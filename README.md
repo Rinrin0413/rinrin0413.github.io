@@ -1,1 +1,2 @@
-# rinrin0413.github.io
+# https://rinrin0413.github.io/
+#####©Rinrin All rights reserved
