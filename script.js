@@ -1,3 +1,4 @@
+//defs
 var $discord_join_button = $("#discord-join-button");
 var navigationOpenFlag = false;
 var navButtonFlag = true;
