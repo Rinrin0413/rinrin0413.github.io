@@ -15,15 +15,17 @@
 	<meta property="og:type" content="website" />
 </svelte:head>
 
-<p>
-	Hi there, I'm a 16year-old
-	<a
-		href="https://nnn.ed.jp/high_school_feature/s_high_school"
-		target="_blank"
-		rel="noreferrer noopener">S high school</a
-	>
-	student from Japan; am a low spec fool ('ω' )
-</p>
+<div id="container">
+	<p>
+		Hi there, I'm a 16year-old
+		<a
+			href="https://nnn.ed.jp/high_school_feature/s_high_school"
+			target="_blank"
+			rel="noreferrer noopener">S high school</a
+		>
+		student from Japan; am a low spec fool ('ω' )
+	</p>
+</div>
 
 <style lang="scss">
 	@import './assets/stylesheets/root.scss';
