@@ -10,7 +10,6 @@
 
 	<meta property="og:title" content={title} />
 	<meta property="og:description" content={desc} />
-	<!-- TODO: Input the link to here ↓↓  -->
 	<meta property="og:url" content="https://rinrin.pages.dev" />
 	<meta property="og:type" content="website" />
 </svelte:head>
