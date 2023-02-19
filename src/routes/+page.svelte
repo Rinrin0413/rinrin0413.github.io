@@ -1,22 +1,27 @@
 <script>
-	let title = 'Home';
-	let desc = 'Rinrin.rs のホームページです(・。・)o彡ﾟ';
+	const head = {
+		title: 'Home',
+		desc: 'Rinrin.rs のホームページです🫵'
+	};
+
+	// TODO: Make this dynamic
+	const age = 16;
 </script>
 
 <svelte:head>
-	<title>Rinrin.rs | {title}</title>
-	<meta name="title" content="Rinrin.rs | {title}" />
-	<meta name="description" content={desc} />
+	<title>Rinrin.rs | {head.title}</title>
+	<meta name="title" content="Rinrin.rs | {head.title}" />
+	<meta name="description" content={head.desc} />
 
-	<meta property="og:title" content={title} />
-	<meta property="og:description" content={desc} />
+	<meta property="og:title" content={head.title} />
+	<meta property="og:description" content={head.desc} />
 	<meta property="og:url" content="https://rinrin.pages.dev" />
 	<meta property="og:type" content="website" />
 </svelte:head>
 
-<div id="container">
+<main>
 	<p>
-		Hi there, I'm a 16year-old
+		Hi there, I'm a {age}year-old
 		<a
 			href="https://nnn.ed.jp/high_school_feature/s_high_school"
 			target="_blank"
@@ -24,8 +29,8 @@
 		>
 		student from Japan; am a low spec fool ('ω' )
 	</p>
-</div>
+	<h3>贵樣は优秀の人材故怪レい日本语を使ラことが出来ゑ</h3>
+</main>
 
 <style lang="scss">
-	@import './assets/stylesheets/root.scss';
 </style>

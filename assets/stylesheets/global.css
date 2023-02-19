@@ -1,18 +1,16 @@
+@font-face {
+    font-family: "Kiwi Maru";
+    src: url("../fonts/Kiwi_Maru/KiwiMaru-Medium.ttf");
+}
+
+* {
+	scrollbar-color: #82624a transparent;
+}
+
 html {
-    background-color: #7d6752;
-    color: #251403;
+    font-family: "Kiwi Maru", serif;
+    background-color: #f5deb3;
+    color: #533618;
+	text-align: center;
     scroll-behavior: smooth;
-}
-
-::selection {
-    background-color: #b5eaff;
-    color: #442c15;
-}
-
-*:link {
-    color: #b5eaff;
-}
-
-*:visited {
-    color: #e4b5ff;
 }
