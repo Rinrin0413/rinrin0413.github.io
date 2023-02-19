@@ -17,7 +17,7 @@
 	<meta property="og:locale" content="ja_JP" />
 	<meta name="twitter:card" content="summary" />
 	<meta name="twitter:site" content={site_url} />
-	<meta name="theme-color" content="#82624a" />
+	<meta name="theme-color" content="#f5deb3" />
 
 	<meta name="keywords" content="Rinrin,Rinrin0413,Rinrin.rs" />
 	<meta name="author" content="Rinrin.rs <rinrin0413.valley@gmail.com>" />
