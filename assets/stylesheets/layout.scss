@@ -12,5 +12,6 @@
             $bg-secondary 68%,
             $bg-primary ),
         url('/images/wallpapers/dalle_frog-eats-an-apple.png') no-repeat center center fixed;
+    background-size: cover;
     z-index: -1;
 }
