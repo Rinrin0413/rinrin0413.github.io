@@ -14,3 +14,8 @@ html {
 * {
     scrollbar-color: #82624a transparent;
 }
+
+::selection {
+	background: #533618;
+	color: #fcf0d9;
+}
