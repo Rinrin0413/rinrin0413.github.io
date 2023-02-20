@@ -1,0 +1,16 @@
+@use '/assets/stylesheets/variables' as *;
+
+#bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(152deg,
+            $bg-primary,
+            $bg-secondary 42%,
+            $bg-secondary 68%,
+            $bg-primary ),
+        url('/images/wallpapers/dalle_frog-eats-an-apple.png') no-repeat center center fixed;
+    z-index: -1;
+}

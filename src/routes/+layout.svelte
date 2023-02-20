@@ -1,11 +1,8 @@
 <script lang="ts">
 	import { copyright, site_url } from '$lib/variables';
-    import { print_logo_aa } from '$lib/util';
 
 	import Header from '$lib/components/header.svelte';
 	import Footer from '$lib/components/footer.svelte';
-
-    print_logo_aa();
 </script>
 
 <svelte:head>
@@ -30,3 +27,9 @@
 <slot />
 
 <Footer />
+
+<div id="bg" />
+
+<style lang="scss">
+	@use '/assets/stylesheets/layout';
+</style>

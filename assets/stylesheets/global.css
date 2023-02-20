@@ -3,14 +3,14 @@
     src: url("../fonts/Kiwi_Maru/KiwiMaru-Medium.ttf");
 }
 
-* {
-	scrollbar-color: #82624a transparent;
-}
-
 html {
     font-family: "Kiwi Maru", serif;
-    background-color: #f5deb3;
     color: #533618;
-	text-align: center;
+    text-align: center;
     scroll-behavior: smooth;
+    background-color: #382b1b;
+}
+
+* {
+    scrollbar-color: #82624a transparent;
 }
