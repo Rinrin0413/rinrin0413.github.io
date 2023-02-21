@@ -13,37 +13,51 @@
 <div id="header-bg" class:blur={is_at_top} />
 <header>
 	<div>
-		<p>
-			ヘッダーだよヘッダーだよヘッダーだよヘッダーだよヘッダーだよヘッダーだよヘッダーだよヘッダーだよヘッダーだよヘッダーだよ
-		</p>
+		<p>ヘッダーだよ</p>
 	</div>
 </header>
 <div id="header-space" />
 
 <style lang="scss">
+	@use 'sass:math';
+
 	@use '/assets/stylesheets/variables/color' as *;
 	@use '/assets/stylesheets/variables/dimension' as *;
 
-	header, #header-bg {
+	header,
+	#header-bg {
 		position: fixed;
 		top: 0;
 		left: 0;
+	}
+
+	header {
 		width: 100vw;
 		height: $header-height;
 	}
 
 	#header-bg {
+		width: 120vw;
+		height: $header-height * 2;
+		transform: translate(-10vw, -$header-height);
 		background: linear-gradient(-6deg, $header-primary, $header-secondary);
 		box-shadow: 0 0 16px $header-primary;
-		transition: .4s;
+		transition: 0.5s;
 
 		&.blur {
-			filter: blur(16px);
+			transform: translate(-10vw, math.div(-$header-height, 2));
+			filter: blur(32px);
+			background: radial-gradient(
+				ellipse at center,
+				$header-primary,
+				$header-primary 30%,
+				$header-secondary
+			);
 		}
 	}
 
 	#header-space {
 		display: block;
-		height: $header-height;
+		height: $header-height * 2;
 	}
 </style>
