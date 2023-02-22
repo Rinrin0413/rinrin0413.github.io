@@ -51,7 +51,7 @@
 				ellipse at center,
 				$header-secondary 20%,
 				$header-tertiary 25%,
-				$header-primary 75%,
+				$header-primary 75%
 			);
 		}
 	}
