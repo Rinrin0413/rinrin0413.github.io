@@ -46,7 +46,7 @@
 
 		&.blur {
 			transform: translate(-10vw, math.div(-$header-height, 2));
-			filter: blur(32px);
+			filter: blur(28px);
 			background: radial-gradient(
 				ellipse at center,
 				$header-secondary 20%,
