@@ -42,7 +42,7 @@
 		transform: translate(-10vw, -$header-height);
 		background: linear-gradient(-6deg, $header-primary, $header-secondary);
 		box-shadow: 0 4px 14px $header-primary;
-		transition: 0.5s;
+		transition: .4s;
 
 		&.blur {
 			transform: translate(-10vw, math.div(-$header-height, 2));
