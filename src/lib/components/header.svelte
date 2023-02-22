@@ -41,7 +41,7 @@
 		height: $header-height * 2;
 		transform: translate(-10vw, -$header-height);
 		background: linear-gradient(-6deg, $header-primary, $header-secondary);
-		box-shadow: 0 0 16px $header-primary;
+		box-shadow: 0 4px 14px $header-primary;
 		transition: 0.5s;
 
 		&.blur {
@@ -49,9 +49,9 @@
 			filter: blur(32px);
 			background: radial-gradient(
 				ellipse at center,
-				$header-primary,
-				$header-primary 30%,
-				$header-secondary
+				$header-secondary 20%,
+				$header-tertiary 25%,
+				$header-primary 75%,
 			);
 		}
 	}
