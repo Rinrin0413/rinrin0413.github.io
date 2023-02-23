@@ -2,14 +2,14 @@
 @use '/assets/stylesheets/variables/dimension' as *;
 
 footer {
-    height: $footer-height;
-    background-color: $text-primary;
-    color: $bg-primary;
+	height: $footer-height;
+	background-color: $text-primary;
+	color: $bg-primary;
 
-    h1 {
-        font-size: 18px;
-        font-weight: 200;
-        padding: 32px 0;
-        margin: 0;
-    }
+	h1 {
+		font-size: 18px;
+		font-weight: 200;
+		padding: 32px 0;
+		margin: 0;
+	}
 }
