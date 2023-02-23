@@ -11,6 +11,10 @@ html {
 	background-color: #382b1b;
 }
 
+body {
+	margin: 0;
+}
+
 * {
 	scrollbar-color: #82624a transparent;
 }
