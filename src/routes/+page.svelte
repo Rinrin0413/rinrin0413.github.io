@@ -1,7 +1,7 @@
 <script>
 	const head = {
 		title: 'Home',
-		desc: 'Rinrin.rs のホームページです🫵'
+		desc: 'Rinrin.rs のホームページです'
 	};
 
 	// TODO: Make this dynamic
