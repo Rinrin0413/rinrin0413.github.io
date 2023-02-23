@@ -5,7 +5,7 @@
 
 	if (browser) {
 		window.addEventListener('scroll', () => {
-			is_at_top = window.scrollY === 0;
+			is_at_top = window.scrollY <= 0;
 		});
 	}
 </script>
