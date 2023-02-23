@@ -14,7 +14,6 @@
 <header>
 	<a href="/" id="logo" class:center={is_at_top}><img src="images/favicon.png" alt="Logo" /></a>
 </header>
-<div id="header-space" />
 
 <style lang="scss">
 	@use 'sass:math';
@@ -114,10 +113,5 @@
 				$header-primary 75%
 			);
 		}
-	}
-
-	#header-space {
-		display: block;
-		height: $header-height * 2;
 	}
 </style>
