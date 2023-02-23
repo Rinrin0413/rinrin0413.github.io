@@ -24,7 +24,7 @@
 
 <Header />
 
-<slot />
+<main><slot /></main>
 
 <Footer />
 

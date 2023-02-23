@@ -1,4 +1,12 @@
 @use '/assets/stylesheets/variables/color' as *;
+@use '/assets/stylesheets/variables/dimension' as *;
+
+main {
+	$header-space: $header-height * 2;
+
+	min-height: calc(100vh - $header-space - $footer-height);
+	margin-top: $header-space;
+}
 
 #bg {
 	position: fixed;
@@ -6,13 +14,11 @@
 	left: 0;
 	width: 100vw;
 	height: 100vh;
-	background: linear-gradient(
-			152deg,
+	background: linear-gradient(152deg,
 			$bg-primary,
 			$bg-secondary 42%,
 			$bg-secondary 68%,
-			$bg-primary
-		),
+			$bg-primary),
 		url('/images/wallpapers/sd_temple.png') no-repeat center center fixed;
 	background-size: cover;
 	z-index: -1;
