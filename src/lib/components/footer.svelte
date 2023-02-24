@@ -7,5 +7,5 @@
 </footer>
 
 <style lang="scss">
-	@use '/assets/stylesheets/footer.scss';
+	@use '/assets/stylesheets/footer';
 </style>

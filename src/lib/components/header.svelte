@@ -16,5 +16,5 @@
 </header>
 
 <style lang="scss">
-	@use '/assets/stylesheets/header.scss';
+	@use '/assets/stylesheets/header';
 </style>
