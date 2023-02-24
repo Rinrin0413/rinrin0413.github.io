@@ -2,6 +2,7 @@
 	import Space from '$lib/components/space.svelte';
 	import Hr from '$lib/components/hr.svelte';
 
+	import { site_url } from '$lib/variables';
 	import { calc_age } from '$lib/util';
 
 	const head = {
@@ -17,7 +18,7 @@
 
 	<meta property="og:title" content={head.title} />
 	<meta property="og:description" content={head.desc} />
-	<meta property="og:url" content="https://rinrin.pages.dev" />
+	<meta property="og:url" content="{site_url}" />
 	<meta property="og:type" content="website" />
 </svelte:head>
 
