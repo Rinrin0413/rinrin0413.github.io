@@ -11,7 +11,8 @@ const t =
     font-size: 15px;\
     font-weight: 900;\
 ';
-console.log(`
+console.log(
+	`
         %c  %c
     %c                %c
     %c  %c%c            %c%c  %c

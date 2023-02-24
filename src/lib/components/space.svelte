@@ -1,5 +1,5 @@
 <script lang="ts">
-    /** The intrinsic height of the space. */
+	/** The intrinsic height of the space. */
 	export let height: string;
 </script>
 

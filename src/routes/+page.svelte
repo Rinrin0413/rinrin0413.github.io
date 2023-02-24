@@ -25,7 +25,7 @@
 
 <section id="about">
 	<h1>About me</h1>
-	<Space height={"50px"} />
+	<Space height={'50px'} />
 
 	<p>
 		あああ！ こんにちは。<br />
@@ -91,7 +91,7 @@
 				margin-left: 10px;
 			}
 		}
-		
+
 		p {
 			font-size: 20px;
 			font-weight: bold;
