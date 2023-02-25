@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Space from '$lib/components/space.svelte';
+	import Title from '$lib/components/title.svelte';
 	import Hr from '$lib/components/hr.svelte';
 
 	import { site_url } from '$lib/variables';
@@ -18,16 +18,14 @@
 
 	<meta property="og:title" content={head.title} />
 	<meta property="og:description" content={head.desc} />
-	<meta property="og:url" content="{site_url}" />
+	<meta property="og:url" content={site_url} />
 	<meta property="og:type" content="website" />
 </svelte:head>
 
 <img src="images/rinrin.webp" alt="Rinrin" id="icon" />
 
 <section id="about">
-	<h1>About me</h1>
-	<Space height={'50px'} />
-
+	<Title text="About me" ja="わたしはだれだ!!!" />
 	<p>
 		あああ！ こんにちは。<br />
 		私は{calc_age()}歳の学生です。
@@ -35,6 +33,19 @@
 </section>
 
 <Hr />
+
+<section id="chronicle">
+	<Title text="Chronicle" ja="我が悠遠なる秀悦の歴史" />
+	<p>
+		かき途中まだ書いてないまだ書き途中まだかいてない
+		<br />...<br />
+		2006&emsp;-&emsp;発生
+		<br /><br />
+		2023&emsp;-&emsp;発生から17年経った
+		<br /><br />
+		2036&emsp;-&emsp;30年後の自分は何歳かな..と 誕生直後から... 考えていました。
+	</p>
+</section>
 
 <style lang="scss">
 	@use '/assets/stylesheets/variables/color' as *;
@@ -46,7 +57,7 @@
 		width: $size;
 		height: $size;
 		border-radius: 3%;
-		margin: 18px auto 2px auto;
+		margin: 18px auto -48px auto;
 		box-shadow: 0 4px 14px $shadow-color;
 		transition: 0.3s;
 
@@ -62,36 +73,7 @@
 	}
 
 	section {
-		margin: 0 0 48px 0;
-
-		h1 {
-			font-size: 38px;
-			font-weight: 900;
-			margin: 0;
-			white-space: nowrap;
-			position: absolute;
-			left: 50%;
-			transform: translateX(-50%);
-
-			&::before,
-			&::after {
-				content: '';
-				display: inline-block;
-				width: 96px;
-				height: 2px;
-				background-color: $line-primary;
-				vertical-align: middle;
-				white-space: nowrap;
-			}
-
-			&::before {
-				margin-right: 10px;
-			}
-
-			&::after {
-				margin-left: 10px;
-			}
-		}
+		margin: 64px 0;
 
 		p {
 			font-size: 20px;
