@@ -46,10 +46,10 @@
 		}
 
 		&#shadow {
-			// transform: translateX(-50%) scale(1, -1) perspective(128px) rotate3d(-1, 0, 0, 45deg);
+			transform: translateX(-50%) scale(1, -1) perspective(128px) rotate3d(-1, 0, 0, 45deg);
 			transform-origin: 50% 43px;
 			filter: blur(1.2px);
-			color: transparent;
+			// color: transparent;
 			background: linear-gradient(0deg, rgba($text-primary, 0.4), transparent 72%);
 			background-clip: text;
 			-webkit-background-clip: text;
