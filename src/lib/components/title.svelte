@@ -46,9 +46,7 @@
 		}
 
 		&#shadow {
-			transform: translateX(-50%) scale(1, -1) // perspective(128px)
-				// rotate3d(-1, 0, 0, 45deg)
-;
+			transform: translateX(-50%) scale(1, -1);
 			transform-origin: 50% 43px;
 			filter: blur(1.2px);
 			color: transparent;
