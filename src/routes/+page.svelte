@@ -22,7 +22,7 @@
 	<meta property="og:type" content="website" />
 </svelte:head>
 
-<img src="images/rinrin.webp" alt="Rinrin" id="icon" />
+<!-- <img src="images/rinrin.webp" alt="Rinrin" id="icon" />
 
 <section id="about">
 	<Title text="About me" ja="わたしはだれだ!!!" />
@@ -45,7 +45,7 @@
 		<br /><br />
 		2036&emsp;-&emsp;30年後の自分は何歳かな..と 誕生直後から... 考えていました。
 	</p>
-</section>
+</section> -->
 
 <style lang="scss">
 	@use '/assets/stylesheets/variables/color' as *;
