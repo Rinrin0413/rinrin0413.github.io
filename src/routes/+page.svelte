@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Title from '$lib/components/title.svelte';
 	import Hr from '$lib/components/hr.svelte';
+	import Chronicle from '$lib/components/chronicle.svelte';
 
 	import { site_url } from '$lib/variables';
 	import { calc_age } from '$lib/util';
@@ -36,15 +37,7 @@
 
 <section id="chronicle">
 	<Title text="Chronicle" ja="我が悠遠なる秀悦の歴史" />
-	<p>
-		かき途中まだ書いてないまだ書き途中まだかいてない
-		<br />...<br />
-		2006&emsp;-&emsp;発生
-		<br /><br />
-		2023&emsp;-&emsp;発生から17年経った
-		<br /><br />
-		2036&emsp;-&emsp;30年後の自分は何歳かな..と 誕生直後から... 考えていました。
-	</p>
+	<Chronicle />
 </section>
 
 <style lang="scss">
