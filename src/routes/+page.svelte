@@ -32,7 +32,7 @@
 	</p>
 </section>
 
-<Hr />
+<Hr /> -->
 
 <section id="chronicle">
 	<Title text="Chronicle" ja="我が悠遠なる秀悦の歴史" />
@@ -45,7 +45,7 @@
 		<br /><br />
 		2036&emsp;-&emsp;30年後の自分は何歳かな..と 誕生直後から... 考えていました。
 	</p>
-</section> -->
+</section>
 
 <style lang="scss">
 	@use '/assets/stylesheets/variables/color' as *;
