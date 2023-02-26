@@ -22,7 +22,7 @@
 	<meta property="og:type" content="website" />
 </svelte:head>
 
-<!-- <img src="images/rinrin.webp" alt="Rinrin" id="icon" />
+<img src="images/rinrin.webp" alt="Rinrin" id="icon" />
 
 <section id="about">
 	<Title text="About me" ja="わたしはだれだ!!!" />
@@ -32,7 +32,7 @@
 	</p>
 </section>
 
-<Hr /> -->
+<Hr />
 
 <section id="chronicle">
 	<Title text="Chronicle" ja="我が悠遠なる秀悦の歴史" />
