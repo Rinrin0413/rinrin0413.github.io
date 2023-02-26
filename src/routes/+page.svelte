@@ -11,7 +11,7 @@
 	};
 </script>
 
-<!-- <svelte:head>
+<svelte:head>
 	<title>Rinrin.rs | {head.title}</title>
 	<meta name="title" content="Rinrin.rs | {head.title}" />
 	<meta name="description" content={head.desc} />
@@ -20,7 +20,7 @@
 	<meta property="og:description" content={head.desc} />
 	<meta property="og:url" content={site_url} />
 	<meta property="og:type" content="website" />
-</svelte:head> -->
+</svelte:head>
 
 <img src="images/rinrin.webp" alt="Rinrin" id="icon" />
 

@@ -22,7 +22,7 @@
 	<link rel="icon" href="/images/favicon.png" />
 </svelte:head>
 
-<Header />
+<!-- <Header /> -->
 
 <main><slot /></main>
 
