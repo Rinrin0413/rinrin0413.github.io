@@ -8,8 +8,8 @@
 </script>
 
 <h1 id="{text}," title={ja}>{text}</h1>
-<!-- <h1 id="shadow">{text}</h1>
-<Space height={'64px'} /> -->
+<h1 id="shadow">{text}</h1>
+<Space height={'64px'} />
 
 <style lang="scss">
 	@use '/assets/stylesheets/variables/color' as *;
