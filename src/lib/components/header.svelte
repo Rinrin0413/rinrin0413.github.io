@@ -4,9 +4,15 @@
 	let is_at_top = true;
 
 	if (browser) {
+		update_scroll()
+
 		window.addEventListener('scroll', () => {
-			is_at_top = window.scrollY <= 0;
+			update_scroll()
 		});
+	}
+
+	function update_scroll() {
+		is_at_top = window.scrollY <= 0;
 	}
 </script>
 
