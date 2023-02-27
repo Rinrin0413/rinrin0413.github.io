@@ -14,7 +14,7 @@ ul {
 	// 2px is the width of the border
 	@media screen and (max-width: ($max-width + 4px)) {
 		border: none;
-    }
+	}
 
 	li {
 		display: flex;
