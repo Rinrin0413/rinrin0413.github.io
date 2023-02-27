@@ -4,16 +4,20 @@
 		<div>この世界に湧く</div>
 	</li>
 	<li>
+		<h1>May 2020</h1>
+		<div>Discord bot を作りたくて間違って Python を始める</div>
+	</li>
+	<li>
 		<h1>Mar. 2022</h1>
-		<div>TETR.IO を始める</div>
+		<div>デスクトップPC に乗り換えて初日に Windows を消し飛ばして Arch Linux を入れようとする。 だが UEFI に逆らわれ&emsp;敗北...</div>
 	</li>
 	<li>
 		<h1 class="no-pin">Apr. 2022</h1>
-		<div>S高等学校に入学</div> 
+		<div>S高等学校に名前を書き&emsp;入学...</div>
 	</li>
 	<li>
 		<h1 class="no-pin">Jun. 2022</h1>
-		<div>吹っ切れて Windows を消し飛ばして openSUSE Leap に乗り換える</div>
+		<div>吹っ切れてまた Windows を消し飛ばして openSUSE に乗り換える</div>
 	</li>
 	<li>
 		<h1>Apr. 2036</h1>
@@ -37,18 +41,17 @@
 			justify-content: center;
 			text-align: left;
 			margin: 0 32px;
-			font-size: 18px;
 
 			h1 {
 				font-weight: 200;
 				width: 86px;
 				position: relative;
 				bottom: 32px;
-				padding: 0 32px 48px 0;
+				padding-right: 32px;
 				margin: 0;
 				border-right: 1px solid $line-primary;
 				white-space: nowrap;
-				font-size: inherit;
+				font-size: 18px;
 
 				&:not(.no-pin):after {
 					content: '';
@@ -63,11 +66,27 @@
 			}
 
 			div {
+				$separator-color: rgba($line-primary, 0.7);
+
 				position: relative;
 				bottom: 32px;
 				left: 24px;
 				width: 512px;
-				font-size: inherit;
+				font-size: 16px;
+				font-weight: bold;
+				border-bottom: 2.5px solid $separator-color;
+				padding: 0 6px 3px 12px;
+				margin-bottom: 48px;
+
+				&:before {
+					content: '';
+					display: inline-block;
+					width: 1px;
+					height: 100%;
+					background-color: $separator-color;
+					position: absolute;
+					left: 3px;
+				}
 			}
 		}
 	}
