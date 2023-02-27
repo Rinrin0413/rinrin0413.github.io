@@ -1,28 +1,17 @@
+<script lang="ts">
+	import { chronicle } from '$lib/data/chronicle';
+	import { fmt_month } from '$lib/util';
+</script>
+
 <ul>
-	<li>
-		<h1>Apr. 2006</h1>
-		<div>この世界に湧く</div>
-	</li>
-	<li>
-		<h1>May 2020</h1>
-		<div>Discord bot を作りたくて間違って Python を始める</div>
-	</li>
-	<li>
-		<h1>Mar. 2022</h1>
-		<div>デスクトップPC に乗り換えて初日に Windows を消し飛ばして Arch Linux を入れようとする。 だが UEFI に逆らわれ&emsp;敗北...</div>
-	</li>
-	<li>
-		<h1 class="no-pin">Apr. 2022</h1>
-		<div>S高等学校に名前を書き&emsp;入学...</div>
-	</li>
-	<li>
-		<h1 class="no-pin">Jun. 2022</h1>
-		<div>吹っ切れてまた Windows を消し飛ばして openSUSE に乗り換える</div>
-	</li>
-	<li>
-		<h1>Apr. 2036</h1>
-		<div>30年後の自分は何歳かな..と 誕生直後から... 考えていました。</div>
-	</li>
+	{#each chronicle as {year, events}}
+		{#each events as {month, event}}
+			<li>
+				<h1>{fmt_month(month)} {year}</h1>
+				<div>{event}</div>
+			</li>
+		{/each}
+	{/each}
 </ul>
 
 <style lang="scss">
