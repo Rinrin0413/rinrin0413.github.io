@@ -4,10 +4,10 @@
 	let is_at_top = true;
 
 	if (browser) {
-		update_scroll()
+		update_scroll();
 
 		window.addEventListener('scroll', () => {
-			update_scroll()
+			update_scroll();
 		});
 	}
 
