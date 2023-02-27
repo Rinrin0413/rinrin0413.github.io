@@ -5,9 +5,9 @@
 
 <ul>
 	{#each chronicle as { year, events }}
-		{#each events as { month, event }}
+		{#each events as { month, event }, i}
 			<li>
-				<h1>{fmt_month(month)} {year}</h1>
+				<h1 class:no-pin={i != 0}>{fmt_month(month)} {year}</h1>
 				<div>{event}</div>
 			</li>
 		{/each}
