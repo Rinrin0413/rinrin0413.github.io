@@ -1,18 +1,30 @@
 @use './variables/color' as *;
+@use './variables/mixin' as *;
 
 ul {
+	$max-width: 640px;
+
 	padding: 0;
 	margin: 64px auto;
 	$border: 2px dotted $line-primary;
 	border-left: $border;
 	border-right: $border;
-	max-width: 640px;
+	max-width: $max-width;
+
+	// 2px is the width of the border
+	@media screen and (max-width: ($max-width + 4px)) {
+		border: none;
+    }
 
 	li {
 		display: flex;
 		justify-content: center;
 		text-align: left;
-		margin: 0 32px;
+		margin: 0 32px 0 16px;
+
+		@include sp {
+			margin: 0 24px 0 12px;
+		}
 
 		h1 {
 			font-weight: 200;
@@ -25,6 +37,12 @@ ul {
 			white-space: nowrap;
 			font-size: 18px;
 
+			@include sp {
+				width: 81px;
+				font-size: 16px;
+				padding-right: 14px;
+			}
+
 			&:not(.no-pin):after {
 				content: '';
 				$size: 18px;
@@ -34,6 +52,13 @@ ul {
 				transform: rotate(45deg);
 				position: absolute;
 				left: 109.99px;
+
+				@include sp {
+					$size: 12px;
+					width: $size;
+					height: $size;
+					left: 89.99px;
+				}
 			}
 		}
 
@@ -49,6 +74,11 @@ ul {
 			border-bottom: 2.5px solid $separator-color;
 			padding: 0 6px 3px 12px;
 			margin-bottom: 48px;
+
+			@include sp {
+				left: 8px;
+				font-size: 14px;
+			}
 
 			&:before {
 				content: '';
