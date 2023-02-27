@@ -4,8 +4,8 @@
 </script>
 
 <ul>
-	{#each chronicle as {year, events}}
-		{#each events as {month, event}}
+	{#each chronicle as { year, events }}
+		{#each events as { month, event }}
 			<li>
 				<h1>{fmt_month(month)} {year}</h1>
 				<div>{event}</div>
@@ -15,68 +15,5 @@
 </ul>
 
 <style lang="scss">
-	@use '/assets/stylesheets/variables/color' as *;
-
-	ul {
-		padding: 0;
-		margin: 64px auto;
-		$border: 2px dotted $line-primary;
-		border-left: $border;
-		border-right: $border;
-		max-width: 640px;
-
-		li {
-			display: flex;
-			justify-content: center;
-			text-align: left;
-			margin: 0 32px;
-
-			h1 {
-				font-weight: 200;
-				width: 86px;
-				position: relative;
-				bottom: 32px;
-				padding-right: 32px;
-				margin: 0;
-				border-right: 1px solid $line-primary;
-				white-space: nowrap;
-				font-size: 18px;
-
-				&:not(.no-pin):after {
-					content: '';
-					$size: 18px;
-					width: $size;
-					height: $size;
-					background-color: #5f4730;
-					transform: rotate(45deg);
-					position: absolute;
-					left: 109.99px;
-				}
-			}
-
-			div {
-				$separator-color: rgba($line-primary, 0.7);
-
-				position: relative;
-				bottom: 32px;
-				left: 24px;
-				width: 512px;
-				font-size: 16px;
-				font-weight: bold;
-				border-bottom: 2.5px solid $separator-color;
-				padding: 0 6px 3px 12px;
-				margin-bottom: 48px;
-
-				&:before {
-					content: '';
-					display: inline-block;
-					width: 1px;
-					height: 100%;
-					background-color: $separator-color;
-					position: absolute;
-					left: 3px;
-				}
-			}
-		}
-	}
+	@import '/assets/stylesheets/chronicle';
 </style>
