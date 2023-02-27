@@ -10,7 +10,7 @@ export const chronicle = [
 	{
 		year: 2022,
 		events: [
-			{ month: 3, event: 'デスクトップPC に乗り換えて初日に Windows を消し飛ばして Arch Linux を入れようとする。だが UEFI に逆らわれ　敗北...' },
+			{ month: 3, event: 'PC 買い替えて初日に Windows を消し飛ばし Arch Linux を入れようとする。だが UEFI に逆らわれ　敗北...' },
 			{ month: 4, event: 'S高等学校に名前を書き　入学...' },
 			{ month: 6, event: '吹っ切れてまた Windows を消し飛ばして次は openSUSE に乗り換える' }
 		]
