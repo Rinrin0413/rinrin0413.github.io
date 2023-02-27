@@ -1,5 +1,6 @@
 @use './variables/color' as *;
 @use './variables/dimension' as *;
+@use './variables/mixin' as *;
 
 footer {
 	height: $footer-height;
@@ -11,6 +12,10 @@ footer {
 		font-weight: 200;
 		padding: 32px 0;
 		margin: 0;
+
+		@include sp {
+			font-size: 14px;
+		}
 	}
 
 	::selection {
