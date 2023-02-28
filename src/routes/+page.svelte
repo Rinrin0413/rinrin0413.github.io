@@ -27,7 +27,7 @@
 
 <section id="about">
 	<Title text="About me" ja="わたしはだれだ!!!" />
-	<p>
+	<p id="large">
 		あああ！ こんにちは。<br />
 		私は{calc_age()}歳の学生です。
 	</p>
@@ -40,8 +40,19 @@
 	<Chronicle />
 </section>
 
+<Hr />
+
+<section id="contact">
+	<Title text="Contact / Social" ja="連絡先とか" />
+	<p>
+		基本的には Discordサーバー入ってそこで言うか DM してくれれば気づく。
+		出先だと気付かないかもだから緊急だったらメール送ってください。
+	</p>
+</section>
+
 <style lang="scss">
 	@use '/assets/stylesheets/variables/color' as *;
+	@use '/assets/stylesheets/variables/mixin' as *;
 
 	#icon {
 		$size: 256px;
@@ -69,9 +80,23 @@
 		margin: 64px 0;
 
 		p {
-			font-size: 20px;
 			font-weight: bold;
-			margin: 10px;
+			padding: 0 18px;
+			margin: 10px auto;
+			max-width: 512px;
+
+			&:not(#large) {
+				font-size: 18px;
+
+				@include sp {
+					font-size: 16px;
+					padding: 0 14px;
+				}
+			}
+
+			&#large {
+				font-size: 20px;
+			}
 		}
 	}
 </style>
