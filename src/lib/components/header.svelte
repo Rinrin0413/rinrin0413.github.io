@@ -6,13 +6,11 @@
 	if (browser) {
 		update_scroll();
 
-		window.addEventListener('scroll', () => {
-			update_scroll();
-		});
-	}
+		window.addEventListener('scroll', update_scroll);
 
-	function update_scroll() {
-		is_at_top = window.scrollY <= 0;
+		function update_scroll() {
+			is_at_top = window.scrollY <= 0;
+		}
 	}
 </script>
 
