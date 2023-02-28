@@ -17,10 +17,6 @@
 		update_vw();
 
 		window.addEventListener('resize', update_vw);
-
-		function update_vw() {
-			vw = window.innerWidth;
-		}
 	}
 
 	$: if (node) {
@@ -28,6 +24,10 @@
 			init_width = node.offsetWidth;
 		}
 		is_overflown = vw <= init_width;
+	}
+
+	function update_vw() {
+		vw = window.innerWidth;
 	}
 </script>
 
