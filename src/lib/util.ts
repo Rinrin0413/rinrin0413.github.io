@@ -11,20 +11,24 @@ export function calc_age() {
 }
 
 /** Formats the given month number to a string. */
-export function fmt_month(month: number) {
-	const months = [
-		'Jan.',
-		'Feb.',
-		'Mar.',
-		'Apr.',
-		'May',
-		'Jun.',
-		'Jul.',
-		'Aug.',
-		'Sep.',
-		'Oct.',
-		'Nov.',
-		'Dec.'
-	];
-	return months[month - 1];
+export function fmt_month(month: number | null) {
+	if (month == null) {
+		return '???&nbsp;';
+	} else {
+		const months = [
+			'Jan.',
+			'Feb.',
+			'Mar.',
+			'Apr.',
+			'May&nbsp;',
+			'Jun.',
+			'Jul.',
+			'Aug.',
+			'Sep.',
+			'Oct.',
+			'Nov.',
+			'Dec.'
+		];
+		return months[month - 1];
+	}
 }
