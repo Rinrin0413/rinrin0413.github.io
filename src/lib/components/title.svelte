@@ -1,15 +1,41 @@
 <script lang="ts">
 	import Space from '$lib/components/space.svelte';
 
+	import { browser } from '$app/environment';
+
 	export let text: string;
 
 	/** Japanese text */
 	export let ja = '';
+
+	let vw: number;
+	let node: HTMLHeadingElement;
+	let init_width: number;
+	let is_overflown = false;
+
+	if (browser) {
+		update_vw();
+
+		window.addEventListener('resize', update_vw);
+
+		function update_vw() {
+			vw = window.innerWidth;
+		}
+	}
+
+	$: if (node) {
+		if (!init_width) {
+			init_width = node.offsetWidth;
+		}
+		is_overflown = vw <= init_width;
+	}
 </script>
 
-<h1 id="{text}," title={ja}>{text}</h1>
-<h1 id="shadow">{text}</h1>
-<Space height={'64px'} />
+<div class:mini={is_overflown}>
+	<h1 title={ja} bind:this={node}>{text}</h1>
+	<h1 id="shadow">{text}</h1>
+	<Space height={'64px'} />
+</div>
 
 <style lang="scss">
 	@use '/assets/stylesheets/variables/color' as *;
@@ -54,6 +80,17 @@
 			background-clip: text;
 			-webkit-background-clip: text;
 			user-select: none;
+		}
+	}
+
+	.mini h1 {
+		font-size: 26px;
+
+		&:not(#shadow) {
+			&::before,
+			&::after {
+				width: 16px;
+			}
 		}
 	}
 </style>
