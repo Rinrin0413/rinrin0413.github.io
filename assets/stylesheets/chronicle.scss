@@ -19,7 +19,7 @@ ul {
 	}
 
 	&:not(.opened) {
-		height: 128px;
+		height: 86px;
 		background-color: #5f47306c;
 		box-shadow: 0 4px 14px #00000062;
 		border-bottom: $border;
@@ -27,6 +27,10 @@ ul {
 		border-bottom-left-radius: $border-radius;
 		border-bottom-right-radius: $border-radius;
 		cursor: pointer;
+
+		&:hover {
+			transform: translateY(4px) scale(0.994);
+		}
 
 		li:first-child {
 			filter: blur(0);
