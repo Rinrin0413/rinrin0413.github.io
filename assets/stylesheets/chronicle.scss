@@ -29,7 +29,20 @@ ul {
 		cursor: pointer;
 
 		&:hover {
-			transform: translateY(4px) scale(0.994);
+			transform: translateY(8px) scale(0.99);
+
+			&::after {
+				opacity: 0.54;
+			}
+		}
+
+		&::after {
+			content: 'Open...';
+			position: relative;
+			bottom: 21px;
+			font-size: 16px;
+			opacity: 0.78;
+			transition: 0.2s;
 		}
 
 		li:first-child {
