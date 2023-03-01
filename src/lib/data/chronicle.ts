@@ -47,9 +47,9 @@ export const chronicle = [
 	{
 		year: 2023,
 		events: [{ month: 2, event: 'このサイトを SvelteKit を使って書き直す' }]
-	},
-	{
-		year: 2036,
-		events: [{ month: 4, event: '30年後の自分は何歳かな..と 誕生直後から... 考えていました。' }]
 	}
+	// {
+	// 	year: 2036,
+	// 	events: [{ month: 4, event: '30年後の自分は何歳かな..と 誕生直後から... 考えていました。' }]
+	// }
 ];
