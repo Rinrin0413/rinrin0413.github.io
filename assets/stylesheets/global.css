@@ -13,13 +13,7 @@ html {
 	color: #533618;
 	text-align: center;
 	scroll-behavior: smooth;
-	background: linear-gradient(
-			152deg,
-			#f5deb3,
-			#f7f5f1ab 42%,
-			#f7f5f1ab 68%,
-			#f5deb3
-		),
+	background: linear-gradient(152deg, #f5deb3, #f7f5f1ab 42%, #f7f5f1ab 68%, #f5deb3),
 		url('/images/wallpapers/sd_temple.png');
 	background-repeat: no-repeat;
 	background-size: cover;

@@ -49,13 +49,14 @@
 		出先だと気付かないかもだから緊急だったらメール送ってください。
 	</p>
 	以下作り途中のため とりあえず雑なレイアウト:
-	<br><br>
+	<br /><br />
 	Email: <a href="mailto:rinrin0413.valley@gmail.com">rinrin0413.valley@gmail.com</a>
-	<br>
-	Discord: <a href="https://discord.com/users/724976600873041940">Rinrin.rs#5671 (724976600873041940)</a>
-	<br>
+	<br />
+	Discord:
+	<a href="https://discord.com/users/724976600873041940">Rinrin.rs#5671 (724976600873041940)</a>
+	<br />
 	Discord Server: <a href="https://discord.gg/7QhMDfyPHR">Rinrinの要塞</a>
-	<br>
+	<br />
 	Twitter: <a href="https://twitter.com/Rinrin_2nd">@Rinrin_2nd</a>
 </section>
 
