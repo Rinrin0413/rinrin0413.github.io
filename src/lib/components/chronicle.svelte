@@ -9,7 +9,8 @@
 	}
 </script>
 
-<ul
+<div class="container">
+	<ul
 	class:opened={is_opened}
 	title={!is_opened ? 'Open' : ''}
 	on:click|once={toggle}
@@ -26,6 +27,7 @@
 		{/each}
 	{/each}
 </ul>
+</div>
 
 <style lang="scss">
 	@import '/assets/stylesheets/chronicle';

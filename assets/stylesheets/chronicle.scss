@@ -1,6 +1,10 @@
 @use './variables/color' as *;
 @use './variables/mixin' as *;
 
+.container {
+	margin: 0 18px;
+}
+
 ul {
 	$max-width: 640px;
 	$border: 2px dotted $line-primary;
@@ -12,11 +16,6 @@ ul {
 	max-width: $max-width;
 	height: auto;
 	transition: 0.5s;
-
-	// 2px is the width of the border
-	@media screen and (max-width: ($max-width + 4px)) {
-		border: none;
-	}
 
 	&:not(.opened) {
 		height: 86px;
@@ -32,7 +31,7 @@ ul {
 			transform: translateY(8px) scale(0.99);
 
 			&::after {
-				opacity: 0.54;
+				opacity: 0.58;
 			}
 		}
 
@@ -40,8 +39,9 @@ ul {
 			content: 'Open...';
 			position: relative;
 			bottom: 21px;
+			left: 40%;
 			font-size: 16px;
-			opacity: 0.78;
+			opacity: 0.84;
 			transition: 0.2s;
 		}
 
@@ -91,13 +91,13 @@ ul {
 				background-color: #5f4730;
 				transform: rotate(45deg);
 				position: absolute;
-				left: 109.99px;
+				left: 111px;
 
 				@include sp {
 					$size: 12px;
 					width: $size;
 					height: $size;
-					left: 89.99px;
+					left: 91px;
 				}
 			}
 		}
