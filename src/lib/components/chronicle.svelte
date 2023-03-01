@@ -1,9 +1,22 @@
 <script lang="ts">
 	import { chronicle } from '$lib/data/chronicle';
 	import { fmt_month } from '$lib/util';
+
+	let is_opened = false;
+
+	function toggle() {
+		is_opened = !is_opened;
+	}
 </script>
 
-<ul>
+<ul
+	class:opened={is_opened}
+	title={!is_opened ? 'Open' : ''}
+	on:click|once={toggle}
+	on:keypress|once={(e) => {
+		if (e.key === 'Enter') toggle;
+	}}
+>
 	{#each chronicle as { year, events }}
 		{#each events as { month, event }, i}
 			<li>

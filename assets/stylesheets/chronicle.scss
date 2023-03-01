@@ -3,17 +3,40 @@
 
 ul {
 	$max-width: 640px;
+	$border: 2px dotted $line-primary;
 
 	padding: 0;
 	margin: 64px auto;
-	$border: 2px dotted $line-primary;
 	border-left: $border;
 	border-right: $border;
 	max-width: $max-width;
+	height: auto;
+	transition: 0.5s;
 
 	// 2px is the width of the border
 	@media screen and (max-width: ($max-width + 4px)) {
 		border: none;
+	}
+
+	&:not(.opened) {
+		height: 128px;
+		background-color: #5f47306c;
+		box-shadow: 0 4px 14px #00000062;
+		border-bottom: $border;
+		$border-radius: 4px;
+		border-bottom-left-radius: $border-radius;
+		border-bottom-right-radius: $border-radius;
+		cursor: pointer;
+
+		li:first-child {
+			filter: blur(0);
+		}
+
+		li:not(:first-child) {
+			position: absolute;
+			transform: scale(0);
+			opacity: 0;
+		}
 	}
 
 	li {
@@ -21,6 +44,7 @@ ul {
 		justify-content: center;
 		text-align: left;
 		margin: 0 32px 0 16px;
+		transition: 0.5s;
 
 		@include sp {
 			margin: 0 24px 0 12px;
