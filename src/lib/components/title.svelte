@@ -33,7 +33,7 @@
 
 <div class:mini={is_overflown}>
 	<h1 title={ja} bind:this={node}>{text}</h1>
-	<h1 id="shadow">{text}</h1>
+	<h1 class="shadow">{text}</h1>
 	<Space height={'64px'} />
 </div>
 
@@ -48,7 +48,7 @@
 		position: absolute;
 		left: 50%;
 
-		&:not(#shadow) {
+		&:not(.shadow) {
 			transform: translateX(-50%);
 
 			&::before,
@@ -71,7 +71,7 @@
 			}
 		}
 
-		&#shadow {
+		&.shadow {
 			transform: translateX(-50%) scale(1, -1);
 			transform-origin: 50% 43px;
 			filter: blur(1.2px);
@@ -86,7 +86,7 @@
 	.mini h1 {
 		font-size: 26px;
 
-		&:not(#shadow) {
+		&:not(.shadow) {
 			&::before,
 			&::after {
 				width: 16px;
