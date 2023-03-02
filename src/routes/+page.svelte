@@ -38,6 +38,7 @@
 
 <section id="chronicle">
 	<Title text="Chronicle" ja="我が悠遠なる秀悦の歴史" />
+	<p>我が悠遠なる秀悦の歴史</p>
 	<Chronicle />
 </section>
 
