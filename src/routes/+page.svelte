@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Title from '$lib/components/title.svelte';
 	import Hr from '$lib/components/hr.svelte';
+	import Activities from '$lib/components/activities.svelte';
 	import Chronicle from '$lib/components/chronicle.svelte';
 	import ContactTable from '$lib/components/contact_table.svelte';
 
@@ -32,6 +33,18 @@
 		あああ！ こんにちは。<br />
 		私は{calc_age()}歳の学生です。
 	</p>
+</section>
+
+<Hr />
+
+<section id="activities">
+	<Title text="Major Activities" ja="主なすること。" />
+	<ul>
+		<li><a href="#acivity-programming"> Programming </a></li>
+		<li><a href="#acivity-game"> Game </a></li>
+		<li><a href="#acivity-music"> Music </a></li>
+	</ul>
+	<Activities />
 </section>
 
 <Hr />
@@ -100,6 +113,32 @@
 		&:active {
 			box-shadow: none;
 			transform: translateY(8px) scale(0.968);
+		}
+	}
+
+	#activities {
+		ul {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			list-style: none;
+			padding: 0;
+			margin: 12px auto;
+
+			li {
+				margin: 0 12px;
+				font-size: 18px;
+				font-weight: bold;
+
+				a {
+					color: #460000;
+					transition: 0.3s;
+
+					&:hover {
+						color: #9b3535;
+					}
+				}
+			}
 		}
 	}
 </style>
