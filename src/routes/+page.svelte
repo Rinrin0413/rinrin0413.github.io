@@ -2,6 +2,7 @@
 	import Title from '$lib/components/title.svelte';
 	import Hr from '$lib/components/hr.svelte';
 	import Chronicle from '$lib/components/chronicle.svelte';
+	import ContactTable from '$lib/components/contact_table.svelte';
 
 	import { site_url } from '$lib/variables';
 	import { calc_age } from '$lib/util';
@@ -48,43 +49,12 @@
 		基本的には Discordサーバー入ってそこで言うか DM してくれれば気づく。
 		出先だと気付かないかもだから緊急だったらメール送ってください。
 	</p>
-	以下作り途中のため とりあえず雑なレイアウト:
-	<br /><br />
-	Email: <a href="mailto:rinrin0413.valley@gmail.com">rinrin0413.valley@gmail.com</a>
-	<br />
-	Discord:
-	<a href="https://discord.com/users/724976600873041940">Rinrin.rs#5671 (724976600873041940)</a>
-	<br />
-	Discord Server: <a href="https://discord.gg/7QhMDfyPHR">Rinrinの要塞</a>
-	<br />
-	Twitter: <a href="https://twitter.com/Rinrin_2nd">@Rinrin_2nd</a>
+	<ContactTable />
 </section>
 
 <style lang="scss">
 	@use '/assets/stylesheets/variables/color' as *;
 	@use '/assets/stylesheets/variables/mixin' as *;
-
-	#icon {
-		$size: 256px;
-		$shadow-color: #00000094;
-
-		width: $size;
-		height: $size;
-		border-radius: 3%;
-		margin: 18px auto -48px auto;
-		box-shadow: 0 4px 14px $shadow-color;
-		transition: 0.3s;
-
-		&:hover {
-			box-shadow: 0 2px 6px $shadow-color;
-			transform: translateY(6px) scale(0.98);
-		}
-
-		&:active {
-			box-shadow: none;
-			transform: translateY(8px) scale(0.968);
-		}
-	}
 
 	section {
 		margin: 64px 0;
@@ -107,6 +77,28 @@
 			&#large {
 				font-size: 20px;
 			}
+		}
+	}
+
+	#icon {
+		$size: 256px;
+		$shadow-color: #00000094;
+
+		width: $size;
+		height: $size;
+		border-radius: 3%;
+		margin: 18px auto -48px auto;
+		box-shadow: 0 4px 14px $shadow-color;
+		transition: 0.3s;
+
+		&:hover {
+			box-shadow: 0 2px 6px $shadow-color;
+			transform: translateY(6px) scale(0.98);
+		}
+
+		&:active {
+			box-shadow: none;
+			transform: translateY(8px) scale(0.968);
 		}
 	}
 </style>
