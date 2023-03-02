@@ -6,7 +6,9 @@
 
 <table id="contact-table">
 	<tr>
-		<td>Email</td>
+		<td>
+			<img src="images/logos/google/gmail.png" alt="Gmail logo" />Gmail
+		</td>
 		<td
 			><button
 				class="a"
@@ -24,19 +26,49 @@
 		>
 	</tr>
 	<tr>
-		<td>Discord</td>
+		<td>
+			<img src="images/logos/discord/discord-mark-blue.svg" alt="Discord logo" />Discord
+		</td>
 		<td
-			><a href="https://discord.com/users/724976600873041940">Rinrin.rs#5671 (724976600873041940)</a
+			><a
+				href="https://discord.com/users/724976600873041940"
+				target="_blank"
+				rel="noopener noreferrer">Rinrin.rs#5671 (724976600873041940)</a
 			></td
 		>
 	</tr>
 	<tr>
-		<td>Discord Server</td>
-		<td><a href="https://discord.gg/7QhMDfyPHR">Rinrinの要塞</a></td>
+		<td title="My Discord server">
+			<img src="images/logos/discord/discord-mark-blue.svg" alt="Discord logo" />〃 Server
+		</td>
+		<td
+			><a href="https://discord.gg/7QhMDfyPHR" target="_blank" rel="noopener noreferrer"
+				>Rinrinの要塞</a
+			></td
+		>
 	</tr>
 	<tr>
-		<td>Twitter</td>
-		<td><a href="https://twitter.com/Rinrin_2nd">@Rinrin_2nd</a></td>
+		<td>
+			<img
+				src="images/logos/twitter-logo-01282021/Twitter logo/SVG/Logo blue.svg"
+				alt="Twitter logo"
+			/>Twitter
+		</td>
+		<td
+			><a href="https://twitter.com/Rinrin_2nd" target="_blank" rel="noopener noreferrer"
+				>@Rinrin_2nd</a
+			></td
+		>
+	</tr>
+	<tr>
+		<td>
+			<img src="images/logos/github-mark/github-mark.svg" alt="GitHub logo" />GitHub
+		</td>
+		<td>
+			<a href="https://github.com/Rinrin0413" target="_blank" rel="noopener noreferrer"
+				>@Rinrin0413</a
+			>
+		</td>
 	</tr>
 </table>
 
@@ -45,10 +77,14 @@
 
 	#contact-table {
 		font-size: 18px;
+		background: #ffffff35;
+		padding: 12px;
+		padding-top: 4px;
 		margin: 18px auto;
+		border-radius: 4px;
 
 		@include sp {
-			font-size: 16px;
+			font-size: 14px;
 		}
 
 		tr {
@@ -57,6 +93,20 @@
 			td {
 				&:first-child {
 					text-align: right;
+					white-space: nowrap;
+
+					img {
+						width: 26px;
+						vertical-align: middle;
+						transform: translateY(-4px);
+						margin-right: 6px;
+
+						@include sp {
+							width: 19px;
+							transform: translateY(-2px);
+							margin-right: 5px;
+						}
+					}
 
 					&:after {
 						content: ':';
