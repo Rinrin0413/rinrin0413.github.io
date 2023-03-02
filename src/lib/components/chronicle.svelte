@@ -11,22 +11,22 @@
 
 <div class="container">
 	<ul
-	class:opened={is_opened}
-	title={!is_opened ? 'Open' : ''}
-	on:click|once={toggle}
-	on:keypress|once={(e) => {
-		if (e.key === 'Enter') toggle;
-	}}
->
-	{#each chronicle as { year, events }}
-		{#each events as { month, event }, i}
-			<li>
-				<h1 class:no-pin={i != 0}>{@html fmt_month(month)} {year}</h1>
-				<div>{event}</div>
-			</li>
+		class:opened={is_opened}
+		title={!is_opened ? 'Open' : ''}
+		on:click|once={toggle}
+		on:keypress|once={(e) => {
+			if (e.key === 'Enter') toggle;
+		}}
+	>
+		{#each chronicle as { year, events }}
+			{#each events as { month, event }, i}
+				<li>
+					<h1 class:no-pin={i != 0}>{@html fmt_month(month)} {year}</h1>
+					<div>{event}</div>
+				</li>
+			{/each}
 		{/each}
-	{/each}
-</ul>
+	</ul>
 </div>
 
 <style lang="scss">

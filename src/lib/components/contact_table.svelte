@@ -19,7 +19,7 @@
 							is_ea_link_in_progress = false;
 						}, 5000);
 					}
-				}}><span /><span></span></button
+				}}><span /><span /></button
 			></td
 		>
 	</tr>
@@ -82,7 +82,6 @@
 						}
 
 						span {
-
 							&:first-child {
 								&:before {
 									content: 'rinrin0413';
