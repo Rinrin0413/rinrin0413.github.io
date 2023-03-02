@@ -29,6 +29,8 @@ body {
 
 * {
 	scrollbar-color: #82624a transparent;
+	/* See the value of `$footer-height` in `./variables/dimension.scss` */
+	scroll-margin-top: 128px;
 }
 
 ::selection {
