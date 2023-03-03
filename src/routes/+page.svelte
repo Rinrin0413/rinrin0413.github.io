@@ -47,6 +47,7 @@
 
 <section id="activities">
 	<Title text="Major Activities" ja="主なすること。" />
+	<p>何をしているか</p>
 	<ul>
 		<li><a href="#acivity-programming">Programming</a></li>
 		<li><a href="#acivity-game">Game</a></li>
