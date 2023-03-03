@@ -1,10 +1,10 @@
 <script lang="ts">
 	import Title from '$lib/components/title.svelte';
 	import Hr from '$lib/components/hr.svelte';
-	import ContentsTable from '$lib/components/contents_table.svelte';
-	import Activities from '$lib/components/activities.svelte';
-	import Chronicle from '$lib/components/chronicle.svelte';
-	import ContactTable from '$lib/components/contact_table.svelte';
+	import ContentsTable from './contents_table.svelte';
+	import Activities from './activities.svelte';
+	import Chronicle from './chronicle.svelte';
+	import ContactTable from './contact_table.svelte';
 
 	import { site_url } from '$lib/variables';
 	import { calc_age } from '$lib/util';
