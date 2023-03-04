@@ -1,15 +1,24 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
+	import { browser } from '$app/environment';
 	import { chronicle } from '$lib/data/chronicle';
-	import { fmt_month } from '$lib/util';
+	import { fmt_month, add_class_on_visible } from '$lib/util';
+
+	onMount(fade_in);
+	if (browser) window.addEventListener('scroll', fade_in);
 
 	let is_opened = false;
+
+	function fade_in() {
+		add_class_on_visible(document.getElementsByClassName('container'), 'fade-in-up-zoom');
+	}
 
 	function toggle() {
 		is_opened = !is_opened;
 	}
 </script>
 
-<div class="container">
+<div class="container" class:fade-in-up-zoom={false}>
 	<ul
 		class:opened={is_opened}
 		title={!is_opened ? 'Open' : ''}
@@ -30,5 +39,6 @@
 </div>
 
 <style lang="scss">
+	@use '/assets/stylesheets/util';
 	@import '/assets/stylesheets/chronicle';
 </style>

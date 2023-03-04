@@ -1,0 +1,10 @@
+.fade-in-up-zoom {
+	animation: fadeInUpZoom 1.8s;
+}
+
+@keyframes fadeInUpZoom {
+	0% {
+		opacity: 0;
+		transform: translateY(64px) scale(00);
+	}
+}

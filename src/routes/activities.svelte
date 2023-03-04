@@ -1,5 +1,18 @@
+<script lang="ts">
+	import { onMount } from 'svelte';
+	import { browser } from '$app/environment';
+	import { add_class_on_visible } from '$lib/util';
+
+	onMount(fade_in);
+	if (browser) window.addEventListener('scroll', fade_in);
+
+	function fade_in() {
+		add_class_on_visible(document.getElementsByClassName('act'), 'fade-in-up-zoom');
+	}
+</script>
+
 <div class="container">
-	<div class="act-prog">
+	<div class="act act-prog" class:fade-in-up-zoom={false}>
 		<h1 id="acivity-programming" class="c5">Programming</h1>
 		<p>開発しろ。</p>
 		<br />
@@ -36,7 +49,7 @@
 			> が主。
 		</p>
 	</div>
-	<div class="act-game">
+	<div class="act act-game" class:fade-in-up-zoom={false}>
 		<h1 id="acivity-game" class="c5">Game</h1>
 		<p>...開発しろ。</p>
 		<br />
@@ -57,7 +70,7 @@
 		<h2><a href="https://www.thatskygame.com">Sky: Children of the Light</a></h2>
 		<p>最近は時間が取れなくてあんまりログインできていない。 誘ってくれれば行くかも。</p>
 	</div>
-	<div class="act-music">
+	<div class="act act-music" class:fade-in-up-zoom={false}>
 		<h1 id="acivity-music" class="c5">Music</h1>
 		<p class="subtitle">la lala~ |♫|♪♬♪|♪♫:|❙♪|❙</p>
 		<br />
@@ -78,6 +91,8 @@
 </div>
 
 <style lang="scss">
+	@use '/assets/stylesheets/util';
+
 	@use '/assets/stylesheets/variables/mixin' as *;
 
 	.container {
@@ -85,7 +100,7 @@
 		max-width: 512px;
 		text-align: left;
 
-		> div {
+		.act {
 			padding: 4px 18px;
 			margin: 28px 14px;
 			box-shadow: 0 4px 18px 4px #0000004c;
@@ -219,6 +234,10 @@
 					background-color: black;
 					color: white;
 				}
+			}
+
+			&:not(.fade-in-up-zoom) {
+				opacity: 0;
 			}
 		}
 	}

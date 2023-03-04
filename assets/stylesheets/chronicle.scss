@@ -3,6 +3,10 @@
 
 .container {
 	margin: 0 18px;
+
+	&:not(.fade-in-up-zoom) {
+		opacity: 0;
+	}
 }
 
 ul {

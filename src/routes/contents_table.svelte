@@ -1,10 +1,25 @@
+<script lang="ts">
+	import { onMount } from 'svelte';
+	import { browser } from '$app/environment';
+	import { add_class_on_visible } from '$lib/util';
+
+	onMount(fade_in);
+	if (browser) window.addEventListener('scroll', fade_in);
+
+	function fade_in() {
+		add_class_on_visible(document.getElementsByTagName('ul'), 'fade-in-up-zoom');
+	}
+</script>
+
 <ul>
-	<a href="#activities"><li>Major Activities</li></a>
+	<a href="#activities" class:fade-in-up-zoom={false}><li>Major Activities</li></a>
 	<a href="#chronicle"><li>Chronicle</li></a>
 	<a href="#contact"><li>Contact / Social</li></a>
 </ul>
 
 <style lang="scss">
+	@use '/assets/stylesheets/util';
+	
 	ul {
 		list-style: none;
 		max-width: 326px;
@@ -48,6 +63,10 @@
 			&:last-child li {
 				border-bottom: none;
 			}
+		}
+
+		&:not(.fade-in-up-zoom) {
+			opacity: 0;
 		}
 	}
 </style>
