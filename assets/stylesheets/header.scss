@@ -68,11 +68,26 @@ header {
 		&.center {
 			top: 50%;
 			left: 50%;
-			transform: translateX(-50%);
+			$tl-x: translateX(-50%);
+			transform: $tl-x;
+			animation: fadeInDown 0.9s ease-out;
 
 			&::after {
 				left: 50%;
 				transform: translate(-50%, $logo-size * 0.9);
+			}
+
+			@keyframes fadeInDown {
+				0% {
+					opacity: 0;
+					filter: blur(32px);
+					transform: $tl-x translateY(-64px);
+				}
+
+				100% {
+					opacity: 1;
+					transform: $tl-x;
+				}
 			}
 		}
 	}
