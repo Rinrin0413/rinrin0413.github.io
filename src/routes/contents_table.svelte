@@ -19,7 +19,7 @@
 
 <style lang="scss">
 	@use '/assets/stylesheets/util';
-	
+
 	ul {
 		list-style: none;
 		max-width: 326px;
