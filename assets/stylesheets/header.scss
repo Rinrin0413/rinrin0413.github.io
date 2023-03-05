@@ -71,6 +71,28 @@ header {
 			$tl-x: translateX(-50%);
 			transform: $tl-x;
 
+			&:hover img {
+				animation: sway 0.4s ease-in-out forwards;
+
+				@keyframes sway {
+					20% {
+						transform: rotate(28deg);
+					}
+					
+					50% {
+						transform: rotate(-28deg);
+					}
+
+					80% {
+						transform: rotate(16deg);
+					}
+
+					100% {
+						transform: rotate(0deg);
+					}
+				}
+			}
+
 			&::after {
 				left: 50%;
 				transform: translate(-50%, $logo-size * 0.9);
