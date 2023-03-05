@@ -34,7 +34,7 @@
 		<h2 class="c5">Web Dev.</h2>
 		<p>
 			基本的にスタイルシートでストレスが溜まるのであまりやりたくない。
-			普通のCSSだともう精神が崩壊するので <a href="https://sass-lang.com">Sass</a> 使え。SAAS
+			普通のCSSだともう精神が崩壊するので <a href="https://sass-lang.com">Sass</a> 使え。SASS
 			はインデント構文なので SCSS を使う。 こんな感じで Web開発は全然ゴリゴリにやってないので、<a
 				href="https://svelte.dev/">Svelte</a
 			>以外のフレームワークは使ったことがない。 このサイトも
