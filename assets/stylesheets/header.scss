@@ -78,7 +78,7 @@ header {
 					20% {
 						transform: rotate(28deg);
 					}
-					
+
 					50% {
 						transform: rotate(-28deg);
 					}
@@ -131,10 +131,12 @@ header {
 	&.blur {
 		transform: translate(-10vw, math.div(-$header-height, 2));
 		filter: blur(28px);
-		background: radial-gradient(ellipse at center,
-				$header-secondary 20%,
-				$header-tertiary 25%,
-				$header-primary 75%);
+		background: radial-gradient(
+			ellipse at center,
+			$header-secondary 20%,
+			$header-tertiary 25%,
+			$header-primary 75%
+		);
 		box-shadow: 0 4px 14px $header-primary;
 	}
 }
