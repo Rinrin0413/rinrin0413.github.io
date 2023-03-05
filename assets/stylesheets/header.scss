@@ -70,23 +70,27 @@ header {
 			left: 50%;
 			$tl-x: translateX(-50%);
 			transform: $tl-x;
-			animation: fadeInDown 0.9s ease-out;
 
 			&::after {
 				left: 50%;
 				transform: translate(-50%, $logo-size * 0.9);
 			}
 
-			@keyframes fadeInDown {
-				0% {
-					opacity: 0;
-					filter: blur(32px);
-					transform: $tl-x translateY(-64px);
-				}
+			&.fade-in {
+				opacity: 0;
+				animation: fadeInDown 0.9s ease-out forwards;
 
-				100% {
-					opacity: 1;
-					transform: $tl-x;
+				@keyframes fadeInDown {
+					0% {
+						opacity: 0;
+						filter: blur(32px);
+						transform: $tl-x translateY(-64px);
+					}
+
+					100% {
+						opacity: 1;
+						transform: $tl-x;
+					}
 				}
 			}
 		}
@@ -104,12 +108,10 @@ header {
 	&.blur {
 		transform: translate(-10vw, math.div(-$header-height, 2));
 		filter: blur(28px);
-		background: radial-gradient(
-			ellipse at center,
-			$header-secondary 20%,
-			$header-tertiary 25%,
-			$header-primary 75%
-		);
+		background: radial-gradient(ellipse at center,
+				$header-secondary 20%,
+				$header-tertiary 25%,
+				$header-primary 75%);
 		box-shadow: 0 4px 14px $header-primary;
 	}
 }
