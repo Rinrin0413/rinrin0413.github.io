@@ -37,7 +37,7 @@
 		{#each socials as { service, name, url, icon }}
 			<tr>
 				<td>
-					{#if icon}<img src="images/logos/{icon}" alt="{service} logo" />{/if}{service}
+					{#if icon}<img src="/images/logos/{icon}" alt="{service} logo" />{/if}{service}
 				</td>
 				<td>
 					{#if url}

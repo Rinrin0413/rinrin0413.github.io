@@ -5,13 +5,13 @@
 <table>
 	<tr>
 		<td>
-			<img src="images/logos/gmail.png" alt="Gmail logo" />Gmail
+			<img src="/images/logos/gmail.png" alt="Gmail logo" />Gmail
 		</td>
 		<td><EaButton /></td>
 	</tr>
 	<tr>
 		<td>
-			<img src="images/logos/discord-mark-blue.svg" alt="Discord logo" />Discord
+			<img src="/images/logos/discord-mark-blue.svg" alt="Discord logo" />Discord
 		</td>
 		<td
 			><a
@@ -23,7 +23,7 @@
 	</tr>
 	<tr>
 		<td title="My Discord server">
-			<img src="images/logos/discord-mark-blue.svg" alt="Discord logo" />〃 Server
+			<img src="/images/logos/discord-mark-blue.svg" alt="Discord logo" />〃 Server
 		</td>
 		<td
 			><a href="https://discord.gg/7QhMDfyPHR" target="_blank" rel="noopener noreferrer"
@@ -33,7 +33,7 @@
 	</tr>
 	<tr>
 		<td>
-			<img src="images/logos/twitter_Logo blue.svg" alt="Twitter logo" />Twitter
+			<img src="/images/logos/twitter_Logo blue.svg" alt="Twitter logo" />Twitter
 		</td>
 		<td
 			><a href="https://twitter.com/Rinrin_2nd" target="_blank" rel="noopener noreferrer"
@@ -43,7 +43,7 @@
 	</tr>
 	<tr>
 		<td>
-			<img src="images/logos/github-mark.svg" alt="GitHub logo" />GitHub
+			<img src="/images/logos/github-mark.svg" alt="GitHub logo" />GitHub
 		</td>
 		<td>
 			<a href="https://github.com/Rinrin0413" target="_blank" rel="noopener noreferrer"

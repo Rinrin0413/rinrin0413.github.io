@@ -26,7 +26,7 @@
 	<meta property="og:type" content="website" />
 </svelte:head>
 
-<img src="images/rinrin.webp" alt="Rinrin" id="icon" />
+<img src="/images/rinrin.webp" alt="Rinrin" id="icon" />
 
 <section id="about">
 	<Title text="About me" ja="わたしはだれだ!!!" />

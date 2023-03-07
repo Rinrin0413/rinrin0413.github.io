@@ -20,7 +20,7 @@
 <div id="header-bg" class:blur={is_at_top} />
 <header>
 	<a href="/" id="logo" class:center={is_at_top} class:fade-in={enable_fade_in}
-		><img src="images/favicon.png" alt="Logo" /></a
+		><img src="/images/favicon.png" alt="Logo" /></a
 	>
 </header>
 
