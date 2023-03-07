@@ -1,6 +1,6 @@
 const icons = {
-	discord: 'discord/discord-mark-blue.svg',
-	twitter: 'twitter-logo-01282021/Twitter logo/SVG/Logo blue.svg',
+	discord: 'discord-mark-blue.svg',
+	twitter: 'twitter_Logo blue.svg',
 	xbox: 'xbox.png'
 };
 
@@ -57,7 +57,7 @@ export const socials = [
 		service: 'GitHub',
 		name: '@Rinrin0413',
 		url: 'https://github.com/Rinrin0413',
-		icon: 'github-mark/github-mark.svg'
+		icon: 'github-mark.svg'
 	},
 	{
 		service: 'GitLab',
@@ -165,7 +165,7 @@ export const socials = [
 		service: 'Patreon',
 		name: 'Rinrin.rs',
 		url: 'https://patreon.com/user?u=68900751',
-		icon: 'patreon_brand_kit/Patreon Brand Assets/Patreon Logo/PNG/Digital-Patreon-Logo_FieryCoral.png'
+		icon: 'Digital-Patreon-Logo_FieryCoral.png'
 	},
 	{
 		service: 'pixiv',
@@ -177,13 +177,13 @@ export const socials = [
 		service: 'Qiita',
 		name: '@Rinrin0413',
 		url: 'https://qiita.com/Rinrin0413',
-		icon: 'qiita-png/favicon.png'
+		icon: 'qiita_favicon.png'
 	},
 	{
 		service: 'Reddit',
 		name: 'Rinrin0413',
 		url: 'https://reddit.com/user/Rinrin0413',
-		icon: 'Reddit-Logo-Assets/Reddit Logo/On White/SVG/Reddit_Mark_OnWhite.svg'
+		icon: 'Reddit_Mark_OnWhite.svg'
 	},
 	{
 		service: 'Shadertoy',
@@ -201,7 +201,7 @@ export const socials = [
 		service: 'Spotify',
 		name: 'Rinrin.valley',
 		url: 'https://open.spotify.com/user/orr3huuq7wdmws3a6tgyh50d0?si=f680715bc4a54a5e',
-		icon: 'spotify-icons-logos/Spotify_Icon_RGB_Green.png'
+		icon: 'Spotify_Icon_RGB_Green.png'
 	},
 	{
 		service: 'Steam',
@@ -225,7 +225,7 @@ export const socials = [
 		service: 'Twitch',
 		name: 'rinrin0413',
 		url: 'https://twitch.tv/rinrin0413',
-		icon: 'twitch-brand-assets/Brand Assets/Logos/glitch/Purple/TwitchGlitchPurple.svg'
+		icon: 'TwitchGlitchPurple.svg'
 	},
 	{
 		service: 'Twitter',
@@ -261,6 +261,6 @@ export const socials = [
 		service: 'YouTube',
 		name: '@rinrin-rs',
 		url: 'https://youtube.com/@rinrin-rs',
-		icon: 'youtube_icon/yt_icon_rgb.png'
+		icon: 'yt_icon_rgb.png'
 	}
 ];
