@@ -30,6 +30,7 @@
 
 <div id="bg" />
 
-<style lang="scss">
+<style lang="scss" global>
 	@use '/assets/stylesheets/layout';
+	@use '/assets/stylesheets/style';
 </style>

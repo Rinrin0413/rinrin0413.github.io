@@ -4,7 +4,7 @@
 	import ContentsTable from './contents_table.svelte';
 	import Activities from './activities.svelte';
 	import Chronicle from './chronicle.svelte';
-	import ContactTable from './contact_table.svelte';
+	import MinimalContactTable from './minimal_contact_table.svelte';
 
 	import { site_url } from '$lib/variables';
 	import { calc_age } from '$lib/util';
@@ -72,36 +72,12 @@
 		基本的には Discordサーバー入ってそこで言うか DM してくれれば気づく。
 		出先だと気付かないかもだから緊急だったらメール送ってください。
 	</p>
-	<ContactTable />
+	<MinimalContactTable />
+	<p><a href="social">その他のソーシャルアカウント</a></p>
 </section>
 
 <style lang="scss">
 	@use '/assets/stylesheets/variables/color' as *;
-	@use '/assets/stylesheets/variables/mixin' as *;
-
-	section {
-		margin: 64px 0;
-
-		p {
-			font-weight: bold;
-			padding: 0 18px;
-			margin: 10px auto;
-			max-width: 512px;
-
-			&:not(#large) {
-				font-size: 18px;
-
-				@include sp {
-					font-size: 16px;
-					padding: 0 14px;
-				}
-			}
-
-			&#large {
-				font-size: 20px;
-			}
-		}
-	}
 
 	#icon {
 		$size: 256px;

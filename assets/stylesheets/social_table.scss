@@ -1,0 +1,47 @@
+@use './variables/mixin' as *;
+
+table {
+	font-size: 18px;
+	background: #ffffff35;
+	padding: 12px;
+	padding-top: 4px;
+	margin: 18px auto;
+	border-radius: 4px;
+
+	@include sp {
+		font-size: 14px;
+	}
+
+	tr {
+		line-height: 1.8;
+
+		td {
+			&:first-child {
+				text-align: right;
+				white-space: nowrap;
+
+				img {
+					width: 26px;
+					vertical-align: middle;
+					transform: translateY(-2px);
+					margin-right: 6px;
+					user-select: none;
+
+					@include sp {
+						width: 19px;
+						transform: translateY(-2px);
+						margin-right: 5px;
+					}
+				}
+
+				&:after {
+					content: ':';
+				}
+			}
+
+			&:last-child {
+				text-align: left;
+			}
+		}
+	}
+}
