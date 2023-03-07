@@ -159,7 +159,7 @@ export const socials = [
 		service: 'osu!',
 		name: 'Rinrin-rs',
 		url: 'https://osu.ppy.sh/users/32818234',
-		icon: 'osu!_68747470733a2f2f6f73752e7070792e73682f77696b692f696d616765732f4272616e645f6964656e746974795f67756964656c696e65732f696d672f75736167652d66756c6c2d636f6c6f75722e706e67.png'
+		icon: 'osu!.png'
 	},
 	{
 		service: 'Patreon',
