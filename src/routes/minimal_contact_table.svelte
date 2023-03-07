@@ -33,10 +33,7 @@
 	</tr>
 	<tr>
 		<td>
-			<img
-				src="images/logos/twitter_Logo blue.svg"
-				alt="Twitter logo"
-			/>Twitter
+			<img src="images/logos/twitter_Logo blue.svg" alt="Twitter logo" />Twitter
 		</td>
 		<td
 			><a href="https://twitter.com/Rinrin_2nd" target="_blank" rel="noopener noreferrer"
