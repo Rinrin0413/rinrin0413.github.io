@@ -138,12 +138,6 @@ export const socials = [
 		icon: null // Could not find the guideline
 	},
 	{
-		service: 'Notris Foes',
-		name: 'Rinrin',
-		url: 'https://notrisfoes.com/users/10012',
-		icon: null // Could not find the guideline
-	},
-	{
 		service: 'Nuketris',
 		name: 'Rinrin',
 		url: 'https://nuketris.com/user?username=Rinrin',
