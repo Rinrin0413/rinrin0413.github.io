@@ -234,6 +234,12 @@ export const socials = [
 		icon: icons.twitter
 	},
 	{
+		service: 'WakaTime',
+		name: '@Rinrin',
+		url: 'https://wakatime.com/@Rinrin',
+		icon: 'wakatime_Logo.svg'
+	},
+	{
 		service: 'Weblate',
 		name: '@rinrin',
 		url: 'https://hosted.weblate.org/user/rinrin',
