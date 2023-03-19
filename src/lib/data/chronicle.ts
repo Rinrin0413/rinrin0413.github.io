@@ -19,7 +19,7 @@ export const chronicle = [
 		year: 2019,
 		events: [
 			{ month: 3, event: '小学校卒業してまたお引越し 千葉に引っ越した。' },
-			{ month: 4, event: 'Windows 10版のマインクラフトを始める' },
+			{ month: 4, event: 'Windows版マインクラフトを始める' },
 		]
 	},
 	{
@@ -33,15 +33,15 @@ export const chronicle = [
 		year: 2021,
 		events: [
 			{ month: 4, event: '春休み明けに無事崩壊し不登校になる。ここから改善することはなかった' },
-			{ month: 11, event: 'Rust を知って Python を捨てる' }
+			{ month: 11, event: 'Rust を知って Python を使うのをやめる' }
 		]
 	},
 	{
 		year: 2022,
 		events: [
-			{ month: 3, event: 'PC 買い替えて初日に Windows を消し飛ばし Arch Linux を入れようとする。だが UEFI に逆らわれ　敗北...' },
-			{ month: 4, event: 'S高等学校に名前を書き　入学...' },
-			{ month: 6, event: '吹っ切れてまた Windows を消し飛ばして次は openSUSE に乗り換える' }
+			{ month: 3, event: 'PC 買い替えて届いた。なお入ってた Windows を初日に消し飛ばした模様' },
+			{ month: 4, event: 'S高等学校に名前を書いて入学' },
+			{ month: 6, event: '吹っ切れて Windows を消し飛ばして openSUSE に乗り換える' }
 		]
 	},
 	{
