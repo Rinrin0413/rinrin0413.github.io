@@ -6,6 +6,12 @@ const icons = {
 
 export const socials = [
 	{
+		service: 'AI PICTORS',
+		name: 'rin',
+		url: 'https://aipictors.com/user/?id=rin',
+		icon: 'aipictors_logo-simple.png	'
+	},
+	{
 		service: 'Ameba',
 		name: 'rin-rin-0413',
 		url: 'https://ameblo.jp/rin-rin-0413',
