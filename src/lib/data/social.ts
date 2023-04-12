@@ -24,6 +24,12 @@ export const socials = [
 		icon: null // Could not find the guideline
 	},
 	{
+		service: 'Civitai',
+		name: 'Rinrin0413',
+		url: 'https://civitai.com/user/Rinrin0413',
+		icon: null // Could not find the guideline
+	},
+	{
 		service: 'Crafters Colony',
 		name: 'Rinrin.rs',
 		url: 'https://minecraft-mcworld.com/author/8329904824f1182e7495db8c7cb1e3e7cbc05ce5',
