@@ -14,7 +14,7 @@
 <div class="container">
 	<div class="act act-prog" class:fade-in-up-zoom={false}>
 		<h1 id="acivity-programming" class="c5">Programming</h1>
-		<p>開発しろ。</p>
+		<p>13歳頃から始めた。あまり広い分野は網羅していない。</p>
 		<br />
 		<h2 class="c5"><a href="https://www.rust-lang.org">Rust</a></h2>
 		<p>現在一番好きな言语🦀 名前の拡張子もRustです。 全开発者使用しろ。</p>
@@ -51,21 +51,24 @@
 	</div>
 	<div class="act act-game" class:fade-in-up-zoom={false}>
 		<h1 id="acivity-game" class="c5">Game</h1>
-		<p>...開発しろ。</p>
+		<p>RPG みたいなのはここには載せてない。</p>
 		<br />
 		<h2><a href="https://tetr.io">TETR.IO</a></h2>
-		<p>向いてるかは別として 一番刺さったゲームだと思う。 2023年3月時点では SS帯で弱い方</p>
+		<p>
+			TETR.IO というのは某社会主義連邞生まれの某落ちものパズルゲーム風のインディーゲーム。
+			向いてるかは別として 一番楽しいと思ってる。2023年4月時点では SS帯。
+		</p>
 		<br />
 		<h2><a href="https://www.minecraft.net">Minecraft</a></h2>
 		<p>
-			一番長くやってるのはこれ。Wii U版と統合版はもうやってなくて Java版がメイン。 Wii
-			U版やってた時代では建築が多かった。統合版になってからはアドオン開発やらシェーダー開発もするようになったが、<del
+			一番長くやってる。Wii U版と統合版はもうやってなくて Java版がメイン。 Wii
+			U版やってた時代では建築していることが多かった。統合版始めてからはアドオン開発やらシェーダー開発もするようになったが、<del
 				>マイクロソフト</del
-			>による度重なる破壊活動でもう完全に萎えた。
+			>による度重なる破壊活動でもう完全に萎えた。 Java版では ちまちま開発している。
 		</p>
 		<br />
 		<h2><a href="https://www.thatskygame.com">Sky: Children of the Light</a></h2>
-		<p>最近は時間が取れなくてあんまりログインできていない。 誘ってくれれば行くかも。</p>
+		<p>最近は時間が取れなくてあんまりログインできていない。誘ってくれれば行くかも。</p>
 	</div>
 	<div class="act act-music" class:fade-in-up-zoom={false}>
 		<h1 id="acivity-music" class="c5">Music</h1>
@@ -73,12 +76,12 @@
 		<br />
 		<h2>Listen</h2>
 		<p>
-			古典派とロマン派の(主にピアノの)クラシック曲が好き。 特にフランツ・リストの作品をよく聴く。
+			古典派とロマン派の(主にピアノの)クラシック曲が好き。特にフランツ・リストの作品をよく聴く。
 		</p>
 		<br />
 		<h2>Play</h2>
 		<p>
-			1ミリも上手くないが上記のようなクラシック曲とかをピアノで弾いてる。
+			全く上手くないが上記のようなクラシック曲とかをピアノで弾いてる。
 			アルトリコーダーやらアコースティックギターやらも家にあるが全く触らない。
 		</p>
 		<br />
