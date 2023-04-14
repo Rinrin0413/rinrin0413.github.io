@@ -110,7 +110,7 @@ export const socials = [
 	{
 		service: 'MCPEDL',
 		name: 'Rinrinrs',
-		url: 'https://mcpedl.com/user/rinrinrs',
+		url: 'https://mcpedl.com/user/rinrin-rs',
 		icon: null // Could not find the guideline
 	},
 	{
@@ -205,7 +205,7 @@ export const socials = [
 	},
 	{
 		service: 'Spotify',
-		name: 'Rinrin.valley',
+		name: 'Rinrin.rs',
 		url: 'https://open.spotify.com/user/orr3huuq7wdmws3a6tgyh50d0?si=f680715bc4a54a5e',
 		icon: 'Spotify_Icon_RGB_Green.png'
 	},
