@@ -56,7 +56,7 @@
 		<h2><a href="https://tetr.io">TETR.IO</a></h2>
 		<p>
 			TETR.IO というのは某社会主義連邞生まれの某落ちものパズルゲーム風のインディーゲーム。
-			向いてるかは別として 一番楽しいと思ってる。2023年4月時点では SS帯。
+			向いてるかは別として 一番楽しいと思ってる。2023年5月時点では SS帯。
 		</p>
 		<br />
 		<h2><a href="https://www.minecraft.net">Minecraft</a></h2>
