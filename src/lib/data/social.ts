@@ -36,6 +36,12 @@ export const socials = [
 		icon: null // Could not find the guideline
 	},
 	{
+		service: 'CurseForge',
+		name: 'rinrin0413',
+		url: 'https://curseforge.com/members/rinrin0413',
+		icon: null // Could not find the guideline
+	},
+	{
 		service: 'Discord',
 		name: 'Rinrin.rs#5671',
 		url: 'https://discord.com/users/724976600873041940',
