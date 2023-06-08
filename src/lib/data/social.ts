@@ -120,6 +120,12 @@ export const socials = [
 		icon: null // Could only find the old logo
 	},
 	{
+		service: 'Modrinth',
+		name: 'Rinrin',
+		url: 'https://modrinth.com/user/Rinrin',
+		icon: 'modrinth_logo.svg'
+	},
+	{
 		service: 'mstdn.jp',
 		name: '@rinrin0413',
 		url: 'https://mstdn.jp/@rinrin0413',
