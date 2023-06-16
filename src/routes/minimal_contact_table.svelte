@@ -17,13 +17,13 @@
 			><a
 				href="https://discord.com/users/724976600873041940"
 				target="_blank"
-				rel="noopener noreferrer">Rinrin.rs#5671</a
+				rel="noopener noreferrer">rinrin0413</a
 			></td
 		>
 	</tr>
 	<tr>
 		<td title="My Discord server">
-			<img src="/images/logos/discord-mark-blue.svg" alt="Discord logo" />〃 Server
+			<img src="/images/logos/discord-mark-blue.svg" alt="Discord logo" />Discord(server)
 		</td>
 		<td
 			><a href="https://discord.gg/7QhMDfyPHR" target="_blank" rel="noopener noreferrer"

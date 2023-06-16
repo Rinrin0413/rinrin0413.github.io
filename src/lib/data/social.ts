@@ -43,7 +43,7 @@ export const socials = [
 	},
 	{
 		service: 'Discord',
-		name: 'Rinrin.rs#5671',
+		name: 'rinrin0413',
 		url: 'https://discord.com/users/724976600873041940',
 		icon: icons.discord
 	},
