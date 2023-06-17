@@ -49,7 +49,7 @@ export const socials = [
 	},
 	{
 		service: 'Discord(sub)',
-		name: 'Rinrin.wgsl#5711',
+		name: 'rinrin.wgsl',
 		url: 'https://discord.com/users/801082943371477022',
 		icon: icons.discord
 	},
