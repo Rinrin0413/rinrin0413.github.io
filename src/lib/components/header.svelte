@@ -22,6 +22,14 @@
 	<a href="/" id="logo" class:center={is_at_top} class:fade-in={enable_fade_in}
 		><img src="/images/favicon.png" alt="Logo" /></a
 	>
+	<nav class:center={is_at_top} class:fade-in={enable_fade_in}>
+		<a href="/profile">Profile</a>
+		<a href="/articles">Articles</a>
+		<a href="/tools">Web Tools</a>
+		<a href="/projects">Projects</a>
+		<a href="/creations">Creations</a>
+		<a href="/social">Social</a>
+	</nav>
 </header>
 
 <style lang="scss">
