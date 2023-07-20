@@ -6,7 +6,7 @@ const icons = {
 
 export const socials = [
 	{
-		service: 'AI PICTORS',
+		service: 'Aipictors',
 		name: 'rin',
 		url: 'https://aipictors.com/user/?id=rin',
 		icon: 'aipictors_square_logo.png'
