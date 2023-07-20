@@ -9,7 +9,7 @@ export const socials = [
 		service: 'AI PICTORS',
 		name: 'rin',
 		url: 'https://aipictors.com/user/?id=rin',
-		icon: 'aipictors_logo-simple.png	'
+		icon: 'aipictors_square_logo.png'
 	},
 	{
 		service: 'Ameba',
