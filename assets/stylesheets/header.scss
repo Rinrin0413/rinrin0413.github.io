@@ -118,6 +118,53 @@ header {
 			}
 		}
 	}
+
+	nav {
+		display: flex;
+		justify-content: right;
+		align-items: center;
+
+		a {
+			text-decoration: none;
+			height: $header-height;
+			padding: 0 9px;
+			transition: 0.16s;
+
+			&:last-child {
+				margin-right: 8px;
+			}
+
+			&:hover {
+				background-color: #ffe6c450;
+			}
+
+			svg,
+			span {
+				display: block;
+				margin: 0 auto;
+			}
+
+			svg {
+				height: 42px;
+				width: auto;
+				fill: $text-primary;
+				position: relative;
+				top: 4px;
+			}
+
+			// Icon of Projects section
+			&:nth-child(4) svg {
+				transform: scale(0.87);
+			}
+
+			span {
+				color: #38220b;
+				font-size: 16px;
+				position: relative;
+				top: -2px;
+			}
+		}
+	}
 }
 
 #header-bg {
