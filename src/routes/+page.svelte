@@ -7,6 +7,7 @@
 	import MinimalContactTable from './minimal_contact_table.svelte';
 
 	import { site_url } from '$lib/variables';
+	import { _ } from 'svelte-i18n';
 	import { calc_age } from '$lib/util';
 
 	const head = {
@@ -29,10 +30,9 @@
 <img src="/images/rinrin.webp" alt="Rinrin" id="icon" />
 
 <section id="about">
-	<Title text="About me" ja="わたしはだれだ!!!" />
+	<Title text="About me" ja={$_('whoami')} />
 	<p id="large">
-		あああ！ こんにちは。<br />
-		私は{calc_age()}歳の学生です。
+		{@html $_('greeting', { values: { age: calc_age() } })}
 	</p>
 </section>
 
