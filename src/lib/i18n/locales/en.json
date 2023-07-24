@@ -1,10 +1,11 @@
 {
     "home": {
         "icon": "Rinrin.rs' avatar",
-        "whoami": "Who am I!!!!",
         "greeting": "Hi there!!!<br />I'm a {age}year-old Japanese student.",
-        "index": "Mokuji!",
-        "activities": "what i usually do.",
-        "whatIDo": "Hobbies, etc..."
+        "tableOfContents": " ",
+        "whatIDo": "what i usually do",
+        "chronicle": "my history",
+        "contact": "Basically, I can respond by joining my Discord server and contacting me there, or by direct messaging me on Discord.\nI might not notice them when I am out, so if it's urgent, please send me an email instead.",
+        "otherSocial": "Other social accounts"
     }
 }

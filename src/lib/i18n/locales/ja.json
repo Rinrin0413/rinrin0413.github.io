@@ -1,10 +1,11 @@
 {
     "home": {
         "icon": "Rinrin.rs のアイコン",
-        "whoami": "わたしはだれだ!!!",
         "greeting": "あああ！ こんにちは。<br />私は{age}歳の学生です。",
-        "index": "もくじー!",
-        "activities": "趣味とか",
-        "whatIDo": "なにをしているか。"
+        "tableOfContents": "もくじ",
+        "whatIDo": "なにをしているか。",
+        "chronicle": "我が悠遠なる秀悦の歴史",
+        "contact": "基本的には Discordサーバー入ってそこで言うか DM してくれれば応答できる。\n出先だと気付かないかもしれないので緊急だったらメールを送ってください。",
+        "otherSocial": "その他のソーシャルアカウント"
     }
 }

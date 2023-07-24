@@ -40,6 +40,7 @@
 
 <section id="contents">
 	<Title text="Table of Contents" />
+	<p>{$_('home.tableOfContents')}</p>
 	<ContentsTable />
 </section>
 
@@ -60,7 +61,7 @@
 
 <section id="chronicle">
 	<Title text="Chronicle" />
-	<p>我が悠遠なる秀悦の歴史</p>
+	<p>{$_('home.chronicle')}</p>
 	<Chronicle />
 </section>
 
@@ -68,12 +69,9 @@
 
 <section id="contact">
 	<Title text="Contact / Social" />
-	<p>
-		基本的には Discordサーバー入ってそこで言うか DM してくれれば気づく。
-		出先だと気付かないかもだから緊急だったらメール送ってください。
-	</p>
+	<p>{$_('home.contact')}</p>
 	<MinimalContactTable />
-	<p><a href="social">その他のソーシャルアカウント</a></p>
+	<p><a href="social">{$_('home.otherSocial')	}</a></p>
 </section>
 
 <style lang="scss">
