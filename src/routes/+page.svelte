@@ -30,7 +30,7 @@
 <img src="/images/rinrin.webp" alt={$_('home.icon')} id="icon" />
 
 <section id="about">
-	<Title text="About me" ja={$_('home.whoami')} />
+	<Title text="About me" />
 	<p id="large">
 		{@html $_('home.greeting', { values: { age: calc_age() } })}
 	</p>
@@ -39,14 +39,14 @@
 <Hr />
 
 <section id="contents">
-	<Title text="Table of Contents" ja="{$_('home.index')}" />
+	<Title text="Table of Contents" />
 	<ContentsTable />
 </section>
 
 <Hr />
 
 <section id="activities">
-	<Title text="Major Activities" ja="{$_('home.activities')}" />
+	<Title text="Major Activities" />
 	<p>{$_('home.whatIDo')}</p>
 	<ul>
 		<li><a href="#acivity-programming">Programming</a></li>
@@ -59,7 +59,7 @@
 <Hr />
 
 <section id="chronicle">
-	<Title text="Chronicle" ja="我が悠遠なる秀悦の歴史" />
+	<Title text="Chronicle" />
 	<p>我が悠遠なる秀悦の歴史</p>
 	<Chronicle />
 </section>
@@ -67,7 +67,7 @@
 <Hr />
 
 <section id="contact">
-	<Title text="Contact / Social" ja="連絡先とか" />
+	<Title text="Contact / Social" />
 	<p>
 		基本的には Discordサーバー入ってそこで言うか DM してくれれば気づく。
 		出先だと気付かないかもだから緊急だったらメール送ってください。

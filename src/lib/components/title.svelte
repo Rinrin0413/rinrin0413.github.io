@@ -5,9 +5,6 @@
 
 	export let text: string;
 
-	/** Japanese text */
-	export let ja = '';
-
 	let vw: number;
 	let node: HTMLHeadingElement;
 	let init_width: number;
@@ -32,7 +29,7 @@
 </script>
 
 <div class:mini={is_overflown}>
-	<h1 title={ja} bind:this={node}>{text}</h1>
+	<h1 bind:this={node}>{text}</h1>
 	<h1 class="shadow">{text}</h1>
 	<Space height={'64px'} />
 </div>
