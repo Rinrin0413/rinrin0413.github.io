@@ -2,6 +2,8 @@
 	import { onMount } from 'svelte';
 	import { browser } from '$app/environment';
 
+	import { _ } from 'svelte-i18n';
+
 	onMount(update_scroll);
 
 	let is_at_top = true;
@@ -20,7 +22,7 @@
 <div id="header-bg" class:blur={is_at_top} />
 <header>
 	<a href="/" id="logo" class:center={is_at_top} class:fade-in={enable_fade_in}
-		><img src="/images/favicon.png" alt="Logo" /></a
+		><img src="/images/favicon.png" alt={$_('header.logo')} /></a
 	>
 	<nav>
 		<a href="/profile">
