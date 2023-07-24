@@ -10,5 +10,8 @@
     },
     "header": {
         "logo": "Rinrin.rsのロゴ"
+    },
+    "error": {
+        "pageNotFound": "お探しのページが見つからず申し訳OneNote。"
     }
 }

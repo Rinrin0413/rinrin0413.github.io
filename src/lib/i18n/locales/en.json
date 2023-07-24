@@ -10,5 +10,8 @@
     },
     "header": {
         "logo": "Rinrin.rs' logo"
+    },
+    "error": {
+        "pageNotFound": "404 not like this!<br />this page does not exist :("
     }
 }

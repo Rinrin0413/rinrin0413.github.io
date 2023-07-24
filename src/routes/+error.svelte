@@ -1,6 +1,8 @@
 <script lang="ts">
 	import Title from '$lib/components/title.svelte';
 
+	import { _ } from 'svelte-i18n';
+
 	const head = {
 		title: '404 - Page not found'
 	};
@@ -13,9 +15,9 @@
 
 <h1>404</h1>
 <Title text="Page not found" />
-<p>お探しのページが見つからず申し訳OneNote。</p>
+<p>{@html $_('error.pageNotFound')}</p>
 
-<img src="/images/404.webp" alt="404" />
+<img src="/images/404.webp" alt="404 Not like this" />
 
 <style lang="scss">
 	h1 {
