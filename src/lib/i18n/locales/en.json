@@ -1,4 +1,10 @@
 {
-	"whoami": "Who am I!!!!",
-	"greeting": "Hi there!!!<br />I'm a {age}year-old Japanese student."
+    "home": {
+        "icon": "Rinrin.rs' avatar",
+        "whoami": "Who am I!!!!",
+        "greeting": "Hi there!!!<br />I'm a {age}year-old Japanese student.",
+        "index": "Mokuji!",
+        "activities": "what i usually do.",
+        "whatIDo": "Hobbies, etc..."
+    }
 }

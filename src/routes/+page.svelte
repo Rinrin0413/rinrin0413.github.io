@@ -27,27 +27,27 @@
 	<meta property="og:type" content="website" />
 </svelte:head>
 
-<img src="/images/rinrin.webp" alt="Rinrin" id="icon" />
+<img src="/images/rinrin.webp" alt={$_('home.icon')} id="icon" />
 
 <section id="about">
-	<Title text="About me" ja={$_('whoami')} />
+	<Title text="About me" ja={$_('home.whoami')} />
 	<p id="large">
-		{@html $_('greeting', { values: { age: calc_age() } })}
+		{@html $_('home.greeting', { values: { age: calc_age() } })}
 	</p>
 </section>
 
 <Hr />
 
 <section id="contents">
-	<Title text="Table of Contents" ja="もくじー" />
+	<Title text="Table of Contents" ja="{$_('home.index')}" />
 	<ContentsTable />
 </section>
 
 <Hr />
 
 <section id="activities">
-	<Title text="Major Activities" ja="主なすること。" />
-	<p>何をしているか</p>
+	<Title text="Major Activities" ja="{$_('home.activities')}" />
+	<p>{$_('home.whatIDo')}</p>
 	<ul>
 		<li><a href="#acivity-programming">Programming</a></li>
 		<li><a href="#acivity-game">Game</a></li>

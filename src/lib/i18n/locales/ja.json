@@ -1,4 +1,10 @@
 {
-	"whoami": "わたしはだれだ!!!",
-	"greeting": "あああ！ こんにちは。<br />私は{age}歳の学生です。"
+    "home": {
+        "icon": "Rinrin.rs のアイコン",
+        "whoami": "わたしはだれだ!!!",
+        "greeting": "あああ！ こんにちは。<br />私は{age}歳の学生です。",
+        "index": "もくじー!",
+        "activities": "趣味とか",
+        "whatIDo": "なにをしているか。"
+    }
 }
