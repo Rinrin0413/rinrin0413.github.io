@@ -1,4 +1,4 @@
 {
-    "whoami": "Who am I!!!!",
-    "greeting": "Hi there!!!<br />I'm a {age}year-old Japanese student."
+	"whoami": "Who am I!!!!",
+	"greeting": "Hi there!!!<br />I'm a {age}year-old Japanese student."
 }
