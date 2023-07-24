@@ -1,17 +1,41 @@
 {
-    "home": {
-        "icon": "Rinrin.rs' avatar",
-        "greeting": "Hi there!!!<br />I'm a {age}year-old Japanese student.",
-        "tableOfContents": " ",
-        "whatIDo": "what i usually do",
-        "chronicle": "my history",
-        "contact": "Basically, I can respond by joining my Discord server and contacting me there, or by direct messaging me on Discord.\nI might not notice them when I am out, so if it's urgent, please send me an email instead.",
-        "otherSocial": "Other social accounts"
-    },
-    "header": {
-        "logo": "Rinrin.rs' logo"
-    },
-    "error": {
-        "pageNotFound": "404 not like this!<br />this page does not exist :("
-    }
+	"home": {
+		"icon": "Rinrin.rs' avatar",
+		"greeting": "Hi there!!!<br />I'm a {age}year-old Japanese student.",
+		"tableOfContents": " ",
+		"whatIDo": "what i usually do",
+		"chronicle": "my history",
+		"contact": "Basically, I can respond by joining my Discord server and contacting me there, or by direct messaging me on Discord.\nI might not notice them when I am out, so if it's urgent, please send me an email instead.",
+		"otherSocial": "Other social accounts"
+	},
+	"header": {
+		"logo": "Rinrin.rs' logo"
+	},
+	"error": {
+		"pageNotFound": "404 not like this!<br />this page does not exist :("
+	},
+	"activities": {
+        "programming": {
+            "desc": "I started around the 13year-old. I do not learn very broadly.",
+            "rust": "Currently my favorite language🦀 Also my handle contains the .rs extension. ",
+            "graphics": {
+                "desc": "When i was developing shader packs for Minecraft Bedrock Edition,\ncome to like this field.",
+                "langsToUse": "Languages to use:",
+                "mayNotUse": "I may not use it anymore"
+            },
+            "webdev": [
+                "I basically don't want to do this because stylesheets are very stressful. I use SCSS of ",
+                " because \"using normal CSS\" breaks my sprit (SAAS requires indentation rules so i don't use it).\ni.e. i don't have much motivation for web development. So i have never used a framework other than ",
+                ". This home page was made with it."
+            ],
+            "git": [
+                "I learned the basics but i can never remember flags, options, etc.\nI am quite sloppy about managing branches in my personal repositories. I basically use ",
+                " for remote repository hosting."
+            ]
+        },
+        "game": {
+            "desc": "Games like RPGs are not listed here.",
+            "tetrio": "TETR.IO is modern yet familiar online stacker in the same genre as certain Russian certain puzzle game.\nI am not very good at this game but fun to play it once in a while."
+        }
+	}
 }
