@@ -71,7 +71,7 @@
 	<Title text="Contact / Social" />
 	<p>{$_('home.contact')}</p>
 	<MinimalContactTable />
-	<p><a href="social">{$_('home.otherSocial')	}</a></p>
+	<p><a href="social">{$_('home.otherSocial')}</a></p>
 </section>
 
 <style lang="scss">
