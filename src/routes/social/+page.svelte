@@ -4,6 +4,7 @@
 	import EaButton from '$lib/components/ea_button.svelte';
 
 	import { site_url } from '$lib/variables';
+	import { _ } from 'svelte-i18n';
 	import { socials } from '$lib/data/social';
 
 	const head = {
@@ -27,7 +28,7 @@
 	<Space height="64px" />
 
 	<Title text="Social" />
-	<p>{head.desc}</p>
+	<p>{$_('social.desc')}</p>
 
 	<Space height="32px" />
 
