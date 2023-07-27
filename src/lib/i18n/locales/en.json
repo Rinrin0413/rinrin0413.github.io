@@ -53,5 +53,45 @@
 				"."
 			]
 		}
+	},
+	"chronicle": {
+		"2006": {
+			"4": "was spawned in Yokohama City"
+		},
+		"2011": {
+			"null": "Around this time, called myself rinrin and was playing Ameba Pigg on Windows 7."
+		},
+		"2013": {
+			"4": "Entered the special support class of elementary school."
+		},
+		"2015": {
+			"6": "Moved to Tochigi Prefecture."
+		},
+		"2016": {
+			"12": "Played Minecraft(Wii U Edition) for the first time."
+		},
+		"2019": {
+			"3": "Moved again after graduating from elementary school, this time to Chiba Prefecture.",
+			"4": "Started playing Minecraft Bedrock Edition (Windows 10 Edition)"
+		},
+		"2020": {
+			"5": "Started learning Python because i wanted to create a Discord bot (FATAL MISTAKE)",
+			"null": "From the middle of the year, my congenital disorder begins to worsen."
+		},
+		"2021": {
+			"4": "Can hardly speak after the spring break and become a truant.",
+			"11": "Started learning Rust so stops using Python."
+		},
+		"2022": {
+			"3": "Bought a new desktop computer. On that day it arrived, tried to install Arch Linux but it failed. eventually reinstalled Windows.",
+			"4": "Entered S High School",
+			"6": "Really hate Windows so installed openSUSE as main OS. Somehow installed successfully this time."
+		},
+		"2023": {
+			"2": "Rewrote this site using SvelteKit."
+		},
+		"2036": {
+			"4": "I have wondered.. right after i was born...how old i would be 30 years from now."
+		}
 	}
 }
