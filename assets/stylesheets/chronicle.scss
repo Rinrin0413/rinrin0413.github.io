@@ -51,6 +51,14 @@ ul {
 
 		li:first-child {
 			filter: blur(0);
+
+			@include sp {
+				white-space: nowrap;
+
+				div {
+					font-size: 11px;
+				}
+			}
 		}
 
 		li:not(:first-child) {
@@ -118,6 +126,7 @@ ul {
 			border-bottom: 2.5px solid $separator-color;
 			padding: 0 6px 3px 12px;
 			margin-bottom: 48px;
+			transition: 0.2s;
 
 			@include sp {
 				left: 8px;
