@@ -12,7 +12,8 @@
 		"otherSocial": "Other social accounts"
 	},
 	"header": {
-		"logo": "Rinrin.rs' logo"
+		"logo": "Rinrin.rs' logo",
+		"language": "日本語"
 	},
 	"error": {
 		"pageNotFound": "404 not like this!<br />this page does not exist :("

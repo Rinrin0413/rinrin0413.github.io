@@ -12,7 +12,8 @@
 		"otherSocial": "その他のソーシャルアカウント"
 	},
 	"header": {
-		"logo": "Rinrin.rsのロゴ"
+		"logo": "Rinrin.rsのロゴ",
+		"language": "English"
 	},
 	"error": {
 		"pageNotFound": "お探しのページが見つからず申し訳OneNote。"
