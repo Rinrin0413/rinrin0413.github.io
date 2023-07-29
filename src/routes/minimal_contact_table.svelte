@@ -7,7 +7,7 @@
 		<td>
 			<img src="/images/logos/gmail.png" alt="Gmail logo" />Gmail
 		</td>
-		<td><EaButton /></td>
+		<td><EaButton mini /></td>
 	</tr>
 	<tr>
 		<td>
