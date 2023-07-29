@@ -9,7 +9,7 @@
 
 <button
 	class="a"
-	class:mini={mini}
+	class:mini
 	class:progress={is_ea_link_in_progress}
 	on:click={() => {
 		if (!is_ea_link_in_progress) {
@@ -35,7 +35,8 @@
 
 		@include sp() {
 			&.mini span {
-				&:before, &:after {
+				&:before,
+				&:after {
 					font-size: 10px;
 				}
 			}
