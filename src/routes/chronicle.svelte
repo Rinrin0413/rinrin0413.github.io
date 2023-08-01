@@ -40,6 +40,6 @@
 </div>
 
 <style lang="scss">
-	@use '/assets/stylesheets/util';
+	@use '/assets/stylesheets/utils/fade_in_up_zoom';
 	@import '/assets/stylesheets/chronicle';
 </style>
