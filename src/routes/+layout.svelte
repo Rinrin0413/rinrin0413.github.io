@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { copyright, site_url } from '$lib/variables';
 
-	import Header from '$lib/components/header.svelte';
+	import Header from '$lib/components/header/header.svelte';
 	import Footer from '$lib/components/footer.svelte';
 </script>
 
