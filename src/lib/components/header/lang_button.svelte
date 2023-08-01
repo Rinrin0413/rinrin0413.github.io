@@ -53,10 +53,22 @@
 		}
 
 		&:active {
-			transform: translateY(4px) rotateY(180deg);
+			animation: rotate-y 0.17s;
 
 			span {
 				color: transparent;
+			}
+
+			@keyframes rotate-y {
+				0% {
+					transform: translateY(4px) rotateY(0deg);
+				}
+				50% {
+					transform: translateY(4px) rotateY(50deg);
+				}
+				100% {
+					transform: translateY(4px) rotateY(0deg);
+				}
 			}
 		}
 
