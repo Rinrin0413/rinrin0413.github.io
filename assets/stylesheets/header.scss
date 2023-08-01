@@ -2,6 +2,7 @@
 
 @use './variables/color' as *;
 @use './variables/dimension' as *;
+@use './variables/mixin' as *;
 
 header,
 #header-bg {
@@ -123,12 +124,21 @@ header {
 		display: flex;
 		justify-content: right;
 		align-items: center;
+		height: $header-height;
 
 		a {
 			text-decoration: none;
 			height: $header-height;
 			padding: 0 9px;
 			transition: 0.16s;
+
+			&.at-top {
+				transform: translateY(-64px);
+			}
+
+			@include hm {
+				display: none;
+			}
 
 			&:last-child {
 				margin-right: 8px;

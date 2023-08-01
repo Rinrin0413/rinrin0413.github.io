@@ -55,7 +55,7 @@
 	>
 	<nav>
 		{#each items as item}
-			<a href={item.id}>
+			<a href={item.id} class:at-top={is_at_top}>
 				<Icon id={item.id} />
 				<span>{$_(item.name)}</span>
 			</a>

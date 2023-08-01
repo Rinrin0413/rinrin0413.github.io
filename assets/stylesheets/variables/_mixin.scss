@@ -1,4 +1,5 @@
 $breakpoint: 718px;
+$breakpoint_hamburger_menu: 825px;
 
 @mixin pc {
 	@media screen and (min-width: $breakpoint) {
@@ -8,6 +9,12 @@ $breakpoint: 718px;
 
 @mixin sp {
 	@media screen and (max-width: #{$breakpoint - 1}) {
+		@content;
+	}
+}
+
+@mixin hm {
+	@media screen and (max-width: #{$breakpoint_hamburger_menu - 1}) {
 		@content;
 	}
 }
