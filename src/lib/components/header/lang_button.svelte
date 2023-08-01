@@ -28,28 +28,14 @@
 </button>
 
 <style lang="scss">
+	@use '/assets/stylesheets/header/button';
+
 	@use '/assets/stylesheets/variables/dimension' as *;
 	@use '/assets/stylesheets/variables/color' as *;
 
 	button {
-		$btn-size: $header-height * 0.82;
-		height: $btn-size;
-		width: $btn-size;
-		background: #b39e79;
-		border: 3px solid #cab99c;
-		cursor: pointer;
-		border-radius: 4px;
-		margin: 0 6px;
-		font-family: inherit;
-		filter: drop-shadow(0 0 4px #0000008a);
-
-		&,
 		span {
 			transition: 0.3s;
-		}
-
-		&:hover {
-			transform: translateY(2px);
 		}
 
 		&:active {
@@ -70,22 +56,6 @@
 					transform: translateY(4px) rotateY(0deg);
 				}
 			}
-		}
-
-		svg {
-			height: 36px;
-			width: auto;
-			fill: $text-dark;
-			position: relative;
-			top: -1px;
-		}
-
-		span {
-			font-size: 14px;
-			color: $text-dark;
-			position: relative;
-			top: -10px;
-			letter-spacing: -0.86px;
 		}
 	}
 </style>

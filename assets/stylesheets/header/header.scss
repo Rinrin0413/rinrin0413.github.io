@@ -1,8 +1,8 @@
 @use 'sass:math';
 
-@use './variables/color' as *;
-@use './variables/dimension' as *;
-@use './variables/mixin' as *;
+@use '../variables/color' as *;
+@use '../variables/dimension' as *;
+@use '../variables/mixin' as *;
 
 header,
 #header-bg {
@@ -130,11 +130,6 @@ header {
 			text-decoration: none;
 			height: $header-height;
 			padding: 0 9px;
-			transition: 0.16s;
-
-			&.at-top {
-				transform: translateY(-64px);
-			}
 
 			@include hm {
 				display: none;
@@ -159,6 +154,15 @@ header {
 				position: relative;
 				top: -2px;
 			}
+		}
+
+		a,
+		div {
+			transition: 0.16s;
+		}
+
+		.at-top {
+			transform: translateY(-72px);
 		}
 	}
 }

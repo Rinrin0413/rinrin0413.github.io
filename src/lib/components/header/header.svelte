@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Icon from './icon.svelte';
+	import HamburgerButton from './hamburger_button.svelte';
 	import LangButton from './lang_button.svelte';
 
 	import { onMount } from 'svelte';
@@ -60,10 +61,11 @@
 				<span>{$_(item.name)}</span>
 			</a>
 		{/each}
+		<div class:at-top={is_at_top}><HamburgerButton /></div>
 		<LangButton />
 	</nav>
 </header>
 
 <style lang="scss">
-	@use '/assets/stylesheets/header';
+	@use '/assets/stylesheets/header/header';
 </style>
