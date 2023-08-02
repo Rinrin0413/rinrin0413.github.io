@@ -30,7 +30,7 @@
 		}
 
 		&:active {
-			transform: translateY(5px);
+			transform: translateY(5px) scale(0.95);
 		}
 	}
 </style>
