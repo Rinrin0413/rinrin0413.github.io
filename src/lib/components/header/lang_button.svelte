@@ -34,6 +34,8 @@
 	@use '/assets/stylesheets/variables/color' as *;
 
 	button {
+		display: inline-block;
+
 		span {
 			transition: 0.3s;
 		}

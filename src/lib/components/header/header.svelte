@@ -61,8 +61,7 @@
 				<span>{$_(item.name)}</span>
 			</a>
 		{/each}
-		<div class:at-top={is_at_top}><HamburgerButton /></div>
-		<LangButton />
+		<div class:at-top={is_at_top}><HamburgerButton /><LangButton /></div>
 	</nav>
 </header>
 

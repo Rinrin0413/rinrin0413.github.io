@@ -26,7 +26,7 @@
 		font-weight: 900;
 
 		@include hm {
-			display: block;
+			display: inline-block;
 		}
 
 		&:active {
