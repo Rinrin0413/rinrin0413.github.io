@@ -59,7 +59,7 @@ header {
 					img {
 						transform: translateX(-$header-height * 0.26);
 					}
-	
+
 					&::after {
 						transform: translateX(170px);
 						clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
