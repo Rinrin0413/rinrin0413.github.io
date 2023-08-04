@@ -56,6 +56,8 @@
 		is_drawer_menu_opened = open;
 		toggle_scroll_prevention(is_drawer_menu_opened);
 	}
+
+	function empty() {} // eslint-disable-line @typescript-eslint/no-empty-function
 </script>
 
 {#if is_drawer_menu_opened}
@@ -65,7 +67,7 @@
 		on:click={() => {
 			toggle_drawer_menu(false);
 		}}
-		on:keypress={() => {}}
+		on:keypress={empty}
 	/>
 {/if}
 <div id="header-bg" class:blur={is_at_top} />
