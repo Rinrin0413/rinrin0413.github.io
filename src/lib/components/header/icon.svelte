@@ -48,12 +48,13 @@
         
         Copyright (c) 2019 The Bootstrap Authors
         under the MIT License: https://github.com/twbs/icons/blob/main/LICENSE
+
+		And deleted attribute `fill` by Rinrin.rs
     -->
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
 		width="16"
 		height="16"
-		fill="currentColor"
 		class="bi bi-window"
 		viewBox="0 0 16 16"
 		id="projects"
@@ -86,12 +87,13 @@
         
         Copyright (c) 2019 The Bootstrap Authors
         under the MIT License: https://github.com/twbs/icons/blob/main/LICENSE
+
+		And deleted attribute `fill` by Rinrin.rs
     -->
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
 		width="16"
 		height="16"
-		fill="currentColor"
 		class="bi bi-link-45deg"
 		viewBox="0 0 16 16"
 	>
