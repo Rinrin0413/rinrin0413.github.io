@@ -4,6 +4,17 @@
 @use '../variables/dimension' as *;
 @use '../variables/mixin' as *;
 
+#drawer-menu-bg {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: #ffffff2a;
+	backdrop-filter: blur(6px);
+	z-index: 126;
+}
+
 header,
 #header-bg {
 	position: fixed;
