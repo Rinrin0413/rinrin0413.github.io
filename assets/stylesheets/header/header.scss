@@ -54,7 +54,7 @@ header {
 				clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
 			}
 
-			@include not_un {
+			@include not-un {
 				&:hover {
 					img {
 						transform: translateX(-$header-height * 0.26);

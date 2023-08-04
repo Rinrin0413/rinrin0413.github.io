@@ -1,6 +1,6 @@
 $breakpoint: 718px;
-$breakpoint_hamburger_menu: 825px;
-$breakpoint_ultra_narrow: 380px;
+$breakpoint-hamburger-menu: 825px;
+$breakpoint-ultra-narrow: 380px;
 
 @mixin pc {
 	@media screen and (min-width: $breakpoint) {
@@ -15,13 +15,13 @@ $breakpoint_ultra_narrow: 380px;
 }
 
 @mixin hm {
-	@media screen and (max-width: #{$breakpoint_hamburger_menu - 1}) {
+	@media screen and (max-width: #{$breakpoint-hamburger-menu - 1}) {
 		@content;
 	}
 }
 
-@mixin not_un {
-	@media screen and (min-width: $breakpoint_ultra_narrow) {
+@mixin not-un {
+	@media screen and (min-width: $breakpoint-ultra-narrow) {
 		@content;
 	}
 }
