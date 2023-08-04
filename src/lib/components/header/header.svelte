@@ -59,12 +59,25 @@
 </script>
 
 {#if is_drawer_menu_opened}
-	<div id="drawer-menu-bg" transition:blur={{ duration: 300 }} on:click={() => {toggle_drawer_menu(false);}} on:keypress={()=>{}} />
+	<div
+		id="drawer-menu-bg"
+		transition:blur={{ duration: 300 }}
+		on:click={() => {
+			toggle_drawer_menu(false);
+		}}
+		on:keypress={() => {}}
+	/>
 {/if}
 <div id="header-bg" class:blur={is_at_top} />
 <header>
-	<a href="/" id="logo" class:center={is_at_top} class:fade-in={enable_fade_in} on:click={() => {toggle_drawer_menu(false);}}
-		><img src="/images/favicon.png" alt={$_('header.logo')} /></a
+	<a
+		href="/"
+		id="logo"
+		class:center={is_at_top}
+		class:fade-in={enable_fade_in}
+		on:click={() => {
+			toggle_drawer_menu(false);
+		}}><img src="/images/favicon.png" alt={$_('header.logo')} /></a
 	>
 	<nav>
 		{#each items as item}
@@ -73,7 +86,14 @@
 				<span>{$_(item.name)}</span>
 			</a>
 		{/each}
-		<div class:at-top={is_at_top}><HamburgerButton is_opened={is_drawer_menu_opened} on:toggle={(e) => {toggle_drawer_menu(e.detail.is_opened);}} /><LangButton /></div>
+		<div class:at-top={is_at_top}>
+			<HamburgerButton
+				is_opened={is_drawer_menu_opened}
+				on:toggle={(e) => {
+					toggle_drawer_menu(e.detail.is_opened);
+				}}
+			/><LangButton />
+		</div>
 	</nav>
 </header>
 

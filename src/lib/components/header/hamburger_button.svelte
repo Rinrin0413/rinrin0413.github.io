@@ -5,10 +5,12 @@
 	const dispatch = createEventDispatcher();
 </script>
 
-<button on:click={() => {
-	is_opened = !is_opened;
-	dispatch('toggle', { is_opened });
-}}>
+<button
+	on:click={() => {
+		is_opened = !is_opened;
+		dispatch('toggle', { is_opened });
+	}}
+>
 	{#if is_opened}
 		<!-- 
 			Google Material Symbols and Icons - Close
@@ -16,7 +18,11 @@
 			
 			This icon is licensed under the Apache License Version 2.0: https://github.com/google/material-design-icons/blob/master/README.md
 		-->
-		<svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="m249-207-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg>
+		<svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"
+			><path
+				d="m249-207-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"
+			/></svg
+		>
 	{:else}
 		<!-- 
 			Google Material Symbols and Icons - Menu
