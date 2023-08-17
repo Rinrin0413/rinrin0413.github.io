@@ -11,7 +11,7 @@ $vh001: var(--vh001, 1vh);
 	top: 0;
 	left: 0;
 	width: 100vw;
-	height: calc($vh001*100);
+	height: calc($vh001 * 100);
 	background-color: #ffffff2a;
 	$back-blur: blur(6px);
 	backdrop-filter: $back-blur;
@@ -192,9 +192,9 @@ header {
 				backdrop-filter: $back-blur;
 				-webkit-backdrop-filter: $back-blur;
 				position: absolute;
-				top: calc($vh001*50);
+				top: calc($vh001 * 50);
 				left: 50vw;
-				transform: translateY(calc(-50% + $header-height*.5)) translateX(-50%);
+				transform: translateY(calc(-50% + $header-height * 0.5)) translateX(-50%);
 			}
 
 			a {

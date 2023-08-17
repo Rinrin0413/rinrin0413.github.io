@@ -20,7 +20,7 @@
 		set_vh001();
 
 		function set_vh001() {
-			document.documentElement.style.setProperty('--vh001', window.innerHeight*.01 + 'px');
+			document.documentElement.style.setProperty('--vh001', window.innerHeight * 0.01 + 'px');
 		}
 	}
 
