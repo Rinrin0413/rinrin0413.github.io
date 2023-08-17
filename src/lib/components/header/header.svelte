@@ -13,7 +13,16 @@
 
 	let is_at_top = true;
 
-	if (browser) window.addEventListener('scroll', update_scroll);
+	if (browser) {
+		window.addEventListener('scroll', update_scroll);
+		window.addEventListener('resize', set_vh001);
+
+		set_vh001();
+
+		function set_vh001() {
+			document.documentElement.style.setProperty('--vh001', window.innerHeight*.01 + 'px');
+		}
+	}
 
 	let is_drawer_menu_opened = false;
 	let enable_fade_in = true;

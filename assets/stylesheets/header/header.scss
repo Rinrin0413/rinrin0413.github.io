@@ -4,13 +4,14 @@
 @use '../variables/dimension' as *;
 @use '../variables/mixin' as *;
 
+$vh001: var(--vh001, 1vh);
+
 #drawer-menu-bg {
 	position: fixed;
 	top: 0;
 	left: 0;
 	width: 100vw;
-	// Why is it not 100vh? because fkios
-	height: 200vh;
+	height: calc($vh001*100);
 	background-color: #ffffff2a;
 	$back-blur: blur(6px);
 	backdrop-filter: $back-blur;
@@ -191,7 +192,7 @@ header {
 				backdrop-filter: $back-blur;
 				-webkit-backdrop-filter: $back-blur;
 				position: absolute;
-				top: 50vh;
+				top: calc($vh001*50);
 				left: 50vw;
 				transform: translateY(calc(-50% + $header-height*.5)) translateX(-50%);
 			}
