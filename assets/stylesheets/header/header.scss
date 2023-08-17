@@ -9,9 +9,12 @@
 	top: 0;
 	left: 0;
 	width: 100vw;
-	height: 100vh;
+	// Why is it not 100vh? because fkios
+	height: 200vh;
 	background-color: #ffffff2a;
-	backdrop-filter: blur(6px);
+	$back-blur: blur(6px);
+	backdrop-filter: $back-blur;
+	-webkit-backdrop-filter: $back-blur;
 	z-index: 126;
 }
 
@@ -138,15 +141,13 @@ header {
 		justify-content: right;
 		align-items: center;
 		height: $header-height;
+		position: relative;
+		right: 64px;
 
 		a {
 			text-decoration: none;
 			height: $header-height;
 			padding: 0 9px;
-
-			@include hm {
-				display: none;
-			}
 
 			&:last-child {
 				margin-right: 8px;
@@ -169,12 +170,52 @@ header {
 			}
 		}
 
-		a,
-		div {
+		a {
 			transition: 0.16s;
 		}
 
 		.at-top {
+			transform: translateY(-72px);
+		}
+
+		@include hm {
+			& {
+				flex-direction: column;
+				justify-content: center;
+				width: 92vw;
+				max-width: 428px;
+				margin: 0 auto;
+				height: auto;
+				background-color: #ff00f271;
+				$back-blur: blur(6px);
+				backdrop-filter: $back-blur;
+				-webkit-backdrop-filter: $back-blur;
+				position: absolute;
+				top: 50vh;
+				left: 50vw;
+				transform: translateY(calc(-50% + $header-height*.5)) translateX(-50%);
+			}
+
+			a {
+				display: block;
+
+				&:hover {
+				}
+
+				span {
+				}
+			}
+		}
+	}
+
+	div {
+		position: fixed;
+		top: 0;
+		right: 0;
+		height: $header-height;
+		transition: 0.16s;
+
+		&.hidden {
 			transform: translateY(-72px);
 		}
 	}

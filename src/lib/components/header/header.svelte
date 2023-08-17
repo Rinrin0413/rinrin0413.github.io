@@ -72,6 +72,22 @@
 {/if}
 <div id="header-bg" class:blur={is_at_top} />
 <header>
+	<nav>
+		{#each items as item}
+			<a href={item.id} class:at-top={is_at_top}>
+				<Icon id={item.id} />
+				<span>{$_(item.name)}</span>
+			</a>
+		{/each}
+	</nav>
+	<div class:at-top={is_at_top} class:hidden={is_at_top}>
+		<HamburgerButton
+			is_opened={is_drawer_menu_opened}
+			on:toggle={(e) => {
+				toggle_drawer_menu(e.detail.is_opened);
+			}}
+		/><LangButton />
+	</div>
 	<a
 		href="/"
 		id="logo"
@@ -81,22 +97,6 @@
 			toggle_drawer_menu(false);
 		}}><img src="/images/favicon.png" alt={$_('header.logo')} /></a
 	>
-	<nav>
-		{#each items as item}
-			<a href={item.id} class:at-top={is_at_top}>
-				<Icon id={item.id} />
-				<span>{$_(item.name)}</span>
-			</a>
-		{/each}
-		<div class:at-top={is_at_top}>
-			<HamburgerButton
-				is_opened={is_drawer_menu_opened}
-				on:toggle={(e) => {
-					toggle_drawer_menu(e.detail.is_opened);
-				}}
-			/><LangButton />
-		</div>
-	</nav>
 </header>
 
 <style lang="scss">
