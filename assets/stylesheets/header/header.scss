@@ -149,6 +149,7 @@ header {
 			text-decoration: none;
 			height: $header-height;
 			padding: 0 9px;
+			transition: 0.16s;
 
 			&:last-child {
 				margin-right: 8px;
@@ -161,9 +162,6 @@ header {
 			span {
 				display: block;
 				margin: 0 auto;
-			}
-
-			span {
 				color: $text-dark;
 				font-size: 16px;
 				position: relative;
@@ -171,39 +169,49 @@ header {
 			}
 		}
 
-		a {
-			transition: 0.16s;
-		}
-
 		.at-top {
 			transform: translateY(-72px);
 		}
 
 		@include hm {
-			& {
-				flex-direction: column;
-				justify-content: center;
-				width: 92vw;
-				max-width: 428px;
-				margin: 0 auto;
-				height: auto;
-				background-color: #ff00f271;
-				$back-blur: blur(6px);
-				backdrop-filter: $back-blur;
-				-webkit-backdrop-filter: $back-blur;
-				position: absolute;
-				top: calc($vh001 * 50);
-				left: 50vw;
-				transform: translateY(calc(-50% + $header-height * 0.5)) translateX(-50%);
-			}
+			flex-direction: column;
+			justify-content: center;
+			width: 92vw;
+			max-width: 428px;
+			margin: 0 auto;
+			height: auto;
+			background-color: #cab99ca0;;
+			border: 2px solid #b39e79;
+			border-radius: 2px;
+			$back-blur: blur(6px);
+			backdrop-filter: $back-blur;
+			-webkit-backdrop-filter: $back-blur;
+			position: absolute;
+			top: calc($vh001 * 50);
+			left: 50vw;
+			transform: translateY(calc(-50% + $header-height * 0.5)) translateX(-50%);
 
 			a {
 				display: block;
-
-				&:hover {
-				}
+				width: calc(100% - 18px);
+				margin: 0;
+				margin-right: 0 !important;
 
 				span {
+					display: inline;
+					vertical-align: middle;
+					top: 14px;
+					font-size: 20px;
+				}
+
+				&:not(:first-child)::before {
+					content: '';
+					display: block;
+					width: 100%;
+					height: 1px;
+					background-color: $text-primary;
+					margin: 0 auto;
+					opacity: 0.3;
 				}
 			}
 		}

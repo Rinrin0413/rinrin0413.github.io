@@ -108,18 +108,22 @@
 
 <style lang="scss">
 	@use '/assets/stylesheets/variables/color' as *;
+	@use '/assets/stylesheets/variables/mixin' as *;
 
 	svg {
 		display: block;
 		margin: 0 auto;
-	}
-
-	svg {
 		height: 42px;
 		width: auto;
 		fill: $text-primary;
 		position: relative;
 		top: 4px;
+
+		@include hm {
+			display: inline;
+			vertical-align: middle;
+			top: 14px;
+		}
 	}
 
 	#projects {
