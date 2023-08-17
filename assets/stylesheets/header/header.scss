@@ -190,6 +190,35 @@ header {
 			top: calc($vh001 * 50);
 			left: 50vw;
 			transform: translateY(calc(-50% + $header-height * 0.5)) translateX(-50%);
+			animation: fadeInBlur 0.4s ease-out forwards;
+
+			@keyframes fadeInBlur {
+				0% {
+					opacity: 0;
+					filter: blur(6px);
+				}
+
+				100% {
+					opacity: 1;
+					filter: blur(0);
+				}
+			}
+
+			&:not(.is-opened) {
+				animation: fadeOutBlur 0.3s ease-out forwards;
+
+				@keyframes fadeOutBlur {
+					0% {
+						opacity: 1;
+						filter: blur(0);
+					}
+
+					100% {
+						opacity: 0;
+						filter: blur(6px);
+					}
+				}
+			}
 
 			a {
 				display: block;
