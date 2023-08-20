@@ -220,6 +220,21 @@ header {
 				}
 			}
 
+			&.is-opened::before {
+				content: '- Menu -';
+				font-size: 28px;
+				font-weight: 100;
+				letter-spacing: 0.1em;
+				background-color: #b39e79;
+				border: 2px solid rgba($text-primary, 0.25);
+				width: 100%;
+				padding: 1px 8px 5px 8px;
+				border-radius: 4px;
+				filter: drop-shadow(0 0 4px #00000080);
+				position: relative;
+				top: -4px;
+			}
+
 			a {
 				display: block;
 				width: calc(100% - 18px);
@@ -233,7 +248,7 @@ header {
 					font-size: 20px;
 				}
 
-				&:not(:first-child)::before {
+				&::before {
 					content: '';
 					display: block;
 					width: 100%;
