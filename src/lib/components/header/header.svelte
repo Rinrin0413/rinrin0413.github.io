@@ -83,7 +83,11 @@
 <header>
 	<nav class:opened={is_drawer_menu_opened}>
 		{#each items as item}
-			<a href={item.id} class:at-top={is_at_top}>
+			<a 
+				href={item.id} 
+				class:at-top={is_at_top}
+				on:click={() => {toggle_drawer_menu(false);}}
+			>
 				<Icon id={item.id} />
 				<span>{$_(item.name)}</span>
 			</a>
