@@ -92,7 +92,7 @@
 			</a>
 		{/each}
 	</nav>
-	<div class:at-top={is_at_top} class:hidden={is_at_top}>
+	<div class:hidden={is_at_top}>
 		<HamburgerButton
 			is_opened={is_drawer_menu_opened}
 			on:toggle={(e) => {
