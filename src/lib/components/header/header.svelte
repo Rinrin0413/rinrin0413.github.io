@@ -12,6 +12,11 @@
 	onMount(update_scroll);
 
 	let is_at_top = true;
+	/** 
+	 * Whether after closing drawer menu.
+	 * `false` by default because it is not "after closing" at loaded the page.
+	 */
+	let is_after_drawer_menu_closed = false;
 
 	if (browser) {
 		window.addEventListener('scroll', update_scroll);
@@ -62,6 +67,7 @@
 
 	/** Toggles drawer menu open/close. */
 	function toggle_drawer_menu(open: boolean) {
+		is_after_drawer_menu_closed = is_drawer_menu_opened;
 		is_drawer_menu_opened = open;
 		toggle_scroll_prevention(is_drawer_menu_opened);
 	}
@@ -81,7 +87,12 @@
 {/if}
 <div id="header-bg" class:blur={is_at_top} />
 <header>
-	<nav class:opened={is_drawer_menu_opened} class:at-top={is_at_top}>
+	<nav 
+		class:opened={is_drawer_menu_opened} 
+		class:after-closed={is_after_drawer_menu_closed} 
+		class:at-top={is_at_top}
+		class:is-not-yet-opened={!is_drawer_menu_opened && !is_after_drawer_menu_closed}
+	>
 		{#each items as item}
 			<a 
 				href={item.id} 

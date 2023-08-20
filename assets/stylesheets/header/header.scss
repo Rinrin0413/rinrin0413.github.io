@@ -206,7 +206,11 @@ header {
 				}
 			}
 
-			&:not(.opened) {
+			&.is-not-yet-opened {
+				display: none;
+			}
+
+			&.after-closed {
 				opacity: 0;
 				filter: none;
 				left: 200vw;
