@@ -27,8 +27,8 @@ footer {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		background-color: #b39e794a;
-		border: 2px solid #cab99c50;
+		background-color: rgba($button-primary, 0.29);
+		border: 2px solid rgba($button-secondary, 0.31);
 		padding: 6px 12px;
 		border-radius: 4px;
 		transition: 0.2s;

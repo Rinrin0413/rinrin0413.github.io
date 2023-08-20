@@ -182,8 +182,8 @@ header {
 			max-width: 428px;
 			margin: 0 auto;
 			height: auto;
-			background-color: #cab99ca0;
-			border: 2px solid #b39e79;
+			background-color: rgba($button-primary, 0.63);
+			border: 2px solid $button-primary;
 			border-radius: 2px;
 			$back-blur: blur(6px);
 			backdrop-filter: $back-blur;
@@ -243,7 +243,7 @@ header {
 				font-size: 28px;
 				font-weight: 100;
 				letter-spacing: 0.1em;
-				background-color: #b39e79;
+				background-color: $button-primary;
 				border: 2px solid rgba($text-primary, 0.25);
 				width: 100%;
 				padding: 1px 8px 5px 8px;
