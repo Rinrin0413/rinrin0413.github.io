@@ -33,16 +33,6 @@
 	</tr>
 	<tr>
 		<td>
-			<img src="/images/logos/twitter_Logo blue.svg" alt="Twitter logo" />Twitter
-		</td>
-		<td
-			><a href="https://twitter.com/Rinrin_2nd" target="_blank" rel="noopener noreferrer"
-				>@Rinrin_2nd</a
-			></td
-		>
-	</tr>
-	<tr>
-		<td>
 			<img src="/images/logos/github-mark.svg" alt="GitHub logo" />GitHub
 		</td>
 		<td>
@@ -50,6 +40,16 @@
 				>@Rinrin0413</a
 			>
 		</td>
+	</tr>
+	<tr>
+		<td>
+			<img src="/images/logos/x_logo.svg" alt="X logo" />X
+		</td>
+		<td
+			><a href="https://x.com/Rinrin_2nd" target="_blank" rel="noopener noreferrer"
+				>@Rinrin_2nd</a
+			></td
+		>
 	</tr>
 </table>
 

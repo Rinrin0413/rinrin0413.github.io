@@ -1,6 +1,6 @@
 const icons = {
 	discord: 'discord-mark-blue.svg',
-	twitter: 'twitter_Logo blue.svg',
+	x: 'x_logo.svg',
 	xbox: 'xbox.png'
 };
 
@@ -246,18 +246,6 @@ export const socials = [
 		icon: 'TwitchGlitchPurple.svg'
 	},
 	{
-		service: 'Twitter',
-		name: '@Rinrin_2nd',
-		url: 'https://twitter.com/Rinrin_2nd',
-		icon: icons.twitter
-	},
-	{
-		service: 'Twitter(sub)',
-		name: '@Rinrin_wgsl',
-		url: 'https://twitter.com/Rinrin_wgsl',
-		icon: icons.twitter
-	},
-	{
 		service: 'WakaTime',
 		name: '@Rinrin',
 		url: 'https://wakatime.com/@Rinrin',
@@ -268,6 +256,18 @@ export const socials = [
 		name: '@rinrin',
 		url: 'https://hosted.weblate.org/user/rinrin',
 		icon: null // Could not find the guideline
+	},
+	{
+		service: 'X',
+		name: '@Rinrin_2nd',
+		url: 'https://x.com/Rinrin_2nd',
+		icon: icons.x
+	},
+	{
+		service: 'X(sub)',
+		name: '@Rinrin_wgsl',
+		url: 'https://x.com/Rinrin_wgsl',
+		icon: icons.x
 	},
 	{
 		service: 'Xbox',
