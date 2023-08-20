@@ -32,6 +32,14 @@
 		>
 	</tr>
 	<tr>
+		<td>Misskey.io</td>
+		<td
+			><a href="https://misskey.io/@Rinrin0413" target="_blank" rel="noopener noreferrer"
+				>@Rinrin0413</a
+			></td
+		>
+	</tr>
+	<tr>
 		<td>
 			<img src="/images/logos/github-mark.svg" alt="GitHub logo" />GitHub
 		</td>
