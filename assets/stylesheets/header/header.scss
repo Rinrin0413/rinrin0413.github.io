@@ -204,7 +204,7 @@ header {
 				}
 			}
 
-			&:not(.is-opened) {
+			&:not(.opened) {
 				animation: fadeOutBlur 0.3s ease-out forwards;
 
 				@keyframes fadeOutBlur {
@@ -220,7 +220,7 @@ header {
 				}
 			}
 
-			&.is-opened::before {
+			&.opened::before {
 				content: '- Menu -';
 				font-size: 28px;
 				font-weight: 100;
