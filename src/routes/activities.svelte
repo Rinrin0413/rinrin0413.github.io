@@ -76,6 +76,9 @@
 				'activities.music.compose.1'
 			)}
 		</p>
+		<br />
+		<h2>Sing</h2>
+		<p>{$_('activities.music.sing')}</p>
 	</div>
 </div>
 
