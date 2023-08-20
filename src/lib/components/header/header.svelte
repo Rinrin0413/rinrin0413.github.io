@@ -81,11 +81,10 @@
 {/if}
 <div id="header-bg" class:blur={is_at_top} />
 <header>
-	<nav class:opened={is_drawer_menu_opened}>
+	<nav class:opened={is_drawer_menu_opened} class:at-top={is_at_top}>
 		{#each items as item}
 			<a 
 				href={item.id} 
-				class:at-top={is_at_top}
 				on:click={() => {toggle_drawer_menu(false);}}
 			>
 				<Icon id={item.id} />

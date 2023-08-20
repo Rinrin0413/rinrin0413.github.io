@@ -169,11 +169,13 @@ header {
 			}
 		}
 
-		.at-top {
+		&.at-top a {
 			transform: translateY(-72px);
 		}
 
 		@include hm {
+			$pos-left: 50vw;
+
 			flex-direction: column;
 			justify-content: center;
 			width: 92vw;
@@ -188,7 +190,7 @@ header {
 			-webkit-backdrop-filter: $back-blur;
 			position: absolute;
 			top: calc($vh001 * 50);
-			left: 50vw;
+			left: $pos-left;
 			transform: translateY(calc(-50% + $header-height * 0.5)) translateX(-50%);
 			animation: fadeInBlur 0.4s ease-out forwards;
 
@@ -205,17 +207,29 @@ header {
 			}
 
 			&:not(.opened) {
+				opacity: 0;
+				filter: none;
+				left: 200vw;
 				animation: fadeOutBlur 0.3s ease-out forwards;
 
 				@keyframes fadeOutBlur {
 					0% {
 						opacity: 1;
 						filter: blur(0);
+						left: $pos-left;
+					}
+
+					98% {
+						opacity: 0;
+						filter: blur(6px);
+					}
+
+					99% {
+						left: $pos-left;
 					}
 
 					100% {
-						opacity: 0;
-						filter: blur(6px);
+						left: 200vw;
 					}
 				}
 			}
