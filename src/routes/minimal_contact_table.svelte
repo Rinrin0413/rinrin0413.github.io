@@ -54,8 +54,7 @@
 			<img src="/images/logos/x_logo.svg" alt="X logo" />X
 		</td>
 		<td
-			><a href="https://x.com/Rinrin_2nd" target="_blank" rel="noopener noreferrer"
-				>@Rinrin_2nd</a
+			><a href="https://x.com/Rinrin_2nd" target="_blank" rel="noopener noreferrer">@Rinrin_2nd</a
 			></td
 		>
 	</tr>
