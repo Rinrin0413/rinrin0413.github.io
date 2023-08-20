@@ -23,10 +23,6 @@
 		window.addEventListener('resize', set_vh001);
 
 		set_vh001();
-
-		function set_vh001() {
-			document.documentElement.style.setProperty('--vh001', window.innerHeight * 0.01 + 'px');
-		}
 	}
 
 	let is_drawer_menu_opened = false;
@@ -63,6 +59,14 @@
 
 	function update_scroll() {
 		is_at_top = window.scrollY <= 0;
+	}
+
+	/**
+	 * Sets css variable `--vh001.
+	 * Must be called in the browser.
+	 */
+	function set_vh001() {
+		document.documentElement.style.setProperty('--vh001', window.innerHeight * 0.01 + 'px');
 	}
 
 	/** Toggles drawer menu open/close. */
