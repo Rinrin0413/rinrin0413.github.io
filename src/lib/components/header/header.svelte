@@ -12,7 +12,7 @@
 	onMount(update_scroll);
 
 	let is_at_top = true;
-	/** 
+	/**
 	 * Whether after closing drawer menu.
 	 * `false` by default because it is not "after closing" at loaded the page.
 	 */
@@ -87,16 +87,18 @@
 {/if}
 <div id="header-bg" class:blur={is_at_top} />
 <header>
-	<nav 
-		class:opened={is_drawer_menu_opened} 
-		class:after-closed={is_after_drawer_menu_closed} 
+	<nav
+		class:opened={is_drawer_menu_opened}
+		class:after-closed={is_after_drawer_menu_closed}
 		class:at-top={is_at_top}
 		class:is-not-yet-opened={!is_drawer_menu_opened && !is_after_drawer_menu_closed}
 	>
 		{#each items as item}
-			<a 
-				href={item.id} 
-				on:click={() => {toggle_drawer_menu(false);}}
+			<a
+				href={item.id}
+				on:click={() => {
+					toggle_drawer_menu(false);
+				}}
 			>
 				<Icon id={item.id} />
 				<span>{$_(item.name)}</span>
