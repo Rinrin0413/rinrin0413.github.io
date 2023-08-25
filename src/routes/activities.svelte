@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { browser } from '$app/environment';
-
 	import { add_class_on_visible } from '$lib/util';
 	import { _ } from 'svelte-i18n';
 

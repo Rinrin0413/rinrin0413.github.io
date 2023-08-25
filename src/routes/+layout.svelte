@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { copyright, site_url } from '$lib/variables';
-	import { browser } from '$app/environment';
-
 	import Header from '$lib/components/header/header.svelte';
 	import Footer from '$lib/components/footer.svelte';
+	
+	import { copyright, site_url } from '$lib/variables';
+	import { browser } from '$app/environment';
 
 	let max_vh1: number;
 
