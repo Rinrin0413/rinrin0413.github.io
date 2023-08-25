@@ -15,7 +15,7 @@
 	}
 
 	/**
-	 * Sets css variable `--vh001.
+	 * Sets css variable `--vh001`.
 	 * Must be called in the browser.
 	 */
 	 function set_vh001() {
