@@ -3,6 +3,7 @@
 	import { browser } from '$app/environment';
 	import { chronicle } from '$lib/data/chronicle';
 	import { fmt_month, add_class_on_visible } from '$lib/util';
+	import { _ } from 'svelte-i18n';
 
 	onMount(fade_in);
 	if (browser) window.addEventListener('scroll', fade_in);
@@ -31,7 +32,7 @@
 			{#each events as { month, event }, i}
 				<li>
 					<h1 class:no-pin={i != 0}>{@html fmt_month(month)} {year}</h1>
-					<div>{event}</div>
+					<div>{$_('chronicle.' + event)}</div>
 				</li>
 			{/each}
 		{/each}
@@ -39,6 +40,6 @@
 </div>
 
 <style lang="scss">
-	@use '/assets/stylesheets/util';
+	@use '/assets/stylesheets/utils/fade_in_up_zoom';
 	@import '/assets/stylesheets/chronicle';
 </style>

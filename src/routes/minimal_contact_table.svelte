@@ -7,7 +7,7 @@
 		<td>
 			<img src="/images/logos/gmail.png" alt="Gmail logo" />Gmail
 		</td>
-		<td><EaButton /></td>
+		<td><EaButton mini /></td>
 	</tr>
 	<tr>
 		<td>
@@ -32,12 +32,10 @@
 		>
 	</tr>
 	<tr>
-		<td>
-			<img src="/images/logos/twitter_Logo blue.svg" alt="Twitter logo" />Twitter
-		</td>
+		<td>Misskey.io</td>
 		<td
-			><a href="https://twitter.com/Rinrin_2nd" target="_blank" rel="noopener noreferrer"
-				>@Rinrin_2nd</a
+			><a href="https://misskey.io/@Rinrin0413" target="_blank" rel="noopener noreferrer"
+				>@Rinrin0413</a
 			></td
 		>
 	</tr>
@@ -50,6 +48,15 @@
 				>@Rinrin0413</a
 			>
 		</td>
+	</tr>
+	<tr>
+		<td>
+			<img src="/images/logos/x_logo.svg" alt="X logo" />X
+		</td>
+		<td
+			><a href="https://x.com/Rinrin_2nd" target="_blank" rel="noopener noreferrer">@Rinrin_2nd</a
+			></td
+		>
 	</tr>
 </table>
 

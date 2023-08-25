@@ -77,3 +77,8 @@ export function fmt_month(month: number | null) {
 		return months[month - 1];
 	}
 }
+
+/** Toggles body scroll prevention. */
+export function toggle_scroll_prevention(prevent: boolean) {
+	document.getElementsByTagName('body')[0].style.overflow = prevent ? 'hidden' : 'auto';
+}

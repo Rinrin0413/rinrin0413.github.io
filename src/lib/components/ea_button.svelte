@@ -1,11 +1,15 @@
 <script lang="ts">
 	import { decrypt_ea } from '$lib/decrypt_ea';
 
+	/** Whether the button is mini version. */
+	export let mini = false;
+
 	let is_ea_link_in_progress = false;
 </script>
 
 <button
 	class="a"
+	class:mini
 	class:progress={is_ea_link_in_progress}
 	on:click={() => {
 		if (!is_ea_link_in_progress) {
@@ -19,6 +23,8 @@
 >
 
 <style lang="scss">
+	@use '/assets/stylesheets/variables/mixin' as *;
+
 	button {
 		padding: 0;
 		font-family: inherit;
@@ -26,6 +32,15 @@
 		background: none;
 		border: none;
 		transition: 0.26s;
+
+		@include sp() {
+			&.mini span {
+				&:before,
+				&:after {
+					font-size: 10px;
+				}
+			}
+		}
 
 		&.progress {
 			color: black;

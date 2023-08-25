@@ -7,6 +7,7 @@
 	import MinimalContactTable from './minimal_contact_table.svelte';
 
 	import { site_url } from '$lib/variables';
+	import { _ } from 'svelte-i18n';
 	import { calc_age } from '$lib/util';
 
 	const head = {
@@ -26,28 +27,28 @@
 	<meta property="og:type" content="website" />
 </svelte:head>
 
-<img src="/images/rinrin.webp" alt="Rinrin" id="icon" />
+<img src="/images/rinrin.webp" alt={$_('home.icon')} id="icon" />
 
 <section id="about">
-	<Title text="About me" ja="わたしはだれだ!!!" />
+	<Title text="About me" />
 	<p id="large">
-		あああ！ こんにちは。<br />
-		私は{calc_age()}歳の学生です。
+		{@html $_('home.greeting', { values: { age: calc_age() } })}
 	</p>
 </section>
 
 <Hr />
 
 <section id="contents">
-	<Title text="Table of Contents" ja="もくじー" />
+	<Title text="Table of Contents" />
+	<p>{$_('home.tableOfContents')}</p>
 	<ContentsTable />
 </section>
 
 <Hr />
 
 <section id="activities">
-	<Title text="Major Activities" ja="主なすること。" />
-	<p>何をしているか</p>
+	<Title text="Major Activities" />
+	<p>{$_('home.whatIDo')}</p>
 	<ul>
 		<li><a href="#acivity-programming">Programming</a></li>
 		<li><a href="#acivity-game">Game</a></li>
@@ -59,21 +60,18 @@
 <Hr />
 
 <section id="chronicle">
-	<Title text="Chronicle" ja="我が悠遠なる秀悦の歴史" />
-	<p>我が悠遠なる秀悦の歴史</p>
+	<Title text="Chronicle" />
+	<p>{$_('home.chronicle')}</p>
 	<Chronicle />
 </section>
 
 <Hr />
 
 <section id="contact">
-	<Title text="Contact / Social" ja="連絡先とか" />
-	<p>
-		基本的には Discordサーバー入ってそこで言うか DM してくれれば気づく。
-		出先だと気付かないかもだから緊急だったらメール送ってください。
-	</p>
+	<Title text="Contact / Social" />
+	<p>{$_('home.contact')}</p>
 	<MinimalContactTable />
-	<p><a href="social">その他のソーシャルアカウント</a></p>
+	<p><a href="social">{$_('home.otherSocial')}</a></p>
 </section>
 
 <style lang="scss">

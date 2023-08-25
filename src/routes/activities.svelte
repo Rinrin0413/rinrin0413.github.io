@@ -2,6 +2,7 @@
 	import { onMount } from 'svelte';
 	import { browser } from '$app/environment';
 	import { add_class_on_visible } from '$lib/util';
+	import { _ } from 'svelte-i18n';
 
 	onMount(fade_in);
 	if (browser) window.addEventListener('scroll', fade_in);
@@ -14,82 +15,69 @@
 <div class="container">
 	<div class="act act-prog" class:fade-in-up-zoom={false}>
 		<h1 id="acivity-programming" class="c5">Programming</h1>
-		<p>13歳頃から始めた。あまり広い分野は網羅していない。</p>
+		<p>{$_('activities.programming.desc')}</p>
 		<br />
-		<h2 class="c5"><a href="https://www.rust-lang.org">Rust</a></h2>
-		<p>現在一番好きな言语🦀 名前の拡張子もRustです。 全开発者使用しろ。</p>
+		<h2 class="c5"><a href="https://rust-lang.org">Rust</a></h2>
+		<p>{$_('activities.programming.rust')}</p>
 		<br />
 		<h2 class="c5">Graphics</h2>
 		<p>
-			マインクラフト統合版でシェーダーを描いてから好きになった。
-			現在はJava版の方でシェーダーを作っている。<br />
-			使う言語は:
+			{$_('activities.programming.graphics.desc')}<br />{$_(
+				'activities.programming.graphics.langsToUse'
+			)}<br />
 			<a href="https://learn.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl"
 				>HLSL</a
-			>(もう書かないかも),
-			<a href="https://www.opengl.org">GLSL</a>,
-			<a href="https://www.w3.org/TR/WGSL">WGSL</a>
+			>({$_('activities.programming.graphics.mayNotUse')}),
+			<a href="https://opengl.org">GLSL</a>,
+			<a href="https://w3.org/TR/WGSL">WGSL</a>
 		</p>
 		<br />
 		<h2 class="c5">Web Dev.</h2>
 		<p>
-			基本的にスタイルシートでストレスが溜まるのであまりやりたくない。
-			普通のCSSだともう精神が崩壊するので <a href="https://sass-lang.com">Sass</a> 使え。SASS
-			はインデント構文なので SCSS を使う。 こんな感じで Web開発は全然ゴリゴリにやってないので、<a
-				href="https://svelte.dev/">Svelte</a
-			>以外のフレームワークは使ったことがない。 このサイトも
-			<a href="https://svelte.dev/">Svelte</a> を使って作った。
+			{$_('activities.programming.webdev.0')}<a href="https://sass-lang.com">Sass</a>{$_(
+				'activities.programming.webdev.1'
+			)}<a href="https://svelte.dev/">Svelte</a>{$_('activities.programming.webdev.2')}
 		</p>
 		<br />
-		<h2 class="c5"><a href="https://git-scm.com/">Git</a></h2>
+		<h2 class="c5"><a href="https://git-scm.com">Git</a></h2>
 		<p>
-			基本的なことはできるけど フラグとかは全然覚えられない。
-			個人リポジトリとかだとブランチの管理が雑。 リモートリポジトリは <a href="https://github.com/"
-				>GitHub</a
-			> が主。
+			{$_('activities.programming.git.0')}<a href="https://github.com">GitHub</a>{$_(
+				'activities.programming.git.1'
+			)}
 		</p>
 	</div>
 	<div class="act act-game" class:fade-in-up-zoom={false}>
 		<h1 id="acivity-game" class="c5">Game</h1>
-		<p>RPG みたいなのはここには載せてない。</p>
+		<p>{$_('activities.game.desc')}</p>
 		<br />
 		<h2><a href="https://tetr.io">TETR.IO</a></h2>
-		<p>
-			TETR.IO というのは某社会主義連邞生まれの某落ちものパズルゲーム風のインディーゲーム。
-			向いてるかは別として 一番楽しいと思ってる。2023年5月時点では SS帯。
-		</p>
+		<p>{$_('activities.game.tetrio')}</p>
 		<br />
-		<h2><a href="https://www.minecraft.net">Minecraft</a></h2>
-		<p>
-			一番長くやってる。Wii U版と統合版はもうやってなくて Java版がメイン。 Wii
-			U版やってた時代では建築していることが多かった。統合版始めてからはアドオン開発やらシェーダー開発もするようになったが、<del
-				>マイクロソフト</del
-			>による度重なる破壊活動でもう完全に萎えた。 Java版では ちまちま開発している。
-		</p>
+		<h2><a href="https://minecraft.net">Minecraft</a></h2>
+		<p>{$_('activities.game.mc.0')}<del>{$_('w.microsoft')}</del>{$_('activities.game.mc.1')}</p>
 		<br />
-		<h2><a href="https://www.thatskygame.com">Sky: Children of the Light</a></h2>
-		<p>最近は時間が取れなくてあんまりログインできていない。誘ってくれれば行くかも。</p>
+		<h2><a href="https://thatskygame.com">Sky: Children of the Light</a></h2>
+		<p>{$_('activities.game.sky')}</p>
 	</div>
 	<div class="act act-music" class:fade-in-up-zoom={false}>
 		<h1 id="acivity-music" class="c5">Music</h1>
 		<p class="subtitle">|♫|♪♬♪|♪♫:|❙♪|❙</p>
 		<br />
 		<h2>Listen</h2>
-		<p>
-			古典派とロマン派の(主にピアノの)クラシック曲が好き。特にフランツ・リストの作品をよく聴く。
-		</p>
+		<p>{$_('activities.music.listen')}</p>
 		<br />
 		<h2>Play</h2>
-		<p>
-			全く上手くないが上記のようなクラシック曲とかをピアノで弾いてる。
-			アルトリコーダーやらアコースティックギターやらも家にあるが全く触らない。
-		</p>
+		<p>{$_('activities.music.play')}</p>
 		<br />
 		<h2>Compose</h2>
 		<p>
-			クラシックっぽい曲を作ったりクラシックを編曲したり。 ただし理論をほとんど考えていないので
-			コード進行とかについては何も知らない。 作曲には基本的に MuseScore 3, 4 を使っている。
+			{$_('activities.music.compose.0')}<a href="https://musescore.org">MuseScore 3, 4</a>{$_(
+				'activities.music.compose.1'
+			)}
 		</p>
+		<br />
+		<h2>Sing</h2>
+		<p>{$_('activities.music.sing')}</p>
 	</div>
 </div>
 
