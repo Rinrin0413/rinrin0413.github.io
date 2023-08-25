@@ -14,3 +14,15 @@
 
 </div>
 </details>
+
+<details>
+<summary>CSS Variables</summary>
+<div>
+
+| Name | Description | Usable area |
+| --: | --- | --- |
+| `--vh001` | viewport height * 0.01 (realtime update) | all |
+| `--max-vh001` | viewport max height ever * 0.01 (realtime update) | all |
+
+</div>
+</details>
