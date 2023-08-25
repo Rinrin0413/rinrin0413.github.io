@@ -1,8 +1,22 @@
 <script lang="ts">
 	import { copyright, site_url } from '$lib/variables';
+	import { browser } from '$app/environment';
 
 	import Header from '$lib/components/header/header.svelte';
 	import Footer from '$lib/components/footer.svelte';
+
+	if (browser) {
+		window.addEventListener('resize', set_vh001);
+		set_vh001();
+	}
+
+	/**
+	 * Sets css variable `--vh001.
+	 * Must be called in the browser.
+	 */
+	 function set_vh001() {
+		document.documentElement.style.setProperty('--vh001', window.innerHeight * 0.01 + 'px');
+	}
 </script>
 
 <svelte:head>
