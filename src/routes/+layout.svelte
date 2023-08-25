@@ -5,9 +5,13 @@
 	import Header from '$lib/components/header/header.svelte';
 	import Footer from '$lib/components/footer.svelte';
 
+	let max_vh1: number;
+
 	if (browser) {
 		window.addEventListener('resize', set_vh001);
+		window.addEventListener('resize', () => { if (max_vh1 < window.innerHeight) set_max_vh001(); });
 		set_vh001();
+		set_max_vh001()
 	}
 
 	/**
@@ -16,6 +20,15 @@
 	 */
 	 function set_vh001() {
 		document.documentElement.style.setProperty('--vh001', window.innerHeight * 0.01 + 'px');
+	}
+
+	/**
+	 * Sets css variable `--max-vh001`.
+	 * Must be called in the browser.
+	 */
+	 function set_max_vh001() {
+		max_vh1 = window.innerHeight;
+		document.documentElement.style.setProperty('--max-vh001', max_vh1*0.01 + 'px');
 	}
 </script>
 
