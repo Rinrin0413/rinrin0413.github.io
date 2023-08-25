@@ -141,7 +141,7 @@ header {
 		justify-content: right;
 		align-items: center;
 		height: $header-height;
-		position: relative;
+		position: fixed;
 		right: 64px;
 
 		a {
