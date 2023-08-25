@@ -16,7 +16,7 @@ html {
 }
 
 html::before {
-	content: "";
+	content: '';
 	background: linear-gradient(152deg, #f5deb3, #f7f5f1ab 42%, #f7f5f1ab 68%, #f5deb3),
 		url('/images/wallpapers/sd_kowloon-walled-city.webp');
 	background-repeat: no-repeat;
@@ -27,8 +27,8 @@ html::before {
 	top: 0;
 	left: 0;
 	width: 100%;
-	height: calc(var(--max-vh001, 1vh)*100);
-	z-index:-1;
+	height: calc(var(--max-vh001, 1vh) * 100);
+	z-index: -1;
 }
 
 body {

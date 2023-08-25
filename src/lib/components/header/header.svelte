@@ -19,7 +19,7 @@
 	let is_after_drawer_menu_closed = false;
 
 	if (browser) addEventListener('scroll', update_scroll);
-	
+
 	let is_drawer_menu_opened = false;
 	let enable_fade_in = true;
 
