@@ -10,6 +10,7 @@
 | 128 | header title (`header.scss/#logo::after`) |
 | 127 | header bg (`header.scss/#header-bg`) |
 | 126 | drawer menu bg (`header.scss/#drawer-menu-bg`) |
+| -1 | fixed bg (`global.css/html::before`) |
 
 </div>
 </details>

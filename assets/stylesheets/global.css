@@ -13,12 +13,22 @@ html {
 	color: #533618;
 	text-align: center;
 	scroll-behavior: smooth;
+}
+
+html::before {
+	content: "";
 	background: linear-gradient(152deg, #f5deb3, #f7f5f1ab 42%, #f7f5f1ab 68%, #f5deb3),
 		url('/images/wallpapers/sd_kowloon-walled-city.webp');
 	background-repeat: no-repeat;
 	background-size: cover;
-	background-attachment: fixed;
 	background-position: center;
+	display: block;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: calc(var(--max-vh001, 1vh)*100);
+	z-index:-1;
 }
 
 body {
