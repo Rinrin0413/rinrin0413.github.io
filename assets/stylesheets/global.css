@@ -1,11 +1,13 @@
 @font-face {
 	font-family: 'Kiwi Maru';
-	src: url('../fonts/Kiwi_Maru/KiwiMaru-Medium.ttf');
+	src: url('../fonts/Kiwi_Maru/KiwiMaru-Medium.woff2') format('woff2'),
+		url('../fonts/Kiwi_Maru/KiwiMaru-Medium.ttf') format('truetype');
 }
 
 @font-face {
 	font-family: 'Source Code Pro';
-	src: url('../fonts/Source_Code_Pro/static/SourceCodePro-Regular.ttf');
+	src: url('../fonts/Source_Code_Pro/static/SCodePro-Regular.woff2') format('woff2'),
+		url('../fonts/Source_Code_Pro/static/SourceCodePro-Regular.ttf') format('truetype');
 }
 
 html {
