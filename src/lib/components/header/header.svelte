@@ -111,7 +111,7 @@
 		class:fade-in={enable_fade_in}
 		on:click={() => {
 			toggle_drawer_menu(false);
-		}}><img src="/images/favicon.png" alt={$_('header.logo')} /></a
+		}}><img src="/images/logo.svg" alt={$_('header.logo')} /></a
 	>
 </header>
 
