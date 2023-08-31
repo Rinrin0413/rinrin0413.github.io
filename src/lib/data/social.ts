@@ -18,6 +18,12 @@ export const socials = [
 		icon: null // Can not use the logo due to the ToS
 	},
 	{
+		service: 'Bluesky Social',
+		name: '@rinrin0413.bsky.social',
+		url: 'https://bsky.app/profile/rinrin0413.bsky.social',
+		icon: null // Could not find the guideline
+	},
+	{
 		service: 'Board Game Arena',
 		name: 'Rinrin-rs',
 		url: 'https://boardgamearena.com/player?id=93356517',
