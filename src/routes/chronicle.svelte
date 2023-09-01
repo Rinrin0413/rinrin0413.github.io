@@ -41,5 +41,5 @@
 
 <style lang="scss">
 	@use '/assets/stylesheets/utils/fade_in_up_zoom';
-	@import '/assets/stylesheets/chronicle';
+	@use '/assets/stylesheets/chronicle';
 </style>
