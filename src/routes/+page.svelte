@@ -31,7 +31,7 @@
 
 <section id="about">
 	<Title text="About me" />
-	<p id="large">
+	<p class="large">
 		{@html $_('home.greeting', { values: { age: calc_age() } })}
 	</p>
 </section>
