@@ -8,8 +8,8 @@
 	let max_vh1: number;
 
 	if (browser) {
-		window.addEventListener('resize', set_vh001);
 		window.addEventListener('resize', () => {
+			set_vh001();
 			if (max_vh1 < window.innerHeight) set_max_vh001();
 		});
 		set_vh001();
