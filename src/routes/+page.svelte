@@ -27,7 +27,7 @@
 	<meta property="og:type" content="website" />
 </svelte:head>
 
-<img src="/images/rinrin_256px.webp" alt={$_('home.icon')} id="icon" />
+<img src="/images/icon_384px.webp" alt={$_('home.icon')} id="icon" />
 
 <section id="about">
 	<Title text="About me" />
