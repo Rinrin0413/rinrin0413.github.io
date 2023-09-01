@@ -30,9 +30,9 @@
 	>
 		{#each chronicle as { year, events }}
 			{#each events as { month, event }, i}
-				<li>
-					<h1 class:no-pin={i != 0}>{@html fmt_month(month)} {year}</h1>
-					<div>{$_('chronicle.' + event)}</div>
+				<li class="row">
+					<div class="year" class:no-pin={i != 0}>{@html fmt_month(month)} {year}</div>
+					<div class="event">{$_('chronicle.' + event)}</div>
 				</li>
 			{/each}
 		{/each}
