@@ -67,17 +67,17 @@
 				margin-left: 10px;
 			}
 		}
-
-		&.shadow {
-			transform: translateX(-50%) scale(1, -1);
-			transform-origin: 50% 43px;
-			filter: blur(1.2px);
-			color: transparent;
-			background: linear-gradient(0deg, rgba($text-primary, 0.4), transparent 72%);
-			background-clip: text;
-			-webkit-background-clip: text;
-			user-select: none;
-		}
+	}
+	
+	.shadow {
+		transform: translateX(-50%) scale(1, -1);
+		transform-origin: 50% 43px;
+		filter: blur(1.2px);
+		color: transparent;
+		background: linear-gradient(0deg, rgba($text-primary, 0.4), transparent 72%);
+		background-clip: text;
+		-webkit-background-clip: text;
+		user-select: none;
 	}
 
 	.mini h1 {
