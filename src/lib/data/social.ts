@@ -1,7 +1,7 @@
 const icons = {
 	discord: 'discord-mark-blue.svg',
 	x: 'x_logo.svg',
-	xbox: 'xbox.png'
+	xbox: 'xbox.webp'
 };
 
 export const socials = [
@@ -9,7 +9,7 @@ export const socials = [
 		service: 'Aipictors',
 		name: 'rin',
 		url: 'https://aipictors.com/user/?id=rin',
-		icon: 'aipictors_square_logo.png'
+		icon: 'aipictors_square_logo.webp'
 	},
 	{
 		service: 'Ameba',
@@ -75,7 +75,7 @@ export const socials = [
 		service: 'Geartics',
 		name: 'rinrin',
 		url: 'https://geartics.com/rinrin',
-		icon: 'geartics_1_Primary_logo_on_transparent_1024.png'
+		icon: 'geartics_1_Primary_logo_on_transparent_39.webp'
 	},
 	{
 		service: 'GitHub',
@@ -117,7 +117,7 @@ export const socials = [
 		service: 'Ko-fi',
 		name: 'rinrin0413',
 		url: 'https://ko-fi.com/rinrin0413',
-		icon: 'Ko-fi_Icon_RGB_rounded.png'
+		icon: 'Ko-fi_Icon_RGB_rounded.webp'
 	},
 	{
 		service: 'MCPEDL',
@@ -159,7 +159,7 @@ export const socials = [
 		service: 'Niconico',
 		name: 'Rinrin.rs',
 		url: 'https://nicovideo.jp/user/121780655',
-		icon: 'nc296561.png'
+		icon: 'nc296561.webp'
 	},
 	{
 		service: 'Noteflight',
@@ -183,25 +183,25 @@ export const socials = [
 		service: 'osu!',
 		name: 'Rinrin-rs',
 		url: 'https://osu.ppy.sh/users/32818234',
-		icon: 'osu!.png'
+		icon: 'osu!.webp'
 	},
 	{
 		service: 'Patreon',
 		name: 'Rinrin.rs',
 		url: 'https://patreon.com/user?u=68900751',
-		icon: 'Digital-Patreon-Logo_FieryCoral.png'
+		icon: 'Digital-Patreon-Logo_FieryCoral.webp'
 	},
 	{
 		service: 'pixiv',
 		name: 'Rinrin.rs',
 		url: 'https://pixiv.net/users/81973273',
-		icon: 'pixiv_logo_icon_r.png'
+		icon: 'pixiv_logo_icon_r.webp'
 	},
 	{
 		service: 'Qiita',
 		name: '@Rinrin0413',
 		url: 'https://qiita.com/Rinrin0413',
-		icon: 'qiita_favicon.png'
+		icon: 'qiita_favicon.webp'
 	},
 	{
 		service: 'Reddit',
@@ -219,13 +219,13 @@ export const socials = [
 		service: 'SoundCloud',
 		name: 'rinrin0413',
 		url: 'https://soundcloud.com/rinrin0413',
-		icon: 'soundcloud_orange_white_64-94fc761.png'
+		icon: 'soundcloud_orange_white_39-94fc761.webp'
 	},
 	{
 		service: 'Spotify',
 		name: 'Rinrin.rs',
 		url: 'https://open.spotify.com/user/orr3huuq7wdmws3a6tgyh50d0?si=f680715bc4a54a5e',
-		icon: 'Spotify_Icon_RGB_Green.png'
+		icon: 'Spotify_Icon_RGB_Green.webp'
 	},
 	{
 		service: 'Steam',
@@ -291,6 +291,6 @@ export const socials = [
 		service: 'YouTube',
 		name: '@rinrin-rs',
 		url: 'https://youtube.com/@rinrin-rs',
-		icon: 'yt_icon_rgb.png'
+		icon: 'yt_icon_rgb.webp'
 	}
 ];
