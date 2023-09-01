@@ -34,7 +34,7 @@
 
 	<p><span class="email">Email</span> <EaButton /></p>
 
-	<table>
+	<table class="social-table">
 		{#each socials as { service, name, url, icon }}
 			<tr>
 				<td>
