@@ -87,16 +87,17 @@
 		{#each items as item}
 			<a
 				href={item.id}
+				class="item"
 				on:click={() => {
 					toggle_drawer_menu(false);
 				}}
 			>
 				<Icon id={item.id} />
-				<span>{$_(item.name)}</span>
+				<span class="item-text">{$_(item.name)}</span>
 			</a>
 		{/each}
 	</nav>
-	<div class:hidden={is_at_top}>
+	<div class="hamburger-btn" class:hidden={is_at_top}>
 		<HamburgerButton
 			is_opened={is_drawer_menu_opened}
 			on:toggle={(e) => {
