@@ -14,7 +14,7 @@
 		add_class_on_visible(document.getElementsByClassName('container'), 'fade-in-up-zoom');
 	}
 
-	function toggle() {
+	function open() {
 		is_opened = !is_opened;
 	}
 </script>
@@ -23,9 +23,9 @@
 	<ul
 		class:opened={is_opened}
 		title={!is_opened ? 'Open' : ''}
-		on:click|once={toggle}
+		on:click|once={open}
 		on:keypress|once={(e) => {
-			if (e.key === 'Enter') toggle;
+			if (e.key === 'Enter') open;
 		}}
 	>
 		{#each chronicle as { year, events }}
