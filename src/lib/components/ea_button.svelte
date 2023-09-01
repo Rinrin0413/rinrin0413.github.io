@@ -32,43 +32,43 @@
 		background: none;
 		border: none;
 		transition: 0.26s;
+	}
 
-		@include sp() {
-			&.mini span {
-				&:before,
-				&:after {
-					font-size: 10px;
-				}
+
+	span {
+		&:first-child {
+			&:before {
+				content: 'rinrin0413';
+			}
+
+			&:after {
+				content: '.';
 			}
 		}
 
-		&.progress {
-			color: black;
-			text-decoration: none;
-			opacity: 0.5;
-			cursor: progress;
-		}
-
-		span {
-			&:first-child {
-				&:before {
-					content: 'rinrin0413';
-				}
-
-				&:after {
-					content: '.';
-				}
+		&:last-child {
+			&:before {
+				content: 'valley';
 			}
 
-			&:last-child {
-				&:before {
-					content: 'valley';
-				}
-
-				&:after {
-					content: '@gmail.com';
-				}
+			&:after {
+				content: '@gmail.com';
 			}
 		}
+	}
+
+	@include sp() {
+		.mini span {
+			&:before,
+			&:after {
+				font-size: 10px;
+			}
+		}
+	}
+	.progress {
+		color: black;
+		text-decoration: none;
+		opacity: 0.5;
+		cursor: progress;
 	}
 </style>
