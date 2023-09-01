@@ -1,6 +1,5 @@
 @use '../variables/dimension' as *;
 @use '../variables/color' as *;
-@use '../variables/mixin' as *;
 
 button {
 	$btn-size: $header-height * 0.82;

@@ -30,9 +30,6 @@
 <style lang="scss">
 	@use '/assets/stylesheets/header/button';
 
-	@use '/assets/stylesheets/variables/dimension' as *;
-	@use '/assets/stylesheets/variables/color' as *;
-
 	button {
 		display: inline-block;
 
