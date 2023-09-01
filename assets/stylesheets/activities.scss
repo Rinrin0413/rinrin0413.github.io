@@ -29,13 +29,8 @@ h2 {
 }
 
 p {
-	font-size: 16px;
 	margin: 0;
 	margin-bottom: 18px;
-
-	@include sp {
-		font-size: 14px;
-	}
 }
 
 #act-prog {
