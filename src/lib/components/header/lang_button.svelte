@@ -36,10 +36,6 @@
 	button {
 		display: inline-block;
 
-		span {
-			transition: 0.3s;
-		}
-
 		&:active {
 			animation: rotate-y 0.17s;
 
@@ -59,5 +55,9 @@
 				}
 			}
 		}
+	}
+	
+	span {
+		transition: 0.3s;
 	}
 </style>

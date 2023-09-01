@@ -19,29 +19,28 @@ button {
 	&:hover {
 		transform: translateY(2px);
 	}
+}
 
-	svg,
-	span {
-		display: inline-block;
-	}
+svg,
+span {
+	display: inline-block;
+	position: relative;
+}
 
-	svg {
-		height: 32.4px;
-		width: auto;
-		fill: $text-dark;
-		position: relative;
-		top: 2px;
-		transform: scale(1.1);
-	}
+svg {
+	height: 32.4px;
+	width: auto;
+	fill: $text-dark;
+	top: 2px;
+	transform: scale(1.1);
+}
 
-	span {
-		font-size: 8px;
-		font-weight: 900;
-		color: $text-dark;
-		position: relative;
-		top: -7px;
-		letter-spacing: -0.95px;
-		white-space: nowrap;
-		transform: scale(1.56);
-	}
+span {
+	font-size: 8px;
+	font-weight: 900;
+	color: $text-dark;
+	top: -7px;
+	letter-spacing: -0.95px;
+	white-space: nowrap;
+	transform: scale(1.56);
 }
