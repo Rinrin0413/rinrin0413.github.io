@@ -68,7 +68,7 @@
 			}
 		}
 	}
-	
+
 	.shadow {
 		transform: translateX(-50%) scale(1, -1);
 		transform-origin: 50% 43px;

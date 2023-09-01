@@ -34,7 +34,6 @@
 		transition: 0.26s;
 	}
 
-
 	span {
 		&:first-child {
 			&:before {

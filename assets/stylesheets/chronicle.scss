@@ -52,10 +52,10 @@ ul {
 		.row {
 			&:first-child {
 				filter: blur(0);
-	
+
 				@include sp {
 					white-space: nowrap;
-	
+
 					.event {
 						font-size: 11px;
 					}
