@@ -106,7 +106,7 @@
 	</div>
 	<a
 		href="/"
-		id="logo"
+		id="header-logo"
 		class:center={is_at_top}
 		class:fade-in={enable_fade_in}
 		on:click={() => {
