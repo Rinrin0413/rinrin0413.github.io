@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { createEventDispatcher } from 'svelte';
+	import { set_vh001 } from '$lib/util';
 
 	export let is_opened: boolean;
 	const dispatch = createEventDispatcher();
@@ -9,6 +10,7 @@
 	on:click={() => {
 		is_opened = !is_opened;
 		dispatch('toggle', { is_opened });
+		set_vh001();
 	}}
 >
 	{#if is_opened}
