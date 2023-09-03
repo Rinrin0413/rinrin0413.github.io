@@ -37,7 +37,9 @@
 		<p>
 			{$_('activities.programming.webdev.0')}<a href="https://sass-lang.com">Sass</a>{$_(
 				'activities.programming.webdev.1'
-			)}<a href="https://svelte.dev/">Svelte</a>{$_('activities.programming.webdev.2')}
+			)}<a href="https://svelte.dev/">Svelte</a>{$_('activities.programming.webdev.2')}<br />{$_(
+				'activities.programming.webdev.3'
+			)}
 		</p>
 		<br />
 		<h2 class="c5"><a href="https://git-scm.com">Git</a></h2>

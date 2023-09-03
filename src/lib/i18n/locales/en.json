@@ -30,7 +30,8 @@
 			"webdev": [
 				"I basically don't want to do this because stylesheets are very stressful. I use SCSS of ",
 				" because \"using normal CSS\" breaks my sprit (SAAS requires indentation rules so i don't use it).\ni.e. i don't have much motivation for web development. So i have never used a framework other than ",
-				". This home page was made with it."
+				". This home page was made with it.",
+				"and I HATE MOBILE SAFARI."
 			],
 			"git": [
 				"I learned the basics but i can never remember flags, options, etc.\nI am quite sloppy about managing branches in my personal repositories. I basically use ",
