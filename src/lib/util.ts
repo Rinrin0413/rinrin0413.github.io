@@ -83,13 +83,12 @@ export function toggle_scroll_prevention(prevent: boolean) {
 	document.getElementsByTagName('body')[0].style.overflow = prevent ? 'hidden' : 'auto';
 }
 
-
 /**
  * Sets css variable `--vh001`.
  * Must be called in the browser.
- * 
+ *
  * # Example:
- * 
+ *
  * ```ts
  * 	if (browser) {
  *		window.addEventListener('resize', set_vh001);

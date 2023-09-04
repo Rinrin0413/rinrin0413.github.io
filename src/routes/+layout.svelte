@@ -34,7 +34,7 @@
 	<meta name="format-detection" content="telephone=no,address=no,email=no" />
 
 	<meta property="og:site_name" content="Rinrin.rs' Homepage" />
-	<meta property="og:image" content={site_url}{logo_180px_oxipng} />
+	<meta property="og:image" content="{site_url}{logo_180px_oxipng}" />
 	<meta property="og:locale" content="ja_JP" />
 	<meta name="twitter:card" content="summary" />
 	<meta name="twitter:site" content={site_url} />
