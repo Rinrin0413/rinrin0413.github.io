@@ -158,6 +158,22 @@ nav {
 		margin-right: 8px;
 	}
 
+	&.active {
+		background-color: #ffe6c420;
+
+		.item-text::after {
+			content: '';
+			display: block;
+			width: 115%;
+			height: 3px;
+			background-color: rgba($text-primary, 0.7);
+			position: absolute;
+			bottom: -2px;
+			left: 0;
+			transform: translateX(-5%);
+		}
+	}
+	
 	&:hover {
 		background-color: #ffe6c450;
 	}

@@ -7,6 +7,7 @@
 	import { browser } from '$app/environment';
 	import { toggleScrollPrevention } from '$lib/util';
 	import { blur } from 'svelte/transition';
+	import { page } from '$app/stores';
 	import { _ } from 'svelte-i18n';
 
 	onMount(updateScroll);
@@ -23,6 +24,7 @@
 	let isDrawerMenuOpened = false;
 	let enableFadeIn = true;
 
+	$: pathname = $page.url.pathname;
 	$: if (!isAtTop) enableFadeIn = false;
 
 	const ITEMS = [
@@ -88,6 +90,7 @@
 			<a
 				href={item.id}
 				class="item"
+				class:active={pathname == '/' + item.id}
 				on:click={() => {
 					toggleDrawerMenu(false);
 				}}
