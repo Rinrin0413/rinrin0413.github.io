@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Space from '$lib/components/space.svelte';
+	import Space from '$lib/components/Space.svelte';
 
 	import { browser } from '$app/environment';
 
@@ -7,8 +7,8 @@
 
 	let vw: number;
 	let node: HTMLHeadingElement;
-	let init_width: number;
-	let is_overflown = false;
+	let initWidth: number;
+	let isOverflown = false;
 
 	if (browser) {
 		update_vw();
@@ -17,10 +17,10 @@
 	}
 
 	$: if (node) {
-		if (!init_width) {
-			init_width = node.offsetWidth;
+		if (!initWidth) {
+			initWidth = node.offsetWidth;
 		}
-		is_overflown = vw <= init_width;
+		isOverflown = vw <= initWidth;
 	}
 
 	function update_vw() {
@@ -28,7 +28,7 @@
 	}
 </script>
 
-<div class:mini={is_overflown}>
+<div class:mini={isOverflown}>
 	<h1 bind:this={node}>{text}</h1>
 	<h1 class="shadow">{text}</h1>
 	<Space height={'64px'} />

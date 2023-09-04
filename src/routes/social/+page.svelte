@@ -1,26 +1,26 @@
 <script lang="ts">
-	import Title from '$lib/components/title.svelte';
-	import Space from '$lib/components/space.svelte';
-	import EaButton from '$lib/components/ea_button.svelte';
+	import Title from '$lib/components/Title.svelte';
+	import Space from '$lib/components/Space.svelte';
+	import EaButton from '$lib/components/EaButton.svelte';
 
-	import { site_url } from '$lib/variables';
+	import { SITE_URL } from '$lib/variables';
 	import { _ } from 'svelte-i18n';
-	import { socials } from '$lib/data/social';
+	import { SOCIALS } from '$lib/data/social';
 
-	const head = {
+	const HEAD = {
 		title: 'Social',
 		desc: 'Rinrin.rs のソーシャルアカウント一覧'
 	};
 </script>
 
 <svelte:head>
-	<title>Rinrin.rs | {head.title}</title>
-	<meta name="title" content="Rinrin.rs | {head.title}" />
-	<meta name="description" content={head.desc} />
+	<title>Rinrin.rs | {HEAD.title}</title>
+	<meta name="title" content="Rinrin.rs | {HEAD.title}" />
+	<meta name="description" content={HEAD.desc} />
 
-	<meta property="og:title" content={head.title} />
-	<meta property="og:description" content={head.desc} />
-	<meta property="og:url" content="{site_url}/social" />
+	<meta property="og:title" content={HEAD.title} />
+	<meta property="og:description" content={HEAD.desc} />
+	<meta property="og:url" content="{SITE_URL}/social" />
 	<meta property="og:type" content="article" />
 </svelte:head>
 
@@ -35,7 +35,7 @@
 	<p><span class="email">Email</span> <EaButton /></p>
 
 	<table class="social-table">
-		{#each socials as { service, name, url, icon }}
+		{#each SOCIALS as { service, name, url, icon }}
 			<tr>
 				<td>
 					{#if icon}<img src="/images/logos/{icon}" alt="{service} logo" />{/if}{service}

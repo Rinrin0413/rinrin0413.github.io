@@ -1,4 +1,4 @@
-export const chronicle = [
+export const CHRONICLE = [
 	{
 		year: 2006,
 		events: [{ month: 4, event: '2006.4' }]

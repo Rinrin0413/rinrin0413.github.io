@@ -1,37 +1,37 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { browser } from '$app/environment';
-	import { chronicle } from '$lib/data/chronicle';
-	import { fmt_month, add_class_on_visible } from '$lib/util';
+	import { CHRONICLE } from '$lib/data/chronicle';
+	import { fmtMonth, addClassOnVisible } from '$lib/util';
 	import { _ } from 'svelte-i18n';
 
-	onMount(fade_in);
-	if (browser) window.addEventListener('scroll', fade_in);
+	onMount(fadeIn);
+	if (browser) window.addEventListener('scroll', fadeIn);
 
-	let is_opened = false;
+	let isOpened = false;
 
-	function fade_in() {
-		add_class_on_visible(document.getElementsByClassName('container'), 'fade-in-up-zoom');
+	function fadeIn() {
+		addClassOnVisible(document.getElementsByClassName('container'), 'fade-in-up-zoom');
 	}
 
 	function open() {
-		is_opened = !is_opened;
+		isOpened = !isOpened;
 	}
 </script>
 
 <div class="container" class:fade-in-up-zoom={false}>
 	<ul
-		class:opened={is_opened}
-		title={!is_opened ? 'Open' : ''}
+		class:opened={isOpened}
+		title={!isOpened ? 'Open' : ''}
 		on:click|once={open}
 		on:keypress|once={(e) => {
 			if (e.key === 'Enter') open;
 		}}
 	>
-		{#each chronicle as { year, events }}
+		{#each CHRONICLE as { year, events }}
 			{#each events as { month, event }, i}
 				<li class="row">
-					<div class="year" class:no-pin={i != 0}>{@html fmt_month(month)} {year}</div>
+					<div class="year" class:no-pin={i != 0}>{@html fmtMonth(month)} {year}</div>
 					<div class="event">{$_('chronicle.' + event)}</div>
 				</li>
 			{/each}

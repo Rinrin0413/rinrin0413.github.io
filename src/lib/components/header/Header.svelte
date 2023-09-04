@@ -1,31 +1,31 @@
 <script lang="ts">
-	import Icon from './icon.svelte';
-	import HamburgerButton from './hamburger_button.svelte';
-	import LangButton from './lang_button.svelte';
+	import Icon from './Icon.svelte';
+	import HamburgerButton from './HamburgerButton.svelte';
+	import LangButton from './LangButton.svelte';
 
 	import { onMount } from 'svelte';
 	import { browser } from '$app/environment';
-	import { toggle_scroll_prevention } from '$lib/util';
+	import { toggleScrollPrevention } from '$lib/util';
 	import { blur } from 'svelte/transition';
 	import { _ } from 'svelte-i18n';
 
-	onMount(update_scroll);
+	onMount(updateScroll);
 
-	let is_at_top = true;
+	let isAtTop = true;
 	/**
 	 * Whether after closing drawer menu.
 	 * `false` by default because it is not "after closing" at loaded the page.
 	 */
-	let is_after_drawer_menu_closed = false;
+	let isAfterDrawerMenuClosed = false;
 
-	if (browser) addEventListener('scroll', update_scroll);
+	if (browser) addEventListener('scroll', updateScroll);
 
-	let is_drawer_menu_opened = false;
-	let enable_fade_in = true;
+	let isDrawerMenuOpened = false;
+	let enableFadeIn = true;
 
-	$: if (!is_at_top) enable_fade_in = false;
+	$: if (!isAtTop) enableFadeIn = false;
 
-	const items = [
+	const ITEMS = [
 		{
 			name: 'Profile',
 			id: 'profile'
@@ -52,44 +52,44 @@
 		}
 	];
 
-	function update_scroll() {
-		is_at_top = window.scrollY <= 0;
+	function updateScroll() {
+		isAtTop = window.scrollY <= 0;
 	}
 
 	/** Toggles drawer menu open/close. */
-	function toggle_drawer_menu(open: boolean) {
-		is_after_drawer_menu_closed = is_drawer_menu_opened;
-		is_drawer_menu_opened = open;
-		toggle_scroll_prevention(is_drawer_menu_opened);
+	function toggleDrawerMenu(open: boolean) {
+		isAfterDrawerMenuClosed = isDrawerMenuOpened;
+		isDrawerMenuOpened = open;
+		toggleScrollPrevention(isDrawerMenuOpened);
 	}
 
 	function empty() {} // eslint-disable-line @typescript-eslint/no-empty-function
 </script>
 
-{#if is_drawer_menu_opened}
+{#if isDrawerMenuOpened}
 	<div
 		id="drawer-menu-bg"
 		transition:blur={{ duration: 200 }}
 		on:click={() => {
-			toggle_drawer_menu(false);
+			toggleDrawerMenu(false);
 		}}
 		on:keypress={empty}
 	/>
 {/if}
-<div id="header-bg" class:blur={is_at_top} />
+<div id="header-bg" class:blur={isAtTop} />
 <header>
 	<nav
-		class:opened={is_drawer_menu_opened}
-		class:after-closed={is_after_drawer_menu_closed}
-		class:at-top={is_at_top}
-		class:is-not-yet-opened={!is_drawer_menu_opened && !is_after_drawer_menu_closed}
+		class:opened={isDrawerMenuOpened}
+		class:after-closed={isAfterDrawerMenuClosed}
+		class:at-top={isAtTop}
+		class:is-not-yet-opened={!isDrawerMenuOpened && !isAfterDrawerMenuClosed}
 	>
-		{#each items as item}
+		{#each ITEMS as item}
 			<a
 				href={item.id}
 				class="item"
 				on:click={() => {
-					toggle_drawer_menu(false);
+					toggleDrawerMenu(false);
 				}}
 			>
 				<Icon id={item.id} />
@@ -97,21 +97,21 @@
 			</a>
 		{/each}
 	</nav>
-	<div class="hamburger-btn" class:hidden={is_at_top}>
+	<div class="hamburger-btn" class:hidden={isAtTop}>
 		<HamburgerButton
-			is_opened={is_drawer_menu_opened}
+			isOpened={isDrawerMenuOpened}
 			on:toggle={(e) => {
-				toggle_drawer_menu(e.detail.is_opened);
+				toggleDrawerMenu(e.detail.is_opened);
 			}}
 		/><LangButton />
 	</div>
 	<a
 		href="/"
 		id="header-logo"
-		class:center={is_at_top}
-		class:fade-in={enable_fade_in}
+		class:center={isAtTop}
+		class:fade-in={enableFadeIn}
 		on:click={() => {
-			toggle_drawer_menu(false);
+			toggleDrawerMenu(false);
 		}}><img src="/images/logos/rinrin/logo.svg" alt={$_('header.logo')} /></a
 	>
 </header>

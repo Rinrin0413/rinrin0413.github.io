@@ -1,7 +1,7 @@
 /** Decrypts email address */
-export function decrypt_ea(k: number) {
-	const s = 'egiyorN0tC4mV1A3L';
-	const p = [
+export function decryptEa(k: number) {
+	const S = 'egiyorN0tC4mV1A3L';
+	const P = [
 		0x5, // ▼ Protocol
 		0x2,
 		0xe,
@@ -38,12 +38,12 @@ export function decrypt_ea(k: number) {
 		0x5
 	];
 	let r = '';
-	for (let i = 0; i < p.length; i++) {
-		const c = p[i];
-		if (c < p.length) {
-			r += s.split('').reverse().join('')[c].toLowerCase();
+	for (let i = 0; i < P.length; i++) {
+		const C = P[i];
+		if (C < P.length) {
+			r += S.split('').reverse().join('')[C].toLowerCase();
 		} else {
-			r += String.fromCharCode((c + k) / k);
+			r += String.fromCharCode((C + k) / k);
 		}
 	}
 

@@ -1,19 +1,19 @@
 <script lang="ts">
 	import { createEventDispatcher } from 'svelte';
-	import { set_vh001 } from '$lib/util';
+	import { setVh001 } from '$lib/util';
 
-	export let is_opened: boolean;
+	export let isOpened: boolean;
 	const dispatch = createEventDispatcher();
 </script>
 
 <button
 	on:click={() => {
-		is_opened = !is_opened;
-		dispatch('toggle', { is_opened });
-		set_vh001();
+		isOpened = !isOpened;
+		dispatch('toggle', { is_opened: isOpened });
+		setVh001();
 	}}
 >
-	{#if is_opened}
+	{#if isOpened}
 		<!-- 
 			Google Material Symbols and Icons - Close
 			https://fonts.google.com/icons?selected=Material%20Symbols%20Outlined%3Aclose%3AFILL%400%3Bwght%40400%3BGRAD%400%3Bopsz%4048
@@ -36,7 +36,7 @@
 			><path d="M120-240v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z" /></svg
 		>
 	{/if}
-	<span>{is_opened ? 'Close' : 'Menu'}</span>
+	<span>{isOpened ? 'Close' : 'Menu'}</span>
 </button>
 
 <style lang="scss">
