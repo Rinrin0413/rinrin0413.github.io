@@ -49,99 +49,103 @@ ul {
 			transition: 0.2s;
 		}
 
-		li:first-child {
-			filter: blur(0);
+		.row {
+			&:first-child {
+				filter: blur(0);
 
-			@include sp {
-				white-space: nowrap;
+				@include sp {
+					white-space: nowrap;
 
-				div {
-					font-size: 11px;
+					.event {
+						font-size: 11px;
+					}
 				}
 			}
-		}
 
-		li:not(:first-child) {
-			position: absolute;
-			transform: scale(0);
-			opacity: 0;
+			&:not(:first-child) {
+				position: absolute;
+				transform: scale(0);
+				opacity: 0;
+			}
+		}
+	}
+}
+
+.row {
+	display: flex;
+	justify-content: center;
+	text-align: left;
+	margin: 0 32px 0 16px;
+	transition: 0.5s;
+}
+
+.year {
+	font-family: 'Source Code Pro', monospace;
+	font-weight: 200;
+	position: relative;
+	bottom: 32px;
+	padding-right: 22px;
+	margin: 0;
+	border-right: 1px solid $line-primary;
+	white-space: nowrap;
+	font-size: 18px;
+
+	&:not(.no-pin):after {
+		content: '';
+		$size: 18px;
+		width: $size;
+		height: $size;
+		background-color: #5f4730;
+		transform: rotate(45deg);
+		position: absolute;
+		left: 111px;
+	}
+}
+
+.event {
+	$separator-color: rgba($line-primary, 0.7);
+
+	position: relative;
+	bottom: 32px;
+	left: 24px;
+	width: 512px;
+	font-size: 16px;
+	font-weight: bold;
+	border-bottom: 2.5px solid $separator-color;
+	padding: 0 6px 3px 12px;
+	margin-bottom: 48px;
+	transition: 0.2s;
+
+	&:before {
+		content: '';
+		display: inline-block;
+		width: 1px;
+		height: 100%;
+		background-color: $separator-color;
+		position: absolute;
+		left: 3px;
+	}
+}
+
+@include sp {
+	.row {
+		margin: 0 24px 0 12px;
+	}
+
+	.year {
+		font-size: 16px;
+		padding-right: 10px;
+
+		&:not(.no-pin):after {
+			$size: 12px;
+			width: $size;
+			height: $size;
+			left: 91px;
 		}
 	}
 
-	li {
-		display: flex;
-		justify-content: center;
-		text-align: left;
-		margin: 0 32px 0 16px;
-		transition: 0.5s;
-
-		@include sp {
-			margin: 0 24px 0 12px;
-		}
-
-		h1 {
-			font-family: 'Source Code Pro', monospace;
-			font-weight: 200;
-			position: relative;
-			bottom: 32px;
-			padding-right: 22px;
-			margin: 0;
-			border-right: 1px solid $line-primary;
-			white-space: nowrap;
-			font-size: 18px;
-
-			@include sp {
-				font-size: 16px;
-				padding-right: 10px;
-			}
-
-			&:not(.no-pin):after {
-				content: '';
-				$size: 18px;
-				width: $size;
-				height: $size;
-				background-color: #5f4730;
-				transform: rotate(45deg);
-				position: absolute;
-				left: 111px;
-
-				@include sp {
-					$size: 12px;
-					width: $size;
-					height: $size;
-					left: 91px;
-				}
-			}
-		}
-
-		div {
-			$separator-color: rgba($line-primary, 0.7);
-
-			position: relative;
-			bottom: 32px;
-			left: 24px;
-			width: 512px;
-			font-size: 16px;
-			font-weight: bold;
-			border-bottom: 2.5px solid $separator-color;
-			padding: 0 6px 3px 12px;
-			margin-bottom: 48px;
-			transition: 0.2s;
-
-			@include sp {
-				left: 8px;
-				font-size: 14px;
-			}
-
-			&:before {
-				content: '';
-				display: inline-block;
-				width: 1px;
-				height: 100%;
-				background-color: $separator-color;
-				position: absolute;
-				left: 3px;
-			}
-		}
+	.event {
+		left: 8px;
+		font-size: 14px;
 	}
 }

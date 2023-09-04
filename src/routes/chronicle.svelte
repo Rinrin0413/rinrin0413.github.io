@@ -14,7 +14,7 @@
 		add_class_on_visible(document.getElementsByClassName('container'), 'fade-in-up-zoom');
 	}
 
-	function toggle() {
+	function open() {
 		is_opened = !is_opened;
 	}
 </script>
@@ -23,16 +23,16 @@
 	<ul
 		class:opened={is_opened}
 		title={!is_opened ? 'Open' : ''}
-		on:click|once={toggle}
+		on:click|once={open}
 		on:keypress|once={(e) => {
-			if (e.key === 'Enter') toggle;
+			if (e.key === 'Enter') open;
 		}}
 	>
 		{#each chronicle as { year, events }}
 			{#each events as { month, event }, i}
-				<li>
-					<h1 class:no-pin={i != 0}>{@html fmt_month(month)} {year}</h1>
-					<div>{$_('chronicle.' + event)}</div>
+				<li class="row">
+					<div class="year" class:no-pin={i != 0}>{@html fmt_month(month)} {year}</div>
+					<div class="event">{$_('chronicle.' + event)}</div>
 				</li>
 			{/each}
 		{/each}
@@ -41,5 +41,5 @@
 
 <style lang="scss">
 	@use '/assets/stylesheets/utils/fade_in_up_zoom';
-	@import '/assets/stylesheets/chronicle';
+	@use '/assets/stylesheets/chronicle';
 </style>

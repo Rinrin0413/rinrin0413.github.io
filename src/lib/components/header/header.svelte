@@ -87,16 +87,17 @@
 		{#each items as item}
 			<a
 				href={item.id}
+				class="item"
 				on:click={() => {
 					toggle_drawer_menu(false);
 				}}
 			>
 				<Icon id={item.id} />
-				<span>{$_(item.name)}</span>
+				<span class="item-text">{$_(item.name)}</span>
 			</a>
 		{/each}
 	</nav>
-	<div class:hidden={is_at_top}>
+	<div class="hamburger-btn" class:hidden={is_at_top}>
 		<HamburgerButton
 			is_opened={is_drawer_menu_opened}
 			on:toggle={(e) => {
@@ -106,12 +107,12 @@
 	</div>
 	<a
 		href="/"
-		id="logo"
+		id="header-logo"
 		class:center={is_at_top}
 		class:fade-in={enable_fade_in}
 		on:click={() => {
 			toggle_drawer_menu(false);
-		}}><img src="/images/favicon.png" alt={$_('header.logo')} /></a
+		}}><img src="/images/logos/rinrin/logo.svg" alt={$_('header.logo')} /></a
 	>
 </header>
 

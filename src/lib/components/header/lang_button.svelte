@@ -30,15 +30,8 @@
 <style lang="scss">
 	@use '/assets/stylesheets/header/button';
 
-	@use '/assets/stylesheets/variables/dimension' as *;
-	@use '/assets/stylesheets/variables/color' as *;
-
 	button {
 		display: inline-block;
-
-		span {
-			transition: 0.3s;
-		}
 
 		&:active {
 			animation: rotate-y 0.17s;
@@ -59,5 +52,9 @@
 				}
 			}
 		}
+	}
+
+	span {
+		transition: 0.3s;
 	}
 </style>

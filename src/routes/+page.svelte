@@ -27,11 +27,11 @@
 	<meta property="og:type" content="website" />
 </svelte:head>
 
-<img src="/images/rinrin.webp" alt={$_('home.icon')} id="icon" />
+<img src="/images/icon_384px.webp" alt={$_('home.icon')} id="icon" />
 
 <section id="about">
 	<Title text="About me" />
-	<p id="large">
+	<p class="large">
 		{@html $_('home.greeting', { values: { age: calc_age() } })}
 	</p>
 </section>
@@ -49,7 +49,7 @@
 <section id="activities">
 	<Title text="Major Activities" />
 	<p>{$_('home.whatIDo')}</p>
-	<ul>
+	<ul id="activity-list">
 		<li><a href="#acivity-programming">Programming</a></li>
 		<li><a href="#acivity-game">Game</a></li>
 		<li><a href="#acivity-music">Music</a></li>
@@ -103,28 +103,26 @@
 		height: 298px;
 	}
 
-	#activities {
-		ul {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			list-style: none;
-			padding: 0;
-			margin: 12px auto;
+	#activity-list {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		list-style: none;
+		padding: 0;
+		margin: 12px auto;
 
-			li {
-				margin: 0 12px;
-				font-size: 18px;
-				font-weight: bold;
+		li {
+			margin: 0 12px;
+			font-size: 18px;
+			font-weight: bold;
+		}
 
-				a {
-					color: #460000;
-					transition: 0.3s;
+		a {
+			color: #460000;
+			transition: 0.3s;
 
-					&:hover {
-						color: #9b3535;
-					}
-				}
+			&:hover {
+				color: #9b3535;
 			}
 		}
 	}

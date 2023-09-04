@@ -8,12 +8,13 @@
 	if (browser) window.addEventListener('scroll', fade_in);
 
 	function fade_in() {
-		add_class_on_visible(document.getElementsByClassName('act'), 'fade-in-up-zoom');
+		let act = document.getElementsByClassName('container').item(0)?.children;
+		if (act) add_class_on_visible(act, 'fade-in-up-zoom');
 	}
 </script>
 
 <div class="container">
-	<div class="act act-prog" class:fade-in-up-zoom={false}>
+	<div id="act-prog" class:fade-in-up-zoom={false}>
 		<h1 id="acivity-programming" class="c5">Programming</h1>
 		<p>{$_('activities.programming.desc')}</p>
 		<br />
@@ -36,7 +37,9 @@
 		<p>
 			{$_('activities.programming.webdev.0')}<a href="https://sass-lang.com">Sass</a>{$_(
 				'activities.programming.webdev.1'
-			)}<a href="https://svelte.dev/">Svelte</a>{$_('activities.programming.webdev.2')}
+			)}<a href="https://svelte.dev/">Svelte</a>{$_('activities.programming.webdev.2')}<br />{$_(
+				'activities.programming.webdev.3'
+			)}
 		</p>
 		<br />
 		<h2 class="c5"><a href="https://git-scm.com">Git</a></h2>
@@ -46,7 +49,7 @@
 			)}
 		</p>
 	</div>
-	<div class="act act-game" class:fade-in-up-zoom={false}>
+	<div id="act-game" class:fade-in-up-zoom={false}>
 		<h1 id="acivity-game" class="c5">Game</h1>
 		<p>{$_('activities.game.desc')}</p>
 		<br />
@@ -59,7 +62,7 @@
 		<h2><a href="https://thatskygame.com">Sky: Children of the Light</a></h2>
 		<p>{$_('activities.game.sky')}</p>
 	</div>
-	<div class="act act-music" class:fade-in-up-zoom={false}>
+	<div id="act-music" class:fade-in-up-zoom={false}>
 		<h1 id="acivity-music" class="c5">Music</h1>
 		<p class="subtitle">|♫|♪♬♪|♪♫:|❙♪|❙</p>
 		<br />

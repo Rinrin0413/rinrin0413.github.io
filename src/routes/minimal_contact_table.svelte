@@ -2,10 +2,10 @@
 	import EaButton from '$lib/components/ea_button.svelte';
 </script>
 
-<table>
+<table class="social-table">
 	<tr>
 		<td>
-			<img src="/images/logos/gmail.png" alt="Gmail logo" />Gmail
+			<img src="/images/logos/gmail.webp" alt="Gmail logo" />Gmail
 		</td>
 		<td><EaButton mini /></td>
 	</tr>

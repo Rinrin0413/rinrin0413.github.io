@@ -2,27 +2,22 @@
 	import Header from '$lib/components/header/header.svelte';
 	import Footer from '$lib/components/footer.svelte';
 
-	import { copyright, site_url } from '$lib/variables';
 	import { browser } from '$app/environment';
+	import { set_vh001 } from '$lib/util';
+	import { copyright, site_url } from '$lib/variables';
 
 	let max_vh1: number;
 
 	if (browser) {
-		window.addEventListener('resize', set_vh001);
 		window.addEventListener('resize', () => {
+			set_vh001();
 			if (max_vh1 < window.innerHeight) set_max_vh001();
 		});
 		set_vh001();
 		set_max_vh001();
 	}
 
-	/**
-	 * Sets css variable `--vh001`.
-	 * Must be called in the browser.
-	 */
-	function set_vh001() {
-		document.documentElement.style.setProperty('--vh001', window.innerHeight * 0.01 + 'px');
-	}
+	const logo_180px_oxipng = '/images/logos/rinrin/logo_180px_oxipng.png?v=2';
 
 	/**
 	 * Sets css variable `--max-vh001`.
@@ -39,7 +34,7 @@
 	<meta name="format-detection" content="telephone=no,address=no,email=no" />
 
 	<meta property="og:site_name" content="Rinrin.rs' Homepage" />
-	<meta property="og:image" content="{site_url}/images/favicon.png" />
+	<meta property="og:image" content="{site_url}{logo_180px_oxipng}" />
 	<meta property="og:locale" content="ja_JP" />
 	<meta name="twitter:card" content="summary" />
 	<meta name="twitter:site" content={site_url} />
@@ -48,7 +43,11 @@
 	<meta name="keywords" content="Rinrin,Rinrin0413,Rinrin.rs" />
 	<meta name="author" content="Rinrin.rs <rinrin0413.valley@gmail.com>" />
 	<meta name="copyright" content={copyright} />
-	<link rel="icon" href="/images/favicon.png" />
+
+	<link rel="icon" href={logo_180px_oxipng} />
+	<link rel="icon" href="/images/logos/rinrin/logo.svg" type="image/svg+xml" />
+	<link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+	<link rel="manifest" href="/manifest.json" />
 </svelte:head>
 
 <Header />
