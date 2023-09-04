@@ -19,7 +19,8 @@
 				isInProgress = false;
 			}, 5000);
 		}
-	}}><span /><span /></button
+	}}
+	aria-label="Email"><span /><span /></button
 >
 
 <style lang="scss">
