@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { decryptEa } from '$lib/decrypt_ea';
+	import { decryptEa } from '$lib/decrypt-ea';
 
 	/** Whether the button is mini version. */
 	export let mini = false;
