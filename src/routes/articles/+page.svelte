@@ -2,23 +2,23 @@
 	import Title from '$lib/components/title.svelte';
 	import Space from '$lib/components/space.svelte';
 
-	import { site_url } from '$lib/variables';
+	import { SITE_URL } from '$lib/variables';
 	//import { _ } from 'svelte-i18n';
 
-	const head = {
+	const HEAD = {
 		title: 'Profile',
 		desc: 'Rinrin.rs のブログ(?)'
 	};
 </script>
 
 <svelte:head>
-	<title>Rinrin.rs | {head.title}</title>
-	<meta name="title" content="Rinrin.rs | {head.title}" />
-	<meta name="description" content={head.desc} />
+	<title>Rinrin.rs | {HEAD.title}</title>
+	<meta name="title" content="Rinrin.rs | {HEAD.title}" />
+	<meta name="description" content={HEAD.desc} />
 
-	<meta property="og:title" content={head.title} />
-	<meta property="og:description" content={head.desc} />
-	<meta property="og:url" content="{site_url}/articles" />
+	<meta property="og:title" content={HEAD.title} />
+	<meta property="og:description" content={HEAD.desc} />
+	<meta property="og:url" content="{SITE_URL}/articles" />
 	<meta property="og:type" content="article" />
 </svelte:head>
 

@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { copyright } from '$lib/variables';
+	import { COPYRIGHT } from '$lib/variables';
 </script>
 
 <footer>
-	<p class="copyright">{copyright}</p>
+	<p class="copyright">{COPYRIGHT}</p>
 	<a href="/" class="go-to-top-btn">
 		<!-- 
 			Bootstrap Icons - House door fill

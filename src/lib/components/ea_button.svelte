@@ -1,22 +1,22 @@
 <script lang="ts">
-	import { decrypt_ea } from '$lib/decrypt_ea';
+	import { decryptEa } from '$lib/decrypt_ea';
 
 	/** Whether the button is mini version. */
 	export let mini = false;
 
-	let is_ea_link_in_progress = false;
+	let isInProgress = false;
 </script>
 
 <button
 	class="a"
 	class:mini
-	class:progress={is_ea_link_in_progress}
+	class:progress={isInProgress}
 	on:click={() => {
-		if (!is_ea_link_in_progress) {
-			is_ea_link_in_progress = true;
-			decrypt_ea(1031);
+		if (!isInProgress) {
+			isInProgress = true;
+			decryptEa(1031);
 			setTimeout(() => {
-				is_ea_link_in_progress = false;
+				isInProgress = false;
 			}, 5000);
 		}
 	}}><span /><span /></button

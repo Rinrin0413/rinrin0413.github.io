@@ -1,15 +1,15 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { browser } from '$app/environment';
-	import { add_class_on_visible } from '$lib/util';
+	import { addClassOnVisible } from '$lib/util';
 	import { _ } from 'svelte-i18n';
 
-	onMount(fade_in);
-	if (browser) window.addEventListener('scroll', fade_in);
+	onMount(fadeIn);
+	if (browser) window.addEventListener('scroll', fadeIn);
 
-	function fade_in() {
+	function fadeIn() {
 		let act = document.getElementsByClassName('container').item(0)?.children;
-		if (act) add_class_on_visible(act, 'fade-in-up-zoom');
+		if (act) addClassOnVisible(act, 'fade-in-up-zoom');
 	}
 </script>
 
