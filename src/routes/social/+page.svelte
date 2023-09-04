@@ -1,7 +1,7 @@
 <script lang="ts">
-	import Title from '$lib/components/title.svelte';
-	import Space from '$lib/components/space.svelte';
-	import EaButton from '$lib/components/ea_button.svelte';
+	import Title from '$lib/components/Title.svelte';
+	import Space from '$lib/components/Space.svelte';
+	import EaButton from '$lib/components/EaButton.svelte';
 
 	import { SITE_URL } from '$lib/variables';
 	import { _ } from 'svelte-i18n';

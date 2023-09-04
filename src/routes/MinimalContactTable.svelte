@@ -1,5 +1,5 @@
 <script lang="ts">
-	import EaButton from '$lib/components/ea_button.svelte';
+	import EaButton from '$lib/components/EaButton.svelte';
 </script>
 
 <table class="social-table">

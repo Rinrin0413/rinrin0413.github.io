@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Header from '$lib/components/header/header.svelte';
-	import Footer from '$lib/components/footer.svelte';
+	import Header from '$lib/components/header/Header.svelte';
+	import Footer from '$lib/components/Footer.svelte';
 
 	import { browser } from '$app/environment';
 	import { setVh001 } from '$lib/util';

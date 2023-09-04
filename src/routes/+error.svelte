@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Title from '$lib/components/title.svelte';
+	import Title from '$lib/components/Title.svelte';
 
 	import { _ } from 'svelte-i18n';
 

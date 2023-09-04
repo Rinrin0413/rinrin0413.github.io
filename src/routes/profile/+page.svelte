@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Title from '$lib/components/title.svelte';
-	import Space from '$lib/components/space.svelte';
+	import Title from '$lib/components/Title.svelte';
+	import Space from '$lib/components/Space.svelte';
 
 	import { SITE_URL } from '$lib/variables';
 	//import { _ } from 'svelte-i18n';

@@ -1,10 +1,10 @@
 <script lang="ts">
-	import Title from '$lib/components/title.svelte';
-	import Hr from '$lib/components/hr.svelte';
-	import ContentsTable from './contents_table.svelte';
-	import Activities from './activities.svelte';
-	import Chronicle from './chronicle.svelte';
-	import MinimalContactTable from './minimal_contact_table.svelte';
+	import Title from '$lib/components/Title.svelte';
+	import Hr from '$lib/components/Hr.svelte';
+	import ContentsTable from './ContentsTable.svelte';
+	import Activities from './Activities.svelte';
+	import Chronicle from './Chronicle.svelte';
+	import MinimalContactTable from './MinimalContactTable.svelte';
 
 	import { SITE_URL } from '$lib/variables';
 	import { _ } from 'svelte-i18n';

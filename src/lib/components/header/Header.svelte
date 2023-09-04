@@ -1,7 +1,7 @@
 <script lang="ts">
-	import Icon from './icon.svelte';
-	import HamburgerButton from './hamburger_button.svelte';
-	import LangButton from './lang_button.svelte';
+	import Icon from './Icon.svelte';
+	import HamburgerButton from './HamburgerButton.svelte';
+	import LangButton from './LangButton.svelte';
 
 	import { onMount } from 'svelte';
 	import { browser } from '$app/environment';

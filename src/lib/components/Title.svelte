@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Space from '$lib/components/space.svelte';
+	import Space from '$lib/components/Space.svelte';
 
 	import { browser } from '$app/environment';
 
