@@ -9,12 +9,27 @@
 	function fadeIn() {
 		addClassOnVisible(document.getElementsByTagName('ul'), 'fade-in-up-zoom');
 	}
+
+	const ITEMS = [
+		{
+			id: 'activities',
+			name: 'Major Activities'
+		},
+		{
+			id: 'chronicle',
+			name: 'Chronicle'
+		},
+		{
+			id: 'contact',
+			name: 'Contact / Social'
+		}
+	];
 </script>
 
-<ul>
-	<a href="#activities" class:fade-in-up-zoom={false}><li>Major Activities</li></a>
-	<a href="#chronicle"><li>Chronicle</li></a>
-	<a href="#contact"><li>Contact / Social</li></a>
+<ul class:fade-in-up-zoom={false}>
+	{#each ITEMS as { id, name } (id)}
+		<li><a href={`#${id}`}><div>{name}</div></a></li>
+	{/each}
 </ul>
 
 <style lang="scss">
@@ -34,6 +49,20 @@
 		}
 	}
 
+	li {
+		&:active div {
+			font-size: 20px;
+		}
+
+		&:first-child div {
+			border-top: none;
+		}
+
+		&:last-child div {
+			border-bottom: none;
+		}
+	}
+
 	a {
 		color: inherit;
 		transition: 0.2s;
@@ -41,26 +70,14 @@
 		&:hover {
 			color: #9c6113;
 
-			li {
+			div {
 				background-color: #fff6e5b2;
 				font-size: 24px;
 			}
 		}
-
-		&:active li {
-			font-size: 20px;
-		}
-
-		&:first-child li {
-			border-top: none;
-		}
-
-		&:last-child li {
-			border-bottom: none;
-		}
 	}
 
-	li {
+	div {
 		font-size: 20px;
 		font-weight: bold;
 		padding: 18px 0;
