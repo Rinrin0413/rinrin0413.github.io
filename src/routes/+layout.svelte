@@ -27,7 +27,7 @@
 	}
 
 	const HEAD = {
-		logo_180px_oxipng: '/images/logos/rinrin/logo_180px_oxipng.png?v=2',
+		logo_180px_oxipng: '/images/logos/rinrin/logo_180px_oxipng.png?v=2'
 	};
 </script>
 
