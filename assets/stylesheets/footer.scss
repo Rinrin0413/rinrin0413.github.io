@@ -24,7 +24,7 @@ footer {
 	}
 }
 
-.go-to-top-btn {
+.go-to-home-btn {
 	float: right;
 	margin-top: -22px;
 	margin-right: 26px;
@@ -35,7 +35,7 @@ footer {
 	align-items: center;
 	background-color: rgba($button-primary, 0.29);
 	border: 2px solid rgba($button-secondary, 0.31);
-	padding: 6px 12px;
+	padding: 7px;
 	border-radius: 4px;
 	transition: 0.2s;
 
@@ -50,7 +50,7 @@ svg {
 	height: $size;
 }
 
-.top-text {
+.home-text {
 	font-size: 14px;
 	font-weight: 900;
 }
