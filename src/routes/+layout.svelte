@@ -3,17 +3,14 @@
 	import Footer from '$lib/components/Footer.svelte';
 
 	import { browser } from '$app/environment';
-	import { setVh001 } from '$lib/util';
 	import { COPYRIGHT, SITE_URL } from '$lib/variables';
 
 	let maxVh1: number;
 
 	if (browser) {
 		window.addEventListener('resize', () => {
-			setVh001();
 			if (maxVh1 < window.innerHeight) setMaxVh001();
 		});
-		setVh001();
 		setMaxVh001();
 	}
 

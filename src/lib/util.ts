@@ -82,20 +82,3 @@ export function fmtMonth(month: number | null) {
 export function toggleScrollPrevention(prevent: boolean) {
 	document.getElementsByTagName('body')[0].style.overflow = prevent ? 'hidden' : 'auto';
 }
-
-/**
- * Sets css variable `--vh001`.
- * Must be called in the browser.
- *
- * # Example:
- *
- * ```ts
- * 	if (browser) {
- *		window.addEventListener('resize', setVh001);
- *		setVh001();
- *	}
- * ```
- */
-export function setVh001() {
-	document.documentElement.style.setProperty('--vh001', window.innerHeight * 0.01 + 'px');
-}

@@ -1,4 +1,3 @@
-@use '../variables/vh' as *;
 @use '../variables/color' as *;
 @use '../variables/dimension' as *;
 @use '../variables/mixin' as *;
@@ -8,7 +7,7 @@
 	top: 0;
 	left: 0;
 	width: 100vw;
-	height: calc($vh001 * 100);
+	height: 100dvh;
 	background-color: #ffffff2a;
 	$back-blur: blur(6px);
 	backdrop-filter: $back-blur;
@@ -238,7 +237,7 @@ nav {
 		backdrop-filter: $back-blur;
 		-webkit-backdrop-filter: $back-blur;
 		position: absolute;
-		top: calc($vh001 * 50);
+		top: 50dvh;
 		left: $pos-left;
 		transform: translateY(calc(-50% + $header-height * 0.5)) translateX(-50%);
 		animation: fadeInBlur 0.4s ease-out forwards;
