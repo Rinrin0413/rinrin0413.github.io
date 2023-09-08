@@ -1,13 +1,3 @@
-@font-face {
-	font-family: 'Kiwi Maru';
-	src: url('../fonts/Kiwi_Maru/KiwiMaru-Medium.ttf');
-}
-
-@font-face {
-	font-family: 'Source Code Pro';
-	src: url('../fonts/Source_Code_Pro/static/SourceCodePro-Regular.ttf');
-}
-
 html {
 	font-family: 'Kiwi Maru', serif;
 	color: #533618;
@@ -33,7 +23,7 @@ html::before {
 
 body {
 	margin: 0;
-	/* Anti Dark reader  */
+	/* Anti Dark reader */
 	background: none;
 }
 

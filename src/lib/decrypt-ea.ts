@@ -1,0 +1,51 @@
+/** Decrypts email address */
+export function decryptEa(k: number) {
+	const S = 'egiyorN0tC4mV1A3L';
+	const P = [
+		0x5, // ▼ Protocol
+		0x2,
+		0xe,
+		0x0,
+		0x8,
+		0xc,
+		0xe5bf,
+		0xb, // ▼ Account
+		0xe,
+		0xa,
+		0xb,
+		0xe,
+		0xa,
+		0x9,
+		0x6,
+		0x3,
+		0x1,
+		0xb53b,
+		0x4,
+		0x2,
+		0x0,
+		0x0,
+		0x10,
+		0xd,
+		0xfdd9, // <- a
+		0xf, // ▼ Domain
+		0x5,
+		0x2,
+		0xe,
+		0x0,
+		0xb53b,
+		0x7,
+		0xc,
+		0x5
+	];
+	let r = '';
+	for (let i = 0; i < P.length; i++) {
+		const C = P[i];
+		if (C < P.length) {
+			r += S.split('').reverse().join('')[C].toLowerCase();
+		} else {
+			r += String.fromCharCode((C + k) / k);
+		}
+	}
+
+	location.href = r;
+}

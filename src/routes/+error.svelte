@@ -1,16 +1,16 @@
 <script lang="ts">
-	import Title from '$lib/components/title.svelte';
+	import Title from '$lib/components/Title.svelte';
 
 	import { _ } from 'svelte-i18n';
 
-	const head = {
+	const HEAD = {
 		title: '404 - Page not found'
 	};
 </script>
 
 <svelte:head>
-	<title>Rinrin.rs | {head.title}</title>
-	<meta name="title" content="Rinrin.rs | {head.title}" />
+	<title>Rinrin.rs | {HEAD.title}</title>
+	<meta name="title" content="Rinrin.rs | {HEAD.title}" />
 </svelte:head>
 
 <h1>404</h1>

@@ -7,13 +7,13 @@
  * <script lang="ts">
  *     import { onMount } from 'svelte';
  *     import { browser } from '$app/environment';
- *     import { add_class_on_visible } from '$lib/util';
+ *     import { addClassOnVisible } from '$lib/util';
  *
- *     onMount(fade_in);
- *     if (browser) window.addEventListener('scroll', fade_in);
+ *     onMount(fadeIn);
+ *     if (browser) window.addEventListener('scroll', fadeIn);
  *
- *     function fade_in() {
- * 	       add_class_on_visible(
+ *     function fadeIn() {
+ * 	       addClassOnVisible(
  *             document.getElementsByClassName('foo'),
  *             'fade-in-up'
  *         );
@@ -24,43 +24,43 @@
  * <a class="foo" class:fade-in-up={false} />
  * ```
  */
-export function add_class_on_visible(
+export function addClassOnVisible(
 	elements: HTMLCollectionOf<Element> | HTMLElement | null,
-	class_name: string
+	className: string
 ) {
 	if (elements instanceof HTMLCollection) {
 		[...elements].forEach((e) => {
-			add_class_on_visible_(e, class_name);
+			addClassOnVisible_(e, className);
 		});
 	} else if (elements instanceof HTMLElement) {
-		add_class_on_visible_(elements, class_name);
+		addClassOnVisible_(elements, className);
 	}
 }
 
-function add_class_on_visible_(element: Element | HTMLElement, class_name: string) {
+function addClassOnVisible_(element: Element | HTMLElement, className: string) {
 	if (element.getBoundingClientRect().top < window.innerHeight) {
-		element.classList.add(class_name);
+		element.classList.add(className);
 	}
 }
 
 /** Calculates the age of Rinrin. */
-export function calc_age() {
-	const birthday = { year: 2006, month: 4, date: 13 };
+export function calcAge() {
+	const BIRTHDAY = { year: 2006, month: 4, date: 13 };
 	const today = new Date();
 	const year = today.getFullYear();
 	const month = today.getMonth() + 1;
 	const date = today.getDate();
-	let age = year - birthday.year;
-	age -= month < birthday.month || (month == birthday.month && date < birthday.date) ? 1 : 0;
+	let age = year - BIRTHDAY.year;
+	age -= month < BIRTHDAY.month || (month == BIRTHDAY.month && date < BIRTHDAY.date) ? 1 : 0;
 	return age;
 }
 
 /** Formats the given month number to a string. */
-export function fmt_month(month: number | null) {
+export function fmtMonth(month: number | null) {
 	if (month == null) {
 		return '???&nbsp;';
 	} else {
-		const months = [
+		const Months = [
 			'Jan.',
 			'Feb.',
 			'Mar.',
@@ -74,11 +74,11 @@ export function fmt_month(month: number | null) {
 			'Nov.',
 			'Dec.'
 		];
-		return months[month - 1];
+		return Months[month - 1];
 	}
 }
 
 /** Toggles body scroll prevention. */
-export function toggle_scroll_prevention(prevent: boolean) {
+export function toggleScrollPrevention(prevent: boolean) {
 	document.getElementsByTagName('body')[0].style.overflow = prevent ? 'hidden' : 'auto';
 }

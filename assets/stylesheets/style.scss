@@ -8,18 +8,15 @@ section {
 		padding: 0 18px;
 		margin: 10px auto;
 		max-width: 512px;
+		font-size: 20px;
 
-		&:not(#large) {
+		&:not(.large) {
 			font-size: 18px;
 
 			@include sp {
 				font-size: 16px;
 				padding: 0 14px;
 			}
-		}
-
-		&#large {
-			font-size: 20px;
 		}
 	}
 }
