@@ -5,6 +5,12 @@
 
 	export let text: string;
 
+	/**
+	 * Defines a unique identifier (ID) which must be unique in the whole document.
+	 * Its purpose is to identify the element when linking (using a fragment identifier).
+	 */
+	export let id: string | undefined | null = null;
+
 	let vw: number;
 	let node: HTMLHeadingElement;
 	let initWidth: number;
@@ -29,7 +35,7 @@
 </script>
 
 <div class:mini={isOverflown}>
-	<h1 bind:this={node}>{text}</h1>
+	<h1 id={id} bind:this={node}>{text}</h1>
 	<h1 class="shadow">{text}</h1>
 	<Space height={'64px'} />
 </div>
