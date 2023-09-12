@@ -1,6 +1,25 @@
 {
 	"w": {
-		"microsoft": "Microsoft"
+		"microsoft": "Microsoft",
+		"name": "Name",
+		"age": "Age",
+		"yearsOld": " years old",
+		"birthday": "Birthday",
+		"sHighSchool": "S High School",
+		"yokohama": "Yokohama City",
+		"webDev": "Web Development",
+		"minecraft": "Minecraft",
+		"hardware": "Hardware",
+		"model": "Model",
+		"memory": "Memory",
+		"gpu": "GPU",
+		"software": "Software",
+		"shell": "Shell",
+		"desktopEnv": "Desktop Environment",
+		"webBrowser": "Web Browser",
+		"transition": "Transition",
+		"codeEditor": "Code Editor",
+		"sakuraEditor": "Sakura Editor"
 	},
 	"home": {
 		"icon": "Rinrin.rs' avatar",
@@ -96,6 +115,63 @@
 		"2036": {
 			"4": "I have wondered.. right after i was born...how old i would be 30 years from now."
 		}
+	},
+	"profile": {
+		"intro": [
+			"Hi there, I'm Rinrin.rs.",
+			"am a student, Japanese, {age} years old. and have ASD.",
+			"I'm mainly on Discord.",
+			"I make simple bots for Discord.",
+			"Basically i would not work Web dev.",
+			"may be able to draw a simple pixel art.",
+			"also compose music as a hobby."
+		],
+		"birthday": "April 13th, 2006",
+		"school": "School",
+		"birthplace": "Birthplace",
+		"hobby": "see"
+	},
+	"skills": {
+		"summary": "Click to expand",
+		"rust": [
+			"I love it. but i'm not saying i mastered it",
+			"Use it to make bots for Discord"
+		],
+		"git": "I have ASD so i will have a seizure if i don't commit regularly",
+		"glslWgslHlsl": "Originally i was developing shaderpacks for Minecraft",
+		"webDev": {
+			"0": "don't like it because stylesheets are very stressful",
+			"svelte": [
+				"Used SvelteKit when developing website. Same this homepage",
+				"And have never used other frameworks"
+			],
+			"htmlCssJs": "I HATE CSS",
+			"sass": [
+				"I like mixin and variables etc.",
+				"I use SCSS",
+				"SASS requires indentation rules so i don't use it"
+			]
+		},
+		"python": [
+			"It is the first language i learned",
+			"There is a risk of anaphylaxis, but that does not mean cannot write it"
+		],
+		"minecraft": [
+			"I used to build Japanese-style architecture. but not good at Western-style architecture",
+			"At one time i was also creating add-ons for Bedrock Edition, but not going to do it again",
+			"Currently developing shaderpacks for Java Edition when feel like it"
+		],
+		"linux": [
+			"OpenSUSE Leap 15.4 is my main OS",
+			"But i don't use it for server purposes so it is hard to say it is a skill",
+			"By killing the root of all evil \"Windows\", I was able to be happy"
+		]
+	},
+	"env": {
+		"notes": [
+			"see ",
+			"(Japanese) for more details and devices"
+		]
 	},
 	"social": {
 		"desc": "List of my social accounts"
