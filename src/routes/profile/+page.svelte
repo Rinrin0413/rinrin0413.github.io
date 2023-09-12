@@ -52,8 +52,10 @@
 	<Title text="Hobby" id="hobby" />
 
 	<Space height="14px" />
-	<p>{$_('profile.hobby')}
-	<a href="/#activities">Major Activities</a></p>
+	<p>
+		{$_('profile.hobby')}
+		<a href="/#activities">Major Activities</a>
+	</p>
 
 	<Space height="28px" />
 
@@ -66,6 +68,6 @@
 	<Title text="Environment" id="environment" />
 
 	<Space height="28px" />
-	
+
 	<Environment />
 </section>

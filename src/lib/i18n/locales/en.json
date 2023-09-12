@@ -133,10 +133,7 @@
 	},
 	"skills": {
 		"summary": "Click to expand",
-		"rust": [
-			"I love it. but i'm not saying i mastered it",
-			"Use it to make bots for Discord"
-		],
+		"rust": ["I love it. but i'm not saying i mastered it", "Use it to make bots for Discord"],
 		"git": "I have ASD so i will have a seizure if i don't commit regularly",
 		"glslWgslHlsl": "Originally i was developing shaderpacks for Minecraft",
 		"webDev": {
@@ -168,10 +165,7 @@
 		]
 	},
 	"env": {
-		"notes": [
-			"see ",
-			"(Japanese) for more details and devices"
-		]
+		"notes": ["see ", "(Japanese) for more details and devices"]
 	},
 	"social": {
 		"desc": "List of my social accounts"

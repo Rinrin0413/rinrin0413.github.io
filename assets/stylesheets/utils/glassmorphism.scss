@@ -1,13 +1,13 @@
 .glassmorphism {
-    background-color: #ffffff35;
-    $blur: blur(4px);
-    backdrop-filter: $blur;
-    -webkit-backdrop-filter: $blur;
-    $border-light: 2px solid #ffffff30;
-    border-top: $border-light;
-    border-left: $border-light;
-    $border-dark: 2px solid #00000017;
-    border-bottom: $border-dark;
-    border-right: $border-dark;
-    border-radius: 4px;
+	background-color: #ffffff35;
+	$blur: blur(4px);
+	backdrop-filter: $blur;
+	-webkit-backdrop-filter: $blur;
+	$border-light: 2px solid #ffffff30;
+	border-top: $border-light;
+	border-left: $border-light;
+	$border-dark: 2px solid #00000017;
+	border-bottom: $border-dark;
+	border-right: $border-dark;
+	border-radius: 4px;
 }
