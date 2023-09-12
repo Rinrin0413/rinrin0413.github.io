@@ -37,21 +37,3 @@ body {
 	background: #533618;
 	color: #f5deb3;
 }
-
-a,
-.a {
-	color: #2b43bd;
-	text-decoration: underline;
-	cursor: pointer;
-	transition: 0.16s;
-}
-
-a:hover,
-.a:hover {
-	color: #2b8fbd;
-}
-
-a:active,
-.a:active {
-	color: #2bbdb1;
-}

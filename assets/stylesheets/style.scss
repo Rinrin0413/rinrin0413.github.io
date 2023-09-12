@@ -20,3 +20,18 @@ section {
 		}
 	}
 }
+
+a, .a {
+	color: #2b43bd;
+	text-decoration: underline;
+	cursor: pointer;
+	transition: 0.16s;
+
+	&:hover {
+		color: #2b8fbd;
+	}
+
+	&:active {
+		color: #2bbdb1;
+	}
+}
