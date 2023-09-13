@@ -84,6 +84,7 @@
 		background-clip: text;
 		-webkit-background-clip: text;
 		user-select: none;
+		pointer-events: none;
 	}
 
 	.mini h1 {
