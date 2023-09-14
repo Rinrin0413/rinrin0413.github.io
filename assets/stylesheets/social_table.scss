@@ -2,11 +2,10 @@
 
 .social-table {
 	font-size: 18px;
-	background: #ffffff35;
 	padding: 12px;
 	padding-top: 4px;
 	margin: 18px auto;
-	border-radius: 4px;
+	@include glassmorphism;
 
 	@include sp {
 		font-size: 14px;
