@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Title from '$lib/components/Title.svelte';
 	import Hr from '$lib/components/Hr.svelte';
-	import ContentsTable from './ContentsTable.svelte';
+	import ContentTable from './ContentTable.svelte';
 	import Activities from './Activities.svelte';
 	import Chronicle from './Chronicle.svelte';
 	import MinimalContactTable from './MinimalContactTable.svelte';
@@ -41,7 +41,7 @@
 <section id="contents">
 	<Title text="Table of Contents" />
 	<p>{$_('home.tableOfContents')}</p>
-	<ContentsTable />
+	<ContentTable />
 </section>
 
 <Hr />
