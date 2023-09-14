@@ -4,7 +4,7 @@
 </script>
 
 <div>
-	<table class="glassmorphism">
+	<table>
 		<tr>
 			<td>{$_('w.name')}</td>
 			<td>Rinrin.rs</td>
@@ -29,7 +29,6 @@
 </div>
 
 <style lang="scss">
-	@use '/assets/stylesheets/utils/glassmorphism';
 	@use '/assets/stylesheets/variables/mixin' as *;
 	@use '/assets/stylesheets/variables/color' as *;
 
@@ -42,6 +41,7 @@
 	table {
 		padding: 12px;
 		margin: 0 auto;
+		@include glassmorphism;
 	}
 
 	td {
