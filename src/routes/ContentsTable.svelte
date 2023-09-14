@@ -34,15 +34,14 @@
 
 <style lang="scss">
 	@use '/assets/stylesheets/utils/fade_in_up_zoom';
+	@use '/assets/stylesheets/variables/mixin' as *;
 
 	ul {
 		list-style: none;
 		max-width: 326px;
 		padding: 0;
 		margin: 24px auto;
-		background-color: #fff6e58c;
-		border: 4px solid #b1976c8c;
-		border-radius: 4px;
+		@include glassmorphism($blur: 10px, $border-radius: 8px);
 
 		&:not(.fade-in-up-zoom) {
 			opacity: 0;
@@ -50,40 +49,34 @@
 	}
 
 	li {
-		&:active div {
-			font-size: 20px;
+		transition: 0.13s;
+
+		&:first-child, &:last-child {
+			div {
+				border: none;
+			}
 		}
 
-		&:first-child div {
-			border-top: none;
-		}
-
-		&:last-child div {
-			border-bottom: none;
+		&:hover {
+			background-color: #ffffff5a;
+			$saturate: saturate(2);
+			backdrop-filter: $saturate;
+			-webkit-backdrop-filter: $saturate;
 		}
 	}
 
 	a {
 		color: inherit;
-		transition: 0.2s;
-
-		&:hover {
-			color: #9c6113;
-
-			div {
-				background-color: #fff6e5b2;
-				font-size: 24px;
-			}
-		}
 	}
 
 	div {
+		width: 93%;
+		padding: 18px 0;
+		margin: 0 auto;
 		font-size: 20px;
 		font-weight: bold;
-		padding: 18px 0;
-		$border: 1px solid #b1976c;
+		$border: 1px solid #ffffffa0;
 		border-top: $border;
 		border-bottom: $border;
-		transition: 0.24s;
 	}
 </style>
