@@ -51,7 +51,8 @@
 	li {
 		transition: 0.13s;
 
-		&:first-child, &:last-child {
+		&:first-child,
+		&:last-child {
 			div {
 				border: none;
 			}
