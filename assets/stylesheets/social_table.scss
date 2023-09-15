@@ -9,37 +9,37 @@
 	@include sp {
 		font-size: 14px;
 	}
+}
 
-	tr {
-		line-height: 1.8;
+tr {
+	line-height: 1.8;
+}
 
-		td {
-			&:first-child {
-				text-align: right;
-				white-space: nowrap;
+td {
+	&:first-child {
+		text-align: right;
+		white-space: nowrap;
 
-				img {
-					width: 26px;
-					vertical-align: middle;
-					transform: translateY(-2px);
-					margin-right: 6px;
-					user-select: none;
+		img {
+			width: 26px;
+			vertical-align: middle;
+			transform: translateY(-2px);
+			margin-right: 6px;
+			user-select: none;
 
-					@include sp {
-						width: 19px;
-						transform: translateY(-2px);
-						margin-right: 5px;
-					}
-				}
-
-				&:after {
-					content: ':';
-				}
-			}
-
-			&:last-child {
-				text-align: left;
+			@include sp {
+				width: 19px;
+				transform: translateY(-2px);
+				margin-right: 5px;
 			}
 		}
+
+		&:after {
+			content: ':';
+		}
+	}
+
+	&:last-child {
+		text-align: left;
 	}
 }
