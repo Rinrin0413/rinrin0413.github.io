@@ -10,7 +10,7 @@ html {
 html::before {
 	content: '';
 	background: linear-gradient(152deg, #f5deb3, #f7f5f1ab 42%, #f7f5f1ab 68%, #f5deb3),
-		url('/images/wallpapers/dalle_frog-eats-apple.png');
+		url('/images/wallpapers/sd_moon.webp');
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
@@ -27,7 +27,7 @@ body {
 	margin: 0;
 	/* Anti Dark reader */
 	background: none;
-}
+}et		
 
 * {
 	scrollbar-color: #82624a transparent;
