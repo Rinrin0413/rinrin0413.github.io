@@ -42,4 +42,8 @@ td {
 	&:last-child {
 		text-align: left;
 	}
+
+	a::after {
+		content: none;
+	}
 }
