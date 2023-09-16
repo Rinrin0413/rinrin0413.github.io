@@ -33,8 +33,8 @@
 			id: 'profile'
 		},
 		{
-			name: 'Articles',
-			id: 'articles'
+			name: 'Blog',
+			id: 'blog'
 		},
 		{
 			name: 'Web Tools',
