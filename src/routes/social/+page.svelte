@@ -54,23 +54,9 @@
 
 <style lang="scss">
 	@use '/assets/stylesheets/social_table';
-
 	@use '/assets/stylesheets/variables/mixin' as *;
 
 	.email:after {
 		content: ': ';
-	}
-
-	table {
-		font-size: 18px;
-		background: #ffffff35;
-		padding: 12px;
-		padding-top: 4px;
-		margin: 18px auto;
-		border-radius: 4px;
-
-		@include sp {
-			font-size: 14px;
-		}
 	}
 </style>

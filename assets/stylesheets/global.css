@@ -1,3 +1,5 @@
+/* This file is for `src/app.html`. */
+
 html {
 	font-family: 'Kiwi Maru', serif;
 	color: #533618;
@@ -8,7 +10,7 @@ html {
 html::before {
 	content: '';
 	background: linear-gradient(152deg, #f5deb3, #f7f5f1ab 42%, #f7f5f1ab 68%, #f5deb3),
-		url('/images/wallpapers/sd_mountain.webp');
+		url('/images/wallpapers/sd_moon.webp');
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
@@ -36,22 +38,4 @@ body {
 ::selection {
 	background: #533618;
 	color: #f5deb3;
-}
-
-a,
-.a {
-	color: #2b43bd;
-	text-decoration: underline;
-	cursor: pointer;
-	transition: 0.16s;
-}
-
-a:hover,
-.a:hover {
-	color: #2b8fbd;
-}
-
-a:active,
-.a:active {
-	color: #2bbdb1;
 }

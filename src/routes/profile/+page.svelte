@@ -1,9 +1,14 @@
 <script lang="ts">
 	import Title from '$lib/components/Title.svelte';
 	import Space from '$lib/components/Space.svelte';
+	import Details from './Details.svelte';
+	import Hr from '$lib/components/Hr.svelte';
+	import Skills from './Skills.svelte';
+	import Environment from './Environment.svelte';
 
 	import { SITE_URL } from '$lib/variables';
-	//import { _ } from 'svelte-i18n';
+	import { _ } from 'svelte-i18n';
+	import { calcAge } from '$lib/util';
 
 	const HEAD = {
 		title: 'Profile',
@@ -26,7 +31,40 @@
 	<Space height="64px" />
 
 	<Title text="My Profile" />
-	<p>Coming soon...</p>
-</section>
 
-<style lang="scss"></style>
+	<p>
+		{$_('profile.intro.0')}<br />
+		{$_('profile.intro.1', { values: { age: calcAge() } })}<br />
+		{$_('profile.intro.2')}
+	</p>
+	<p>
+		{$_('profile.intro.3')}<br />
+		{$_('profile.intro.4')}<br />
+		{$_('profile.intro.5')}<br />
+		{$_('profile.intro.6')}
+	</p>
+
+	<Details />
+
+	<Hr />
+	<Space height="28px" />
+
+	<Title text="Hobby" id="hobby" />
+
+	<p>
+		{$_('profile.hobby')}
+		<a href="/#activities">Major Activities</a>
+	</p>
+
+	<Space height="28px" />
+
+	<Title text="Skills" id="skills" />
+
+	<Skills />
+
+	<Space height="28px" />
+
+	<Title text="Environment" id="environment" />
+
+	<Environment />
+</section>

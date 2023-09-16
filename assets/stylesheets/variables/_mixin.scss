@@ -25,3 +25,21 @@ $breakpoint-ultra-narrow: 380px;
 		@content;
 	}
 }
+
+@mixin glassmorphism(
+	$blur: 4px,
+	$background-color: #ffffff35,
+	$border-light: 2px solid #ffffff30,
+	$border-dark: 2px solid #00000017,
+	$border-radius: 4px
+) {
+	background-color: $background-color;
+	$filter: blur($blur);
+	backdrop-filter: $filter;
+	-webkit-backdrop-filter: $filter;
+	border-top: $border-light;
+	border-left: $border-light;
+	border-bottom: $border-dark;
+	border-right: $border-dark;
+	border-radius: $border-radius;
+}
