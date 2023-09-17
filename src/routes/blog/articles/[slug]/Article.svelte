@@ -1,7 +1,7 @@
 <script lang="ts">
-    import type { SvelteComponentTyped } from "svelte";
+	import type { SvelteComponentTyped } from 'svelte';
 
-    export let body: typeof SvelteComponentTyped;
+	export let body: typeof SvelteComponentTyped;
 </script>
 
 <article><div><svelte:component this={body} /></div></article>
@@ -14,22 +14,22 @@
 		margin: 0 auto;
 		padding: 0 13px;
 
-        >div {
-            text-align: left;
-            font-size: 18px;
-            font-weight: lighter;
-            letter-spacing: 1.2px;
-            padding: 0 18px;
-            @include glassmorphism;
+		> div {
+			text-align: left;
+			font-size: 18px;
+			font-weight: lighter;
+			letter-spacing: 1.2px;
+			padding: 0 18px;
+			@include glassmorphism;
 
-            @include sp {
-                font-size: 16px;
-                padding: 0 10px;
-            }
+			@include sp {
+				font-size: 16px;
+				padding: 0 10px;
+			}
 
-            img {
-                max-width: 100%;
-            }
-        }
-    }
+			img {
+				max-width: 100%;
+			}
+		}
+	}
 </style>
