@@ -5,7 +5,7 @@ export const load: PageLoad = async ({ params }) => {
 	try {
 		const { default: component, metadata: frontmatter } = await import(`../${params.slug}.md`);
 		if (!frontmatter.published) err();
-		return { slug: params.slug, component, frontmatter };
+		return { component, frontmatter };
 	} catch {
 		err();
 	}

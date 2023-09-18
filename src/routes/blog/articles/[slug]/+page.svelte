@@ -2,15 +2,17 @@
 	import Article from './Article.svelte';
 
 	import type { PageData } from './$types';
+	import { page } from '$app/stores';
 	import { SITE_URL } from '$lib/variables';
 
 	export let data: PageData;
 	const metadata = data.frontmatter;
+	const slug = $page.url.pathname.split('/').pop();
 
 	const HEAD = {
 		title: 'Blog - ' + metadata.title,
 		desc: metadata.desc,
-		thumbnail_path: `/images/blog/${metadata.slug}.png`
+		thumbnail_path: `/images/blog/${slug}.png`
 	};
 </script>
 
@@ -21,7 +23,7 @@
 
 	<meta property="og:title" content={HEAD.title} />
 	<meta property="og:description" content={HEAD.desc} />
-	<meta property="og:url" content="{SITE_URL}/blog/articles/{metadata.slug}" />
+	<meta property="og:url" content="{SITE_URL}/blog/articles/{slug}" />
 	<meta property="og:image" content="{SITE_URL}{HEAD.thumbnail_path}.png" />
 	<meta property="og:type" content="article" />
 </svelte:head>
