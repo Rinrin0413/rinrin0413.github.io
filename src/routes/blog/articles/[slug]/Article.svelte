@@ -155,6 +155,7 @@
 			pre code {
 				display: block;
 				padding: 16px 20px;
+				scrollbar-color: white transparent;
 				overflow: scroll;
 			}
 
