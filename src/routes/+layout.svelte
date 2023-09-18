@@ -36,9 +36,11 @@
 	<meta property="og:site_name" content="Rinrin.rs' Homepage" />
 	{#if !$page.url.pathname.startsWith('/blog/articles/')}
 		<meta property="og:image" content="{SITE_URL}{HEAD.logo_180px_oxipng}" />
+		<meta name="twitter:card" content="summary" />
+	{:else}
+		<meta name="twitter:card" content="summary_large_image" />
 	{/if}
 	<meta property="og:locale" content="ja_JP" />
-	<meta name="twitter:card" content="summary" />
 	<meta name="twitter:site" content={SITE_URL} />
 	<meta name="theme-color" content="#d1b27f" />
 
