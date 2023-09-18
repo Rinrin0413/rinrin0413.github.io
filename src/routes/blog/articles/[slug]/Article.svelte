@@ -173,7 +173,7 @@
 				td {
 					padding: 6px 8px;
 					padding: 8px 12px;
-					border: 2px solid rgba($text-primary, 0.1);
+					border: 1px solid rgba($text-primary, 0.1);
 				}
 
 				th {
