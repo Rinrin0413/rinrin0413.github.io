@@ -2,6 +2,7 @@
 	import Header from '$lib/components/header/Header.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 
+	import { page } from '$app/stores';
 	import { browser } from '$app/environment';
 	import { COPYRIGHT, SITE_URL } from '$lib/variables';
 
@@ -33,7 +34,9 @@
 	<meta name="format-detection" content="telephone=no,address=no,email=no" />
 
 	<meta property="og:site_name" content="Rinrin.rs' Homepage" />
-	<meta property="og:image" content="{SITE_URL}{HEAD.logo_180px_oxipng}" />
+	{#if !$page.url.pathname.startsWith('/blog/articles/')}
+		<meta property="og:image" content="{SITE_URL}{HEAD.logo_180px_oxipng}" />
+	{/if}
 	<meta property="og:locale" content="ja_JP" />
 	<meta name="twitter:card" content="summary" />
 	<meta name="twitter:site" content={SITE_URL} />
