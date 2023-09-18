@@ -4,6 +4,8 @@ import preprocess from 'svelte-preprocess';
 import { mdsvex } from 'mdsvex';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import shiki from 'shiki';
+import { escapeSvelte}  from 'mdsvex';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -17,7 +19,8 @@ const config = {
 		}),
 		mdsvex({
 			extensions: ['.md'],
-			rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings]
+			rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings],
+			highlight: { highlighter }
 		})
 	],
 
@@ -30,5 +33,10 @@ const config = {
 
 	extensions: ['.svelte', '.md']
 };
+
+async function highlighter(code, lang) {
+	const theme = await shiki.getHighlighter({ theme: 'dark-plus' });
+	return escapeSvelte(theme.codeToHtml(code, {lang}));
+}
 
 export default config;

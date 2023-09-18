@@ -130,11 +130,11 @@
 				border-left: 5px solid $text-dark;
 				padding: 1px 18px;
 			}
-			
+
 			code {
 				font-family: 'Source Code Pro', monospace;
-				background-color: #1c1c1b;
-				color: #d4d4d4;
+				// background-color: #1c1c1b;
+				// color: #d4d4d4;
 				padding: 2px 6px;
 				border-radius: 2px;
 
@@ -147,6 +147,7 @@
 			pre code {
 				display: block;
 				padding: 16px 20px;
+				overflow:scroll
 			}
 
 			table {
