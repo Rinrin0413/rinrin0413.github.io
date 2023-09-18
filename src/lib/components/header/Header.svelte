@@ -90,7 +90,7 @@
 			<a
 				href='/{item.id}'
 				class="item"
-				class:active={pathname == '/' + item.id}
+				class:active={pathname.split('/')[1] == item.id}
 				on:click={() => {
 					toggleDrawerMenu(false);
 				}}
