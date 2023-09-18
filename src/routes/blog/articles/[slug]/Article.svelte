@@ -28,12 +28,17 @@
 				font-size: 16px;
 				padding: 0 10px;
 			}
-			
+
 			p {
 				margin: 1.25em 0;
 			}
 
-			h1, h2, h3, h4, h5, h6 {
+			h1,
+			h2,
+			h3,
+			h4,
+			h5,
+			h6 {
 				font-weight: bold;
 				margin: 1.25em 0 0.4em 0;
 				text-wrap: balance;
@@ -106,7 +111,8 @@
 				}
 			}
 
-			ul, ol {
+			ul,
+			ol {
 				padding-left: 2em;
 			}
 
@@ -147,7 +153,7 @@
 			pre code {
 				display: block;
 				padding: 16px 20px;
-				overflow:scroll
+				overflow: scroll;
 			}
 
 			table {
