@@ -139,12 +139,13 @@
 
 			code {
 				font-family: 'Source Code Pro', monospace;
-				background-color: #1E1E1E;
+				background-color: #1e1e1e;
 				color: #d4d4d4;
 				padding: 2px 6px;
 				border-radius: 2px;
 
-				&, *{
+				&,
+				* {
 					&::selection {
 						background-color: #1e569888;
 						color: inherit;

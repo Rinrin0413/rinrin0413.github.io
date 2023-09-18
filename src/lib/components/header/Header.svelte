@@ -88,7 +88,7 @@
 	>
 		{#each ITEMS as item}
 			<a
-				href='/{item.id}'
+				href="/{item.id}"
 				class="item"
 				class:active={pathname.split('/')[1] == item.id}
 				on:click={() => {
