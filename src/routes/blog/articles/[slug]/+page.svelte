@@ -52,6 +52,8 @@
 	/>
 </div>
 
+<h1 id="article-title" style={parallax(-0.19)}>{metadata.title}</h1>
+
 <Article body={data.component} />
 
 <style lang="scss">
@@ -86,5 +88,14 @@
 		height: min(427px, 70vh);
 		object-fit: contain;
 		filter: drop-shadow(0 0 14px #00000080);
+	}
+
+	#article-title {
+		position: relative;
+		bottom: $header-height * 1.3 + 18px;
+
+		@media (min-height: 622px) {
+			bottom: calc($header-height * 1.3 + 25vh - 128px);
+		}
 	}
 </style>
