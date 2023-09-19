@@ -82,3 +82,32 @@ export function fmtMonth(month: number | null) {
 export function toggleScrollPrevention(prevent: boolean) {
 	document.getElementsByTagName('body')[0].style.overflow = prevent ? 'hidden' : 'auto';
 }
+
+/** 
+ * Returns a string that can be used as a CSS transform property value for parallax effect.
+ * 
+ * # Example:
+ * 
+ * ```svelte
+ * <script lang="ts">
+ *     import { parallaxStyle } from '$lib/util';
+ * 
+ * 	   let scrollY: number;
+ * 	   let parallax = parallaxStyle(0);
+ *	   $: parallax = parallaxStyle(scrollY);
+ * </script>
+ * 
+ * <svelte:window bind:scrollY />
+ * 
+ * <!-- Low layer (slow) -->
+ * <div style="{parallax(0.3)}" />
+ * 
+ * <!-- High layer (fast) -->
+ * <div style="{parallax(-0.3)}" />
+ * ```
+ */
+export function parallaxStyle(scrollY: number) {
+	return function(factor: number) {
+		return `transform: translateY(${scrollY * factor}px);`;
+	}
+}

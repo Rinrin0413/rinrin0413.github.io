@@ -4,10 +4,15 @@
 	import type { PageData } from './$types';
 	import { page } from '$app/stores';
 	import { SITE_URL } from '$lib/variables';
+	import { parallaxStyle } from '$lib/util';
 
 	export let data: PageData;
 	const metadata = data.frontmatter;
 	const slug = $page.url.pathname.split('/').pop();
+
+	let scrollY: number;
+	let parallax = parallaxStyle(0);
+	$: parallax = parallaxStyle(scrollY);
 
 	const HEAD = {
 		title: 'Blog - ' + metadata.title,
@@ -28,10 +33,23 @@
 	<meta property="og:type" content="article" />
 </svelte:head>
 
-<img src="/images/blog/{slug}.png" alt="Article thumbnail" id="back-thumbnail" aria-hidden="true" />
+<svelte:window bind:scrollY />
+
+<img 
+	src="/images/blog/{slug}.png" 
+	alt="Article thumbnail" 
+	id="back-thumbnail" 
+	style={parallax(0.25)} 
+	aria-hidden="true" 
+/>
 
 <div id="thumbnail-wrapper">
-	<img src="/images/blog/{slug}.png" alt="Article thumbnail" id="thumbnail" />
+	<img 
+		src="/images/blog/{slug}.png" 
+		alt="Article thumbnail" 
+		id="thumbnail" 
+		style={parallax(-0.25)} 
+	/>
 </div>
 
 <Article body={data.component} />
