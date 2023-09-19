@@ -59,7 +59,7 @@
 <style lang="scss">
 	@use '/assets/stylesheets/variables/dimension' as *;
 
-	$back-thumbnail-height: 70vh;
+	$back-thumbnail-height: calc($max-vh * 70);
 
 	#back-thumbnail {
 		position: absolute;
@@ -84,8 +84,8 @@
 
 	#thumbnail {
 		position: relative;
-		width: 95vmin;
-		height: min(427px, 70vh);
+		width: min(95vw, calc($max-vh * 95));
+		height: min(427px, $back-thumbnail-height);
 		object-fit: contain;
 		filter: drop-shadow(0 0 14px #00000080);
 	}
@@ -95,7 +95,7 @@
 		bottom: $header-height * 1.3 + 18px;
 
 		@media (min-height: 622px) {
-			bottom: calc($header-height * 1.3 + 25vh - 128px);
+			bottom: calc($header-height * 1.3 + calc($max-vh * 25) - 128px);
 		}
 	}
 </style>
