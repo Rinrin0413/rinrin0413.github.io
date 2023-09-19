@@ -35,20 +35,20 @@
 
 <svelte:window bind:scrollY />
 
-<img 
-	src="/images/blog/{slug}.png" 
-	alt="Article thumbnail" 
-	id="back-thumbnail" 
-	style={parallax(0.25)} 
-	aria-hidden="true" 
+<img
+	src="/images/blog/{slug}.png"
+	alt="Article thumbnail"
+	id="back-thumbnail"
+	style={parallax(0.25)}
+	aria-hidden="true"
 />
 
 <div id="thumbnail-wrapper">
-	<img 
-		src="/images/blog/{slug}.png" 
-		alt="Article thumbnail" 
-		id="thumbnail" 
-		style={parallax(-0.25)} 
+	<img
+		src="/images/blog/{slug}.png"
+		alt="Article thumbnail"
+		id="thumbnail"
+		style={parallax(-0.25)}
 	/>
 </div>
 
