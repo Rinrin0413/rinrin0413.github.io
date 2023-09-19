@@ -83,7 +83,7 @@
 	#thumbnail {
 		position: relative;
 		width: 95vmin;
-		height: 427px;
+		height: min(427px, 70vh);
 		object-fit: contain;
 		filter: drop-shadow(0 0 14px #00000080);
 	}
