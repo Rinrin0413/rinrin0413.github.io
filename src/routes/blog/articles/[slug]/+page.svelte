@@ -89,6 +89,10 @@
 		height: min(427px, $back-thumbnail-height);
 		object-fit: contain;
 		filter: drop-shadow(0 0 14px #00000080);
+
+		@media (max-height: 859px) {
+			height: min(386px, $back-thumbnail-height);
+		}
 	}
 
 	#article-title {
