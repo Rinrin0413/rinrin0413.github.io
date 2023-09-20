@@ -52,7 +52,9 @@
 	/>
 </div>
 
-<h1 id="article-title" style={parallax(-0.19)}>{metadata.title}</h1>
+<div id="article-meta">
+	<h1 id="article-title" style={parallax(-0.19)}>{metadata.title}</h1>
+</div>
 
 <Article body={data.component} />
 
@@ -95,9 +97,16 @@
 		}
 	}
 
-	#article-title {
+	#article-meta {
 		position: relative;
 		bottom: $header-height * 1.3 + 18px;
+
+		@media (min-height: 622px) {
+			bottom: calc($header-height * 1.3 + calc($max-vh * 25) - 128px);
+		}
+	}
+
+	#article-title {
 		display: inline-block;
 		padding: 6px 18px;
 		margin: 0 auto;
@@ -110,10 +119,6 @@
 		$blur: blur(64px);
 		backdrop-filter: $blur;
 		-webkit-backdrop-filter: $blur;
-
-		@media (min-height: 622px) {
-			bottom: calc($header-height * 1.3 + calc($max-vh * 25) - 128px);
-		}
 
 		@include sp {
 			font-size: 24px;
