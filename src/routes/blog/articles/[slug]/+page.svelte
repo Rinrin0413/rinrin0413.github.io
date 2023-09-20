@@ -58,6 +58,7 @@
 
 <style lang="scss">
 	@use '/assets/stylesheets/variables/dimension' as *;
+	@use '/assets/stylesheets/variables/mixin' as *;
 
 	$back-thumbnail-height: calc($max-vh * 70);
 
@@ -93,9 +94,25 @@
 	#article-title {
 		position: relative;
 		bottom: $header-height * 1.3 + 18px;
+		display: inline-block;
+		padding: 6px 18px;
+		margin: 0 auto;
+		font-size: 30px;
+		font-weight: lighter;
+		color: #fffdf7;
+		background-color: #0000005a;
+		border-bottom: 7px solid #0000003a;
+		border-radius: 3px;
+		$blur: blur(64px);
+		backdrop-filter: $blur;
+		-webkit-backdrop-filter: $blur;
 
 		@media (min-height: 622px) {
 			bottom: calc($header-height * 1.3 + calc($max-vh * 25) - 128px);
+		}
+
+		@include sp {
+			font-size: 24px;
 		}
 	}
 </style>
