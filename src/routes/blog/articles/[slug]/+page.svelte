@@ -116,7 +116,7 @@
 		background-color: #0000005a;
 		border-bottom: 7px solid #0000003a;
 		border-radius: 3px;
-		$blur: blur(64px);
+		$blur: blur(20px);
 		backdrop-filter: $blur;
 		-webkit-backdrop-filter: $blur;
 
