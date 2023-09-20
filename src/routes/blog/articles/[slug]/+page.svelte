@@ -4,11 +4,12 @@
 	import type { PageData } from './$types';
 	import { page } from '$app/stores';
 	import { SITE_URL } from '$lib/variables';
-	import { parallaxStyle } from '$lib/util';
+	import { parallaxStyle, idToDate } from '$lib/util';
+	import { date } from 'svelte-i18n';
 
 	export let data: PageData;
 	const metadata = data.frontmatter;
-	const slug = $page.url.pathname.split('/').pop();
+	const slug = $page.url.pathname.split('/').pop()!;
 
 	let scrollY: number;
 	let parallax = parallaxStyle(0);
@@ -54,6 +55,10 @@
 
 <div id="article-meta">
 	<h1 id="article-title" style={parallax(-0.19)}>{metadata.title}</h1>
+    <br />
+    <p id="article-desc" style={parallax(-0.12)}>
+		Published: {$date(idToDate(slug), { format: 'long' })}<br />
+	</p>
 </div>
 
 <Article body={data.component} />
@@ -124,4 +129,12 @@
 			font-size: 24px;
 		}
 	}
+
+	#article-desc {
+        display: inline-block;
+        padding: 4px 12px;
+        margin: 0 auto;
+		margin-top: 18px;
+        @include glassmorphism(background-color, #ffffff8a);
+    }
 </style>
