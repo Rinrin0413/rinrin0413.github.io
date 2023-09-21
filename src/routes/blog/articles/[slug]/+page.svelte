@@ -112,13 +112,15 @@
 		}
 	}
 
+	$text-color-meta: #fffbee;
+
 	#article-title {
 		display: inline-block;
 		padding: 6px 18px;
 		margin: 0 auto;
 		font-size: 30px;
 		font-weight: lighter;
-		color: #fffdf7;
+		color: $text-color-meta;
 		background-color: #0000005a;
 		border-bottom: 7px solid #0000003a;
 		border-radius: 3px;
@@ -133,9 +135,12 @@
 
 	#article-desc {
         display: inline-block;
-        padding: 4px 12px;
+        padding: 3px 18px;
         margin: 0 auto;
 		margin-top: 18px;
-        @include glassmorphism(background-color, #ffffff8a);
+		color: $text-color-meta;
+		font-size: 16px;
+		font-weight: lighter;
+        @include glassmorphism($background-color: #0000008a, $border-radius: 1px);
     }
 </style>
