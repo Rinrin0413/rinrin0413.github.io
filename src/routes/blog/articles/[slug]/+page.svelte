@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Space from '$lib/components/Space.svelte';
 	import Article from './Article.svelte';
+	import Tags from './Tags.svelte';
 
 	import type { PageData } from './$types';
 	import { page } from '$app/stores';
@@ -67,6 +68,7 @@
 	<br />
 	<p id="article-desc" style={parallax(-0.12)}>{$date(idToDate(slug), { format: 'full' })}</p>
 	<Article body={data.component} />
+	<Tags tags={metadata.tags} />
 </div>
 
 <style lang="scss">

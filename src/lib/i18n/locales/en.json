@@ -19,7 +19,8 @@
 		"webBrowser": "Web Browser",
 		"transition": "Transition",
 		"codeEditor": "Code Editor",
-		"sakuraEditor": "Sakura Editor"
+		"sakuraEditor": "Sakura Editor",
+		"tags": "Tags"
 	},
 	"home": {
 		"icon": "Rinrin.rs' avatar",

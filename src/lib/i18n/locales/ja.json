@@ -19,7 +19,8 @@
 		"webBrowser": "Webブラウザー",
 		"transition": "遷移",
 		"codeEditor": "コードエディター",
-		"sakuraEditor": "サクラエディタ"
+		"sakuraEditor": "サクラエディタ",
+		"tags": "タグ"
 	},
 	"home": {
 		"icon": "Rinrin.rs のアイコン",
