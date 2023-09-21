@@ -41,7 +41,7 @@
 			h6 {
 				font-weight: bold;
 				margin: 1.25em 0 0.4em 0;
-				text-wrap: balance;
+				//text-wrap: balance;
 
 				> a {
 					text-decoration: none;
