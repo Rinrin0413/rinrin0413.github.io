@@ -86,6 +86,7 @@
 		object-fit: cover;
 		opacity: 0.6;
 		filter: blur(4px);
+		user-select: none;
 	}
 
 	#thumbnail-wrapper {
