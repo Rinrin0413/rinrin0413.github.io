@@ -142,7 +142,8 @@
 				background-color: #1e1e1e;
 				color: #d4d4d4;
 				padding: 2px 6px;
-				border-radius: 2px;
+				border-radius: 6px;
+				word-break: break-all;
 
 				&,
 				* {
@@ -158,6 +159,7 @@
 				padding: 16px 20px;
 				scrollbar-color: white transparent;
 				overflow: scroll;
+				word-break: break-all;
 			}
 
 			table {
