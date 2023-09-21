@@ -81,7 +81,7 @@
 		position: absolute;
 		top: 0;
 		left: 0;
-		width: 100vw;
+		width: 100%;
 		height: $back-thumbnail-height;
 		object-fit: cover;
 		opacity: 0.6;
@@ -89,7 +89,7 @@
 	}
 
 	#thumbnail-wrapper {
-		width: 100vw;
+		width: 100%;
 		height: $back-thumbnail-height;
 		position: relative;
 		bottom: $header-height * 1.3;
