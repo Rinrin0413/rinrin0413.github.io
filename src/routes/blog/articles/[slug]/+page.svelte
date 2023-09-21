@@ -38,6 +38,10 @@
 	<meta property="og:url" content="{SITE_URL}/blog/articles/{slug}" />
 	<meta property="og:image" content="{SITE_URL}{HEAD.thumbnail_path}" />
 	<meta property="og:type" content="article" />
+
+	{#if !metadata.indexed}
+		<meta name="robots" content="noindex" />
+	{/if}
 </svelte:head>
 
 <svelte:window bind:scrollY />
