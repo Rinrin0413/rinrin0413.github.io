@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Space from '$lib/components/Space.svelte';
 	import Article from './Article.svelte';
 
 	import type { PageData } from './$types';
@@ -16,6 +17,8 @@
 	let scrollY: number;
 	let parallax = parallaxStyle(0);
 	$: parallax = parallaxStyle(scrollY);
+
+	const hasThumbnail = metadata.hasThumbnail;
 
 	const HEAD = {
 		title: 'Blog - ' + metadata.title,
@@ -38,24 +41,28 @@
 
 <svelte:window bind:scrollY />
 
-<img
-	src="/images/blog/{slug}.png"
-	alt="Article thumbnail"
-	id="back-thumbnail"
-	style={parallax(0.25)}
-	aria-hidden="true"
-/>
-
-<div id="thumbnail-wrapper">
+{#if hasThumbnail}
 	<img
 		src="/images/blog/{slug}.png"
 		alt="Article thumbnail"
-		id="thumbnail"
-		style={parallax(-0.25)}
+		id="back-thumbnail"
+		style={parallax(0.25)}
+		aria-hidden="true"
 	/>
-</div>
 
-<div id="article-content">
+	<div id="thumbnail-wrapper">
+		<img
+			src="/images/blog/{slug}.png"
+			alt="Article thumbnail"
+			id="thumbnail"
+			style={parallax(-0.25)}
+		/>
+	</div>
+{:else}
+	<Space height="32px" />
+{/if}
+
+<div id="article-content" class:thumbnail-exists={hasThumbnail}>
 	<h1 id="article-title" style={parallax(-0.19)}>{metadata.title}</h1>
 	<br />
 	<p id="article-desc" style={parallax(-0.12)}>{$date(idToDate(slug), { format: 'full' })}</p>
@@ -101,7 +108,7 @@
 		}
 	}
 
-	#article-content {
+	#article-content.thumbnail-exists {
 		position: relative;
 		bottom: $header-height * 1.3 + 18px;
 
