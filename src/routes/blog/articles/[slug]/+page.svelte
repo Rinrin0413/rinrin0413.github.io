@@ -54,15 +54,14 @@
 	/>
 </div>
 
-<div id="article-meta">
+<div id="article-content">
 	<h1 id="article-title" style={parallax(-0.19)}>{metadata.title}</h1>
     <br />
     <p id="article-desc" style={parallax(-0.12)}>
 		{$_('article.published')}: {$date(idToDate(slug), { format: 'long' })}<br />
 	</p>
+	<Article body={data.component} />
 </div>
-
-<Article body={data.component} />
 
 <style lang="scss">
 	@use '/assets/stylesheets/variables/dimension' as *;
@@ -103,7 +102,7 @@
 		}
 	}
 
-	#article-meta {
+	#article-content {
 		position: relative;
 		bottom: $header-height * 1.3 + 18px;
 
@@ -137,7 +136,8 @@
         display: inline-block;
         padding: 3px 18px;
         margin: 0 auto;
-		margin-top: 18px;
+		margin-top: 16px;
+		margin-bottom: 32px;
 		color: $text-color-meta;
 		font-size: 16px;
 		font-weight: lighter;
