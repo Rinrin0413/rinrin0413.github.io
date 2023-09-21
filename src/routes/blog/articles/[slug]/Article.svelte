@@ -161,6 +161,7 @@
 			}
 
 			table {
+				font-size: 16px;
 				margin: 12px auto;
 				border-collapse: collapse;
 				overflow: hidden;
@@ -168,10 +169,15 @@
 				$blur: blur(16px);
 				backdrop-filter: $blur;
 				-webkit-backdrop-filter: $blur;
+				word-break: break-all;
+
+				@include sp {
+					font-size: 14px;
+				}
 
 				th,
 				td {
-					padding: 6px 8px;
+					max-width: 383px;
 					padding: 8px 12px;
 					border: 1px solid rgba($text-primary, 0.1);
 				}
