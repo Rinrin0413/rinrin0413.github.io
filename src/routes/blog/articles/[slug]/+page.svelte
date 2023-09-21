@@ -55,8 +55,8 @@
 
 <div id="article-content">
 	<h1 id="article-title" style={parallax(-0.19)}>{metadata.title}</h1>
-    <br />
-    <p id="article-desc" style={parallax(-0.12)}>{$date(idToDate(slug), { format: 'long' })}</p>
+	<br />
+	<p id="article-desc" style={parallax(-0.12)}>{$date(idToDate(slug), { format: 'long' })}</p>
 	<Article body={data.component} />
 </div>
 
@@ -130,14 +130,14 @@
 	}
 
 	#article-desc {
-        display: inline-block;
-        padding: 3px 18px;
-        margin: 0 auto;
+		display: inline-block;
+		padding: 3px 18px;
+		margin: 0 auto;
 		margin-top: 16px;
 		margin-bottom: 32px;
 		color: $text-color-meta;
 		font-size: 16px;
 		font-weight: lighter;
-        @include glassmorphism($background-color: #0000008a, $border-radius: 1px);
-    }
+		@include glassmorphism($background-color: #0000008a, $border-radius: 1px);
+	}
 </style>
