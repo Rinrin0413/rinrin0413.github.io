@@ -9,7 +9,9 @@
 
 	export let data: PageData;
 	const metadata = data.frontmatter;
+	/* eslint-disable @typescript-eslint/no-non-null-assertion */
 	const slug = $page.url.pathname.split('/').pop()!;
+	/* eslint-enable @typescript-eslint/no-non-null-assertion */
 
 	let scrollY: number;
 	let parallax = parallaxStyle(0);
