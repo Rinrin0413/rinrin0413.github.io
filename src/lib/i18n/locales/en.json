@@ -169,5 +169,8 @@
 	},
 	"social": {
 		"desc": "List of my social accounts"
+	},
+	"article": {
+		"published": "Published"
 	}
 }

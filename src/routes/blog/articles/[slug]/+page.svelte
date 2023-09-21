@@ -5,6 +5,7 @@
 	import { page } from '$app/stores';
 	import { SITE_URL } from '$lib/variables';
 	import { parallaxStyle, idToDate } from '$lib/util';
+	import { _ } from 'svelte-i18n';
 	import { date } from 'svelte-i18n';
 
 	export let data: PageData;
@@ -57,7 +58,7 @@
 	<h1 id="article-title" style={parallax(-0.19)}>{metadata.title}</h1>
     <br />
     <p id="article-desc" style={parallax(-0.12)}>
-		Published: {$date(idToDate(slug), { format: 'long' })}<br />
+		{$_('article.published')}: {$date(idToDate(slug), { format: 'long' })}<br />
 	</p>
 </div>
 

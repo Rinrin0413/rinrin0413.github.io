@@ -162,5 +162,8 @@
 	},
 	"social": {
 		"desc": "Rinrin.rs のソーシャルアカウント一覧"
+	},
+	"article": {
+		"published": "公開日"
 	}
 }
