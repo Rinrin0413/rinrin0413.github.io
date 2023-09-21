@@ -58,7 +58,7 @@
 <div id="article-content">
 	<h1 id="article-title" style={parallax(-0.19)}>{metadata.title}</h1>
 	<br />
-	<p id="article-desc" style={parallax(-0.12)}>{$date(idToDate(slug), { format: 'long' })}</p>
+	<p id="article-desc" style={parallax(-0.12)}>{$date(idToDate(slug), { format: 'full' })}</p>
 	<Article body={data.component} />
 </div>
 
