@@ -1,10 +1,10 @@
 <script lang="ts">
 	import { _ } from 'svelte-i18n';
 
-	export let tags: string[];
+	export let tags: string[] | null;
 </script>
 
-{#if 0 < tags.length}
+{#if tags && 0 < tags.length}
 	<div id="tags">
 		<span>{$_('w.tags')}</span>
 		<ul>
