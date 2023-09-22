@@ -2,6 +2,7 @@
 	import Space from '$lib/components/Space.svelte';
 	import Article from './Article.svelte';
 	import Tags from './Tags.svelte';
+	import ScrollToTop from './ScrollToTop.svelte';
 
 	import type { PageData } from './$types';
 	import { page } from '$app/stores';
@@ -74,6 +75,8 @@
 	<Article body={data.component} />
 	<Tags tags={metadata.tags} />
 </div>
+
+<ScrollToTop />
 
 <style lang="scss">
 	@use '/assets/stylesheets/variables/dimension' as *;
