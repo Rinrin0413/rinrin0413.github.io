@@ -170,5 +170,6 @@
 	},
 	"social": {
 		"desc": "List of my social accounts"
-	}
+	},
+	"article.backToIndex": "Back to index"
 }

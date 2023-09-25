@@ -9,6 +9,7 @@
 	import { SITE_URL } from '$lib/variables';
 	import { parallaxStyle, idToDate } from '$lib/util';
 	import { date } from 'svelte-i18n';
+	import { _ } from 'svelte-i18n';
 
 	export let data: PageData;
 	const metadata = data.frontmatter;
@@ -73,7 +74,7 @@
 	<div><p class="article-date" style={parallax(-0.12)}>{$date(idToDate(slug), { format: 'full' })}</p></div>
 	<Article body={data.component} />
 	<Tags tags={metadata.tags} />
-	<div><a href="/blog" class="back-to-index">Back to index</a></div>
+	<div><a href="/blog" class="back-to-index">{$_('article.backToIndex')}</a></div>
 </div>
 
 <ScrollToTop />
