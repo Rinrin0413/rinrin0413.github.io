@@ -70,8 +70,7 @@
 
 <div id="article-content" class:thumbnail-exists={hasThumbnail}>
 	<h1 id="article-title" style={parallax(-0.19)}>{metadata.title}</h1>
-	<br />
-	<p id="article-desc" style={parallax(-0.12)}>{$date(idToDate(slug), { format: 'full' })}</p>
+	<div><p id="article-date" style={parallax(-0.12)}>{$date(idToDate(slug), { format: 'full' })}</p></div>
 	<Article body={data.component} />
 	<Tags tags={metadata.tags} />
 	<div><a href="/blog" class="back-to-index">Back to index</a></div>
@@ -149,7 +148,7 @@
 		}
 	}
 
-	#article-desc {
+	#article-date {
 		display: inline-block;
 		padding: 3px 18px;
 		margin: 0 auto;
