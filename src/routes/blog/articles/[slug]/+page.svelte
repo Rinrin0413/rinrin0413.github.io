@@ -51,16 +51,16 @@
 	<img
 		src="/images/blog/{slug}.png"
 		alt="Article thumbnail"
-		id="back-thumbnail"
+		class="back-thumbnail"
 		style={parallax(0.25)}
 		aria-hidden="true"
 	/>
 
-	<div id="thumbnail-wrapper">
+	<div class="thumbnail-wrapper">
 		<img
 			src="/images/blog/{slug}.png"
 			alt="Article thumbnail"
-			id="thumbnail"
+			class="thumbnail"
 			style={parallax(-0.25)}
 		/>
 	</div>
@@ -68,9 +68,9 @@
 	<Space height="32px" />
 {/if}
 
-<div id="article-content" class:thumbnail-exists={hasThumbnail}>
-	<h1 id="article-title" style={parallax(-0.19)}>{metadata.title}</h1>
-	<div><p id="article-date" style={parallax(-0.12)}>{$date(idToDate(slug), { format: 'full' })}</p></div>
+<div class="article-content" class:thumbnail-exists={hasThumbnail}>
+	<h1 style={parallax(-0.19)}>{metadata.title}</h1>
+	<div><p class="article-date" style={parallax(-0.12)}>{$date(idToDate(slug), { format: 'full' })}</p></div>
 	<Article body={data.component} />
 	<Tags tags={metadata.tags} />
 	<div><a href="/blog" class="back-to-index">Back to index</a></div>
@@ -84,7 +84,7 @@
 
 	$back-thumbnail-height: calc($max-vh * 70);
 
-	#back-thumbnail {
+	.back-thumbnail {
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -96,7 +96,7 @@
 		user-select: none;
 	}
 
-	#thumbnail-wrapper {
+	.thumbnail-wrapper {
 		width: 100%;
 		height: $back-thumbnail-height;
 		position: relative;
@@ -106,7 +106,7 @@
 		align-items: center;
 	}
 
-	#thumbnail {
+	.thumbnail {
 		position: relative;
 		width: min(95vw, calc($max-vh * 95));
 		height: min(427px, $back-thumbnail-height);
@@ -118,7 +118,7 @@
 		}
 	}
 
-	#article-content.thumbnail-exists {
+	.article-content.thumbnail-exists {
 		position: relative;
 		bottom: $header-height * 1.3 + 18px;
 
@@ -129,7 +129,7 @@
 
 	$text-color-meta: #fffbee;
 
-	#article-title {
+	h1 {
 		display: inline-block;
 		padding: 6px 18px;
 		margin: 0 auto;
@@ -148,7 +148,7 @@
 		}
 	}
 
-	#article-date {
+	.article-date {
 		display: inline-block;
 		padding: 3px 18px;
 		margin: 0 auto;
