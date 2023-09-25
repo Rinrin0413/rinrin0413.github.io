@@ -74,6 +74,7 @@
 	<p id="article-desc" style={parallax(-0.12)}>{$date(idToDate(slug), { format: 'full' })}</p>
 	<Article body={data.component} />
 	<Tags tags={metadata.tags} />
+	<div><a href="/blog" class="back-to-index">Back to index</a></div>
 </div>
 
 <ScrollToTop />
@@ -158,5 +159,11 @@
 		font-size: 16px;
 		font-weight: lighter;
 		@include glassmorphism($background-color: #0000008a, $border-radius: 1px);
+	}
+
+	.back-to-index {
+		display: inline-block;
+		font-size: 18px;
+		margin-top: 32px;
 	}
 </style>
