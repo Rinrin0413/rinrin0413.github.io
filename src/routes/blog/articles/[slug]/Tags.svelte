@@ -23,9 +23,9 @@
 		padding-top: 8px;
 		margin: 0 22px;
 		margin-top: 22px;
-		background-color: #fffcf5;
-		border-radius: 10px;
-		border: 4px solid #d6cbb1;
+		background-color: #fff8e7a4;
+		border-radius: 4px;
+		border: 3px solid #d6cbb1;
 	}
 
 	span {
