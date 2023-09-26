@@ -112,10 +112,10 @@ export function parallaxStyle(scrollY: number) {
 	};
 }
 
-/** Converts an article ID to a date. */
+/** Converts an article ID to a Date object. */
 export function idToDate(articleId: string) {
 	const y = articleId.slice(0, 4);
 	const m = articleId.slice(4, 6).replace(/^0+/, '');
 	const d = articleId.slice(6, 8).replace(/^0+/, '');
-	return Date.UTC(+y, +m - 1, +d);
+	return new Date(`${y}-${m}-${d}`);
 }

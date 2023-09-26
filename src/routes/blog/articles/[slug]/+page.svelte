@@ -74,7 +74,7 @@
 <div class="article-content" class:thumbnail-exists={hasThumbnail}>
 	<h1 style={parallax(-0.19)}>{metadata.title}</h1>
 	<div><time 
-		datetime={new Date(date).toISOString()}
+		datetime={date.toISOString()}
 		style={parallax(-0.12)}
 	>{$date_i18n(date, { format: 'full' })}</time></div>
 	<Article body={data.component} />
