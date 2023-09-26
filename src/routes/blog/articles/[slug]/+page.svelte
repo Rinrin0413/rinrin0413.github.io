@@ -8,7 +8,7 @@
 	import { page } from '$app/stores';
 	import { SITE_URL } from '$lib/variables';
 	import { parallaxStyle, idToDate } from '$lib/util';
-	import { date } from 'svelte-i18n';
+	import { date as date_i18n } from 'svelte-i18n';
 	import { _ } from 'svelte-i18n';
 
 	export let data: PageData;
@@ -20,6 +20,8 @@
 	let scrollY: number;
 	let parallax = parallaxStyle(0);
 	$: parallax = parallaxStyle(scrollY);
+
+	let date = idToDate(slug);
 
 	const hasThumbnail = metadata.hasThumbnail;
 
@@ -71,7 +73,10 @@
 
 <div class="article-content" class:thumbnail-exists={hasThumbnail}>
 	<h1 style={parallax(-0.19)}>{metadata.title}</h1>
-	<div><p class="article-date" style={parallax(-0.12)}>{$date(idToDate(slug), { format: 'full' })}</p></div>
+	<div><time 
+		datetime={new Date(date).toISOString()}
+		style={parallax(-0.12)}
+	>{$date_i18n(date, { format: 'full' })}</time></div>
 	<Article body={data.component} />
 	<Tags tags={metadata.tags} />
 	<div><a href="/blog" class="back-to-index">{$_('article.backToIndex')}</a></div>
@@ -149,7 +154,7 @@
 		}
 	}
 
-	.article-date {
+	time {
 		display: inline-block;
 		padding: 3px 18px;
 		margin: 0 auto;
