@@ -24,11 +24,11 @@
 	let date = idToDate(slug);
 
 	const hasThumbnail = metadata.hasThumbnail;
+	const thumbnail_path = hasThumbnail ? `/images/blog/${slug}.` + metadata.img_fmt : null;
 
 	const HEAD = {
 		title: 'Blog - ' + metadata.title,
-		desc: metadata.desc,
-		thumbnail_path: `/images/blog/${slug}.png`
+		desc: metadata.desc
 	};
 </script>
 
@@ -41,7 +41,7 @@
 	<meta property="og:description" content={HEAD.desc} />
 	<meta property="og:url" content="{SITE_URL}/blog/articles/{slug}" />
 	{#if hasThumbnail}
-		<meta property="og:image" content="{SITE_URL}{HEAD.thumbnail_path}" />
+		<meta property="og:image" content="{SITE_URL}{thumbnail_path}" />
 		<meta property="og:type" content="article" />
 	{/if}
 
@@ -54,7 +54,7 @@
 
 {#if hasThumbnail}
 	<img
-		src="/images/blog/{slug}.png"
+		src={thumbnail_path}
 		alt="Article thumbnail"
 		class="back-thumbnail"
 		style={parallax(0.25)}
@@ -63,7 +63,7 @@
 
 	<div class="thumbnail-wrapper">
 		<img
-			src="/images/blog/{slug}.png"
+			src={thumbnail_path}
 			alt="Article thumbnail"
 			class="thumbnail"
 			style={parallax(-0.25)}
