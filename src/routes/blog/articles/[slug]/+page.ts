@@ -13,5 +13,5 @@ export const load: PageLoad = async ({ params }): Promise<{
 };
 
 function err() {
-	throw error(404, 'This article does not exist');
+	throw error(404);
 }
