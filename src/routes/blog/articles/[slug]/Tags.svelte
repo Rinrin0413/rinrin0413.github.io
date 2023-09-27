@@ -9,7 +9,7 @@
 		<span>{$_('w.tags')}</span>
 		<ul>
 			{#each tags as tag}
-				<li><a href={`/blog/t=${tag}`}>{tag.toUpperCase()}</a></li>
+				<li><a href={`/blog?t=${tag}`}>{tag.toUpperCase()}</a></li>
 			{/each}
 		</ul>
 	</div>
