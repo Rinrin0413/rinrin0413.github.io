@@ -40,8 +40,10 @@
 	<meta property="og:title" content={HEAD.title} />
 	<meta property="og:description" content={HEAD.desc} />
 	<meta property="og:url" content="{SITE_URL}/blog/articles/{slug}" />
-	<meta property="og:image" content="{SITE_URL}{HEAD.thumbnail_path}" />
-	<meta property="og:type" content="article" />
+	{#if hasThumbnail}
+		<meta property="og:image" content="{SITE_URL}{HEAD.thumbnail_path}" />
+		<meta property="og:type" content="article" />
+	{/if}
 
 	{#if !metadata.indexed}
 		<meta name="robots" content="noindex" />
