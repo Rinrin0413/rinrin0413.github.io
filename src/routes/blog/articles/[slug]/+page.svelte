@@ -166,7 +166,14 @@
 		color: $text-color-meta;
 		font-size: 16px;
 		font-weight: lighter;
-		@include glassmorphism($background-color: #0000008a, $border-radius: 1px);
+		background-color: #0000008a;
+		border-radius: 1px;
+		$border-light: 2px solid #ffffff30;
+		$border-dark: 2px solid #00000017;
+		border-top: $border-light;
+		border-left: $border-light;
+		border-bottom: $border-dark;
+		border-right: $border-dark;
 	}
 
 	.back-to-index {
