@@ -24,7 +24,7 @@
 	let date = idToDate(slug);
 
 	const hasThumbnail = metadata.hasThumbnail;
-	const thumbnail_path = hasThumbnail ? `/images/blog/${slug}.` + metadata.img_fmt : null;
+	const thumbnail_path = hasThumbnail ? `/images/blog/${slug}.` + metadata.imgFmt : null;
 
 	const HEAD = {
 		title: 'Blog - ' + metadata.title,
