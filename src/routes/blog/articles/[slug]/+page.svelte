@@ -62,12 +62,7 @@
 	/>
 
 	<div class="thumbnail-wrapper">
-		<img
-			src={thumbnail_path}
-			alt="Article thumbnail"
-			class="thumbnail"
-			style={parallax(-0.25)}
-		/>
+		<img src={thumbnail_path} alt="Article thumbnail" class="thumbnail" style={parallax(-0.25)} />
 	</div>
 {:else}
 	<Space height="32px" />
