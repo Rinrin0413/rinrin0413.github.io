@@ -123,7 +123,7 @@ export function idToDate(articleId: string) {
 }
 
 /** Fetches and sorts all articles. */
-export async function fetchArticles({limit, tags}: fetchArticlesOptions = {}) {
+export async function fetchArticles({limit, tags, only_indexed}: fetchArticlesOptions = {}) {
 	// Fetch all articles.
 	let articles = await Promise.all(
 		Object.entries(import.meta.glob('/src/routes/blog/articles/*.md')).map(
@@ -140,12 +140,18 @@ export async function fetchArticles({limit, tags}: fetchArticlesOptions = {}) {
 	// Sort by newest.
 	articles.sort((a, b) => calcOrder(b.slug) - calcOrder(a.slug));
 
-    // Filter by tags.
-    if (tags) articles = articles.filter((a) => {
-        for (const tag of tags) {
-            const articleTags = a.metadata.tags ?? [];
-            if (!articleTags.includes(tag)) return false;
-        }
+	// Filtering
+    if (tags || only_indexed != undefined) articles = articles.filter((a) => {
+
+		// Filter by tags.
+        if (tags) for (const tag of tags) {
+			const articleTags = a.metadata.tags ?? [];
+			if (!articleTags.includes(tag)) return false;
+		}
+
+		// Filter by indexed.
+		if (only_indexed && !a.metadata.indexed) return false;
+
         return true;
     });
 
@@ -158,6 +164,7 @@ export async function fetchArticles({limit, tags}: fetchArticlesOptions = {}) {
 type fetchArticlesOptions = {
 	limit?: number;
 	tags?: string[];
+	only_indexed?: boolean;
 };
 
 function calcOrder(slug: string) {
