@@ -123,7 +123,7 @@ export function idToDate(articleId: string) {
 }
 
 /** Fetches and sorts all articles. */
-export async function fetchArticles({limit, tags, only_indexed}: fetchArticlesOptions = {}) {
+export async function fetchArticles({ limit, tags, only_indexed }: fetchArticlesOptions = {}) {
 	// Fetch all articles.
 	let articles = await Promise.all(
 		Object.entries(import.meta.glob('/src/routes/blog/articles/*.md')).map(
@@ -138,22 +138,23 @@ export async function fetchArticles({limit, tags, only_indexed}: fetchArticlesOp
 	);
 
 	// Filtering
-    if (tags || only_indexed != undefined) articles = articles.filter((a) => {
+	if (tags || only_indexed != undefined)
+		articles = articles.filter((a) => {
+			// Filter by published.
+			if (!a.metadata.published) return false;
 
-		// Filter by published.
-		if (!a.metadata.published) return false;
+			// Filter by tags.
+			if (tags)
+				for (const tag of tags) {
+					const articleTags = a.metadata.tags ?? [];
+					if (!articleTags.includes(tag)) return false;
+				}
 
-		// Filter by tags.
-        if (tags) for (const tag of tags) {
-			const articleTags = a.metadata.tags ?? [];
-			if (!articleTags.includes(tag)) return false;
-		}
+			// Filter by indexed.
+			if (only_indexed && !a.metadata.indexed) return false;
 
-		// Filter by indexed.
-		if (only_indexed && !a.metadata.indexed) return false;
-
-        return true;
-    });
+			return true;
+		});
 
 	// Sort by newest.
 	articles.sort((a, b) => calcOrder(b.slug) - calcOrder(a.slug));
