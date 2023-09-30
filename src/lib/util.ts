@@ -123,7 +123,7 @@ export function idToDate(articleId: string) {
 }
 
 /** Fetches and sorts all articles. */
-export async function fetchArticles() {
+export async function fetchArticles({limit}: fetchArticlesOptions = {}) {
 	// Fetch all articles.
 	const articles = await Promise.all(
 		Object.entries(import.meta.glob('/src/routes/blog/articles/*.md')).map(
@@ -140,8 +140,15 @@ export async function fetchArticles() {
 	// Sort by newest.
 	articles.sort((a, b) => calcOrder(b.slug) - calcOrder(a.slug));
 
+	// Limit the number of articles.
+	if (limit) articles.splice(limit);
+
 	return articles;
 }
+
+type fetchArticlesOptions = {
+	limit?: number;
+};
 
 function calcOrder(slug: string) {
 	let n = parseInt(slug.split('_')[0]);
