@@ -140,6 +140,9 @@ export async function fetchArticles({limit, tags, only_indexed}: fetchArticlesOp
 	// Filtering
     if (tags || only_indexed != undefined) articles = articles.filter((a) => {
 
+		// Filter by published.
+		if (!a.metadata.published) return false;
+
 		// Filter by tags.
         if (tags) for (const tag of tags) {
 			const articleTags = a.metadata.tags ?? [];
