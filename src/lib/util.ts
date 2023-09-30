@@ -123,9 +123,9 @@ export function idToDate(articleId: string) {
 }
 
 /** Fetches and sorts all articles. */
-export async function fetchArticles({limit}: fetchArticlesOptions = {}) {
+export async function fetchArticles({limit, tags}: fetchArticlesOptions = {}) {
 	// Fetch all articles.
-	const articles = await Promise.all(
+	let articles = await Promise.all(
 		Object.entries(import.meta.glob('/src/routes/blog/articles/*.md')).map(
 			async ([path, importArticle]) => {
 				const { metadata } = (await importArticle()) as { metadata: ArticleMetadata };
@@ -140,6 +140,15 @@ export async function fetchArticles({limit}: fetchArticlesOptions = {}) {
 	// Sort by newest.
 	articles.sort((a, b) => calcOrder(b.slug) - calcOrder(a.slug));
 
+    // Filter by tags.
+    if (tags) articles = articles.filter((a) => {
+        for (const tag of tags) {
+            const articleTags = a.metadata.tags ?? [];
+            if (!articleTags.includes(tag)) return false;
+        }
+        return true;
+    });
+
 	// Limit the number of articles.
 	if (limit) articles.splice(limit);
 
@@ -148,6 +157,7 @@ export async function fetchArticles({limit}: fetchArticlesOptions = {}) {
 
 type fetchArticlesOptions = {
 	limit?: number;
+	tags?: string[];
 };
 
 function calcOrder(slug: string) {
