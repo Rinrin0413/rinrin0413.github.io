@@ -137,9 +137,6 @@ export async function fetchArticles({limit, tags, only_indexed}: fetchArticlesOp
 		)
 	);
 
-	// Sort by newest.
-	articles.sort((a, b) => calcOrder(b.slug) - calcOrder(a.slug));
-
 	// Filtering
     if (tags || only_indexed != undefined) articles = articles.filter((a) => {
 
@@ -154,6 +151,9 @@ export async function fetchArticles({limit, tags, only_indexed}: fetchArticlesOp
 
         return true;
     });
+
+	// Sort by newest.
+	articles.sort((a, b) => calcOrder(b.slug) - calcOrder(a.slug));
 
 	// Limit the number of articles.
 	if (limit) articles.splice(limit);
