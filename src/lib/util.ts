@@ -1,3 +1,5 @@
+import type ArticleMetadata from '$lib/types/ArticleMetadata';
+
 /**
  * Adds a specified class to specified elements when they are scrolled into view.
  *
@@ -118,4 +120,60 @@ export function idToDate(articleId: string) {
 	const m = articleId.slice(4, 6);
 	const d = articleId.slice(6, 8);
 	return new Date(`${y}-${m}-${d}`);
+}
+
+/** Fetches and sorts all articles. */
+export async function fetchArticles({ limit, tags, only_indexed }: fetchArticlesOptions = {}) {
+	// Fetch all articles.
+	let articles = await Promise.all(
+		Object.entries(import.meta.glob('/src/routes/blog/articles/*.md')).map(
+			async ([path, importArticle]) => {
+				const { metadata } = (await importArticle()) as { metadata: ArticleMetadata };
+				return {
+					metadata,
+					slug: path.split('/').pop()!.split('.')[0] // eslint-disable-line @typescript-eslint/no-non-null-assertion
+				};
+			}
+		)
+	);
+
+	// Filtering
+	if (tags || only_indexed != undefined)
+		articles = articles.filter((a) => {
+			// Filter by published.
+			if (!a.metadata.published) return false;
+
+			// Filter by tags.
+			if (tags)
+				for (const tag of tags) {
+					const articleTags = a.metadata.tags ?? [];
+					if (!articleTags.includes(tag)) return false;
+				}
+
+			// Filter by indexed.
+			if (only_indexed && !a.metadata.indexed) return false;
+
+			return true;
+		});
+
+	// Sort by newest.
+	articles.sort((a, b) => calcOrder(b.slug) - calcOrder(a.slug));
+
+	// Limit the number of articles.
+	if (limit) articles.splice(limit);
+
+	return articles;
+}
+
+type fetchArticlesOptions = {
+	limit?: number;
+	tags?: string[];
+	only_indexed?: boolean;
+};
+
+function calcOrder(slug: string) {
+	let n = parseInt(slug.split('_')[0]);
+	// It is alignment for slugs without numbering.
+	n *= n < 100000000 ? 100 : 1;
+	return n;
 }
