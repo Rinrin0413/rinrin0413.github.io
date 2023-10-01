@@ -8,4 +8,5 @@ export default interface ArticleMetadata {
 	tags: string[] | null;
 	hasThumbnail: boolean;
 	imgFmt: string | null;
-}
+	slug?: string;
+};

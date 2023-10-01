@@ -128,11 +128,9 @@ export async function fetchArticles({ limit, tags, only_indexed }: fetchArticles
 	let articles = await Promise.all(
 		Object.entries(import.meta.glob('/src/routes/blog/articles/*.md')).map(
 			async ([path, importArticle]) => {
-				const { metadata } = (await importArticle()) as { metadata: ArticleMetadata };
-				return {
-					metadata,
-					slug: path.split('/').pop()!.split('.')[0] // eslint-disable-line @typescript-eslint/no-non-null-assertion
-				};
+				let { metadata } = (await importArticle()) as { metadata: ArticleMetadata };
+				metadata.slug = path.split('/').pop()!.split('.')[0]; // eslint-disable-line @typescript-eslint/no-non-null-assertion
+				return metadata;
 			}
 		)
 	);
@@ -141,23 +139,27 @@ export async function fetchArticles({ limit, tags, only_indexed }: fetchArticles
 	if (tags || only_indexed != undefined)
 		articles = articles.filter((a) => {
 			// Filter by published.
-			if (!a.metadata.published) return false;
+			if (!a.published) return false;
 
 			// Filter by tags.
 			if (tags)
 				for (const tag of tags) {
-					const articleTags = a.metadata.tags ?? [];
+					const articleTags = a.tags ?? [];
 					if (!articleTags.includes(tag)) return false;
 				}
 
 			// Filter by indexed.
-			if (only_indexed && !a.metadata.indexed) return false;
+			if (only_indexed && !a.indexed) return false;
 
 			return true;
 		});
 
 	// Sort by newest.
-	articles.sort((a, b) => calcOrder(b.slug) - calcOrder(a.slug));
+	articles.sort((a, b) => {
+		if (a.slug && b.slug) return calcOrder(b.slug) - calcOrder(a.slug);
+		// unreachable
+		return 0;
+	});
 
 	// Limit the number of articles.
 	if (limit) articles.splice(limit);

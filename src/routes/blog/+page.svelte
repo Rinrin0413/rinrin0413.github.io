@@ -32,9 +32,8 @@
 	<Title text="Blog" />
 
 	<ul>
-		{#each data.articles as article}
-			{@const slug = article.slug}
-			{@const meta = article.metadata}
+		{#each data.articles as meta}
+			{@const slug = meta.slug ?? 'unreachable'}
 			{@const date = idToDate(slug)}
 
 			<li>

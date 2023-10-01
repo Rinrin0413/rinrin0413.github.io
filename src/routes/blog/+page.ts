@@ -4,9 +4,7 @@ import type ArticleMetadata from '$lib/types/ArticleMetadata';
 export const load: PageLoad = async ({
 	url,
 	fetch
-}): Promise<{
-	articles: { metadata: ArticleMetadata; slug: string }[];
-}> => {
+}): Promise<{articles: ArticleMetadata[]}> => {
 	const response = await fetch('/api/articles?indexed=true&' + url.searchParams);
 	console.log('/api/articles?indexed=true&' + url.searchParams);
 	const articles = await response.json();
