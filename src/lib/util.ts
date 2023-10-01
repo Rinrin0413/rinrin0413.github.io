@@ -128,7 +128,7 @@ export async function fetchArticles({ limit, tags, only_indexed }: fetchArticles
 	let articles = await Promise.all(
 		Object.entries(import.meta.glob('/src/routes/blog/articles/*.md')).map(
 			async ([path, importArticle]) => {
-				let { metadata } = (await importArticle()) as { metadata: ArticleMetadata };
+				const { metadata } = (await importArticle()) as { metadata: ArticleMetadata };
 				metadata.slug = path.split('/').pop()!.split('.')[0]; // eslint-disable-line @typescript-eslint/no-non-null-assertion
 				return metadata;
 			}
