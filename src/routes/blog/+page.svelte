@@ -32,27 +32,33 @@
 
 	<Title text="Blog" />
 
-	<ul>{#each data.articles as meta}
-		{@const slug = meta.slug ?? 'unreachable'}
-		{@const date = idToDate(slug)}
+	<ul>
+		{#each data.articles as meta}
+			{@const slug = meta.slug ?? 'unreachable'}
+			{@const date = idToDate(slug)}
 
-		<li><a href={'/blog/articles/' + slug}><article>
-			<div class="thumbnail">
-				{#if meta.hasThumbnail}
-					<img src={`/images/blog/${slug}.${meta.imgFmt}`} alt="Article thumbnail" />
-				{/if}
-			</div>
-			<div class="meta">
-				<h2>{meta.title}</h2>
-				<time datetime={date.toISOString()}>
-					{$date_i18n(date, { format: 'medium' })}
-				</time>
-				{#if meta.desc}
-					<p>{meta.desc}</p>
-				{/if}
-			</div>
-		</article></a></li>
-	{/each}</ul>
+			<li>
+				<a href={'/blog/articles/' + slug}
+					><article>
+						<div class="thumbnail">
+							{#if meta.hasThumbnail}
+								<img src={`/images/blog/${slug}.${meta.imgFmt}`} alt="Article thumbnail" />
+							{/if}
+						</div>
+						<div class="meta">
+							<h2>{meta.title}</h2>
+							<time datetime={date.toISOString()}>
+								{$date_i18n(date, { format: 'medium' })}
+							</time>
+							{#if meta.desc}
+								<p>{meta.desc}</p>
+							{/if}
+						</div>
+					</article></a
+				>
+			</li>
+		{/each}
+	</ul>
 </section>
 
 <style lang="scss">
