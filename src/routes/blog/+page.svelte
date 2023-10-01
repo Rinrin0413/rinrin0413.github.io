@@ -2,12 +2,13 @@
 	import Title from '$lib/components/Title.svelte';
 	import Space from '$lib/components/Space.svelte';
 
+	import type { PageData } from './$types';
 	import { SITE_URL } from '$lib/variables';
 	import { idToDate } from '$lib/util.js';
 	import { date as date_i18n } from 'svelte-i18n';
 	//import { _ } from 'svelte-i18n';
 
-	export let data;
+	export let data: PageData;
 
 	const HEAD = {
 		title: 'Blog',
