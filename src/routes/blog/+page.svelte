@@ -37,19 +37,21 @@
 			{@const meta = article.metadata}
 			{@const date = idToDate(slug)}
 
-			<li><a href={'/blog/articles/' + slug}>
-				{#if meta.hasThumbnail}
-					<img src={`/images/blog/${slug}.${meta.imgFmt}`} alt="Article thumbnail" />
-				{/if}
-				<h2>{meta.title}</h2>
-				<time datetime={date.toISOString()}>
-					{$date_i18n(date, { format: 'medium' })}
-				</time>
-				{#if meta.desc}
-					<p>{meta.desc}</p>
-				{/if}
-				<span>read more -&gt;</span>
-			</a></li>
+			<li>
+				<a href={'/blog/articles/' + slug}>
+					{#if meta.hasThumbnail}
+						<img src={`/images/blog/${slug}.${meta.imgFmt}`} alt="Article thumbnail" />
+					{/if}
+					<h2>{meta.title}</h2>
+					<time datetime={date.toISOString()}>
+						{$date_i18n(date, { format: 'medium' })}
+					</time>
+					{#if meta.desc}
+						<p>{meta.desc}</p>
+					{/if}
+					<span>read more -&gt;</span>
+				</a>
+			</li>
 		{/each}
 	</ul>
 </section>
