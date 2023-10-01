@@ -36,14 +36,16 @@
 		{#each data.articles as meta}
 			{@const slug = meta.slug ?? 'unreachable'}
 			{@const date = idToDate(slug)}
+			{@const hasThumbnail = meta.hasThumbnail}
 
 			<li>
 				<a href={'/blog/articles/' + slug}
 					><article>
 						<div class="thumbnail">
-							{#if meta.hasThumbnail}
-								<img src={`/images/blog/${slug}.${meta.imgFmt}`} alt="Article thumbnail" />
-							{/if}
+							<img
+								src={'/images/' + (hasThumbnail ? `blog/${slug}.${meta.imgFmt}` : 'no-image_oxipng.png')}
+								alt={hasThumbnail ? 'Article thumbnail' : 'No image'}
+							/>
 						</div>
 						<div class="meta">
 							<h2>{meta.title}</h2>
