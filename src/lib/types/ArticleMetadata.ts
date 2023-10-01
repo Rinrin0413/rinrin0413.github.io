@@ -9,4 +9,4 @@ export default interface ArticleMetadata {
 	hasThumbnail: boolean;
 	imgFmt: string | null;
 	slug?: string;
-};
+}
