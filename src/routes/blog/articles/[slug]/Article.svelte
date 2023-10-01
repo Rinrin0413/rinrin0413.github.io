@@ -4,13 +4,13 @@
 	export let body: typeof SvelteComponent;
 </script>
 
-<article><div><svelte:component this={body} /></div></article>
+<article class="article-body"><div><svelte:component this={body} /></div></article>
 
 <style lang="scss" global>
 	@use '/assets/stylesheets/variables/mixin' as *;
 	@use '/assets/stylesheets/variables/color' as *;
 
-	article {
+	.article-body {
 		max-width: 768px;
 		margin: 0 auto;
 		padding: 0 13px;
