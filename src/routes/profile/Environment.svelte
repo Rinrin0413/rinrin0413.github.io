@@ -1,8 +1,10 @@
 <script lang="ts">
+	import Title2 from '$lib/components/Title2.svelte';
+
 	import { _ } from 'svelte-i18n';
 </script>
 
-<h2>{$_('w.hardware')}</h2>
+<Title2 text={$_('w.hardware')} />
 
 <div>
 	<h3>{$_('w.model')}</h3>
@@ -18,7 +20,7 @@
 	<p>NVIDIA GeForce RTX 3060 / 12GB</p>
 </div>
 
-<h2>{$_('w.software')}</h2>
+<Title2 text={$_('w.software')} />
 
 <div>
 	<h3>OS</h3>
@@ -54,19 +56,6 @@
 <style lang="scss">
 	@use '/assets/stylesheets/variables/color' as *;
 	@use '/assets/stylesheets/variables/mixin' as *;
-
-	h2 {
-		display: inline-block;
-		text-align: center;
-		font-size: 28px;
-		font-weight: bold;
-		border-bottom: 6px solid rgba($text-primary, 0.5);
-		padding: 0 10px;
-
-		@include sp {
-			font-size: 24px;
-		}
-	}
 
 	h3,
 	div p {
