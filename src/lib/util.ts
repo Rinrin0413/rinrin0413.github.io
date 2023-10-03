@@ -122,18 +122,18 @@ export function idToDate(articleId: string) {
 	return new Date(`${y}-${m}-${d}`);
 }
 
+function getArticles(callbackfn: ([path, importArticle]: [string, () => unknown]) => Promise<ArticleMetadata>) {
+	return Promise.all(Object.entries(import.meta.glob('/src/routes/blog/articles/*.md')).map(callbackfn));
+}
+
 /** Fetches and sorts all articles. */
 export async function fetchArticles({ limit, tags, only_indexed }: fetchArticlesOptions = {}) {
 	// Fetch all articles.
-	let articles = await Promise.all(
-		Object.entries(import.meta.glob('/src/routes/blog/articles/*.md')).map(
-			async ([path, importArticle]) => {
-				const { metadata } = (await importArticle()) as { metadata: ArticleMetadata };
-				metadata.slug = path.split('/').pop()!.split('.')[0]; // eslint-disable-line @typescript-eslint/no-non-null-assertion
-				return metadata;
-			}
-		)
-	);
+	let articles = await getArticles(async ([path, importArticle]) => {
+		const { metadata } = (await importArticle()) as { metadata: ArticleMetadata };
+		metadata.slug = path.split('/').pop()!.split('.')[0]; // eslint-disable-line @typescript-eslint/no-non-null-assertion
+		return metadata;
+	}) as ArticleMetadata[];
 
 	// Filtering
 	if (tags || only_indexed != undefined)
