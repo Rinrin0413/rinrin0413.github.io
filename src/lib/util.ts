@@ -122,8 +122,10 @@ export function idToDate(articleId: string) {
 	return new Date(`${y}-${m}-${d}`);
 }
 
+type ArticleTagsWithValidity = { isValid: boolean; tags: string[] | null };
+
 function getArticles(callbackfn: ([path, importArticle]: [string, () => unknown]) => Promise<
-	ArticleMetadata | { isValid: boolean; tags: string[] | null }
+	ArticleMetadata | ArticleTagsWithValidity
 >) {
 	return Promise.all(Object.entries(import.meta.glob('/src/routes/blog/articles/*.md')).map(callbackfn));
 }
@@ -192,7 +194,7 @@ export async function fetchTags() {
 				isValid: metadata.indexed && metadata.published,
 				tags: metadata.tags
 			};
-		}) as { isValid: boolean; tags: string[] | null }[]
+		}) as ArticleTagsWithValidity[]
     )
         // Filter by published,indexed
         // and convert to list of tags.
