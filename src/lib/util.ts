@@ -190,7 +190,7 @@ function calcOrder(slug: string) {
 
 /** Returns a list of tags and their counts. */
 export async function fetchTags() {
-	let tags = // Fetch all articles.
+	const tags = // Fetch all articles.
 		(
 			(await getArticles(async ([_, importArticle]) => {
 				const { metadata } = (await importArticle()) as { metadata: ArticleMetadata };
