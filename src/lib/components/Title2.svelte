@@ -8,7 +8,7 @@
 	export let id: string | undefined | null = null;
 </script>
 
-<h2 id={id}>{text}</h2>
+<h2 {id}>{text}</h2>
 
 <style lang="scss">
 	@use '/assets/stylesheets/variables/color' as *;

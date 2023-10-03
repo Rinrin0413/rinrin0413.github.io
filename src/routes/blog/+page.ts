@@ -2,7 +2,10 @@ import type { PageLoad } from './$types';
 import type ArticleMetadata from '$lib/types/ArticleMetadata';
 import type ArticleTagWithCount from '$lib/types/ArticleTagWithCount';
 
-export const load: PageLoad = async ({ url, fetch }): Promise<{
+export const load: PageLoad = async ({
+	url,
+	fetch
+}): Promise<{
 	articles: ArticleMetadata[];
 	tags: string[];
 	allTags: ArticleTagWithCount[];

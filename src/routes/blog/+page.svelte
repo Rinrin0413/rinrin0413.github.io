@@ -36,14 +36,19 @@
 
 	<div class="tags">
 		<h2>Tags:</h2>
-		<ul>{#each data.allTags as {tag, count}}
+		<ul>
+			{#each data.allTags as { tag, count }}
 				<li style="display: inline-block; margin: 0 6px;">
-				<a href={"/blog?t=" + tag}><span style={`
+					<a href={'/blog?t=' + tag}
+						><span
+							style={`
 					font-weight: ${tags.includes(tag) ? 'bold' : 'lighter'};
-					text-decoration: ${tags.includes(tag) ? 'underline' : 'none'}`
-				}>{tag}</span>({count})</a>
-			</li>
-		{/each}</ul>
+					text-decoration: ${tags.includes(tag) ? 'underline' : 'none'}`}>{tag}</span
+						>({count})</a
+					>
+				</li>
+			{/each}
+		</ul>
 	</div>
 
 	<ul>
