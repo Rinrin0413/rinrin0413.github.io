@@ -6,6 +6,10 @@
 	import type { PageData } from './$types';
 	import { SITE_URL } from '$lib/variables';
 	import { idToDate } from '$lib/util.js';
+	import { fly } from 'svelte/transition';
+	import { elasticBackOut } from '$lib/easing';
+	import { expoIn, expoOut } from 'svelte/easing';
+	import { flip } from 'svelte/animate';
 	import { date as date_i18n } from 'svelte-i18n';
 	//import { _ } from 'svelte-i18n';
 
@@ -38,35 +42,35 @@
 	<TagPicker allTags={data.allTags} pickedTags={tags} />
 
 	<ul>
-		{#each data.articles as meta}
+		{#each data.articles as meta (meta.slug)}
 			{@const slug = meta.slug ?? 'unreachable'}
 			{@const date = idToDate(slug)}
 			{@const hasThumbnail = meta.hasThumbnail}
 
-			<li>
-				<a href={'/blog/articles/' + slug}
-					><article>
-						<div class="thumbnail">
-							<img
-								src={'/images/' +
-									(hasThumbnail ? `blog/${slug}.${meta.imgFmt}` : 'no-image_oxipng.png')}
-								alt={hasThumbnail ? 'Article thumbnail' : 'No image'}
-								loading="lazy"
-								class:no-image={!hasThumbnail}
-							/>
-						</div>
-						<div class="meta">
-							<h2>{meta.title}</h2>
-							<time datetime={date.toISOString()}>
-								{$date_i18n(date, { format: 'medium' })}
-							</time>
-							{#if meta.desc}
-								<p>{meta.desc}</p>
-							{/if}
-						</div>
-					</article></a
-				>
-			</li>
+			<li
+				in:fly={{ x:-512, duration: 1000, easing:elasticBackOut }}
+				out:fly={{ x: 256, duration: 200, easing:expoIn }}
+				animate:flip={{ duration: 700, easing:expoOut }}
+			><a href={'/blog/articles/' + slug}><article>
+				<div class="thumbnail">
+					<img
+						src={'/images/' +
+							(hasThumbnail ? `blog/${slug}.${meta.imgFmt}` : 'no-image_oxipng.png')}
+						alt={hasThumbnail ? 'Article thumbnail' : 'No image'}
+						loading="lazy"
+						class:no-image={!hasThumbnail}
+					/>
+				</div>
+				<div class="meta">
+					<h2>{meta.title}</h2>
+					<time datetime={date.toISOString()}>
+						{$date_i18n(date, { format: 'medium' })}
+					</time>
+					{#if meta.desc}
+						<p>{meta.desc}</p>
+					{/if}
+				</div>
+			</article></a></li>
 		{/each}
 	</ul>
 </section>
