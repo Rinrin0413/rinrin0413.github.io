@@ -52,6 +52,6 @@
 	}
 
 	.tag-btn:hover {
-        text-decoration: underline;
-    }
+		text-decoration: underline;
+	}
 </style>
