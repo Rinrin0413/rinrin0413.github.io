@@ -1,11 +1,11 @@
 <script lang="ts">
 	export let name: string;
 	export let count: number;
-	export let enabled: boolean;
+	export let isEnabled: boolean;
 </script>
 
-<li class:enabled>
-	<a href={`/blog${enabled ? '' : `?t=${name}`}`} class="tag-btn">
+<li class:isEnabled>
+	<a href={`/blog${isEnabled ? '' : `?t=${name}`}`} class="tag-btn">
 		{name}({count})
 	</a>
 </li>
@@ -17,7 +17,7 @@
 
 	li:not(.enabled) {
         $disabled-opacity: 0.53;
-        
+
 		opacity: $disabled-opacity;
 		transition: 0.17s;
 

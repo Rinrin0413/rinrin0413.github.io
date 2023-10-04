@@ -13,7 +13,7 @@
 
 	<ul>
 		{#each allTags as { tag, count }}
-			<Tag name={tag} {count} enabled={pickedTags.includes(tag)} />
+			<Tag name={tag} {count} isEnabled={pickedTags.includes(tag)} />
 		{/each}
 	</ul>
 </details>
