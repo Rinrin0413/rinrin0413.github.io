@@ -48,29 +48,33 @@
 			{@const hasThumbnail = meta.hasThumbnail}
 
 			<li
-				in:fly={{ x:-512, duration: 1000, easing:elasticBackOut }}
-				out:fly={{ x: 256, duration: 200, easing:expoIn }}
-				animate:flip={{ duration: 700, easing:expoOut }}
-			><a href={'/blog/articles/' + slug}><article>
-				<div class="thumbnail">
-					<img
-						src={'/images/' +
-							(hasThumbnail ? `blog/${slug}.${meta.imgFmt}` : 'no-image_oxipng.png')}
-						alt={hasThumbnail ? 'Article thumbnail' : 'No image'}
-						loading="lazy"
-						class:no-image={!hasThumbnail}
-					/>
-				</div>
-				<div class="meta">
-					<h2>{meta.title}</h2>
-					<time datetime={date.toISOString()}>
-						{$date_i18n(date, { format: 'medium' })}
-					</time>
-					{#if meta.desc}
-						<p>{meta.desc}</p>
-					{/if}
-				</div>
-			</article></a></li>
+				in:fly={{ x: -512, duration: 1000, easing: elasticBackOut }}
+				out:fly={{ x: 256, duration: 200, easing: expoIn }}
+				animate:flip={{ duration: 700, easing: expoOut }}
+			>
+				<a href={'/blog/articles/' + slug}
+					><article>
+						<div class="thumbnail">
+							<img
+								src={'/images/' +
+									(hasThumbnail ? `blog/${slug}.${meta.imgFmt}` : 'no-image_oxipng.png')}
+								alt={hasThumbnail ? 'Article thumbnail' : 'No image'}
+								loading="lazy"
+								class:no-image={!hasThumbnail}
+							/>
+						</div>
+						<div class="meta">
+							<h2>{meta.title}</h2>
+							<time datetime={date.toISOString()}>
+								{$date_i18n(date, { format: 'medium' })}
+							</time>
+							{#if meta.desc}
+								<p>{meta.desc}</p>
+							{/if}
+						</div>
+					</article></a
+				>
+			</li>
 		{/each}
 	</ul>
 </section>
