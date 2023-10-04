@@ -1,13 +1,29 @@
 <script lang="ts">
+    import { goto } from "$app/navigation";
+
 	export let name: string;
 	export let count: number;
 	export let isEnabled: boolean;
+
+    function toggle() {
+        isEnabled = !isEnabled;
+
+        const params = new URLSearchParams(location.search).getAll('t');
+        let tagsInParam = 0 < params.length ? params[0].split(',') : [];
+        if (isEnabled) {
+            tagsInParam.push(name);
+        } else {
+            tagsInParam = tagsInParam.filter(t => t != name);
+        }
+
+        goto('/blog' + (0 < tagsInParam.length ? '?t=' + tagsInParam.join(',') : ''));
+    }
 </script>
 
-<li class:isEnabled>
-	<a href={`/blog${isEnabled ? '' : `?t=${name}`}`} class="tag-btn">
+<li class:enabled={isEnabled}>
+	<button on:click={toggle} class="tag-btn">
 		{name}({count})
-	</a>
+    </button>
 </li>
 
 <style lang="scss">
