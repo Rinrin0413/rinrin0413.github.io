@@ -86,5 +86,5 @@
 </section>
 
 <style lang="scss">
-	@use '/assets/stylesheets/blog';
+	@use '/assets/stylesheets/blog/blog';
 </style>
