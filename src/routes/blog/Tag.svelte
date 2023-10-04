@@ -11,14 +11,22 @@
 </li>
 
 <style lang="scss">
+	@use '/assets/stylesheets/variables/mixin' as *;
+
 	@use '/assets/stylesheets/blog/tag';
 
 	li:not(.enabled) {
-		opacity: 0.53;
+        $disabled-opacity: 0.53;
+        
+		opacity: $disabled-opacity;
 		transition: 0.17s;
 
 		&:hover {
 			opacity: 0.7;
+
+            @include sp {
+                opacity: $disabled-opacity;
+            }
 		}
 	}
 </style>
