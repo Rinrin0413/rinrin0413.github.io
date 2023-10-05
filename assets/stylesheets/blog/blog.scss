@@ -10,10 +10,13 @@ ul {
 
 li {
 	margin: 24px 16px;
+}
 
-	@include sp {
-		margin: 17px 14px;
-	}
+h2 {
+	font-size: 24px;
+	font-weight: lighter;
+	margin: 0 8px;
+	margin-top: 14px;
 }
 
 .clear-btn {
@@ -36,5 +39,15 @@ li {
 	&:hover {
 		filter: brightness(1.06);
 		transform: translateY(3px);
+	}
+}
+
+@include sp {
+	li {
+		margin: 17px 14px;
+	}
+
+	h2 {
+		font-size: 18px;
 	}
 }
