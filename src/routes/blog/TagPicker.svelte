@@ -12,18 +12,20 @@
 	let isOpened = true;
 </script>
 
-<button on:click={() => isOpened = !isOpened}>
+<button on:click={() => (isOpened = !isOpened)}>
 	<span class:opened={isOpened}><Title2 text="Tags" /></span>
 </button>
 
-{#if isOpened}<ul>{#each allTags as { tag, count }, i}
-	<div
-		in:fly={{ y: -18, duration: 400, delay: i * 52, easing: bounceOut }}
-		out:scale={{ duration: 200, delay: (allTags.length -i) * 16 }}
-	>
-		<Tag name={tag} {count} isEnabled={pickedTags.includes(tag)} />
-	</div>
-{/each}</ul>{/if}
+{#if isOpened}<ul>
+		{#each allTags as { tag, count }, i}
+			<div
+				in:fly={{ y: -18, duration: 400, delay: i * 52, easing: bounceOut }}
+				out:scale={{ duration: 200, delay: (allTags.length - i) * 16 }}
+			>
+				<Tag name={tag} {count} isEnabled={pickedTags.includes(tag)} />
+			</div>
+		{/each}
+	</ul>{/if}
 
 <style lang="scss">
 	button {
@@ -42,7 +44,7 @@
 			rotate: -90deg;
 			transition: 0.2s;
 		}
-	
+
 		&.opened::before {
 			rotate: 0deg;
 		}
