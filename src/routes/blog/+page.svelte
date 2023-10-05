@@ -16,6 +16,8 @@
 	export let data: PageData;
 	let tags = data.tags;
 	$: tags = data.tags;
+	let articles = data.articles;
+	$: articles = data.articles;
 
 	const HEAD = {
 		title: 'Blog',
@@ -41,42 +43,47 @@
 
 	<TagPicker allTags={data.allTags} pickedTags={tags} />
 
-	<ul>
-		{#each data.articles as meta (meta.slug)}
-			{@const slug = meta.slug ?? 'unreachable'}
-			{@const date = idToDate(slug)}
-			{@const hasThumbnail = meta.hasThumbnail}
+	{#if 0 < articles.length}
+		<ul>
+			{#each articles as meta (meta.slug)}
+				{@const slug = meta.slug ?? 'unreachable'}
+				{@const date = idToDate(slug)}
+				{@const hasThumbnail = meta.hasThumbnail}
 
-			<li
-				in:fly={{ x: -512, duration: 1000, easing: elasticBackOut }}
-				out:fly={{ x: 256, duration: 200, easing: expoIn }}
-				animate:flip={{ duration: 700, easing: expoOut }}
-			>
-				<a href={'/blog/articles/' + slug}
-					><article>
-						<div class="thumbnail">
-							<img
-								src={'/images/' +
-									(hasThumbnail ? `blog/${slug}.${meta.imgFmt}` : 'no-image_oxipng.png')}
-								alt={hasThumbnail ? 'Article thumbnail' : 'No image'}
-								loading="lazy"
-								class:no-image={!hasThumbnail}
-							/>
-						</div>
-						<div class="meta">
-							<h2>{meta.title}</h2>
-							<time datetime={date.toISOString()}>
-								{$date_i18n(date, { format: 'medium' })}
-							</time>
-							{#if meta.desc}
-								<p>{meta.desc}</p>
-							{/if}
-						</div>
-					</article></a
+				<li
+					in:fly={{ x: -512, duration: 1000, easing: elasticBackOut }}
+					out:fly={{ x: 256, duration: 200, easing: expoIn }}
+					animate:flip={{ duration: 700, easing: expoOut }}
 				>
-			</li>
-		{/each}
-	</ul>
+					<a href={'/blog/articles/' + slug}
+						><article>
+							<div class="thumbnail">
+								<img
+									src={'/images/' +
+										(hasThumbnail ? `blog/${slug}.${meta.imgFmt}` : 'no-image_oxipng.png')}
+									alt={hasThumbnail ? 'Article thumbnail' : 'No image'}
+									loading="lazy"
+									class:no-image={!hasThumbnail}
+								/>
+							</div>
+							<div class="meta">
+								<h2>{meta.title}</h2>
+								<time datetime={date.toISOString()}>
+									{$date_i18n(date, { format: 'medium' })}
+								</time>
+								{#if meta.desc}
+									<p>{meta.desc}</p>
+								{/if}
+							</div>
+						</article></a
+					>
+				</li>
+			{/each}
+		</ul>
+	{:else}
+		<h2>No matching articles found.</h2>
+		<a href="/blog" class="clear-btn">Clear filters</a>
+	{/if}
 </section>
 
 <style lang="scss">
