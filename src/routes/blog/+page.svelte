@@ -43,15 +43,17 @@
 	<TagPicker allTags={data.allTags} pickedTags={tags} />
 
 	{#if 0 < articles.length}
-		<ul>{#each articles as meta (meta.slug)}
-			<li
-				in:fly={{ x: -512, duration: 1000, easing: elasticBackOut }}
-				out:fly={{ x: 256, duration: 200, easing: expoIn }}
-				animate:flip={{ duration: 700, easing: expoOut }}
-			>
-				<ArticleCard meta={meta} />
-			</li>
-		{/each}</ul>
+		<ul>
+			{#each articles as meta (meta.slug)}
+				<li
+					in:fly={{ x: -512, duration: 1000, easing: elasticBackOut }}
+					out:fly={{ x: 256, duration: 200, easing: expoIn }}
+					animate:flip={{ duration: 700, easing: expoOut }}
+				>
+					<ArticleCard {meta} />
+				</li>
+			{/each}
+		</ul>
 	{:else}
 		<h2>No matching articles found.</h2>
 		<a href="/blog" class="clear-btn">Clear filters</a>
