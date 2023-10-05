@@ -10,7 +10,7 @@
 	import { elasticBackOut } from '$lib/easing';
 	import { expoIn, expoOut } from 'svelte/easing';
 	import { flip } from 'svelte/animate';
-	//import { _ } from 'svelte-i18n';
+	import { _ } from 'svelte-i18n';
 
 	export let data: PageData;
 	let tags = data.tags;
@@ -55,8 +55,8 @@
 			{/each}
 		</ul>
 	{:else}
-		<h2>No matching articles found.</h2>
-		<a href="/blog" class="clear-btn">Clear filters</a>
+		<h2>{$_('blog.noMatchingArticlesFound')}</h2>
+		<a href="/blog" class="clear-btn">{$_('blog.clearFilters')}</a>
 	{/if}
 </section>
 

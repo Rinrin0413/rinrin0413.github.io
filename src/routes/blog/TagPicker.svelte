@@ -3,6 +3,7 @@
 	import Tag from './Tag.svelte';
 
 	import type ArticleTagWithCount from '$lib/types/ArticleTagWithCount';
+	import { _ } from 'svelte-i18n';
 	import { fly, scale } from 'svelte/transition';
 	import { bounceOut } from 'svelte/easing';
 
@@ -13,7 +14,7 @@
 </script>
 
 <button on:click={() => (isOpened = !isOpened)}>
-	<span class:opened={isOpened}><Title2 text="Tags" /></span>
+	<span class:opened={isOpened}><Title2 text={$_('w.tags')} /></span>
 </button>
 
 {#if isOpened}<ul>
