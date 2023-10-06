@@ -17,16 +17,18 @@
 	<span class:opened={isOpened}><Title2 text={$_('w.tags')} /></span>
 </button>
 
-{#if isOpened}<ul>
-		{#each allTags as { tag, count }, i}
+<ul>
+	{#each allTags as { tag, count }, i}
+		{#if isOpened}
 			<div
 				in:fly|global={{ y: -18, duration: 400, delay: i * 52, easing: bounceOut }}
 				out:scale|local={{ duration: 200, delay: (allTags.length - i) * 16 }}
 			>
 				<Tag name={tag} {count} isEnabled={pickedTags.includes(tag)} />
 			</div>
-		{/each}
-	</ul>{/if}
+		{/if}
+	{/each}
+</ul>
 
 <style lang="scss">
 	button {
