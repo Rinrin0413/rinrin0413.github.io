@@ -164,5 +164,9 @@
 	"social": {
 		"desc": "Rinrin.rs のソーシャルアカウント一覧"
 	},
+	"blog": {
+		"noMatchingArticlesFound": "一致する記事が見つかりませんでした。",
+		"clearFilters": "フィルターをリセット"
+	},
 	"article.backToIndex": "記事一覧に戻る"
 }

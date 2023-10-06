@@ -1,9 +1,22 @@
 <script lang="ts">
-	import Title from '$lib/components/Title.svelte';
 	import Space from '$lib/components/Space.svelte';
+	import Title from '$lib/components/Title.svelte';
+	import TagPicker from './TagPicker.svelte';
+	import ArticleCard from './ArticleCard.svelte';
 
+	import type { PageData } from './$types';
 	import { SITE_URL } from '$lib/variables';
-	//import { _ } from 'svelte-i18n';
+	import { fly } from 'svelte/transition';
+	import { elasticBackOut } from '$lib/easing';
+	import { expoIn, expoOut } from 'svelte/easing';
+	import { flip } from 'svelte/animate';
+	import { _ } from 'svelte-i18n';
+
+	export let data: PageData;
+	let tags = data.tags;
+	$: tags = data.tags;
+	let articles = data.articles;
+	$: articles = data.articles;
 
 	const HEAD = {
 		title: 'Blog',
@@ -26,7 +39,27 @@
 	<Space height="64px" />
 
 	<Title text="Blog" />
-	<p>Coming soon...</p>
+
+	<TagPicker allTags={data.allTags} pickedTags={tags} />
+
+	{#if 0 < articles.length}
+		<ul>
+			{#each articles as meta (meta.slug)}
+				<li
+					in:fly|global={{ x: -512, duration: 1000, easing: elasticBackOut }}
+					out:fly|global={{ x: 256, duration: 200, easing: expoIn }}
+					animate:flip={{ duration: 700, easing: expoOut }}
+				>
+					<ArticleCard {meta} />
+				</li>
+			{/each}
+		</ul>
+	{:else}
+		<h2>{$_('blog.noMatchingArticlesFound')}</h2>
+		<a href="/blog" class="clear-btn">{$_('blog.clearFilters')}</a>
+	{/if}
 </section>
 
-<style lang="scss"></style>
+<style lang="scss">
+	@use '/assets/stylesheets/blog/blog';
+</style>

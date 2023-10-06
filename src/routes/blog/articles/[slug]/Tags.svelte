@@ -9,7 +9,7 @@
 		<span>{$_('w.tags')}</span>
 		<ul>
 			{#each tags as tag}
-				<li><a href={`/blog?t=${tag}`}>{tag.toUpperCase()}</a></li>
+				<li><a href={`/blog?t=${tag}`} class="tag-btn">{tag.toUpperCase()}</a></li>
 			{/each}
 		</ul>
 	</div>
@@ -17,6 +17,8 @@
 
 <style lang="scss">
 	@use '/assets/stylesheets/variables/mixin' as *;
+
+	@use '/assets/stylesheets/blog/tag';
 
 	div {
 		display: inline-block;
@@ -49,27 +51,7 @@
 		justify-content: center;
 	}
 
-	li {
-		display: inline-block;
-		padding: 1px 6px;
-		margin-right: 6px;
-		margin-bottom: 4px;
-		background-color: #1f1f1f;
-		border-radius: 3px;
-
-		@include sp {
-			margin-bottom: 13px;
-		}
-	}
-
-	a {
-		font-family: 'Source Code Pro', monospace;
-		color: #e9e9e9;
-		font-size: 16px;
-		text-decoration: none;
-
-		&:hover {
-			text-decoration: underline;
-		}
+	.tag-btn:hover {
+		text-decoration: underline;
 	}
 </style>

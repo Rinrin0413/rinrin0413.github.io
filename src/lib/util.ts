@@ -129,10 +129,8 @@ export async function fetchArticles({ limit, tags, only_indexed }: fetchArticles
 		Object.entries(import.meta.glob('/src/routes/blog/articles/*.md')).map(
 			async ([path, importArticle]) => {
 				const { metadata } = (await importArticle()) as { metadata: ArticleMetadata };
-				return {
-					metadata,
-					slug: path.split('/').pop()!.split('.')[0] // eslint-disable-line @typescript-eslint/no-non-null-assertion
-				};
+				metadata.slug = path.split('/').pop()!.split('.')[0]; // eslint-disable-line @typescript-eslint/no-non-null-assertion
+				return metadata;
 			}
 		)
 	);
@@ -141,23 +139,27 @@ export async function fetchArticles({ limit, tags, only_indexed }: fetchArticles
 	if (tags || only_indexed != undefined)
 		articles = articles.filter((a) => {
 			// Filter by published.
-			if (!a.metadata.published) return false;
+			if (!a.published) return false;
 
 			// Filter by tags.
 			if (tags)
 				for (const tag of tags) {
-					const articleTags = a.metadata.tags ?? [];
+					const articleTags = a.tags ?? [];
 					if (!articleTags.includes(tag)) return false;
 				}
 
 			// Filter by indexed.
-			if (only_indexed && !a.metadata.indexed) return false;
+			if (only_indexed && !a.indexed) return false;
 
 			return true;
 		});
 
 	// Sort by newest.
-	articles.sort((a, b) => calcOrder(b.slug) - calcOrder(a.slug));
+	articles.sort((a, b) => {
+		if (a.slug && b.slug) return calcOrder(b.slug) - calcOrder(a.slug);
+		// unreachable
+		return 0;
+	});
 
 	// Limit the number of articles.
 	if (limit) articles.splice(limit);
@@ -176,4 +178,40 @@ function calcOrder(slug: string) {
 	// It is alignment for slugs without numbering.
 	n *= n < 100000000 ? 100 : 1;
 	return n;
+}
+
+/** Returns a list of tags and their counts. */
+export async function fetchTags() {
+	const tags = // Fetch all articles.
+		(
+			await Promise.all(
+				Object.values(import.meta.glob('/src/routes/blog/articles/*.md')).map(
+					async (importArticle) => {
+						const { metadata } = (await importArticle()) as { metadata: ArticleMetadata };
+						return {
+							isValid: metadata.indexed && metadata.published,
+							tags: metadata.tags
+						};
+					}
+				)
+			)
+		)
+			// Filter by published,indexed
+			// and convert to list of tags.
+			.flatMap((a) => (a.isValid && a.tags) || [])
+
+			// Count tags.
+			.reduce((acc: { tag: string; count: number }[], tag) => {
+				const existingTag = acc.find((t) => t.tag == tag);
+				existingTag ? existingTag.count++ : acc.push({ tag, count: 1 });
+				return acc;
+			}, [])
+
+			// Sort by tag name.
+			.sort((a, b) => a.tag.localeCompare(b.tag))
+
+			// Sort by count.
+			.sort((a, b) => b.count - a.count);
+
+	return tags;
 }

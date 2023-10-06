@@ -171,5 +171,9 @@
 	"social": {
 		"desc": "List of my social accounts"
 	},
+	"blog": {
+		"noMatchingArticlesFound": "No matching articles found.",
+		"clearFilters": "Clear filters"
+	},
 	"article.backToIndex": "Back to index"
 }
