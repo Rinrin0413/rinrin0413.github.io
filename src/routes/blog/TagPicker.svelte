@@ -20,8 +20,8 @@
 {#if isOpened}<ul>
 		{#each allTags as { tag, count }, i}
 			<div
-				in:fly={{ y: -18, duration: 400, delay: i * 52, easing: bounceOut }}
-				out:scale={{ duration: 200, delay: (allTags.length - i) * 16 }}
+				in:fly|global={{ y: -18, duration: 400, delay: i * 52, easing: bounceOut }}
+				out:scale|local={{ duration: 200, delay: (allTags.length - i) * 16 }}
 			>
 				<Tag name={tag} {count} isEnabled={pickedTags.includes(tag)} />
 			</div>

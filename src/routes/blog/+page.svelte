@@ -46,8 +46,8 @@
 		<ul>
 			{#each articles as meta (meta.slug)}
 				<li
-					in:fly={{ x: -512, duration: 1000, easing: elasticBackOut }}
-					out:fly={{ x: 256, duration: 200, easing: expoIn }}
+					in:fly|global={{ x: -512, duration: 1000, easing: elasticBackOut }}
+					out:fly|global={{ x: 256, duration: 200, easing: expoIn }}
 					animate:flip={{ duration: 700, easing: expoOut }}
 				>
 					<ArticleCard {meta} />
