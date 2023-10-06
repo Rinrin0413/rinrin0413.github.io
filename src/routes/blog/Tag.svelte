@@ -22,7 +22,7 @@
 
 <li class:enabled={isEnabled}>
 	<button on:click={toggle} class="tag-btn">
-		{name}({count})
+		{name.toUpperCase()}({count})
 	</button>
 </li>
 
