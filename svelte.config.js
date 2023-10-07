@@ -4,6 +4,7 @@ import preprocess from 'svelte-preprocess';
 import { mdsvex } from 'mdsvex';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import rehypeExternalLinks from 'rehype-external-links';
 import shiki from 'shiki';
 import { escapeSvelte } from 'mdsvex';
 
@@ -19,7 +20,10 @@ const config = {
 		}),
 		mdsvex({
 			extensions: ['.md'],
-			rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings],
+			rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings, [rehypeExternalLinks, {
+				target: '_blank',
+				rel: ['noopener', 'noreferrer']
+			}]],
 			highlight: { highlighter }
 		})
 	],
