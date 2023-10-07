@@ -20,10 +20,17 @@ const config = {
 		}),
 		mdsvex({
 			extensions: ['.md'],
-			rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings, [rehypeExternalLinks, {
-				target: '_blank',
-				rel: ['noopener', 'noreferrer']
-			}]],
+			rehypePlugins: [
+				rehypeSlug,
+				rehypeAutolinkHeadings,
+				[
+					rehypeExternalLinks,
+					{
+						target: '_blank',
+						rel: ['noopener', 'noreferrer']
+					}
+				]
+			],
 			highlight: { highlighter }
 		})
 	],
