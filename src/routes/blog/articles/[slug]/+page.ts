@@ -9,7 +9,7 @@ export const load: PageLoad = async ({
 	component: typeof SvelteComponent;
 	frontmatter: ArticleMetadata;
 }> => {
-	const { default: component, metadata: frontmatter } = await import(`../${params.slug}.md`).catch(
+	const { default: component, metadata: frontmatter } = await import(`../../../../../articles/${params.slug}.md`).catch(
 		err
 	);
 	if (!frontmatter.published) err();

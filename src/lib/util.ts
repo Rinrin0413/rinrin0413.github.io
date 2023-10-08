@@ -126,7 +126,7 @@ export function idToDate(articleId: string) {
 export async function fetchArticles({ limit, tags, only_indexed }: fetchArticlesOptions = {}) {
 	// Fetch all articles.
 	let articles = await Promise.all(
-		Object.entries(import.meta.glob('/src/routes/blog/articles/*.md')).map(
+		Object.entries(import.meta.glob('/articles/*.md')).map(
 			async ([path, importArticle]) => {
 				const { metadata } = (await importArticle()) as { metadata: ArticleMetadata };
 				metadata.slug = path.split('/').pop()!.split('.')[0]; // eslint-disable-line @typescript-eslint/no-non-null-assertion
@@ -185,7 +185,7 @@ export async function fetchTags() {
 	const tags = // Fetch all articles.
 		(
 			await Promise.all(
-				Object.values(import.meta.glob('/src/routes/blog/articles/*.md')).map(
+				Object.values(import.meta.glob('/articles/*.md')).map(
 					async (importArticle) => {
 						const { metadata } = (await importArticle()) as { metadata: ArticleMetadata };
 						return {
