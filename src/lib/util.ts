@@ -134,23 +134,22 @@ export async function fetchArticles({ limit, tags, only_indexed }: fetchArticles
 	);
 
 	// Filtering
-	if (tags || only_indexed != undefined)
-		articles = articles.filter((a) => {
-			// Filter by published.
-			if (!a.published) return false;
+	articles = articles.filter((a) => {
+		// Filter by published.
+		if (!a.published) return false;
 
-			// Filter by tags.
-			if (tags)
-				for (const tag of tags) {
-					const articleTags = a.tags ?? [];
-					if (!articleTags.includes(tag)) return false;
-				}
+		// Filter by tags.
+		if (tags)
+			for (const tag of tags) {
+				const articleTags = a.tags ?? [];
+				if (!articleTags.includes(tag)) return false;
+			}
 
-			// Filter by indexed.
-			if (only_indexed && !a.indexed) return false;
+		// Filter by indexed.
+		if (only_indexed && !a.indexed) return false;
 
-			return true;
-		});
+		return true;
+	});
 
 	// Sort by newest.
 	articles.sort((a, b) => {
