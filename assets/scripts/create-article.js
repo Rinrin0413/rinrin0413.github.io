@@ -21,9 +21,9 @@ const filePath = path.join(articlesDir, fileName);
 const initContent = `---
 published: true
 indexed: true
-title: "ここにタイトル"
-desc: "ここに説明文"
-tags: ["タグ", "タグ"]
+title: ここにタイトル
+desc: ここに説明文
+tags: [タグ, タグ]
 hasThumbnail: false
 imgFmt: null
 ---
