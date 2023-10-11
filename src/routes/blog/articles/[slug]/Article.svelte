@@ -11,7 +11,8 @@
 	@use '/assets/stylesheets/variables/color' as *;
 
 	.article-body {
-		max-width: 768px;
+		$width-change-rate: calc(100vw - $breakpoint);
+		max-width: min(calc($width-change-rate * 0.3 + 768px), 1024px);
 		margin: 0 auto;
 		padding: 0 13px;
 
@@ -19,7 +20,7 @@
 			text-align: left;
 			font-size: 18px;
 			font-weight: lighter;
-			padding: 0 18px;
+			padding: 0 min(calc($width-change-rate * 0.1 + 18px), 48px);
 			line-height: 1.5;
 			@include glassmorphism;
 
