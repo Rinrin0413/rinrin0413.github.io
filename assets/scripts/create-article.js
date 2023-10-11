@@ -4,15 +4,16 @@ import path from 'path';
 const articlesDir = path.join(process.cwd(), 'articles');
 
 const now = new Date();
-const date = now.getFullYear() 
-    + String(now.getMonth() + 1).padStart(2, '0') 
-    + String(now.getDate()).padStart(2, '0');
+const year = now.getFullYear();
+const month = String(now.getMonth() + 1).padStart(2, '0');
+const day = String(now.getDate()).padStart(2, '0');
+const date = `${year}${month}${day}`;
 
 let i = 1;
-while (fs.existsSync(path.join(
-    articlesDir,
-    date + (1 < i ? String(i).padStart(2, '0') : '') + '.md'
-))) i++;
+while (
+	fs.existsSync(path.join(articlesDir, date + (1 < i ? String(i).padStart(2, '0') : '') + '.md'))
+)
+	i++;
 const fileName = date + (1 < i ? String(i).padStart(2, '0') : '') + '.md';
 
 const filePath = path.join(articlesDir, fileName);
