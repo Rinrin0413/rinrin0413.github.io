@@ -28,7 +28,7 @@
 	const hasThumbnail = metadata.hasThumbnail;
 	const thumbnail_path = hasThumbnail ? `/images/blog/${slug}.` + metadata.imgFmt : null;
 
-	function introAnim(index: number = 0) {
+	function introAnim(index = 0) {
 		return {
 			duration: 700,
 			delay: 100 + index * 160,
