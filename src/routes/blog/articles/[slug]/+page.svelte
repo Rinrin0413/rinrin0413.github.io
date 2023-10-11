@@ -135,6 +135,7 @@
 
 	h1 {
 		display: inline-block;
+		max-width: 90%;
 		padding: 6px 18px;
 		margin: 0 auto;
 		font-size: 30px;
