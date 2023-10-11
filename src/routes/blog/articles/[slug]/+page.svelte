@@ -175,6 +175,6 @@
 	.back-to-index {
 		display: inline-block;
 		font-size: 18px;
-		margin-top: 32px;
+		margin: 32px 0;
 	}
 </style>
