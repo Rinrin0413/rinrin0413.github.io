@@ -1,12 +1,7 @@
 import adapter from '@sveltejs/adapter-auto';
 import { vitePreprocess } from '@sveltejs/kit/vite';
 import preprocess from 'svelte-preprocess';
-import { mdsvex } from 'mdsvex';
-import rehypeSlug from 'rehype-slug';
-import rehypeAutolinkHeadings from 'rehype-autolink-headings';
-import rehypeExternalLinks from 'rehype-external-links';
-import shiki from 'shiki';
-import { escapeSvelte } from 'mdsvex';
+import mdsvex from './mdsvex.config.js';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -18,21 +13,7 @@ const config = {
 			scss: { sourceMap: true },
 			sourceMap: true
 		}),
-		mdsvex({
-			extensions: ['.md'],
-			rehypePlugins: [
-				rehypeSlug,
-				rehypeAutolinkHeadings,
-				[
-					rehypeExternalLinks,
-					{
-						target: '_blank',
-						rel: ['noopener', 'noreferrer']
-					}
-				]
-			],
-			highlight: { highlighter }
-		})
+		mdsvex
 	],
 
 	kit: {
@@ -44,10 +25,5 @@ const config = {
 
 	extensions: ['.svelte', '.md']
 };
-
-async function highlighter(code, lang) {
-	const theme = await shiki.getHighlighter({ theme: 'dark-plus' });
-	return escapeSvelte(theme.codeToHtml(code, { lang }));
-}
 
 export default config;
