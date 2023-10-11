@@ -22,6 +22,6 @@ export default mdsvex({
 });
 
 async function highlighter(code, lang) {
-	const theme = await shiki.getHighlighter({ theme: 'dark-plus' });
+	const theme = await shiki.getHighlighter({ theme: 'dracula' });
 	return escapeSvelte(theme.codeToHtml(code, { lang }));
 }
