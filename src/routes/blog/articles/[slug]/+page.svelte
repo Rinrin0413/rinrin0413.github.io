@@ -8,6 +8,8 @@
 	import { page } from '$app/stores';
 	import { SITE_URL } from '$lib/variables';
 	import { parallaxStyle, idToDate } from '$lib/util';
+	import { cubicOut } from 'svelte/easing';
+	import { scale } from 'svelte/transition';
 	import { date as date_i18n } from 'svelte-i18n';
 	import { _ } from 'svelte-i18n';
 
@@ -25,6 +27,14 @@
 
 	const hasThumbnail = metadata.hasThumbnail;
 	const thumbnail_path = hasThumbnail ? `/images/blog/${slug}.` + metadata.imgFmt : null;
+
+	function introAnim(index: number = 0) {
+		return {
+			duration: 700,
+			delay: 100 + index * 160,
+			easing: cubicOut
+		};
+	}
 
 	const HEAD = {
 		title: 'Blog - ' + metadata.title,
@@ -61,7 +71,7 @@
 		aria-hidden="true"
 	/>
 
-	<div class="thumbnail-wrapper">
+	<div class="thumbnail-wrapper" in:scale|global={introAnim()}>
 		<img src={thumbnail_path} alt="Article thumbnail" class="thumbnail" style={parallax(-0.25)} />
 	</div>
 {:else}
@@ -69,8 +79,10 @@
 {/if}
 
 <div class="article-content" class:thumbnail-exists={hasThumbnail}>
-	<h1 style={parallax(-0.19)}>{metadata.title}</h1>
-	<div>
+	<div in:scale|global={introAnim(2)}>
+		<h1 style={parallax(-0.19)}>{metadata.title}</h1>
+	</div>
+	<div in:scale|global={introAnim(3)}>
 		<time datetime={date.toISOString()} style={parallax(-0.12)}
 			>{$date_i18n(date, { format: 'full' })}</time
 		>
