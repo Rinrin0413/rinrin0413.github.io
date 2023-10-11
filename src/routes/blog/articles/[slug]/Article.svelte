@@ -19,7 +19,6 @@
 			text-align: left;
 			font-size: 18px;
 			font-weight: lighter;
-			letter-spacing: 1.2px;
 			padding: 0 18px;
 			line-height: 1.5;
 			@include glassmorphism;
