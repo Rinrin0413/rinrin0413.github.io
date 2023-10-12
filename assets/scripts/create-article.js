@@ -32,6 +32,8 @@ imgFmt: null
 
 日付を変えたかったら[記事のファイル名のルール(ファイル)](/docs/blog.md#記事のファイル名のルール)に従った上でファイル名を変更する
 
+画像を新しくアップロードする場合は [/assets/images/blog/](/assets/images/blog/) に配置する
+
 その他の詳細についてはテスト記事参照:
 
 - Markdownファイル: [/articles/20230917_test.md](/articles/20230917_test.md)
