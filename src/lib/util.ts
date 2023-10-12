@@ -210,3 +210,21 @@ export async function fetchTags() {
 
 	return tags;
 }
+
+/** Returns the file format of each article's thumbnail image (articles without thumbnail images will not be listed). */
+export async function fetchThumbnailImgFmt() {
+	const thumbnailImgs = Object.keys(import.meta.glob(`/assets/images/blog/thumbnails/*.*`)).map(
+		(path) => path.split('/').pop()! // eslint-disable-line @typescript-eslint/no-non-null-assertion
+	);
+	return (await Promise.all(Object.keys(import.meta.glob('/articles/*.md')))).reduce(
+		(acc: { [key: string]: string }, path) => {
+			const slug = path.split('/').pop()!.split('.')[0]; // eslint-disable-line @typescript-eslint/no-non-null-assertion
+			for (const img of thumbnailImgs) {
+				const [name, fmt] = img.split('.');
+				if (name == slug) acc[slug] = fmt;
+			}
+			return acc;
+		},
+		{}
+	);
+}
