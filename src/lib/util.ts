@@ -1,4 +1,5 @@
 import type ArticleMetadata from '$lib/types/ArticleMetadata';
+import type ArticleThumbnailImgFmts from './types/ArticleThumbnailImgFmts';
 
 /**
  * Adds a specified class to specified elements when they are scrolled into view.
@@ -217,7 +218,7 @@ export async function fetchThumbnailImgFmt() {
 		(path) => path.split('/').pop()! // eslint-disable-line @typescript-eslint/no-non-null-assertion
 	);
 	return (await Promise.all(Object.keys(import.meta.glob('/articles/*.md')))).reduce(
-		(acc: { [key: string]: string }, path) => {
+		(acc: ArticleThumbnailImgFmts, path) => {
 			const slug = path.split('/').pop()!.split('.')[0]; // eslint-disable-line @typescript-eslint/no-non-null-assertion
 			for (const img of thumbnailImgs) {
 				const [name, fmt] = img.split('.');
