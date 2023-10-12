@@ -24,7 +24,7 @@
 	let date = idToDate(slug);
 
 	const hasThumbnail = metadata.hasThumbnail;
-	const thumbnail_path = hasThumbnail ? `/images/blog/${slug}.` + metadata.imgFmt : null;
+	const thumbnail_path = hasThumbnail ? `/images/blog/thumbnails/${slug}.` + metadata.imgFmt : null;
 
 	function introAnim(index = 0) {
 		return {

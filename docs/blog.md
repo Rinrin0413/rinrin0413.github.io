@@ -20,7 +20,7 @@ npm run article
 ## サムネイル画像の追加方法
 
 1. Markdownファイルのフロントマター(`---`で囲まれてるやつ)の `hasThumbnail` を `true` に、`imgFmt` にファイルフォーマットを指定する
-1. [ルール](#サムネイル画像のルール)に従った上で [/assets/images/blog/](/assets/images/blog/) に画像を追加する
+1. [ルール](#サムネイル画像のルール)に従った上で [/assets/images/blog/thumbnails/](/assets/images/blog/thumbnails/) に画像を追加する
 
 ### サムネイル画像のルール
 

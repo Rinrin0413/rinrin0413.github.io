@@ -14,7 +14,8 @@
 	><article>
 		<div class="thumbnail">
 			<img
-				src={'/images/' + (hasThumbnail ? `blog/${slug}.${meta.imgFmt}` : 'no-image_oxipng.png')}
+				src={'/images/' +
+					(hasThumbnail ? `blog/thumbnails/${slug}.${meta.imgFmt}` : 'no-image_oxipng.png')}
 				alt={hasThumbnail ? 'Article thumbnail' : 'No image'}
 				loading="lazy"
 				class:no-image={!hasThumbnail}
