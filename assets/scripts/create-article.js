@@ -24,8 +24,6 @@ indexed: true
 title: ここにタイトル
 desc: ここに説明文
 tags: [タグ, タグ]
-hasThumbnail: false
-imgFmt: null
 ---
 
 ここに本文
@@ -34,7 +32,13 @@ imgFmt: null
 
 画像を新しくアップロードする場合は [/assets/images/blog/](/assets/images/blog/) に配置する
 
-その他の詳細についてはテスト記事参照:
+その他の詳細についてはドキュメントやテスト記事参照:
+
+## ドキュメント
+
+- [blog.md](/docs/blog.md)
+
+## テスト記事
 
 - Markdownファイル: [/articles/20230917_test.md](/articles/20230917_test.md)
 - ページ: [/blog/articles/20230917_test](http://127.0.0.1:5173/blog/articles/20230917_test) (vite devサーバー起動中のみ)
