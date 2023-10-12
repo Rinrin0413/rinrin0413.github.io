@@ -6,7 +6,5 @@ export default interface ArticleMetadata {
 	title: string;
 	desc: string | null;
 	tags: string[] | null;
-	hasThumbnail: boolean;
-	imgFmt: string | null;
 	slug?: string;
 }
