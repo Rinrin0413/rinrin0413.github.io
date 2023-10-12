@@ -23,8 +23,11 @@
 
 	let date = idToDate(slug);
 
-	const hasThumbnail = metadata.hasThumbnail;
-	const thumbnail_path = hasThumbnail ? `/images/blog/thumbnails/${slug}.` + metadata.imgFmt : null;
+	const thumbnailImgFmt = data.thumbnailImgFmt;
+	const hasThumbnailImg = thumbnailImgFmt !== null;
+	const thumbnail_path = hasThumbnailImg
+		? `/images/blog/thumbnails/${slug}.` + thumbnailImgFmt
+		: null;
 
 	function introAnim(index = 0) {
 		return {
@@ -48,7 +51,7 @@
 	<meta property="og:title" content={HEAD.title} />
 	<meta property="og:description" content={HEAD.desc} />
 	<meta property="og:url" content="{SITE_URL}/blog/articles/{slug}" />
-	{#if hasThumbnail}
+	{#if hasThumbnailImg}
 		<meta property="og:image" content="{SITE_URL}{thumbnail_path}" />
 		<meta property="og:type" content="article" />
 	{/if}
@@ -60,7 +63,7 @@
 
 <svelte:window bind:scrollY />
 
-{#if hasThumbnail}
+{#if hasThumbnailImg}
 	<img
 		src={thumbnail_path}
 		alt="Article thumbnail"
@@ -76,7 +79,7 @@
 	<Space height="32px" />
 {/if}
 
-<div class="article-content" class:thumbnail-exists={hasThumbnail}>
+<div class="article-content" class:thumbnail-exists={hasThumbnailImg}>
 	<div in:scale|global={introAnim(2)}>
 		<h1 style={parallax(-0.19)}>{metadata.title}</h1>
 	</div>

@@ -1,13 +1,17 @@
 <script lang="ts">
 	import type ArticleMetadata from '$lib/types/ArticleMetadata';
+	import type ArticleThumbnailImgFmts from '$lib/types/ArticleThumbnailImgFmts';
 	import { idToDate } from '$lib/util.js';
 	import { date as date_i18n } from 'svelte-i18n';
 
 	export let meta: ArticleMetadata;
+	export let thumbnailImgFmts: ArticleThumbnailImgFmts;
 
 	const slug = meta.slug ?? 'unreachable';
 	const date = idToDate(slug);
-	const hasThumbnail = meta.hasThumbnail;
+
+	const thumbnailImgFmt = thumbnailImgFmts[slug] ?? null;
+	const hasThumbnailImg = thumbnailImgFmt !== null;
 </script>
 
 <a href={'/blog/articles/' + slug}
@@ -15,10 +19,10 @@
 		<div class="thumbnail">
 			<img
 				src={'/images/' +
-					(hasThumbnail ? `blog/thumbnails/${slug}.${meta.imgFmt}` : 'no-image_oxipng.png')}
-				alt={hasThumbnail ? 'Article thumbnail' : 'No image'}
+					(hasThumbnailImg ? `blog/thumbnails/${slug}.${thumbnailImgFmt}` : 'no-image_oxipng.png')}
+				alt={hasThumbnailImg ? 'Article thumbnail' : 'No image'}
 				loading="lazy"
-				class:no-image={!hasThumbnail}
+				class:no-image={!hasThumbnailImg}
 			/>
 		</div>
 		<div class="meta">

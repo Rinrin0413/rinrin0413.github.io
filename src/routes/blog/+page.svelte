@@ -50,7 +50,7 @@
 					out:fly|global={{ x: 256, duration: 200, easing: expoIn }}
 					animate:flip={{ duration: 700, easing: expoOut }}
 				>
-					<ArticleCard {meta} />
+					<ArticleCard {meta} thumbnailImgFmts={data.thumbnailImgFmts} />
 				</li>
 			{/each}
 		</ul>
