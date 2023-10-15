@@ -155,10 +155,11 @@
 		}
 
 		table {
+			display: block;
 			font-size: 16px;
-			margin: 12px auto;
+			margin: 12px 0;
+			overflow: scroll;
 			border-collapse: collapse;
-			overflow: hidden;
 			border-radius: 2px;
 			$blur: blur(16px);
 			backdrop-filter: $blur;
@@ -166,7 +167,8 @@
 			word-break: break-all;
 
 			@include sp {
-				font-size: 14px;
+				font-size: 11px;
+				white-space: nowrap;
 			}
 
 			th,
@@ -174,6 +176,10 @@
 				max-width: 383px;
 				padding: 8px 12px;
 				border: 1px solid rgba($text-primary, 0.1);
+
+				@include sp {
+					max-width: initial;
+				}
 			}
 
 			th {
