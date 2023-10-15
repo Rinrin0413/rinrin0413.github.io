@@ -1,5 +1,4 @@
-import type ArticleMetadata from '$lib/types/ArticleMetadata';
-import type ArticleThumbnailImgFmts from './types/ArticleThumbnailImgFmts';
+import type { ArticleMetadata, ArticleThumbnailImgFmts } from './types';
 
 /**
  * Adds a specified class to specified elements when they are scrolled into view.

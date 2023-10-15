@@ -2,7 +2,7 @@
 	import Title2 from '$lib/components/Title2.svelte';
 	import Tag from './Tag.svelte';
 
-	import type ArticleTagWithCount from '$lib/types/ArticleTagWithCount';
+	import type { ArticleTagWithCount } from '$lib/types';
 	import { _ } from 'svelte-i18n';
 	import { fly, scale } from 'svelte/transition';
 	import { bounceOut } from 'svelte/easing';

@@ -1,6 +1,6 @@
 import type { PageLoad } from './$types';
 import type { SvelteComponent } from 'svelte';
-import type ArticleMetadata from '$lib/types/ArticleMetadata';
+import type { ArticleMetadata } from '$lib/types';
 import { error } from '@sveltejs/kit';
 
 export const load: PageLoad = async ({

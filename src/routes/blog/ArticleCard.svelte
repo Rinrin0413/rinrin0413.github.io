@@ -1,6 +1,5 @@
 <script lang="ts">
-	import type ArticleMetadata from '$lib/types/ArticleMetadata';
-	import type ArticleThumbnailImgFmts from '$lib/types/ArticleThumbnailImgFmts';
+	import type { ArticleMetadata, ArticleThumbnailImgFmts } from '$lib/types';
 	import { idToDate } from '$lib/util.js';
 	import { date as date_i18n } from 'svelte-i18n';
 
