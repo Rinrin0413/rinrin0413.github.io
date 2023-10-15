@@ -21,7 +21,6 @@
 	<meta property="og:title" content={HEAD.title} />
 	<meta property="og:description" content={HEAD.desc} />
 	<meta property="og:url" content="{SITE_URL}/social" />
-	<meta property="og:type" content="article" />
 </svelte:head>
 
 <section>

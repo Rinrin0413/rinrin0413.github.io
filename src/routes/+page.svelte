@@ -24,7 +24,6 @@
 	<meta property="og:title" content={HEAD.title} />
 	<meta property="og:description" content={HEAD.desc} />
 	<meta property="og:url" content={SITE_URL} />
-	<meta property="og:type" content="website" />
 </svelte:head>
 
 <img src="/images/icon_13_384px.webp" alt={$_('home.icon')} id="icon" />

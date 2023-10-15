@@ -53,7 +53,6 @@
 	<meta property="og:url" content="{SITE_URL}/blog/articles/{slug}" />
 	{#if hasThumbnailImg}
 		<meta property="og:image" content="{SITE_URL}{thumbnail_path}" />
-		<meta property="og:type" content="article" />
 	{/if}
 
 	{#if !metadata.indexed}
