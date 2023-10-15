@@ -1,4 +1,4 @@
-import { fetchTags } from '$lib/util';
+import { fetchTags } from '$lib/fetchers';
 import { json } from '@sveltejs/kit';
 
 export const prerender = true;

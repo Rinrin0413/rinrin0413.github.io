@@ -1,4 +1,4 @@
-import { fetchThumbnailImgFmt } from '$lib/util';
+import { fetchThumbnailImgFmt } from '$lib/fetchers';
 import { json } from '@sveltejs/kit';
 
 export const prerender = true;
