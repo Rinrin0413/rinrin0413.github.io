@@ -72,7 +72,12 @@
 	/>
 
 	<div class="thumbnail-wrapper" in:scale|global={introAnim()}>
-		<img src={thumbnail_path} alt={$_('w.articleThumbnailImage')} class="thumbnail" style={parallax(-0.25)} />
+		<img
+			src={thumbnail_path}
+			alt={$_('w.articleThumbnailImage')}
+			class="thumbnail"
+			style={parallax(-0.25)}
+		/>
 	</div>
 {:else}
 	<Space height="32px" />
