@@ -20,7 +20,10 @@
 		"transition": "Transition",
 		"codeEditor": "Code Editor",
 		"sakuraEditor": "Sakura Editor",
-		"tags": "Tags"
+		"tags": "Tags",
+		"articleThumbnailImage": "Article thumbnail image",
+		"noImage": "No image",
+		"backImage": "Background image"
 	},
 	"home": {
 		"icon": "Rinrin.rs' avatar",

@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { ArticleMetadata, ArticleThumbnailImgFmts } from '$lib/types';
 	import { idToDate } from '$lib/util.js';
+	import { _ } from 'svelte-i18n';
 	import { date as date_i18n } from 'svelte-i18n';
 
 	export let meta: ArticleMetadata;
@@ -19,7 +20,7 @@
 			<img
 				src={'/images/' +
 					(hasThumbnailImg ? `blog/thumbnails/${slug}.${thumbnailImgFmt}` : 'no-image_oxipng.png')}
-				alt={hasThumbnailImg ? 'Article thumbnail' : 'No image'}
+				alt={$_('w.' + (hasThumbnailImg ? 'articleThumbnailImage' : 'noImage'))}
 				loading="lazy"
 				class:no-image={!hasThumbnailImg}
 			/>

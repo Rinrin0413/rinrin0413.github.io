@@ -8,10 +8,10 @@
 	import { page } from '$app/stores';
 	import { SITE_URL } from '$lib/variables';
 	import { parallaxStyle, idToDate } from '$lib/util';
+	import { _ } from 'svelte-i18n';
 	import { cubicOut } from 'svelte/easing';
 	import { scale } from 'svelte/transition';
 	import { date as date_i18n } from 'svelte-i18n';
-	import { _ } from 'svelte-i18n';
 
 	export let data: PageData;
 	const metadata = data.frontmatter;
@@ -66,14 +66,14 @@
 {#if hasThumbnailImg}
 	<img
 		src={thumbnail_path}
-		alt="Article thumbnail"
+		alt={$_('w.backImage')}
 		class="back-thumbnail"
 		style={parallax(0.25)}
 		aria-hidden="true"
 	/>
 
 	<div class="thumbnail-wrapper" in:scale|global={introAnim()}>
-		<img src={thumbnail_path} alt="Article thumbnail" class="thumbnail" style={parallax(-0.25)} />
+		<img src={thumbnail_path} alt={$_('w.articleThumbnailImage')} class="thumbnail" style={parallax(-0.25)} />
 	</div>
 {:else}
 	<Space height="32px" />

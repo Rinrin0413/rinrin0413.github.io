@@ -20,7 +20,10 @@
 		"transition": "遷移",
 		"codeEditor": "コードエディター",
 		"sakuraEditor": "サクラエディタ",
-		"tags": "タグ"
+		"tags": "タグ",
+		"articleThumbnailImage": "記事のサムネイル画像",
+		"noImage": "画像無し",
+		"backImage": "バックグラウンド画像"
 	},
 	"home": {
 		"icon": "Rinrin.rs のアイコン",
