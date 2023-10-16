@@ -27,7 +27,7 @@ $breakpoint-ultra-narrow: 380px;
 }
 
 @mixin glassmorphism(
-	$blur: 4px,
+	$blur: 10px,
 	$background-color: #ffffff35,
 	$border-light: 2px solid #ffffff30,
 	$border-dark: 2px solid #00000017,

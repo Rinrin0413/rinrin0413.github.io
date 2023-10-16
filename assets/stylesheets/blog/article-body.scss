@@ -160,9 +160,6 @@
 			overflow-x: scroll;
 			border-collapse: collapse;
 			border-radius: 2px;
-			$blur: blur(16px);
-			backdrop-filter: $blur;
-			-webkit-backdrop-filter: $blur;
 			word-break: break-all;
 
 			@include sp {
@@ -184,12 +181,12 @@
 			}
 
 			th {
-				background-color: rgba($text-primary, 0.2);
+				background-color: rgba($text-primary, 0.22);
 				border-bottom: 2px solid $text-primary;
 			}
 
 			td {
-				background-color: rgba($text-primary, 0.1);
+				background-color: rgba($text-primary, 0.11);
 			}
 		}
 
