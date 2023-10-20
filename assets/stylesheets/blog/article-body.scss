@@ -7,6 +7,10 @@
 	margin: 0 auto;
 	padding: 0 13px;
 
+	@include sp {
+		padding: 0 max(2px, calc(6vw - 32px));
+	}
+
 	> div {
 		text-align: left;
 		font-size: 18px;
@@ -17,7 +21,7 @@
 
 		@include sp {
 			font-size: 16px;
-			padding: 0 10px;
+			padding: 0 13px;
 		}
 
 		p {
