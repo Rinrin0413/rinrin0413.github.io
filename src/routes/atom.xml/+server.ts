@@ -1,3 +1,4 @@
+import type { RequestHandler } from './$types';
 import { fetchArticles, fetchTags } from "$lib/fetchers";
 import { SITE_URL, COPYRIGHT } from "$lib/variables";
 import { v5 as uuidv5 } from 'uuid';
@@ -5,7 +6,7 @@ import { idToDate } from "$lib/util";
 
 export const prerender = true;
 
-export const GET = async ({setHeaders}) => {
+export const GET: RequestHandler = async ({setHeaders}) => {
     setHeaders({
         'Cache-Control': 'max-age=0, s-maxage=86400',
         'Content-Type': 'application/atom+xml; charset=utf-8'
