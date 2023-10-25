@@ -1,6 +1,6 @@
 import type { RequestHandler } from './$types';
 import { fetchArticles, fetchTags } from '$lib/fetchers';
-import { SITE_URL, COPYRIGHT } from '$lib/variables';
+import { SITE_URL, COPYRIGHT, SITE_NAME } from '$lib/variables';
 import { v5 as uuidv5 } from 'uuid';
 import { idToDate } from '$lib/util';
 
@@ -13,8 +13,6 @@ export const GET: RequestHandler = async ({ setHeaders }) => {
 	});
 	return new Response(await body());
 };
-
-const SITE_TITLE = "Rinrin.rs' Homepage"; // TODO: define in variables.ts
 
 async function body() {
 	const FEED_UUID = 'abe93c08-c6e2-2d92-a181-9a1c2816fb3d';
@@ -38,7 +36,7 @@ async function body() {
 	return `<?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ja">
     <id>urn:uuid:${FEED_UUID}</id>
-    <title>${SITE_TITLE} | Blog</title>
+    <title>${SITE_NAME} | Blog</title>
     <updated>${new Date().toISOString()}</updated>
     <author>
         <name>Rinrin.rs</name>
