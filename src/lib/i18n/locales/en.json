@@ -38,6 +38,7 @@
 		"logo": "Rinrin.rs' logo",
 		"language": "日本語"
 	},
+	"footer.atomFeed": "Atom feed",
 	"error": {
 		"pageNotFound": "404 not like this!<br />this page does not exist :("
 	},
