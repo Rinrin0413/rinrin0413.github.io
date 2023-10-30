@@ -43,7 +43,7 @@ async function body() {
         <email>rinrin0413.valley@gmail.com</email>
         <uri>${SITE_URL}</uri>
     </author>
-    <link rel="self" href="${SITE_URL}/atom.xml" />
+    <link rel="self" href="${SITE_URL}/feed" />
     <link rel="alternate" href="${SITE_URL}" />
     ${categories}
     <icon>${SITE_URL}/favicon.ico</icon>
