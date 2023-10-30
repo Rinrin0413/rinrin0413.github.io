@@ -54,6 +54,7 @@
 	<link rel="icon" href="/images/logos/rinrin/logo.svg" type="image/svg+xml" />
 	<link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
 	<link rel="manifest" href="/manifest.json" />
+	<link rel="alternate" href="/feed" type="application/atom+xml" title={SITE_NAME + " | Blog"} />
 </svelte:head>
 
 <Header />
