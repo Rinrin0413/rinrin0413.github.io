@@ -52,7 +52,8 @@ async function body() {
         <title>${article.title}</title>
         <updated>${date.toISOString()}</updated>
         <link rel="alternate" href="${SITE_URL}/blog/articles/${article.slug}" />
-        <summary>${article.desc}</summary>${renderCategories(article.tags ?? []).join('\n        ')}
+        <summary>${article.desc}</summary>
+        ${renderCategories(article.tags ?? []).join('\n        ')}
     </entry>`;
 		})
 		.join('\n    ');
