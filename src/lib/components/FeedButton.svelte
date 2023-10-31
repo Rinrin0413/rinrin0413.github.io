@@ -2,7 +2,7 @@
 	import { _ } from 'svelte-i18n';
 </script>
 
-<a href="/feed" class="no-after-icn" title={$_('w.atomFeed')} target="_blank">
+<a href="/feed" class="no-after-icn" title={$_('w.atomFeed')} target="_blank" type="application/atom+xml">
 	<!-- 
         Google Material Symbols and Icons - RSS Feed
         https://fonts.google.com/icons?selected=Material%20Symbols%20Outlined%3Arss_feed%3AFILL%400%3Bwght%40400%3BGRAD%400%3Bopsz%4024
