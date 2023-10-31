@@ -17,7 +17,10 @@ export const GET: RequestHandler = async ({ setHeaders }) => {
 async function body() {
 	const FEED_UUID = 'abe93c08-c6e2-2d92-a181-9a1c2816fb3d';
 
-	const categories = renderCategories((await fetchTags()).map((t) => t.tag)).join('\n    ');
+	const categories = renderCategories(
+		(await fetchTags()).map((t) => t.tag),
+		4
+	);
 
 	let prevDate: {
 		date: Date;
@@ -52,8 +55,7 @@ async function body() {
         <title>${article.title}</title>
         <updated>${date.toISOString()}</updated>
         <link rel="alternate" href="${SITE_URL}/blog/articles/${article.slug}" />
-        <summary>${article.desc}</summary>
-        ${renderCategories(article.tags ?? []).join('\n        ')}
+        <summary>${article.desc}</summary>${renderCategories(article.tags ?? [], 8)}
     </entry>`;
 		})
 		.join('\n    ');
@@ -69,8 +71,7 @@ async function body() {
         <uri>${SITE_URL}</uri>
     </author>
     <link rel="self" href="${SITE_URL}/feed" />
-    <link rel="alternate" href="${SITE_URL}" />
-    ${categories}
+    <link rel="alternate" href="${SITE_URL}" />${categories}
     <icon>${SITE_URL}/favicon.ico</icon>
     <rights>${COPYRIGHT}</rights>
     ${articles}
@@ -78,10 +79,12 @@ async function body() {
 `;
 }
 
-function renderCategories(tags: string[]) {
-	return tags.map((t) => {
-		const tag = t.toUpperCase();
-		const url = `${SITE_URL}/blog?t=${encodeURIComponent(tag)}`;
-		return `<category term="${tag}" scheme="${url}" />`;
-	});
+function renderCategories(tags: string[], indent = 0) {
+	return tags
+		.map((t) => {
+			const tag = t.toUpperCase();
+			const url = `${SITE_URL}/blog?t=${encodeURIComponent(tag)}`;
+			return `\n${' '.repeat(indent)}<category term="${tag}" scheme="${url}" />`;
+		})
+		.join('');
 }
