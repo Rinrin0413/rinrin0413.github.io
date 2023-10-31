@@ -5,6 +5,7 @@
 	$width-change-rate: calc(100vw - $breakpoint);
 	max-width: min(calc($width-change-rate * 0.3 + 768px), 1024px);
 	margin: 0 auto;
+	margin-top: 16px;
 	padding: 0 13px;
 
 	@include sp {
