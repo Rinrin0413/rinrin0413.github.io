@@ -93,8 +93,10 @@
 			>{$date_i18n(date, { format: 'full' })}</time
 		>
 	</div>
-	<div in:scale|global={introAnim(4)} style={parallax(-0.06)}>
-		<FeedButton />
+	<div in:scale|global={introAnim(4)}>
+		<div style={parallax(-0.06)}>
+			<FeedButton />
+		</div>
 	</div>
 	<Article body={data.component} />
 	<Tags tags={metadata.tags} />
