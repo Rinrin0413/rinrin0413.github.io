@@ -1,6 +1,6 @@
 import type { RequestHandler } from './$types';
 import { fetchArticles, fetchTags } from '$lib/fetchers';
-import { SITE_URL, COPYRIGHT, SITE_NAME } from '$lib/variables';
+import { SITE_URL, COPYRIGHT, BLOG_NAME } from '$lib/variables';
 import { v5 as uuidv5 } from 'uuid';
 import { idToDate } from '$lib/util';
 
@@ -36,7 +36,7 @@ async function body() {
 	return `<?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ja">
     <id>urn:uuid:${FEED_UUID}</id>
-    <title>${SITE_NAME} | Blog</title>
+    <title>${BLOG_NAME}</title>
     <updated>${new Date().toISOString()}</updated>
     <author>
         <name>Rinrin.rs</name>

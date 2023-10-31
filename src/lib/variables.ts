@@ -6,3 +6,6 @@ export const SITE_URL = 'https://rinrin.pages.dev';
 
 /** Name of the site. */
 export const SITE_NAME = "Rinrin.rs' Homepage";
+
+/** Name of the blog. */
+export const BLOG_NAME = 'Rinrin.rs\' Blog';

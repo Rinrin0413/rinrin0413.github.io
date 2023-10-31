@@ -4,7 +4,7 @@
 
 	import { page } from '$app/stores';
 	import { browser } from '$app/environment';
-	import { COPYRIGHT, SITE_NAME, SITE_URL } from '$lib/variables';
+	import { BLOG_NAME, COPYRIGHT, SITE_NAME, SITE_URL } from '$lib/variables';
 
 	let maxVh1: number;
 
@@ -54,7 +54,7 @@
 	<link rel="icon" href="/images/logos/rinrin/logo.svg" type="image/svg+xml" />
 	<link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
 	<link rel="manifest" href="/manifest.json" />
-	<link rel="alternate" href="/feed" type="application/atom+xml" title={SITE_NAME + " | Blog"} />
+	<link rel="alternate" href="/feed" type="application/atom+xml" title={BLOG_NAME} />
 </svelte:head>
 
 <Header />
