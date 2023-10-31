@@ -25,28 +25,8 @@ footer {
 }
 
 .feed-btn {
-	$size: 32px;
-	width: $size;
-	height: $size;
 	float: left;
-	padding: 4px;
 	margin-left: 24px;
-	background: $button-primary;
-	border: 3px solid $button-secondary;
-	border-radius: 4px;
-	box-shadow: 0 0 14px #00000050;
-	transition: 0.2s;
-
-	&:hover {
-		filter: brightness(1.06);
-		transform: translateY(3px);
-	}
-}
-
-.rss-icon {
-	width: 100%;
-	height: 100%;
-	fill: $text-dark;
 }
 
 .go-to-home-btn {
