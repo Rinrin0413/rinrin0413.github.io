@@ -1,16 +1,17 @@
 <script lang="ts">
 	import Space from '$lib/components/Space.svelte';
 	import Title from '$lib/components/Title.svelte';
+	import FeedButton from '$lib/components/FeedButton.svelte';
 	import TagPicker from './TagPicker.svelte';
 	import ArticleCard from './ArticleCard.svelte';
 
 	import type { PageData } from './$types';
 	import { SITE_URL } from '$lib/variables';
+	import { _ } from 'svelte-i18n';
 	import { fly } from 'svelte/transition';
 	import { elasticBackOut } from '$lib/easing';
 	import { expoIn, expoOut } from 'svelte/easing';
 	import { flip } from 'svelte/animate';
-	import { _ } from 'svelte-i18n';
 
 	export let data: PageData;
 	let tags = data.tags;
@@ -36,9 +37,8 @@
 
 <section>
 	<Space height="64px" />
-
 	<Title text="Blog" />
-
+	<p><FeedButton /></p>
 	<TagPicker allTags={data.allTags} pickedTags={tags} />
 
 	{#if 0 < articles.length}

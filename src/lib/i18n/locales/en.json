@@ -23,7 +23,8 @@
 		"tags": "Tags",
 		"articleThumbnailImage": "Article thumbnail image",
 		"noImage": "No image",
-		"backImage": "Background image"
+		"backImage": "Background image",
+		"atomFeed": "Atom feed"
 	},
 	"home": {
 		"icon": "Rinrin.rs' avatar",

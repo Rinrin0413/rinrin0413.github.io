@@ -4,7 +4,7 @@
 
 	import { page } from '$app/stores';
 	import { browser } from '$app/environment';
-	import { COPYRIGHT, SITE_URL } from '$lib/variables';
+	import { BLOG_NAME, COPYRIGHT, SITE_NAME, SITE_URL } from '$lib/variables';
 
 	let maxVh1: number;
 
@@ -33,7 +33,7 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1" />
 	<meta name="format-detection" content="telephone=no,address=no,email=no" />
 
-	<meta property="og:site_name" content="Rinrin.rs' Homepage" />
+	<meta property="og:site_name" content={SITE_NAME} />
 	{#if $page.url.pathname.startsWith('/blog/articles/')}
 		<meta property="og:type" content="article" />
 		<meta name="twitter:card" content="summary_large_image" />
@@ -54,6 +54,7 @@
 	<link rel="icon" href="/images/logos/rinrin/logo.svg" type="image/svg+xml" />
 	<link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
 	<link rel="manifest" href="/manifest.json" />
+	<link rel="alternate" href="/feed" type="application/atom+xml" title={BLOG_NAME} />
 </svelte:head>
 
 <Header />

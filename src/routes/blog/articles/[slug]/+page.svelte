@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Space from '$lib/components/Space.svelte';
+	import FeedButton from '$lib/components/FeedButton.svelte';
 	import Article from './Article.svelte';
 	import Tags from './Tags.svelte';
 	import ScrollToTop from './ScrollToTop.svelte';
@@ -91,6 +92,11 @@
 		<time datetime={date.toISOString()} style={parallax(-0.12)}
 			>{$date_i18n(date, { format: 'full' })}</time
 		>
+	</div>
+	<div in:scale|global={introAnim(4)}>
+		<div style={parallax(-0.06)}>
+			<FeedButton />
+		</div>
 	</div>
 	<Article body={data.component} />
 	<Tags tags={metadata.tags} />

@@ -23,7 +23,8 @@
 		"tags": "タグ",
 		"articleThumbnailImage": "記事のサムネイル画像",
 		"noImage": "画像無し",
-		"backImage": "バックグラウンド画像"
+		"backImage": "バックグラウンド画像",
+		"atomFeed": "Atomフィード"
 	},
 	"home": {
 		"icon": "Rinrin.rs のアイコン",
