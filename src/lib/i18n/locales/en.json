@@ -17,9 +17,7 @@
 		"shell": "Shell",
 		"desktopEnv": "Desktop Environment",
 		"webBrowser": "Web Browser",
-		"transition": "Transition",
-		"codeEditor": "Code Editor",
-		"sakuraEditor": "Sakura Editor"
+		"codeEditor": "Code Editor"
 	},
 	"home": {
 		"icon": "Rinrin.rs' avatar",

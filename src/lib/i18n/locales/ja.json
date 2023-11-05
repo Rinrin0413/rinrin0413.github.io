@@ -17,9 +17,7 @@
 		"shell": "シェル",
 		"desktopEnv": "デスクトップ環境",
 		"webBrowser": "Webブラウザー",
-		"transition": "遷移",
-		"codeEditor": "コードエディター",
-		"sakuraEditor": "サクラエディタ"
+		"codeEditor": "コードエディター"
 	},
 	"home": {
 		"icon": "Rinrin.rs のアイコン",
