@@ -17,9 +17,7 @@
 		"shell": "Shell",
 		"desktopEnv": "Desktop Environment",
 		"webBrowser": "Web Browser",
-		"transition": "Transition",
-		"codeEditor": "Code Editor",
-		"sakuraEditor": "Sakura Editor"
+		"codeEditor": "Code Editor"
 	},
 	"home": {
 		"icon": "Rinrin.rs' avatar",
@@ -159,9 +157,8 @@
 			"Currently developing shaderpacks for Java Edition when feel like it"
 		],
 		"linux": [
-			"OpenSUSE Leap 15.4 is my main OS",
-			"But i don't use it for server purposes so it is hard to say it is a skill",
-			"By killing the root of all evil \"Windows\", I was able to be happy"
+			"openSUSE Leap 15.5 is my main OS",
+			"But i don't use it for server purposes so it is hard to say it is a skill"
 		]
 	},
 	"env": {

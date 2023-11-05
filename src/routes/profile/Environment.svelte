@@ -22,27 +22,19 @@
 
 <div>
 	<h3>OS</h3>
-	<p>openSUSE Leap 15.4 x86_64</p>
+	<p>openSUSE Leap 15.5 x86_64</p>
 
 	<h3>{$_('w.shell')}</h3>
 	<p>bash 4.4.23</p>
 
 	<h3>{$_('w.desktopEnv')}</h3>
-	<p>GNOME 41.4</p>
+	<p>GNOME 41.9</p>
 
 	<h3>{$_('w.webBrowser')}</h3>
 	<p>Mozilla Firefox</p>
-	<span>
-		<b>{$_('w.transition')}</b><br />
-		[IE9 -> Chrome -> Edge -> Brave -> Firefox]
-	</span>
 
 	<h3>{$_('w.codeEditor')}</h3>
 	<p>Visual Studio Code Insiders</p>
-	<span>
-		<b>{$_('w.transition')}</b><br />
-		[{$_('w.sakuraEditor')} -> Notepad++ -> VSCode -> VSCode Insiders]
-	</span>
 </div>
 
 <p>
@@ -113,27 +105,5 @@
 		border-right: $glassmorphism-border-dark;
 		border-bottom: $glassmorphism-border-dark;
 		border-left: $glassmorphism-border-light;
-	}
-
-	span {
-		font-size: 16px;
-		margin-top: 0px;
-		position: relative;
-		top: -19px;
-
-		@include sp {
-			font-size: 14px;
-		}
-	}
-
-	b {
-		font-size: 18px;
-
-		&:before {
-			content: '┗ ';
-		}
-		&:after {
-			content: ':';
-		}
 	}
 </style>
