@@ -252,6 +252,12 @@ export const SOCIALS = [
 		icon: 'tetrio-color.svg'
 	},
 	{
+		service: 'Transifex',
+		name: 'rinrin0413.valley',
+		url: 'https://transifex.com/user/profile/rinrin0413.valley',
+		icon: null // Could not find the guideline
+	},
+	{
 		service: 'Twitch',
 		name: 'rinrin0413',
 		url: 'https://twitch.tv/rinrin0413',
