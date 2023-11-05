@@ -22,13 +22,13 @@
 
 <div>
 	<h3>OS</h3>
-	<p>openSUSE Leap 15.4 x86_64</p>
+	<p>openSUSE Leap 15.5 x86_64</p>
 
 	<h3>{$_('w.shell')}</h3>
 	<p>bash 4.4.23</p>
 
 	<h3>{$_('w.desktopEnv')}</h3>
-	<p>GNOME 41.4</p>
+	<p>GNOME 41.9</p>
 
 	<h3>{$_('w.webBrowser')}</h3>
 	<p>Mozilla Firefox</p>
