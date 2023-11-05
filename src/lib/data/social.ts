@@ -129,13 +129,19 @@ export const SOCIALS = [
 		service: 'Misskey.io',
 		name: '@Rinrin0413',
 		url: 'https://misskey.io/@Rinrin0413',
-		icon: null // Could only find the old logo
+		icon: null // Could not find the guideline
 	},
 	{
 		service: 'Modrinth',
 		name: 'Rinrin',
 		url: 'https://modrinth.com/user/Rinrin',
 		icon: 'modrinth_logo.svg'
+	},
+	{
+		service: 'Monkeytype',
+		name: 'Rinrin.rs',
+		url: 'https://monkeytype.com/profile/Rinrin.rs',
+		icon: null // Could not find the guideline
 	},
 	{
 		service: 'mstdn.jp',
@@ -244,6 +250,12 @@ export const SOCIALS = [
 		name: 'RINRIN-RS',
 		url: 'https://ch.tetr.io/u/rinrin-rs',
 		icon: 'tetrio-color.svg'
+	},
+	{
+		service: 'Transifex',
+		name: 'rinrin0413.valley',
+		url: 'https://transifex.com/user/profile/rinrin0413.valley',
+		icon: null // Could not find the guideline
 	},
 	{
 		service: 'Twitch',

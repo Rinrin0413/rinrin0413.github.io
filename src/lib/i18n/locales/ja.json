@@ -17,9 +17,7 @@
 		"shell": "シェル",
 		"desktopEnv": "デスクトップ環境",
 		"webBrowser": "Webブラウザー",
-		"transition": "遷移",
 		"codeEditor": "コードエディター",
-		"sakuraEditor": "サクラエディタ",
 		"tags": "タグ",
 		"articleThumbnailImage": "記事のサムネイル画像",
 		"noImage": "画像無し",
@@ -124,7 +122,7 @@
 	"profile": {
 		"intro": [
 			"こんにちは、Rinrin.rs です。",
-			"学生です。日本人です。{age}歳です。ASDです。",
+			"学生で 日本人で {age}歳で ASDです。",
 			"基本的に Discord にいます。",
 			"Discord用の簡単な bot とかなら作ります。",
 			"Web開発は基本的にしません。",
@@ -157,9 +155,8 @@
 			"現在はモチベーションが高いときに Java版のシェーダーパックを作っている"
 		],
 		"linux": [
-			"OpenSUSE Leap 15.4 をメインの OS として使っている",
-			"サーバー用途とかで使っているわけではないのでスキルとは言い難い",
-			"諸悪の根源である Windows を杀すことによって幸せになれた"
+			"openSUSE Leap 15.5 をメインの OS として使っている",
+			"サーバー用途とかで使っているわけではないのでスキルとは言い難い"
 		]
 	},
 	"env": {
