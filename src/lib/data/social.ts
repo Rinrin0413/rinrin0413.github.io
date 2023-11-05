@@ -138,6 +138,12 @@ export const SOCIALS = [
 		icon: 'modrinth_logo.svg'
 	},
 	{
+		service: 'Monkeytype',
+		name: 'Rinrin.rs',
+		url: 'https://monkeytype.com/profile/Rinrin.rs',
+		icon: null // Could not find the guideline
+	},
+	{
 		service: 'mstdn.jp',
 		name: '@rinrin0413',
 		url: 'https://mstdn.jp/@rinrin0413',
