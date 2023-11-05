@@ -129,7 +129,7 @@ export const SOCIALS = [
 		service: 'Misskey.io',
 		name: '@Rinrin0413',
 		url: 'https://misskey.io/@Rinrin0413',
-		icon: null // Could only find the old logo
+		icon: null // Could not find the guideline
 	},
 	{
 		service: 'Modrinth',
