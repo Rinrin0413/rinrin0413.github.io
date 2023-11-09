@@ -73,6 +73,7 @@
 
 <section id="blog">
 	<Title text="Blog Articles" />
+	<p>{$_('home.recentArticles')}</p>
 	<BlogArticles {articles} />
 	<p><a href="/blog">{$_('home.viewAll')}</a></p>
 </section>
