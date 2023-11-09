@@ -1,7 +1,7 @@
 <script lang="ts">
-	import ArticleCard from "$lib/components/ArticleCard.svelte";
+	import ArticleCard from '$lib/components/ArticleCard.svelte';
 
-	import type { ArticleMetadata } from "$lib/types";
+	import type { ArticleMetadata } from '$lib/types';
 
 	export let articles: ArticleMetadata[];
 </script>
