@@ -112,7 +112,7 @@
 	}
 
 	#contents {
-		height: 298px;
+		height: 362px;
 	}
 
 	#activity-list {

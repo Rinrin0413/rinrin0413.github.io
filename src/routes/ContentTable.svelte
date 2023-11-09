@@ -20,6 +20,10 @@
 			name: 'Chronicle'
 		},
 		{
+			id: 'blog',
+			name: 'Blog'
+		},
+		{
 			id: 'contact',
 			name: 'Contact / Social'
 		}
@@ -51,7 +55,6 @@
 	li {
 		transition: 0.13s;
 
-		&:first-child,
 		&:last-child {
 			div {
 				border: none;
@@ -72,12 +75,11 @@
 
 	div {
 		width: 93%;
-		padding: 18px 0;
+		padding: 16px 0;
 		margin: 0 auto;
 		font-size: 20px;
 		font-weight: bold;
 		$border: 1px solid #ffffffa0;
-		border-top: $border;
 		border-bottom: $border;
 	}
 </style>
