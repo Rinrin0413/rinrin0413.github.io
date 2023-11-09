@@ -1,6 +1,5 @@
 <script lang="ts">
     import type { ArticleMetadata } from "$lib/types";
-    import { _ } from "svelte-i18n";
 
     export let articles: ArticleMetadata[];
 </script>
