@@ -71,7 +71,7 @@
 <Hr />
 
 <section id="blog">
-	<Title text="Blog" />
+	<Title text="Blog Articles" />
 	<ul>
 		{#each articles as meta}<li>
 				<a href="/blog/articles/{meta.slug}">{meta.title}</a>

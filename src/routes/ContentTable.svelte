@@ -21,7 +21,7 @@
 		},
 		{
 			id: 'blog',
-			name: 'Blog'
+			name: 'Blog Articles'
 		},
 		{
 			id: 'contact',
