@@ -6,9 +6,13 @@
 	import Chronicle from './Chronicle.svelte';
 	import MinimalContactTable from './MinimalContactTable.svelte';
 
+	import type { PageData } from './$types';
 	import { SITE_URL } from '$lib/variables';
 	import { _ } from 'svelte-i18n';
 	import { calcAge } from '$lib/util';
+
+	export let data: PageData;
+	const articles = data.articles;
 
 	const HEAD = {
 		title: 'Home',
@@ -62,6 +66,15 @@
 	<Title text="Chronicle" />
 	<p>{$_('home.chronicle')}</p>
 	<Chronicle />
+</section>
+
+<Hr />
+
+<section id="blog">
+	<Title text="Blog" />
+	<ul>{#each articles as meta}<li>
+		<a href="/blog/articles/{meta.slug}">{meta.title}</a>
+	</li>{/each}</ul>
 </section>
 
 <Hr />
