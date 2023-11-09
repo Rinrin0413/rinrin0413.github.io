@@ -3,7 +3,7 @@
 	import Title from '$lib/components/Title.svelte';
 	import FeedButton from '$lib/components/FeedButton.svelte';
 	import TagPicker from './TagPicker.svelte';
-	import ArticleCard from './ArticleCard.svelte';
+	import ArticleCard from '$lib/components/ArticleCard.svelte';
 
 	import type { PageData } from './$types';
 	import { SITE_URL } from '$lib/variables';
