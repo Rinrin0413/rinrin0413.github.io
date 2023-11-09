@@ -1,13 +1,26 @@
 <script lang="ts">
-    import type { ArticleMetadata } from "$lib/types";
+	import ArticleCard from "$lib/components/ArticleCard.svelte";
 
-    export let articles: ArticleMetadata[];
+	import type { ArticleMetadata } from "$lib/types";
+
+	export let articles: ArticleMetadata[];
 </script>
 
 <ul>
-    {#each articles as meta}
-        <li>
-            <a href="/blog/articles/{meta.slug}">{meta.title}</a>
-        </li>
-    {/each}
+	{#each articles as meta}
+		<li><ArticleCard {meta} mini /></li>
+	{/each}
 </ul>
+
+<style lang="scss">
+	ul {
+		max-width: 748px;
+		padding: 0;
+		margin: 0 auto;
+		list-style: none;
+	}
+
+	li {
+		margin: 12px 8px;
+	}
+</style>
