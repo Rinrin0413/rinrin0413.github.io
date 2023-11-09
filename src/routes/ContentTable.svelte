@@ -7,7 +7,7 @@
 	if (browser) window.addEventListener('scroll', fadeIn);
 
 	function fadeIn() {
-		addClassOnVisible(document.getElementsByTagName('ul'), 'fade-in-up-zoom');
+		addClassOnVisible(document.querySelector('#toc'), 'fade-in-up-zoom');
 	}
 
 	const ITEMS = [
@@ -30,7 +30,7 @@
 	];
 </script>
 
-<ul class:fade-in-up-zoom={false}>
+<ul id="toc" class:fade-in-up-zoom={false}>
 	{#each ITEMS as { id, name } (id)}
 		<li><a href={`#${id}`}><div>{name}</div></a></li>
 	{/each}
