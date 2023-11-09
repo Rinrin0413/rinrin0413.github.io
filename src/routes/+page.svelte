@@ -72,9 +72,11 @@
 
 <section id="blog">
 	<Title text="Blog" />
-	<ul>{#each articles as meta}<li>
-		<a href="/blog/articles/{meta.slug}">{meta.title}</a>
-	</li>{/each}</ul>
+	<ul>
+		{#each articles as meta}<li>
+				<a href="/blog/articles/{meta.slug}">{meta.title}</a>
+			</li>{/each}
+	</ul>
 </section>
 
 <Hr />
