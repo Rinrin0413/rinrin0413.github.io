@@ -5,16 +5,21 @@
 	import { date as date_i18n } from 'svelte-i18n';
 
 	export let meta: ArticleMetadata;
-	export let thumbnailImgFmts: ArticleThumbnailImgFmts;
+	export let thumbnailImgFmts: ArticleThumbnailImgFmts | null = null;
+	/**
+	 * Whether the card is mini version.
+	 * The mini version is always mobile view and does not have thumbnail image.
+	 */
+	export let mini = false;
 
 	const slug = meta.slug ?? 'unreachable';
 	const date = idToDate(slug);
 
-	const thumbnailImgFmt = thumbnailImgFmts[slug] ?? null;
+	const thumbnailImgFmt = thumbnailImgFmts?.[slug] ?? null;
 	const hasThumbnailImg = thumbnailImgFmt !== null;
 </script>
 
-<a href={'/blog/articles/' + slug}
+<a href={'/blog/articles/' + slug} class:force-mobile-view={mini}
 	><article>
 		<div class="thumbnail">
 			<img

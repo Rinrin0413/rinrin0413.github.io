@@ -25,14 +25,14 @@
  * ```
  */
 export function addClassOnVisible(
-	elements: HTMLCollectionOf<Element> | HTMLElement | null,
+	elements: HTMLCollectionOf<Element> | NodeListOf<Element> | HTMLElement | Element | null,
 	className: string
 ) {
-	if (elements instanceof HTMLCollection) {
+	if (elements instanceof HTMLCollection || elements instanceof NodeList) {
 		[...elements].forEach((e) => {
 			addClassOnVisible_(e, className);
 		});
-	} else if (elements instanceof HTMLElement) {
+	} else if (elements instanceof HTMLElement || elements instanceof Element) {
 		addClassOnVisible_(elements, className);
 	}
 }

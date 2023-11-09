@@ -101,7 +101,7 @@ p {
 	line-height: 1.1;
 }
 
-@include sp {
+@mixin mobile-view {
 	article {
 		grid-template-columns: auto;
 		grid-template-rows: auto auto;
@@ -155,4 +155,12 @@ p {
 		font-size: 15px;
 		margin-top: 2px;
 	}
+}
+
+@include sp {
+	@include mobile-view;
+}
+
+.force-mobile-view {
+	@include mobile-view;
 }
