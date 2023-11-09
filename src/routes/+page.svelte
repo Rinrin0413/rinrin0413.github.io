@@ -4,6 +4,7 @@
 	import ContentTable from './ContentTable.svelte';
 	import Activities from './Activities.svelte';
 	import Chronicle from './Chronicle.svelte';
+	import BlogArticles from './BlogArticles.svelte';
 	import MinimalContactTable from './MinimalContactTable.svelte';
 
 	import type { PageData } from './$types';
@@ -72,11 +73,7 @@
 
 <section id="blog">
 	<Title text="Blog Articles" />
-	<ul>
-		{#each articles as meta}<li>
-				<a href="/blog/articles/{meta.slug}">{meta.title}</a>
-			</li>{/each}
-	</ul>
+	<BlogArticles articles={articles} />
 </section>
 
 <Hr />
