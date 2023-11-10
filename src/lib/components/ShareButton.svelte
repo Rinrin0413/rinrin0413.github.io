@@ -33,6 +33,13 @@
 			shareWithWebShareApi();
 		}
 	}
+
+	function copyToClipboard() {
+		navigator.clipboard.writeText(url)
+			.then(() => alert($_('blog.copied')))
+			.catch(() => alert($_('blog.copyFailed')))
+			.finally(() => isMenuOpened = false);
+	}
 </script>
 
 <button on:click={share} id="share-btn" title={$_('w.share')}>
@@ -51,7 +58,7 @@
 
 {#if isMenuOpened}
 	<ul>
-		<li><button>[COPY]</button></li>
+		<li><button on:click={copyToClipboard}>{$_('blog.copyUrlToClipboard')}</button></li>
 		<li><button>X</button></li>
 		<li><button>mastodon</button></li>
 		<li><button>Misskey</button></li>

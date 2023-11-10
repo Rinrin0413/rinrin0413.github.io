@@ -170,7 +170,10 @@
 	},
 	"blog": {
 		"noMatchingArticlesFound": "一致する記事が見つかりませんでした。",
-		"clearFilters": "フィルターをリセット"
+		"clearFilters": "フィルターをリセット",
+		"copyUrlToClipboard": "クリップボードにURLをコピー",
+		"copied": "コピーしました",
+		"copyFailed": "コピーに失敗しました"
 	},
 	"article.backToIndex": "記事一覧に戻る"
 }

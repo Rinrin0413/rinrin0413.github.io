@@ -177,7 +177,10 @@
 	},
 	"blog": {
 		"noMatchingArticlesFound": "No matching articles found.",
-		"clearFilters": "Clear filters"
+		"clearFilters": "Clear filters",
+		"copyUrlToClipboard": "Copy URL to clipboard",
+		"copied": "Copied",
+		"copyFailed": "Copy failed"
 	},
 	"article.backToIndex": "Back to index"
 }
