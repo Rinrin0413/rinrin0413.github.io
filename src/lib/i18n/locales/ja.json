@@ -22,7 +22,8 @@
 		"articleThumbnailImage": "記事のサムネイル画像",
 		"noImage": "画像無し",
 		"backImage": "バックグラウンド画像",
-		"atomFeed": "Atomフィード"
+		"atomFeed": "Atomフィード",
+		"share": "共有"
 	},
 	"home": {
 		"icon": "Rinrin.rs のアイコン",

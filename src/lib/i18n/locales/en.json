@@ -22,7 +22,8 @@
 		"articleThumbnailImage": "Article thumbnail image",
 		"noImage": "No image",
 		"backImage": "Background image",
-		"atomFeed": "Atom feed"
+		"atomFeed": "Atom feed",
+		"share": "Share"
 	},
 	"home": {
 		"icon": "Rinrin.rs' avatar",

@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { SITE_NAME } from "$lib/variables";
 	import { browser } from "$app/environment";
+	import { _ } from "svelte-i18n";
 
 	function shareWithModal() {
 		// TODO: implement modal
@@ -26,4 +27,4 @@
 	}
 </script>
 
-<button on:click={share}>Share</button>
+<button on:click={share} title={$_('w.share')}>Share</button>
