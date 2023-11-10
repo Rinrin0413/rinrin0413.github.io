@@ -5,14 +5,21 @@
 
 	let isMenuOpened = false;
 
+	let url: string;
+	let title: string;
+	if (browser) {
+		url = location.href;
+		title = document.title;
+	}
+
 	function shareWithModal() {
 		isMenuOpened = !isMenuOpened;
 	}
 
 	function shareWithWebShareApi() {
 		navigator.share({
-			url: location.href,
-			text: document.title,
+			url: url,
+			text: title,
 			title: SITE_NAME
 		});
 	}
