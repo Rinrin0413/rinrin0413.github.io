@@ -35,10 +35,11 @@
 	}
 
 	function copyToClipboard() {
-		navigator.clipboard.writeText(url)
+		navigator.clipboard
+			.writeText(url)
 			.then(() => alert($_('blog.copied')))
 			.catch(() => alert($_('blog.copyFailed')))
-			.finally(() => isMenuOpened = false);
+			.finally(() => (isMenuOpened = false));
 	}
 </script>
 
