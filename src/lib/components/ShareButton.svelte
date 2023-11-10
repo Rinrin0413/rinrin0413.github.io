@@ -81,4 +81,16 @@
 		height: 100%;
 		fill: $text-dark;
 	}
+
+	ul {
+		display: inline-block;
+		position: absolute;
+		bottom: 35px;
+		transform: translateX(-86px);
+		list-style: none;
+		padding: 5px 10px;
+		background: $button-secondary;
+		border: 3px solid $button-primary;
+		border-radius: 12px;
+	}
 </style>
