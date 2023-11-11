@@ -173,7 +173,8 @@
 		"clearFilters": "フィルターをリセット",
 		"copyUrl": "URLをコピー",
 		"copied": "コピーしました",
-		"copyFailed": "コピーに失敗しました"
+		"copyFailed": "コピーに失敗しました",
+		"post": "ポスト"
 	},
 	"article.backToIndex": "記事一覧に戻る"
 }

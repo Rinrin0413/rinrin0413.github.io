@@ -76,7 +76,10 @@
 				{$_('blog.copyUrl')}
 			</button>
 		</li>
-		<li><button>X</button></li>
+		<li><button>
+			<img src="/images/logos/x_logo.svg" alt="X logo">
+			{$_('blog.post')}
+		</button></li>
 		<li><button>mastodon</button></li>
 		<li><button>Misskey</button></li>
 		<li><button>LINE</button></li>
@@ -147,11 +150,20 @@
 			}
 		}
 
-		svg {
-			$size: 22px;
-			width: $size;
-			height: $size;
+		svg, img {
 			vertical-align: middle;
+		}
+
+		$copy-icn-size: 22px;
+		$logo-size: 18px;
+
+		svg {
+			width: $copy-icn-size;
+		}
+
+		img {
+			width: $logo-size;
+			margin: 0 (($copy-icn-size - $logo-size) * 0.5);
 		}
 	}
 </style>
