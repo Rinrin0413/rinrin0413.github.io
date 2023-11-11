@@ -181,7 +181,9 @@
 		"copyUrl": "Copy URL",
 		"copied": "Copied",
 		"copyFailed": "Copy failed",
-		"post": "Post"
+		"post": "Post",
+		"toot": "Toot",
+		"note": "Note"
 	},
 	"article.backToIndex": "Back to index"
 }

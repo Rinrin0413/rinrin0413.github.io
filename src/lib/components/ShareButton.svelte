@@ -97,8 +97,14 @@
 				{$_('blog.post')}
 			</button>
 		</li>
-		<li><button>mastodon</button></li>
-		<li><button>Misskey</button></li>
+		<li><button>
+			<img src="/images/logos/mastodon_logo-purple.svg" alt="Mastodon logo" />
+			{$_('blog.toot')}
+		</button></li>
+		<li><button>
+			<img src="/images/logos/misskey_icon.png" alt="Misskey logo" />
+			{$_('blog.note')}
+		</button></li>
 	</ul>
 {/if}
 
@@ -172,7 +178,7 @@
 		}
 
 		$copy-icn-size: 22px;
-		$logo-size: 18px;
+		$logo-size: 19px;
 
 		svg {
 			width: $copy-icn-size;
