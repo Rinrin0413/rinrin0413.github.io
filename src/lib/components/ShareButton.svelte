@@ -78,14 +78,18 @@
 				{$_('blog.post')}
 			</button>
 		</li>
-		<li><button>
-			<img src="/images/logos/mastodon_logo-purple.svg" alt="Mastodon logo" />
-			{$_('blog.toot')}
-		</button></li>
-		<li><button>
-			<img src="/images/logos/misskey_icon.png" alt="Misskey logo" />
-			{$_('blog.note')}
-		</button></li>
+		<li>
+			<button>
+				<img src="/images/logos/mastodon_logo-purple.svg" alt="Mastodon logo" />
+				{$_('blog.toot')}
+			</button>
+		</li>
+		<li>
+			<button>
+				<img src="/images/logos/misskey_icon.png" alt="Misskey logo" />
+				{$_('blog.note')}
+			</button>
+		</li>
 	</ul>
 {/if}
 
