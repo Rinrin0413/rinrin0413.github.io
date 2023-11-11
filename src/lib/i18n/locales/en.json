@@ -178,7 +178,7 @@
 	"blog": {
 		"noMatchingArticlesFound": "No matching articles found.",
 		"clearFilters": "Clear filters",
-		"copyUrlToClipboard": "Copy URL to clipboard",
+		"copyUrl": "Copy URL",
 		"copied": "Copied",
 		"copyFailed": "Copy failed"
 	},

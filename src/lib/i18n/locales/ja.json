@@ -171,7 +171,7 @@
 	"blog": {
 		"noMatchingArticlesFound": "一致する記事が見つかりませんでした。",
 		"clearFilters": "フィルターをリセット",
-		"copyUrlToClipboard": "クリップボードにURLをコピー",
+		"copyUrl": "URLをコピー",
 		"copied": "コピーしました",
 		"copyFailed": "コピーに失敗しました"
 	},
