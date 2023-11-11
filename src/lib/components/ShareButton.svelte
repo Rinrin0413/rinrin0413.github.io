@@ -28,7 +28,7 @@
 	function share() {
 		if (!browser) return;
 
-		if (navigator.share === undefined) {
+		if (navigator.share === undefined || true) { // DEBUG: ` || true`
 			shareWithModal();
 		} else {
 			shareWithWebShareApi();
@@ -41,6 +41,15 @@
 			.then(() => alert($_('blog.copied')))
 			.catch(() => alert($_('blog.copyFailed')))
 			.finally(() => (isMenuOpened = false));
+	}
+
+	function openLink(url: string) {
+		window.open(url, '_blank');
+	}
+
+	function shareOnTwitter() {
+		const text = encodeURIComponent(title.replace('Rinrin.rs', 'Rinrin​.rs') + '\n' + url);
+		openLink('https://twitter.com/intent/tweet?text=' + text);
 	}
 </script>
 
@@ -76,7 +85,7 @@
 				{$_('blog.copyUrl')}
 			</button>
 		</li>
-		<li><button>
+		<li><button on:click={shareOnTwitter}>
 			<img src="/images/logos/x_logo.svg" alt="X logo">
 			{$_('blog.post')}
 		</button></li>
