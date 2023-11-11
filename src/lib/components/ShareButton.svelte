@@ -129,8 +129,8 @@
 
 		button {
 			width: 100%;
-			padding: 5px 8px;
-			padding-right: 16px;
+			padding: 5px 6px;
+			padding-right: 14px;
 			font-size: 14px;
 			color: $text-dark;
 			text-align: left;
