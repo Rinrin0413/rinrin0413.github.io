@@ -99,7 +99,6 @@
 		</li>
 		<li><button>mastodon</button></li>
 		<li><button>Misskey</button></li>
-		<li><button>LINE</button></li>
 	</ul>
 {/if}
 
