@@ -250,6 +250,16 @@
 			width: $logo-size;
 			margin: 0 (($copy-icn-size - $logo-size) * 0.5);
 		}
+
+		&::after {
+			content: '';
+			display: block;
+			position: absolute;
+			bottom: -17px;
+			left: 124px;
+			border: 7px solid transparent;
+			border-top-color: $button-primary;
+		}
 	}
 
 	$font-size-input: 13px;
