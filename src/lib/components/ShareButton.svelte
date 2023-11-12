@@ -101,7 +101,9 @@
 			</button>
 			<form on:submit={shareOnMastodon}>
 				<span /><input
-					type="text" placeholder={$_('w.domain')} required
+					type="text"
+					placeholder={$_('w.domain')}
+					required
 					bind:value={mastodonDomain}
 				/><img src={`https://${mastodonDomain}/favicon.ico`} alt="" class="server-favicon" />
 			</form>
@@ -113,7 +115,9 @@
 			</button>
 			<form on:submit={shareOnMisskey}>
 				<span /><input
-					type="text" placeholder={$_('w.domain')} required
+					type="text"
+					placeholder={$_('w.domain')}
+					required
 					bind:value={misskeyDomain}
 				/><img src={`https://${misskeyDomain}/favicon.ico`} alt="" class="server-favicon" />
 			</form>
