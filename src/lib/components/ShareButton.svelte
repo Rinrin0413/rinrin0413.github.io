@@ -13,6 +13,7 @@
 		title = document.title;
 	}
 
+	let mastodonDomain = 'mastodon.social';
 	let misskeyDomain = 'misskey.io';
 
 	function shareWithModal() {
@@ -55,9 +56,17 @@
 		openLink('https://twitter.com/intent/tweet?text=' + text);
 	}
 
-	function shareOnMisskey() {
+	function shareWithDomain(domain: string) {
 		const text = encodeURIComponent(title + '\n' + url);
-		openLink(`https://${misskeyDomain}/share?text=${text}`);
+		openLink(`https://${domain}/share?text=${text}`);
+	}
+
+	function shareOnMastodon() {
+		shareWithDomain(mastodonDomain);
+	}
+
+	function shareOnMisskey() {
+		shareWithDomain(misskeyDomain);
 	}
 </script>
 
@@ -86,10 +95,16 @@
 			</button>
 		</li>
 		<li>
-			<button>
+			<button on:click={shareOnMastodon}>
 				<img src="/images/logos/mastodon_logo-purple.svg" alt="Mastodon logo" />
 				{$_('blog.toot')}
 			</button>
+			<form on:submit={shareOnMastodon}>
+				<span /><input
+					type="text" placeholder={$_('w.domain')} required
+					bind:value={mastodonDomain}
+				/><img src={`https://${mastodonDomain}/favicon.ico`} alt="" class="server-favicon" />
+			</form>
 		</li>
 		<li>
 			<button on:click={shareOnMisskey}>
