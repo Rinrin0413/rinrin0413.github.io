@@ -151,7 +151,7 @@
 	</ul>
 {/if}
 
-<button on:click={share} class="share-btn" title={$_('w.share')}>
+<button on:click={share} class="share-btn" class:opened={isMenuOpened} title={$_('w.share')}>
 	<!-- 
         Google Material Symbols and Icons - Share
         https://fonts.google.com/icons?selected=Material%20Symbols%20Outlined%3Ashare%3AFILL%401%3Bwght%40400%3BGRAD%400%3Bopsz%4024
@@ -188,7 +188,7 @@
 		cursor: pointer;
 		transition: 0.2s;
 
-		&:hover {
+		&:hover, &.opened {
 			filter: brightness(1.06);
 			transform: translateY(3px);
 		}
@@ -206,7 +206,7 @@
 	ul {
 		display: inline-block;
 		position: absolute;
-		bottom: 40px;
+		bottom: 38px;
 		transform: translateX(-102px);
 		list-style: none;
 		padding: 6px 8px;
