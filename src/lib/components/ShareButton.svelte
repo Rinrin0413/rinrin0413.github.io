@@ -73,7 +73,7 @@
 </script>
 
 {#if isMenuOpened}
-	<ul transition:fly|local={{ x: 3, y: 8, duration: 200 }}>
+	<ul transition:fly|local={{ x: 1, y: 8, duration: 200 }}>
 		<li>
 			<button on:click={copyToClipboard}>
 				<!-- 
@@ -206,13 +206,14 @@
 	ul {
 		display: inline-block;
 		position: absolute;
-		bottom: 35px;
+		bottom: 40px;
 		transform: translateX(-102px);
 		list-style: none;
 		padding: 6px 8px;
 		background: $button-secondary;
 		border: 3px solid $button-primary;
 		border-radius: 12px;
+		filter: drop-shadow(0 2px 5px #0000008a);
 
 		button {
 			width: 100%;
