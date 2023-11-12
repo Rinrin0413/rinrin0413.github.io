@@ -13,6 +13,8 @@
 		title = document.title;
 	}
 
+	let misskeyDomain = 'misskey.io';
+
 	function shareWithModal() {
 		isMenuOpened = !isMenuOpened;
 	}
@@ -52,6 +54,11 @@
 		const text = encodeURIComponent(title.replace('Rinrin.rs', 'Rinrin​.rs') + '\n' + url);
 		openLink('https://twitter.com/intent/tweet?text=' + text);
 	}
+
+	function shareOnMisskey() {
+		const text = encodeURIComponent(title + '\n' + url);
+		openLink(`https://${misskeyDomain}/share?text=${text}`);
+	}
 </script>
 
 {#if isMenuOpened}
@@ -85,10 +92,16 @@
 			</button>
 		</li>
 		<li>
-			<button>
+			<button on:click={shareOnMisskey}>
 				<img src="/images/logos/misskey_icon.png" alt="Misskey logo" />
 				{$_('blog.note')}
 			</button>
+			<form on:submit={shareOnMisskey}>
+				<span /><input
+					type="text" placeholder={$_('w.domain')} required
+					bind:value={misskeyDomain}
+				/><img src={`https://${misskeyDomain}/favicon.ico`} alt="" class="server-favicon" />
+			</form>
 		</li>
 	</ul>
 {/if}
@@ -149,7 +162,7 @@
 		display: inline-block;
 		position: absolute;
 		bottom: 35px;
-		transform: translateX(-72px);
+		transform: translateX(-102px);
 		list-style: none;
 		padding: 6px 8px;
 		background: $button-secondary;
@@ -192,5 +205,51 @@
 			width: $logo-size;
 			margin: 0 (($copy-icn-size - $logo-size) * 0.5);
 		}
+	}
+
+	$font-size-input: 13px;
+
+	form {
+		display: block;
+		margin-top: -2px;
+	}
+
+	span {
+		&::before {
+			content: '┗';
+			font-family: 'Source Code Pro', monospace;
+			font-size: 20px;
+			margin-left: 5px;
+			position: relative;
+			top: 2px;
+			opacity: 0.4;
+		}
+
+		&::after {
+			content: 'https://';
+			font-size: $font-size-input;
+			margin-left: 3px;
+			opacity: 0.8;
+		}
+	}
+
+	input {
+		max-width: 112px;
+		margin-left: 1px;
+		padding: 2px;
+		font-size: $font-size-input;
+		font-weight: bold;
+		color: $text-dark;
+		background: $button-secondary;
+		border: 2px solid $button-primary;
+		border-radius: 4px;
+	}
+
+	.server-favicon {
+		$size: 14px;
+		width: $size;
+		height: $size;
+		margin-left: 5px;
+		vertical-align: middle;
 	}
 </style>

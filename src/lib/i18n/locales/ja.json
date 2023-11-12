@@ -23,7 +23,8 @@
 		"noImage": "画像無し",
 		"backImage": "バックグラウンド画像",
 		"atomFeed": "Atomフィード",
-		"share": "共有"
+		"share": "共有",
+		"domain": "ドメイン"
 	},
 	"home": {
 		"icon": "Rinrin.rs のアイコン",

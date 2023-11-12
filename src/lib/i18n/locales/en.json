@@ -23,7 +23,8 @@
 		"noImage": "No image",
 		"backImage": "Background image",
 		"atomFeed": "Atom feed",
-		"share": "Share"
+		"share": "Share",
+		"domain": "Domain"
 	},
 	"home": {
 		"icon": "Rinrin.rs' avatar",
