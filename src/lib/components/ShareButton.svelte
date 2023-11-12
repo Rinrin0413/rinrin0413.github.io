@@ -188,7 +188,8 @@
 		cursor: pointer;
 		transition: 0.2s;
 
-		&:hover, &.opened {
+		&:hover,
+		&.opened {
 			filter: brightness(1.06);
 			transform: translateY(3px);
 		}
