@@ -68,6 +68,10 @@
 	function shareOnMisskey() {
 		shareWithDomain(misskeyDomain);
 	}
+
+	function faviconUrl(domain: string) {
+		return `https://${domain}/favicon.ico`;
+	}
 </script>
 
 {#if isMenuOpened}
@@ -105,7 +109,7 @@
 					placeholder={$_('w.domain')}
 					required
 					bind:value={mastodonDomain}
-				/><img src={`https://${mastodonDomain}/favicon.ico`} alt="" class="server-favicon" />
+				/><img src={faviconUrl(mastodonDomain)} alt="" class="server-favicon" />
 			</form>
 		</li>
 		<li>
@@ -119,7 +123,7 @@
 					placeholder={$_('w.domain')}
 					required
 					bind:value={misskeyDomain}
-				/><img src={`https://${misskeyDomain}/favicon.ico`} alt="" class="server-favicon" />
+				/><img src={faviconUrl(misskeyDomain)} alt="" class="server-favicon" />
 			</form>
 		</li>
 	</ul>
