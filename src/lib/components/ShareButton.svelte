@@ -4,19 +4,23 @@
 	import { _ } from 'svelte-i18n';
 	import { fly } from 'svelte/transition';
 
-	let isMenuOpened = false;
+	let isWebShareApiSupported = false;
 
 	let url: string;
 	let title: string;
+
 	if (browser) {
+		isWebShareApiSupported = navigator.share !== undefined;
 		url = location.href;
 		title = document.title;
 	}
 
+	let isMenuOpened = false;
+
 	let mastodonDomain = 'mastodon.social';
 	let misskeyDomain = 'misskey.io';
 
-	function shareWithModal() {
+	function toggleDropdownMenu() {
 		isMenuOpened = !isMenuOpened;
 	}
 
@@ -30,13 +34,7 @@
 
 	function share() {
 		if (!browser) return;
-
-		// DEBUG: ` || true`
-		if (navigator.share === undefined || true) {
-			shareWithModal();
-		} else {
-			shareWithWebShareApi();
-		}
+		toggleDropdownMenu();
 	}
 
 	function copyToClipboard() {
@@ -126,6 +124,30 @@
 				/><img src={faviconUrl(misskeyDomain)} alt="" class="server-favicon" />
 			</form>
 		</li>
+		{#if isWebShareApiSupported}
+			<li title={$_('w.webShareApi')}>
+				<button class="web-share-api-btn" on:click={shareWithWebShareApi}>
+					<!-- 
+						Bootstrap Icons - Three dots
+						https://icons.getbootstrap.com/icons/three-dots
+						
+						Copyright (c) 2019 The Bootstrap Authors
+						under the MIT License: https://github.com/twbs/icons/blob/main/LICENSE
+					-->
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						width="16"
+						height="16"
+						fill="currentColor"
+						class="bi bi-three-dots"
+						viewBox="0 0 16 16"
+						><path
+							d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"
+						/></svg
+					>
+				</button>
+			</li>
+		{/if}
 	</ul>
 {/if}
 
@@ -274,5 +296,22 @@
 		height: $size;
 		margin-left: 5px;
 		vertical-align: middle;
+	}
+
+	.web-share-api-btn {
+		margin: 0;
+		margin-top: 12px;
+		padding: 1px 0;
+		text-align: center;
+		background: $button-primary;
+		border-radius: 24px;
+
+		&:hover {
+			transform: none;
+		}
+	}
+
+	.bi-three-dots {
+		height: 100%;
 	}
 </style>

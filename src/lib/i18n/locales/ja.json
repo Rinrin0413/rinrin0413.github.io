@@ -24,7 +24,8 @@
 		"backImage": "バックグラウンド画像",
 		"atomFeed": "Atomフィード",
 		"share": "共有",
-		"domain": "ドメイン"
+		"domain": "ドメイン",
+		"webShareApi": "ウェブ共有 API"
 	},
 	"home": {
 		"icon": "Rinrin.rs のアイコン",

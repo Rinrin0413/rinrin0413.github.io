@@ -24,7 +24,8 @@
 		"backImage": "Background image",
 		"atomFeed": "Atom feed",
 		"share": "Share",
-		"domain": "Domain"
+		"domain": "Domain",
+		"webShareApi": "Web Share API"
 	},
 	"home": {
 		"icon": "Rinrin.rs' avatar",
