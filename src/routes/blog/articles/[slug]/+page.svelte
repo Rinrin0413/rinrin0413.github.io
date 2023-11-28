@@ -82,7 +82,7 @@
 		/>
 	</div>
 {:else}
-	<Space height="32px" />
+	<Space height="86px" />
 {/if}
 
 <div class="article-content" class:thumbnail-exists={hasThumbnailImg}>
