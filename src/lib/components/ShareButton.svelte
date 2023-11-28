@@ -143,7 +143,12 @@
 	</ul>
 {/if}
 
-<button on:click={toggleDropdownMenu} class="share-btn" class:opened={isMenuOpened} title={$_('w.share')}>
+<button
+	on:click={toggleDropdownMenu}
+	class="share-btn"
+	class:opened={isMenuOpened}
+	title={$_('w.share')}
+>
 	<!-- 
         Google Material Symbols and Icons - Share
         https://fonts.google.com/icons?selected=Material%20Symbols%20Outlined%3Ashare%3AFILL%401%3Bwght%40400%3BGRAD%400%3Bopsz%4024
