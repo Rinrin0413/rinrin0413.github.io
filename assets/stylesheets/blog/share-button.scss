@@ -1,0 +1,155 @@
+@use '../variables/color' as *;
+
+.share-btn {
+	display: inline-block;
+	$size: 32px;
+	width: $size;
+	height: $size;
+	padding: 4px;
+	margin: 0 8px;
+	background: $button-primary;
+	border: 3px solid $button-secondary;
+	border-radius: 4px;
+	box-shadow: 0 0 14px #00000050;
+	box-sizing: content-box;
+	cursor: pointer;
+	transition: 0.2s;
+
+	&:hover,
+	&.opened {
+		filter: brightness(1.06);
+		transform: translateY(3px);
+	}
+}
+
+svg {
+	fill: $text-dark;
+}
+
+.share-icn {
+	width: 100%;
+	height: 100%;
+}
+
+ul {
+	display: inline-block;
+	position: absolute;
+	bottom: 38px;
+	transform: translateX(-102px);
+	list-style: none;
+	padding: 6px 8px;
+	background: $button-secondary;
+	border: 3px solid $button-primary;
+	border-radius: 12px;
+	filter: drop-shadow(0 2px 5px #0000008a);
+
+	button {
+		width: 100%;
+		padding: 5px 6px;
+		padding-right: 14px;
+		font-size: 14px;
+		color: $text-dark;
+		text-align: left;
+		background: none;
+		border: none;
+		border-radius: 7px;
+		cursor: pointer;
+		transition: 0.2s;
+
+		&:hover {
+			background: $button-secondary;
+			filter: brightness(1.075);
+			transform: translateX(4px);
+		}
+	}
+
+	svg,
+	img {
+		vertical-align: middle;
+	}
+
+	$copy-icn-size: 22px;
+	$logo-size: 19px;
+
+	svg {
+		width: $copy-icn-size;
+	}
+
+	img {
+		width: $logo-size;
+		margin: 0 (($copy-icn-size - $logo-size) * 0.5);
+	}
+
+	&::after {
+		content: '';
+		display: block;
+		position: absolute;
+		bottom: -17px;
+		left: 124px;
+		border: 7px solid transparent;
+		border-top-color: $button-primary;
+	}
+}
+
+$font-size-input: 13px;
+
+form {
+	display: block;
+	margin-top: -2px;
+}
+
+span {
+	&::before {
+		content: '┗';
+		font-family: 'Source Code Pro', monospace;
+		font-size: 20px;
+		margin-left: 5px;
+		position: relative;
+		top: 2px;
+		opacity: 0.4;
+	}
+
+	&::after {
+		content: 'https://';
+		font-size: $font-size-input;
+		margin-left: 3px;
+		opacity: 0.8;
+	}
+}
+
+input {
+	max-width: 112px;
+	margin-left: 1px;
+	padding: 2px;
+	font-size: $font-size-input;
+	font-weight: bold;
+	color: $text-dark;
+	background: $button-secondary;
+	border: 2px solid $button-primary;
+	border-radius: 4px;
+}
+
+.server-favicon {
+	$size: 14px;
+	width: $size;
+	height: $size;
+	margin-left: 5px;
+	vertical-align: middle;
+}
+
+.web-share-api-btn {
+	margin: 0;
+	margin-top: 12px;
+	padding: 1px 0;
+	text-align: center;
+	background: $button-primary;
+	border-radius: 24px;
+
+	&:hover {
+		transform: none;
+	}
+}
+
+.bi-three-dots {
+	height: 100%;
+}
