@@ -3,6 +3,7 @@
 	import { browser } from '$app/environment';
 	import { _ } from 'svelte-i18n';
 	import { fly } from 'svelte/transition';
+	import { faviconUrl } from '$lib/util';
 
 	let isWebShareApiSupported = false;
 
@@ -65,10 +66,6 @@
 
 	function shareOnMisskey() {
 		shareWithDomain(misskeyDomain);
-	}
-
-	function faviconUrl(domain: string) {
-		return `https://${domain}/favicon.ico`;
 	}
 </script>
 
