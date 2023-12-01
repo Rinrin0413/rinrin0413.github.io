@@ -31,6 +31,7 @@
 		width: $size;
 		height: $size;
 		padding: 4px;
+		margin: 0 6px;
 		background: $button-primary;
 		border: 3px solid $button-secondary;
 		border-radius: 4px;
