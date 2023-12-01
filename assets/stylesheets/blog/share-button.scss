@@ -105,6 +105,16 @@ ul {
 		.bi-three-dots {
 			height: 100%;
 		}
+
+		&::after {
+			content: '';
+			display: block;
+			position: absolute;
+			bottom: -17px;
+			left: 124px;
+			border: 7px solid transparent;
+			border-top-color: $button-primary;
+		}
 	}
 
 	&:not(.menu) {
@@ -133,16 +143,6 @@ ul {
 	svg,
 	img {
 		vertical-align: middle;
-	}
-
-	&::after {
-		content: '';
-		display: block;
-		position: absolute;
-		bottom: -17px;
-		left: 124px;
-		border: 7px solid transparent;
-		border-top-color: $button-primary;
 	}
 }
 
