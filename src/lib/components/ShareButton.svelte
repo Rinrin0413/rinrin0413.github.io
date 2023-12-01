@@ -20,6 +20,14 @@
 
 	let isMenuOpened = false;
 
+	const ITEM_NAMES = {
+		copy: $_('blog.copyUrl'),
+		post: $_('blog.post'),
+		toot: $_('blog.toot'),
+		note: $_('blog.note'),
+		webShareApi: $_('w.webShareApi')
+	};
+
 	let mastodonDomain = 'mastodon.social';
 	let misskeyDomain = 'misskey.io';
 
@@ -69,7 +77,7 @@
 {#if isMenuOpened || expanded}
 	<ul class:menu={!expanded} transition:fly|local={{ x: 1, y: 8, duration: 200 }}>
 		<li>
-			<button on:click={copyToClipboard}>
+			<button on:click={copyToClipboard} title={ITEM_NAMES.copy}>
 				<!-- 
 					Google Material Symbols and Icons - Content Copy
 					https://fonts.google.com/icons?selected=Material%20Symbols%20Outlined%3Acontent_copy%3AFILL%400%3Bwght%40400%3BGRAD%400%3Bopsz%4024
@@ -82,23 +90,23 @@
 					/></svg
 				>
 				{#if !expanded}
-					{$_('blog.copyUrl')}
+					{ITEM_NAMES.copy}
 				{/if}
 			</button>
 		</li>
 		<li>
-			<button on:click={shareOnTwitter}>
+			<button on:click={shareOnTwitter} title={ITEM_NAMES.post}>
 				<img src="/images/logos/x_logo.svg" alt="X logo" />
 				{#if !expanded}
-				{$_('blog.post')}
+					{ITEM_NAMES.post}
 				{/if}
 			</button>
 		</li>
 		<li>
-			<button class:opened={false} on:click={shareOnMastodon}>
+			<button class:opened={false} on:click={shareOnMastodon} title={ITEM_NAMES.toot}>
 				<img src="/images/logos/mastodon_logo-purple.svg" alt="Mastodon logo" />
 				{#if !expanded}
-					{$_('blog.toot')}
+					{ITEM_NAMES.toot}
 				{/if}
 			</button>
 			{#if !expanded}
@@ -113,10 +121,10 @@
 			{/if}
 		</li>
 		<li>
-			<button class:opened={false} on:click={shareOnMisskey}>
+			<button class:opened={false} on:click={shareOnMisskey} title={ITEM_NAMES.note}>
 				<img src="/images/logos/misskey_icon.png" alt="Misskey logo" />
 				{#if !expanded}
-					{$_('blog.note')}
+					{ITEM_NAMES.note}
 				{/if}
 			</button>
 			{#if !expanded}
@@ -131,8 +139,8 @@
 			{/if}
 		</li>
 		{#if isWebShareApiSupported}
-			<li title={$_('w.webShareApi')}>
-				<button class="web-share-api-btn" on:click={shareWithWebShareApi}>
+			<li>
+				<button class="web-share-api-btn" on:click={shareWithWebShareApi} title={ITEM_NAMES.webShareApi}>
 					<!-- 
 						Bootstrap Icons - Three dots
 						https://icons.getbootstrap.com/icons/three-dots
