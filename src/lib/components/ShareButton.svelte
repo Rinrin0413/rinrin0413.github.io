@@ -140,7 +140,11 @@
 		</li>
 		{#if isWebShareApiSupported}
 			<li>
-				<button class="web-share-api-btn" on:click={shareWithWebShareApi} title={ITEM_NAMES.webShareApi}>
+				<button
+					class="web-share-api-btn"
+					on:click={shareWithWebShareApi}
+					title={ITEM_NAMES.webShareApi}
+				>
 					<!-- 
 						Bootstrap Icons - Three dots
 						https://icons.getbootstrap.com/icons/three-dots

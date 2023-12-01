@@ -61,7 +61,7 @@ ul {
 			border-radius: 7px;
 			cursor: pointer;
 			transition: 0.2s;
-	
+
 			&:hover {
 				background: $button-secondary;
 				filter: brightness(1.075);
@@ -88,7 +88,7 @@ ul {
 			margin-left: 5px;
 			vertical-align: middle;
 		}
-		
+
 		.web-share-api-btn {
 			margin: 0;
 			margin-top: 12px;
@@ -96,12 +96,12 @@ ul {
 			text-align: center;
 			background: $button-primary;
 			border-radius: 24px;
-		
+
 			&:hover {
 				transform: none;
 			}
 		}
-		
+
 		.bi-three-dots {
 			height: 100%;
 		}
