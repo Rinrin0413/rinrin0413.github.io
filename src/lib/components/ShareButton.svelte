@@ -75,6 +75,7 @@
 </script>
 
 {#if isMenuOpened || expanded}
+	<!-- prettier-ignore -->
 	<ul class:menu={!expanded} transition:fly|local={{ x: 1, y: 8, duration: 200 }}>
 		<li>
 			<button on:click={copyToClipboard} title={ITEM_NAMES.copy}>
@@ -92,24 +93,24 @@
 				{#if !expanded}
 					{ITEM_NAMES.copy}
 				{/if}
-			</button>
-		</li>
-		<li>
+			</button
+		></li
+		><li>
 			<button on:click={shareOnTwitter} title={ITEM_NAMES.post}>
 				<img src="/images/logos/x_logo.svg" alt="X logo" />
 				{#if !expanded}
 					{ITEM_NAMES.post}
 				{/if}
-			</button>
-		</li>
-		<li>
+			</button
+		></li
+		><li>
 			<button class:opened={false} on:click={shareOnMastodon} title={ITEM_NAMES.toot}>
 				<img src="/images/logos/mastodon_logo-purple.svg" alt="Mastodon logo" />
 				{#if !expanded}
 					{ITEM_NAMES.toot}
 				{/if}
-			</button>
-			{#if !expanded}
+			</button
+			>{#if !expanded}
 				<form on:submit={shareOnMastodon}>
 					<span /><input
 						type="text"
@@ -117,10 +118,9 @@
 						required
 						bind:value={mastodonDomain}
 					/><img src={faviconUrl(mastodonDomain)} alt="" class="server-favicon" />
-				</form>
-			{/if}
-		</li>
-		<li>
+				</form>{/if
+		}</li
+		><li>
 			<button class:opened={false} on:click={shareOnMisskey} title={ITEM_NAMES.note}>
 				<img src="/images/logos/misskey_icon.png" alt="Misskey logo" />
 				{#if !expanded}

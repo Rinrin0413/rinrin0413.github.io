@@ -100,8 +100,7 @@
 			but breaking the logic for the sake of intuitiveness.
 		-->
 		<div style={parallax(-0.06)}>
-			<ShareButton />
-			<FeedButton />
+			<ShareButton /><FeedButton />
 		</div>
 	</div>
 	<Article body={data.component} />
