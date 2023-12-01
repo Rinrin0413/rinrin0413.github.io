@@ -95,6 +95,10 @@
 		>
 	</div>
 	<div in:scale|global={introAnim(4)}>
+		<!-- 
+			Logically, the dropdown menu of the sharing button should come after the thumbnail image,
+			but breaking the logic for the sake of intuitiveness.
+		-->
 		<div style={parallax(-0.06)}>
 			<ShareButton />
 			<FeedButton />
