@@ -1,6 +1,6 @@
 @use '../variables/color' as *;
 
-.share-btn {
+@mixin btn {
 	display: inline-block;
 	$size: 32px;
 	width: $size;
@@ -22,6 +22,10 @@
 	}
 }
 
+.share-btn {
+	@include btn;
+}
+
 svg {
 	fill: $text-dark;
 }
@@ -32,52 +36,103 @@ svg {
 }
 
 ul {
-	display: inline-block;
-	position: absolute;
-	bottom: 38px;
-	transform: translateX(-102px);
 	list-style: none;
-	padding: 6px 8px;
-	background: $button-secondary;
-	border: 3px solid $button-primary;
-	border-radius: 12px;
-	filter: drop-shadow(0 2px 5px #0000008a);
 
-	button {
-		width: 100%;
-		padding: 5px 6px;
-		padding-right: 14px;
-		font-size: 14px;
-		color: $text-dark;
-		text-align: left;
-		background: none;
-		border: none;
-		border-radius: 7px;
-		cursor: pointer;
-		transition: 0.2s;
+	&.menu {
+		display: inline-block;
+		position: absolute;
+		bottom: 38px;
+		transform: translateX(-102px);
+		padding: 6px 8px;
+		background: $button-secondary;
+		border: 3px solid $button-primary;
+		border-radius: 12px;
+		filter: drop-shadow(0 2px 5px #0000008a);
 
-		&:hover {
-			background: $button-secondary;
-			filter: brightness(1.075);
-			transform: translateX(4px);
+		button {
+			width: 100%;
+			padding: 5px 6px;
+			padding-right: 14px;
+			font-size: 14px;
+			color: $text-dark;
+			text-align: left;
+			background: none;
+			border: none;
+			border-radius: 7px;
+			cursor: pointer;
+			transition: 0.2s;
+	
+			&:hover {
+				background: $button-secondary;
+				filter: brightness(1.075);
+				transform: translateX(4px);
+			}
+		}
+
+		$copy-icn-size: 22px;
+		$logo-size: 19px;
+
+		svg {
+			width: $copy-icn-size;
+		}
+
+		img {
+			width: $logo-size;
+			margin: 0 (($copy-icn-size - $logo-size) * 0.5);
+		}
+
+		.server-favicon {
+			$size: 14px;
+			width: $size;
+			height: $size;
+			margin-left: 5px;
+			vertical-align: middle;
+		}
+		
+		.web-share-api-btn {
+			margin: 0;
+			margin-top: 12px;
+			padding: 1px 0;
+			text-align: center;
+			background: $button-primary;
+			border-radius: 24px;
+		
+			&:hover {
+				transform: none;
+			}
+		}
+		
+		.bi-three-dots {
+			height: 100%;
+		}
+	}
+
+	&:not(.menu) {
+		padding: 0;
+
+		li {
+			display: inline;
+		}
+
+		button {
+			@include btn;
+		}
+
+		svg {
+			width: 100%;
+			height: 100%;
+		}
+
+		img {
+			$size: 75%;
+			max-width: $size;
+			max-height: $size;
 		}
 	}
 
 	svg,
 	img {
 		vertical-align: middle;
-	}
-
-	$copy-icn-size: 22px;
-	$logo-size: 19px;
-
-	svg {
-		width: $copy-icn-size;
-	}
-
-	img {
-		width: $logo-size;
-		margin: 0 (($copy-icn-size - $logo-size) * 0.5);
 	}
 
 	&::after {
@@ -127,29 +182,4 @@ input {
 	background: $button-secondary;
 	border: 2px solid $button-primary;
 	border-radius: 4px;
-}
-
-.server-favicon {
-	$size: 14px;
-	width: $size;
-	height: $size;
-	margin-left: 5px;
-	vertical-align: middle;
-}
-
-.web-share-api-btn {
-	margin: 0;
-	margin-top: 12px;
-	padding: 1px 0;
-	text-align: center;
-	background: $button-primary;
-	border-radius: 24px;
-
-	&:hover {
-		transform: none;
-	}
-}
-
-.bi-three-dots {
-	height: 100%;
 }

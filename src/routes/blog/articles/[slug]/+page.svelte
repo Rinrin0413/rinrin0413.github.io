@@ -105,6 +105,7 @@
 		</div>
 	</div>
 	<Article body={data.component} />
+	<p><ShareButton expanded /></p>
 	<Tags tags={metadata.tags} />
 	<div><a href="/blog" class="back-to-index">{$_('article.backToIndex')}</a></div>
 </div>
