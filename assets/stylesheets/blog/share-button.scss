@@ -107,13 +107,17 @@ ul {
 			height: 100%;
 		}
 
+		&::before,
 		&::after {
 			content: '';
 			display: block;
 			position: absolute;
-			bottom: -17px;
 			left: 124px;
 			border: 7px solid transparent;
+		}
+
+		&.in-article-page::after {
+			bottom: -17px;
 			border-top-color: $button-primary;
 		}
 	}
@@ -143,12 +147,12 @@ ul {
 	}
 
 	&:not(.in-article-page) {
-		bottom: 395px;
+		bottom: auto;
+		top: 333px;
 		filter: drop-shadow(0 0 5px #00000070);
 
-		&::after {
-			bottom: 198px;
-			border: 7px solid transparent;
+		&::before {
+			top: -17px;
 			border-bottom-color: $button-primary;
 		}
 	}
