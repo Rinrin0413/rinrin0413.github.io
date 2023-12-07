@@ -103,41 +103,39 @@
 				{/if}
 			</button
 		></li
-		><li>
-			<button class:opened={false} on:click={shareOnMastodon} title={ITEM_NAMES.toot}>
-				<img src="/images/logos/mastodon_logo-purple.svg" alt="Mastodon logo" />
-				{#if !expanded}
+		>{#if !expanded}
+			<li>
+				<button class:opened={false} on:click={shareOnMastodon} title={ITEM_NAMES.toot}>
+					<img src="/images/logos/mastodon_logo-purple.svg" alt="Mastodon logo" />
 					{ITEM_NAMES.toot}
-				{/if}
-			</button
-			>{#if !expanded}
+				</button>
 				<form on:submit={shareOnMastodon}>
-					<span /><input
+					<span
+					/><input
 						type="text"
 						placeholder={$_('w.domain')}
 						required
 						bind:value={mastodonDomain}
 					/><img src={faviconUrl(mastodonDomain)} alt="" class="server-favicon" />
-				</form>{/if
-		}</li
-		><li>
-			<button class:opened={false} on:click={shareOnMisskey} title={ITEM_NAMES.note}>
-				<img src="/images/logos/misskey_icon.png" alt="Misskey logo" />
-				{#if !expanded}
+				</form>
+			</li>
+			<li>
+				<button class:opened={false} on:click={shareOnMisskey} title={ITEM_NAMES.note}>
+					<img src="/images/logos/misskey_icon.png" alt="Misskey logo" />
 					{ITEM_NAMES.note}
-				{/if}
-			</button
-			>{#if !expanded}
+				</button>
 				<form on:submit={shareOnMisskey}>
-					<span /><input
+					<span
+					/><input
 						type="text"
 						placeholder={$_('w.domain')}
 						required
 						bind:value={misskeyDomain}
 					/><img src={faviconUrl(misskeyDomain)} alt="" class="server-favicon" />
-				</form>{/if
-		}</li
-		>{#if isWebShareApiSupported
+				</form>
+			</li>
+		{/if
+		}{#if isWebShareApiSupported
 			}<li>
 				<button class="web-share-api-btn" on:click={shareWithWebShareApi} title={ITEM_NAMES.webShareApi}>
 					<!-- 
