@@ -126,6 +126,7 @@ ul {
 
 		button {
 			@include btn;
+			vertical-align: middle;
 		}
 
 		svg {
