@@ -126,8 +126,8 @@
 				{#if !expanded}
 					{ITEM_NAMES.note}
 				{/if}
-			</button>
-			{#if !expanded}
+			</button
+			>{#if !expanded}
 				<form on:submit={shareOnMisskey}>
 					<span /><input
 						type="text"
@@ -135,11 +135,10 @@
 						required
 						bind:value={misskeyDomain}
 					/><img src={faviconUrl(misskeyDomain)} alt="" class="server-favicon" />
-				</form>
-			{/if}
-		</li>
-		{#if isWebShareApiSupported}
-			<li>
+				</form>{/if
+		}</li
+		>{#if isWebShareApiSupported
+			}<li>
 				<button class="web-share-api-btn" on:click={shareWithWebShareApi} title={ITEM_NAMES.webShareApi}>
 					<!-- 
 						Bootstrap Icons - Three dots
