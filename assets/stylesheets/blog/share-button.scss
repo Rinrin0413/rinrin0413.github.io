@@ -48,6 +48,7 @@ ul {
 		border: 3px solid $button-primary;
 		border-radius: 12px;
 		filter: drop-shadow(0 2px 5px #0000008a);
+		z-index: 42;
 
 		button {
 			width: 100%;
@@ -138,6 +139,17 @@ ul {
 			$size: 75%;
 			max-width: $size;
 			max-height: $size;
+		}
+	}
+
+	&:not(.in-article-page) {
+		bottom: 395px;
+		filter: drop-shadow(0 0 5px #00000070);
+
+		&::after {
+			bottom: 198px;
+			border: 7px solid transparent;
+			border-bottom-color: $button-primary;
 		}
 	}
 

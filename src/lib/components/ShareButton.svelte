@@ -6,6 +6,7 @@
 	import { faviconUrl } from '$lib/util';
 
 	export let expanded = false;
+	export let notArticlePage = false;
 
 	let isWebShareApiSupported = false;
 
@@ -17,6 +18,12 @@
 		url = location.href;
 		title = document.title;
 	}
+
+	const ANIM_DIRECTION = notArticlePage ? -1 : 1;
+	const ANIM_OFFSET = {
+		x: 1 * ANIM_DIRECTION,
+		y: 8 * ANIM_DIRECTION
+	};
 
 	let isMenuOpened = false;
 
@@ -76,7 +83,11 @@
 
 {#if isMenuOpened || expanded}
 	<!-- prettier-ignore -->
-	<ul class:menu={!expanded} transition:fly|local={{ x: 1, y: 8, duration: 200 }}>
+	<ul
+		class:menu={!expanded}
+		class:in-article-page={!notArticlePage}
+		transition:fly|local={{ ...ANIM_OFFSET, duration: 200 }}
+	>
 		<li>
 			<button on:click={copyToClipboard} title={ITEM_NAMES.copy}>
 				<!-- 
