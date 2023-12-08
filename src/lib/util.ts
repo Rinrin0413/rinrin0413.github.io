@@ -119,3 +119,8 @@ export function idToDate(articleId: string) {
 	const d = articleId.slice(6, 8);
 	return new Date(`${y}-${m}-${d}`);
 }
+
+/** Converts to an URL of the favicon of the given domain. */
+export function faviconUrl(domain: string) {
+	return `https://${domain}/favicon.ico`;
+}

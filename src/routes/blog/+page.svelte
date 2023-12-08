@@ -2,6 +2,7 @@
 	import Space from '$lib/components/Space.svelte';
 	import Title from '$lib/components/Title.svelte';
 	import FeedButton from '$lib/components/FeedButton.svelte';
+	import ShareButton from '$lib/components/ShareButton.svelte';
 	import TagPicker from './TagPicker.svelte';
 	import ArticleCard from '$lib/components/ArticleCard.svelte';
 
@@ -38,7 +39,7 @@
 <section>
 	<Space height="64px" />
 	<Title text="Blog" />
-	<p><FeedButton /></p>
+	<p><ShareButton notArticlePage /><FeedButton /></p>
 	<TagPicker allTags={data.allTags} pickedTags={tags} />
 
 	{#if 0 < articles.length}

@@ -22,7 +22,10 @@
 		"articleThumbnailImage": "Article thumbnail image",
 		"noImage": "No image",
 		"backImage": "Background image",
-		"atomFeed": "Atom feed"
+		"atomFeed": "Atom feed",
+		"share": "Share",
+		"domain": "Domain",
+		"webShareApi": "Web Share API"
 	},
 	"home": {
 		"icon": "Rinrin.rs' avatar",
@@ -176,7 +179,13 @@
 	},
 	"blog": {
 		"noMatchingArticlesFound": "No matching articles found.",
-		"clearFilters": "Clear filters"
+		"clearFilters": "Clear filters",
+		"copyUrl": "Copy URL",
+		"copied": "Copied",
+		"copyFailed": "Copy failed",
+		"post": "Post",
+		"toot": "Toot",
+		"note": "Note"
 	},
 	"article.backToIndex": "Back to index"
 }

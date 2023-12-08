@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Space from '$lib/components/Space.svelte';
+	import ShareButton from '$lib/components/ShareButton.svelte';
 	import FeedButton from '$lib/components/FeedButton.svelte';
 	import Article from './Article.svelte';
 	import Tags from './Tags.svelte';
@@ -81,7 +82,7 @@
 		/>
 	</div>
 {:else}
-	<Space height="32px" />
+	<Space height="86px" />
 {/if}
 
 <div class="article-content" class:thumbnail-exists={hasThumbnailImg}>
@@ -94,11 +95,16 @@
 		>
 	</div>
 	<div in:scale|global={introAnim(4)}>
+		<!-- 
+			Logically, the dropdown menu of the sharing button should come after the thumbnail image,
+			but breaking the logic for the sake of intuitiveness.
+		-->
 		<div style={parallax(-0.06)}>
-			<FeedButton />
+			<ShareButton /><FeedButton />
 		</div>
 	</div>
 	<Article body={data.component} />
+	<p><ShareButton expanded /></p>
 	<Tags tags={metadata.tags} />
 	<div><a href="/blog" class="back-to-index">{$_('article.backToIndex')}</a></div>
 </div>
