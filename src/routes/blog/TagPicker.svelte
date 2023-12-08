@@ -14,7 +14,7 @@
 </script>
 
 <button on:click={() => (isOpened = !isOpened)}>
-	<span class:opened={isOpened}><Title2 text={$_('w.tags')} /></span>
+	<span class:opened={isOpened}><Title2 text={$_('w.tags')} style="margin: 0;" /></span>
 </button>
 
 <ul>
@@ -32,6 +32,7 @@
 
 <style lang="scss">
 	button {
+		margin-bottom: 16px;
 		font-family: inherit;
 		color: inherit;
 		background: none;
