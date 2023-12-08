@@ -199,5 +199,15 @@
 			cursor: pointer;
 			font-weight: bold;
 		}
+
+		iframe {
+			max-width: 100%;
+			border-radius: 4px;
+		}
+
+		.yt-embed {
+			width: 100%;
+			min-height: 372px;
+		}
 	}
 }
