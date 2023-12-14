@@ -16,19 +16,20 @@
 	import { date as date_i18n } from 'svelte-i18n';
 
 	export let data: PageData;
-	const metadata = data.frontmatter;
+	let metadata = data.frontmatter;
+	$: metadata = data.frontmatter;
 	// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-	const slug = $page.url.pathname.split('/').pop()!;
+	$: slug = $page.url.pathname.split('/').pop()!;
 
 	let scrollY: number;
 	let parallax = parallaxStyle(0);
 	$: parallax = parallaxStyle(scrollY);
 
-	let date = idToDate(slug);
+	$: date = idToDate(slug);
 
-	const thumbnailImgFmt = data.thumbnailImgFmt;
-	const hasThumbnailImg = thumbnailImgFmt !== null;
-	const thumbnail_path = hasThumbnailImg
+	$: thumbnailImgFmt = data.thumbnailImgFmt;
+	$: hasThumbnailImg = thumbnailImgFmt !== null;
+	$: thumbnail_path = hasThumbnailImg
 		? `/images/blog/thumbnails/${slug}.` + thumbnailImgFmt
 		: null;
 
