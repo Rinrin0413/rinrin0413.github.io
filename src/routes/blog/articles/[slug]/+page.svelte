@@ -17,7 +17,8 @@
 
 	export let data: PageData;
 	const metadata = data.frontmatter;
-	const slug = $page.url.pathname.split('/').pop()!; // eslint-disable-line @typescript-eslint/no-non-null-assertion
+	// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+	const slug = $page.url.pathname.split('/').pop()!;
 
 	let scrollY: number;
 	let parallax = parallaxStyle(0);

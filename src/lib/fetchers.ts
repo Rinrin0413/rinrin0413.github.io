@@ -6,7 +6,8 @@ export async function fetchArticles({ limit, tags, only_indexed }: fetchArticles
 	let articles = await Promise.all(
 		Object.entries(import.meta.glob('/articles/*.md')).map(async ([path, importArticle]) => {
 			const { metadata } = (await importArticle()) as { metadata: ArticleMetadata };
-			metadata.slug = path.split('/').pop()!.split('.')[0]; // eslint-disable-line @typescript-eslint/no-non-null-assertion
+			// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+			metadata.slug = path.split('/').pop()!.split('.')[0];
 			return metadata;
 		})
 	);
@@ -92,11 +93,13 @@ export async function fetchTags() {
 /** Returns the file format of each article's thumbnail image (articles without thumbnail images will not be listed). */
 export async function fetchThumbnailImgFmt() {
 	const thumbnailImgs = Object.keys(import.meta.glob(`/assets/images/blog/thumbnails/*.*`)).map(
-		(path) => path.split('/').pop()! // eslint-disable-line @typescript-eslint/no-non-null-assertion
+		// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+		(path) => path.split('/').pop()!
 	);
 	return (await Promise.all(Object.keys(import.meta.glob('/articles/*.md')))).reduce(
 		(acc: ArticleThumbnailImgFmts, path) => {
-			const slug = path.split('/').pop()!.split('.')[0]; // eslint-disable-line @typescript-eslint/no-non-null-assertion
+			// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+			const slug = path.split('/').pop()!.split('.')[0];
 			for (const img of thumbnailImgs) {
 				const [name, fmt] = img.split('.');
 				if (name == slug) acc[slug] = fmt;
