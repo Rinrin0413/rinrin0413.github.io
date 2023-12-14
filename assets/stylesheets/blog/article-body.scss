@@ -17,6 +17,7 @@
 		font-size: 18px;
 		font-weight: lighter;
 		padding: 0 min(calc($width-change-rate * 0.1 + 18px), 48px);
+		padding-bottom: 32px;
 		line-height: 1.5;
 		@include glassmorphism;
 
