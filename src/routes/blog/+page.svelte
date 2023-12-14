@@ -15,31 +15,35 @@
 	import { flip } from 'svelte/animate';
 
 	export let data: PageData;
+
+	$: currentUrl = SITE_URL + '/blog';
+
 	let tags = data.tags;
 	$: tags = data.tags;
 	let articles = data.articles;
 	$: articles = data.articles;
 
-	const HEAD = {
+	$: HEAD = {
 		title: 'Blog',
+		titleFull: 'Rinrin.rs | Blog',
 		desc: 'Rinrin.rs のブログ(?)'
 	};
 </script>
 
 <svelte:head>
-	<title>Rinrin.rs | {HEAD.title}</title>
-	<meta name="title" content="Rinrin.rs | {HEAD.title}" />
+	<title>{HEAD.titleFull}</title>
+	<meta name="title" content="{HEAD.titleFull}" />
 	<meta name="description" content={HEAD.desc} />
 
 	<meta property="og:title" content={HEAD.title} />
 	<meta property="og:description" content={HEAD.desc} />
-	<meta property="og:url" content="{SITE_URL}/blog" />
+	<meta property="og:url" content={currentUrl} />
 </svelte:head>
 
 <section>
 	<Space height="64px" />
 	<Title text="Blog" />
-	<p><ShareButton notArticlePage /><FeedButton /></p>
+	<p><ShareButton href={currentUrl} title={HEAD.titleFull} notArticlePage /><FeedButton /></p>
 	<TagPicker allTags={data.allTags} pickedTags={tags} />
 
 	{#if 0 < articles.length}

@@ -21,6 +21,8 @@
 	// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
 	$: slug = $page.url.pathname.split('/').pop()!;
 
+	$: currentUrl = SITE_URL + '/blog/articles/' + slug;
+
 	let scrollY: number;
 	$: parallax = parallaxStyle(scrollY);
 
@@ -40,20 +42,21 @@
 		};
 	}
 
-	const HEAD = {
+	$: HEAD = {
 		title: 'Blog - ' + metadata.title,
+		titleFull: 'Rinrin.rs | Blog - ' + metadata.title,
 		desc: metadata.desc
 	};
 </script>
 
 <svelte:head>
-	<title>Rinrin.rs | {HEAD.title}</title>
-	<meta name="title" content="Rinrin.rs | {HEAD.title}" />
+	<title>{HEAD.titleFull}</title>
+	<meta name="title" content="{HEAD.titleFull}" />
 	<meta name="description" content={HEAD.desc} />
 
 	<meta property="og:title" content={HEAD.title} />
 	<meta property="og:description" content={HEAD.desc} />
-	<meta property="og:url" content="{SITE_URL}/blog/articles/{slug}" />
+	<meta property="og:url" content={currentUrl} />
 	{#if hasThumbnailImg}
 		<meta property="og:image" content="{SITE_URL}{thumbnail_path}" />
 	{/if}
@@ -101,11 +104,11 @@
 			but breaking the logic for the sake of intuitiveness.
 		-->
 		<div style={parallax(-0.06)}>
-			<ShareButton /><FeedButton />
+			<ShareButton href={currentUrl} title={HEAD.titleFull} /><FeedButton />
 		</div>
 	</div>
 	<Article body={data.component} />
-	<p><ShareButton expanded /></p>
+	<p><ShareButton href={currentUrl} title={HEAD.titleFull} expanded /></p>
 	<Tags tags={metadata.tags} />
 	<div><a href="/blog" class="back-to-index">{$_('article.backToIndex')}</a></div>
 </div>

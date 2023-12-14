@@ -5,19 +5,14 @@
 	import { fly } from 'svelte/transition';
 	import { faviconUrl } from '$lib/util';
 
+	export let href: string;
+	export let title: string;
 	export let expanded = false;
 	export let notArticlePage = false;
 
 	let isWebShareApiSupported = false;
 
-	let currentHref: string;
-	let title: string;
-
-	if (browser) {
-		isWebShareApiSupported = navigator.share !== undefined;
-		currentHref = location.href;
-		title = document.title;
-	}
+	if (browser) isWebShareApiSupported = navigator.share !== undefined;
 
 	const ANIM_DIRECTION = notArticlePage ? -1 : 1;
 	const ANIM_OFFSET = {
@@ -44,7 +39,7 @@
 
 	function shareWithWebShareApi() {
 		navigator.share({
-			url: currentHref,
+			url: href,
 			text: title,
 			title: SITE_NAME
 		});
@@ -52,7 +47,7 @@
 
 	function copyToClipboard() {
 		navigator.clipboard
-			.writeText(currentHref)
+			.writeText(href)
 			.then(() => alert($_('blog.copied')))
 			.catch(() => alert($_('blog.copyFailed')))
 			.finally(() => (isMenuOpened = false));
@@ -63,12 +58,12 @@
 	}
 
 	function shareOnTwitter() {
-		const text = encodeURIComponent(title.replace('Rinrin.rs', 'Rinrin​.rs') + '\n' + currentHref);
+		const text = encodeURIComponent(title.replace('Rinrin.rs', 'Rinrin​.rs') + '\n' + href);
 		openLink('https://twitter.com/intent/tweet?text=' + text);
 	}
 
 	function shareWithDomain(domain: string) {
-		const text = encodeURIComponent(title + '\n' + currentHref);
+		const text = encodeURIComponent(title + '\n' + href);
 		openLink(`https://${domain}/share?text=${text}`);
 	}
 
