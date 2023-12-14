@@ -10,12 +10,12 @@
 
 	let isWebShareApiSupported = false;
 
-	let url: string;
+	let currentHref: string;
 	let title: string;
 
 	if (browser) {
 		isWebShareApiSupported = navigator.share !== undefined;
-		url = location.href;
+		currentHref = location.href;
 		title = document.title;
 	}
 
@@ -44,7 +44,7 @@
 
 	function shareWithWebShareApi() {
 		navigator.share({
-			url: url,
+			url: currentHref,
 			text: title,
 			title: SITE_NAME
 		});
@@ -52,7 +52,7 @@
 
 	function copyToClipboard() {
 		navigator.clipboard
-			.writeText(url)
+			.writeText(currentHref)
 			.then(() => alert($_('blog.copied')))
 			.catch(() => alert($_('blog.copyFailed')))
 			.finally(() => (isMenuOpened = false));
@@ -63,12 +63,12 @@
 	}
 
 	function shareOnTwitter() {
-		const text = encodeURIComponent(title.replace('Rinrin.rs', 'Rinrin​.rs') + '\n' + url);
+		const text = encodeURIComponent(title.replace('Rinrin.rs', 'Rinrin​.rs') + '\n' + currentHref);
 		openLink('https://twitter.com/intent/tweet?text=' + text);
 	}
 
 	function shareWithDomain(domain: string) {
-		const text = encodeURIComponent(title + '\n' + url);
+		const text = encodeURIComponent(title + '\n' + currentHref);
 		openLink(`https://${domain}/share?text=${text}`);
 	}
 
