@@ -30,9 +30,7 @@
 
 	$: thumbnailImgFmt = data.thumbnailImgFmt;
 	$: hasThumbnailImg = thumbnailImgFmt !== null;
-	$: thumbnail_path = hasThumbnailImg
-		? `/images/blog/thumbnails/${slug}.` + thumbnailImgFmt
-		: null;
+	$: thumbnail_path = hasThumbnailImg ? `/images/blog/thumbnails/${slug}.` + thumbnailImgFmt : null;
 
 	function introAnim(index = 0) {
 		return {
@@ -51,7 +49,7 @@
 
 <svelte:head>
 	<title>{HEAD.titleFull}</title>
-	<meta name="title" content="{HEAD.titleFull}" />
+	<meta name="title" content={HEAD.titleFull} />
 	<meta name="description" content={HEAD.desc} />
 
 	<meta property="og:title" content={HEAD.title} />

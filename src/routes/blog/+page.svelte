@@ -32,7 +32,7 @@
 
 <svelte:head>
 	<title>{HEAD.titleFull}</title>
-	<meta name="title" content="{HEAD.titleFull}" />
+	<meta name="title" content={HEAD.titleFull} />
 	<meta name="description" content={HEAD.desc} />
 
 	<meta property="og:title" content={HEAD.title} />
