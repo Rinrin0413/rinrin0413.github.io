@@ -22,7 +22,6 @@
 	$: slug = $page.url.pathname.split('/').pop()!;
 
 	let scrollY: number;
-	let parallax = parallaxStyle(0);
 	$: parallax = parallaxStyle(scrollY);
 
 	$: date = idToDate(slug);

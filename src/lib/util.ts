@@ -93,7 +93,6 @@ export function toggleScrollPrevention(prevent: boolean) {
  *     import { parallaxStyle } from '$lib/util';
  *
  * 	   let scrollY: number;
- * 	   let parallax = parallaxStyle(0);
  *	   $: parallax = parallaxStyle(scrollY);
  * </script>
  *
