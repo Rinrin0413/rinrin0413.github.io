@@ -1,6 +1,6 @@
 import type { RequestHandler } from './$types';
 import { fetchArticles, fetchTags } from '$lib/fetchers';
-import { SITE_URL, COPYRIGHT, BLOG_NAME } from '$lib/variables';
+import { SITE_URL, COPYRIGHT, BLOG_NAME, EMAIL_ADDRESS } from '$lib/variables';
 import { v5 as uuidv5 } from 'uuid';
 import { idToDate } from '$lib/util';
 
@@ -67,7 +67,7 @@ async function body() {
     <updated>${new Date().toISOString()}</updated>
     <author>
         <name>Rinrin.rs</name>
-        <email>rinrin0413.valley@gmail.com</email>
+        <email>${EMAIL_ADDRESS}</email>
         <uri>${SITE_URL}</uri>
     </author>
     <link rel="self" href="${SITE_URL}/feed" />

@@ -4,7 +4,7 @@
 
 	import { page } from '$app/stores';
 	import { browser } from '$app/environment';
-	import { BLOG_NAME, COPYRIGHT, SITE_NAME, SITE_URL } from '$lib/variables';
+	import { BLOG_NAME, COPYRIGHT, SITE_NAME, SITE_URL, EMAIL_ADDRESS } from '$lib/variables';
 
 	let maxVh1: number;
 
@@ -47,7 +47,7 @@
 	<meta name="theme-color" content="#d1b27f" />
 
 	<meta name="keywords" content="Rinrin,Rinrin0413,Rinrin.rs" />
-	<meta name="author" content="Rinrin.rs <rinrin0413.valley@gmail.com>" />
+	<meta name="author" content="Rinrin.rs <{EMAIL_ADDRESS}>" />
 	<meta name="copyright" content={COPYRIGHT} />
 
 	<link rel="icon" href={HEAD.logo_180px_oxipng} />
