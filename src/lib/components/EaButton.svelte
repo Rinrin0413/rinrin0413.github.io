@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { EMAIL_ADDRESS } from "$lib/variables";
+	import { EMAIL_ADDRESS } from '$lib/variables';
 
 	/** Whether the button is mini version. */
 	export let mini = false;
