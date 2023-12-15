@@ -13,7 +13,7 @@
 		"article": "node assets/scripts/create-article.js"
 	},
 	"devDependencies": {
-		"@sveltejs/adapter-auto": "^1.0.0-next.90",
+		"@sveltejs/adapter-cloudflare": "^2.3.4",
 		"@sveltejs/kit": "^1.0.0-next.587",
 		"@types/uuid": "^9.0.6",
 		"@typescript-eslint/eslint-plugin": "^5.45.0",
