@@ -10,6 +10,7 @@
 | 128 | header title (`header.scss/#header-logo::after`) |
 | 127 | header bg (`header.scss/#header-bg`) |
 | 126 | drawer menu bg (`header.scss/#drawer-menu-bg`) |
+| 42 | sharing dropdown menu (`share-button.scss/ul.menu`) |
 | -1 | fixed bg (`global.css/html::before`) |
 
 </div>

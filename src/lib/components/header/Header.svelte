@@ -33,8 +33,8 @@
 			id: 'profile'
 		},
 		{
-			name: 'Articles',
-			id: 'articles'
+			name: 'Blog',
+			id: 'blog'
 		},
 		{
 			name: 'Web Tools',
@@ -88,9 +88,9 @@
 	>
 		{#each ITEMS as item}
 			<a
-				href={item.id}
+				href="/{item.id}"
 				class="item"
-				class:active={pathname == '/' + item.id}
+				class:active={pathname.split('/')[1] == item.id}
 				on:click={() => {
 					toggleDrawerMenu(false);
 				}}

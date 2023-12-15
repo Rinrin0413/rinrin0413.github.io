@@ -1,6 +1,7 @@
-import adapter from '@sveltejs/adapter-auto';
+import adapter from '@sveltejs/adapter-cloudflare';
 import { vitePreprocess } from '@sveltejs/kit/vite';
 import preprocess from 'svelte-preprocess';
+import mdsvex from './mdsvex.config.js';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -11,7 +12,8 @@ const config = {
 		preprocess({
 			scss: { sourceMap: true },
 			sourceMap: true
-		})
+		}),
+		mdsvex
 	],
 
 	kit: {
@@ -19,7 +21,9 @@ const config = {
 		files: {
 			assets: 'assets'
 		}
-	}
+	},
+
+	extensions: ['.svelte', '.md']
 };
 
 export default config;

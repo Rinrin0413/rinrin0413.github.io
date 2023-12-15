@@ -17,7 +17,15 @@
 		"shell": "シェル",
 		"desktopEnv": "デスクトップ環境",
 		"webBrowser": "Webブラウザー",
-		"codeEditor": "コードエディター"
+		"codeEditor": "コードエディター",
+		"tags": "タグ",
+		"articleThumbnailImage": "記事のサムネイル画像",
+		"noImage": "画像無し",
+		"backImage": "バックグラウンド画像",
+		"atomFeed": "Atomフィード",
+		"share": "共有",
+		"domain": "ドメイン",
+		"webShareApi": "ウェブ共有 API"
 	},
 	"home": {
 		"icon": "Rinrin.rs のアイコン",
@@ -25,6 +33,8 @@
 		"tableOfContents": "もくじ",
 		"whatIDo": "なにをしているか。",
 		"chronicle": "我が悠遠なる秀悦の歴史",
+		"recentArticles": "最近の記事:",
+		"viewAll": "その他の記事",
 		"contact": "基本的には Discordサーバー入ってそこで言うか DM してくれれば応答できる。\n出先だと気付かないかもしれないので緊急だったらメールを送ってください。",
 		"otherSocial": "その他のソーシャルアカウント"
 	},
@@ -159,5 +169,16 @@
 	},
 	"social": {
 		"desc": "Rinrin.rs のソーシャルアカウント一覧"
-	}
+	},
+	"blog": {
+		"noMatchingArticlesFound": "一致する記事が見つかりませんでした。",
+		"clearFilters": "フィルターをリセット",
+		"copyUrl": "URLをコピー",
+		"copied": "コピーしました",
+		"copyFailed": "コピーに失敗しました",
+		"post": "ポスト",
+		"toot": "トゥート",
+		"note": "ノート"
+	},
+	"article.backToIndex": "記事一覧に戻る"
 }

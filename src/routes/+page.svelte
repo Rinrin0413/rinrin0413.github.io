@@ -4,11 +4,16 @@
 	import ContentTable from './ContentTable.svelte';
 	import Activities from './Activities.svelte';
 	import Chronicle from './Chronicle.svelte';
+	import BlogArticles from './BlogArticles.svelte';
 	import MinimalContactTable from './MinimalContactTable.svelte';
 
+	import type { PageData } from './$types';
 	import { SITE_URL } from '$lib/variables';
 	import { _ } from 'svelte-i18n';
 	import { calcAge } from '$lib/util';
+
+	export let data: PageData;
+	const articles = data.articles;
 
 	const HEAD = {
 		title: 'Home',
@@ -24,7 +29,6 @@
 	<meta property="og:title" content={HEAD.title} />
 	<meta property="og:description" content={HEAD.desc} />
 	<meta property="og:url" content={SITE_URL} />
-	<meta property="og:type" content="website" />
 </svelte:head>
 
 <img src="/images/icon_13_384px.webp" alt={$_('home.icon')} id="icon" />
@@ -67,6 +71,15 @@
 
 <Hr />
 
+<section id="blog">
+	<Title text="Blog Articles" />
+	<p>{$_('home.recentArticles')}</p>
+	<BlogArticles {articles} />
+	<p><a href="/blog">{$_('home.viewAll')}</a></p>
+</section>
+
+<Hr />
+
 <section id="contact">
 	<Title text="Contact / Social" />
 	<p>{$_('home.contact')}</p>
@@ -100,7 +113,7 @@
 	}
 
 	#contents {
-		height: 298px;
+		height: 362px;
 	}
 
 	#activity-list {
