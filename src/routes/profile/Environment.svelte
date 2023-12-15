@@ -4,6 +4,8 @@
 	import { _ } from 'svelte-i18n';
 </script>
 
+<p>{$_('env.intro')}</p>
+
 <Title2 text={$_('w.hardware')} />
 
 <div>
