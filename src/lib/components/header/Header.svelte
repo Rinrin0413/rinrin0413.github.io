@@ -65,7 +65,8 @@
 		toggleScrollPrevention(isDrawerMenuOpened);
 	}
 
-	function empty() {} // eslint-disable-line @typescript-eslint/no-empty-function
+	// eslint-disable-next-line @typescript-eslint/no-empty-function
+	function empty() {}
 </script>
 
 {#if isDrawerMenuOpened}
