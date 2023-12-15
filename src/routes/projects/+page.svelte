@@ -6,7 +6,7 @@
 	//import { _ } from 'svelte-i18n';
 
 	const HEAD = {
-		title: 'Profile',
+		title: 'Dev. Projects',
 		desc: 'Rinrin.rs の開発プロジェクト'
 	};
 </script>
@@ -19,7 +19,6 @@
 	<meta property="og:title" content={HEAD.title} />
 	<meta property="og:description" content={HEAD.desc} />
 	<meta property="og:url" content="{SITE_URL}/projects" />
-	<meta property="og:type" content="article" />
 </svelte:head>
 
 <section>

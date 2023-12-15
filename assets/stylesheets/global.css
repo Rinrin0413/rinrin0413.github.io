@@ -5,6 +5,7 @@ html {
 	color: #533618;
 	text-align: center;
 	scroll-behavior: smooth;
+	background-color: #615141;
 }
 
 html::before {

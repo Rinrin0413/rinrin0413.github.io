@@ -17,7 +17,15 @@
 		"shell": "Shell",
 		"desktopEnv": "Desktop Environment",
 		"webBrowser": "Web Browser",
-		"codeEditor": "Code Editor"
+		"codeEditor": "Code Editor",
+		"tags": "Tags",
+		"articleThumbnailImage": "Article thumbnail image",
+		"noImage": "No image",
+		"backImage": "Background image",
+		"atomFeed": "Atom feed",
+		"share": "Share",
+		"domain": "Domain",
+		"webShareApi": "Web Share API"
 	},
 	"home": {
 		"icon": "Rinrin.rs' avatar",
@@ -25,6 +33,8 @@
 		"tableOfContents": " ",
 		"whatIDo": "what i usually do",
 		"chronicle": "my history",
+		"recentArticles": "Recent articles:",
+		"viewAll": "View all",
 		"contact": "Basically, I can respond by joining my Discord server and contacting me there, or by direct messaging me on Discord.\nI might not notice them when I am out, so if it's urgent, please send me an email instead.",
 		"otherSocial": "Other social accounts"
 	},
@@ -162,9 +172,21 @@
 		]
 	},
 	"env": {
+		"intro": "My various soil and environments",
 		"notes": ["see ", "(Japanese) for more details and devices"]
 	},
 	"social": {
 		"desc": "List of my social accounts"
-	}
+	},
+	"blog": {
+		"noMatchingArticlesFound": "No matching articles found.",
+		"clearFilters": "Clear filters",
+		"copyUrl": "Copy URL",
+		"copied": "Copied",
+		"copyFailed": "Copy failed",
+		"post": "Post",
+		"toot": "Toot",
+		"note": "Note"
+	},
+	"article.backToIndex": "Back to index"
 }

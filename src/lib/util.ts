@@ -25,14 +25,14 @@
  * ```
  */
 export function addClassOnVisible(
-	elements: HTMLCollectionOf<Element> | HTMLElement | null,
+	elements: HTMLCollectionOf<Element> | NodeListOf<Element> | HTMLElement | Element | null,
 	className: string
 ) {
-	if (elements instanceof HTMLCollection) {
+	if (elements instanceof HTMLCollection || elements instanceof NodeList) {
 		[...elements].forEach((e) => {
 			addClassOnVisible_(e, className);
 		});
-	} else if (elements instanceof HTMLElement) {
+	} else if (elements instanceof HTMLElement || elements instanceof Element) {
 		addClassOnVisible_(elements, className);
 	}
 }
@@ -81,4 +81,45 @@ export function fmtMonth(month: number | null) {
 /** Toggles body scroll prevention. */
 export function toggleScrollPrevention(prevent: boolean) {
 	document.getElementsByTagName('body')[0].style.overflow = prevent ? 'hidden' : 'auto';
+}
+
+/**
+ * Returns a string that can be used as a CSS transform property value for parallax effect.
+ *
+ * # Example:
+ *
+ * ```svelte
+ * <script lang="ts">
+ *     import { parallaxStyle } from '$lib/util';
+ *
+ * 	   let scrollY: number;
+ *	   $: parallax = parallaxStyle(scrollY);
+ * </script>
+ *
+ * <svelte:window bind:scrollY />
+ *
+ * <!-- Low layer (slow) -->
+ * <div style="{parallax(0.3)}" />
+ *
+ * <!-- High layer (fast) -->
+ * <div style="{parallax(-0.3)}" />
+ * ```
+ */
+export function parallaxStyle(scrollY: number) {
+	return function (factor: number) {
+		return `transform: translateY(${scrollY * factor}px);`;
+	};
+}
+
+/** Converts an article ID to a Date object. */
+export function idToDate(articleId: string) {
+	const y = articleId.slice(0, 4);
+	const m = articleId.slice(4, 6);
+	const d = articleId.slice(6, 8);
+	return new Date(`${y}-${m}-${d}`);
+}
+
+/** Converts to an URL of the favicon of the given domain. */
+export function faviconUrl(domain: string) {
+	return `https://${domain}/favicon.ico`;
 }

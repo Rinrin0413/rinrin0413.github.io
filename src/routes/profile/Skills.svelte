@@ -69,7 +69,6 @@
 			<ul>
 				<li>{$_('skills.linux.0')}</li>
 				<li>{$_('skills.linux.1')}</li>
-				<li>{$_('skills.linux.2')}</li>
 			</ul>
 		</li>
 	</ul>

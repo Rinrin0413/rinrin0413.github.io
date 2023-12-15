@@ -23,7 +23,7 @@ console.log(
     %c  %c%c            %c%c  %c
     %c                %c
 
-%cRinrin's Homepage`,
+%cRinrin' Homepage`,
 	S,
 	'',
 	D,

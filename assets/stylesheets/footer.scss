@@ -24,6 +24,11 @@ footer {
 	}
 }
 
+.feed-btn {
+	float: left;
+	margin-left: 24px;
+}
+
 .go-to-home-btn {
 	float: right;
 	margin-top: -22px;
@@ -44,7 +49,7 @@ footer {
 	}
 }
 
-svg {
+.home-icon {
 	$size: 26px;
 	width: $size;
 	height: $size;
