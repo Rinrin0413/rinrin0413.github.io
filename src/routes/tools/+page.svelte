@@ -6,7 +6,7 @@
 	//import { _ } from 'svelte-i18n';
 
 	const HEAD = {
-		title: 'Profile',
+		title: 'Web Tools',
 		desc: '作った かすWebツール'
 	};
 </script>

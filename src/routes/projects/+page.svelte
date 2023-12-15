@@ -6,7 +6,7 @@
 	//import { _ } from 'svelte-i18n';
 
 	const HEAD = {
-		title: 'Profile',
+		title: 'Dev. Projects',
 		desc: 'Rinrin.rs の開発プロジェクト'
 	};
 </script>
