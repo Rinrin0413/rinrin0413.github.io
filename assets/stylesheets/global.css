@@ -10,8 +10,9 @@ html {
 
 html::before {
 	content: '';
+	/* Max size of the background image is 1920x1080 */
 	background: linear-gradient(152deg, #f5deb3, #f7f5f1ab 42%, #f7f5f1ab 68%, #f5deb3),
-		url('/images/wallpapers/sd_autumn-lake.webp');
+		url('/images/wallpapers/sd_old-capital-december.webp');
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
