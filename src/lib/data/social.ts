@@ -310,5 +310,11 @@ export const SOCIALS = [
 		name: '@rinrin0413',
 		url: 'https://zenn.dev/rinrin0413',
 		icon: 'zenn_logo-only.svg'
+	},
+	{
+		service: 'おならすきー',
+		name: '@rinrin',
+		url: 'https://ona.la/@rinrin',
+		icon: null // Could not find the guideline
 	}
 ];
