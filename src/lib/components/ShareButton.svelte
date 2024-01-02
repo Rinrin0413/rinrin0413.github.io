@@ -31,7 +31,6 @@
 	};
 
 	let mastodonDomain = 'mastodon.social';
-	let misskeyDomain = 'misskey.io';
 
 	function toggleDropdownMenu() {
 		isMenuOpened = !isMenuOpened;
@@ -62,6 +61,12 @@
 		openLink('https://twitter.com/intent/tweet?text=' + text);
 	}
 
+	function shareOnMisskey() {
+		const text = encodeURIComponent(title);
+		const url = encodeURIComponent(href);
+		openLink(`https://misskey-hub.net/share/?text=${text}&url=${url}`);
+	}
+
 	function shareWithDomain(domain: string) {
 		const text = encodeURIComponent(title + '\n' + href);
 		openLink(`https://${domain}/share?text=${text}`);
@@ -69,10 +74,6 @@
 
 	function shareOnMastodon() {
 		shareWithDomain(mastodonDomain);
-	}
-
-	function shareOnMisskey() {
-		shareWithDomain(misskeyDomain);
 	}
 </script>
 
@@ -109,6 +110,14 @@
 				{/if}
 			</button
 		></li
+		><li>
+			<button on:click={shareOnMisskey} title={ITEM_NAMES.note}>
+				<img src="/images/logos/misskey_icon.png" alt="Misskey logo" />
+				{#if !expanded}
+					{ITEM_NAMES.note}
+				{/if}
+			</button
+		></li
 		>{#if !expanded}
 			<li>
 				<button class:opened={false} on:click={shareOnMastodon} title={ITEM_NAMES.toot}>
@@ -123,21 +132,6 @@
 						required
 						bind:value={mastodonDomain}
 					/><img src={faviconUrl(mastodonDomain)} alt="" class="server-favicon" />
-				</form>
-			</li>
-			<li>
-				<button class:opened={false} on:click={shareOnMisskey} title={ITEM_NAMES.note}>
-					<img src="/images/logos/misskey_icon.png" alt="Misskey logo" />
-					{ITEM_NAMES.note}
-				</button>
-				<form on:submit={shareOnMisskey}>
-					<span
-					/><input
-						type="text"
-						placeholder={$_('w.domain')}
-						required
-						bind:value={misskeyDomain}
-					/><img src={faviconUrl(misskeyDomain)} alt="" class="server-favicon" />
 				</form>
 			</li>
 		{/if

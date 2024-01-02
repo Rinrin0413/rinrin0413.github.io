@@ -18,8 +18,11 @@
 	export let data: PageData;
 	let metadata = data.frontmatter;
 	$: metadata = data.frontmatter;
-	// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-	$: slug = $page.url.pathname.split('/').pop()!;
+
+	$: paths = $page.url.pathname.split('/');
+	$: pathnameLength = paths.length;
+	$: isPathnameEndsWithSlash = paths[pathnameLength - 1] === '';
+	$: slug = paths[pathnameLength - (isPathnameEndsWithSlash ? 2 : 1)];
 
 	$: currentUrl = SITE_URL + '/blog/articles/' + slug;
 
