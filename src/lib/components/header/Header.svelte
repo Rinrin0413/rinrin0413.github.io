@@ -77,6 +77,7 @@
 			toggleDrawerMenu(false);
 		}}
 		on:keypress={empty}
+		role="none"
 	/>
 {/if}
 <div id="header-bg" class:blur={isAtTop} />
