@@ -16,12 +16,12 @@ const config = {
 	// Consult https://kit.svelte.dev/docs/integrations#preprocessors
 	// for more information about preprocessors
 	preprocess: [
+		mdsvex,
 		vitePreprocess(),
 		preprocess({
 			scss: { sourceMap: true },
 			sourceMap: true
-		}),
-		mdsvex
+		})
 	],
 
 	kit: {
