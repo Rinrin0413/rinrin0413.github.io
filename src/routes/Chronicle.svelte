@@ -19,15 +19,18 @@
 	}
 </script>
 
-<div class="container" class:fade-in-up-zoom={false}>
-	<ul
-		class:opened={isOpened}
-		title={!isOpened ? 'Open' : ''}
-		on:click|once={open}
-		on:keypress|once={(e) => {
-			if (e.key === 'Enter') open;
-		}}
-	>
+<div
+	class="container"
+	class:fade-in-up-zoom={false}
+	title={!isOpened ? 'Open' : ''}
+	role="button"
+	tabindex="0"
+	on:click|once={open}
+	on:keypress|once={(e) => {
+		if (e.key === 'Enter') open;
+	}}
+>
+	<ul class:opened={isOpened}>
 		{#each CHRONICLE as { year, events }}
 			{#each events as { month, event }, i}
 				<li class="row">
