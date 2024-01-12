@@ -22,7 +22,7 @@
 		{#if isOpened}
 			<div
 				in:fly|global={{ y: -18, duration: 400, delay: i * 52, easing: bounceOut }}
-				out:scale|local={{ duration: 200, delay: (allTags.length - i) * 16 }}
+				out:scale={{ duration: 200, delay: (allTags.length - i) * 16 }}
 			>
 				<Tag name={tag} {count} isEnabled={pickedTags.includes(tag)} />
 			</div>

@@ -72,7 +72,7 @@
 {#if isDrawerMenuOpened}
 	<div
 		id="drawer-menu-bg"
-		transition:blur={{ duration: 200 }}
+		transition:blur|global={{ duration: 200 }}
 		on:click={() => {
 			toggleDrawerMenu(false);
 		}}

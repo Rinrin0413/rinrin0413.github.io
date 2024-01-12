@@ -7,7 +7,7 @@ export const load: PageLoad = async ({
 	params,
 	fetch
 }): Promise<{
-	component: typeof SvelteComponent;
+	component: typeof SvelteComponent<any>;
 	frontmatter: ArticleMetadata;
 	thumbnailImgFmt: string | null;
 }> => {
