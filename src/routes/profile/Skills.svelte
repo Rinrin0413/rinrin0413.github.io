@@ -86,7 +86,6 @@
 
 	summary {
 		font-size: 16px;
-		font-weight: 500;
 		text-decoration: none;
 		transition: 0.2s;
 
@@ -110,7 +109,6 @@
 	li {
 		text-align: left;
 		font-size: 16px;
-		font-weight: 500;
 		list-style: disc;
 		margin-bottom: 3px;
 

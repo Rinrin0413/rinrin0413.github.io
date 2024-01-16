@@ -24,7 +24,6 @@
 	h1 {
 		font-family: 'Source Code Pro', monospace;
 		font-size: 5rem;
-		font-weight: 500;
 		text-align: center;
 		margin: 0;
 	}

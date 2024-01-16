@@ -34,7 +34,6 @@
 		font-size: 18px;
 		margin-right: 5px;
 		color: #52411c;
-		font-weight: 500;
 
 		&::after {
 			content: ':';
