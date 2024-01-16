@@ -2,7 +2,7 @@
 @use './variables/mixin' as *;
 
 .container {
-	margin: 0 18px;
+	margin: 64px 18px;
 
 	&:not(.fade-in-up-zoom) {
 		opacity: 0;
@@ -14,7 +14,7 @@ ul {
 	$border: 2px dotted $line-primary;
 
 	padding: 0;
-	margin: 64px auto;
+	margin: 0 auto;
 	border-left: $border;
 	border-right: $border;
 	max-width: $max-width;

@@ -19,7 +19,7 @@
 <svelte:window bind:scrollY />
 
 {#if 800 < scrollY && willScrollUp}
-	<button on:click={scrollToTop} transition:fly|local={{ x: 86, duration: 500 }}>
+	<button on:click={scrollToTop} transition:fly={{ x: 86, duration: 500 }}>
 		<!-- 
             Bootstrap Icons - Arrow up circle fill
             https://icons.getbootstrap.com/icons/arrow-up-circle-fill

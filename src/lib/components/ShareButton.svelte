@@ -82,7 +82,7 @@
 	<ul
 		class:menu={!expanded}
 		class:in-article-page={!notArticlePage}
-		transition:fly|local={{ ...ANIM_OFFSET, duration: 200 }}
+		transition:fly={{ ...ANIM_OFFSET, duration: 200 }}
 	>
 		<li>
 			<button on:click={copyToClipboard} title={ITEM_NAMES.copy}>

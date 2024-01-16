@@ -15,6 +15,7 @@
 
 <h1>404</h1>
 <Title text="Page not found" />
+<!-- eslint-disable-next-line svelte/no-at-html-tags -->
 <p>{@html $_('error.pageNotFound')}</p>
 
 <img src="/images/404.webp" alt="404 Not like this" />
