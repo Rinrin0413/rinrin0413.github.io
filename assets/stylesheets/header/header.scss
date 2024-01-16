@@ -50,7 +50,7 @@ header {
 		color: $text-primary;
 		font-size: $logo-size * 0.6;
 		position: absolute;
-		font-weight: 300;
+		font-weight: 500;
 		transition: 0.1s;
 		z-index: 128;
 	}
@@ -289,7 +289,7 @@ nav {
 		&::before {
 			content: '- Menu -';
 			font-size: 28px;
-			font-weight: 100;
+			font-weight: 500;
 			letter-spacing: 0.1em;
 			background-color: $button-primary;
 			border: 2px solid rgba($text-primary, 0.25);

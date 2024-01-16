@@ -15,7 +15,7 @@
 	> div {
 		text-align: left;
 		font-size: 18px;
-		font-weight: lighter;
+		font-weight: 500;
 		padding: 0 min(calc($width-change-rate * 0.1 + 18px), 48px);
 		padding-bottom: 32px;
 		line-height: 1.5;
@@ -36,7 +36,8 @@
 		h4,
 		h5,
 		h6 {
-			font-weight: bold;
+			font-weight: 500;
+			text-shadow: 0 0 1px $text-primary;
 			margin: 1.25em 0 0.4em 0;
 			text-wrap: balance;
 
@@ -125,7 +126,7 @@
 		}
 
 		strong {
-			font-weight: bold;
+			text-shadow: 0 0 1px $text-primary;
 		}
 
 		blockquote {
@@ -198,7 +199,7 @@
 
 		details summary {
 			cursor: pointer;
-			font-weight: bold;
+			text-shadow: 0 0 1px $text-primary;
 		}
 
 		iframe {

@@ -78,7 +78,7 @@
 		padding: 16px 0;
 		margin: 0 auto;
 		font-size: 20px;
-		font-weight: bold;
+		font-weight: 500;
 		$border: 1px solid #ffffffa0;
 		border-bottom: $border;
 	}

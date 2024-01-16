@@ -81,7 +81,7 @@ ul {
 
 .year {
 	font-family: 'Source Code Pro', monospace;
-	font-weight: 200;
+	font-weight: 500;
 	position: relative;
 	bottom: 32px;
 	padding-right: 22px;
@@ -110,7 +110,8 @@ ul {
 	left: 24px;
 	width: 512px;
 	font-size: 16px;
-	font-weight: bold;
+	font-weight: 500;
+	text-shadow: 0 0 1px $text-primary;
 	border-bottom: 2.5px solid $separator-color;
 	padding: 0 6px 3px 12px;
 	margin-bottom: 48px;

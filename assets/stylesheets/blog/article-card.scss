@@ -1,4 +1,5 @@
 @use '../variables/mixin' as *;
+@use '../variables/color' as *;
 
 a {
 	color: inherit !important;
@@ -70,7 +71,8 @@ img {
 		left: 0;
 		margin-top: 10px;
 		font-size: 14px;
-		font-weight: bold;
+		font-weight: 500;
+		text-shadow: 0 0 1px $text-primary;
 		text-decoration: underline;
 		transition: 0.2s;
 	}
@@ -78,7 +80,8 @@ img {
 
 h2 {
 	font-size: 24px;
-	font-weight: bold;
+	font-weight: 500;
+	text-shadow: 0 0 1px $text-primary;
 	line-height: 1.2;
 	margin: 0;
 	text-wrap: balance;
@@ -87,14 +90,14 @@ h2 {
 time {
 	display: block;
 	font-size: 15px;
-	font-weight: bold;
+	font-weight: 500;
 	opacity: 0.7;
 	margin-top: 4px;
 }
 
 p {
 	font-size: 18px;
-	font-weight: lighter;
+	font-weight: 500;
 	padding: 0 !important;
 	margin: 0;
 	margin-top: 8px;

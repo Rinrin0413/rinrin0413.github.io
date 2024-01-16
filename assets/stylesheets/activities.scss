@@ -127,6 +127,7 @@ p {
 		font-size: 26px;
 		text-align: center;
 		font-family: serif;
+		// The specified font is a generic font family so `font-weight: 900` is allowed.
 		font-weight: 900;
 	}
 

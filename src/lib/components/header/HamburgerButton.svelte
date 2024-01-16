@@ -45,7 +45,7 @@
 	button {
 		display: none;
 		margin-right: 8px;
-		font-weight: 900;
+		font-weight: 500;
 
 		@include hm {
 			display: inline-block;

@@ -26,3 +26,28 @@
 
 </div>
 </details>
+
+<details>
+<summary>Font weights</summary>
+<div>
+
+## `'Kiwi Maru'`
+
+<!-- - Light: `300`
+- Regular: `400` -->
+- Medium: `500`
+
+**Do not use**: `100`, `200`, `300`, `400`, `600`, `700`, `800`, `900`, `normal`, `bold`, `lighter`, `bolder`
+
+## `'Source Code Pro'`
+
+<!-- - ExtraLight: `200`
+- Light: `300`
+- Regular: `400` -->
+- Medium: `500`
+<!-- - SemiBold: `600`
+- Bold: `700`
+- ExtraBold: `800`
+- Black: `900` -->
+
+**Do not use**: `100`, `200`, `300`, `400`, `600`, `700`, `800`, `900`, `normal`, `bold`, `lighter`, `bolder`

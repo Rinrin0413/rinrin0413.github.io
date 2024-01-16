@@ -45,8 +45,9 @@
 
 	h1 {
 		font-size: 36px;
-		font-weight: 900;
+		font-weight: 500;
 		margin: 0;
+		text-shadow: 0 0 1px $text-primary;
 		white-space: nowrap;
 		position: absolute;
 		left: 50%;
@@ -85,6 +86,7 @@
 		-webkit-background-clip: text;
 		user-select: none;
 		pointer-events: none;
+		text-shadow: none;
 	}
 
 	.mini h1 {

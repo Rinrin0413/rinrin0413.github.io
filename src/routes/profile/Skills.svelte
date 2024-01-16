@@ -76,6 +76,7 @@
 
 <style lang="scss">
 	@use '/assets/stylesheets/variables/mixin' as *;
+	@use '/assets/stylesheets/variables/color' as *;
 
 	details {
 		display: inline-block;
@@ -85,7 +86,7 @@
 
 	summary {
 		font-size: 16px;
-		font-weight: bold;
+		font-weight: 500;
 		text-decoration: none;
 		transition: 0.2s;
 
@@ -109,7 +110,7 @@
 	li {
 		text-align: left;
 		font-size: 16px;
-		font-weight: bold;
+		font-weight: 500;
 		list-style: disc;
 		margin-bottom: 3px;
 
