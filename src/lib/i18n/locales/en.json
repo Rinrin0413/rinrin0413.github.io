@@ -75,10 +75,10 @@
 			"sky": "I don't have time to play it these days. I might go if you invite me."
 		},
 		"music": {
-			"listen": "I like piano music in the classical era and romantic era, and i especially listen to Franz Liszt's pieces.",
+			"listen": "I like piano music in the classical era and romantic era, and i especially listen to Franz Liszt's pieces. Recently, i started to listen to not only piano music but also orchestral compositions and classical song.",
 			"play": "I play classical music on the piano but not very good at it.\nAnd i quickly get tired of piano practice, so i'm often satisfied with playing only some of my favorite melodies.",
 			"compose": [
-				"I compose classical like music and arrange classical music.\nBut i don't know anything about code progression, etc. because i hardly consider theory. Basically i compose in ",
+				"I compose classical like music and arrange/transcribe classical music. Sometimes compose songs like popular music.\nBut i don't know anything about code progression, etc. because i hardly consider theory. Basically i compose in ",
 				"."
 			],
 			"sing": "I don't usually sing a song because i don't know much about songs with lyrics. The songs i can sing are GHIBLI songs etc. that i bought CD and listened to in the past."
