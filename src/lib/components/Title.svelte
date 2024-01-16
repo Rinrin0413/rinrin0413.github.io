@@ -41,15 +41,16 @@
 </div>
 
 <style lang="scss">
+	@use '/assets/stylesheets/variables/mixin' as *;
 	@use '/assets/stylesheets/variables/color' as *;
 
 	h1 {
 		font-size: 36px;
 		margin: 0;
-		text-shadow: 0 0 1px $text-primary;
 		white-space: nowrap;
 		position: absolute;
 		left: 50%;
+		@include bold;
 
 		&:not(.shadow) {
 			transform: translateX(-50%);

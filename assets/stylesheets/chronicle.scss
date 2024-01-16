@@ -103,17 +103,16 @@ ul {
 
 .event {
 	$separator-color: rgba($line-primary, 0.7);
-
 	position: relative;
 	bottom: 32px;
 	left: 24px;
 	width: 512px;
 	font-size: 16px;
-	text-shadow: 0 0 1px $text-primary;
 	border-bottom: 2.5px solid $separator-color;
 	padding: 0 6px 3px 12px;
 	margin-bottom: 48px;
 	transition: 0.2s;
+	@include bold;
 
 	&:before {
 		content: '';

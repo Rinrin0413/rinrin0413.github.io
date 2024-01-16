@@ -1,3 +1,5 @@
+@use './color' as *;
+
 $breakpoint: 718px;
 $breakpoint-hamburger-menu: 792px;
 $breakpoint-ultra-narrow: 380px;
@@ -42,4 +44,8 @@ $breakpoint-ultra-narrow: 380px;
 	border-bottom: $border-dark;
 	border-right: $border-dark;
 	border-radius: $border-radius;
+}
+
+@mixin bold($color: $text-primary) {
+	text-shadow: 0 0 1px;
 }

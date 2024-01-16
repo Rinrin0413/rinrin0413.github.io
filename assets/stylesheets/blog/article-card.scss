@@ -71,9 +71,9 @@ img {
 		left: 0;
 		margin-top: 10px;
 		font-size: 14px;
-		text-shadow: 0 0 1px $text-primary;
 		text-decoration: underline;
 		transition: 0.2s;
+		@include bold;
 	}
 }
 

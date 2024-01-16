@@ -31,6 +31,8 @@
 <summary>Font weights</summary>
 <div>
 
+**Use the Sass mixin `bold` to make the text bold.**
+
 ## `'Kiwi Maru'`
 
 <!-- - Light: `300`
@@ -51,3 +53,6 @@
 - Black: `900` -->
 
 **Do not use**: `100`, `200`, `300`, `400`, `600`, `700`, `800`, `900`, `normal`, `bold`, `lighter`, `bolder`
+
+</div>
+</details>

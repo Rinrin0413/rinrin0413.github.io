@@ -35,9 +35,9 @@
 		h4,
 		h5,
 		h6 {
-			text-shadow: 0 0 1px $text-primary;
 			margin: 1.25em 0 0.4em 0;
 			text-wrap: balance;
+			@include bold;
 
 			> a {
 				text-decoration: none;
@@ -124,7 +124,7 @@
 		}
 
 		strong {
-			text-shadow: 0 0 1px $text-primary;
+			@include bold;
 		}
 
 		blockquote {
@@ -197,7 +197,7 @@
 
 		details summary {
 			cursor: pointer;
-			text-shadow: 0 0 1px $text-primary;
+			@include bold;
 		}
 
 		iframe {
