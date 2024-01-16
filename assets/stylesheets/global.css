@@ -33,8 +33,8 @@ body {
 
 * {
 	scrollbar-color: #82624a transparent;
-	/* See the value of `$footer-height` in `./variables/dimension.scss` */
-	scroll-margin-top: 128px;
+	/* $header-height +18px */
+	scroll-margin-top: 92px;
 }
 
 ::selection {
