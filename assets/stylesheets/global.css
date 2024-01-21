@@ -2,7 +2,6 @@
 
 html {
 	font-family: 'Kiwi Maru', serif;
-	font-weight: 500;
 	color: #533618;
 	text-align: center;
 	scroll-behavior: smooth;
@@ -36,6 +35,7 @@ body {
 	scrollbar-color: #82624a transparent;
 	/* $header-height +18px */
 	scroll-margin-top: 92px;
+	font-weight: 500;
 }
 
 ::selection {
