@@ -72,11 +72,12 @@
 {#if isDrawerMenuOpened}
 	<div
 		id="drawer-menu-bg"
-		transition:blur={{ duration: 200 }}
+		transition:blur|global={{ duration: 200 }}
 		on:click={() => {
 			toggleDrawerMenu(false);
 		}}
 		on:keypress={empty}
+		role="none"
 	/>
 {/if}
 <div id="header-bg" class:blur={isAtTop} />

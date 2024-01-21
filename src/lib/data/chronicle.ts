@@ -33,6 +33,7 @@ export const CHRONICLE = [
 		year: 2021,
 		events: [
 			{ month: 4, event: '2021.4' },
+			{ month: 5, event: '2021.5' },
 			{ month: 11, event: '2021.11' }
 		]
 	},

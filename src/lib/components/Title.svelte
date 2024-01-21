@@ -41,15 +41,16 @@
 </div>
 
 <style lang="scss">
+	@use '/assets/stylesheets/variables/mixin' as *;
 	@use '/assets/stylesheets/variables/color' as *;
 
 	h1 {
 		font-size: 36px;
-		font-weight: 900;
 		margin: 0;
 		white-space: nowrap;
 		position: absolute;
 		left: 50%;
+		@include bold;
 
 		&:not(.shadow) {
 			transform: translateX(-50%);
@@ -85,6 +86,7 @@
 		-webkit-background-clip: text;
 		user-select: none;
 		pointer-events: none;
+		text-shadow: none;
 	}
 
 	.mini h1 {
