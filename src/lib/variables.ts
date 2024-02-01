@@ -10,5 +10,5 @@ export const SITE_NAME = "Rinrin.rs' Homepage";
 /** Name of the blog. */
 export const BLOG_NAME = "Rinrin.rs' Blog";
 
-/** Rinrin.rs' Email address. */
-export const EMAIL_ADDRESS = 'rinrin0413.rs@gmail.com';
+/** Rinrin.rs' contact email address. */
+export const CONTACT_EMAIL_ADDRESS = 'rinrin0413.rs@gmail.com';

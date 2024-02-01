@@ -1,11 +1,11 @@
 <script lang="ts">
-	import { EMAIL_ADDRESS } from '$lib/variables';
+	import { CONTACT_EMAIL_ADDRESS } from '$lib/variables';
 
 	/** Whether the button is mini version. */
 	export let mini = false;
 </script>
 
-<a href={`mailto:${EMAIL_ADDRESS}`} class:mini>{EMAIL_ADDRESS}</a>
+<a href={`mailto:${CONTACT_EMAIL_ADDRESS}`} class:mini>{CONTACT_EMAIL_ADDRESS}</a>
 
 <style lang="scss">
 	@use '/assets/stylesheets/variables/mixin' as *;
