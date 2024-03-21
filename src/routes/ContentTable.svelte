@@ -32,7 +32,7 @@
 
 <ul id="toc" class:fade-in-up-zoom={false}>
 	{#each ITEMS as { id, name } (id)}
-		<li><a href={`#${id}`}><div>{name}</div></a></li>
+		<li><a href="#{id}"><div>{name}</div></a></li>
 	{/each}
 </ul>
 

@@ -37,7 +37,7 @@
 <div class:mini={isOverflown}>
 	<h1 {id} bind:this={node}>{text}</h1>
 	<h1 class="shadow">{text}</h1>
-	<Space height={'64px'} />
+	<Space height='64px' />
 </div>
 
 <style lang="scss">
