@@ -8,7 +8,7 @@
 <button
 	on:click={() => {
 		isOpened = !isOpened;
-		dispatch('toggle', { is_opened: isOpened });
+		dispatch('toggle', isOpened);
 	}}
 >
 	{#if isOpened}

@@ -17,9 +17,9 @@
 	let isOverflown = false;
 
 	if (browser) {
-		update_vw();
+		updateVw();
 
-		window.addEventListener('resize', update_vw);
+		window.addEventListener('resize', updateVw);
 	}
 
 	$: if (node) {
@@ -29,7 +29,7 @@
 		isOverflown = vw <= initWidth;
 	}
 
-	function update_vw() {
+	function updateVw() {
 		vw = window.innerWidth;
 	}
 </script>

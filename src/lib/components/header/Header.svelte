@@ -105,9 +105,7 @@
 	<div class="hamburger-btn" class:hidden={isAtTop}>
 		<HamburgerButton
 			isOpened={isDrawerMenuOpened}
-			on:toggle={(e) => {
-				toggleDrawerMenu(e.detail.is_opened);
-			}}
+			on:toggle={(e) => toggleDrawerMenu(e.detail)}
 		/><LangButton />
 	</div>
 	<a
