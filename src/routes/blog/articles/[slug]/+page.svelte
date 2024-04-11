@@ -13,7 +13,7 @@
 	import { _ } from 'svelte-i18n';
 	import { cubicOut } from 'svelte/easing';
 	import { scale } from 'svelte/transition';
-	import { date as date_i18n } from 'svelte-i18n';
+	import { date as dateI18n } from 'svelte-i18n';
 
 	export let data: PageData;
 	let metadata = data.frontmatter;
@@ -96,7 +96,7 @@
 	</div>
 	<div in:scale|global={introAnim(3)}>
 		<time datetime={date.toISOString()} style={parallax(-0.12)}
-			>{$date_i18n(date, { format: 'full' })}</time
+			>{$dateI18n(date, { format: 'full' })}</time
 		>
 	</div>
 	<div in:scale|global={introAnim(4)}>
