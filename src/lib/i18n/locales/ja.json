@@ -42,6 +42,9 @@
 		"logo": "Rinrin.rsのロゴ",
 		"language": "English"
 	},
+	"footer": {
+		"bgWallpaper": "背景壁紙"
+	},
 	"error": {
 		"pageNotFound": "お探しのページが見つからず申し訳OneNote。"
 	},

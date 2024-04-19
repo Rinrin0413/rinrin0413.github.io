@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { COPYRIGHT } from '$lib/variables';
 	import FeedButton from './FeedButton.svelte';
+	import { _ } from 'svelte-i18n';
 </script>
 
 <footer>
@@ -27,6 +28,9 @@
 			/>
 		</svg>
 		<span class="home-text">HOME</span>
+	</a>
+	<a href="/images/wallpapers/sd_sunny-rain.webp" target="_blank" rel="noopener noreferrer" class="btn-to-wallpaper">
+		<span>{$_('footer.bgWallpaper')}</span>
 	</a>
 </footer>
 
