@@ -35,7 +35,7 @@
 	<p>GNOME 41.9</p>
 
 	<h3>{$_('w.webBrowser')}</h3>
-	<p>Mozilla Firefox</p>
+	<p>Mozilla Firefox ESR</p>
 
 	<h3>{$_('w.codeEditor')}</h3>
 	<p>Visual Studio Code Insiders</p>
