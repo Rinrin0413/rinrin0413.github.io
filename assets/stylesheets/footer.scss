@@ -67,7 +67,8 @@ footer {
 	margin-right: 16px;
 	@include btn;
 
-	span, &::after {
+	span,
+	&::after {
 		filter: brightness(3.4);
 	}
 
