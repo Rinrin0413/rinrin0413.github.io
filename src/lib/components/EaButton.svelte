@@ -5,7 +5,7 @@
 	export let mini = false;
 </script>
 
-<a href={`mailto:${CONTACT_EMAIL_ADDRESS}`} class:mini>{CONTACT_EMAIL_ADDRESS}</a>
+<a href="mailto:{CONTACT_EMAIL_ADDRESS}" class:mini>{CONTACT_EMAIL_ADDRESS}</a>
 
 <style lang="scss">
 	@use '/assets/stylesheets/variables/mixin' as *;

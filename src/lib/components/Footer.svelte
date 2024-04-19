@@ -1,6 +1,19 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import { COPYRIGHT } from '$lib/variables';
 	import FeedButton from './FeedButton.svelte';
+	import { _ } from 'svelte-i18n';
+
+	let wallpaperPath: string;
+
+	onMount(() => {
+		const htmlElms = document.getElementsByTagName('html');
+		if (0 < htmlElms.length) {
+			const bgImg = getComputedStyle(htmlElms[0], '::before').backgroundImage;
+			// Extract the URL from the CSS function `url()`.
+			wallpaperPath = bgImg.replace(/.*url\("(.*)"\).*/, '$1');
+		}
+	});
 </script>
 
 <footer>
@@ -28,6 +41,11 @@
 		</svg>
 		<span class="home-text">HOME</span>
 	</a>
+	{#if wallpaperPath !== undefined}
+		<a href={wallpaperPath} target="_blank" rel="noopener noreferrer" class="btn-to-wallpaper">
+			<span>{$_('footer.bgWallpaper')}</span>
+		</a>
+	{/if}
 </footer>
 
 <style lang="scss">

@@ -28,15 +28,8 @@ footer {
 	margin-left: 24px;
 }
 
-.go-to-home-btn {
+@mixin btn {
 	float: right;
-	margin-top: -22px;
-	margin-right: 26px;
-	text-decoration: none;
-	color: $bg-primary;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
 	background-color: rgba($button-primary, 0.29);
 	border: 2px solid rgba($button-secondary, 0.31);
 	padding: 7px;
@@ -44,8 +37,19 @@ footer {
 	transition: 0.2s;
 
 	&:hover {
-		transform: translateY(-6px);
+		transform: translateY(-4px);
 	}
+}
+
+.go-to-home-btn {
+	margin-top: -22px;
+	margin-right: 26px;
+	text-decoration: none;
+	color: $bg-primary;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	@include btn;
 }
 
 .home-icon {
@@ -56,4 +60,19 @@ footer {
 
 .home-text {
 	font-size: 14px;
+}
+
+.btn-to-wallpaper {
+	font-size: 15px;
+	margin-right: 16px;
+	@include btn;
+
+	span,
+	&::after {
+		filter: brightness(3.4);
+	}
+
+	@include sp {
+		margin-right: 10px;
+	}
 }

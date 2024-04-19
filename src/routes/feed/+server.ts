@@ -26,7 +26,7 @@ async function body() {
 		date: Date;
 		index: number;
 	};
-	const articles = (await fetchArticles({ only_indexed: true }))
+	const articles = (await fetchArticles({ isOnlyIndexed: true }))
 		.reverse()
 		.map((article) => {
 			// eslint-disable-next-line @typescript-eslint/no-non-null-assertion

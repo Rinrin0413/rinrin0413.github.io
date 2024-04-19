@@ -1,7 +1,7 @@
 import type { ArticleMetadata, ArticleThumbnailImgFmts } from './types';
 
 /** Fetches and sorts all articles. */
-export async function fetchArticles({ limit, tags, only_indexed }: fetchArticlesOptions = {}) {
+export async function fetchArticles({ limit, tags, isOnlyIndexed }: fetchArticlesOptions = {}) {
 	// Fetch all articles.
 	let articles = await Promise.all(
 		Object.entries(import.meta.glob('/articles/*.md')).map(async ([path, importArticle]) => {
@@ -25,7 +25,7 @@ export async function fetchArticles({ limit, tags, only_indexed }: fetchArticles
 			}
 
 		// Filter by indexed.
-		if (only_indexed && !a.indexed) return false;
+		if (isOnlyIndexed && !a.indexed) return false;
 
 		return true;
 	});
@@ -46,7 +46,7 @@ export async function fetchArticles({ limit, tags, only_indexed }: fetchArticles
 type fetchArticlesOptions = {
 	limit?: number;
 	tags?: string[];
-	only_indexed?: boolean;
+	isOnlyIndexed?: boolean;
 };
 
 function calcOrder(slug: string) {

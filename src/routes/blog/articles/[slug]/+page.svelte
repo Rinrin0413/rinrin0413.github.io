@@ -13,7 +13,7 @@
 	import { _ } from 'svelte-i18n';
 	import { cubicOut } from 'svelte/easing';
 	import { scale } from 'svelte/transition';
-	import { date as date_i18n } from 'svelte-i18n';
+	import { date as dateI18n } from 'svelte-i18n';
 
 	export let data: PageData;
 	let metadata = data.frontmatter;
@@ -33,7 +33,7 @@
 
 	$: thumbnailImgFmt = data.thumbnailImgFmt;
 	$: hasThumbnailImg = thumbnailImgFmt !== null;
-	$: thumbnail_path = hasThumbnailImg ? `/images/blog/thumbnails/${slug}.` + thumbnailImgFmt : null;
+	$: thumbnailPath = hasThumbnailImg ? `/images/blog/thumbnails/${slug}.` + thumbnailImgFmt : null;
 
 	function introAnim(index = 0) {
 		return {
@@ -59,7 +59,7 @@
 	<meta property="og:description" content={HEAD.desc} />
 	<meta property="og:url" content={currentUrl} />
 	{#if hasThumbnailImg}
-		<meta property="og:image" content="{SITE_URL}{thumbnail_path}" />
+		<meta property="og:image" content="{SITE_URL}{thumbnailPath}" />
 	{/if}
 
 	{#if !metadata.indexed}
@@ -71,7 +71,7 @@
 
 {#if hasThumbnailImg}
 	<img
-		src={thumbnail_path}
+		src={thumbnailPath}
 		alt={$_('w.backImage')}
 		class="back-thumbnail"
 		style={parallax(0.25)}
@@ -80,7 +80,7 @@
 
 	<div class="thumbnail-wrapper" in:scale|global={introAnim()}>
 		<img
-			src={thumbnail_path}
+			src={thumbnailPath}
 			alt={$_('w.articleThumbnailImage')}
 			class="thumbnail"
 			style={parallax(-0.25)}
@@ -96,7 +96,7 @@
 	</div>
 	<div in:scale|global={introAnim(3)}>
 		<time datetime={date.toISOString()} style={parallax(-0.12)}
-			>{$date_i18n(date, { format: 'full' })}</time
+			>{$dateI18n(date, { format: 'full' })}</time
 		>
 	</div>
 	<div in:scale|global={introAnim(4)}>

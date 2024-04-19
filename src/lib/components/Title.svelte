@@ -17,9 +17,9 @@
 	let isOverflown = false;
 
 	if (browser) {
-		update_vw();
+		updateVw();
 
-		window.addEventListener('resize', update_vw);
+		window.addEventListener('resize', updateVw);
 	}
 
 	$: if (node) {
@@ -29,7 +29,7 @@
 		isOverflown = vw <= initWidth;
 	}
 
-	function update_vw() {
+	function updateVw() {
 		vw = window.innerWidth;
 	}
 </script>
@@ -37,7 +37,7 @@
 <div class:mini={isOverflown}>
 	<h1 {id} bind:this={node}>{text}</h1>
 	<h1 class="shadow">{text}</h1>
-	<Space height={'64px'} />
+	<Space height="64px" />
 </div>
 
 <style lang="scss">

@@ -18,7 +18,7 @@ const fileName = date + (1 < i ? String(i).padStart(2, '0') : '') + '.md';
 
 const filePath = path.join(articlesDir, fileName);
 
-const initContent = `---
+const INIT_CONTENT = `---
 published: true
 indexed: true
 title: ここにタイトル
@@ -44,6 +44,6 @@ tags: [タグ, タグ]
 - ページ: [/blog/articles/20230917_test](http://127.0.0.1:5173/blog/articles/20230917_test) (vite devサーバー起動中のみ)
 `;
 
-fs.writeFileSync(filePath, initContent);
+fs.writeFileSync(filePath, INIT_CONTENT);
 
 console.log('Created: ' + filePath);
