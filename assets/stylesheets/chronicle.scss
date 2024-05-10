@@ -40,13 +40,20 @@ ul {
 		}
 
 		&::after {
-			content: 'Open...';
+			content: 'Expand ▼';
+			float: right;
 			position: relative;
-			bottom: 21px;
-			left: 40%;
+			bottom: 24px;
+			right: 12px;
 			font-size: 16px;
 			opacity: 0.84;
 			transition: 0.2s;
+
+			@include sp {
+				font-size: 15px;
+				bottom: 20px;
+				right: 20px;
+			}
 		}
 
 		.row {
