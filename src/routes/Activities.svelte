@@ -74,9 +74,8 @@
 		<br />
 		<h2>Compose</h2>
 		<p>
-			{$_('activities.music.compose.0')}<a href="https://musescore.org">MuseScore 3, 4</a>{$_(
-				'activities.music.compose.1'
-			)}
+			{$_('activities.music.compose.0')}<a href="https://musescore.org">MuseScore Studio 3, 4</a
+			>{$_('activities.music.compose.1')}
 		</p>
 		<br />
 		<h2>Sing</h2>
