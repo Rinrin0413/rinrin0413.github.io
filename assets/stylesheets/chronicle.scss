@@ -64,7 +64,9 @@ ul {
 					white-space: nowrap;
 
 					.event {
-						font-size: 11px;
+						font-size: 13px;
+						text-overflow: ellipsis;
+						overflow: hidden;
 					}
 				}
 			}
@@ -134,7 +136,7 @@ ul {
 
 @include sp {
 	.row {
-		margin: 0 24px 0 12px;
+		margin: 0 16px 0 12px;
 	}
 
 	.year {
@@ -152,5 +154,7 @@ ul {
 	.event {
 		left: 8px;
 		font-size: 14px;
+		padding-right: 0;
+		padding-left: 10px;
 	}
 }
