@@ -7,40 +7,40 @@
 
 	<ul>
 		<li>
-			Rust
+			<span>Rust</span>
 			<ul>
 				<li>{$_('skills.rust.0')}</li>
 				<li>{$_('skills.rust.1')}</li>
 			</ul>
 		</li>
 		<li>
-			Git
+			<span>Git</span>
 			<ul><li>{$_('skills.git')}</li></ul>
 		</li>
 		<li>
-			GLSL / WGSL / HLSL
+			<span>GLSL / WGSL / HLSL</span>
 			<ul><li>{$_('skills.glslWgslHlsl')}</li></ul>
 		</li>
 		<li>
-			{$_('w.webDev')}
+			<span>{$_('w.webDev')}</span>
 			<ul>
 				<li>{$_('skills.webDev.0')}</li>
 				<li>
-					Svelte
+					<span>Svelte</span>
 					<ul>
 						<li>{$_('skills.webDev.svelte.0')}</li>
 						<li>{$_('skills.webDev.svelte.1')}</li>
 					</ul>
 				</li>
 				<li>
-					HTML / CSS / JavaScript
+					<span>HTML / CSS / JavaScript</span>
 					<ul>
 						<li>{$_('skills.webDev.htmlCssJs')}</li>
 						<li>{$_('skills.webDev.htmlCssJs')}</li>
 					</ul>
 				</li>
 				<li>
-					SASS
+					<span>SASS</span>
 					<ul>
 						<li>{$_('skills.webDev.sass.0')}</li>
 						<li>{$_('skills.webDev.sass.1')}</li>
@@ -50,14 +50,14 @@
 			</ul>
 		</li>
 		<li>
-			Python
+			<span>Python</span>
 			<ul>
 				<li>{$_('skills.python.0')}</li>
 				<li>{$_('skills.python.1')}</li>
 			</ul>
 		</li>
 		<li>
-			{$_('w.minecraft')}
+			<span>{$_('w.minecraft')}</span>
 			<ul>
 				<li>{$_('skills.minecraft.0')}</li>
 				<li>{$_('skills.minecraft.1')}</li>
@@ -65,7 +65,7 @@
 			</ul>
 		</li>
 		<li>
-			Linux
+			<span>Linux</span>
 			<ul>
 				<li>{$_('skills.linux.0')}</li>
 				<li>{$_('skills.linux.1')}</li>
