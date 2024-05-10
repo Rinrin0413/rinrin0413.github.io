@@ -25,7 +25,8 @@
 		"atomFeed": "Atomフィード",
 		"share": "共有",
 		"domain": "ドメイン",
-		"webShareApi": "ウェブ共有 API"
+		"webShareApi": "ウェブ共有 API",
+		"jaLang": "日本語"
 	},
 	"home": {
 		"icon": "Rinrin.rs のアイコン",
@@ -139,6 +140,8 @@
 			"趣味で曲を作ったりもしています。"
 		],
 		"birthday": "2006年4月13日",
+		"primaryLang": "言語",
+		"timezone": "時刻帯",
 		"school": "所属校",
 		"birthplace": "出身地",
 		"hobby": "参照:"

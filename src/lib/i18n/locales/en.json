@@ -25,7 +25,8 @@
 		"atomFeed": "Atom feed",
 		"share": "Share",
 		"domain": "Domain",
-		"webShareApi": "Web Share API"
+		"webShareApi": "Web Share API",
+		"jaLang": "Japanese lang."
 	},
 	"home": {
 		"icon": "Rinrin.rs' avatar",
@@ -139,6 +140,8 @@
 			"also compose music as a hobby."
 		],
 		"birthday": "April 13th, 2006",
+		"primaryLang": "Primary lang.",
+		"timezone": "Timezone",
 		"school": "School",
 		"birthplace": "Birthplace",
 		"hobby": "see"
