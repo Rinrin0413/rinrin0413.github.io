@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/rinrin0413
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://rinrin.pages.dev
+  * I am rinrin0413 (https://keybase.io/rinrin0413) on keybase.
+  * I have a public key ASBXA-N48-SZWa9dSvrra46jwOHH7kKzRbw-zQGmBKNPUAo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01205fc94386aef80de506c614563d0a53a78e6cbb62547d54e1eada584536bb91830a",
+      "host": "keybase.io",
+      "kid": "01205703e378f3e49959af5d4afaeb6b8ea3c0e1c7ee42b345bc3ecd01a604a34f500a",
+      "uid": "972dcac4bed9cbb741ed62b8a8faa919",
+      "username": "rinrin0413"
+    },
+    "merkle_root": {
+      "ctime": 1715627856,
+      "hash": "ea0aea7e2a4c4ecabdc9d7e60cd494a2aaa7f2438331aa515d3f9afeaab143effe8a3a1eeeeefcce343acb9a0d5cd1dee1d099f5db87b12f9eedda0ddac4fed9",
+      "hash_meta": "af3ddee8092462865d10c7cd6b3bca615e223b8e705deb165e2fe99a7ac05282",
+      "seqno": 25721272
+    },
+    "service": {
+      "entropy": "i17IdBznnc9mkuxebAjKWDo2",
+      "hostname": "rinrin.pages.dev",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "6.2.8"
+  },
+  "ctime": 1715627902,
+  "expire_in": 504576000,
+  "prev": "a07cb58b2adf3849a64efc2306ceba65e5b05ad4b85039d7e184ae57c209e75b",
+  "seqno": 6,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgVwPjePPkmVmvXUr662uOo8Dhx+5Cs0W8Ps0BpgSjT1AKp3BheWxvYWTESpcCBsQgoHy1iyrfOEmmTvwjBs66ZeWwWtS4UDnX4YSuV8IJ51vEINRy+tvk3cYv5a5CGsX5zMh2koaDFv53E7qkuxCCj+tjAgHCo3NpZ8RAI3G0GB18mwCSlXvCWztikQX0+o8BL3XavZ+L3LTkYJRouPA8YivGb/kZg1ydKWT/xvcowq8FCL3J7s1JtVEOB6hzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEINNdvcZ9FBz3fwMs51cCngOt8fOVrP4gF/uMpz1LO9Spo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/rinrin0413
+
+==================================================================

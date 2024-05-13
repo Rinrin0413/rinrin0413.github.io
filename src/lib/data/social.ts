@@ -108,6 +108,12 @@ export const SOCIALS = [
 		icon: null // Could not find the guideline
 	},
 	{
+		service: 'Keybase',
+		name: 'rinrin0413',
+		url: 'https://keybase.io/rinrin0413',
+		icon: null // Could not find the guideline
+	},
+	{
 		service: 'King of Stackers',
 		name: 'Rinrin',
 		url: 'https://kingofstackers.com/profile.php?uid=4036',

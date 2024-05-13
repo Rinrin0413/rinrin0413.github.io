@@ -18,6 +18,14 @@
 			<td>{$_('profile.birthday')}</td>
 		</tr>
 		<tr>
+			<td>{$_('profile.primaryLang')}</td>
+			<td>{$_('w.jaLang')}</td>
+		</tr>
+		<tr>
+			<td>{$_('profile.timezone')}</td>
+			<td>JST (UTC +9)</td>
+		</tr>
+		<tr>
 			<td>{$_('profile.school')}</td>
 			<td>{$_('w.sHighSchool')}</td>
 		</tr>

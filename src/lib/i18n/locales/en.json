@@ -25,7 +25,8 @@
 		"atomFeed": "Atom feed",
 		"share": "Share",
 		"domain": "Domain",
-		"webShareApi": "Web Share API"
+		"webShareApi": "Web Share API",
+		"jaLang": "Japanese lang."
 	},
 	"home": {
 		"icon": "Rinrin.rs' avatar",
@@ -75,7 +76,7 @@
 				"It is one of the games i have been playing for the longest period.\nI no longer play Wii U Edition and Bedrock Edition, I currently play the Java Edition. On the Wii U Edition,\nI was building frequently. Since i started Bedrock Edition,\nI have been developing add-ons and shader packs but i got sick of Bedrock Edition because of the repeated ",
 				"'s shit. Currently, I am developing a shader pack for Java Edition at my own pace."
 			],
-			"sky": "I don't have time to play it these days. I might go if you invite me."
+			"sky": "I was born in the Season of Assembly. But don't have time to play these days. I might go if you invite me."
 		},
 		"music": {
 			"listen": "I like piano music in the classical era and romantic era, and i especially listen to Franz Liszt's pieces. Recently, i started to listen to not only piano music but also orchestral compositions and classical song.",
@@ -133,12 +134,14 @@
 			"Hi there, I'm Rinrin.rs.",
 			"am a student, Japanese, {age} years old. and have ASD.",
 			"I'm mainly on Discord.",
-			"I make simple bots for Discord.",
+			"I'll write code.",
 			"Basically i would not work Web dev.",
 			"may be able to draw a simple pixel art.",
 			"also compose music as a hobby."
 		],
 		"birthday": "April 13th, 2006",
+		"primaryLang": "Primary lang.",
+		"timezone": "Timezone",
 		"school": "School",
 		"birthplace": "Birthplace",
 		"hobby": "see"
@@ -168,7 +171,7 @@
 		"minecraft": [
 			"I used to build Japanese-style architecture. but not good at Western-style architecture",
 			"At one time i was also creating add-ons for Bedrock Edition, but not going to do it again",
-			"Currently developing shaderpacks for Java Edition when feel like it"
+			"Currently developing shaderpacks for Java Edition and building something, when feel like it"
 		],
 		"linux": [
 			"openSUSE Leap 15.5 is my main OS",
