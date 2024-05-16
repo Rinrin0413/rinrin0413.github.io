@@ -6,6 +6,7 @@
 
 | Z-Index | Entity |
 | --: | --- |
+| 1031 | nprogress bar/spinner (`/node_modules/nprogress/nprogress.css`) |
 | 129 | header logo (`header.scss/#header-logo`) |
 | 128 | header title (`header.scss/#header-logo::after`) |
 | 127 | header bg (`header.scss/#header-bg`) |

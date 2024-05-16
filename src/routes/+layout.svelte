@@ -2,13 +2,23 @@
 	import Header from '$lib/components/header/Header.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 
+	import NProgress from 'nprogress';
+	import 'nprogress/nprogress.css';
+	import { navigating } from '$app/stores';
 	import { page } from '$app/stores';
 	import { browser } from '$app/environment';
 	import { BLOG_NAME, COPYRIGHT, SITE_NAME, SITE_URL, CONTACT_EMAIL_ADDRESS } from '$lib/variables';
 
+	NProgress.configure({});
+	$: {
+		if ($navigating !== null && $page.url.pathname != '/blog') NProgress.start();
+		else NProgress.done();
+	}
+
 	let maxVh1: number;
 
 	if (browser) {
+		NProgress.start();
 		window.addEventListener('resize', () => {
 			if (maxVh1 < window.innerHeight) setMaxVh001();
 		});
