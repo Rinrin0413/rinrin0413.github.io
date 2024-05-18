@@ -1,4 +1,5 @@
 <script lang="ts">
+	/** `profile` | `blog` | `tools` | `projects` | `creations` | `social` */
 	export let id: string;
 </script>
 
