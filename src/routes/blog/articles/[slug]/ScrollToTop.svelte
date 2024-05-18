@@ -20,13 +20,13 @@
 
 {#if 800 < scrollY && willScrollUp}
 	<button on:click={scrollToTop} transition:fly={{ x: 86, duration: 500 }}>
-		<!-- 
-            Bootstrap Icons - Arrow up circle fill
-            https://icons.getbootstrap.com/icons/arrow-up-circle-fill
-            
-            Copyright (c) 2019 The Bootstrap Authors
-            under the MIT License: https://github.com/twbs/icons/blob/main/LICENSE
-        -->
+		<!--
+			Bootstrap Icons - Arrow up circle fill
+			https://icons.getbootstrap.com/icons/arrow-up-circle-fill
+
+			Copyright (c) 2019 The Bootstrap Authors
+			under the MIT License: https://github.com/twbs/icons/blob/main/LICENSE
+		-->
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
 			width="16"

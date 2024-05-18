@@ -20,10 +20,10 @@
 	<p class="copyright">{COPYRIGHT}</p>
 	<div class="feed-btn"><FeedButton /></div>
 	<a href="/" class="go-to-home-btn">
-		<!-- 
+		<!--
 			Bootstrap Icons - House door fill
 			https://icons.getbootstrap.com/icons/house-door-fill/
-			
+
 			Copyright (c) 2019 The Bootstrap Authors
 			under the MIT License: https://github.com/twbs/icons/blob/main/LICENSE
 		-->

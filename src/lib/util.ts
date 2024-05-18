@@ -13,7 +13,7 @@
  *     if (browser) window.addEventListener('scroll', fadeIn);
  *
  *     function fadeIn() {
- * 	       addClassOnVisible(
+ *         addClassOnVisible(
  *             document.getElementsByClassName('foo'),
  *             'fade-in-up'
  *         );
