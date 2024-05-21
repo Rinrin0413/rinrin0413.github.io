@@ -32,7 +32,7 @@ body {
 }
 
 * {
-	scrollbar-color: #82624a transparent;
+	scrollbar-color: #2b1d0e transparent;
 	/* $header-height +18px */
 	scroll-margin-top: 92px;
 	font-weight: 500;
