@@ -18,9 +18,7 @@
 
 	$: currentUrl = SITE_URL + '/blog';
 
-	let tags = data.tags;
 	$: tags = data.tags;
-	let articles = data.articles;
 	$: articles = data.articles;
 
 	$: HEAD = {
