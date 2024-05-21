@@ -1,6 +1,6 @@
 import type { ArticleMetadata, ArticleThumbnailImgFmts } from './types';
 
-/** Fetches and sorts all articles. */
+/** Fetches and sorts articles. */
 export async function fetchArticles({ limit, tags, isOnlyIndexed }: fetchArticlesOptions = {}) {
 	// Fetch all articles.
 	let articles = await Promise.all(
