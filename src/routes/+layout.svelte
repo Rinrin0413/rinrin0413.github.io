@@ -9,7 +9,6 @@
 	import { browser } from '$app/environment';
 	import { BLOG_NAME, COPYRIGHT, SITE_NAME, SITE_URL, CONTACT_EMAIL_ADDRESS } from '$lib/variables';
 
-	NProgress.configure({});
 	$: {
 		if ($navigating !== null && $page.url.pathname != '/blog') NProgress.start();
 		else NProgress.done();
