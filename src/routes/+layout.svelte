@@ -9,8 +9,10 @@
 	import { browser } from '$app/environment';
 	import { BLOG_NAME, COPYRIGHT, SITE_NAME, SITE_URL, CONTACT_EMAIL_ADDRESS } from '$lib/variables';
 
+	$: pathname = $page.url.pathname;
+
 	$: {
-		if ($navigating !== null && $page.url.pathname != '/blog') NProgress.start();
+		if ($navigating !== null && pathname != '/blog') NProgress.start();
 		else NProgress.done();
 	}
 
@@ -43,11 +45,16 @@
 	<meta name="format-detection" content="telephone=no,address=no,email=no" />
 
 	<meta property="og:site_name" content={SITE_NAME} />
-	{#if $page.url.pathname.startsWith('/blog/articles/')}
+	{#if pathname.startsWith('/blog/articles/')}
 		<meta property="og:type" content="article" />
-		<meta name="twitter:card" content="summary_large_image" />
+	{:else if pathname.startsWith('/profile')}
+		<meta property="og:type" content="profile" />
 	{:else}
 		<meta property="og:type" content="website" />
+	{/if}
+	{#if pathname.startsWith('/blog/articles/')}
+		<meta name="twitter:card" content="summary_large_image" />
+	{:else}
 		<meta property="og:image" content="{SITE_URL}{HEAD.logo_180px_oxipng}" />
 		<meta name="twitter:card" content="summary" />
 	{/if}
