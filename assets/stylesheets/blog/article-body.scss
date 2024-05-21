@@ -195,9 +195,27 @@
 			}
 		}
 
-		details summary {
-			cursor: pointer;
-			@include bold;
+		details {
+			summary {
+				cursor: pointer;
+				font-size: 24px;
+				padding: 0 12px;
+				border-radius: 1px;
+				transition: 0.2s;
+				@include bold;
+
+				&::marker {
+					font-size: 24px;
+				}
+
+				&:hover {
+					background-color: rgba($text-primary, 0.2);
+				}
+
+				@include sp {
+					font-size: 22px;
+				}
+			}
 		}
 
 		iframe {
