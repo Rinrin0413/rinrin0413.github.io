@@ -31,7 +31,7 @@
 	<meta property="og:url" content={SITE_URL} />
 </svelte:head>
 
-<img src="/images/icon_13_384px.webp" alt={$_('home.icon')} id="icon" />
+<img src="/images/icon_13_384px.webp" alt={$_('home.icon')} class="icn" />
 
 <section id="about">
 	<Title text="About me" />
@@ -91,7 +91,7 @@
 <style lang="scss">
 	@use '/assets/stylesheets/variables/color' as *;
 
-	#icon {
+	.icn {
 		$size: 256px;
 		$shadow-color: #00000094;
 
