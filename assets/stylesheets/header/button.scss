@@ -5,8 +5,8 @@ button {
 	$btn-size: $header-height * 0.82;
 	height: $btn-size;
 	width: $btn-size;
-	background: $button-primary;
-	border: 3px solid $button-secondary;
+	background: $btn-primary;
+	border: 3px solid $btn-secondary;
 	cursor: pointer;
 	border-radius: 4px;
 	margin: 0 6px;

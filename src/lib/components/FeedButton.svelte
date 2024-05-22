@@ -32,8 +32,8 @@
 		height: $size;
 		padding: 4px;
 		margin: 0 6px;
-		background: $button-primary;
-		border: 3px solid $button-secondary;
+		background: $btn-primary;
+		border: 3px solid $btn-secondary;
 		border-radius: 4px;
 		box-shadow: 0 0 14px #00000050;
 		transition: 0.2s;

@@ -229,8 +229,8 @@ nav {
 		max-width: 428px;
 		margin: 0 auto;
 		height: auto;
-		background-color: rgba($button-primary, 0.63);
-		border: 2px solid $button-primary;
+		background-color: rgba($btn-primary, 0.63);
+		border: 2px solid $btn-primary;
 		border-radius: 2px;
 		$back-blur: blur(6px);
 		backdrop-filter: $back-blur;
@@ -289,7 +289,7 @@ nav {
 			content: '- Menu -';
 			font-size: 28px;
 			letter-spacing: 0.1em;
-			background-color: $button-primary;
+			background-color: $btn-primary;
 			border: 2px solid rgba($text-primary, 0.25);
 			width: 100%;
 			padding: 1px 8px 5px 8px;
