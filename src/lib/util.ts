@@ -25,7 +25,13 @@
  * ```
  */
 export function addClassOnVisible(
-	elements: HTMLCollectionOf<Element> | NodeListOf<Element> | HTMLElement | Element | null | undefined,
+	elements:
+		| HTMLCollectionOf<Element>
+		| NodeListOf<Element>
+		| HTMLElement
+		| Element
+		| null
+		| undefined,
 	className: string
 ) {
 	if (elements instanceof HTMLCollection || elements instanceof NodeList) {
