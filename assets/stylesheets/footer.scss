@@ -4,12 +4,12 @@
 
 footer {
 	height: $footer-height;
-	background-color: $text-primary;
+	background-color: $txt-primary;
 	color: $bg-primary;
 
 	::selection {
 		background: $bg-primary;
-		color: $text-primary;
+		color: $txt-primary;
 	}
 }
 

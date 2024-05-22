@@ -59,7 +59,7 @@
 	svg {
 		width: 64px;
 		height: auto;
-		color: $text-primary;
+		color: $txt-primary;
 		opacity: 0.3;
 		transition: 0.4s;
 

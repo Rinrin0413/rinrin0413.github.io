@@ -47,6 +47,6 @@
 	svg {
 		width: 100%;
 		height: 100%;
-		fill: $text-dark;
+		fill: $txt-dark;
 	}
 </style>

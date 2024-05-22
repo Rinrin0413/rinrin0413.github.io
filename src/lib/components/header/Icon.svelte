@@ -115,7 +115,7 @@
 		margin: 0 auto;
 		height: 42px;
 		width: auto;
-		fill: $text-primary;
+		fill: $txt-primary;
 		position: relative;
 		top: 4px;
 

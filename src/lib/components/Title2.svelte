@@ -21,7 +21,7 @@
 		display: inline-block;
 		text-align: center;
 		font-size: 28px;
-		border-bottom: 6px solid rgba($text-primary, 0.5);
+		border-bottom: 6px solid rgba($txt-primary, 0.5);
 		padding: 0 10px;
 
 		@include sp {
