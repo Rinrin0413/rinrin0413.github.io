@@ -17,7 +17,7 @@
 
 	const HEAD = {
 		title: 'Home',
-		desc: 'Rinrin.rs のホームページです'
+		desc: 'Rinrin.rs のホームページです。'
 	};
 </script>
 
