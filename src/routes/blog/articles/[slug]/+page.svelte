@@ -30,6 +30,11 @@
 	$: parallax = parallaxStyle(scrollY);
 
 	$: date = idToDate(slug);
+	let datePlus9h: Date;
+	$: {
+		datePlus9h = new Date(date);
+		datePlus9h.setHours(datePlus9h.getHours() + 9);
+	}
 
 	$: thumbnailImgFmt = data.thumbnailImgFmt;
 	$: hasThumbnailImg = thumbnailImgFmt !== null;
@@ -95,7 +100,7 @@
 		<h1 style={parallax(-0.19)}>{metadata.title}</h1>
 	</div>
 	<div in:scale|global={introAnim(3)}>
-		<time datetime={date.toISOString()} style={parallax(-0.12)}
+		<time datetime={datePlus9h.toISOString()} style={parallax(-0.12)}
 			>{$dateI18n(date, { format: 'full' })}</time
 		>
 	</div>
