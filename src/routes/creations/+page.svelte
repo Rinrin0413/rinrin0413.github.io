@@ -7,7 +7,8 @@
 
 	const HEAD = {
 		title: 'Creations',
-		desc: 'Rinrin.rs の創作物'
+		desc: 'Rinrin.rs の創作物',
+		url: SITE_URL + '/creations'
 	};
 </script>
 
@@ -18,7 +19,9 @@
 
 	<meta property="og:title" content={HEAD.title} />
 	<meta property="og:description" content={HEAD.desc} />
-	<meta property="og:url" content="{SITE_URL}/creations" />
+	<meta property="og:url" content={HEAD.url} />
+
+	<link rel="canonical" href={HEAD.url} />
 </svelte:head>
 
 <section>

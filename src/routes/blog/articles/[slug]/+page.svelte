@@ -24,7 +24,7 @@
 	$: isPathnameEndsWithSlash = paths[pathnameLength - 1] === '';
 	$: slug = paths[pathnameLength - (isPathnameEndsWithSlash ? 2 : 1)];
 
-	$: currentUrl = SITE_URL + '/blog/articles/' + slug;
+	$: canonicalUrl = SITE_URL + '/blog/articles/' + slug;
 
 	let scrollY: number;
 	$: parallax = parallaxStyle(scrollY);
@@ -62,7 +62,7 @@
 
 	<meta property="og:title" content={HEAD.title} />
 	<meta property="og:description" content={HEAD.desc} />
-	<meta property="og:url" content={currentUrl} />
+	<meta property="og:url" content={canonicalUrl} />
 	{#if hasThumbnailImg}
 		<meta property="og:image" content="{SITE_URL}{thumbnailPath}" />
 	{/if}
@@ -70,6 +70,8 @@
 	{#if !metadata.indexed}
 		<meta name="robots" content="noindex" />
 	{/if}
+
+	<link rel="canonical" href={canonicalUrl} />
 </svelte:head>
 
 <svelte:window bind:scrollY />
@@ -110,11 +112,11 @@
 			but breaking the logic for the sake of intuitiveness.
 		-->
 		<div style={parallax(-0.06)}>
-			<ShareButton href={currentUrl} title={HEAD.titleFull} /><FeedButton />
+			<ShareButton href={canonicalUrl} title={HEAD.titleFull} /><FeedButton />
 		</div>
 	</div>
 	<Article body={data.component} />
-	<p><ShareButton href={currentUrl} title={HEAD.titleFull} expanded /></p>
+	<p><ShareButton href={canonicalUrl} title={HEAD.titleFull} expanded /></p>
 	<Tags tags={metadata.tags} />
 	<div><a href="/blog" class="back-to-index">{$_('article.backToIndex')}</a></div>
 </div>

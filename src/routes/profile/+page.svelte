@@ -12,7 +12,8 @@
 
 	const HEAD = {
 		title: 'Profile',
-		desc: 'Rinrin.rs のプロフィール'
+		desc: 'Rinrin.rs のプロフィール',
+		url: SITE_URL + '/profile'
 	};
 </script>
 
@@ -23,7 +24,9 @@
 
 	<meta property="og:title" content={HEAD.title} />
 	<meta property="og:description" content={HEAD.desc} />
-	<meta property="og:url" content="{SITE_URL}/profile" />
+	<meta property="og:url" content={HEAD.url} />
+
+	<link rel="canonical" href={HEAD.url} />
 </svelte:head>
 
 <section>
