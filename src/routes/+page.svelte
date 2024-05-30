@@ -46,8 +46,8 @@
 <Hr />
 
 <section id="contents">
-	<Title text="Table of Contents" />
-	<p>{$_('home.tableOfContents')}</p>
+	<Title text="Contents" />
+	<p>{$_('home.contents')}</p>
 	<ContentTable />
 </section>
 
