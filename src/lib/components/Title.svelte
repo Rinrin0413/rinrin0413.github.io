@@ -36,7 +36,7 @@
 
 <div class:mini={isOverflown}>
 	<h1 {id} bind:this={node}>{text}</h1>
-	<h1 class="shadow">{text}</h1>
+	<span data-content={text} />
 	<Space height="64px" />
 </div>
 
@@ -44,39 +44,41 @@
 	@use '/assets/stylesheets/variables/mixin' as *;
 	@use '/assets/stylesheets/variables/color' as *;
 
-	h1 {
+	h1,
+	span::before {
 		font-size: 36px;
 		margin: 0;
 		white-space: nowrap;
 		position: absolute;
 		left: 50%;
 		@include bold;
+	}
 
-		&:not(.shadow) {
-			transform: translateX(-50%);
+	h1 {
+		transform: translateX(-50%);
 
-			&::before,
-			&::after {
-				content: '';
-				display: inline-block;
-				width: 64px;
-				height: 2px;
-				background-color: $line-primary;
-				vertical-align: middle;
-				white-space: nowrap;
-			}
+		&::before,
+		&::after {
+			content: '';
+			display: inline-block;
+			width: 64px;
+			height: 2px;
+			background-color: $line-primary;
+			vertical-align: middle;
+			white-space: nowrap;
+		}
 
-			&::before {
-				margin-right: 10px;
-			}
+		&::before {
+			margin-right: 10px;
+		}
 
-			&::after {
-				margin-left: 10px;
-			}
+		&::after {
+			margin-left: 10px;
 		}
 	}
 
-	.shadow {
+	span::before {
+		content: attr(data-content);
 		transform: translateX(-50%) scale(1, -1);
 		transform-origin: 50% 43px;
 		filter: blur(1.2px);
@@ -89,14 +91,21 @@
 		text-shadow: none;
 	}
 
-	.mini h1 {
-		font-size: 26px;
+	.mini {
+		h1,
+		span::before {
+			font-size: 26px;
+		}
 
-		&:not(.shadow) {
+		h1 {
 			&::before,
 			&::after {
 				width: 16px;
 			}
+		}
+
+		span::before {
+			transform-origin: 50% 31px;
 		}
 	}
 </style>

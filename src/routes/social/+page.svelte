@@ -9,7 +9,8 @@
 
 	const HEAD = {
 		title: 'Social',
-		desc: 'Rinrin.rs のソーシャルアカウント一覧'
+		desc: 'Rinrin.rs のソーシャルアカウント一覧',
+		url: SITE_URL + '/social'
 	};
 </script>
 
@@ -20,7 +21,9 @@
 
 	<meta property="og:title" content={HEAD.title} />
 	<meta property="og:description" content={HEAD.desc} />
-	<meta property="og:url" content="{SITE_URL}/social" />
+	<meta property="og:url" content={HEAD.url} />
+
+	<link rel="canonical" href={HEAD.url} />
 </svelte:head>
 
 <section>
