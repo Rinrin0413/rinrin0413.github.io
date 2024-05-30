@@ -44,7 +44,8 @@
 	@use '/assets/stylesheets/variables/mixin' as *;
 	@use '/assets/stylesheets/variables/color' as *;
 
-	h1, span::before {
+	h1,
+	span::before {
 		font-size: 36px;
 		margin: 0;
 		white-space: nowrap;
@@ -91,7 +92,8 @@
 	}
 
 	.mini {
-		h1, span::before {
+		h1,
+		span::before {
 			font-size: 26px;
 		}
 
