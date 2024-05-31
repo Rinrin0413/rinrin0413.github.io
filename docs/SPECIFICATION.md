@@ -48,6 +48,8 @@ Default font weight is `500`.
 
 ## `'Source Code Pro'`
 
+Use the Sass mixin `source-code-pro` to apply the font.
+
 <!-- - ExtraLight: `200`
 - Light: `300`
 - Regular: `400` -->
@@ -60,6 +62,8 @@ Default font weight is `500`.
 **Do not use**: `100`, `200`, `300`, `400`, `600`, `700`, `800`, `900`, `normal`, `bold`, `lighter`, `bolder`
 
 ## `'Kaisei Decol'`
+
+Use the Sass mixin `kaisei-decol` to apply the font.
 
 <!-- - Regular: `400`
 - Medium: `500` -->
