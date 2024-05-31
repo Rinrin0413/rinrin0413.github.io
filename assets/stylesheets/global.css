@@ -1,7 +1,7 @@
 /* This file is for `src/app.html`. */
 
 html {
-	font-family: 'Kiwi Maru', serif;
+	font-family: 'Kiwi Maru', sans-serif;
 	color: #533618;
 	text-align: center;
 	scroll-behavior: smooth;
