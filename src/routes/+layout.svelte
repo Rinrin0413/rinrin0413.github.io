@@ -35,9 +35,10 @@
 		document.documentElement.style.setProperty('--max-vh001', maxVh1 * 0.01 + 'px');
 	}
 
-	const HEAD = {
-		logo_180px_oxipng: '/images/logos/rinrin/logo_180px_oxipng.png?v=2'
+	$: HEAD = {
+		logo_180px_oxipng: '/images/logos/rinrin/logo_180px_oxipng.png?v=2',
 	};
+	$: absThumbnailPath = SITE_URL + HEAD.logo_180px_oxipng;
 </script>
 
 <svelte:head>
@@ -52,14 +53,15 @@
 	{:else}
 		<meta property="og:type" content="website" />
 	{/if}
+	<meta property="og:locale" content="ja_JP" />
+	<meta name="twitter:site" content={SITE_URL} />
 	{#if pathname.startsWith('/blog/articles/')}
 		<meta name="twitter:card" content="summary_large_image" />
 	{:else}
-		<meta property="og:image" content="{SITE_URL}{HEAD.logo_180px_oxipng}" />
 		<meta name="twitter:card" content="summary" />
+		<meta property="og:image" content={absThumbnailPath} />
+		<meta name="thumbnail" content={absThumbnailPath} />
 	{/if}
-	<meta property="og:locale" content="ja_JP" />
-	<meta name="twitter:site" content={SITE_URL} />
 	<meta name="theme-color" content="#d1b27f" />
 
 	<meta name="keywords" content="Rinrin,Rinrin0413,Rinrin.rs" />

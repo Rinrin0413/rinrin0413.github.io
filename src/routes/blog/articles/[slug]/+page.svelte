@@ -53,6 +53,7 @@
 		titleFull: 'Rinrin.rs | Blog - ' + metadata.title,
 		desc: metadata.desc
 	};
+	$: absThumbnailPath = SITE_URL + thumbnailPath;
 </script>
 
 <svelte:head>
@@ -64,7 +65,8 @@
 	<meta property="og:description" content={HEAD.desc} />
 	<meta property="og:url" content={canonicalUrl} />
 	{#if hasThumbnailImg}
-		<meta property="og:image" content="{SITE_URL}{thumbnailPath}" />
+		<meta property="og:image" content={absThumbnailPath} />
+		<meta name="thumbnail" content={absThumbnailPath} />
 	{/if}
 
 	{#if !metadata.indexed}
