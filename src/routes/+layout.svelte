@@ -36,7 +36,7 @@
 	}
 
 	$: HEAD = {
-		logo_180px_oxipng: '/images/logos/rinrin/logo_180px_oxipng.png?v=2',
+		logo_180px_oxipng: '/images/logos/rinrin/logo_180px_oxipng.png?v=2'
 	};
 	$: absThumbnailPath = SITE_URL + HEAD.logo_180px_oxipng;
 </script>
