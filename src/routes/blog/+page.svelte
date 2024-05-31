@@ -8,6 +8,7 @@
 
 	import type { PageData } from './$types';
 	import { SITE_URL } from '$lib/variables';
+	import { page } from '$app/stores';
 	import { _ } from 'svelte-i18n';
 	import { fly } from 'svelte/transition';
 	import { elasticBackOut } from '$lib/easing';
@@ -18,6 +19,7 @@
 
 	$: canonicalUrl = SITE_URL + '/blog';
 
+	$: pageUrl = $page.url;
 	$: tags = data.tags;
 	$: articles = data.articles;
 
@@ -43,7 +45,7 @@
 <section>
 	<Space height="64px" />
 	<Title text="Blog" />
-	<p><ShareButton href={canonicalUrl} title={HEAD.titleFull} notArticlePage /><FeedButton /></p>
+	<p><ShareButton href="{SITE_URL}{pageUrl.pathname}{pageUrl.search}" title={HEAD.titleFull} notArticlePage /><FeedButton /></p>
 	<TagPicker allTags={data.allTags} pickedTags={tags} />
 
 	{#if 0 < articles.length}
