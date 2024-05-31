@@ -89,7 +89,7 @@ ul {
 }
 
 .year {
-	font-family: 'Source Code Pro', monospace;
+	@include source-code-pro;
 	position: relative;
 	bottom: 32px;
 	padding-right: 22px;

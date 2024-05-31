@@ -34,7 +34,7 @@ p {
 }
 
 #act-prog {
-	font-family: 'Source Code Pro', monospace;
+	@include source-code-pro;
 	background-color: #1c1c1b;
 	border-radius: 4px;
 	color: #d4d4d4;

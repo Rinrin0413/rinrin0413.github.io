@@ -24,7 +24,7 @@
 	@use '/assets/stylesheets/variables/mixin' as *;
 
 	h1 {
-		font-family: 'Source Code Pro', monospace;
+		@include source-code-pro;
 		font-size: 5rem;
 		text-align: center;
 		margin: 0;

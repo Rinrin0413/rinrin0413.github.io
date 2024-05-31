@@ -50,7 +50,7 @@
 
 			.icon-link::before {
 				content: '#';
-				font-family: 'Source Code Pro', monospace;
+				@include source-code-pro;
 				color: $txt-dark;
 				opacity: 0.3;
 			}
@@ -135,7 +135,7 @@
 		}
 
 		code {
-			font-family: 'Source Code Pro', monospace;
+			@include source-code-pro;
 			background-color: #282a36;
 			color: #f8f8f2;
 			padding: 2px 6px;

@@ -17,7 +17,7 @@ li {
 	border: none;
 	padding: 3px 7px;
 	margin: 0;
-	font-family: 'Source Code Pro', monospace;
+	@include source-code-pro;
 	color: #e9e9e9;
 	font-size: 16px;
 	text-decoration: none;

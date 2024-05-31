@@ -50,6 +50,10 @@ $breakpoint-ultra-narrow: 380px;
 	text-shadow: 0 0 1px;
 }
 
+@mixin source-code-pro {
+	font-family: 'Source Code Pro', monospace;
+}
+
 @mixin kaisei-decol {
 	font-family: 'Kaisei Decol', 'Kiwi Maru', serif;
 	font-weight: 700;
