@@ -45,7 +45,13 @@
 <section>
 	<Space height="64px" />
 	<Title text="Blog" />
-	<p><ShareButton href="{SITE_URL}{pageUrl.pathname}{pageUrl.search}" title={HEAD.titleFull} notArticlePage /><FeedButton /></p>
+	<p>
+		<ShareButton
+			href="{SITE_URL}{pageUrl.pathname}{pageUrl.search}"
+			title={HEAD.titleFull}
+			notArticlePage
+		/><FeedButton />
+	</p>
 	<TagPicker allTags={data.allTags} pickedTags={tags} />
 
 	{#if 0 < articles.length}
