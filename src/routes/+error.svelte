@@ -21,11 +21,18 @@
 <img src="/images/404.webp" alt="404 Not like this" />
 
 <style lang="scss">
+	@use '/assets/stylesheets/variables/mixin' as *;
+
 	h1 {
 		font-family: 'Source Code Pro', monospace;
 		font-size: 5rem;
 		text-align: center;
 		margin: 0;
+	}
+
+	p {
+		@include kaisei-decol;
+		font-size: 15px;
 	}
 
 	img {

@@ -84,6 +84,10 @@ h2 {
 	text-wrap: balance;
 }
 
+:not(.force-mobile-view) > article h2 {
+	@include kaisei-decol;
+}
+
 time {
 	display: block;
 	font-size: 15px;

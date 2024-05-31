@@ -123,15 +123,16 @@ p {
 	background-repeat: repeat-y;
 	background-size: 100% 22px;
 
+	:not(.subtitle, h2) {
+		@include kaisei-decol;
+	}
+
 	h1 {
 		font-size: 26px;
 		text-align: center;
-		font-family: serif;
-		// The specified font is a generic font family so `font-weight: 900` is allowed.
-		font-weight: 900;
 	}
 
-	p.subtitle {
+	.subtitle {
 		text-align: center;
 	}
 

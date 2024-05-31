@@ -49,3 +49,8 @@ $breakpoint-ultra-narrow: 380px;
 @mixin bold($color: $txt-primary) {
 	text-shadow: 0 0 1px;
 }
+
+@mixin kaisei-decol {
+	font-family: 'Kaisei Decol', 'Kiwi Maru', serif;
+	font-weight: 700;
+}

@@ -32,7 +32,11 @@
 <summary>Font weights</summary>
 <div>
 
+Default font weight is `500`.
+
 **Use the Sass mixin `bold` to make the text bold.**
+
+---
 
 ## `'Kiwi Maru'`
 
@@ -54,6 +58,14 @@
 - Black: `900` -->
 
 **Do not use**: `100`, `200`, `300`, `400`, `600`, `700`, `800`, `900`, `normal`, `bold`, `lighter`, `bolder`
+
+## `'Kaisei Decol'`
+
+<!-- - Regular: `400`
+- Medium: `500` -->
+- Bold: `700`
+
+**Must specify the `font-weight` to `700`**
 
 </div>
 </details>

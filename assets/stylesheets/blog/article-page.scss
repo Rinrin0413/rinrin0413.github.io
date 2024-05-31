@@ -49,6 +49,7 @@ $back-thumbnail-height: calc($max-vh * 70);
 $text-color-meta: #fffbee;
 
 h1 {
+	@include kaisei-decol;
 	display: inline-block;
 	max-width: 90%;
 	padding: 6px 18px;

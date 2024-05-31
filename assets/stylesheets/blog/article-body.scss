@@ -35,6 +35,7 @@
 		h4,
 		h5,
 		h6 {
+			@include kaisei-decol;
 			margin: 1.25em 0 0.4em 0;
 			text-wrap: balance;
 			@include bold;
