@@ -1,6 +1,30 @@
 @use './variables/color' as *;
 @use './variables/dimension' as *;
 
+#nprogress {
+	.bar {
+		background: #a50000;
+		height: 5px;
+	}
+
+	.peg {
+		display: none;
+	}
+
+	.spinner-icon {
+		background-image: url('/images/logos/rinrin/logo.svg');
+		background-size: contain;
+		$size: 28px;
+		width: $size;
+		height: $size;
+		border: none;
+		border-radius: initial;
+		$anim: nprogress-spinner 500ms linear infinite;
+		animation: $anim;
+		-webkit-animation: $anim;
+	}
+}
+
 main {
 	$header-space: $header-height * 2;
 

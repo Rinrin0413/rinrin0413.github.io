@@ -14,6 +14,11 @@
 
 	const slug = meta.slug ?? 'unreachable';
 	const date = idToDate(slug);
+	let datePlus9h: Date;
+	$: {
+		datePlus9h = new Date(date);
+		datePlus9h.setHours(datePlus9h.getHours() + 9);
+	}
 
 	const thumbnailImgFmt = thumbnailImgFmts?.[slug] ?? null;
 	const hasThumbnailImg = thumbnailImgFmt !== null;
@@ -33,7 +38,7 @@
 		</div>
 		<div class="meta">
 			<h2>{meta.title}</h2>
-			<time datetime={date.toISOString()}>
+			<time datetime={datePlus9h.toISOString()}>
 				{$dateI18n(date, { format: 'medium' })}
 			</time>
 			{#if meta.desc}

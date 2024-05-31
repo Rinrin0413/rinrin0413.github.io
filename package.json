@@ -1,6 +1,6 @@
 {
 	"name": "homepage_rinrin",
-	"version": "0.6.6",
+	"version": "0.6.7",
 	"private": true,
 	"scripts": {
 		"dev": "vite dev",
@@ -16,6 +16,7 @@
 		"@sveltejs/adapter-cloudflare": "^3.0.0",
 		"@sveltejs/kit": "^2.4.3",
 		"@sveltejs/vite-plugin-svelte": "^3.0.0",
+		"@types/nprogress": "^0.2.3",
 		"@types/uuid": "^9.0.6",
 		"@typescript-eslint/eslint-plugin": "^6.0.0",
 		"@typescript-eslint/parser": "^6.0.0",
@@ -23,6 +24,7 @@
 		"eslint-config-prettier": "^9.1.0",
 		"eslint-plugin-svelte": "^2.35.1",
 		"mdsvex": "^0.11.0",
+		"nprogress": "^0.2.0",
 		"prettier": "^3.1.1",
 		"prettier-plugin-svelte": "^3.1.2",
 		"rehype-autolink-headings": "^7.0.0",

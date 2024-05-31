@@ -41,7 +41,7 @@ tags: [タグ, タグ]
 ## テスト記事
 
 - Markdownファイル: [/articles/20230917_test.md](/articles/20230917_test.md)
-- ページ: [/blog/articles/20230917_test](http://127.0.0.1:5173/blog/articles/20230917_test) (vite devサーバー起動中のみ)
+- ページ: [/blog/articles/20230917_test](http://localhost:5173/blog/articles/20230917_test) (vite devサーバー起動中のみ)
 `;
 
 fs.writeFileSync(filePath, INIT_CONTENT);

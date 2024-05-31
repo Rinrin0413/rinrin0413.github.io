@@ -5,8 +5,8 @@ button {
 	$btn-size: $header-height * 0.82;
 	height: $btn-size;
 	width: $btn-size;
-	background: $button-primary;
-	border: 3px solid $button-secondary;
+	background: $btn-primary;
+	border: 3px solid $btn-secondary;
 	cursor: pointer;
 	border-radius: 4px;
 	margin: 0 6px;
@@ -29,14 +29,14 @@ span {
 svg {
 	height: 32.4px;
 	width: auto;
-	fill: $text-dark;
+	fill: $txt-dark;
 	top: 2px;
 	transform: scale(1.1);
 }
 
 span {
 	font-size: 8px;
-	color: $text-dark;
+	color: $txt-dark;
 	top: -7px;
 	letter-spacing: -0.95px;
 	white-space: nowrap;

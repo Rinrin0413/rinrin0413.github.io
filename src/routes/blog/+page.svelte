@@ -16,11 +16,9 @@
 
 	export let data: PageData;
 
-	$: currentUrl = SITE_URL + '/blog';
+	$: canonicalUrl = SITE_URL + '/blog';
 
-	let tags = data.tags;
 	$: tags = data.tags;
-	let articles = data.articles;
 	$: articles = data.articles;
 
 	$: HEAD = {
@@ -37,13 +35,15 @@
 
 	<meta property="og:title" content={HEAD.title} />
 	<meta property="og:description" content={HEAD.desc} />
-	<meta property="og:url" content={currentUrl} />
+	<meta property="og:url" content={canonicalUrl} />
+
+	<link rel="canonical" href={canonicalUrl} />
 </svelte:head>
 
 <section>
 	<Space height="64px" />
 	<Title text="Blog" />
-	<p><ShareButton href={currentUrl} title={HEAD.titleFull} notArticlePage /><FeedButton /></p>
+	<p><ShareButton href={canonicalUrl} title={HEAD.titleFull} notArticlePage /><FeedButton /></p>
 	<TagPicker allTags={data.allTags} pickedTags={tags} />
 
 	{#if 0 < articles.length}

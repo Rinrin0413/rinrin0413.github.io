@@ -62,14 +62,14 @@
 	}
 
 	$glassmorphism-border-light: 2px solid #e7dfd57a;
-	$glassmorphism-border-dark: 2px solid rgba($text-primary, 0.1);
+	$glassmorphism-border-dark: 2px solid rgba($txt-primary, 0.1);
 
 	h3 {
 		margin: 0 auto;
 		font-size: 20px;
 		padding: 0 14px;
-		border-bottom: 2px solid rgba($text-primary, 0.75);
-		background-color: rgba($text-primary, 0.16);
+		border-bottom: 2px solid rgba($txt-primary, 0.75);
+		background-color: rgba($txt-primary, 0.16);
 		$blur: blur(4px);
 		backdrop-filter: $blur;
 		-webkit-backdrop-filter: $blur;
@@ -86,7 +86,7 @@
 		padding-bottom: 8px;
 		margin-top: 0;
 		margin-bottom: 14px;
-		background-color: rgba($text-primary, 0.08);
+		background-color: rgba($txt-primary, 0.08);
 		$blur: blur(24px);
 		backdrop-filter: $blur;
 		-webkit-backdrop-filter: $blur;

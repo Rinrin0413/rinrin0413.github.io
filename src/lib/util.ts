@@ -13,7 +13,7 @@
  *     if (browser) window.addEventListener('scroll', fadeIn);
  *
  *     function fadeIn() {
- * 	       addClassOnVisible(
+ *         addClassOnVisible(
  *             document.getElementsByClassName('foo'),
  *             'fade-in-up'
  *         );
@@ -25,7 +25,13 @@
  * ```
  */
 export function addClassOnVisible(
-	elements: HTMLCollectionOf<Element> | NodeListOf<Element> | HTMLElement | Element | null,
+	elements:
+		| HTMLCollectionOf<Element>
+		| NodeListOf<Element>
+		| HTMLElement
+		| Element
+		| null
+		| undefined,
 	className: string
 ) {
 	if (elements instanceof HTMLCollection || elements instanceof NodeList) {

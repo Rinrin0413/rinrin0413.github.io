@@ -24,12 +24,17 @@
 	$: isPathnameEndsWithSlash = paths[pathnameLength - 1] === '';
 	$: slug = paths[pathnameLength - (isPathnameEndsWithSlash ? 2 : 1)];
 
-	$: currentUrl = SITE_URL + '/blog/articles/' + slug;
+	$: canonicalUrl = SITE_URL + '/blog/articles/' + slug;
 
 	let scrollY: number;
 	$: parallax = parallaxStyle(scrollY);
 
 	$: date = idToDate(slug);
+	let datePlus9h: Date;
+	$: {
+		datePlus9h = new Date(date);
+		datePlus9h.setHours(datePlus9h.getHours() + 9);
+	}
 
 	$: thumbnailImgFmt = data.thumbnailImgFmt;
 	$: hasThumbnailImg = thumbnailImgFmt !== null;
@@ -48,6 +53,7 @@
 		titleFull: 'Rinrin.rs | Blog - ' + metadata.title,
 		desc: metadata.desc
 	};
+	$: absThumbnailPath = SITE_URL + thumbnailPath;
 </script>
 
 <svelte:head>
@@ -57,14 +63,17 @@
 
 	<meta property="og:title" content={HEAD.title} />
 	<meta property="og:description" content={HEAD.desc} />
-	<meta property="og:url" content={currentUrl} />
+	<meta property="og:url" content={canonicalUrl} />
 	{#if hasThumbnailImg}
-		<meta property="og:image" content="{SITE_URL}{thumbnailPath}" />
+		<meta property="og:image" content={absThumbnailPath} />
+		<meta name="thumbnail" content={absThumbnailPath} />
 	{/if}
 
 	{#if !metadata.indexed}
 		<meta name="robots" content="noindex" />
 	{/if}
+
+	<link rel="canonical" href={canonicalUrl} />
 </svelte:head>
 
 <svelte:window bind:scrollY />
@@ -95,7 +104,7 @@
 		<h1 style={parallax(-0.19)}>{metadata.title}</h1>
 	</div>
 	<div in:scale|global={introAnim(3)}>
-		<time datetime={date.toISOString()} style={parallax(-0.12)}
+		<time datetime={datePlus9h.toISOString()} style={parallax(-0.12)}
 			>{$dateI18n(date, { format: 'full' })}</time
 		>
 	</div>
@@ -105,11 +114,11 @@
 			but breaking the logic for the sake of intuitiveness.
 		-->
 		<div style={parallax(-0.06)}>
-			<ShareButton href={currentUrl} title={HEAD.titleFull} /><FeedButton />
+			<ShareButton href={canonicalUrl} title={HEAD.titleFull} /><FeedButton />
 		</div>
 	</div>
 	<Article body={data.component} />
-	<p><ShareButton href={currentUrl} title={HEAD.titleFull} expanded /></p>
+	<p><ShareButton href={canonicalUrl} title={HEAD.titleFull} expanded /></p>
 	<Tags tags={metadata.tags} />
 	<div><a href="/blog" class="back-to-index">{$_('article.backToIndex')}</a></div>
 </div>

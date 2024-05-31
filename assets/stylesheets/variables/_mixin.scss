@@ -46,6 +46,6 @@ $breakpoint-ultra-narrow: 380px;
 	border-radius: $border-radius;
 }
 
-@mixin bold($color: $text-primary) {
+@mixin bold($color: $txt-primary) {
 	text-shadow: 0 0 1px;
 }

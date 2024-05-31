@@ -9,7 +9,7 @@
 
 	function fadeIn() {
 		let act = document.getElementsByClassName('container').item(0)?.children;
-		if (act) addClassOnVisible(act, 'fade-in-up-zoom');
+		addClassOnVisible(act, 'fade-in-up-zoom');
 	}
 </script>
 

@@ -322,5 +322,11 @@ export const SOCIALS = [
 		name: '@rinrin',
 		url: 'https://ona.la/@rinrin',
 		icon: null // Could not find the guideline
+	},
+	{
+		service: 'でばっぐ神社',
+		name: 'Rinrin0413',
+		url: 'https://d-shrine.jp/u/Rinrin0413',
+		icon: null // Could not find the guideline
 	}
 ];

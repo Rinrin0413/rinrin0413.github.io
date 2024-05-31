@@ -4,12 +4,12 @@
 
 footer {
 	height: $footer-height;
-	background-color: $text-primary;
+	background-color: $txt-primary;
 	color: $bg-primary;
 
 	::selection {
 		background: $bg-primary;
-		color: $text-primary;
+		color: $txt-primary;
 	}
 }
 
@@ -30,8 +30,8 @@ footer {
 
 @mixin btn {
 	float: right;
-	background-color: rgba($button-primary, 0.29);
-	border: 2px solid rgba($button-secondary, 0.31);
+	background-color: rgba($btn-primary, 0.29);
+	border: 2px solid rgba($btn-secondary, 0.31);
 	padding: 7px;
 	border-radius: 4px;
 	transition: 0.2s;
@@ -52,7 +52,7 @@ footer {
 	@include btn;
 }
 
-.home-icon {
+.home-icn {
 	$size: 26px;
 	width: $size;
 	height: $size;

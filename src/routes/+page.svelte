@@ -17,7 +17,7 @@
 
 	const HEAD = {
 		title: 'Home',
-		desc: 'Rinrin.rs のホームページです'
+		desc: 'Rinrin.rs のホームページです。'
 	};
 </script>
 
@@ -29,9 +29,11 @@
 	<meta property="og:title" content={HEAD.title} />
 	<meta property="og:description" content={HEAD.desc} />
 	<meta property="og:url" content={SITE_URL} />
+
+	<link rel="canonical" href={SITE_URL} />
 </svelte:head>
 
-<img src="/images/icon_13_384px.webp" alt={$_('home.icon')} id="icon" />
+<img src="/images/icon_13_384px.webp" alt={$_('home.icon')} class="icn" />
 
 <section id="about">
 	<Title text="About me" />
@@ -44,8 +46,8 @@
 <Hr />
 
 <section id="contents">
-	<Title text="Table of Contents" />
-	<p>{$_('home.tableOfContents')}</p>
+	<Title text="Contents" />
+	<p>{$_('home.contents')}</p>
 	<ContentTable />
 </section>
 
@@ -91,7 +93,7 @@
 <style lang="scss">
 	@use '/assets/stylesheets/variables/color' as *;
 
-	#icon {
+	.icn {
 		$size: 256px;
 		$shadow-color: #00000094;
 
