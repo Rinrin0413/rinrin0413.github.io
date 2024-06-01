@@ -10,6 +10,12 @@
 	import { _ } from 'svelte-i18n';
 	import { calcAge } from '$lib/util';
 
+	const L10N_PATH: string = 'profile.intro.';
+	const intro = [
+		[$_(L10N_PATH + '0'), $_(L10N_PATH + '1', { values: { age: calcAge() } }), $_(L10N_PATH + '2')],
+		[$_(L10N_PATH + '3'), $_(L10N_PATH + '4'), $_(L10N_PATH + '5'), $_(L10N_PATH + '6')]
+	];
+
 	const HEAD = {
 		title: 'Profile',
 		desc: 'Rinrin.rs のプロフィール',
@@ -34,17 +40,14 @@
 
 	<Title text="My Profile" />
 
-	<p>
-		{$_('profile.intro.0')}<br />
-		{$_('profile.intro.1', { values: { age: calcAge() } })}<br />
-		{$_('profile.intro.2')}
-	</p>
-	<p>
-		{$_('profile.intro.3')}<br />
-		{$_('profile.intro.4')}<br />
-		{$_('profile.intro.5')}<br />
-		{$_('profile.intro.6')}
-	</p>
+	{#each intro as lines}
+		<p>
+			{#each lines as line, i}
+				{#if i != 0}<br />{/if}
+				{line}
+			{/each}
+		</p>
+	{/each}
 
 	<Details />
 
