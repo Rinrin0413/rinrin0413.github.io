@@ -1,14 +1,5 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
-	import { browser } from '$app/environment';
-	import { addClassOnVisible } from '$lib/util';
-
-	onMount(fadeIn);
-	if (browser) window.addEventListener('scroll', fadeIn);
-
-	function fadeIn() {
-		addClassOnVisible(document.querySelector('#toc'), 'fade-in-up-zoom');
-	}
+	import FadeInUpAnim from '$lib/components/FadeInUpAnim.svelte';
 
 	const ITEMS = [
 		{
@@ -30,14 +21,15 @@
 	];
 </script>
 
-<ul id="toc" class:fade-in-up-zoom={false}>
-	{#each ITEMS as { id, name } (id)}
-		<li><a href="#{id}"><div>{name}</div></a></li>
-	{/each}
-</ul>
+<FadeInUpAnim>
+	<ul>
+		{#each ITEMS as { id, name } (id)}
+			<li><a href="#{id}"><div>{name}</div></a></li>
+		{/each}
+	</ul>
+</FadeInUpAnim>
 
 <style lang="scss">
-	@use '/assets/stylesheets/utils/fade_in_up_zoom';
 	@use '/assets/stylesheets/variables/mixin' as *;
 
 	ul {
@@ -46,10 +38,6 @@
 		padding: 0;
 		margin: 24px auto;
 		@include glassmorphism($blur: 10px, $border-radius: 8px);
-
-		&:not(.fade-in-up-zoom) {
-			opacity: 0;
-		}
 	}
 
 	li {
