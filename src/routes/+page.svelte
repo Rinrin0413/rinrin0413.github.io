@@ -1,11 +1,11 @@
 <script lang="ts">
 	import Title from '$lib/components/Title.svelte';
 	import Hr from '$lib/components/Hr.svelte';
-	import ContentTable from './ContentTable.svelte';
-	import Activities from './Activities.svelte';
-	import Chronicle from './Chronicle.svelte';
-	import BlogArticles from './BlogArticles.svelte';
-	import MinimalContactTable from './MinimalContactTable.svelte';
+	import ContentTable from '$lib/components/home/ContentTable.svelte';
+	import Activities from '$lib/components/home/Activities.svelte';
+	import Chronicle from '$lib/components/home/Chronicle.svelte';
+	import BlogArticles from '$lib/components/home/BlogArticles.svelte';
+	import MinimalContactTable from '$lib/components/home/MinimalContactTable.svelte';
 
 	import type { PageData } from './$types';
 	import { SITE_URL } from '$lib/variables';
