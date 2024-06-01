@@ -36,6 +36,10 @@ Default font weight is `500`.
 
 **Use the Sass mixin `bold` to make the text bold.**
 
+- [Kiwi Maru](#kiwi-maru)
+- [Source Code Pro](#source-code-pro)
+- [Kaisei Decol](#kaisei-decol)
+
 ---
 
 ## `'Kiwi Maru'`
