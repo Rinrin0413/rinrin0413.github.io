@@ -29,7 +29,7 @@
 </details>
 
 <details>
-<summary>Font weights</summary>
+<summary>Fonts</summary>
 <div>
 
 Default font weight is `500`.
