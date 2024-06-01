@@ -1,76 +1,96 @@
 <script lang="ts">
 	import { _ } from 'svelte-i18n';
+
+	const L10N_PATHS = {
+		s: 'skills.',
+		rs: 'skills.rust.',
+		wevDev: 'skills.webDev.',
+		svelte: 'skills.webDev.svelte.',
+		sass: 'skills.webDev.sass.',
+		py: 'skills.python.',
+		mc: 'skills.minecraft.',
+		linux: 'skills.linux.'
+	};
+	const skills: {
+		key: string;
+		values: (
+			| string
+			| {
+					key: string;
+					value: string[];
+			  }
+		)[];
+	}[] = [
+		{
+			key: 'Rust',
+			values: [$_(L10N_PATHS.rs + '0'), $_(L10N_PATHS.rs + '1')]
+		},
+		{
+			key: 'Git',
+			values: [$_(L10N_PATHS.s + 'git')]
+		},
+		{
+			key: 'GLSL / WGSL / HLSL',
+			values: [$_(L10N_PATHS.s + 'glslWgslHlsl')]
+		},
+		{
+			key: $_('w.webDev'),
+			values: [
+				$_(L10N_PATHS.wevDev + '0'),
+				{
+					key: 'Svelte',
+					value: [$_(L10N_PATHS.svelte + '0'), $_(L10N_PATHS.svelte + '1')]
+				},
+				{
+					key: 'HTML / CSS / JavaScript',
+					value: [$_(L10N_PATHS.wevDev + 'htmlCssJs'), $_(L10N_PATHS.wevDev + 'htmlCssJs')]
+				},
+				{
+					key: 'SASS',
+					value: [$_(L10N_PATHS.sass + '0'), $_(L10N_PATHS.sass + '1'), $_(L10N_PATHS.sass + '2')]
+				}
+			]
+		},
+		{
+			key: 'Python',
+			values: [$_(L10N_PATHS.py + '0'), $_(L10N_PATHS.py + '1')]
+		},
+		{
+			key: $_('w.minecraft'),
+			values: [$_(L10N_PATHS.mc + '0'), $_(L10N_PATHS.mc + '1'), $_(L10N_PATHS.mc + '2')]
+		},
+		{
+			key: 'Linux',
+			values: [$_(L10N_PATHS.linux + '0'), $_(L10N_PATHS.linux + '1')]
+		}
+	];
 </script>
 
 <details>
 	<summary class="a">{$_('skills.summary')}</summary>
 
 	<ul>
-		<li>
-			<span>Rust</span>
-			<ul>
-				<li>{$_('skills.rust.0')}</li>
-				<li>{$_('skills.rust.1')}</li>
-			</ul>
-		</li>
-		<li>
-			<span>Git</span>
-			<ul><li>{$_('skills.git')}</li></ul>
-		</li>
-		<li>
-			<span>GLSL / WGSL / HLSL</span>
-			<ul><li>{$_('skills.glslWgslHlsl')}</li></ul>
-		</li>
-		<li>
-			<span>{$_('w.webDev')}</span>
-			<ul>
-				<li>{$_('skills.webDev.0')}</li>
-				<li>
-					<span>Svelte</span>
-					<ul>
-						<li>{$_('skills.webDev.svelte.0')}</li>
-						<li>{$_('skills.webDev.svelte.1')}</li>
-					</ul>
-				</li>
-				<li>
-					<span>HTML / CSS / JavaScript</span>
-					<ul>
-						<li>{$_('skills.webDev.htmlCssJs')}</li>
-						<li>{$_('skills.webDev.htmlCssJs')}</li>
-					</ul>
-				</li>
-				<li>
-					<span>SASS</span>
-					<ul>
-						<li>{$_('skills.webDev.sass.0')}</li>
-						<li>{$_('skills.webDev.sass.1')}</li>
-						<li>{$_('skills.webDev.sass.2')}</li>
-					</ul>
-				</li>
-			</ul>
-		</li>
-		<li>
-			<span>Python</span>
-			<ul>
-				<li>{$_('skills.python.0')}</li>
-				<li>{$_('skills.python.1')}</li>
-			</ul>
-		</li>
-		<li>
-			<span>{$_('w.minecraft')}</span>
-			<ul>
-				<li>{$_('skills.minecraft.0')}</li>
-				<li>{$_('skills.minecraft.1')}</li>
-				<li>{$_('skills.minecraft.2')}</li>
-			</ul>
-		</li>
-		<li>
-			<span>Linux</span>
-			<ul>
-				<li>{$_('skills.linux.0')}</li>
-				<li>{$_('skills.linux.1')}</li>
-			</ul>
-		</li>
+		{#each skills as s0 (s0.key)}
+			<li>
+				<span>{s0.key}</span>
+				<ul>
+					{#each s0.values as s1}
+						{#if typeof s1 === 'string'}
+							<li>{s1}</li>
+						{:else}
+							<li>
+								<span>{s1.key}</span>
+								<ul>
+									{#each s1.value as s2}
+										<li>{s2}</li>
+									{/each}
+								</ul>
+							</li>
+						{/if}
+					{/each}
+				</ul>
+			</li>
+		{/each}
 	</ul>
 </details>
 
