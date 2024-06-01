@@ -46,7 +46,7 @@
 					value: [$_(L10N_PATHS.wevDev + 'htmlCssJs'), $_(L10N_PATHS.wevDev + 'htmlCssJs')]
 				},
 				{
-					key: 'SASS',
+					key: 'Sass',
 					value: [$_(L10N_PATHS.sass + '0'), $_(L10N_PATHS.sass + '1'), $_(L10N_PATHS.sass + '2')]
 				}
 			]
