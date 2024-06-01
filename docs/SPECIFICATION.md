@@ -14,6 +14,8 @@
 | 42 | sharing dropdown menu (`share-button.scss/ul.menu`) |
 | -1 | fixed bg (`global.css/html::before`) |
 
+---
+
 </div>
 </details>
 
@@ -24,6 +26,8 @@
 | Name | Description | Usable area |
 | --: | --- | --- |
 | `--max-vh001` | viewport max height ever * 0.01 (realtime update) | all |
+
+---
 
 </div>
 </details>
@@ -74,6 +78,8 @@ Use the Sass mixin `kaisei-decol` to apply the font.
 - Bold: `700`
 
 **Must specify the `font-weight` to `700`**
+
+---
 
 </div>
 </details>
@@ -211,6 +217,8 @@ Returns a list of articles that have a thumbnail image with the image file forma
   "20230917_test": "webp"
 }
 ```
+
+---
 
 </div>
 </details>
