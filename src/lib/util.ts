@@ -93,7 +93,7 @@ export function fmtMonth(month: number | null) {
  * **＊ This function is intended to be used in the browser environment.**
  */
 export function toggleScrollPrevention(prevent: boolean) {
-	document.getElementsByTagName('body')[0].style.overflow = prevent ? 'hidden' : 'auto';
+	document.body.style.overflow = prevent ? 'hidden' : 'auto';
 }
 
 /**
