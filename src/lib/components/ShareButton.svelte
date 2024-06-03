@@ -196,5 +196,5 @@
 {/if}
 
 <style lang="scss">
-	@use '/assets/stylesheets/blog/share-button';
+	@use '/assets/stylesheets/blog/share_button';
 </style>

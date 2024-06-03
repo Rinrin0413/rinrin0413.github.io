@@ -49,5 +49,5 @@
 >
 
 <style lang="scss">
-	@use '/assets/stylesheets/blog/article-card';
+	@use '/assets/stylesheets/blog/article_card';
 </style>

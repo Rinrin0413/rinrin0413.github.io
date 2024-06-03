@@ -126,5 +126,5 @@
 <ScrollToTop />
 
 <style lang="scss">
-	@use '/assets/stylesheets/blog/article-page';
+	@use '/assets/stylesheets/blog/article_page';
 </style>
