@@ -26,15 +26,20 @@
 		<ul class:opened={isOpened}>
 			{#each CHRONICLE as { year, events }}
 				{#each events as month, i}
-					{@const sameMonthIndexes = events.reduce((indexes, m, index) => m === month ? indexes.concat(index) : indexes, [0].slice(1))}
+					{@const sameMonthIndexes = events.reduce(
+						(indexes, m, index) => (m === month ? indexes.concat(index) : indexes),
+						[0].slice(1)
+					)}
 					<li class="row">
 						<!-- eslint-disable-next-line svelte/no-at-html-tags -->
 						<div class="year" class:no-pin={i != 0}>{@html fmtMonth(month)} {year}</div>
-						<div class="event">{$_(`chronicle.${year}.${month}${
-							1 < sameMonthIndexes.length ?
-								'.' + sameMonthIndexes.indexOf(i) :
-								''
-						}`)}</div>
+						<div class="event">
+							{$_(
+								`chronicle.${year}.${month}${
+									1 < sameMonthIndexes.length ? '.' + sameMonthIndexes.indexOf(i) : ''
+								}`
+							)}
+						</div>
 					</li>
 				{/each}
 			{/each}
