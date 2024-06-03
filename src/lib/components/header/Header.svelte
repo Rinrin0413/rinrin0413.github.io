@@ -54,11 +54,16 @@
 		}
 	];
 
+	/** **＊ This function is intended to be used in the browser environment.** */
 	function updateScroll() {
 		isAtTop = window.scrollY <= 0;
 	}
 
-	/** Toggles drawer menu open/close. */
+	/**
+	 * Toggles drawer menu open/close.
+	 *
+	 * **＊ This function is intended to be used in the browser environment.**
+	 */
 	function toggleDrawerMenu(open: boolean) {
 		isAfterDrawerMenuClosed = isDrawerMenuOpened;
 		isDrawerMenuOpened = open;

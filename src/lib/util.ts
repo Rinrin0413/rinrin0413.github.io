@@ -1,6 +1,8 @@
 /**
  * Adds a specified class to specified elements when they are scrolled into view.
  *
+ * **＊ This function is intended to be used in the browser environment.**
+ *
  * # Example:
  *
  * ```svelte
@@ -43,6 +45,7 @@ export function addClassOnVisible(
 	}
 }
 
+/** **＊ This function is intended to be used in the browser environment.** */
 function addClassOnVisible_(element: Element | HTMLElement, className: string) {
 	if (element.getBoundingClientRect().top < window.innerHeight) {
 		element.classList.add(className);
@@ -84,7 +87,11 @@ export function fmtMonth(month: number | null) {
 	}
 }
 
-/** Toggles body scroll prevention. */
+/**
+ * Toggles body scroll prevention.
+ *
+ * **＊ This function is intended to be used in the browser environment.**
+ */
 export function toggleScrollPrevention(prevent: boolean) {
 	document.getElementsByTagName('body')[0].style.overflow = prevent ? 'hidden' : 'auto';
 }

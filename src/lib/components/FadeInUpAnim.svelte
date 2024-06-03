@@ -8,6 +8,7 @@
 	onMount(fadeIn);
 	if (browser) window.addEventListener('scroll', fadeIn);
 
+	/** **＊ This function is intended to be used in the browser environment.** */
 	function fadeIn() {
 		addClassOnVisible(container, 'fade-in');
 	}

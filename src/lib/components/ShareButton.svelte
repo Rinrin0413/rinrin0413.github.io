@@ -36,6 +36,7 @@
 		isMenuOpened = !isMenuOpened;
 	}
 
+	/** **＊ This function is intended to be used in the browser environment.** */
 	function shareWithWebShareApi() {
 		navigator.share({
 			url: href,
@@ -44,6 +45,7 @@
 		});
 	}
 
+	/** **＊ This function is intended to be used in the browser environment.** */
 	function copyToClipboard() {
 		navigator.clipboard
 			.writeText(href)
@@ -52,26 +54,31 @@
 			.finally(() => (isMenuOpened = false));
 	}
 
+	/** **＊ This function is intended to be used in the browser environment.** */
 	function openLink(url: string) {
 		window.open(url, '_blank', 'width=628,height=424');
 	}
 
+	/** **＊ This function is intended to be used in the browser environment.** */
 	function shareOnTwitter() {
 		const text = encodeURIComponent(title.replace('Rinrin.rs', 'Rinrin​.rs') + '\n' + href);
 		openLink('https://twitter.com/intent/tweet?text=' + text);
 	}
 
+	/** **＊ This function is intended to be used in the browser environment.** */
 	function shareOnMisskey() {
 		const text = encodeURIComponent(title);
 		const url = encodeURIComponent(href);
 		openLink(`https://misskey-hub.net/share/?text=${text}&url=${url}`);
 	}
 
+	/** **＊ This function is intended to be used in the browser environment.** */
 	function shareWithDomain(domain: string) {
 		const text = encodeURIComponent(title + '\n' + href);
 		openLink(`https://${domain}/share?text=${text}`);
 	}
 
+	/** **＊ This function is intended to be used in the browser environment.** */
 	function shareOnMastodon() {
 		shareWithDomain(mastodonDomain);
 	}
