@@ -7,8 +7,6 @@ function onWarn(warning, handler) {
 	const IGNORED_WARNS = ['a11y-no-noninteractive-tabindex'];
 	if (IGNORED_WARNS.includes(warning.code)) return;
 	handler(warning);
-
-	// console.log(warning.code);
 }
 
 /** @type {import('@sveltejs/kit').Config} */
