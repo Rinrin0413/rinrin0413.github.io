@@ -7,12 +7,9 @@
 	let wallpaperPath: string;
 
 	onMount(() => {
-		const htmlElms = document.getElementsByTagName('html');
-		if (0 < htmlElms.length) {
-			const bgImg = getComputedStyle(htmlElms[0], '::before').backgroundImage;
-			// Extract the URL from the CSS function `url()`.
-			wallpaperPath = bgImg.replace(/.*url\("(.*)"\).*/, '$1');
-		}
+		const bgImg = getComputedStyle(document.documentElement, '::before').backgroundImage;
+		// Extract the URL from the CSS function `url()`.
+		wallpaperPath = bgImg.replace(/.*url\("(.*)"\).*/, '$1');
 	});
 </script>
 
