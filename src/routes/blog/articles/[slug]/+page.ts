@@ -14,7 +14,7 @@ export const load: PageLoad = async ({
 	const { default: component, metadata: frontmatter } = await import(
 		`../../../../../articles/${params.slug}.md`
 	).catch(err);
-	if (!frontmatter.published) err();
+	if (!(frontmatter.published as boolean)) err();
 
 	const thumbnailImgFmt = await (await fetch('/api/articles/thumbnail-imgs'))
 		.json()

@@ -22,7 +22,7 @@
 		window.addEventListener('resize', updateVw);
 	}
 
-	$: if (node) {
+	$: if (node != undefined) {
 		if (!initWidth) {
 			initWidth = node.offsetWidth;
 		}

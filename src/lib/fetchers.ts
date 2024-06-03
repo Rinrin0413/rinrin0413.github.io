@@ -25,20 +25,20 @@ export async function fetchArticles({ limit, tags, isOnlyIndexed }: fetchArticle
 			}
 
 		// Filter by indexed.
-		if (isOnlyIndexed && !a.indexed) return false;
+		if (isOnlyIndexed != undefined && isOnlyIndexed && !a.indexed) return false;
 
 		return true;
 	});
 
 	// Sort by newest.
 	articles.sort((a, b) => {
-		if (a.slug && b.slug) return calcOrder(b.slug) - calcOrder(a.slug);
+		if (a.slug !== undefined && b.slug !== undefined) return calcOrder(b.slug) - calcOrder(a.slug);
 		// unreachable
 		return 0;
 	});
 
 	// Limit the number of articles.
-	if (limit) articles.splice(limit);
+	if (limit != undefined && limit != 0) articles.splice(limit);
 
 	return articles;
 }
