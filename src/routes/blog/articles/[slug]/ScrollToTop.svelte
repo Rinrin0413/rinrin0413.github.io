@@ -10,16 +10,12 @@
 		willScrollUp = scrollY < lastScrollPos;
 		lastScrollPos = scrollY;
 	}
-
-	function scrollToTop() {
-		document.body.scrollIntoView();
-	}
 </script>
 
 <svelte:window bind:scrollY />
 
 {#if 800 < scrollY && willScrollUp}
-	<button on:click={scrollToTop} transition:fly={{ x: 86, duration: 500 }}>
+	<button on:click={() => document.body.scrollIntoView()} transition:fly={{ x: 86, duration: 500 }}>
 		<!--
 			Bootstrap Icons - Arrow up circle fill
 			https://icons.getbootstrap.com/icons/arrow-up-circle-fill
