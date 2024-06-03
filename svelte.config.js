@@ -25,7 +25,32 @@ const config = {
 	],
 
 	kit: {
-		adapter: adapter(),
+		adapter: adapter({ routes: { exclude: [
+			// ▼ Build Artifacts ▼
+			"<build>",
+
+			// ▼ Static Assets ▼
+			// "<files>",
+			"/.well-known/*",
+			"/favicon.ico",
+			"/images/*",
+			"/manifest.json",
+			"/robots.txt",
+			"/scripts/*",
+			"/stylesheets/*",
+
+			// ▼ Pre-rendered Pages ▼
+			// "<prerendered>",
+			"/api/articles/tags",
+			"/api/articles/thumbnail-imgs",
+			"/creations",
+			"/feed",
+			"/profile",
+			"/projects",
+			"/sitemap.xml",
+			"/social",
+			"/tools"
+		]}}),
 		files: {
 			assets: 'assets'
 		}
