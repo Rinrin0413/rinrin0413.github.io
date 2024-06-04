@@ -1,7 +1,7 @@
 <hr />
 
 <style lang="scss">
-	@use '/assets/stylesheets/variables/color' as *;
+	@use '/static/stylesheets/variables/color' as *;
 
 	hr {
 		height: 2px;

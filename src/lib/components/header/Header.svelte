@@ -125,5 +125,5 @@
 </header>
 
 <style lang="scss">
-	@use '/assets/stylesheets/header/header';
+	@use '/static/stylesheets/header/header';
 </style>

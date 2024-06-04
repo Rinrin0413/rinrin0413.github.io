@@ -28,7 +28,7 @@
 </button>
 
 <style lang="scss">
-	@use '/assets/stylesheets/header/button';
+	@use '/static/stylesheets/header/button';
 
 	button {
 		display: inline-block;

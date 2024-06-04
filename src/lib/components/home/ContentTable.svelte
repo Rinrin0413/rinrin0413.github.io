@@ -30,7 +30,7 @@
 </FadeInUpAnim>
 
 <style lang="scss">
-	@use '/assets/stylesheets/variables/mixin' as *;
+	@use '/static/stylesheets/variables/mixin' as *;
 
 	ul {
 		list-style: none;

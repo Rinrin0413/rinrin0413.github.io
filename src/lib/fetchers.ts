@@ -92,7 +92,7 @@ export async function fetchTags() {
 
 /** Returns the file format of each article's thumbnail image (articles without thumbnail images will not be listed). */
 export async function fetchThumbnailImgFmt() {
-	const thumbnailImgs = Object.keys(import.meta.glob(`/assets/images/blog/thumbnails/*.*`)).map(
+	const thumbnailImgs = Object.keys(import.meta.glob(`/static/images/blog/thumbnails/*.*`)).map(
 		// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
 		(path) => path.split('/').pop()!
 	);

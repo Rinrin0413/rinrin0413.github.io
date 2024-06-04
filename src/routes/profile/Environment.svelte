@@ -46,8 +46,8 @@
 </p>
 
 <style lang="scss">
-	@use '/assets/stylesheets/variables/color' as *;
-	@use '/assets/stylesheets/variables/mixin' as *;
+	@use '/static/stylesheets/variables/color' as *;
+	@use '/static/stylesheets/variables/mixin' as *;
 
 	h3,
 	div p {

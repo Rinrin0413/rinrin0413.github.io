@@ -16,9 +16,9 @@
 {/if}
 
 <style lang="scss">
-	@use '/assets/stylesheets/variables/mixin' as *;
+	@use '/static/stylesheets/variables/mixin' as *;
 
-	@use '/assets/stylesheets/blog/tag';
+	@use '/static/stylesheets/blog/tag';
 
 	div {
 		display: inline-block;

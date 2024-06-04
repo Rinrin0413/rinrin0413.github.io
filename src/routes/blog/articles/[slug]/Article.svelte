@@ -7,5 +7,5 @@
 <article class="article-body"><div><svelte:component this={body} /></div></article>
 
 <style lang="scss" global>
-	@use '/assets/stylesheets/blog/article_body';
+	@use '/static/stylesheets/blog/article_body';
 </style>

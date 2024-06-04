@@ -55,8 +55,8 @@
 </section>
 
 <style lang="scss">
-	@use '/assets/stylesheets/social_table';
-	@use '/assets/stylesheets/variables/mixin' as *;
+	@use '/static/stylesheets/social_table';
+	@use '/static/stylesheets/variables/mixin' as *;
 
 	.email:after {
 		content: ': ';

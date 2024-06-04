@@ -48,5 +48,5 @@
 </FadeInUpAnim>
 
 <style lang="scss">
-	@use '/assets/stylesheets/chronicle';
+	@use '/static/stylesheets/chronicle';
 </style>

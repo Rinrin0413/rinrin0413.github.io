@@ -46,5 +46,5 @@
 </footer>
 
 <style lang="scss">
-	@use '/assets/stylesheets/footer';
+	@use '/static/stylesheets/footer';
 </style>

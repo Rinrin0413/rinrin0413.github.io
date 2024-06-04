@@ -21,7 +21,7 @@
 <img src="/images/404.webp" alt="404 Not like this" />
 
 <style lang="scss">
-	@use '/assets/stylesheets/variables/mixin' as *;
+	@use '/static/stylesheets/variables/mixin' as *;
 
 	h1 {
 		@include source-code-pro;

@@ -50,10 +50,7 @@ const config = {
 	],
 
 	kit: {
-		adapter: adapter({ routes: { exclude: CLOUDFLARE_ROUTES_EXCLUDE } }),
-		files: {
-			assets: 'assets'
-		}
+		adapter: adapter({ routes: { exclude: CLOUDFLARE_ROUTES_EXCLUDE } })
 	},
 
 	extensions: ['.svelte', '.md'],

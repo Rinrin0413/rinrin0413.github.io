@@ -61,5 +61,5 @@
 </table>
 
 <style lang="scss">
-	@use '/assets/stylesheets/social_table';
+	@use '/static/stylesheets/social_table';
 </style>
