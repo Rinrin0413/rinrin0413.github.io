@@ -5,7 +5,7 @@
 
 	import { onMount } from 'svelte';
 	import { browser } from '$app/environment';
-	import { toggleScrollPrevention } from '$lib/util';
+	import { toggleScrollPrevention } from '$lib/scripts/util';
 	import { blur } from 'svelte/transition';
 	import { page } from '$app/stores';
 	import { _ } from 'svelte-i18n';

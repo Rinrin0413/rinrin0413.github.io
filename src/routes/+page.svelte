@@ -8,9 +8,9 @@
 	import MinimalContactTable from '$lib/components/home/MinimalContactTable.svelte';
 
 	import type { PageData } from './$types';
-	import { SITE_URL } from '$lib/variables';
+	import { SITE_URL } from '$lib/scripts/variables';
 	import { _ } from 'svelte-i18n';
-	import { calcAge } from '$lib/util';
+	import { calcAge } from '$lib/scripts/util';
 
 	export let data: PageData;
 	const articles = data.articles;

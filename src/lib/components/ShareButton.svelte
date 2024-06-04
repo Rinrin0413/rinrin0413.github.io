@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { SITE_NAME } from '$lib/variables';
+	import { SITE_NAME } from '$lib/scripts/variables';
 	import { browser } from '$app/environment';
 	import { _ } from 'svelte-i18n';
 	import { fly } from 'svelte/transition';
-	import { faviconUrl } from '$lib/util';
+	import { faviconUrl } from '$lib/scripts/util';
 
 	export let href: string;
 	export let title: string;

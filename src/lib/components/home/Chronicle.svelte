@@ -1,8 +1,8 @@
 <script lang="ts">
 	import FadeInUpAnim from '$lib/components/FadeInUpAnim.svelte';
 
-	import { CHRONICLE } from '$lib/data/chronicle';
-	import { fmtMonth } from '$lib/util';
+	import { CHRONICLE } from '$lib/scripts/data/chronicle';
+	import { fmtMonth } from '$lib/scripts/util';
 	import { _ } from 'svelte-i18n';
 
 	let isOpened = false;

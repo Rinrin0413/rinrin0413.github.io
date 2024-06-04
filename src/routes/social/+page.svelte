@@ -3,9 +3,9 @@
 	import Space from '$lib/components/Space.svelte';
 	import EaButton from '$lib/components/EaButton.svelte';
 
-	import { SITE_URL } from '$lib/variables';
+	import { SITE_URL } from '$lib/scripts/variables';
 	import { _ } from 'svelte-i18n';
-	import { SOCIALS } from '$lib/data/social';
+	import { SOCIALS } from '$lib/scripts/data/social';
 
 	const HEAD = {
 		title: 'Social',

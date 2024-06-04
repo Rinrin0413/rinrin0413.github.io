@@ -6,9 +6,9 @@
 	import Skills from './Skills.svelte';
 	import Environment from './Environment.svelte';
 
-	import { SITE_URL } from '$lib/variables';
+	import { SITE_URL } from '$lib/scripts/variables';
 	import { _ } from 'svelte-i18n';
-	import { calcAge } from '$lib/util';
+	import { calcAge } from '$lib/scripts/util';
 
 	const L10N_PATH: string = 'profile.intro.';
 	const intro = [

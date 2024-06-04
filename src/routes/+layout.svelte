@@ -7,7 +7,7 @@
 	import { navigating } from '$app/stores';
 	import { page } from '$app/stores';
 	import { browser } from '$app/environment';
-	import { BLOG_NAME, COPYRIGHT, SITE_NAME, SITE_URL, CONTACT_EMAIL_ADDRESS } from '$lib/variables';
+	import { BLOG_NAME, COPYRIGHT, SITE_NAME, SITE_URL, CONTACT_EMAIL_ADDRESS } from '$lib/scripts/variables';
 
 	$: pathname = $page.url.pathname;
 

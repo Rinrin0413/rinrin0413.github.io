@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { _ } from 'svelte-i18n';
-	import { calcAge } from '$lib/util';
+	import { calcAge } from '$lib/scripts/util';
 
 	const details = [
 		{ key: $_('w.name'), value: 'Rinrin.rs' },

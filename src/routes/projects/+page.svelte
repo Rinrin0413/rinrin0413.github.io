@@ -2,7 +2,7 @@
 	import Title from '$lib/components/Title.svelte';
 	import Space from '$lib/components/Space.svelte';
 
-	import { SITE_URL } from '$lib/variables';
+	import { SITE_URL } from '$lib/scripts/variables';
 	//import { _ } from 'svelte-i18n';
 
 	const HEAD = {

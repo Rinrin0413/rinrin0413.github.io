@@ -7,11 +7,11 @@
 	import ArticleCard from '$lib/components/ArticleCard.svelte';
 
 	import type { PageData } from './$types';
-	import { SITE_URL } from '$lib/variables';
+	import { SITE_URL } from '$lib/scripts/variables';
 	import { page } from '$app/stores';
 	import { _ } from 'svelte-i18n';
 	import { fly } from 'svelte/transition';
-	import { elasticBackOut } from '$lib/easing';
+	import { elasticBackOut } from '$lib/scripts/easing';
 	import { expoIn, expoOut } from 'svelte/easing';
 	import { flip } from 'svelte/animate';
 

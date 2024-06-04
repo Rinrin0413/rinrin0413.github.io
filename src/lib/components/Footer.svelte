@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { COPYRIGHT } from '$lib/variables';
+	import { COPYRIGHT } from '$lib/scripts/variables';
 	import FeedButton from './FeedButton.svelte';
 	import { _ } from 'svelte-i18n';
 
