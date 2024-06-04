@@ -188,5 +188,6 @@
 		"toot": "トゥート",
 		"note": "ノート"
 	},
-	"article.backToIndex": "記事一覧に戻る"
+	"article.backToIndex": "記事一覧に戻る",
+	"acknowledgments.desc": "このサイトの開発で利用したすべてのOSSやサービスに感謝"
 }

@@ -1,0 +1,87 @@
+<script lang="ts">
+	import Space from '$lib/components/Space.svelte';
+	import Title from '$lib/components/Title.svelte';
+
+	import { SITE_URL } from '$lib/scripts/variables';
+	import { _ } from 'svelte-i18n';
+	import { ACKNOWLEDGEMENTS } from '$lib/scripts/data/acknowledgments';
+
+	const HEAD = {
+		title: 'Acknowledgments',
+		desc: 'このサイトの開発で利用したすべてのOSSやサービスに感謝。',
+		url: SITE_URL + '/acknowledgments',
+	};
+</script>
+
+<svelte:head>
+	<title>Rinrin.rs | {HEAD.title}</title>
+	<meta name="title" content="Rinrin.rs | {HEAD.title}" />
+	<meta name="description" content={HEAD.desc} />
+
+	<meta property="og:title" content={HEAD.title} />
+	<meta property="og:description" content={HEAD.desc} />
+	<meta property="og:url" content={HEAD.url} />
+
+	<link rel="canonical" href={HEAD.url} />
+</svelte:head>
+
+<section>
+	<Space height="64px" />
+
+	<Title text="Acknowledgments" />
+	<p>{$_('acknowledgments.desc')}</p>
+
+	<Space height="10px" />
+
+	<table>
+		{#each ACKNOWLEDGEMENTS as { name, url, license, licenseUrl }, i}
+			<tr>
+				<td><a href={url} target="_blank" rel="noopener noreferrer">{name}</a></td>
+				<td>
+					{#if license !== undefined}
+						{#if licenseUrl === undefined}
+							{license}
+						{:else}
+							<a href={licenseUrl} target="_blank" rel="noopener noreferrer">
+								{license}
+							</a>
+						{/if}
+					{/if}
+				</td>
+			</tr>
+		{/each}
+	</table>
+</section>
+
+<style lang="scss">
+	@use '$lib/stylesheets/variables/mixin' as *;
+
+	table {
+		margin: 0 auto;
+		padding: 8px 18px;
+		@include glassmorphism;
+	}
+
+	td {
+		text-align: left;
+	}
+
+	a {
+		font-size: 20px;
+		@include source-code-pro;
+	}
+
+	@include sp {
+		table {
+			padding: 10px 5px;
+		}
+
+		td {
+			padding: 4px 0;
+		}
+
+		a {
+			font-size: 14px;
+		}
+	}
+</style>

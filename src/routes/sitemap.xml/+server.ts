@@ -61,5 +61,10 @@ async function body() {
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
+    <url>
+        <loc>${SITE_URL}/acknowledgments</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.4</priority>
+    </url>
 </urlset>`;
 }

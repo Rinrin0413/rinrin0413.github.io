@@ -195,5 +195,6 @@
 		"toot": "Toot",
 		"note": "Note"
 	},
-	"article.backToIndex": "Back to index"
+	"article.backToIndex": "Back to index",
+	"acknowledgments.desc": "Thank you for all OSS and services that used in the development of this homepage."
 }
