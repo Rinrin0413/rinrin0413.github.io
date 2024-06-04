@@ -11,16 +11,7 @@
 		mc: 'skills.minecraft.',
 		linux: 'skills.linux.'
 	};
-	const skills: {
-		key: string;
-		values: (
-			| string
-			| {
-					key: string;
-					value: string[];
-			  }
-		)[];
-	}[] = [
+	$: skills = [
 		{
 			key: 'Rust',
 			values: [$_(L10N_PATHS.rs + '0'), $_(L10N_PATHS.rs + '1')]

@@ -2,7 +2,7 @@
 	import { _ } from 'svelte-i18n';
 	import { calcAge } from '$lib/scripts/util';
 
-	const details = [
+	$: details = [
 		{ key: $_('w.name'), value: 'Rinrin.rs' },
 		{ key: $_('w.age'), value: `${calcAge()}${$_('w.yearsOld')}` },
 		{ key: $_('w.birthday'), value: $_('profile.birthday') },

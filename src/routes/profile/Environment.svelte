@@ -3,7 +3,7 @@
 
 	import { _ } from 'svelte-i18n';
 
-	const envs = [
+	$: envs = [
 		{
 			type: $_('w.hardware'),
 			items: [
