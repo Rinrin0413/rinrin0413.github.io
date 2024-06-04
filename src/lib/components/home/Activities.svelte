@@ -80,5 +80,5 @@
 </div>
 
 <style lang="scss">
-	@use '/static/stylesheets/activities';
+	@use '$lib/stylesheets/activities';
 </style>

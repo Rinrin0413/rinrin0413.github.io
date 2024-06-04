@@ -125,5 +125,5 @@
 </header>
 
 <style lang="scss">
-	@use '/static/stylesheets/header/header';
+	@use '$lib/stylesheets/header/header';
 </style>

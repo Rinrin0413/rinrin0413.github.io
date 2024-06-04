@@ -27,9 +27,9 @@
 </li>
 
 <style lang="scss">
-	@use '/static/stylesheets/variables/mixin' as *;
+	@use '$lib/stylesheets/variables/mixin' as *;
 
-	@use '/static/stylesheets/blog/tag';
+	@use '$lib/stylesheets/blog/tag';
 
 	li:not(.enabled) {
 		$disabled-opacity: 0.53;

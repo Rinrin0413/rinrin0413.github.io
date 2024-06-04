@@ -86,6 +86,6 @@
 <div id="bg" />
 
 <style lang="scss" global>
-	@use '/static/stylesheets/layout';
-	@use '/static/stylesheets/style';
+	@use '$lib/stylesheets/layout';
+	@use '$lib/stylesheets/style';
 </style>

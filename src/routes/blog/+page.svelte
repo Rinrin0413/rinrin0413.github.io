@@ -73,5 +73,5 @@
 </section>
 
 <style lang="scss">
-	@use '/static/stylesheets/blog/blog';
+	@use '$lib/stylesheets/blog/blog';
 </style>

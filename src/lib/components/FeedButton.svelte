@@ -23,7 +23,7 @@
 </a>
 
 <style lang="scss">
-	@use '/static/stylesheets/variables/color' as *;
+	@use '$lib/stylesheets/variables/color' as *;
 
 	a {
 		display: inline-block;

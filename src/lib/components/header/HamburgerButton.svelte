@@ -38,9 +38,9 @@
 </button>
 
 <style lang="scss">
-	@use '/static/stylesheets/header/button';
+	@use '$lib/stylesheets/header/button';
 
-	@use '/static/stylesheets/variables/mixin' as *;
+	@use '$lib/stylesheets/variables/mixin' as *;
 
 	button {
 		display: none;

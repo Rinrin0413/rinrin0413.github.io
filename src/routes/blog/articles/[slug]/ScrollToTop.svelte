@@ -39,8 +39,8 @@
 {/if}
 
 <style lang="scss">
-	@use '/static/stylesheets/variables/color' as *;
-	@use '/static/stylesheets/variables/mixin' as *;
+	@use '$lib/stylesheets/variables/color' as *;
+	@use '$lib/stylesheets/variables/mixin' as *;
 
 	button {
 		position: fixed;

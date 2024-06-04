@@ -8,7 +8,7 @@
 <a href="mailto:{CONTACT_EMAIL_ADDRESS}" class:mini>{CONTACT_EMAIL_ADDRESS}</a>
 
 <style lang="scss">
-	@use '/static/stylesheets/variables/mixin' as *;
+	@use '$lib/stylesheets/variables/mixin' as *;
 
 	.mini {
 		@include sp {
