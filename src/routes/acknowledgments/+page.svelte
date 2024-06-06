@@ -34,7 +34,7 @@
 	<Space height="10px" />
 
 	<table>
-		{#each ACKNOWLEDGEMENTS as { name, url, license, licenseUrl }, i}
+		{#each ACKNOWLEDGEMENTS as { name, url, license, licenseUrl }}
 			<tr>
 				<td><a href={url} target="_blank" rel="noopener noreferrer">{name}</a></td>
 				<td>
