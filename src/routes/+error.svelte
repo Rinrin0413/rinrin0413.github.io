@@ -32,12 +32,16 @@
 
 	p {
 		@include kaisei-decol;
-		font-size: 15px;
+		font-size: 18px;
+
+		@include sp {
+			font-size: 16px;
+		}
 	}
 
 	img {
 		display: block;
-		margin: 0 auto;
+		margin: 32px auto;
 		width: 100%;
 		max-width: 640px;
 
