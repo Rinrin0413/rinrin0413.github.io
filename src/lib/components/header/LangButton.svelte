@@ -4,11 +4,11 @@
 
 <button
 	on:click={() => {
-		if ($locale == 'ja') {
+		if (typeof $locale === 'string' && $locale.startsWith('en')) {
+			locale.set('ja');
+		} else {
 			locale.set('en');
 			alert('Some parts may not be translated.');
-		} else {
-			locale.set('ja');
 		}
 	}}
 >

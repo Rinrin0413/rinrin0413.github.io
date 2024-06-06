@@ -11,6 +11,8 @@
 		wallpaperPath = bgImg.replace(/.*url\("(.*)"\).*/, '$1');
 	});
 
+	$: isLocaleEng = typeof $locale === 'string' && $locale.startsWith('en');
+
 	const SITEMAP = [
 		{ name: 'Home', path: '/' },
 		{ name: 'Profile', path: '/profile' },
@@ -49,13 +51,13 @@
 					</ul>
 				</nav>
 				<div class="lang">
-					{#if $locale == 'ja'}
-						<button disabled>日本語</button>
-					{:else}
+					{#if isLocaleEng}
 						<button on:click={() => locale.set('ja')} class="active">日本語</button>
+					{:else}
+						<button disabled>日本語</button>
 					{/if}
 					|
-					{#if $locale == 'en'}
+					{#if isLocaleEng}
 						<button disabled>English</button>
 					{:else}
 						<button
