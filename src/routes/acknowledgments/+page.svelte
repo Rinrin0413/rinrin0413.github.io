@@ -9,7 +9,7 @@
 	const HEAD = {
 		title: 'Acknowledgments',
 		desc: 'このサイトの開発で利用したすべてのOSSやサービスに感謝。',
-		url: SITE_URL + '/acknowledgments',
+		url: SITE_URL + '/acknowledgments'
 	};
 </script>
 

@@ -10,10 +10,10 @@ const LICENSES = {
 };
 
 export const ACKNOWLEDGEMENTS: {
-    name: string;
-    url: string;
-    license?: string;
-    licenseUrl?: string;
+	name: string;
+	url: string;
+	license?: string;
+	licenseUrl?: string;
 }[] = [
 	{
 		name: 'Svelte',
