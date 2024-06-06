@@ -3,6 +3,7 @@
 	import Space from '$lib/components/Space.svelte';
 	import Details from './Details.svelte';
 	import Hr from '$lib/components/Hr.svelte';
+	import Chronicle from '$lib/components/home/Chronicle.svelte';
 	import Skills from './Skills.svelte';
 	import Environment from './Environment.svelte';
 
@@ -50,6 +51,14 @@
 	{/each}
 
 	<Details />
+</section>
+
+<Hr />
+
+<section id="chronicle">
+	<Title text="Chronicle" />
+	<p>{$_('home.chronicle')}</p>
+	<Chronicle />
 </section>
 
 <Hr />
