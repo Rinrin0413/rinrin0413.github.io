@@ -44,6 +44,7 @@
 						{/if}
 						<li>
 							<a href="/feed">{$_('w.rssAtomFeed')}</a>
+						</li>
 						<li><a href="/sitemap.xml">sitemap.xml</a></li>
 					</ul>
 				</nav>
@@ -57,10 +58,13 @@
 					{#if $locale == 'en'}
 						<button disabled>English</button>
 					{:else}
-						<button on:click={() => {
-							locale.set('en');
-							alert('Some parts may not be translated.');
-						}} class="active">English</button>
+						<button
+							on:click={() => {
+								locale.set('en');
+								alert('Some parts may not be translated.');
+							}}
+							class="active">English</button
+						>
 					{/if}
 				</div>
 			</div>
