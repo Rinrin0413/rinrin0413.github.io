@@ -22,7 +22,7 @@
 
 	let isMenuOpened = false;
 
-	const ITEM_NAMES = {
+	$: ITEM_NAMES = {
 		copy: $_('blog.copyUrl'),
 		post: $_('blog.post'),
 		toot: $_('blog.toot'),
