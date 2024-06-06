@@ -22,11 +22,14 @@
 		"articleThumbnailImage": "Article thumbnail image",
 		"noImage": "No image",
 		"backImage": "Background image",
-		"atomFeed": "Atom feed",
+		"rssAtomFeed": "RSS / Atom feed",
 		"share": "Share",
 		"domain": "Domain",
 		"webShareApi": "Web Share API",
-		"jaLang": "Japanese lang."
+		"jaLang": "Japanese lang.",
+		"sitemap": "Site Map",
+		"otherLinks": "Other links",
+		"bgWallpaper": "Background wallpaper"
 	},
 	"home": {
 		"icon": "Rinrin.rs' avatar",

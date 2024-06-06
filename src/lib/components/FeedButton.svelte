@@ -5,7 +5,7 @@
 <a
 	href="/feed"
 	class="no-after-icn"
-	title={$_('w.atomFeed')}
+	title={$_('w.rssAtomFeed')}
 	target="_blank"
 	type="application/atom+xml"
 >

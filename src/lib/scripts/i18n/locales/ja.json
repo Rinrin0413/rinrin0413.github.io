@@ -22,11 +22,14 @@
 		"articleThumbnailImage": "記事のサムネイル画像",
 		"noImage": "画像無し",
 		"backImage": "バックグラウンド画像",
-		"atomFeed": "Atomフィード",
+		"rssAtomFeed": "RSS / Atom フィード",
 		"share": "共有",
 		"domain": "ドメイン",
 		"webShareApi": "ウェブ共有 API",
-		"jaLang": "日本語"
+		"jaLang": "日本語",
+		"sitemap": "サイトマップ",
+		"otherLinks": "その他リンク",
+		"bgWallpaper": "今季のビックリ背景壁紙"
 	},
 	"home": {
 		"icon": "Rinrin.rs のアイコン",

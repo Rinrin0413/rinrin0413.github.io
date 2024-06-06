@@ -3,7 +3,7 @@
 @use './variables/mixin' as *;
 
 footer {
-	height: $footer-height;
+	min-height: $min-footer-height;
 	background-color: $txt-primary;
 	color: $bg-primary;
 
@@ -13,66 +13,78 @@ footer {
 	}
 }
 
-.copyright {
-	font-size: 18px;
-	padding: 32px 0;
+.content {
+	display: inline-block;
+	margin: 0 auto;
+	margin-bottom: 16px;
+}
+
+p {
+	display: inline-block;
+	margin: 0 0;
+	margin-top: 20px;
+}
+
+.links {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+nav {
+	margin: 0 14px;
+	margin-bottom: 18px;
+}
+
+h1 {
+	@include kaisei-decol;
+	font-size: 21px;
 	margin: 0;
-
-	@include sp {
-		font-size: 14px;
-	}
+	margin-top: 18px;
+	margin-bottom: 6px;
+	opacity: 0.75;
+	text-decoration: underline 3px;
+	text-decoration-skip-ink: none;
 }
 
-.feed-btn {
-	float: left;
-	margin-left: 24px;
+ul {
+	margin: 0;
+	padding-left: 26px;
+	text-align: left;
 }
 
-@mixin btn {
-	float: right;
-	background-color: rgba($btn-primary, 0.29);
-	border: 2px solid rgba($btn-secondary, 0.31);
-	padding: 7px;
-	border-radius: 4px;
-	transition: 0.2s;
+li {
+	list-style-type: disc;
+	line-height: 1.6;
+}
+
+a {
+	font-size: 17px;
+	color: #f5b3b3;
+	text-decoration-color: rgba($bg-primary, 0.6);
+	transition: 0.1s;
 
 	&:hover {
-		transform: translateY(-4px);
+		text-decoration-color: inherit;
 	}
 }
 
-.go-to-home-btn {
-	margin-top: -22px;
-	margin-right: 26px;
-	text-decoration: none;
-	color: $bg-primary;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	@include btn;
+.lang {
+	margin: 10px 0;
 }
 
-.home-icn {
-	$size: 26px;
-	width: $size;
-	height: $size;
-}
+button {
+	background: none;
+	border: none;
+	cursor: pointer;
+	font-family: inherit;
+	color: inherit;
+	font-size: 18px;
+	text-decoration: underline;
 
-.home-text {
-	font-size: 14px;
-}
-
-.btn-to-wallpaper {
-	font-size: 15px;
-	margin-right: 16px;
-	@include btn;
-
-	span,
-	&::after {
-		filter: brightness(3.4);
-	}
-
-	@include sp {
-		margin-right: 10px;
+	&[disabled] {
+		cursor: initial;
+		text-decoration: none;
+		opacity: 0.5;
 	}
 }
