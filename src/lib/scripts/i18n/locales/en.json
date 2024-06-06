@@ -33,7 +33,7 @@
 	},
 	"home": {
 		"icon": "Rinrin.rs' avatar",
-		"greeting": "Hi there!!!<br />I'm a {age}year-old Japanese student.",
+		"greeting": ["Hi there!!!", "I'm a {age}year-old Japanese student."],
 		"contents": " ",
 		"whatIDo": "what i usually do",
 		"chronicle": "my history",
