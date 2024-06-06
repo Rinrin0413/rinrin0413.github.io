@@ -49,9 +49,10 @@
 	"footer": {
 		"bgWallpaper": "Wallpaper"
 	},
-	"error": {
-		"pageNotFound": "404 not like this!<br />this page does not exist :("
-	},
+	"error": { "pageNotFound": [
+		"404 not like this!",
+		"this page does not exist :("
+	] },
 	"activities": {
 		"programming": {
 			"desc": "I started around the 13year-old. I do not learn very broadly.",
