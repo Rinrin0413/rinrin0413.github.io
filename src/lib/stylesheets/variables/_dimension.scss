@@ -1,5 +1,6 @@
 $header-height: 74px;
 
-$footer-height: 154px;
+// ceil(331.3)
+$min-footer-height: 332px;
 
 $max-vh: var(--max-vh001, 1vh);
