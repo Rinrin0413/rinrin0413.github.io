@@ -50,26 +50,34 @@
 	{/each}
 
 	<Details />
+</section>
 
-	<Hr />
-	<Space height="28px" />
+<Hr />
 
-	<Title text="Hobby" id="hobby" />
-
+<section id="hobby">
+	<Title text="Hobby" />
 	<p>
 		{$_('profile.hobby')}
 		<a href="/#activities">Major Activities</a>
 	</p>
+</section>
 
-	<Space height="28px" />
+<Hr />
 
-	<Title text="Skills" id="skills" />
-
+<section id="skills">
+	<Title text="Skills" />
 	<Skills />
+</section>
 
-	<Space height="28px" />
+<Hr />
 
-	<Title text="Environment" id="environment" />
-
+<section id="environment">
+	<Title text="Environment" />
 	<Environment />
 </section>
+
+<style style="scss">
+	section {
+		margin-top: 28px;
+	}
+</style>
