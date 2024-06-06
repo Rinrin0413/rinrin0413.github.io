@@ -49,10 +49,7 @@
 	"footer": {
 		"bgWallpaper": "背景壁紙"
 	},
-	"error": { "pageNotFound": [
-		"お探しのページが見つからず申し訳OneNote。",
-		" "
-	] },
+	"error": { "pageNotFound": ["お探しのページが見つからず申し訳OneNote。", " "] },
 	"activities": {
 		"programming": {
 			"desc": "13歳頃から始めた。あまり広い分野は網羅していない。",
