@@ -3,8 +3,8 @@ import { init, register } from 'svelte-i18n';
 
 const defaultLocale = 'ja';
 
-register('ja', () => import('./locales/ja.json'));
-register('en', () => import('./locales/en.json'));
+register('ja', () => import('../../locales/ja.json'));
+register('en', () => import('../../locales/en.json'));
 
 init({
 	fallbackLocale: defaultLocale,
