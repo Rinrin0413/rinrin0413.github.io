@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Title from '$lib/components/Title.svelte';
 	import FadeInUpAnim from '$lib/components/FadeInUpAnim.svelte';
 
 	import { CHRONICLE } from '$lib/scripts/data/chronicle';
@@ -11,6 +12,9 @@
 		isOpened = !isOpened;
 	}
 </script>
+
+<Title text="Chronicle" />
+<p>{$_('home.chronicle')}</p>
 
 <FadeInUpAnim>
 	<div

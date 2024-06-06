@@ -56,8 +56,6 @@
 <Hr />
 
 <section id="chronicle">
-	<Title text="Chronicle" />
-	<p>{$_('home.chronicle')}</p>
 	<Chronicle />
 </section>
 
