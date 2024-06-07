@@ -1,6 +1,4 @@
 <script lang="ts">
-	import FadeInAnim from '$lib/components/FadeInAnim.svelte';
-
 	const ITEMS = [
 		{
 			id: 'activities',
@@ -21,13 +19,11 @@
 	];
 </script>
 
-<FadeInAnim type="scale-up-origin-top">
-	<ul>
-		{#each ITEMS as { id, name } (id)}
-			<li><a href="#{id}"><div>{name}</div></a></li>
-		{/each}
-	</ul>
-</FadeInAnim>
+<ul>
+	{#each ITEMS as { id, name } (id)}
+		<li><a href="#{id}"><div>{name}</div></a></li>
+	{/each}
+</ul>
 
 <style lang="scss">
 	@use '$lib/stylesheets/variables/mixin' as *;
