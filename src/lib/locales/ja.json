@@ -33,7 +33,7 @@
 	},
 	"home": {
 		"icon": "Rinrin.rs のアイコン",
-		"greeting": ["あああ！ こんにちは。", "私は{age}歳の学生です。"],
+		"greeting": ["モインモイン！こんにちは。", "私は{age}歳の学生です。"],
 		"contents": "もくじ",
 		"whatIDo": "なにをしているか。",
 		"chronicle": "我が悠遠なる秀悦の歴史",
