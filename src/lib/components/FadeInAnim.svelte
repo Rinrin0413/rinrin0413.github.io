@@ -3,7 +3,7 @@
 	import { browser } from '$app/environment';
 	import { addClassOnVisible } from '$lib/scripts/util';
 
-	/** `slide-up` | `scale-up-origin-top` */
+	/** `slide-up` | `slide-left` | `scale-up-origin-top` */
 	export let type: string;
 
 	/** The delay in milliseconds before the animation starts. */
@@ -23,19 +23,24 @@
 	}
 </script>
 
-<div bind:this={container} class:slide-up={false} class:scale-up-origin-top={false}>
+<div bind:this={container} class:slide-up={false} class:slide-left={false} class:scale-up-origin-top={false}>
 	<slot />
 </div>
 
 <style lang="scss">
-	:not(.slide-up, .scale-up-origin-top) {
+	:not(.slide-up, .slide-left, .scale-up-origin-top) {
 		opacity: 0;
 	}
 
 	$ease-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);
+	$ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
 
 	.slide-up {
 		animation: slideUp 1.2s $ease-out-quart;
+	}
+
+	.slide-left {
+		animation: slideLeft 1.5s $ease-out-expo;
 	}
 
 	.scale-up-origin-top {
@@ -46,6 +51,13 @@
 		0% {
 			opacity: 0;
 			transform: translateY(calc(20% + 64px));
+		}
+	}
+
+	@keyframes slideLeft {
+		0% {
+			opacity: 0;
+			transform: translateX(30%);
 		}
 	}
 
