@@ -1,6 +1,11 @@
 /**
  * Adds a specified class to specified elements when they are scrolled into view.
  *
+ * @param elements - The elements to be observed.
+ * @param className - The class to be added.
+ * @param options.delay - The delay in milliseconds before adding the class.
+ * @param options.evenLittleBit - If true, the class will be added even if the element is slightly visible.
+ *
  * **＊ This function is intended to be used in the browser environment.**
  *
  * # Example:
@@ -34,26 +39,35 @@ export function addClassOnVisible(
 		| Element
 		| null
 		| undefined,
-	className: string
+	className: string,
+	options: addClassOnVisibleOptions = { delay: 0, evenLittleBit: false }
 ) {
 	if (elements instanceof HTMLCollection || elements instanceof NodeList) {
 		[...elements].forEach((e) => {
-			addClassOnVisible_(e, className);
+			addClassOnVisible_(e, className, options);
 		});
 	} else if (elements instanceof HTMLElement || elements instanceof Element) {
-		addClassOnVisible_(elements, className);
+		addClassOnVisible_(elements, className, options);
 	}
 }
 
+type addClassOnVisibleOptions = {
+	delay?: number;
+	evenLittleBit?: boolean;
+};
+
 /** **＊ This function is intended to be used in the browser environment.** */
-function addClassOnVisible_(element: Element | HTMLElement, className: string) {
+function addClassOnVisible_(element: Element | HTMLElement, className: string, options: addClassOnVisibleOptions) {
+	const evenLittleBit = options.evenLittleBit ?? false;
 	const rect = element.getBoundingClientRect();
 	const t = rect.top;
 	const b = rect.bottom;
 	// threshold = top + (25% of difference between top and bottom) + 86px
 	const threshold = t + (b - t) * 0.25 + 86;
-	if (threshold < window.innerHeight) {
-		element.classList.add(className);
+	if ((evenLittleBit ? t : threshold) < window.innerHeight) {
+		setTimeout(() => {
+			element.classList.add(className);
+		}, options.delay ?? 0);
 	}
 }
 
