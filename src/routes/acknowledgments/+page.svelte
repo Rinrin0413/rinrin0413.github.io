@@ -5,6 +5,13 @@
 	import { SITE_URL } from '$lib/scripts/variables';
 	import { _ } from 'svelte-i18n';
 	import { ACKNOWLEDGEMENTS } from '$lib/scripts/data/acknowledgments';
+	import { fly } from 'svelte/transition';
+
+	const ANIM = {
+		offset: -24,
+		duration: 200,
+		delay: 30
+	};
 
 	const HEAD = {
 		title: 'Acknowledgments',
@@ -34,10 +41,12 @@
 	<Space height="10px" />
 
 	<table>
-		{#each ACKNOWLEDGEMENTS as { name, url, license, licenseUrl }}
+		{#each ACKNOWLEDGEMENTS as { name, url, license, licenseUrl }, i}
 			<tr>
-				<td><a href={url} target="_blank" rel="noopener noreferrer">{name}</a></td>
-				<td>
+				<td in:fly|global={{ y: ANIM.offset, duration: ANIM.duration, delay: i * ANIM.delay }}>
+					<a href={url} target="_blank" rel="noopener noreferrer">{name}</a>
+				</td>
+				<td in:fly|global={{ y: ANIM.offset, duration: ANIM.duration, delay: i * ANIM.delay + 250 }}>
 					{#if license !== undefined}
 						{#if licenseUrl === undefined}
 							{license}
