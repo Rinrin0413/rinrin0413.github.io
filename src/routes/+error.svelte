@@ -1,10 +1,20 @@
 <script lang="ts">
 	import Title from '$lib/components/Title.svelte';
 
+	import { page } from '$app/stores';
 	import { _ } from 'svelte-i18n';
 
-	const HEAD = {
-		title: '404 - Page not found'
+	$: status = $page.status;
+	$: is404 = status == 404;
+	$: err = $page.error;
+	$: msg = is404 ?
+		'Page not found' :
+		err !== null ?
+			err.message :
+			'Something went wrong';
+
+	$: HEAD = {
+		title: `${status} - ${msg}`
 	};
 </script>
 
@@ -13,15 +23,19 @@
 	<meta name="title" content="Rinrin.rs | {HEAD.title}" />
 </svelte:head>
 
-<h1>404</h1>
-<Title text="Page not found" />
-<p>
-	{$_('error.pageNotFound.0')}<br />
-	<!-- eslint-disable-next-line svelte/no-at-html-tags -->
-	{$_('error.pageNotFound.1')}
-</p>
-
-<img src="/images/404.webp" alt="404 Not like this" />
+<h1>{status}</h1>
+{#if is404}
+	<Title text='Page not found' />
+	<p>
+		{$_('error.pageNotFound.0')}<br />
+		{$_('error.pageNotFound.1')}
+	</p>
+	<img src="/images/404.webp" alt="404 Not like this" class="e404" />
+{:else}
+	<Title text='Unexpected error' />
+	<p>{msg}</p>
+	<img src="https://http.cat/{status}.jpg" alt=" " loading="lazy" />
+{/if}
 
 <style lang="scss">
 	@use '$lib/stylesheets/variables/mixin' as *;
@@ -48,7 +62,7 @@
 		width: 100%;
 		max-width: 640px;
 
-		&:hover {
+		&.e404:hover {
 			filter: invert(1);
 		}
 	}
