@@ -6,6 +6,12 @@
 	/** `slide-up` | `scale-up-origin-top` */
 	export let type: string;
 
+	/** The delay in milliseconds before the animation starts. */
+	export let delay = 0;
+
+	/** Whether to play the animation even if the element is only a little in the viewport. */
+	export let evenLittleBit = false;
+
 	let container: HTMLElement;
 
 	onMount(fadeIn);
@@ -13,7 +19,7 @@
 
 	/** **＊ This function is intended to be used in the browser environment.** */
 	function fadeIn() {
-		addClassOnVisible(container, type);
+		addClassOnVisible(container, type, { delay, evenLittleBit });
 	}
 </script>
 
