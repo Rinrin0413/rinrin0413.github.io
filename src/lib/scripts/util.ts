@@ -47,7 +47,12 @@ export function addClassOnVisible(
 
 /** **＊ This function is intended to be used in the browser environment.** */
 function addClassOnVisible_(element: Element | HTMLElement, className: string) {
-	if (element.getBoundingClientRect().top < window.innerHeight) {
+	const rect = element.getBoundingClientRect();
+	const t = rect.top;
+	const b = rect.bottom;
+	// threshold = top + (25% of difference between top and bottom) + 86px
+	const threshold = t + (b - t) * 0.25 + 86;
+	if (threshold  < window.innerHeight) {
 		element.classList.add(className);
 	}
 }
