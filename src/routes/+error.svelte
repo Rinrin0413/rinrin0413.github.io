@@ -7,11 +7,7 @@
 	$: status = $page.status;
 	$: is404 = status == 404;
 	$: err = $page.error;
-	$: msg = is404 ?
-		'Page not found' :
-		err !== null ?
-			err.message :
-			'Something went wrong';
+	$: msg = is404 ? 'Page not found' : err !== null ? err.message : 'Something went wrong';
 
 	$: HEAD = {
 		title: `${status} - ${msg}`
@@ -25,14 +21,14 @@
 
 <h1>{status}</h1>
 {#if is404}
-	<Title text='Page not found' />
+	<Title text="Page not found" />
 	<p>
 		{$_('error.pageNotFound.0')}<br />
 		{$_('error.pageNotFound.1')}
 	</p>
 	<img src="/images/404.webp" alt="404 Not like this" class="e404" />
 {:else}
-	<Title text='Unexpected error' />
+	<Title text="Unexpected error" />
 	<p>{msg}</p>
 	<img src="https://http.cat/{status}.jpg" alt=" " loading="lazy" />
 {/if}
