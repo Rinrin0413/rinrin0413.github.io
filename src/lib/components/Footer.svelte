@@ -1,7 +1,8 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { COPYRIGHT } from '$lib/scripts/variables';
 	import { _, locale } from 'svelte-i18n';
+	import { COPYRIGHT } from '$lib/scripts/variables';
+	import FadeInAnim from './FadeInAnim.svelte';
 
 	let wallpaperPath: string;
 
@@ -22,6 +23,10 @@
 		{ name: 'Creations', path: '/creations' },
 		{ name: 'Social', path: '/social' }
 	];
+
+	const ANIM_TYPE = 'slide-left';
+	const ANIM_DELAY_STEP = 50;
+	const ANIM_DELAY_OTHER_LINKS = ANIM_DELAY_STEP * SITEMAP.length * 0.5;
 </script>
 
 <footer>
@@ -31,8 +36,12 @@
 			<nav>
 				<h1>{$_('w.sitemap')}</h1>
 				<ul>
-					{#each SITEMAP as { name, path }}
-						<li><a href={path}>{name}</a></li>
+					{#each SITEMAP as { name, path }, i}
+						<li>
+							<FadeInAnim type={ANIM_TYPE} delay={ANIM_DELAY_STEP * i} evenLittleBit>
+								<a href={path}>{name}</a>
+							</FadeInAnim>
+						</li>
 					{/each}
 				</ul>
 			</nav>
@@ -40,14 +49,22 @@
 				<nav>
 					<h1>{$_('w.otherLinks')}</h1>
 					<ul>
-						<li><a href="/acknowledgments">Acknowledgments</a></li>
-						{#if wallpaperPath !== undefined}
-							<li><a href={wallpaperPath}>{$_('w.bgWallpaper')}</a></li>
-						{/if}
-						<li>
-							<a href="/feed">{$_('w.rssAtomFeed')}</a>
-						</li>
-						<li><a href="/sitemap.xml">sitemap.xml</a></li>
+						<FadeInAnim type={ANIM_TYPE} delay={ANIM_DELAY_OTHER_LINKS + 100} evenLittleBit>
+							<li><a href="/acknowledgments">Acknowledgments</a></li>
+						</FadeInAnim>
+						<FadeInAnim type={ANIM_TYPE} delay={ANIM_DELAY_OTHER_LINKS + 200} evenLittleBit>
+							{#if wallpaperPath !== undefined}
+								<li><a href={wallpaperPath}>{$_('w.bgWallpaper')}</a></li>
+							{/if}
+						</FadeInAnim>
+						<FadeInAnim type={ANIM_TYPE} delay={ANIM_DELAY_OTHER_LINKS + 300} evenLittleBit>
+							<li>
+								<a href="/feed">{$_('w.rssAtomFeed')}</a>
+							</li>
+						</FadeInAnim>
+						<FadeInAnim type={ANIM_TYPE} delay={ANIM_DELAY_OTHER_LINKS + 400} evenLittleBit>
+							<li><a href="/sitemap.xml">sitemap.xml</a></li>
+						</FadeInAnim>
 					</ul>
 				</nav>
 				<div class="lang">
