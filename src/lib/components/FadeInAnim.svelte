@@ -17,11 +17,7 @@
 	}
 </script>
 
-<div
-	bind:this={container}
-	class:slide-up={false}
-	class:scale-up-origin-top={false}
->
+<div bind:this={container} class:slide-up={false} class:scale-up-origin-top={false}>
 	<slot />
 </div>
 

@@ -52,7 +52,7 @@ function addClassOnVisible_(element: Element | HTMLElement, className: string) {
 	const b = rect.bottom;
 	// threshold = top + (25% of difference between top and bottom) + 86px
 	const threshold = t + (b - t) * 0.25 + 86;
-	if (threshold  < window.innerHeight) {
+	if (threshold < window.innerHeight) {
 		element.classList.add(className);
 	}
 }
