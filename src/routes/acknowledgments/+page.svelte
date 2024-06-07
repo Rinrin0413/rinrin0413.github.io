@@ -46,7 +46,9 @@
 				<td in:fly|global={{ y: ANIM.offset, duration: ANIM.duration, delay: i * ANIM.delay }}>
 					<a href={url} target="_blank" rel="noopener noreferrer">{name}</a>
 				</td>
-				<td in:fly|global={{ y: ANIM.offset, duration: ANIM.duration, delay: i * ANIM.delay + 250 }}>
+				<td
+					in:fly|global={{ y: ANIM.offset, duration: ANIM.duration, delay: i * ANIM.delay + 250 }}
+				>
 					{#if license !== undefined}
 						{#if licenseUrl === undefined}
 							{license}

@@ -57,7 +57,11 @@ type addClassOnVisibleOptions = {
 };
 
 /** **＊ This function is intended to be used in the browser environment.** */
-function addClassOnVisible_(element: Element | HTMLElement, className: string, options: addClassOnVisibleOptions) {
+function addClassOnVisible_(
+	element: Element | HTMLElement,
+	className: string,
+	options: addClassOnVisibleOptions
+) {
 	const evenLittleBit = options.evenLittleBit ?? false;
 	const rect = element.getBoundingClientRect();
 	const t = rect.top;
