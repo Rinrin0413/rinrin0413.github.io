@@ -74,11 +74,8 @@
 	}
 
 	td {
-		text-align: left;
-	}
-
-	a {
 		font-size: 20px;
+		text-align: left;
 		@include source-code-pro;
 	}
 
@@ -88,11 +85,8 @@
 		}
 
 		td {
-			padding: 4px 0;
-		}
-
-		a {
 			font-size: 14px;
+			padding: 4px 0;
 		}
 	}
 </style>
