@@ -39,7 +39,6 @@
 	<Title text="About me" />
 	<p class="large">
 		{$_('home.greeting.0')}<br />
-		<!-- eslint-disable-next-line svelte/no-at-html-tags -->
 		{$_('home.greeting.1', { values: { age: calcAge() } })}
 	</p>
 </section>
