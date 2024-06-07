@@ -1,10 +1,10 @@
 <script lang="ts">
-	import FadeInUpAnim from '$lib/components/FadeInUpAnim.svelte';
+	import FadeInAnim from '$lib/components/FadeInAnim.svelte';
 	import { _ } from 'svelte-i18n';
 </script>
 
 <div class="container">
-	<FadeInUpAnim>
+	<FadeInAnim type="scale-up-origin-top">
 		<div id="act-prog">
 			<h1 id="acivity-programming" class="c5">Programming</h1>
 			<p>{$_('activities.programming.desc')}</p>
@@ -40,8 +40,8 @@
 				)}
 			</p>
 		</div>
-	</FadeInUpAnim>
-	<FadeInUpAnim>
+	</FadeInAnim>
+	<FadeInAnim type="scale-up-origin-top">
 		<div id="act-game">
 			<h1 id="acivity-game" class="c5">Game</h1>
 			<p>{$_('activities.game.desc')}</p>
@@ -55,8 +55,8 @@
 			<h2><a href="https://thatskygame.com">Sky: Children of the Light</a></h2>
 			<p>{$_('activities.game.sky')}</p>
 		</div>
-	</FadeInUpAnim>
-	<FadeInUpAnim>
+	</FadeInAnim>
+	<FadeInAnim type="scale-up-origin-top">
 		<div id="act-music">
 			<h1 id="acivity-music" class="c5">Music</h1>
 			<p class="subtitle">|♫|♪♬♪|♪♫:|❙♪|❙</p>
@@ -76,7 +76,7 @@
 			<h2>Sing</h2>
 			<p>{$_('activities.music.sing')}</p>
 		</div>
-	</FadeInUpAnim>
+	</FadeInAnim>
 </div>
 
 <style lang="scss">

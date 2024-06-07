@@ -1,5 +1,5 @@
 <script lang="ts">
-	import FadeInUpAnim from '$lib/components/FadeInUpAnim.svelte';
+	import FadeInAnim from '$lib/components/FadeInAnim.svelte';
 	import ArticleCard from '$lib/components/ArticleCard.svelte';
 
 	import type { ArticleMetadata } from '$lib/scripts/types';
@@ -10,9 +10,9 @@
 <ul>
 	{#each articles as meta}
 		<li>
-			<FadeInUpAnim>
+			<FadeInAnim type="scale-up-origin-top">
 				<ArticleCard {meta} mini />
-			</FadeInUpAnim>
+			</FadeInAnim>
 		</li>
 	{/each}
 </ul>

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Title from '$lib/components/Title.svelte';
-	import FadeInUpAnim from '$lib/components/FadeInUpAnim.svelte';
+	import FadeInAnim from '$lib/components/FadeInAnim.svelte';
 
 	import { CHRONICLE } from '$lib/scripts/data/chronicle';
 	import { fmtMonth } from '$lib/scripts/util';
@@ -16,7 +16,7 @@
 <Title text="Chronicle" />
 <p>{$_('home.chronicle')}</p>
 
-<FadeInUpAnim>
+<FadeInAnim type="scale-up-origin-top">
 	<div
 		class="container"
 		title={!isOpened ? 'Open' : ''}
@@ -49,7 +49,7 @@
 			{/each}
 		</ul>
 	</div>
-</FadeInUpAnim>
+</FadeInAnim>
 
 <style lang="scss">
 	@use '$lib/stylesheets/chronicle';

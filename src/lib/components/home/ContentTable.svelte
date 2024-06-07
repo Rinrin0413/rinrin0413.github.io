@@ -1,5 +1,5 @@
 <script lang="ts">
-	import FadeInUpAnim from '$lib/components/FadeInUpAnim.svelte';
+	import FadeInAnim from '$lib/components/FadeInAnim.svelte';
 
 	const ITEMS = [
 		{
@@ -21,13 +21,13 @@
 	];
 </script>
 
-<FadeInUpAnim>
+<FadeInAnim type="scale-up-origin-top">
 	<ul>
 		{#each ITEMS as { id, name } (id)}
 			<li><a href="#{id}"><div>{name}</div></a></li>
 		{/each}
 	</ul>
-</FadeInUpAnim>
+</FadeInAnim>
 
 <style lang="scss">
 	@use '$lib/stylesheets/variables/mixin' as *;
