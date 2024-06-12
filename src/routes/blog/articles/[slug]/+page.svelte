@@ -55,11 +55,7 @@
 	$: absThumbnailPath = SITE_URL + thumbnailPath;
 </script>
 
-<HeadMetadata
-	title="Blog - {title}"
-	desc="Rinrin.rs のホームページです。"
-	canonicalUrl={canonicalUrl}
-/>
+<HeadMetadata title="Blog - {title}" desc="Rinrin.rs のホームページです。" {canonicalUrl} />
 
 <svelte:head>
 	{#if hasThumbnailImg}

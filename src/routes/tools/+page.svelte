@@ -7,11 +7,7 @@
 	//import { _ } from 'svelte-i18n';
 </script>
 
-<HeadMetadata
-	title="Web Tools"
-	desc="作った かすWebツール"
-	canonicalUrl="{SITE_URL}/tools"
-/>
+<HeadMetadata title="Web Tools" desc="作った かすWebツール" canonicalUrl="{SITE_URL}/tools" />
 
 <section>
 	<Space height="64px" />

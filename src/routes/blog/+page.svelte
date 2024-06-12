@@ -28,11 +28,7 @@
 	const TITLE_FULL = 'Rinrin.rs | ' + TITLE;
 </script>
 
-<HeadMetadata
-	title={TITLE}
-	desc="Rinrin.rs のブログ(?)"
-	canonicalUrl={canonicalUrl}
-/>
+<HeadMetadata title={TITLE} desc="Rinrin.rs のブログ(?)" {canonicalUrl} />
 
 <section>
 	<Space height="64px" />

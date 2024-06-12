@@ -17,11 +17,7 @@
 	const articles = data.articles;
 </script>
 
-<HeadMetadata
-	title="Home"
-	desc="Rinrin.rs のホームページです。"
-	canonicalUrl={SITE_URL}
-/>
+<HeadMetadata title="Home" desc="Rinrin.rs のホームページです。" canonicalUrl={SITE_URL} />
 
 <img src="/images/icon_13_384px.webp" alt={$_('home.icon')} class="icn" />
 
