@@ -1,4 +1,5 @@
 <script lang="ts">
+	import HeadMetadata from '$lib/components/HeadMetadata.svelte';
 	import Space from '$lib/components/Space.svelte';
 	import Title from '$lib/components/Title.svelte';
 
@@ -12,25 +13,13 @@
 		duration: 200,
 		delay: 30
 	};
-
-	const HEAD = {
-		title: 'Acknowledgments',
-		desc: 'このサイトの開発で利用したすべてのOSSやサービスに感謝。',
-		url: SITE_URL + '/acknowledgments'
-	};
 </script>
 
-<svelte:head>
-	<title>Rinrin.rs | {HEAD.title}</title>
-	<meta name="title" content="Rinrin.rs | {HEAD.title}" />
-	<meta name="description" content={HEAD.desc} />
-
-	<meta property="og:title" content={HEAD.title} />
-	<meta property="og:description" content={HEAD.desc} />
-	<meta property="og:url" content={HEAD.url} />
-
-	<link rel="canonical" href={HEAD.url} />
-</svelte:head>
+<HeadMetadata
+	title="Acknowledgments"
+	desc="このサイトの開発で利用したすべてのOSSやサービスに感謝。"
+	canonicalUrl="{SITE_URL}/acknowledgments"
+/>
 
 <section>
 	<Space height="64px" />

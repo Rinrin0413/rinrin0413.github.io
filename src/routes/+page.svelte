@@ -1,4 +1,5 @@
 <script lang="ts">
+	import HeadMetadata from '$lib/components/HeadMetadata.svelte';
 	import Title from '$lib/components/Title.svelte';
 	import Hr from '$lib/components/Hr.svelte';
 	import ContentTable from '$lib/components/home/ContentTable.svelte';
@@ -14,24 +15,13 @@
 
 	export let data: PageData;
 	const articles = data.articles;
-
-	const HEAD = {
-		title: 'Home',
-		desc: 'Rinrin.rs のホームページです。'
-	};
 </script>
 
-<svelte:head>
-	<title>Rinrin.rs | {HEAD.title}</title>
-	<meta name="title" content="Rinrin.rs | {HEAD.title}" />
-	<meta name="description" content={HEAD.desc} />
-
-	<meta property="og:title" content={HEAD.title} />
-	<meta property="og:description" content={HEAD.desc} />
-	<meta property="og:url" content={SITE_URL} />
-
-	<link rel="canonical" href={SITE_URL} />
-</svelte:head>
+<HeadMetadata
+	title="Home"
+	desc="Rinrin.rs のホームページです。"
+	canonicalUrl={SITE_URL}
+/>
 
 <img src="/images/icon_13_384px.webp" alt={$_('home.icon')} class="icn" />
 

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import HeadMetadata from '$lib/components/HeadMetadata.svelte';
 	import Title from '$lib/components/Title.svelte';
 	import Space from '$lib/components/Space.svelte';
 	import Details from './Details.svelte';
@@ -16,25 +17,13 @@
 		[$_(L10N_PATH + '0'), $_(L10N_PATH + '1', { values: { age: calcAge() } }), $_(L10N_PATH + '2')],
 		[$_(L10N_PATH + '3'), $_(L10N_PATH + '4'), $_(L10N_PATH + '5'), $_(L10N_PATH + '6')]
 	];
-
-	const HEAD = {
-		title: 'Profile',
-		desc: 'Rinrin.rs のプロフィール',
-		url: SITE_URL + '/profile'
-	};
 </script>
 
-<svelte:head>
-	<title>Rinrin.rs | {HEAD.title}</title>
-	<meta name="title" content="Rinrin.rs | {HEAD.title}" />
-	<meta name="description" content={HEAD.desc} />
-
-	<meta property="og:title" content={HEAD.title} />
-	<meta property="og:description" content={HEAD.desc} />
-	<meta property="og:url" content={HEAD.url} />
-
-	<link rel="canonical" href={HEAD.url} />
-</svelte:head>
+<HeadMetadata
+	title="Profile"
+	desc="Rinrin.rs のプロフィール"
+	canonicalUrl="{SITE_URL}/profile"
+/>
 
 <section>
 	<Space height="64px" />

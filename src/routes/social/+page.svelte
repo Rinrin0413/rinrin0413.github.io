@@ -1,4 +1,5 @@
 <script lang="ts">
+	import HeadMetadata from '$lib/components/HeadMetadata.svelte';
 	import Title from '$lib/components/Title.svelte';
 	import Space from '$lib/components/Space.svelte';
 	import EaButton from '$lib/components/EaButton.svelte';
@@ -6,25 +7,13 @@
 	import { SITE_URL } from '$lib/scripts/variables';
 	import { _ } from 'svelte-i18n';
 	import { SOCIALS } from '$lib/scripts/data/social';
-
-	const HEAD = {
-		title: 'Social',
-		desc: 'Rinrin.rs のソーシャルアカウント一覧',
-		url: SITE_URL + '/social'
-	};
 </script>
 
-<svelte:head>
-	<title>Rinrin.rs | {HEAD.title}</title>
-	<meta name="title" content="Rinrin.rs | {HEAD.title}" />
-	<meta name="description" content={HEAD.desc} />
-
-	<meta property="og:title" content={HEAD.title} />
-	<meta property="og:description" content={HEAD.desc} />
-	<meta property="og:url" content={HEAD.url} />
-
-	<link rel="canonical" href={HEAD.url} />
-</svelte:head>
+<HeadMetadata
+	title="Social"
+	desc="Rinrin.rs のソーシャルアカウント一覧"
+	canonicalUrl="{SITE_URL}/social"
+/>
 
 <section>
 	<Space height="64px" />

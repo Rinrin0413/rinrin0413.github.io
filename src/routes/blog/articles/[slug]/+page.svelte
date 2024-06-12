@@ -1,4 +1,5 @@
 <script lang="ts">
+	import HeadMetadata from '$lib/components/HeadMetadata.svelte';
 	import Space from '$lib/components/Space.svelte';
 	import ShareButton from '$lib/components/ShareButton.svelte';
 	import FeedButton from '$lib/components/FeedButton.svelte';
@@ -48,32 +49,26 @@
 		};
 	}
 
-	$: HEAD = {
-		title: 'Blog - ' + metadata.title,
-		titleFull: 'Rinrin.rs | Blog - ' + metadata.title,
-		desc: metadata.desc
-	};
+	$: title = metadata.title;
+	$: titleFull = 'Rinrin.rs | ' + title;
+
 	$: absThumbnailPath = SITE_URL + thumbnailPath;
 </script>
 
-<svelte:head>
-	<title>{HEAD.titleFull}</title>
-	<meta name="title" content={HEAD.titleFull} />
-	<meta name="description" content={HEAD.desc} />
+<HeadMetadata
+	title="Blog - {title}"
+	desc="Rinrin.rs のホームページです。"
+	canonicalUrl={canonicalUrl}
+/>
 
-	<meta property="og:title" content={HEAD.title} />
-	<meta property="og:description" content={HEAD.desc} />
-	<meta property="og:url" content={canonicalUrl} />
+<svelte:head>
 	{#if hasThumbnailImg}
 		<meta property="og:image" content={absThumbnailPath} />
 		<meta name="thumbnail" content={absThumbnailPath} />
 	{/if}
-
 	{#if !metadata.indexed}
 		<meta name="robots" content="noindex" />
 	{/if}
-
-	<link rel="canonical" href={canonicalUrl} />
 </svelte:head>
 
 <svelte:window bind:scrollY />
@@ -114,11 +109,11 @@
 			but breaking the logic for the sake of intuitiveness.
 		-->
 		<div style={parallax(-0.06)}>
-			<ShareButton href={canonicalUrl} title={HEAD.titleFull} /><FeedButton />
+			<ShareButton href={canonicalUrl} title={titleFull} /><FeedButton />
 		</div>
 	</div>
 	<Article body={data.component} />
-	<p><ShareButton href={canonicalUrl} title={HEAD.titleFull} expanded /></p>
+	<p><ShareButton href={canonicalUrl} title={titleFull} expanded /></p>
 	<Tags tags={metadata.tags} />
 	<div><a href="/blog" class="back-to-index">{$_('article.backToIndex')}</a></div>
 </div>

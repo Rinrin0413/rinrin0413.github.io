@@ -1,4 +1,5 @@
 <script lang="ts">
+	import HeadMetadata from '$lib/components/HeadMetadata.svelte';
 	import Space from '$lib/components/Space.svelte';
 	import Title from '$lib/components/Title.svelte';
 	import FeedButton from '$lib/components/FeedButton.svelte';
@@ -23,24 +24,15 @@
 	$: tags = data.tags;
 	$: articles = data.articles;
 
-	$: HEAD = {
-		title: 'Blog',
-		titleFull: 'Rinrin.rs | Blog',
-		desc: 'Rinrin.rs のブログ(?)'
-	};
+	const TITLE = 'Blog';
+	const TITLE_FULL = 'Rinrin.rs | ' + TITLE;
 </script>
 
-<svelte:head>
-	<title>{HEAD.titleFull}</title>
-	<meta name="title" content={HEAD.titleFull} />
-	<meta name="description" content={HEAD.desc} />
-
-	<meta property="og:title" content={HEAD.title} />
-	<meta property="og:description" content={HEAD.desc} />
-	<meta property="og:url" content={canonicalUrl} />
-
-	<link rel="canonical" href={canonicalUrl} />
-</svelte:head>
+<HeadMetadata
+	title={TITLE}
+	desc="Rinrin.rs のブログ(?)"
+	canonicalUrl={canonicalUrl}
+/>
 
 <section>
 	<Space height="64px" />
@@ -48,7 +40,7 @@
 	<p>
 		<ShareButton
 			href="{SITE_URL}{pageUrl.pathname}{pageUrl.search}"
-			title={HEAD.titleFull}
+			title={TITLE_FULL}
 			notArticlePage
 		/><FeedButton />
 	</p>
