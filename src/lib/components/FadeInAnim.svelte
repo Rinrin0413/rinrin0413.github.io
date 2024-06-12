@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { browser } from '$app/environment';
-	import { addClassOnVisible } from '$lib/scripts/util';
+	import { addClassOnVisible } from '$lib/scripts/utils';
 
 	/** `slide-up` | `slide-left` | `scale-up-origin-top` */
 	export let type: string;

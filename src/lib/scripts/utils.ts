@@ -14,7 +14,7 @@
  * <script lang="ts">
  *     import { onMount } from 'svelte';
  *     import { browser } from '$app/environment';
- *     import { addClassOnVisible } from '$lib/scripts/util';
+ *     import { addClassOnVisible } from '$lib/scripts/utils';
  *
  *     onMount(fadeIn);
  *     if (browser) window.addEventListener('scroll', fadeIn);
@@ -126,7 +126,7 @@ export function toggleScrollPrevention(prevent: boolean) {
  *
  * ```svelte
  * <script lang="ts">
- *     import { parallaxStyle } from '$lib/scripts/util';
+ *     import { parallaxStyle } from '$lib/scripts/utils';
  *
  * 	   let scrollY: number;
  *	   $: parallax = parallaxStyle(scrollY);

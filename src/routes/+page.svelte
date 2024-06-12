@@ -10,7 +10,7 @@
 	import type { PageData } from './$types';
 	import { SITE_URL } from '$lib/scripts/variables';
 	import { _ } from 'svelte-i18n';
-	import { calcAge } from '$lib/scripts/util';
+	import { calcAge } from '$lib/scripts/utils';
 
 	export let data: PageData;
 	const articles = data.articles;

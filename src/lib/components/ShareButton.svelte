@@ -3,7 +3,7 @@
 	import { browser } from '$app/environment';
 	import { _ } from 'svelte-i18n';
 	import { fly } from 'svelte/transition';
-	import { faviconUrl } from '$lib/scripts/util';
+	import { faviconUrl } from '$lib/scripts/utils';
 
 	export let href: string;
 	export let title: string;

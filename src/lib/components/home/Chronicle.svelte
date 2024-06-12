@@ -3,7 +3,7 @@
 	import FadeInAnim from '$lib/components/FadeInAnim.svelte';
 
 	import { CHRONICLE } from '$lib/scripts/data/chronicle';
-	import { fmtMonth } from '$lib/scripts/util';
+	import { fmtMonth } from '$lib/scripts/utils';
 	import { _ } from 'svelte-i18n';
 
 	let isOpened = false;

@@ -2,7 +2,7 @@ import type { RequestHandler } from './$types';
 import { fetchArticles, fetchTags } from '$lib/scripts/fetchers';
 import { SITE_URL, COPYRIGHT, BLOG_NAME, CONTACT_EMAIL_ADDRESS } from '$lib/scripts/variables';
 import { v5 as uuidv5 } from 'uuid';
-import { idToDate } from '$lib/scripts/util';
+import { idToDate } from '$lib/scripts/utils';
 
 export const prerender = true;
 

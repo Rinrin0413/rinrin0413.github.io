@@ -9,7 +9,7 @@
 	import type { PageData } from './$types';
 	import { page } from '$app/stores';
 	import { SITE_URL } from '$lib/scripts/variables';
-	import { parallaxStyle, idToDate } from '$lib/scripts/util';
+	import { parallaxStyle, idToDate } from '$lib/scripts/utils';
 	import { _ } from 'svelte-i18n';
 	import { cubicOut } from 'svelte/easing';
 	import { scale } from 'svelte/transition';
