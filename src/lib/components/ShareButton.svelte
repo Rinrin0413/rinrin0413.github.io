@@ -96,7 +96,6 @@
 				<!--
 					Google Material Symbols and Icons - Content Copy
 					https://fonts.google.com/icons?selected=Material%20Symbols%20Outlined%3Acontent_copy%3AFILL%400%3Bwght%40400%3BGRAD%400%3Bopsz%4024
-
 					This icon is licensed under the Apache License Version 2.0: https://github.com/google/material-design-icons/blob/master/README.md
 				-->
 				<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"
@@ -148,7 +147,6 @@
 					<!--
 						Bootstrap Icons - Three dots
 						https://icons.getbootstrap.com/icons/three-dots
-
 						Copyright (c) 2019 The Bootstrap Authors
 						under the MIT License: https://github.com/twbs/icons/blob/main/LICENSE
 					-->
@@ -179,7 +177,6 @@
 		<!--
 			Google Material Symbols and Icons - Share
 			https://fonts.google.com/icons?selected=Material%20Symbols%20Outlined%3Ashare%3AFILL%401%3Bwght%40400%3BGRAD%400%3Bopsz%4024
-
 			This icon is licensed under the Apache License Version 2.0: https://github.com/google/material-design-icons/blob/master/README.md
 		-->
 		<svg

@@ -15,7 +15,6 @@
 	<!--
 		Google Material Symbols and Icons - Language
 		https://fonts.google.com/icons?selected=Material%20Symbols%20Outlined%3Alanguage%3AFILL%400%3Bwght%40400%3BGRAD%40200%3Bopsz%4048
-
 		This icon is licensed under the Apache License Version 2.0: https://github.com/google/material-design-icons/blob/master/README.md
 	-->
 	<svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"

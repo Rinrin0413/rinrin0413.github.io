@@ -19,7 +19,6 @@
 		<!--
 			Bootstrap Icons - Arrow up circle fill
 			https://icons.getbootstrap.com/icons/arrow-up-circle-fill
-
 			Copyright (c) 2019 The Bootstrap Authors
 			under the MIT License: https://github.com/twbs/icons/blob/main/LICENSE
 		-->
