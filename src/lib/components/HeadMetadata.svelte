@@ -1,5 +1,9 @@
 <script lang="ts">
-	import { SITE_URL, LOGO_180PX_OXIPNG_REL_PATH, PAGE_FULL_TITLE_PART } from '$lib/scripts/variables';
+	import {
+		SITE_URL,
+		LOGO_180PX_OXIPNG_REL_PATH,
+		PAGE_FULL_TITLE_PART
+	} from '$lib/scripts/variables';
 
 	/** ex: `Home` */
 	export let title: string;
