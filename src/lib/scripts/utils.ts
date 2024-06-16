@@ -6,7 +6,7 @@
  * @param options.delay - The delay in milliseconds before adding the class.
  * @param options.evenLittleBit - If true, the class will be added even if the element is slightly visible.
  *
- * **＊ This function is intended to be used in the browser environment.**
+ * **＊ Must be called in the browser environment.**
  *
  * # Example:
  *
@@ -56,7 +56,7 @@ type addClassOnVisibleOptions = {
 	evenLittleBit?: boolean;
 };
 
-/** **＊ This function is intended to be used in the browser environment.** */
+/** **＊ Must be called in the browser environment.** */
 function addClassOnVisible_(
 	element: Element | HTMLElement,
 	className: string,
@@ -113,7 +113,7 @@ export function fmtMonth(month: number | null) {
 /**
  * Toggles body scroll prevention.
  *
- * **＊ This function is intended to be used in the browser environment.**
+ * **＊ Must be called in the browser environment.**
  */
 export function toggleScrollPrevention(prevent: boolean) {
 	document.body.style.overflow = prevent ? 'hidden' : 'auto';

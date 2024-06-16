@@ -36,7 +36,7 @@
 	/**
 	 * Sets css variable `--max-vh001`.
 	 *
-	 * **＊ This function is intended to be used in the browser environment.**
+	 * **＊ Must be called in the browser environment.**
 	 */
 	function setMaxVh001() {
 		maxVh1 = window.innerHeight;

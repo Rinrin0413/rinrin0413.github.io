@@ -29,7 +29,7 @@
 		isOverflown = vw <= initWidth;
 	}
 
-	/** **＊ This function is intended to be used in the browser environment.** */
+	/** **＊ Must be called in the browser environment.** */
 	function updateVw() {
 		vw = window.innerWidth;
 	}

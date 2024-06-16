@@ -17,7 +17,7 @@
 	onMount(fadeIn);
 	if (browser) window.addEventListener('scroll', fadeIn);
 
-	/** **＊ This function is intended to be used in the browser environment.** */
+	/** **＊ Must be called in the browser environment.** */
 	function fadeIn() {
 		addClassOnVisible(container, type, { delay, evenLittleBit });
 	}
