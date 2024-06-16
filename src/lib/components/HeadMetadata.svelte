@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { SITE_URL, LOGO_180PX_OXIPNG_REL_PATH } from '$lib/scripts/variables';
+	import { SITE_URL, LOGO_180PX_OXIPNG_REL_PATH, PAGE_FULL_TITLE_PART } from '$lib/scripts/variables';
 
 	/** ex: `Home` */
 	export let title: string;
@@ -28,7 +28,7 @@
 	 */
 	export let doesNotSetThumbnailImg = false;
 
-	$: fullTitle = 'Rinrin.rs | ' + title;
+	$: fullTitle = PAGE_FULL_TITLE_PART + title;
 	const absThumbnailPath = SITE_URL + LOGO_180PX_OXIPNG_REL_PATH;
 </script>
 

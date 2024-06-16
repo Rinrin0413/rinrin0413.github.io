@@ -2,6 +2,7 @@
 	import Title from '$lib/components/Title.svelte';
 
 	import { page } from '$app/stores';
+	import { PAGE_FULL_TITLE_PART } from '$lib/scripts/variables';
 	import { _ } from 'svelte-i18n';
 
 	$: status = $page.status;
@@ -15,8 +16,8 @@
 </script>
 
 <svelte:head>
-	<title>Rinrin.rs | {HEAD.title}</title>
-	<meta name="title" content="Rinrin.rs | {HEAD.title}" />
+	<title>{PAGE_FULL_TITLE_PART + HEAD.title}</title>
+	<meta name="title" content={PAGE_FULL_TITLE_PART + HEAD.title} />
 </svelte:head>
 
 <h1>{status}</h1>

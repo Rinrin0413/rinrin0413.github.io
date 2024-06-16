@@ -9,7 +9,7 @@
 
 	import type { PageData } from './$types';
 	import { page } from '$app/stores';
-	import { SITE_URL } from '$lib/scripts/variables';
+	import { SITE_URL, PAGE_FULL_TITLE_PART } from '$lib/scripts/variables';
 	import { parallaxStyle, idToDate } from '$lib/scripts/utils';
 	import { _ } from 'svelte-i18n';
 	import { cubicOut } from 'svelte/easing';
@@ -50,7 +50,7 @@
 	}
 
 	$: title = metadata.title;
-	$: titleFull = 'Rinrin.rs | ' + title;
+	$: titleFull = PAGE_FULL_TITLE_PART + title;
 
 	$: absThumbnailPath = SITE_URL + thumbnailPath;
 </script>

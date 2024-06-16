@@ -8,7 +8,7 @@
 	import ArticleCard from '$lib/components/ArticleCard.svelte';
 
 	import type { PageData } from './$types';
-	import { SITE_URL } from '$lib/scripts/variables';
+	import { SITE_URL, PAGE_FULL_TITLE_PART } from '$lib/scripts/variables';
 	import { page } from '$app/stores';
 	import { _ } from 'svelte-i18n';
 	import { fly } from 'svelte/transition';
@@ -25,7 +25,6 @@
 	$: articles = data.articles;
 
 	const TITLE = 'Blog';
-	const TITLE_FULL = 'Rinrin.rs | ' + TITLE;
 </script>
 
 <HeadMetadata title={TITLE} desc="Rinrin.rs のブログ(?)" {canonicalUrl} />
@@ -36,7 +35,7 @@
 	<p>
 		<ShareButton
 			href="{SITE_URL}{pageUrl.pathname}{pageUrl.search}"
-			title={TITLE_FULL}
+			title={PAGE_FULL_TITLE_PART + TITLE}
 			notArticlePage
 		/><FeedButton />
 	</p>
