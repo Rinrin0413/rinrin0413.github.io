@@ -1,6 +1,6 @@
-@use '../variables/color' as *;
-@use '../variables/dimension' as *;
-@use '../variables/mixin' as *;
+@use '$lib/stylesheets/variables/color' as *;
+@use '$lib/stylesheets/variables/dimension' as *;
+@use '$lib/stylesheets/variables/mixin' as *;
 
 #drawer-menu-bg {
 	position: fixed;

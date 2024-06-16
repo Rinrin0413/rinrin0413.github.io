@@ -1,5 +1,5 @@
-@use './variables/color' as *;
-@use './variables/dimension' as *;
+@use '$lib/stylesheets/variables/color' as *;
+@use '$lib/stylesheets/variables/dimension' as *;
 
 #nprogress {
 	.bar {

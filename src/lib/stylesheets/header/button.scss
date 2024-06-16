@@ -1,5 +1,5 @@
-@use '../variables/dimension' as *;
-@use '../variables/color' as *;
+@use '$lib/stylesheets/variables/dimension' as *;
+@use '$lib/stylesheets/variables/color' as *;
 
 button {
 	$btn-size: $header-height * 0.82;

@@ -1,5 +1,5 @@
-@use '../variables/mixin' as *;
-@use '../variables/color' as *;
+@use '$lib/stylesheets/variables/mixin' as *;
+@use '$lib/stylesheets/variables/color' as *;
 
 a {
 	color: inherit !important;
