@@ -12,7 +12,8 @@
 		COPYRIGHT,
 		SITE_NAME,
 		SITE_URL,
-		CONTACT_EMAIL_ADDRESS
+		CONTACT_EMAIL_ADDRESS,
+		LOGO_180PX_OXIPNG_REL_PATH
 	} from '$lib/scripts/variables';
 
 	$: pathname = $page.url.pathname;
@@ -42,11 +43,6 @@
 		maxVh1 = window.innerHeight;
 		document.documentElement.style.setProperty('--max-vh001', maxVh1 * 0.01 + 'px');
 	}
-
-	$: HEAD = {
-		logo_180px_oxipng: '/images/logos/rinrin/logo_180px_oxipng.png?v=2'
-	};
-	$: absThumbnailPath = SITE_URL + HEAD.logo_180px_oxipng;
 </script>
 
 <svelte:head>
@@ -54,29 +50,15 @@
 	<meta name="format-detection" content="telephone=no,address=no,email=no" />
 
 	<meta property="og:site_name" content={SITE_NAME} />
-	{#if pathname.startsWith('/blog/articles/')}
-		<meta property="og:type" content="article" />
-	{:else if pathname.startsWith('/profile')}
-		<meta property="og:type" content="profile" />
-	{:else}
-		<meta property="og:type" content="website" />
-	{/if}
 	<meta property="og:locale" content="ja_JP" />
 	<meta name="twitter:site" content={SITE_URL} />
-	{#if pathname.startsWith('/blog/articles/')}
-		<meta name="twitter:card" content="summary_large_image" />
-	{:else}
-		<meta name="twitter:card" content="summary" />
-		<meta property="og:image" content={absThumbnailPath} />
-		<meta name="thumbnail" content={absThumbnailPath} />
-	{/if}
 	<meta name="theme-color" content="#d1b27f" />
 
 	<meta name="keywords" content="Rinrin,Rinrin0413,Rinrin.rs" />
 	<meta name="author" content="Rinrin.rs <{CONTACT_EMAIL_ADDRESS}>" />
 	<meta name="copyright" content={COPYRIGHT} />
 
-	<link rel="icon" href={HEAD.logo_180px_oxipng} />
+	<link rel="icon" href={LOGO_180PX_OXIPNG_REL_PATH} />
 	<link rel="icon" href="/images/logos/rinrin/logo.svg" type="image/svg+xml" />
 	<link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
 	<link rel="manifest" href="/manifest.json" />

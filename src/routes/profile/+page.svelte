@@ -19,7 +19,12 @@
 	];
 </script>
 
-<HeadMetadata title="Profile" desc="Rinrin.rs のプロフィール" canonicalUrl="{SITE_URL}/profile" />
+<HeadMetadata
+	title="Profile"
+	desc="Rinrin.rs のプロフィール"
+	canonicalUrl="{SITE_URL}/profile"
+	ogType="profile"
+/>
 
 <section>
 	<Space height="64px" />
