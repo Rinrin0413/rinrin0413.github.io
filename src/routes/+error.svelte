@@ -10,14 +10,12 @@
 	$: err = $page.error;
 	$: msg = is404 ? 'Page not found' : err !== null ? err.message : 'Something went wrong';
 
-	$: HEAD = {
-		title: `${status} - ${msg}`
-	};
+	$: title = `${PAGE_FULL_TITLE_PART}${status} - ${msg}`;
 </script>
 
 <svelte:head>
-	<title>{PAGE_FULL_TITLE_PART + HEAD.title}</title>
-	<meta name="title" content={PAGE_FULL_TITLE_PART + HEAD.title} />
+	<title>{title}</title>
+	<meta name="title" content={title} />
 </svelte:head>
 
 <h1>{status}</h1>
