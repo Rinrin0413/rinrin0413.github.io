@@ -15,3 +15,15 @@ export const CONTACT_EMAIL_ADDRESS = 'rinrin0413.rs@gmail.com';
 
 /** The relative path of `logo_180px_oxipng.png`. */
 export const LOGO_180PX_OXIPNG_REL_PATH = '/images/logos/rinrin/logo_180px_oxipng.png?v=2';
+
+/**
+ * The part of the full title of the pages.
+ *
+ * Usage:
+ *
+ * ```ts
+ * import { PAGE_FULL_TITLE_PART } from '$lib/scripts/variables';
+ * const FULL_TITLE = PAGE_FULL_TITLE_PART + 'Home';
+ * ```
+ */
+export const PAGE_FULL_TITLE_PART = 'Rinrin.rs | ';
