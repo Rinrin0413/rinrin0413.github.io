@@ -49,22 +49,28 @@
 				<nav>
 					<h1>{$_('w.otherLinks')}</h1>
 					<ul>
-						<FadeInAnim type={ANIM_TYPE} delay={ANIM_DELAY_OTHER_LINKS + 100} evenLittleBit>
-							<li><a href="/acknowledgments">Acknowledgments</a></li>
-						</FadeInAnim>
-						<FadeInAnim type={ANIM_TYPE} delay={ANIM_DELAY_OTHER_LINKS + 200} evenLittleBit>
-							{#if wallpaperPath !== undefined}
-								<li><a href={wallpaperPath}>{$_('w.bgWallpaper')}</a></li>
-							{/if}
-						</FadeInAnim>
-						<FadeInAnim type={ANIM_TYPE} delay={ANIM_DELAY_OTHER_LINKS + 300} evenLittleBit>
+						<li>
+							<FadeInAnim type={ANIM_TYPE} delay={ANIM_DELAY_OTHER_LINKS + 100} evenLittleBit>
+								<a href="/acknowledgments">Acknowledgments</a>
+							</FadeInAnim>
+						</li>
+						{#if wallpaperPath !== undefined}
 							<li>
-								<a href="/feed">{$_('w.rssAtomFeed')}</a>
+								<FadeInAnim type={ANIM_TYPE} delay={ANIM_DELAY_OTHER_LINKS + 200} evenLittleBit>
+									<a href={wallpaperPath}>{$_('w.bgWallpaper')}</a>
+								</FadeInAnim>
 							</li>
-						</FadeInAnim>
-						<FadeInAnim type={ANIM_TYPE} delay={ANIM_DELAY_OTHER_LINKS + 400} evenLittleBit>
-							<li><a href="/sitemap.xml">sitemap.xml</a></li>
-						</FadeInAnim>
+						{/if}
+						<li>
+							<FadeInAnim type={ANIM_TYPE} delay={ANIM_DELAY_OTHER_LINKS + 300} evenLittleBit>
+								<a href="/feed">{$_('w.rssAtomFeed')}</a>
+							</FadeInAnim>
+						</li>
+						<li>
+							<FadeInAnim type={ANIM_TYPE} delay={ANIM_DELAY_OTHER_LINKS + 400} evenLittleBit>
+								<a href="/sitemap.xml">sitemap.xml</a>
+							</FadeInAnim>
+						</li>
 					</ul>
 				</nav>
 				<div class="lang">
