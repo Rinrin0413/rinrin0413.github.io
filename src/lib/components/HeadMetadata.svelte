@@ -49,7 +49,7 @@
 	<meta property="og:url" content={canonicalUrl} />
 	<meta property="og:type" content={ogType} />
 	<meta name="twitter:card" content={ogCardType} />
-	{#if doesNotSetThumbnailImg}
+	{#if !doesNotSetThumbnailImg}
 		<meta property="og:image" content={absThumbnailPath} />
 	{/if}
 
