@@ -3,10 +3,12 @@
 	import { _, locale } from 'svelte-i18n';
 	import { COPYRIGHT } from '$lib/scripts/variables';
 	import FadeInAnim from './FadeInAnim.svelte';
+	import { BG_IMG_URL } from '$lib/scripts/data/bg-img-url';
 
 	let wallpaperPath: string;
+	const hasBgImgUrl = BG_IMG_URL !== null;
 
-	onMount(() => {
+	if (!hasBgImgUrl) onMount(() => {
 		const bgImg = getComputedStyle(document.documentElement, '::before').backgroundImage;
 		// Extract the URL from the CSS function `url()`.
 		wallpaperPath = bgImg.replace(/.*url\("(.*)"\).*/, '$1');
@@ -54,10 +56,10 @@
 								<a href="/acknowledgments">Acknowledgments</a>
 							</FadeInAnim>
 						</li>
-						{#if wallpaperPath !== undefined}
+						{#if hasBgImgUrl || wallpaperPath !== undefined}
 							<li>
 								<FadeInAnim type={ANIM_TYPE} delay={ANIM_DELAY_OTHER_LINKS + 200} evenLittleBit>
-									<a href={wallpaperPath}>{$_('w.bgWallpaper')}</a>
+									<a href={BG_IMG_URL ?? wallpaperPath} target="_blank" rel="noopener noreferrer" class="no-after-icn">{$_('w.bgWallpaper')}</a>
 								</FadeInAnim>
 							</li>
 						{/if}
