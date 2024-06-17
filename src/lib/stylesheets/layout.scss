@@ -28,7 +28,7 @@
 main {
 	$header-space: $header-height * 2;
 
-	min-height: calc(100vh - $header-space - $min-footer-height);
+	min-height: max(218px, calc(100vh - $header-space - $min-footer-height));
 	margin-top: $header-space;
 }
 
