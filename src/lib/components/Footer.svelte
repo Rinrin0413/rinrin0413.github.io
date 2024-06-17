@@ -8,11 +8,12 @@
 	let wallpaperPath: string;
 	const hasBgImgUrl = BG_IMG_URL !== null;
 
-	if (!hasBgImgUrl) onMount(() => {
-		const bgImg = getComputedStyle(document.documentElement, '::before').backgroundImage;
-		// Extract the URL from the CSS function `url()`.
-		wallpaperPath = bgImg.replace(/.*url\("(.*)"\).*/, '$1');
-	});
+	if (!hasBgImgUrl)
+		onMount(() => {
+			const bgImg = getComputedStyle(document.documentElement, '::before').backgroundImage;
+			// Extract the URL from the CSS function `url()`.
+			wallpaperPath = bgImg.replace(/.*url\("(.*)"\).*/, '$1');
+		});
 
 	$: isLocaleEng = typeof $locale === 'string' && $locale.startsWith('en');
 
@@ -59,7 +60,12 @@
 						{#if hasBgImgUrl || wallpaperPath !== undefined}
 							<li>
 								<FadeInAnim type={ANIM_TYPE} delay={ANIM_DELAY_OTHER_LINKS + 200} evenLittleBit>
-									<a href={BG_IMG_URL ?? wallpaperPath} target="_blank" rel="noopener noreferrer" class="no-after-icn">{$_('w.bgWallpaper')}</a>
+									<a
+										href={BG_IMG_URL ?? wallpaperPath}
+										target="_blank"
+										rel="noopener noreferrer"
+										class="no-after-icn">{$_('w.bgWallpaper')}</a
+									>
 								</FadeInAnim>
 							</li>
 						{/if}
