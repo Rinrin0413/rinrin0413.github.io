@@ -1,4 +1,5 @@
 <script lang="ts">
+	import HeadMetadata from '$lib/components/HeadMetadata.svelte';
 	import Space from '$lib/components/Space.svelte';
 	import Title from '$lib/components/Title.svelte';
 	import FeedButton from '$lib/components/FeedButton.svelte';
@@ -7,10 +8,11 @@
 	import ArticleCard from '$lib/components/ArticleCard.svelte';
 
 	import type { PageData } from './$types';
-	import { SITE_URL } from '$lib/variables';
+	import { SITE_URL, PAGE_FULL_TITLE_PART } from '$lib/scripts/variables';
+	import { page } from '$app/stores';
 	import { _ } from 'svelte-i18n';
 	import { fly } from 'svelte/transition';
-	import { elasticBackOut } from '$lib/easing';
+	import { elasticBackOut } from '$lib/scripts/easing';
 	import { expoIn, expoOut } from 'svelte/easing';
 	import { flip } from 'svelte/animate';
 
@@ -18,32 +20,25 @@
 
 	$: canonicalUrl = SITE_URL + '/blog';
 
+	$: pageUrl = $page.url;
 	$: tags = data.tags;
 	$: articles = data.articles;
 
-	$: HEAD = {
-		title: 'Blog',
-		titleFull: 'Rinrin.rs | Blog',
-		desc: 'Rinrin.rs のブログ(?)'
-	};
+	const TITLE = 'Blog';
 </script>
 
-<svelte:head>
-	<title>{HEAD.titleFull}</title>
-	<meta name="title" content={HEAD.titleFull} />
-	<meta name="description" content={HEAD.desc} />
-
-	<meta property="og:title" content={HEAD.title} />
-	<meta property="og:description" content={HEAD.desc} />
-	<meta property="og:url" content={canonicalUrl} />
-
-	<link rel="canonical" href={canonicalUrl} />
-</svelte:head>
+<HeadMetadata title={TITLE} desc="Rinrin.rs のブログ(?)" {canonicalUrl} />
 
 <section>
 	<Space height="64px" />
 	<Title text="Blog" />
-	<p><ShareButton href={canonicalUrl} title={HEAD.titleFull} notArticlePage /><FeedButton /></p>
+	<p>
+		<ShareButton
+			href="{SITE_URL}{pageUrl.pathname}{pageUrl.search}"
+			title={PAGE_FULL_TITLE_PART + TITLE}
+			notArticlePage
+		/><FeedButton />
+	</p>
 	<TagPicker allTags={data.allTags} pickedTags={tags} />
 
 	{#if 0 < articles.length}
@@ -65,5 +60,5 @@
 </section>
 
 <style lang="scss">
-	@use '/assets/stylesheets/blog/blog';
+	@use '$lib/stylesheets/blog/blog';
 </style>

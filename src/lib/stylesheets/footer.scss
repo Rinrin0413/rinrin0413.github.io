@@ -1,0 +1,90 @@
+@use '$lib/stylesheets/variables/color' as *;
+@use '$lib/stylesheets/variables/dimension' as *;
+@use '$lib/stylesheets/variables/mixin' as *;
+
+footer {
+	min-height: $min-footer-height;
+	background-color: $txt-primary;
+	color: $bg-primary;
+
+	::selection {
+		background: $bg-primary;
+		color: $txt-primary;
+	}
+}
+
+.content {
+	display: inline-block;
+	margin: 0 auto;
+	margin-bottom: 16px;
+}
+
+p {
+	display: inline-block;
+	margin: 0 0;
+	margin-top: 20px;
+}
+
+.links {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+nav {
+	margin: 0 14px;
+	margin-bottom: 18px;
+}
+
+h1 {
+	@include kaisei-decol;
+	font-size: 21px;
+	margin: 0;
+	margin-top: 18px;
+	margin-bottom: 6px;
+	opacity: 0.75;
+	text-decoration: underline 3px;
+	text-decoration-skip-ink: none;
+}
+
+ul {
+	margin: 0;
+	padding-left: 26px;
+	text-align: left;
+}
+
+li {
+	list-style-type: disc;
+	line-height: 1.6;
+}
+
+a {
+	font-size: 17px;
+	color: #f5b3b3;
+	text-decoration-color: rgba($bg-primary, 0.6);
+	transition: 0.1s;
+
+	&:hover {
+		text-decoration-color: inherit;
+	}
+}
+
+.lang {
+	margin: 10px 0;
+}
+
+button {
+	background: none;
+	border: none;
+	cursor: pointer;
+	font-family: inherit;
+	color: inherit;
+	font-size: 18px;
+	text-decoration: underline;
+
+	&[disabled] {
+		cursor: initial;
+		text-decoration: none;
+		opacity: 0.5;
+	}
+}

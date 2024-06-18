@@ -5,7 +5,7 @@
 
 	import { onMount } from 'svelte';
 	import { browser } from '$app/environment';
-	import { toggleScrollPrevention } from '$lib/util';
+	import { toggleScrollPrevention } from '$lib/scripts/utils';
 	import { blur } from 'svelte/transition';
 	import { page } from '$app/stores';
 	import { _ } from 'svelte-i18n';
@@ -54,11 +54,16 @@
 		}
 	];
 
+	/** **＊ Must be called in the browser environment.** */
 	function updateScroll() {
 		isAtTop = window.scrollY <= 0;
 	}
 
-	/** Toggles drawer menu open/close. */
+	/**
+	 * Toggles drawer menu open/close.
+	 *
+	 * **＊ Must be called in the browser environment.**
+	 */
 	function toggleDrawerMenu(open: boolean) {
 		isAfterDrawerMenuClosed = isDrawerMenuOpened;
 		isDrawerMenuOpened = open;
@@ -120,5 +125,5 @@
 </header>
 
 <style lang="scss">
-	@use '/assets/stylesheets/header/header';
+	@use '$lib/stylesheets/header/header';
 </style>

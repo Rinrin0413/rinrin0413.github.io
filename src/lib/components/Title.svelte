@@ -22,13 +22,14 @@
 		window.addEventListener('resize', updateVw);
 	}
 
-	$: if (node) {
+	$: if (node != undefined) {
 		if (!initWidth) {
 			initWidth = node.offsetWidth;
 		}
 		isOverflown = vw <= initWidth;
 	}
 
+	/** **＊ Must be called in the browser environment.** */
 	function updateVw() {
 		vw = window.innerWidth;
 	}
@@ -41,8 +42,8 @@
 </div>
 
 <style lang="scss">
-	@use '/assets/stylesheets/variables/mixin' as *;
-	@use '/assets/stylesheets/variables/color' as *;
+	@use '$lib/stylesheets/variables/mixin' as *;
+	@use '$lib/stylesheets/variables/color' as *;
 
 	h1,
 	span::before {

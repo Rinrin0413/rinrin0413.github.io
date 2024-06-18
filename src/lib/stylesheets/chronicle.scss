@@ -1,0 +1,156 @@
+@use '$lib/stylesheets/variables/color' as *;
+@use '$lib/stylesheets/variables/mixin' as *;
+
+.container {
+	margin: 64px 18px;
+}
+
+ul {
+	$max-width: 640px;
+	$border: 2px dotted $line-primary;
+
+	padding: 0;
+	margin: 0 auto;
+	border-left: $border;
+	border-right: $border;
+	max-width: $max-width;
+	height: auto;
+	transition: 0.5s;
+
+	&:not(.opened) {
+		height: 86px;
+		background-color: #5f47306c;
+		box-shadow: 0 4px 14px #00000062;
+		border-bottom: $border;
+		$border-radius: 4px;
+		border-bottom-left-radius: $border-radius;
+		border-bottom-right-radius: $border-radius;
+		cursor: pointer;
+
+		&:hover {
+			transform: translateY(8px) scale(0.99);
+
+			&::after {
+				opacity: 0.58;
+			}
+		}
+
+		&::after {
+			content: 'Expand ▼';
+			float: right;
+			position: relative;
+			bottom: 24px;
+			right: 12px;
+			font-size: 16px;
+			opacity: 0.84;
+			transition: 0.2s;
+
+			@include sp {
+				font-size: 15px;
+				bottom: 20px;
+				right: 20px;
+			}
+		}
+
+		.row {
+			&:first-child {
+				filter: blur(0);
+
+				@include sp {
+					white-space: nowrap;
+
+					.event {
+						font-size: 13px;
+						text-overflow: ellipsis;
+						overflow: hidden;
+					}
+				}
+			}
+
+			&:not(:first-child) {
+				position: absolute;
+				transform: scale(0);
+				opacity: 0;
+			}
+		}
+	}
+}
+
+.row {
+	display: flex;
+	justify-content: center;
+	text-align: left;
+	margin: 0 32px 0 16px;
+	transition: 0.5s;
+}
+
+.year {
+	@include source-code-pro;
+	position: relative;
+	bottom: 32px;
+	padding-right: 22px;
+	margin: 0;
+	border-right: 1px solid $line-primary;
+	white-space: nowrap;
+	font-size: 18px;
+
+	&:not(.no-pin):after {
+		content: '';
+		$size: 18px;
+		width: $size;
+		height: $size;
+		background-color: #5f4730;
+		transform: rotate(45deg);
+		position: absolute;
+		left: 111px;
+	}
+}
+
+.event {
+	$separator-color: rgba($line-primary, 0.7);
+	position: relative;
+	bottom: 32px;
+	left: 24px;
+	width: 512px;
+	font-size: 16px;
+	border-bottom: 2.5px solid $separator-color;
+	padding: 0 6px 3px 12px;
+	margin-bottom: 48px;
+	transition: 0.2s;
+	@include bold;
+
+	&:before {
+		content: '';
+		display: inline-block;
+		width: 1px;
+		height: 100%;
+		background-color: $separator-color;
+		position: absolute;
+		left: 3px;
+	}
+}
+
+@include sp {
+	.row {
+		margin: 0 16px 0 12px;
+	}
+
+	.year {
+		font-size: 16px;
+		padding-right: 10px;
+
+		&:not(.no-pin):after {
+			$size: 12px;
+			width: $size;
+			height: $size;
+			left: 91px;
+		}
+	}
+
+	.event {
+		left: 8px;
+		font-size: 14px;
+		padding-right: 0;
+		padding-left: 10px;
+	}
+}

@@ -15,7 +15,6 @@
 		<!--
 			Google Material Symbols and Icons - Close
 			https://fonts.google.com/icons?selected=Material%20Symbols%20Outlined%3Aclose%3AFILL%400%3Bwght%40400%3BGRAD%400%3Bopsz%4048
-
 			This icon is licensed under the Apache License Version 2.0: https://github.com/google/material-design-icons/blob/master/README.md
 		-->
 		<svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"
@@ -27,7 +26,6 @@
 		<!--
 			Google Material Symbols and Icons - Menu
 			https://fonts.google.com/icons?selected=Material%20Symbols%20Outlined%3Amenu%3AFILL%400%3Bwght%40400%3BGRAD%400%3Bopsz%4048
-
 			This icon is licensed under the Apache License Version 2.0: https://github.com/google/material-design-icons/blob/master/README.md
 		-->
 		<svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"
@@ -38,9 +36,9 @@
 </button>
 
 <style lang="scss">
-	@use '/assets/stylesheets/header/button';
+	@use '$lib/stylesheets/header/button';
 
-	@use '/assets/stylesheets/variables/mixin' as *;
+	@use '$lib/stylesheets/variables/mixin' as *;
 
 	button {
 		display: none;

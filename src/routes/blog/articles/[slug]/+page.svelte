@@ -1,4 +1,5 @@
 <script lang="ts">
+	import HeadMetadata from '$lib/components/HeadMetadata.svelte';
 	import Space from '$lib/components/Space.svelte';
 	import ShareButton from '$lib/components/ShareButton.svelte';
 	import FeedButton from '$lib/components/FeedButton.svelte';
@@ -8,8 +9,8 @@
 
 	import type { PageData } from './$types';
 	import { page } from '$app/stores';
-	import { SITE_URL } from '$lib/variables';
-	import { parallaxStyle, idToDate } from '$lib/util';
+	import { SITE_URL, PAGE_FULL_TITLE_PART } from '$lib/scripts/variables';
+	import { parallaxStyle, idToDate } from '$lib/scripts/utils';
 	import { _ } from 'svelte-i18n';
 	import { cubicOut } from 'svelte/easing';
 	import { scale } from 'svelte/transition';
@@ -48,32 +49,29 @@
 		};
 	}
 
-	$: HEAD = {
-		title: 'Blog - ' + metadata.title,
-		titleFull: 'Rinrin.rs | Blog - ' + metadata.title,
-		desc: metadata.desc
-	};
+	$: title = metadata.title;
+	$: titleFull = PAGE_FULL_TITLE_PART + title;
+
 	$: absThumbnailPath = SITE_URL + thumbnailPath;
 </script>
 
-<svelte:head>
-	<title>{HEAD.titleFull}</title>
-	<meta name="title" content={HEAD.titleFull} />
-	<meta name="description" content={HEAD.desc} />
+<HeadMetadata
+	title="Blog - {title}"
+	desc="Rinrin.rs のホームページです。"
+	{canonicalUrl}
+	ogType="article"
+	ogCardType="summary_large_image"
+	doesNotSetThumbnailImg
+/>
 
-	<meta property="og:title" content={HEAD.title} />
-	<meta property="og:description" content={HEAD.desc} />
-	<meta property="og:url" content={canonicalUrl} />
+<svelte:head>
 	{#if hasThumbnailImg}
 		<meta property="og:image" content={absThumbnailPath} />
 		<meta name="thumbnail" content={absThumbnailPath} />
 	{/if}
-
 	{#if !metadata.indexed}
 		<meta name="robots" content="noindex" />
 	{/if}
-
-	<link rel="canonical" href={canonicalUrl} />
 </svelte:head>
 
 <svelte:window bind:scrollY />
@@ -109,16 +107,16 @@
 		>
 	</div>
 	<div in:scale|global={introAnim(4)}>
-		<!-- 
+		<!--
 			Logically, the dropdown menu of the sharing button should come after the thumbnail image,
 			but breaking the logic for the sake of intuitiveness.
 		-->
 		<div style={parallax(-0.06)}>
-			<ShareButton href={canonicalUrl} title={HEAD.titleFull} /><FeedButton />
+			<ShareButton href={canonicalUrl} title={titleFull} /><FeedButton />
 		</div>
 	</div>
 	<Article body={data.component} />
-	<p><ShareButton href={canonicalUrl} title={HEAD.titleFull} expanded /></p>
+	<p><ShareButton href={canonicalUrl} title={titleFull} expanded /></p>
 	<Tags tags={metadata.tags} />
 	<div><a href="/blog" class="back-to-index">{$_('article.backToIndex')}</a></div>
 </div>
@@ -126,5 +124,5 @@
 <ScrollToTop />
 
 <style lang="scss">
-	@use '/assets/stylesheets/blog/article-page';
+	@use '$lib/stylesheets/blog/article_page';
 </style>

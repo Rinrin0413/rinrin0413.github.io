@@ -2,44 +2,42 @@
 	import Title2 from '$lib/components/Title2.svelte';
 
 	import { _ } from 'svelte-i18n';
+
+	$: envs = [
+		{
+			type: $_('w.hardware'),
+			items: [
+				{ key: $_('w.model'), value: 'MouseComputer Z7-Z690' },
+				{ key: 'CPU', value: 'Intel® Core™ i7-12700 Processor' },
+				{ key: $_('w.memory'), value: '16GB✕2' },
+				{ key: $_('w.gpu'), value: 'NVIDIA GeForce RTX 3060 / 12GB' }
+			]
+		},
+		{
+			type: $_('w.software'),
+			items: [
+				{ key: 'OS', value: 'openSUSE Leap 15.5 x86_64' },
+				{ key: $_('w.shell'), value: 'bash 4.4.23' },
+				{ key: $_('w.desktopEnv'), value: 'GNOME 41.9' },
+				{ key: $_('w.webBrowser'), value: 'Mozilla Firefox ESR' },
+				{ key: $_('w.codeEditor'), value: 'Visual Studio Code Insiders' }
+			]
+		}
+	];
 </script>
 
 <p>{$_('env.intro')}</p>
 
-<Title2 text={$_('w.hardware')} />
+{#each envs as { type, items }}
+	<Title2 text={type} />
 
-<div>
-	<h3>{$_('w.model')}</h3>
-	<p>MouseComputer Z7-Z690</p>
-
-	<h3>CPU</h3>
-	<p>Intel® Core™ i7-12700 Processor</p>
-
-	<h3>{$_('w.memory')}</h3>
-	<p>16GB✕2</p>
-
-	<h3>{$_('w.gpu')}</h3>
-	<p>NVIDIA GeForce RTX 3060 / 12GB</p>
-</div>
-
-<Title2 text={$_('w.software')} />
-
-<div>
-	<h3>OS</h3>
-	<p>openSUSE Leap 15.5 x86_64</p>
-
-	<h3>{$_('w.shell')}</h3>
-	<p>bash 4.4.23</p>
-
-	<h3>{$_('w.desktopEnv')}</h3>
-	<p>GNOME 41.9</p>
-
-	<h3>{$_('w.webBrowser')}</h3>
-	<p>Mozilla Firefox ESR</p>
-
-	<h3>{$_('w.codeEditor')}</h3>
-	<p>Visual Studio Code Insiders</p>
-</div>
+	<div>
+		{#each items as { key, value }}
+			<h3>{key}</h3>
+			<p>{value}</p>
+		{/each}
+	</div>
+{/each}
 
 <p>
 	{$_('env.notes.0')}<a href="https://geartics.com/rinrin" target="_blank" rel="noopener noreferrer"
@@ -48,8 +46,8 @@
 </p>
 
 <style lang="scss">
-	@use '/assets/stylesheets/variables/color' as *;
-	@use '/assets/stylesheets/variables/mixin' as *;
+	@use '$lib/stylesheets/variables/color' as *;
+	@use '$lib/stylesheets/variables/mixin' as *;
 
 	h3,
 	div p {

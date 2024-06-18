@@ -1,6 +1,6 @@
 import type { PageLoad } from './$types';
 import type { SvelteComponent } from 'svelte';
-import type { ArticleMetadata } from '$lib/types';
+import type { ArticleMetadata } from '$lib/scripts/types';
 import { error } from '@sveltejs/kit';
 
 export const load: PageLoad = async ({
@@ -14,7 +14,7 @@ export const load: PageLoad = async ({
 	const { default: component, metadata: frontmatter } = await import(
 		`../../../../../articles/${params.slug}.md`
 	).catch(err);
-	if (!frontmatter.published) err();
+	if (!(frontmatter.published as boolean)) err();
 
 	const thumbnailImgFmt = await (await fetch('/api/articles/thumbnail-imgs'))
 		.json()

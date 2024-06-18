@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { SITE_NAME } from '$lib/variables';
+	import { SITE_NAME } from '$lib/scripts/variables';
 	import { browser } from '$app/environment';
 	import { _ } from 'svelte-i18n';
 	import { fly } from 'svelte/transition';
-	import { faviconUrl } from '$lib/util';
+	import { faviconUrl } from '$lib/scripts/utils';
 
 	export let href: string;
 	export let title: string;
@@ -22,7 +22,7 @@
 
 	let isMenuOpened = false;
 
-	const ITEM_NAMES = {
+	$: ITEM_NAMES = {
 		copy: $_('blog.copyUrl'),
 		post: $_('blog.post'),
 		toot: $_('blog.toot'),
@@ -36,6 +36,7 @@
 		isMenuOpened = !isMenuOpened;
 	}
 
+	/** **＊ Must be called in the browser environment.** */
 	function shareWithWebShareApi() {
 		navigator.share({
 			url: href,
@@ -44,6 +45,7 @@
 		});
 	}
 
+	/** **＊ Must be called in the browser environment.** */
 	function copyToClipboard() {
 		navigator.clipboard
 			.writeText(href)
@@ -52,26 +54,31 @@
 			.finally(() => (isMenuOpened = false));
 	}
 
+	/** **＊ Must be called in the browser environment.** */
 	function openLink(url: string) {
 		window.open(url, '_blank', 'width=628,height=424');
 	}
 
+	/** **＊ Must be called in the browser environment.** */
 	function shareOnTwitter() {
 		const text = encodeURIComponent(title.replace('Rinrin.rs', 'Rinrin​.rs') + '\n' + href);
 		openLink('https://twitter.com/intent/tweet?text=' + text);
 	}
 
+	/** **＊ Must be called in the browser environment.** */
 	function shareOnMisskey() {
 		const text = encodeURIComponent(title);
 		const url = encodeURIComponent(href);
 		openLink(`https://misskey-hub.net/share/?text=${text}&url=${url}`);
 	}
 
+	/** **＊ Must be called in the browser environment.** */
 	function shareWithDomain(domain: string) {
 		const text = encodeURIComponent(title + '\n' + href);
 		openLink(`https://${domain}/share?text=${text}`);
 	}
 
+	/** **＊ Must be called in the browser environment.** */
 	function shareOnMastodon() {
 		shareWithDomain(mastodonDomain);
 	}
@@ -89,7 +96,6 @@
 				<!--
 					Google Material Symbols and Icons - Content Copy
 					https://fonts.google.com/icons?selected=Material%20Symbols%20Outlined%3Acontent_copy%3AFILL%400%3Bwght%40400%3BGRAD%400%3Bopsz%4024
-
 					This icon is licensed under the Apache License Version 2.0: https://github.com/google/material-design-icons/blob/master/README.md
 				-->
 				<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"
@@ -141,7 +147,6 @@
 					<!--
 						Bootstrap Icons - Three dots
 						https://icons.getbootstrap.com/icons/three-dots
-
 						Copyright (c) 2019 The Bootstrap Authors
 						under the MIT License: https://github.com/twbs/icons/blob/main/LICENSE
 					-->
@@ -172,7 +177,6 @@
 		<!--
 			Google Material Symbols and Icons - Share
 			https://fonts.google.com/icons?selected=Material%20Symbols%20Outlined%3Ashare%3AFILL%401%3Bwght%40400%3BGRAD%400%3Bopsz%4024
-
 			This icon is licensed under the Apache License Version 2.0: https://github.com/google/material-design-icons/blob/master/README.md
 		-->
 		<svg
@@ -189,5 +193,5 @@
 {/if}
 
 <style lang="scss">
-	@use '/assets/stylesheets/blog/share-button';
+	@use '$lib/stylesheets/blog/share_button';
 </style>

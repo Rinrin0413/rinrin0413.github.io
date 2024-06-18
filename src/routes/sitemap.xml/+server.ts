@@ -1,6 +1,6 @@
 import type { RequestHandler } from './$types';
-import { fetchArticles } from '$lib/fetchers';
-import { SITE_URL } from '$lib/variables';
+import { fetchArticles } from '$lib/scripts/fetchers';
+import { SITE_URL } from '$lib/scripts/variables';
 
 export const prerender = true;
 
@@ -60,6 +60,11 @@ async function body() {
         <loc>${SITE_URL}/social</loc>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>${SITE_URL}/acknowledgments</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.4</priority>
     </url>
 </urlset>`;
 }

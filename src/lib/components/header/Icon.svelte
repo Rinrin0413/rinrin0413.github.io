@@ -7,7 +7,6 @@
 	<!--
 		Google Material Symbols and Icons - Nutrition
 		https://fonts.google.com/icons?selected=Material%20Symbols%20Outlined%3Anutrition%3AFILL%400%3Bwght%40400%3BGRAD%400%3Bopsz%4048
-
 		This icon is licensed under the Apache License Version 2.0: https://github.com/google/material-design-icons/blob/master/README.md
 	-->
 	<svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"
@@ -20,7 +19,6 @@
 	<!--
 		Google Material Symbols and Icons - Article
 		https://fonts.google.com/icons?selected=Material%20Symbols%20Outlined%3Aarticle%3AFILL%400%3Bwght%40400%3BGRAD%400%3Bopsz%4048
-
 		This icon is licensed under the Apache License Version 2.0: https://github.com/google/material-design-icons/blob/master/README.md
 	-->
 	<svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"
@@ -33,7 +31,6 @@
 	<!--
 		Google Material Symbols and Icons - Construction
 		https://fonts.google.com/icons?selected=Material%20Symbols%20Outlined%3Aconstruction%3AFILL%400%3Bwght%40400%3BGRAD%400%3Bopsz%4048
-
 		This icon is licensed under the Apache License Version 2.0: https://github.com/google/material-design-icons/blob/master/README.md
 	-->
 	<svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"
@@ -46,10 +43,8 @@
 	<!--
 		Bootstrap Icons - Window
 		https://icons.getbootstrap.com/icons/window
-
 		Copyright (c) 2019 The Bootstrap Authors
 		under the MIT License: https://github.com/twbs/icons/blob/main/LICENSE
-
 		And deleted attribute `fill` by Rinrin.rs
 	-->
 	<svg
@@ -71,7 +66,6 @@
 	<!--
 		Google Material Symbols and Icons - Palette
 		https://fonts.google.com/icons?selected=Material%20Symbols%20Outlined%3Apalette%3AFILL%400%3Bwght%40400%3BGRAD%400%3Bopsz%4048
-
 		This icon is licensed under the Apache License Version 2.0: https://github.com/google/material-design-icons/blob/master/README.md
 	-->
 	<svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"
@@ -84,10 +78,8 @@
 	<!--
 		Bootstrap Icons - Link 45deg
 		https://icons.getbootstrap.com/icons/link-45deg
-
 		Copyright (c) 2019 The Bootstrap Authors
 		under the MIT License: https://github.com/twbs/icons/blob/main/LICENSE
-
 		And deleted attribute `fill` by Rinrin.rs
 	-->
 	<svg
@@ -107,8 +99,8 @@
 {/if}
 
 <style lang="scss">
-	@use '/assets/stylesheets/variables/color' as *;
-	@use '/assets/stylesheets/variables/mixin' as *;
+	@use '$lib/stylesheets/variables/color' as *;
+	@use '$lib/stylesheets/variables/mixin' as *;
 
 	svg {
 		display: block;

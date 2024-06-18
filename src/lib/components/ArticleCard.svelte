@@ -1,6 +1,6 @@
 <script lang="ts">
-	import type { ArticleMetadata, ArticleThumbnailImgFmts } from '$lib/types';
-	import { idToDate } from '$lib/util.js';
+	import type { ArticleMetadata, ArticleThumbnailImgFmts } from '$lib/scripts/types';
+	import { idToDate } from '$lib/scripts/utils';
 	import { _ } from 'svelte-i18n';
 	import { date as dateI18n } from 'svelte-i18n';
 
@@ -49,5 +49,5 @@
 >
 
 <style lang="scss">
-	@use '/assets/stylesheets/blog/article-card';
+	@use '$lib/stylesheets/blog/article_card';
 </style>

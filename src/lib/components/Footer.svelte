@@ -1,53 +1,110 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { COPYRIGHT } from '$lib/variables';
-	import FeedButton from './FeedButton.svelte';
-	import { _ } from 'svelte-i18n';
+	import { _, locale } from 'svelte-i18n';
+	import { COPYRIGHT } from '$lib/scripts/variables';
+	import FadeInAnim from './FadeInAnim.svelte';
+	import { BG_IMG_URL } from '$lib/scripts/data/bg-img-url';
 
 	let wallpaperPath: string;
+	const hasBgImgUrl = BG_IMG_URL !== null;
 
-	onMount(() => {
-		const htmlElms = document.getElementsByTagName('html');
-		if (0 < htmlElms.length) {
-			const bgImg = getComputedStyle(htmlElms[0], '::before').backgroundImage;
+	if (!hasBgImgUrl)
+		onMount(() => {
+			const bgImg = getComputedStyle(document.documentElement, '::before').backgroundImage;
 			// Extract the URL from the CSS function `url()`.
 			wallpaperPath = bgImg.replace(/.*url\("(.*)"\).*/, '$1');
-		}
-	});
+		});
+
+	$: isLocaleEng = typeof $locale === 'string' && $locale.startsWith('en');
+
+	const SITEMAP = [
+		{ name: 'Home', path: '/' },
+		{ name: 'Profile', path: '/profile' },
+		{ name: 'Blog', path: '/blog' },
+		{ name: 'Web Tools', path: '/tools' },
+		{ name: 'Projects', path: '/projects' },
+		{ name: 'Creations', path: '/creations' },
+		{ name: 'Social', path: '/social' }
+	];
+
+	const ANIM_TYPE = 'slide-left';
+	const ANIM_DELAY_STEP = 50;
+	const ANIM_DELAY_OTHER_LINKS = ANIM_DELAY_STEP * SITEMAP.length * 0.5;
 </script>
 
 <footer>
-	<p class="copyright">{COPYRIGHT}</p>
-	<div class="feed-btn"><FeedButton /></div>
-	<a href="/" class="go-to-home-btn">
-		<!--
-			Bootstrap Icons - House door fill
-			https://icons.getbootstrap.com/icons/house-door-fill/
-
-			Copyright (c) 2019 The Bootstrap Authors
-			under the MIT License: https://github.com/twbs/icons/blob/main/LICENSE
-		-->
-		<svg
-			xmlns="http://www.w3.org/2000/svg"
-			width="16"
-			height="16"
-			fill="currentColor"
-			viewBox="0 0 16 16"
-			class="home-icn"
-		>
-			<path
-				d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5Z"
-			/>
-		</svg>
-		<span class="home-text">HOME</span>
-	</a>
-	{#if wallpaperPath !== undefined}
-		<a href={wallpaperPath} target="_blank" rel="noopener noreferrer" class="btn-to-wallpaper">
-			<span>{$_('footer.bgWallpaper')}</span>
-		</a>
-	{/if}
+	<div class="content">
+		<p>{COPYRIGHT}</p>
+		<div class="links">
+			<nav>
+				<h1>{$_('w.sitemap')}</h1>
+				<ul>
+					{#each SITEMAP as { name, path }, i}
+						<li>
+							<FadeInAnim type={ANIM_TYPE} delay={ANIM_DELAY_STEP * i} evenLittleBit>
+								<a href={path}>{name}</a>
+							</FadeInAnim>
+						</li>
+					{/each}
+				</ul>
+			</nav>
+			<div>
+				<nav>
+					<h1>{$_('w.otherLinks')}</h1>
+					<ul>
+						<li>
+							<FadeInAnim type={ANIM_TYPE} delay={ANIM_DELAY_OTHER_LINKS + 100} evenLittleBit>
+								<a href="/acknowledgments">Acknowledgments</a>
+							</FadeInAnim>
+						</li>
+						{#if hasBgImgUrl || wallpaperPath !== undefined}
+							<li>
+								<FadeInAnim type={ANIM_TYPE} delay={ANIM_DELAY_OTHER_LINKS + 200} evenLittleBit>
+									<a
+										href={BG_IMG_URL ?? wallpaperPath}
+										target="_blank"
+										rel="noopener noreferrer"
+										class="no-after-icn">{$_('w.bgWallpaper')}</a
+									>
+								</FadeInAnim>
+							</li>
+						{/if}
+						<li>
+							<FadeInAnim type={ANIM_TYPE} delay={ANIM_DELAY_OTHER_LINKS + 300} evenLittleBit>
+								<a href="/feed">{$_('w.rssAtomFeed')}</a>
+							</FadeInAnim>
+						</li>
+						<li>
+							<FadeInAnim type={ANIM_TYPE} delay={ANIM_DELAY_OTHER_LINKS + 400} evenLittleBit>
+								<a href="/sitemap.xml">sitemap.xml</a>
+							</FadeInAnim>
+						</li>
+					</ul>
+				</nav>
+				<div class="lang">
+					{#if isLocaleEng}
+						<button on:click={() => locale.set('ja')} class="active">日本語</button>
+					{:else}
+						<button disabled>日本語</button>
+					{/if}
+					|
+					{#if isLocaleEng}
+						<button disabled>English</button>
+					{:else}
+						<button
+							on:click={() => {
+								locale.set('en');
+								alert('Some parts may not be translated.');
+							}}
+							class="active">English</button
+						>
+					{/if}
+				</div>
+			</div>
+		</div>
+	</div>
 </footer>
 
 <style lang="scss">
-	@use '/assets/stylesheets/footer';
+	@use '$lib/stylesheets/footer';
 </style>

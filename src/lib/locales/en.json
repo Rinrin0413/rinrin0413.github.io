@@ -1,0 +1,201 @@
+{
+	"w": {
+		"microsoft": "Microsoft",
+		"name": "Name",
+		"age": "Age",
+		"yearsOld": " years old",
+		"birthday": "Birthday",
+		"sHighSchool": "S High School",
+		"yokohama": "Yokohama City",
+		"webDev": "Web Development",
+		"minecraft": "Minecraft",
+		"hardware": "Hardware",
+		"model": "Model",
+		"memory": "Memory",
+		"gpu": "GPU",
+		"software": "Software",
+		"shell": "Shell",
+		"desktopEnv": "Desktop Environment",
+		"webBrowser": "Web Browser",
+		"codeEditor": "Code Editor",
+		"tags": "Tags",
+		"articleThumbnailImage": "Article thumbnail image",
+		"noImage": "No image",
+		"backImage": "Background image",
+		"rssAtomFeed": "RSS / Atom feed",
+		"share": "Share",
+		"domain": "Domain",
+		"webShareApi": "Web Share API",
+		"jaLang": "Japanese lang.",
+		"sitemap": "Site Map",
+		"otherLinks": "Other links",
+		"bgWallpaper": "Background wallpaper"
+	},
+	"home": {
+		"icon": "Rinrin.rs' avatar",
+		"greeting": ["Hi there!!!", "I'm a {age}year-old Japanese student."],
+		"contents": " ",
+		"whatIDo": "what i usually do",
+		"chronicle": "my history",
+		"recentArticles": "Recent articles:",
+		"viewAll": "View all",
+		"contact": "Basically, I can respond by joining my Discord server and contacting me there, or by direct messaging me on Discord.\nI might not notice them when I am out, so if it's urgent, please send me an email instead.",
+		"otherSocial": "Other social accounts"
+	},
+	"header": {
+		"logo": "Rinrin.rs' logo",
+		"language": "日本語"
+	},
+	"footer": {
+		"bgWallpaper": "Wallpaper"
+	},
+	"error": { "pageNotFound": ["404 not like this!", "this page does not exist :("] },
+	"activities": {
+		"programming": {
+			"desc": "I started around the 13year-old. I do not learn very broadly.",
+			"rust": "Currently my favorite language🦀 Also my handle contains the .rs extension. ",
+			"graphics": {
+				"desc": "When i was developing shader packs for Minecraft Bedrock Edition,\ncome to like this field.",
+				"langsToUse": "Languages to use:",
+				"mayNotUse": "I may not use it anymore"
+			},
+			"webdev": [
+				"I basically don't want to do this because stylesheets are very stressful. I use SCSS of ",
+				" because \"using normal CSS\" breaks my sprit (SAAS requires indentation rules so i don't use it).\ni.e. i don't have much motivation for web development. So i have never used a framework other than ",
+				". This home page was made with it.",
+				"and I HATE MOBILE SAFARI."
+			],
+			"git": [
+				"I learned the basics but i can never remember options, etc.\nI am quite sloppy about managing branches in my personal repositories. I basically use ",
+				" for remote repository hosting."
+			]
+		},
+		"game": {
+			"desc": "Games like RPGs are not listed here.",
+			"tetrio": "TETR.IO is modern yet familiar online stacker in the same genre as certain Russian certain puzzle game.\nI am not very good at this game but fun to play it once in a while.",
+			"mc": [
+				"It is one of the games i have been playing for the longest period.\nI no longer play Wii U Edition and Bedrock Edition, I currently play the Java Edition. On the Wii U Edition,\nI was building frequently. Since i started Bedrock Edition,\nI have been developing add-ons and shader packs but i got sick of Bedrock Edition because of the repeated ",
+				"'s shit. Currently, I am developing a shader pack for Java Edition at my own pace."
+			],
+			"sky": "I was born in the Season of Assembly. But don't have time to play these days. I might go if you invite me."
+		},
+		"music": {
+			"listen": "I like piano music in the classical era and romantic era, and i especially listen to Franz Liszt's pieces. Recently, i started to listen to not only piano music but also orchestral compositions and classical song.",
+			"play": "I play classical music on the piano but not very good at it.\nAnd i quickly get tired of piano practice, so i'm often satisfied with playing only some of my favorite melodies.",
+			"compose": [
+				"I compose classical like music and arrange/transcribe classical music. Sometimes compose songs like popular music.\nBut i don't know anything about code progression, etc. because i hardly consider theory. Basically i compose in ",
+				"."
+			],
+			"sing": "I don't usually sing a song because i don't know much about songs with lyrics. The songs i can sing are Pretty Cure songs and GHIBLI songs etc.. I bought CD of GHIBLI songs and was listened to in the past."
+		}
+	},
+	"chronicle": {
+		"2006": {
+			"4": "was born in Yokohama City"
+		},
+		"2011": {
+			"null": "Around this time, called myself rinrin and was playing Ameba Pigg on Windows 7."
+		},
+		"2013": {
+			"4": "Entered the special support class of elementary school."
+		},
+		"2015": {
+			"6": "Moved to Tochigi Prefecture."
+		},
+		"2016": {
+			"12": "Played Minecraft(Wii U Edition) for the first time."
+		},
+		"2019": {
+			"3": "Moved again after graduating from elementary school, this time to Chiba Prefecture.",
+			"4": "Started playing Minecraft Bedrock Edition (Windows 10 Edition)"
+		},
+		"2020": {
+			"5": "Started learning Python because i wanted to create a Discord bot (FATAL MISTAKE)",
+			"null": "From the middle of the year, my congenital disorder begins to worsen."
+		},
+		"2021": {
+			"4": "Can hardly speak after the spring break and become a truant.",
+			"5": "Started developing shaderpacks for Minecraft Windows Edition.",
+			"11": "Started learning Rust so stops using Python."
+		},
+		"2022": {
+			"3": "Bought a new desktop computer. On that day it arrived, tried to install Arch Linux but it failed. eventually reinstalled Windows.",
+			"4": "Entered S High School",
+			"6": "Really hate Windows so installed openSUSE as main OS. Somehow installed successfully this time."
+		},
+		"2023": {
+			"2": "Rewrote this site using SvelteKit."
+		},
+		"2036": {
+			"4": "I have wondered.. right after i was born...how old i would be 30 years from now."
+		}
+	},
+	"profile": {
+		"intro": [
+			"Hi there, I'm Rinrin.rs.",
+			"am a student, Japanese, {age} years old. and have ASD.",
+			"I'm mainly on Discord.",
+			"I'll write code.",
+			"Basically i would not work Web dev.",
+			"may be able to draw a simple pixel art.",
+			"also compose music as a hobby."
+		],
+		"birthday": "April 13th, 2006",
+		"primaryLang": "Primary lang.",
+		"timezone": "Timezone",
+		"school": "School",
+		"birthplace": "Birthplace",
+		"hobby": "see"
+	},
+	"skills": {
+		"summary": "Click to expand",
+		"rust": ["I love it. but i'm not saying i mastered it", "Use it to make bots for Discord"],
+		"git": "I have ASD so i will have a seizure if i don't commit regularly",
+		"glslWgslHlsl": "Originally i was developing shaderpacks for Minecraft",
+		"webDev": {
+			"0": "don't like it because stylesheets are very stressful",
+			"svelte": [
+				"Used SvelteKit when developing website. Same this homepage",
+				"And have never used other frameworks"
+			],
+			"htmlCssJs": "I HATE CSS",
+			"sass": [
+				"I like mixin and variables etc.",
+				"I use SCSS",
+				"SASS requires indentation rules so i don't use it"
+			]
+		},
+		"python": [
+			"It is the first language i learned",
+			"There is a risk of anaphylaxis, but that does not mean cannot write it"
+		],
+		"minecraft": [
+			"I used to build Japanese-style architecture. but not good at Western-style architecture",
+			"At one time i was also creating add-ons for Bedrock Edition, but not going to do it again",
+			"Currently developing shaderpacks for Java Edition and building something, when feel like it"
+		],
+		"linux": [
+			"openSUSE Leap 15.5 is my main OS",
+			"But i don't use it for server purposes so it is hard to say it is a skill"
+		]
+	},
+	"env": {
+		"intro": "My various soil and environments",
+		"notes": ["see ", "(Japanese) for more details and devices"]
+	},
+	"social": {
+		"desc": "List of my social accounts"
+	},
+	"blog": {
+		"noMatchingArticlesFound": "No matching articles found.",
+		"clearFilters": "Clear filters",
+		"copyUrl": "Copy URL",
+		"copied": "Copied",
+		"copyFailed": "Copy failed",
+		"post": "Post",
+		"toot": "Toot",
+		"note": "Note"
+	},
+	"article.backToIndex": "Back to index",
+	"acknowledgments.desc": "Thank you for all OSS and services that used in the development of this homepage."
+}

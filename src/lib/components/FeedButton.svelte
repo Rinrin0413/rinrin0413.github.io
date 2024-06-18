@@ -5,14 +5,13 @@
 <a
 	href="/feed"
 	class="no-after-icn"
-	title={$_('w.atomFeed')}
+	title={$_('w.rssAtomFeed')}
 	target="_blank"
 	type="application/atom+xml"
 >
 	<!--
 		Google Material Symbols and Icons - RSS Feed
 		https://fonts.google.com/icons?selected=Material%20Symbols%20Outlined%3Arss_feed%3AFILL%400%3Bwght%40400%3BGRAD%400%3Bopsz%4024
-
 		This icon is licensed under the Apache License Version 2.0: https://github.com/google/material-design-icons/blob/master/README.md
 	-->
 	<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"
@@ -23,7 +22,7 @@
 </a>
 
 <style lang="scss">
-	@use '/assets/stylesheets/variables/color' as *;
+	@use '$lib/stylesheets/variables/color' as *;
 
 	a {
 		display: inline-block;

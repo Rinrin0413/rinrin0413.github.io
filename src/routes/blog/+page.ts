@@ -1,5 +1,9 @@
 import type { PageLoad } from './$types';
-import type { ArticleMetadata, ArticleTagWithCount, ArticleThumbnailImgFmts } from '$lib/types';
+import type {
+	ArticleMetadata,
+	ArticleTagWithCount,
+	ArticleThumbnailImgFmts
+} from '$lib/scripts/types';
 
 export const load: PageLoad = async ({
 	url,

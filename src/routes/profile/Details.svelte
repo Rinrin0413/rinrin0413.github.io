@@ -1,44 +1,32 @@
 <script lang="ts">
 	import { _ } from 'svelte-i18n';
-	import { calcAge } from '$lib/util';
+	import { calcAge } from '$lib/scripts/utils';
+
+	$: details = [
+		{ key: $_('w.name'), value: 'Rinrin.rs' },
+		{ key: $_('w.age'), value: `${calcAge()}${$_('w.yearsOld')}` },
+		{ key: $_('w.birthday'), value: $_('profile.birthday') },
+		{ key: $_('profile.primaryLang'), value: $_('w.jaLang') },
+		{ key: $_('profile.timezone'), value: 'JST (UTC +9)' },
+		{ key: $_('profile.school'), value: $_('w.sHighSchool') },
+		{ key: $_('profile.birthplace'), value: $_('w.yokohama') }
+	];
 </script>
 
 <div>
 	<table>
-		<tr>
-			<td>{$_('w.name')}</td>
-			<td>Rinrin.rs</td>
-		</tr>
-		<tr>
-			<td>{$_('w.age')}</td>
-			<td>{calcAge()}{$_('w.yearsOld')}</td>
-		</tr>
-		<tr>
-			<td>{$_('w.birthday')}</td>
-			<td>{$_('profile.birthday')}</td>
-		</tr>
-		<tr>
-			<td>{$_('profile.primaryLang')}</td>
-			<td>{$_('w.jaLang')}</td>
-		</tr>
-		<tr>
-			<td>{$_('profile.timezone')}</td>
-			<td>JST (UTC +9)</td>
-		</tr>
-		<tr>
-			<td>{$_('profile.school')}</td>
-			<td>{$_('w.sHighSchool')}</td>
-		</tr>
-		<tr>
-			<td>{$_('profile.birthplace')}</td>
-			<td>{$_('w.yokohama')}</td>
-		</tr>
+		{#each details as { key, value }}
+			<tr>
+				<td>{key}</td>
+				<td>{value}</td>
+			</tr>
+		{/each}
 	</table>
 </div>
 
 <style lang="scss">
-	@use '/assets/stylesheets/variables/mixin' as *;
-	@use '/assets/stylesheets/variables/color' as *;
+	@use '$lib/stylesheets/variables/mixin' as *;
+	@use '$lib/stylesheets/variables/color' as *;
 
 	div {
 		max-width: 420px;

@@ -19,7 +19,7 @@ npm run article
 
 ## サムネイル画像の設定方法
 
-[サムネイル画像の制約](#サムネイル画像のルール)に従った上で [/assets/images/blog/thumbnails/](/assets/images/blog/thumbnails/) に画像を配置するだけ
+[サムネイル画像の制約](#サムネイル画像のルール)に従った上で [/static/images/blog/thumbnails/](/static/images/blog/thumbnails/) に画像を配置するだけ
 
 ### サムネイル画像の制約
 
