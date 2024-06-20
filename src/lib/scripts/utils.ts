@@ -83,13 +83,13 @@ export function calcAge() {
 	const month = today.getMonth() + 1;
 	const date = today.getDate();
 	let age = year - BIRTHDAY.year;
-	age -= month < BIRTHDAY.month || (month == BIRTHDAY.month && date < BIRTHDAY.date) ? 1 : 0;
+	age -= month < BIRTHDAY.month || (month === BIRTHDAY.month && date < BIRTHDAY.date) ? 1 : 0;
 	return age;
 }
 
 /** Formats the given month number to a string. */
 export function fmtMonth(month: number | null) {
-	if (month == null) {
+	if (month === null) {
 		return '???&nbsp;';
 	} else {
 		const Months = [

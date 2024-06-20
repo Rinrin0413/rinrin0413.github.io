@@ -19,7 +19,7 @@
 	$: pathname = $page.url.pathname;
 
 	$: {
-		if ($navigating !== null && pathname != '/blog') NProgress.start();
+		if ($navigating !== null && pathname !== '/blog') NProgress.start();
 		else NProgress.done();
 	}
 
