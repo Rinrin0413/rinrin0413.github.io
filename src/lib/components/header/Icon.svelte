@@ -3,7 +3,7 @@
 	export let id: string;
 </script>
 
-{#if id == 'profile'}
+{#if id === 'profile'}
 	<!--
 		Google Material Symbols and Icons - Nutrition
 		https://fonts.google.com/icons?selected=Material%20Symbols%20Outlined%3Anutrition%3AFILL%400%3Bwght%40400%3BGRAD%400%3Bopsz%4048
@@ -15,7 +15,7 @@
 		/></svg
 	>
 {/if}
-{#if id == 'blog'}
+{#if id === 'blog'}
 	<!--
 		Google Material Symbols and Icons - Article
 		https://fonts.google.com/icons?selected=Material%20Symbols%20Outlined%3Aarticle%3AFILL%400%3Bwght%40400%3BGRAD%400%3Bopsz%4048
@@ -27,7 +27,7 @@
 		/></svg
 	>
 {/if}
-{#if id == 'tools'}
+{#if id === 'tools'}
 	<!--
 		Google Material Symbols and Icons - Construction
 		https://fonts.google.com/icons?selected=Material%20Symbols%20Outlined%3Aconstruction%3AFILL%400%3Bwght%40400%3BGRAD%400%3Bopsz%4048
@@ -39,7 +39,7 @@
 		/></svg
 	>
 {/if}
-{#if id == 'projects'}
+{#if id === 'projects'}
 	<!--
 		Bootstrap Icons - Window
 		https://icons.getbootstrap.com/icons/window
@@ -62,7 +62,7 @@
 		/>
 	</svg>
 {/if}
-{#if id == 'creations'}
+{#if id === 'creations'}
 	<!--
 		Google Material Symbols and Icons - Palette
 		https://fonts.google.com/icons?selected=Material%20Symbols%20Outlined%3Apalette%3AFILL%400%3Bwght%40400%3BGRAD%400%3Bopsz%4048
@@ -74,7 +74,7 @@
 		/></svg
 	>
 {/if}
-{#if id == 'social'}
+{#if id === 'social'}
 	<!--
 		Bootstrap Icons - Link 45deg
 		https://icons.getbootstrap.com/icons/link-45deg

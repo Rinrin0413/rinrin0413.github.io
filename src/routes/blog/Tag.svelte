@@ -13,7 +13,7 @@
 		if (isEnabled) {
 			tagsInParam.push(name);
 		} else {
-			tagsInParam = tagsInParam.filter((t) => t != name);
+			tagsInParam = tagsInParam.filter((t) => t !== name);
 		}
 
 		goto('/blog' + (0 < tagsInParam.length ? '?t=' + tagsInParam.join(',') : ''));
