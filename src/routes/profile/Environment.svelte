@@ -67,10 +67,7 @@
 		font-size: 20px;
 		padding: 0 14px;
 		border-bottom: 2px solid rgba($txt-primary, 0.75);
-		background-color: rgba($txt-primary, 0.16);
-		$blur: blur(4px);
-		backdrop-filter: $blur;
-		-webkit-backdrop-filter: $blur;
+		background: linear-gradient(0.25turn, #c5b49e8a, #c5beb1d0, #c4bfb68a);
 		border-right: $glassmorphism-border-dark;
 		border-left: $glassmorphism-border-light;
 		border-top: $glassmorphism-border-light;
@@ -84,10 +81,7 @@
 		padding-bottom: 8px;
 		margin-top: 0;
 		margin-bottom: 14px;
-		background-color: rgba($txt-primary, 0.08);
-		$blur: blur(24px);
-		backdrop-filter: $blur;
-		-webkit-backdrop-filter: $blur;
+		background: linear-gradient(0.25turn, #b8ad9fd0, #c9c6be8a, #d1ccc3d0);
 		$border-rad: 4px;
 		border-bottom-left-radius: $border-rad;
 		border-bottom-right-radius: $border-rad;
