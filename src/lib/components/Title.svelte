@@ -82,7 +82,7 @@
 		content: attr(data-content);
 		transform: translateX(-50%) scale(1, -1);
 		transform-origin: 50% 43px;
-		filter: blur(1.2px);
+		filter: blur(1px);
 		color: transparent;
 		background: linear-gradient(0deg, rgba($txt-primary, 0.4), transparent 72%);
 		background-clip: text;
