@@ -12,10 +12,15 @@
 	/** Whether to play the animation even if the element is only a little in the viewport. */
 	export let evenLittleBit = false;
 
+	/** Whether to play the animation forcibly now. */
+	export let playForced = false;
+
 	let container: HTMLElement;
 
 	onMount(fadeIn);
 	if (browser) window.addEventListener('scroll', fadeIn);
+
+	$: if (playForced && container !== undefined) container.classList.add(type);
 
 	/** **＊ Must be called in the browser environment.** */
 	function fadeIn() {
