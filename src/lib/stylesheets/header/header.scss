@@ -8,10 +8,7 @@
 	left: 0;
 	width: 100vw;
 	height: 100dvh;
-	background-color: #ffffff2a;
-	$back-blur: blur(6px);
-	backdrop-filter: $back-blur;
-	-webkit-backdrop-filter: $back-blur;
+	background-color: #e7e2cfa3;
 	z-index: 126;
 }
 
@@ -239,17 +236,15 @@ nav {
 		top: 50dvh;
 		left: $pos-left;
 		transform: translateY(calc(-50% + $header-height * 0.5)) translateX(-50%);
-		animation: fadeInBlur 0.4s ease-out forwards;
+		animation: fadeIn 0.2s ease-out forwards;
 
-		@keyframes fadeInBlur {
+		@keyframes fadeIn {
 			0% {
 				opacity: 0;
-				filter: blur(6px);
 			}
 
 			100% {
 				opacity: 1;
-				filter: blur(0);
 			}
 		}
 
@@ -261,18 +256,16 @@ nav {
 			opacity: 0;
 			filter: none;
 			left: 200vw;
-			animation: fadeOutBlur 0.3s ease-out forwards;
+			animation: fadeOut 0.3s ease-out forwards;
 
-			@keyframes fadeOutBlur {
+			@keyframes fadeOut {
 				0% {
 					opacity: 1;
-					filter: blur(0);
 					left: $pos-left;
 				}
 
 				98% {
 					opacity: 0;
-					filter: blur(6px);
 				}
 
 				99% {
