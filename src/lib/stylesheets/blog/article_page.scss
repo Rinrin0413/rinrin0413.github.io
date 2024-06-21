@@ -11,7 +11,7 @@ $back-thumbnail-height: calc($max-vh * 70);
 	height: $back-thumbnail-height;
 	object-fit: cover;
 	opacity: 0.6;
-	filter: blur(4px);
+	filter: blur(42px);
 	user-select: none;
 }
 
