@@ -25,12 +25,13 @@
 	}
 
 	let maxVh1: number;
+	let prevWidth: number;
 
 	if (browser) {
 		NProgress.start();
 		window.addEventListener('resize', () => {
 			if (maxVh1 < window.innerHeight) setMaxVh001();
-			isDrawerMenuOpened.set(false);
+			closeDrawerMenu();
 		});
 		setMaxVh001();
 	}
@@ -43,6 +44,16 @@
 	function setMaxVh001() {
 		maxVh1 = window.innerHeight;
 		document.documentElement.style.setProperty('--max-vh001', maxVh1 * 0.01 + 'px');
+	}
+
+	/**
+	 * Closes the drawer menu if the window width has changed.
+	 *
+	 * **＊ Must be called in the browser environment.**
+	 */
+	function closeDrawerMenu() {
+		if (prevWidth !== window.innerWidth && prevWidth !== undefined) isDrawerMenuOpened.set(false);
+		prevWidth = window.innerWidth;
 	}
 </script>
 
