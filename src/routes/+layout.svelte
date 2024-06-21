@@ -7,6 +7,7 @@
 	import { navigating } from '$app/stores';
 	import { page } from '$app/stores';
 	import { browser } from '$app/environment';
+	import { isDrawerMenuOpened } from '$lib/scripts/stores';
 	import {
 		BLOG_NAME,
 		COPYRIGHT,
@@ -29,6 +30,7 @@
 		NProgress.start();
 		window.addEventListener('resize', () => {
 			if (maxVh1 < window.innerHeight) setMaxVh001();
+			isDrawerMenuOpened.set(false);
 		});
 		setMaxVh001();
 	}
