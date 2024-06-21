@@ -256,18 +256,16 @@ nav {
 			opacity: 0;
 			filter: none;
 			left: 200vw;
-			animation: fadeOutBlur 0.3s ease-out forwards;
+			animation: fadeOut 0.3s ease-out forwards;
 
-			@keyframes fadeOutBlur {
+			@keyframes fadeOut {
 				0% {
 					opacity: 1;
-					filter: blur(0);
 					left: $pos-left;
 				}
 
 				98% {
 					opacity: 0;
-					filter: blur(6px);
 				}
 
 				99% {
