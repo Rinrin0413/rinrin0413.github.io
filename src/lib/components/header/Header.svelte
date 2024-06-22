@@ -15,6 +15,8 @@
 
 	if (browser) addEventListener('scroll', updateScroll);
 
+	$: isMainVisual = isAtTop && !$isDrawerMenuOpened;
+
 	let enableFadeIn = true;
 
 	$: pathname = $page.url.pathname;
@@ -53,9 +55,9 @@
 	}
 </script>
 
-<div class="header-bg" class:blur={isAtTop} />
+<div class="header-bg" class:blur={isMainVisual} />
 <header>
-	<nav class:opened={$isDrawerMenuOpened} class:at-top={isAtTop}>
+	<nav class:opened={$isDrawerMenuOpened} class:at-top={isMainVisual}>
 		{#each ITEMS as item}
 			<a href="/{item.id}" class="item" class:active={pathname.split('/')[1] === item.id}>
 				<Icon id={item.id} />
@@ -63,13 +65,13 @@
 			</a>
 		{/each}
 	</nav>
-	<div class="hamburger-btn" class:hidden={isAtTop && !$isDrawerMenuOpened}>
+	<div class="hamburger-btn" class:hidden={isMainVisual}>
 		<HamburgerButton /><LangButton />
 	</div>
 	<a
 		href="/"
 		class="header-logo"
-		class:center={isAtTop}
+		class:center={isMainVisual}
 		class:fade-in={enableFadeIn}
 		on:click={() => {
 			isDrawerMenuOpened.set(false);
