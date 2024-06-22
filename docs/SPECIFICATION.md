@@ -26,6 +26,7 @@
 | Name | Description | Usable area |
 | --: | --- | --- |
 | `--max-vh001` | viewport max height ever * 0.01 (realtime update) | all |
+| `--rt-vh001` | viewport height ever * 0.01 (realtime update) | all |
 
 ---
 
