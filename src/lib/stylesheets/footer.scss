@@ -11,7 +11,7 @@ footer {
 	z-index: 126;
 
 	&.drawer-menu {
-		$menu-height: calc(100vh - $header-height);
+		$menu-height: calc($max-vh * 100 - $header-height);
 		position: fixed;
 		min-height: $menu-height;
 		max-height: $menu-height;
