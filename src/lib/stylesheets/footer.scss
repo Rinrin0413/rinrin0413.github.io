@@ -3,9 +3,37 @@
 @use '$lib/stylesheets/variables/mixin' as *;
 
 footer {
+	position: relative;
+	width: 100%;
 	min-height: $min-footer-height;
 	background-color: $txt-primary;
 	color: $bg-primary;
+	z-index: 126;
+
+	&.drawer-menu {
+		$menu-height: calc($rt-vh001 * 100 - $header-height);
+		position: fixed;
+		height: $menu-height;
+		overflow-y: scroll;
+		animation: slideUp 0.6s forwards cubic-bezier(0.16, 1, 0.3, 1);
+
+		@keyframes slideUp {
+			0% {
+				top: 100vh;
+			}
+			100% {
+				top: $header-height;
+			}
+		}
+
+		.content {
+			margin-top: calc(26vh - 122px);
+		}
+
+		p {
+			margin-bottom: 20px;
+		}
+	}
 
 	::selection {
 		background: $bg-primary;

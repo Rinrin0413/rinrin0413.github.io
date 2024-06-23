@@ -7,6 +7,7 @@
 	import { navigating } from '$app/stores';
 	import { page } from '$app/stores';
 	import { browser } from '$app/environment';
+	import { isDrawerMenuOpened } from '$lib/scripts/stores';
 	import {
 		BLOG_NAME,
 		COPYRIGHT,
@@ -24,12 +25,16 @@
 	}
 
 	let maxVh1: number;
+	let prevWidth: number;
 
 	if (browser) {
 		NProgress.start();
 		window.addEventListener('resize', () => {
+			setRtVh001();
 			if (maxVh1 < window.innerHeight) setMaxVh001();
+			closeDrawerMenu();
 		});
+		setRtVh001();
 		setMaxVh001();
 	}
 
@@ -41,6 +46,25 @@
 	function setMaxVh001() {
 		maxVh1 = window.innerHeight;
 		document.documentElement.style.setProperty('--max-vh001', maxVh1 * 0.01 + 'px');
+	}
+
+	/**
+	 * Sets the CSS variable `--rt-vh001`.
+	 *
+	 * **＊ Must be called in the browser environment.**
+	 */
+	function setRtVh001() {
+		document.documentElement.style.setProperty('--rt-vh001', window.innerHeight * 0.01 + 'px');
+	}
+
+	/**
+	 * Closes the drawer menu if the window width has changed.
+	 *
+	 * **＊ Must be called in the browser environment.**
+	 */
+	function closeDrawerMenu() {
+		if (prevWidth !== window.innerWidth && prevWidth !== undefined) isDrawerMenuOpened.set(false);
+		prevWidth = window.innerWidth;
 	}
 </script>
 

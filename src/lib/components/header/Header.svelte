@@ -5,23 +5,18 @@
 
 	import { onMount } from 'svelte';
 	import { browser } from '$app/environment';
-	import { toggleScrollPrevention } from '$lib/scripts/utils';
-	import { blur } from 'svelte/transition';
+	import { isDrawerMenuOpened } from '$lib/scripts/stores';
 	import { page } from '$app/stores';
 	import { _ } from 'svelte-i18n';
 
 	onMount(updateScroll);
 
 	let isAtTop = true;
-	/**
-	 * Whether after closing drawer menu.
-	 * `false` by default because it is not "after closing" at loaded the page.
-	 */
-	let isAfterDrawerMenuClosed = false;
 
 	if (browser) addEventListener('scroll', updateScroll);
 
-	let isDrawerMenuOpened = false;
+	$: isMainVisual = isAtTop && !$isDrawerMenuOpened;
+
 	let enableFadeIn = true;
 
 	$: pathname = $page.url.pathname;
@@ -58,68 +53,28 @@
 	function updateScroll() {
 		isAtTop = window.scrollY <= 0;
 	}
-
-	/**
-	 * Toggles drawer menu open/close.
-	 *
-	 * **＊ Must be called in the browser environment.**
-	 */
-	function toggleDrawerMenu(open: boolean) {
-		isAfterDrawerMenuClosed = isDrawerMenuOpened;
-		isDrawerMenuOpened = open;
-		toggleScrollPrevention(isDrawerMenuOpened);
-	}
-
-	// eslint-disable-next-line @typescript-eslint/no-empty-function
-	function empty() {}
 </script>
 
-{#if isDrawerMenuOpened}
-	<div
-		id="drawer-menu-bg"
-		transition:blur|global={{ duration: 200 }}
-		on:click={() => {
-			toggleDrawerMenu(false);
-		}}
-		on:keypress={empty}
-		role="none"
-	/>
-{/if}
-<div id="header-bg" class:blur={isAtTop} />
+<div class="header-bg" class:blur={isMainVisual} />
 <header>
-	<nav
-		class:opened={isDrawerMenuOpened}
-		class:after-closed={isAfterDrawerMenuClosed}
-		class:at-top={isAtTop}
-		class:is-not-yet-opened={!isDrawerMenuOpened && !isAfterDrawerMenuClosed}
-	>
+	<nav class:opened={$isDrawerMenuOpened} class:at-top={isMainVisual}>
 		{#each ITEMS as item}
-			<a
-				href="/{item.id}"
-				class="item"
-				class:active={pathname.split('/')[1] === item.id}
-				on:click={() => {
-					toggleDrawerMenu(false);
-				}}
-			>
+			<a href="/{item.id}" class="item" class:active={pathname.split('/')[1] === item.id}>
 				<Icon id={item.id} />
 				<span class="item-text">{$_(item.name)}</span>
 			</a>
 		{/each}
 	</nav>
-	<div class="hamburger-btn" class:hidden={isAtTop}>
-		<HamburgerButton
-			isOpened={isDrawerMenuOpened}
-			on:toggle={(e) => toggleDrawerMenu(e.detail)}
-		/><LangButton />
+	<div class="hamburger-btn" class:hidden={isMainVisual}>
+		<HamburgerButton /><LangButton />
 	</div>
 	<a
 		href="/"
-		id="header-logo"
-		class:center={isAtTop}
+		class="header-logo"
+		class:center={isMainVisual}
 		class:fade-in={enableFadeIn}
 		on:click={() => {
-			toggleDrawerMenu(false);
+			isDrawerMenuOpened.set(false);
 		}}><img src="/images/logos/rinrin/logo.svg" alt={$_('header.logo')} /></a
 	>
 </header>
