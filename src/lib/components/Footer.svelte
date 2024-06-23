@@ -28,9 +28,15 @@
 		{ name: 'Social', path: '/social' }
 	];
 
+	const OTHER_PAGES = [
+		{ name: 'Privacy Policy', path: '/privacy' },
+		{ name: 'Acknowledgments', path: '/acknowledgments' }
+	];
+
 	const ANIM_TYPE = 'slide-left';
 	const ANIM_DELAY_STEP = 50;
 	const ANIM_DELAY_OTHER_LINKS = ANIM_DELAY_STEP * SITEMAP.length * 0.5;
+	const ANIM_DELAY_OTHER_LINKS_WITHOUT_PAGES = ANIM_DELAY_OTHER_LINKS + 100 * (OTHER_PAGES.length - 1);
 
 	function closeDrawerMenu() {
 		isDrawerMenuOpened.set(false);
@@ -64,21 +70,23 @@
 				<nav>
 					<h1>{$_('w.otherLinks')}</h1>
 					<ul>
-						<li>
-							<FadeInAnim
-								type={ANIM_TYPE}
-								delay={ANIM_DELAY_OTHER_LINKS + 100}
-								evenLittleBit
-								playForced={$isDrawerMenuOpened}
-							>
-								<a href="/acknowledgments" on:click={closeDrawerMenu}>Acknowledgments</a>
-							</FadeInAnim>
-						</li>
+						{#each OTHER_PAGES as { name, path }, i}
+							<li>
+								<FadeInAnim
+									type={ANIM_TYPE}
+									delay={ANIM_DELAY_OTHER_LINKS + 100 * (i + 1)}
+									evenLittleBit
+									playForced={$isDrawerMenuOpened}
+								>
+									<a href={path} on:click={closeDrawerMenu}>{name}</a>
+								</FadeInAnim>
+							</li>
+						{/each}
 						{#if hasBgImgUrl || wallpaperPath !== undefined}
 							<li>
 								<FadeInAnim
 									type={ANIM_TYPE}
-									delay={ANIM_DELAY_OTHER_LINKS + 200}
+									delay={ANIM_DELAY_OTHER_LINKS_WITHOUT_PAGES + 200}
 									evenLittleBit
 									playForced={$isDrawerMenuOpened}
 								>
@@ -94,7 +102,7 @@
 						<li>
 							<FadeInAnim
 								type={ANIM_TYPE}
-								delay={ANIM_DELAY_OTHER_LINKS + 300}
+								delay={ANIM_DELAY_OTHER_LINKS_WITHOUT_PAGES + 300}
 								evenLittleBit
 								playForced={$isDrawerMenuOpened}
 							>
@@ -104,7 +112,7 @@
 						<li>
 							<FadeInAnim
 								type={ANIM_TYPE}
-								delay={ANIM_DELAY_OTHER_LINKS + 400}
+								delay={ANIM_DELAY_OTHER_LINKS_WITHOUT_PAGES + 400}
 								evenLittleBit
 								playForced={$isDrawerMenuOpened}
 							>
