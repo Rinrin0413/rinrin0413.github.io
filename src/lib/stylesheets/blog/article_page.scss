@@ -1,7 +1,7 @@
 @use '$lib/stylesheets/variables/dimension' as *;
 @use '$lib/stylesheets/variables/mixin' as *;
 
-$back-thumbnail-height: calc($max-vh * 70);
+$back-thumbnail-height: calc($max-vh001 * 70);
 
 .back-thumbnail {
 	position: absolute;
@@ -27,7 +27,7 @@ $back-thumbnail-height: calc($max-vh * 70);
 
 .thumbnail {
 	position: relative;
-	width: min(95vw, calc($max-vh * 95));
+	width: min(95vw, calc($max-vh001 * 95));
 	height: min(427px, $back-thumbnail-height);
 	object-fit: contain;
 	filter: drop-shadow(0 0 14px #00000080);
@@ -42,7 +42,7 @@ $back-thumbnail-height: calc($max-vh * 70);
 	bottom: $header-height * 1.3 + 18px;
 
 	@media (min-height: 622px) {
-		bottom: calc($header-height * 1.3 + calc($max-vh * 25) - 128px);
+		bottom: calc($header-height * 1.3 + calc($max-vh001 * 25) - 128px);
 	}
 }
 
