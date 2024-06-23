@@ -30,7 +30,16 @@
 		"sitemap": "Site Map",
 		"otherLinks": "Other links",
 		"bgWallpaper": "Background wallpaper",
-		"effectiveDate": "Effective date"
+		"effectiveDate": "Effective date",
+		"home": "Home",
+		"profile": "Profile",
+		"blog": "Blog",
+		"webTools": "Web Tools",
+		"projects": "Projects",
+		"creations": "Creations",
+		"social": "Social",
+		"privacyPolicy": "Privacy Policy",
+		"acknowledgments": "Acknowledgments"
 	},
 	"home": {
 		"icon": "Rinrin.rs' avatar",

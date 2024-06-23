@@ -19,18 +19,18 @@
 	$: isLocaleEng = typeof $locale === 'string' && $locale.startsWith('en');
 
 	const SITEMAP = [
-		{ name: 'Home', path: '/' },
-		{ name: 'Profile', path: '/profile' },
-		{ name: 'Blog', path: '/blog' },
-		{ name: 'Web Tools', path: '/tools' },
-		{ name: 'Projects', path: '/projects' },
-		{ name: 'Creations', path: '/creations' },
-		{ name: 'Social', path: '/social' }
+		{ id: 'home', path: '/' },
+		{ id: 'profile', path: '/profile' },
+		{ id: 'blog', path: '/blog' },
+		{ id: 'webTools', path: '/tools' },
+		{ id: 'projects', path: '/projects' },
+		{ id: 'creations', path: '/creations' },
+		{ id: 'social', path: '/social' }
 	];
 
 	const OTHER_PAGES = [
-		{ name: 'Privacy Policy', path: '/privacy' },
-		{ name: 'Acknowledgments', path: '/acknowledgments' }
+		{ id: 'privacyPolicy', path: '/privacy' },
+		{ id: 'acknowledgments', path: '/acknowledgments' }
 	];
 
 	const ANIM_TYPE = 'slide-left';
@@ -53,7 +53,7 @@
 			<nav>
 				<h1>{$_('w.sitemap')}</h1>
 				<ul>
-					{#each SITEMAP as { name, path }, i}
+					{#each SITEMAP as { id, path }, i}
 						<li>
 							<FadeInAnim
 								type={ANIM_TYPE}
@@ -61,7 +61,7 @@
 								evenLittleBit
 								playForced={$isDrawerMenuOpened}
 							>
-								<a href={path} on:click={closeDrawerMenu}>{name}</a>
+								<a href={path} on:click={closeDrawerMenu}>{$_('w.' + id)}</a>
 							</FadeInAnim>
 						</li>
 					{/each}
@@ -71,7 +71,7 @@
 				<nav>
 					<h1>{$_('w.otherLinks')}</h1>
 					<ul>
-						{#each OTHER_PAGES as { name, path }, i}
+						{#each OTHER_PAGES as { id, path }, i}
 							<li>
 								<FadeInAnim
 									type={ANIM_TYPE}
@@ -79,7 +79,7 @@
 									evenLittleBit
 									playForced={$isDrawerMenuOpened}
 								>
-									<a href={path} on:click={closeDrawerMenu}>{name}</a>
+									<a href={path} on:click={closeDrawerMenu}>{$_('w.' + id)}</a>
 								</FadeInAnim>
 							</li>
 						{/each}

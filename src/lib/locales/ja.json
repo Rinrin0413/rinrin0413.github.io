@@ -30,7 +30,16 @@
 		"sitemap": "サイトマップ",
 		"otherLinks": "その他リンク",
 		"bgWallpaper": "今季のビックリ背景壁紙",
-		"effectiveDate": "発効日"
+		"effectiveDate": "発効日",
+		"home": "ホーム",
+		"profile": "プロフィール",
+		"blog": "ブログ",
+		"webTools": "Webツール",
+		"projects": "プロジェクト",
+		"creations": "創作物",
+		"social": "ソーシャル",
+		"privacyPolicy": "プライバシーポリシー",
+		"acknowledgments": "謝辞"
 	},
 	"home": {
 		"icon": "Rinrin.rs のアイコン",
