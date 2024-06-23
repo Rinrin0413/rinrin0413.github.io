@@ -36,7 +36,8 @@
 	const ANIM_TYPE = 'slide-left';
 	const ANIM_DELAY_STEP = 50;
 	const ANIM_DELAY_OTHER_LINKS = ANIM_DELAY_STEP * SITEMAP.length * 0.5;
-	const ANIM_DELAY_OTHER_LINKS_WITHOUT_PAGES = ANIM_DELAY_OTHER_LINKS + 100 * (OTHER_PAGES.length - 1);
+	const ANIM_DELAY_OTHER_LINKS_WITHOUT_PAGES =
+		ANIM_DELAY_OTHER_LINKS + 100 * (OTHER_PAGES.length - 1);
 
 	function closeDrawerMenu() {
 		isDrawerMenuOpened.set(false);

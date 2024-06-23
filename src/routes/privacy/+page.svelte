@@ -23,8 +23,8 @@
 		{$_(`privacy.analytics.0`)}<a
 			href="https://cloudflare.com/web-analytics"
 			target="_blank"
-			rel="noopener noreferrer"
-		>Cloudflare Web Analytics</a>{$_(`privacy.analytics.1`)}
+			rel="noopener noreferrer">Cloudflare Web Analytics</a
+		>{$_(`privacy.analytics.1`)}
 	</p>
 
 	<p>{$_(`w.effectiveDate`)}: {$date(new Date(2024, 6 - 1, 23), { format: 'long' })}</p>
