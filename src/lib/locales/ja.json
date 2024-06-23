@@ -29,7 +29,8 @@
 		"jaLang": "日本語",
 		"sitemap": "サイトマップ",
 		"otherLinks": "その他リンク",
-		"bgWallpaper": "今季のビックリ背景壁紙"
+		"bgWallpaper": "今季のビックリ背景壁紙",
+		"effectiveDate": "発効日"
 	},
 	"home": {
 		"icon": "Rinrin.rs のアイコン",
@@ -190,5 +191,12 @@
 		"note": "ノート"
 	},
 	"article.backToIndex": "記事一覧に戻る",
-	"acknowledgments.desc": "このサイトの開発で利用したすべてのOSSやサービスに感謝"
+	"acknowledgments.desc": "このサイトの開発で利用したすべてのOSSやサービスに感謝",
+	"privacy": {
+		"desc": "このプライバシーポリシーは、当サイトにおけるアクセス解析について示したものです:",
+		"analytics": [
+			"当サイトでは、訪問者のアクセス状況を把握するために、Cloudflare 社の提供する ",
+			" を利用しています。Cloudflare Web Analytics は、Cookie や localStorage などクライアントサイドの状態を一切使わずに、利用に関するメトリクスを収集します。また、分析を表示する目的で、IP アドレス、ユーザーエージェント文字列、その他のデータを介して、個人の「フィンガープリント」を取得することもありません。この分析は非侵襲的で、訪問者のプライバシーを尊重します。"
+		]
+	}
 }
