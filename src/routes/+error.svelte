@@ -6,7 +6,7 @@
 	import { _ } from 'svelte-i18n';
 
 	$: status = $page.status;
-	$: is404 = status == 404;
+	$: is404 = status === 404;
 	$: err = $page.error;
 	$: msg = is404 ? 'Page not found' : err !== null ? err.message : 'Something went wrong';
 

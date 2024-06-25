@@ -24,6 +24,7 @@
 <h2 align="center">Other links</h2>
 
 <p align="center">
+	<a href="https://rinrin.pages.dev/privacy">Privacy Policy</a> &middot;
 	<a href="https://rinrin.pages.dev/acknowledgements">Acknowledgements</a> &middot;
 	<a href="https://rinrin.pages.dev/feed">RSS / Atom feed</a> &middot;
 	<a href="https://rinrin.pages.dev/sitemap.xml">sitemap.xml</a>

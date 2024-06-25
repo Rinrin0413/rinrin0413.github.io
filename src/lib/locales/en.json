@@ -29,7 +29,17 @@
 		"jaLang": "Japanese lang.",
 		"sitemap": "Site Map",
 		"otherLinks": "Other links",
-		"bgWallpaper": "Background wallpaper"
+		"bgWallpaper": "Background wallpaper",
+		"effectiveDate": "Effective date",
+		"home": "Home",
+		"profile": "Profile",
+		"blog": "Blog",
+		"webTools": "Web Tools",
+		"projects": "Projects",
+		"creations": "Creations",
+		"social": "Social",
+		"privacyPolicy": "Privacy Policy",
+		"acknowledgments": "Acknowledgments"
 	},
 	"home": {
 		"icon": "Rinrin.rs' avatar",
@@ -197,5 +207,12 @@
 		"note": "Note"
 	},
 	"article.backToIndex": "Back to index",
-	"acknowledgments.desc": "Thank you for all OSS and services that used in the development of this homepage."
+	"acknowledgments.desc": "Thank you for all OSS and services that used in the development of this homepage.",
+	"privacy": {
+		"desc": "This Privacy Policy outlines the use of access analytics on this website:",
+		"analytics": [
+			"On this website, we use ",
+			" provided by Cloudflare Inc. to analyze the behavior of our website visitors. Cloudflare Web Analytics does not use any client-side state, such as cookies or localStorage, to collect usage metrics. We also don’t “fingerprint” individuals via their IP address, User Agent string, or any other data for the purpose of displaying analytics. This analytics are non-invasive and respect the privacy of your visitors."
+		]
+	}
 }

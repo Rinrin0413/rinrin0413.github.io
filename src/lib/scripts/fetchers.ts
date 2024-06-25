@@ -25,7 +25,7 @@ export async function fetchArticles({ limit, tags, isOnlyIndexed }: fetchArticle
 			}
 
 		// Filter by indexed.
-		if (isOnlyIndexed != undefined && isOnlyIndexed && !a.indexed) return false;
+		if (isOnlyIndexed !== undefined && isOnlyIndexed && !a.indexed) return false;
 
 		return true;
 	});
@@ -38,7 +38,7 @@ export async function fetchArticles({ limit, tags, isOnlyIndexed }: fetchArticle
 	});
 
 	// Limit the number of articles.
-	if (limit != undefined && limit != 0) articles.splice(limit);
+	if (limit !== undefined && limit !== 0) articles.splice(limit);
 
 	return articles;
 }
@@ -76,7 +76,7 @@ export async function fetchTags() {
 
 			// Count tags.
 			.reduce((acc: { tag: string; count: number }[], tag) => {
-				const existingTag = acc.find((t) => t.tag == tag);
+				const existingTag = acc.find((t) => t.tag === tag);
 				existingTag ? existingTag.count++ : acc.push({ tag, count: 1 });
 				return acc;
 			}, [])
@@ -102,7 +102,7 @@ export async function fetchThumbnailImgFmt() {
 			const slug = path.split('/').pop()!.split('.')[0];
 			for (const img of thumbnailImgs) {
 				const [name, fmt] = img.split('.');
-				if (name == slug) acc[slug] = fmt;
+				if (name === slug) acc[slug] = fmt;
 			}
 			return acc;
 		},

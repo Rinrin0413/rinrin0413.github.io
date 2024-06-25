@@ -36,7 +36,7 @@
 					)}
 					<li class="row">
 						<!-- eslint-disable-next-line svelte/no-at-html-tags -->
-						<div class="year" class:no-pin={i != 0}>{@html fmtMonth(month)} {year}</div>
+						<div class="year" class:no-pin={i !== 0}>{@html fmtMonth(month)} {year}</div>
 						<div class="event">
 							{$_(
 								`chronicle.${year}.${month}${

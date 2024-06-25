@@ -34,7 +34,7 @@
 	{#each intro as lines}
 		<p>
 			{#each lines as line, i}
-				{#if i != 0}<br />{/if}
+				{#if i !== 0}<br />{/if}
 				{line}
 			{/each}
 		</p>

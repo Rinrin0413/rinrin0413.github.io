@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { _, locale } from 'svelte-i18n';
+	import { isDrawerMenuOpened } from '$lib/scripts/stores';
 	import { COPYRIGHT } from '$lib/scripts/variables';
 	import FadeInAnim from './FadeInAnim.svelte';
 	import { BG_IMG_URL } from '$lib/scripts/data/bg-img-url';
@@ -18,31 +19,49 @@
 	$: isLocaleEng = typeof $locale === 'string' && $locale.startsWith('en');
 
 	const SITEMAP = [
-		{ name: 'Home', path: '/' },
-		{ name: 'Profile', path: '/profile' },
-		{ name: 'Blog', path: '/blog' },
-		{ name: 'Web Tools', path: '/tools' },
-		{ name: 'Projects', path: '/projects' },
-		{ name: 'Creations', path: '/creations' },
-		{ name: 'Social', path: '/social' }
+		{ id: 'home', path: '/' },
+		{ id: 'profile', path: '/profile' },
+		{ id: 'blog', path: '/blog' },
+		{ id: 'webTools', path: '/tools' },
+		{ id: 'projects', path: '/projects' },
+		{ id: 'creations', path: '/creations' },
+		{ id: 'social', path: '/social' }
+	];
+
+	const OTHER_PAGES = [
+		{ id: 'privacyPolicy', path: '/privacy' },
+		{ id: 'acknowledgments', path: '/acknowledgments' }
 	];
 
 	const ANIM_TYPE = 'slide-left';
 	const ANIM_DELAY_STEP = 50;
 	const ANIM_DELAY_OTHER_LINKS = ANIM_DELAY_STEP * SITEMAP.length * 0.5;
+	const ANIM_DELAY_OTHER_LINKS_WITHOUT_PAGES =
+		ANIM_DELAY_OTHER_LINKS + 100 * (OTHER_PAGES.length - 1);
+
+	function closeDrawerMenu() {
+		isDrawerMenuOpened.set(false);
+	}
 </script>
 
-<footer>
+<footer class:drawer-menu={$isDrawerMenuOpened}>
 	<div class="content">
-		<p>{COPYRIGHT}</p>
+		{#if !$isDrawerMenuOpened}
+			<p>{COPYRIGHT}</p>
+		{/if}
 		<div class="links">
 			<nav>
 				<h1>{$_('w.sitemap')}</h1>
 				<ul>
-					{#each SITEMAP as { name, path }, i}
+					{#each SITEMAP as { id, path }, i}
 						<li>
-							<FadeInAnim type={ANIM_TYPE} delay={ANIM_DELAY_STEP * i} evenLittleBit>
-								<a href={path}>{name}</a>
+							<FadeInAnim
+								type={ANIM_TYPE}
+								delay={ANIM_DELAY_STEP * i}
+								evenLittleBit
+								playForced={$isDrawerMenuOpened}
+							>
+								<a href={path} on:click={closeDrawerMenu}>{$_('w.' + id)}</a>
 							</FadeInAnim>
 						</li>
 					{/each}
@@ -52,14 +71,26 @@
 				<nav>
 					<h1>{$_('w.otherLinks')}</h1>
 					<ul>
-						<li>
-							<FadeInAnim type={ANIM_TYPE} delay={ANIM_DELAY_OTHER_LINKS + 100} evenLittleBit>
-								<a href="/acknowledgments">Acknowledgments</a>
-							</FadeInAnim>
-						</li>
+						{#each OTHER_PAGES as { id, path }, i}
+							<li>
+								<FadeInAnim
+									type={ANIM_TYPE}
+									delay={ANIM_DELAY_OTHER_LINKS + 100 * (i + 1)}
+									evenLittleBit
+									playForced={$isDrawerMenuOpened}
+								>
+									<a href={path} on:click={closeDrawerMenu}>{$_('w.' + id)}</a>
+								</FadeInAnim>
+							</li>
+						{/each}
 						{#if hasBgImgUrl || wallpaperPath !== undefined}
 							<li>
-								<FadeInAnim type={ANIM_TYPE} delay={ANIM_DELAY_OTHER_LINKS + 200} evenLittleBit>
+								<FadeInAnim
+									type={ANIM_TYPE}
+									delay={ANIM_DELAY_OTHER_LINKS_WITHOUT_PAGES + 200}
+									evenLittleBit
+									playForced={$isDrawerMenuOpened}
+								>
 									<a
 										href={BG_IMG_URL ?? wallpaperPath}
 										target="_blank"
@@ -70,12 +101,22 @@
 							</li>
 						{/if}
 						<li>
-							<FadeInAnim type={ANIM_TYPE} delay={ANIM_DELAY_OTHER_LINKS + 300} evenLittleBit>
+							<FadeInAnim
+								type={ANIM_TYPE}
+								delay={ANIM_DELAY_OTHER_LINKS_WITHOUT_PAGES + 300}
+								evenLittleBit
+								playForced={$isDrawerMenuOpened}
+							>
 								<a href="/feed">{$_('w.rssAtomFeed')}</a>
 							</FadeInAnim>
 						</li>
 						<li>
-							<FadeInAnim type={ANIM_TYPE} delay={ANIM_DELAY_OTHER_LINKS + 400} evenLittleBit>
+							<FadeInAnim
+								type={ANIM_TYPE}
+								delay={ANIM_DELAY_OTHER_LINKS_WITHOUT_PAGES + 400}
+								evenLittleBit
+								playForced={$isDrawerMenuOpened}
+							>
 								<a href="/sitemap.xml">sitemap.xml</a>
 							</FadeInAnim>
 						</li>
@@ -102,6 +143,9 @@
 				</div>
 			</div>
 		</div>
+		{#if $isDrawerMenuOpened}
+			<p>{COPYRIGHT}</p>
+		{/if}
 	</div>
 </footer>
 
