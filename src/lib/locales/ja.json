@@ -5,7 +5,6 @@
 		"age": "年齢",
 		"yearsOld": "歳",
 		"birthday": "誕生日",
-		"sHighSchool": "S高等学校",
 		"yokohama": "神奈川県横浜市",
 		"webDev": "Web開発",
 		"minecraft": "マインクラフト",
@@ -153,7 +152,6 @@
 		"birthday": "2006年4月13日",
 		"primaryLang": "言語",
 		"timezone": "時刻帯",
-		"school": "所属校",
 		"birthplace": "出身地",
 		"hobby": "参照:"
 	},

@@ -8,7 +8,6 @@
 		{ key: $_('w.birthday'), value: $_('profile.birthday') },
 		{ key: $_('profile.primaryLang'), value: $_('w.jaLang') },
 		{ key: $_('profile.timezone'), value: 'JST (UTC +9)' },
-		{ key: $_('profile.school'), value: $_('w.sHighSchool') },
 		{ key: $_('profile.birthplace'), value: $_('w.yokohama') }
 	];
 </script>

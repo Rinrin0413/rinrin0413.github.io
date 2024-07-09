@@ -5,7 +5,6 @@
 		"age": "Age",
 		"yearsOld": " years old",
 		"birthday": "Birthday",
-		"sHighSchool": "S High School",
 		"yokohama": "Yokohama City",
 		"webDev": "Web Development",
 		"minecraft": "Minecraft",
@@ -153,7 +152,6 @@
 		"birthday": "April 13th, 2006",
 		"primaryLang": "Primary lang.",
 		"timezone": "Timezone",
-		"school": "School",
 		"birthplace": "Birthplace",
 		"hobby": "see"
 	},
