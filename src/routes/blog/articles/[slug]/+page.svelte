@@ -57,7 +57,7 @@
 
 <HeadMetadata
 	title="Blog - {title}"
-	desc="Rinrin.rs のホームページです。"
+	desc={metadata.desc ?? ''}
 	{canonicalUrl}
 	ogType="article"
 	ogCardType="summary_large_image"
