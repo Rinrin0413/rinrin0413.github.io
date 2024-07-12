@@ -13,6 +13,13 @@ header,
 header {
 	width: 100vw;
 	height: $header-height;
+	transition: 0.4s;
+
+	&.backdrop-blur {
+		$filter: blur(16px);
+		backdrop-filter: $filter;
+		-webkit-backdrop-filter: $filter;
+	}
 }
 
 .header-logo {
@@ -191,6 +198,7 @@ nav {
 	transform: translate(-10vw, -$header-height);
 	background: linear-gradient(-6deg, $header-primary, $header-secondary);
 	box-shadow: 0 0 14px #0000008a;
+	opacity: 0.78;
 	transition: 0.4s;
 
 	&.blur {
@@ -203,6 +211,7 @@ nav {
 			$header-primary 75%
 		);
 		box-shadow: 0 4px 14px $header-primary;
+		opacity: 1;
 	}
 }
 
