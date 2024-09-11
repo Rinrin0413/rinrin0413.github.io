@@ -26,7 +26,7 @@
 	/**
 	 * Whether to set the thumbnail image.
 	 *
-	 * If `true`, set `<meta name="thumbnail" content=ABS_PATH />` and `<meta property="og:image" content=ABS_PATH />`.
+	 * If `false`, set `<meta name="thumbnail" content=ABS_PATH />` and `<meta property="og:image" content=ABS_PATH />`.
 	 *
 	 * Default: `false`
 	 */
@@ -40,7 +40,7 @@
 	<title>{fullTitle}</title>
 	<meta name="title" content={fullTitle} />
 	<meta name="description" content={desc} />
-	{#if doesNotSetThumbnailImg}
+	{#if !doesNotSetThumbnailImg}
 		<meta name="thumbnail" content={absThumbnailPath} />
 	{/if}
 
