@@ -6,14 +6,14 @@
 
 | Z-Index | Entity | Path |
 | --: | --- | --- |
-| 1031 | nprogress bar/spinner | [`/node_modules/nprogress/nprogress.css/#nprogress{.bar,.spinner}`](/node_modules/nprogress/nprogress.css) |
-| 129 | header logo | [`header.scss/.header-logo img`](/src/lib/stylesheets/header/header.scss) |
-| 128 | header title | [`header.scss/.header-logo::after`](/src/lib/stylesheets/header/header.scss) |
-| 127 | header / header bg | [`header.scss/header,.header-bg`](/src/lib/stylesheets/header/header.scss) |
-| 126 | footer | [`footer.scss/footer`](/src/lib/stylesheets/footer.scss) |
-| 42 | sharing dropdown menu | [`share_button.scss/ul.menu`](/src/lib/stylesheets/blog/share_button.scss) |
-| -1 | bg wallpaper | [`global.css/html::before`](/static/stylesheets/global.css) |
-| -1 | unconfirmed fixed element | [`layout.scss/#bg`](/src/lib/stylesheets/layout.scss) |
+| 1031 | nprogress { bar, spinner }  | [`/node_modules/nprogress/nprogress.css>#nprogress .bar`](/node_modules/nprogress/nprogress.css), [`/node_modules/nprogress/nprogress.css>#nprogress .spinner`](/node_modules/nprogress/nprogress.css) |
+| 129 | header logo | [`header.scss>.header-logo img`](/src/lib/stylesheets/header/header.scss) |
+| 128 | header title | [`header.scss>.header-logo::after`](/src/lib/stylesheets/header/header.scss) |
+| 127 | header, header bg | [`header.scss>header, .header-bg`](/src/lib/stylesheets/header/header.scss) |
+| 126 | footer | [`footer.scss>footer`](/src/lib/stylesheets/footer.scss) |
+| 42 | sharing dropdown menu | [`share_button.scss>ul &.menu`](/src/lib/stylesheets/blog/share_button.scss) |
+| -1 | bg wallpaper | [`global.css>html::before`](/static/stylesheets/global.css) |
+| -1 | unconfirmed fixed element | [`layout.scss>#bg`](/src/lib/stylesheets/layout.scss) |
 
 ---
 
