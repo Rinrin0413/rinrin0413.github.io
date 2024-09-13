@@ -12,7 +12,7 @@
 | 127 | header, header bg | [`header.scss>header, .header-bg`](/src/lib/stylesheets/header/header.scss) |
 | 126 | footer | [`footer.scss>footer`](/src/lib/stylesheets/footer.scss) |
 | 42 | sharing dropdown menu | [`share_button.scss>ul &.menu`](/src/lib/stylesheets/blog/share_button.scss) |
-| -1 | bg wallpaper | [`global.css>html::before`](/static/stylesheets/global.css) |
+| -1 | bg wallpaper | [`style.scss>html &::before`](/src/lib/stylesheets/style.scss) |
 | -1 | unconfirmed fixed element | [`layout.scss>#bg`](/src/lib/stylesheets/layout.scss) |
 
 ---

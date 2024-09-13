@@ -1,4 +1,55 @@
+@use '$lib/stylesheets/variables/color' as *;
+@use '$lib/stylesheets/variables/dimension' as *;
 @use '$lib/stylesheets/variables/mixin' as *;
+
+* {
+	scrollbar-color: #2b1d0e transparent;
+	scroll-margin-top: $header-height + 18px;
+	font-weight: 500;
+}
+
+::selection {
+	background: $txt-primary;
+	color: $bg-primary;
+}
+
+html {
+	font-family: 'Kiwi Maru', serif;
+	color: $txt-primary;
+	text-align: center;
+	scroll-behavior: smooth;
+	background-color: #615141;
+
+	&::before {
+		content: '';
+		// The maximum size of the background image is 1920x1035.
+		// And update the `BG_IMG_URL` constant in `/src/lib/scripts/data/bg-img-url.ts` if change the image.
+		background: linear-gradient(
+				152deg,
+				$bg-primary,
+				$bg-secondary 42%,
+				$bg-secondary 68%,
+				$bg-primary
+			),
+			url('/images/wallpapers/sd_city-along-canal.webp');
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
+		display: block;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: calc($max-vh001 * 100);
+		z-index: -1;
+	}
+}
+
+body {
+	margin: 0;
+	// Anti Dark reader
+	background: none;
+}
 
 section {
 	margin: 64px 0;
