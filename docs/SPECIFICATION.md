@@ -108,7 +108,7 @@ Returns a list of blog articles.
 
 ### Response Body
 
-`ArticleMetadata[]` (`src/lib/types.ts`)
+`ArticleMetadata[]` (`src/lib/scripts/types.ts`)
 
 - `[]` (`object[]`) - The list of articles.
 	- `published` (`boolean`) - Whether the article is published.
@@ -165,7 +165,7 @@ Returns a list of tags of valid(published and indexed) blog articles.
 
 ### Response Body
 
-`ArticleTagWithCount[]` (`src/lib/types.ts`)
+`ArticleTagWithCount[]` (`src/lib/scripts/types.ts`)
 
 - `[]` (`object[]`) - The list of tags.
 	- `tag` (`string`) - The tag name.
@@ -205,7 +205,7 @@ Returns a list of articles that have a thumbnail image with the image file forma
 
 ### Response Body
 
-`ArticleThumbnailImgFmts` (`src/lib/types.ts`)
+`ArticleThumbnailImgFmts` (`src/lib/scripts/types.ts`)
 
 - `{}` (`object`) - The list of articles that have a thumbnail image with the image file format.
 	- `[slug]` (`string`) - The thumbnail image file format of the article of this field name.
