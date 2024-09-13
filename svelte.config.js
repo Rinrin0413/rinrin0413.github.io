@@ -1,7 +1,8 @@
 import adapter from '@sveltejs/adapter-cloudflare';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 import preprocess from 'svelte-preprocess';
-import mdsvex from './mdsvex.config.js';
+import { mdsvex } from 'mdsvex';
+import mdsvexConf from './mdsvex.config.js';
 
 const CLOUDFLARE_ROUTES_EXCLUDE = [
 	// ▼ Build Artifacts ▼
@@ -43,7 +44,7 @@ const config = {
 	// Consult https://kit.svelte.dev/docs/integrations#preprocessors
 	// for more information about preprocessors
 	preprocess: [
-		mdsvex,
+		mdsvex(mdsvexConf),
 		vitePreprocess(),
 		preprocess({
 			scss: { sourceMap: true },
@@ -55,7 +56,7 @@ const config = {
 		adapter: adapter({ routes: { exclude: CLOUDFLARE_ROUTES_EXCLUDE } })
 	},
 
-	extensions: ['.svelte', '.md'],
+	extensions: ['.svelte', ...mdsvexConf.extensions],
 
 	onwarn: onWarn
 };
