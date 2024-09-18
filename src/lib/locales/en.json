@@ -5,7 +5,6 @@
 		"age": "Age",
 		"yearsOld": " years old",
 		"birthday": "Birthday",
-		"sHighSchool": "S High School",
 		"yokohama": "Yokohama City",
 		"webDev": "Web Development",
 		"minecraft": "Minecraft",
@@ -87,7 +86,7 @@
 				"It is one of the games i have been playing for the longest period.\nI no longer play Wii U Edition and Bedrock Edition, I currently play the Java Edition. On the Wii U Edition,\nI was building frequently. Since i started Bedrock Edition,\nI have been developing add-ons and shader packs but i got sick of Bedrock Edition because of the repeated ",
 				"'s shit. Currently, I am developing a shader pack for Java Edition at my own pace."
 			],
-			"sky": "I was born in the Season of Assembly. But don't have time to play these days. I might go if you invite me."
+			"sky": "I was born in the Season of Assembly. I had quit once, but recently came back. I might go if you invite me."
 		},
 		"music": {
 			"listen": "I like piano music in the classical era and romantic era, and i especially listen to Franz Liszt's pieces. Recently, i started to listen to not only piano music but also orchestral compositions and classical song.",
@@ -96,7 +95,7 @@
 				"I compose classical like music and arrange/transcribe classical music. Sometimes compose songs like popular music.\nBut i don't know anything about code progression, etc. because i hardly consider theory. Basically i compose in ",
 				"."
 			],
-			"sing": "I don't usually sing a song because i don't know much about songs with lyrics. The songs i can sing are Pretty Cure songs and GHIBLI songs etc.. I bought CD of GHIBLI songs and was listened to in the past."
+			"sing": "I don't usually sing because i'm not very familiar with songs that have lyrics. The songs i can sing are Pretty Cure songs, GHIBLI songs that i bought on CD and listened to in the past, and other songs that i was made to sing at compulsory education school, etc.."
 		}
 	},
 	"chronicle": {
@@ -153,7 +152,6 @@
 		"birthday": "April 13th, 2006",
 		"primaryLang": "Primary lang.",
 		"timezone": "Timezone",
-		"school": "School",
 		"birthplace": "Birthplace",
 		"hobby": "see"
 	},

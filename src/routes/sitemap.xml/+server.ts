@@ -66,5 +66,10 @@ async function body() {
         <changefreq>monthly</changefreq>
         <priority>0.4</priority>
     </url>
+    <url>
+        <loc>${SITE_URL}/privacy</loc>
+        <changefreq>yearly</changefreq>
+        <priority>0.2</priority>
+    </url>
 </urlset>`;
 }

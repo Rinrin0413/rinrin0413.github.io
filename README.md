@@ -1,7 +1,7 @@
 <h1 align="center">Rinrin.rs' Homepage</h1>
 
 <p align="center">
-	<img src="static/images/logos/rinrin/logo.svg" alt="logo" width="256" />
+	<img src="/static/images/logos/rinrin/logo.svg" alt="logo" width="256" />
 	<br />
 	<a href="https://rinrin.pages.dev">https://rinrin.pages.dev</a>
 	<br /><br />

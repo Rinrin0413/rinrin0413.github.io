@@ -12,7 +12,7 @@
 	export let id: string | undefined | null = null;
 
 	let vw: number;
-	let node: HTMLHeadingElement;
+	let width: number;
 	let initWidth: number;
 	let isOverflown = false;
 
@@ -22,10 +22,8 @@
 		window.addEventListener('resize', updateVw);
 	}
 
-	$: if (node !== undefined) {
-		if (!initWidth) {
-			initWidth = node.offsetWidth;
-		}
+	$: if (width !== undefined) {
+		if (initWidth === undefined) initWidth = width;
 		isOverflown = vw <= initWidth;
 	}
 
@@ -36,7 +34,7 @@
 </script>
 
 <div class:mini={isOverflown}>
-	<h1 {id} bind:this={node}>{text}</h1>
+	<h1 {id} bind:clientWidth={width}>{text}</h1>
 	<span data-content={text} />
 	<Space height="64px" />
 </div>
