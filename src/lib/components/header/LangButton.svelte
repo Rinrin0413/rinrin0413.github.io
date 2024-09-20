@@ -1,5 +1,8 @@
 <script lang="ts">
+	import { createEventDispatcher } from 'svelte';
 	import { locale, _ } from 'svelte-i18n';
+
+const dispatch = createEventDispatcher();
 </script>
 
 <button
@@ -11,6 +14,7 @@
 			alert('Some parts may not be translated.');
 		}
 	}}
+	on:focus={() => dispatch('focus')}
 >
 	<!--
 		Google Material Symbols and Icons - Language

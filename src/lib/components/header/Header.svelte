@@ -53,20 +53,25 @@
 	function updateScroll() {
 		isAtTop = window.scrollY <= 0;
 	}
+
+	/** Forcibly set the `AtTop` variable to `false`. */
+	function forceSetTheAtTopFalse() {
+		isAtTop = false;
+	}
 </script>
 
 <div class="header-bg" class:blur={isMainVisual} />
 <header class:backdrop-blur={!isMainVisual}>
 	<nav class:opened={$isDrawerMenuOpened} class:at-top={isMainVisual}>
 		{#each ITEMS as item}
-			<a href="/{item.id}" class="item" class:active={pathname.split('/')[1] === item.id}>
+			<a href="/{item.id}" class="item" class:active={pathname.split('/')[1] === item.id} on:focus={forceSetTheAtTopFalse}>
 				<Icon id={item.id} />
 				<span class="item-text">{$_(item.name)}</span>
 			</a>
 		{/each}
 	</nav>
 	<div class="hamburger-btn" class:hidden={isMainVisual}>
-		<HamburgerButton /><LangButton />
+		<HamburgerButton on:focus={forceSetTheAtTopFalse} /><LangButton on:focus={forceSetTheAtTopFalse} />
 	</div>
 	<a
 		href="/"
