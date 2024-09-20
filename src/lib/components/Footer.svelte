@@ -123,23 +123,24 @@
 					</ul>
 				</nav>
 				<div class="lang">
-					{#if isLocaleEng}
-						<button on:click={() => locale.set('ja')} class="active">日本語</button>
-					{:else}
-						<button disabled>日本語</button>
-					{/if}
+					<button
+						on:click={() => {
+							if (isLocaleEng) locale.set('ja');
+						}}
+						class="active"
+						disabled={!isLocaleEng}>日本語</button
+					>
 					|
-					{#if isLocaleEng}
-						<button disabled>English</button>
-					{:else}
-						<button
-							on:click={() => {
+					<button
+						on:click={() => {
+							if (!isLocaleEng) {
 								locale.set('en');
 								alert('Some parts may not be translated.');
-							}}
-							class="active">English</button
-						>
-					{/if}
+							}
+						}}
+						class="active"
+						disabled={isLocaleEng}>English</button
+					>
 				</div>
 			</div>
 		</div>
