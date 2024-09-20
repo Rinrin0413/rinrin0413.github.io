@@ -62,6 +62,7 @@
 
 <div class="header-bg" class:blur={isMainVisual} />
 <header class:backdrop-blur={!isMainVisual}>
+	<a href="#main-content" class="skip-btn" on:focus={forceSetTheAtTopFalse}>{$_('header.skip')}</a>
 	<nav class:opened={$isDrawerMenuOpened} class:at-top={isMainVisual}>
 		{#each ITEMS as item}
 			<a href="/{item.id}" class="item" class:active={pathname.split('/')[1] === item.id} on:focus={forceSetTheAtTopFalse}>

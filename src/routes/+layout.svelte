@@ -90,7 +90,7 @@
 
 <Header />
 
-<main><slot /></main>
+<main id="main-content"><slot /></main>
 
 <Footer />
 

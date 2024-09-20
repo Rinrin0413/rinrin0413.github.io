@@ -127,6 +127,26 @@ header {
 	}
 }
 
+.skip-btn {
+	position: absolute;
+	top: 0;
+	left: 0;
+	font-size: 22px;
+	@include bold($color: $bg-primary);
+	color: $bg-primary;
+	background-color: $txt-primary;
+	padding: 12px 18px;
+	border-bottom-right-radius: 14px;
+	text-decoration: none;
+	outline-offset: 0;
+	transition: 0.25s ease-out;
+	z-index: 132;
+
+	&:not(:focus) {
+		transform: translate(-130%, -110%);
+	}
+}
+
 nav {
 	display: flex;
 	justify-content: right;
