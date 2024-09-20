@@ -9,7 +9,7 @@ const LICENSES = {
 	}
 };
 
-export const ACKNOWLEDGEMENTS: {
+export const ACKNOWLEDGMENTS: {
 	name: string;
 	url: string;
 	license?: string;
