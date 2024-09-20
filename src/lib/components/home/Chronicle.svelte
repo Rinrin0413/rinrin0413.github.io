@@ -21,7 +21,7 @@
 		class="container"
 		title={!isOpened ? 'Open' : ''}
 		role="button"
-		tabindex="0"
+		tabindex={isOpened ? -1 : 0}
 		on:click|once={open}
 		on:keypress|once={(e) => {
 			if (e.key === 'Enter') open();
