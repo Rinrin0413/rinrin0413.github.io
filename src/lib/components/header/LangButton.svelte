@@ -2,7 +2,7 @@
 	import { createEventDispatcher } from 'svelte';
 	import { locale, _ } from 'svelte-i18n';
 
-const dispatch = createEventDispatcher();
+	const dispatch = createEventDispatcher();
 </script>
 
 <button

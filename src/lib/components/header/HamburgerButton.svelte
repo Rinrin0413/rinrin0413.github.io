@@ -5,7 +5,10 @@
 	const dispatch = createEventDispatcher();
 </script>
 
-<button on:click={() => isDrawerMenuOpened.update((prev) => !prev)} on:focus={() => dispatch('focus')}>
+<button
+	on:click={() => isDrawerMenuOpened.update((prev) => !prev)}
+	on:focus={() => dispatch('focus')}
+>
 	{#if $isDrawerMenuOpened}
 		<!--
 			Google Material Symbols and Icons - Close
