@@ -24,7 +24,7 @@
 		tabindex="0"
 		on:click|once={open}
 		on:keypress|once={(e) => {
-			if (e.key === 'Enter') open;
+			if (e.key === 'Enter') open();
 		}}
 	>
 		<ul class:opened={isOpened}>
