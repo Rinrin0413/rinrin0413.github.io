@@ -80,7 +80,8 @@
 		class:fade-in={enableFadeIn}
 		on:click={() => {
 			isDrawerMenuOpened.set(false);
-		}}><img src="/images/logos/rinrin/logo.svg" alt={$_('header.logo')} /></a
+		}}
+		tabindex="-1"><img src="/images/logos/rinrin/logo.svg" alt={$_('header.logo')} /></a
 	>
 </header>
 
