@@ -32,6 +32,9 @@
 
 	let mastodonDomain = 'mastodon.social';
 
+	let firstItem: HTMLElement;
+	$: if (!expanded) firstItem?.focus();
+
 	function toggleDropdownMenu() {
 		isMenuOpened = !isMenuOpened;
 	}
@@ -92,7 +95,7 @@
 		transition:fly={{ ...ANIM_OFFSET, duration: 200 }}
 	>
 		<li>
-			<button on:click={copyToClipboard} title={ITEM_NAMES.copy}>
+			<button on:click={copyToClipboard} title={ITEM_NAMES.copy} bind:this={firstItem}>
 				<!--
 					Google Material Symbols and Icons - Content Copy
 					https://fonts.google.com/icons?selected=Material%20Symbols%20Outlined%3Acontent_copy%3AFILL%400%3Bwght%40400%3BGRAD%400%3Bopsz%4024
