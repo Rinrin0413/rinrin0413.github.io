@@ -75,6 +75,7 @@
 				class="item"
 				class:active={pathname.split('/')[1] === item.id}
 				on:focus={forceSetTheAtTopFalse}
+				on:mousedown={forceSetTheAtTopFalse}
 			>
 				<Icon id={item.id} />
 				<span class="item-text">{$_(item.name)}</span>
