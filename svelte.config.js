@@ -43,11 +43,7 @@ function onWarn(warning, handler) {
 const config = {
 	// Consult https://kit.svelte.dev/docs/integrations#preprocessors
 	// for more information about preprocessors
-	preprocess: [
-		mdsvex(mdsvexConf),
-		vitePreprocess(),
-		preprocess()
-	],
+	preprocess: [mdsvex(mdsvexConf), vitePreprocess(), preprocess()],
 
 	kit: {
 		adapter: adapter({ routes: { exclude: CLOUDFLARE_ROUTES_EXCLUDE } })
