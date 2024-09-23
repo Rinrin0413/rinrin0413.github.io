@@ -5,7 +5,7 @@
 
 	import { SITE_URL } from '$lib/scripts/variables';
 	import { _ } from 'svelte-i18n';
-	import { ACKNOWLEDGEMENTS } from '$lib/scripts/data/acknowledgments';
+	import { ACKNOWLEDGMENTS } from '$lib/scripts/data/acknowledgments';
 	import { fly } from 'svelte/transition';
 
 	const ANIM = {
@@ -30,7 +30,7 @@
 	<Space height="10px" />
 
 	<table>
-		{#each ACKNOWLEDGEMENTS as { name, url, license, licenseUrl }, i}
+		{#each ACKNOWLEDGMENTS as { name, url, license, licenseUrl }, i}
 			<tr>
 				<td in:fly|global={{ y: ANIM.offset, duration: ANIM.duration, delay: i * ANIM.delay }}>
 					<a href={url} target="_blank" rel="noopener noreferrer">{name}</a>

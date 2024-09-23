@@ -53,20 +53,39 @@
 	function updateScroll() {
 		isAtTop = window.scrollY <= 0;
 	}
+
+	/** Forcibly set the `AtTop` variable to `false`. */
+	function forceSetTheAtTopFalse() {
+		isAtTop = false;
+	}
 </script>
 
 <div class="header-bg" class:blur={isMainVisual} />
 <header class:backdrop-blur={!isMainVisual}>
+	<a
+		href="#main-content"
+		class="skip-btn"
+		on:focus={forceSetTheAtTopFalse}
+		inert={$isDrawerMenuOpened}>{$_('header.skip')}</a
+	>
 	<nav class:opened={$isDrawerMenuOpened} class:at-top={isMainVisual}>
 		{#each ITEMS as item}
-			<a href="/{item.id}" class="item" class:active={pathname.split('/')[1] === item.id}>
+			<a
+				href="/{item.id}"
+				class="item"
+				class:active={pathname.split('/')[1] === item.id}
+				on:focus={forceSetTheAtTopFalse}
+				on:mousedown={forceSetTheAtTopFalse}
+			>
 				<Icon id={item.id} />
 				<span class="item-text">{$_(item.name)}</span>
 			</a>
 		{/each}
 	</nav>
 	<div class="hamburger-btn" class:hidden={isMainVisual}>
-		<HamburgerButton /><LangButton />
+		<HamburgerButton on:focus={forceSetTheAtTopFalse} /><LangButton
+			on:focus={forceSetTheAtTopFalse}
+		/>
 	</div>
 	<a
 		href="/"
@@ -75,7 +94,8 @@
 		class:fade-in={enableFadeIn}
 		on:click={() => {
 			isDrawerMenuOpened.set(false);
-		}}><img src="/images/logos/rinrin/logo.svg" alt={$_('header.logo')} /></a
+		}}
+		tabindex="-1"><img src="/images/logos/rinrin/logo.svg" alt={$_('header.logo')} /></a
 	>
 </header>
 

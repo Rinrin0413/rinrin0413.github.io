@@ -53,7 +53,8 @@
 	},
 	"header": {
 		"logo": "Rinrin.rsのロゴ",
-		"language": "English"
+		"language": "English",
+		"skip": "コンテンツへ進む"
 	},
 	"footer": {
 		"bgWallpaper": "背景壁紙"

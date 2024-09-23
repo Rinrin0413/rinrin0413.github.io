@@ -6,6 +6,28 @@
 	scrollbar-color: #2b1d0e transparent;
 	scroll-margin-top: $header-height + 18px;
 	font-weight: 500;
+	outline: 12px solid transparent;
+}
+
+:focus-visible {
+	$focus-col: #00b0ff;
+	outline: 3px solid $focus-col;
+	outline-offset: 2px;
+	animation: flash 0.5s;
+	overflow: visible;
+	transition: outline 0.3s ease-in;
+
+	@keyframes flash {
+		0% {
+			outline-color: black;
+		}
+		50% {
+			outline-color: white;
+		}
+		100% {
+			outline-color: $focus-col;
+		}
+	}
 }
 
 ::selection {

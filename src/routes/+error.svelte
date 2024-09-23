@@ -16,6 +16,7 @@
 <svelte:head>
 	<title>{title}</title>
 	<meta name="title" content={title} />
+	<meta name="robots" content="noindex" />
 </svelte:head>
 
 <h1>{status}</h1>
