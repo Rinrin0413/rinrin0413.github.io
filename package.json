@@ -1,6 +1,6 @@
 {
 	"name": "homepage_rinrin",
-	"version": "0.7.0",
+	"version": "0.7.!",
 	"private": true,
 	"scripts": {
 		"dev": "vite dev",
