@@ -46,10 +46,7 @@ const config = {
 	preprocess: [
 		mdsvex(mdsvexConf),
 		vitePreprocess(),
-		preprocess({
-			scss: { sourceMap: true },
-			sourceMap: true
-		})
+		preprocess()
 	],
 
 	kit: {
