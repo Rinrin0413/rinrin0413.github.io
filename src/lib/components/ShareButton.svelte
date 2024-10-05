@@ -113,7 +113,7 @@
 		></li
 		><li>
 			<button on:click={shareOnTwitter} title={ITEM_NAMES.post}>
-				<img src="/images/logos/x_logo.svg" alt="X logo" />
+				<img src="/images/logos/x_logo.svg" alt="X logo" width=1200 height=1227 />
 				{#if !expanded}
 					{ITEM_NAMES.post}
 				{/if}
@@ -121,7 +121,7 @@
 		></li
 		><li>
 			<button on:click={shareOnMisskey} title={ITEM_NAMES.note}>
-				<img src="/images/logos/misskey_icon.png" alt="Misskey logo" />
+				<img src="/images/logos/misskey_icon.png" alt="Misskey logo" width=92 height=64 />
 				{#if !expanded}
 					{ITEM_NAMES.note}
 				{/if}
@@ -130,7 +130,7 @@
 		>{#if !expanded}
 			<li>
 				<button class:opened={false} on:click={shareOnMastodon} title={ITEM_NAMES.toot}>
-					<img src="/images/logos/mastodon_logo-purple.svg" alt="Mastodon logo" />
+					<img src="/images/logos/mastodon_logo-purple.svg" alt="Mastodon logo" width=75 height=79 />
 					{ITEM_NAMES.toot}
 				</button>
 				<form on:submit={shareOnMastodon}>
