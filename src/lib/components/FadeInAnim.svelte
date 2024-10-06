@@ -38,8 +38,10 @@
 </div>
 
 <style lang="scss">
-	:not(.slide-up, .slide-left, .scale-up-origin-top) {
-		opacity: 0;
+	@media (scripting: enabled) {
+		:not(.slide-up, .slide-left, .scale-up-origin-top) {
+			opacity: 0;
+		}
 	}
 
 	$ease-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);
