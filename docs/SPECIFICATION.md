@@ -6,6 +6,7 @@
 
 | Z-Index | Entity | Path |
 | --: | --- | --- |
+| 2048 | noscript | [`layout.scss>noscript`](/src/lib/stylesheets/layout.scss) |
 | 1031 | nprogress { bar, spinner }  | [`/node_modules/nprogress/nprogress.css>#nprogress .bar`](/node_modules/nprogress/nprogress.css), [`/node_modules/nprogress/nprogress.css>#nprogress .spinner`](/node_modules/nprogress/nprogress.css) |
 | 132 | header skip btn | [`header.scss>.skip-btn`](/src/lib/stylesheets/header/header.scss) |
 | 129 | header logo | [`header.scss>.header-logo img`](/src/lib/stylesheets/header/header.scss) |
