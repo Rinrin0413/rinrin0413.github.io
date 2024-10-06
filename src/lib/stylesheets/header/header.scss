@@ -13,12 +13,16 @@ header,
 header {
 	width: 100vw;
 	height: $header-height;
+	$filter: blur(16px);
+	backdrop-filter: $filter;
+	-webkit-backdrop-filter: $filter;
 	transition: 0.4s;
 
-	&.backdrop-blur {
-		$filter: blur(16px);
-		backdrop-filter: $filter;
-		-webkit-backdrop-filter: $filter;
+	@media (scripting: enabled) {
+		&:not(.backdrop-blur) {
+			backdrop-filter: none;
+			-webkit-backdrop-filter: none;
+		}
 	}
 }
 
@@ -28,6 +32,9 @@ header {
 	width: $logo-size;
 	height: $logo-size;
 	position: absolute;
+	top: $header-height * 0.1;
+	left: 0;
+	transform: translateX($header-height * 0.3);
 	text-decoration: none;
 	transition: 0.2s ease-in;
 
@@ -44,83 +51,78 @@ header {
 		color: $txt-primary;
 		font-size: $logo-size * 0.6;
 		position: absolute;
+		top: 6px;
+		left: -128px;
+		clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
 		transition: 0.1s;
 		z-index: 128;
 	}
 
-	&:not(.center) {
-		top: $header-height * 0.1;
-		left: 0;
-		transform: translateX($header-height * 0.3);
+	@include not-un {
+		&:hover {
+			img {
+				transform: translateX(-$header-height * 0.26);
+			}
 
-		&::after {
-			top: 6px;
-			left: -128px;
-			clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
-		}
-
-		@include not-un {
-			&:hover {
-				img {
-					transform: translateX(-$header-height * 0.26);
-				}
-
-				&::after {
-					transform: translateX(170px);
-					clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-				}
+			&::after {
+				transform: translateX(170px);
+				clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 			}
 		}
 	}
 
-	&.center {
-		top: 50%;
-		left: 50%;
-		$tl-x: translateX(-50%);
-		transform: $tl-x;
+	@media (scripting: enabled) {
+		&.center {
+			top: 50%;
+			left: 50%;
+			$tl-x: translateX(-50%);
+			transform: $tl-x;
 
-		&:hover img {
-			animation: sway 0.4s ease-in-out forwards;
+			&:hover img {
+				animation: sway 0.4s ease-in-out forwards;
 
-			@keyframes sway {
-				20% {
-					transform: rotate(28deg);
-				}
+				@keyframes sway {
+					20% {
+						transform: rotate(28deg);
+					}
 
-				50% {
-					transform: rotate(-28deg);
-				}
+					50% {
+						transform: rotate(-28deg);
+					}
 
-				80% {
-					transform: rotate(16deg);
-				}
+					80% {
+						transform: rotate(16deg);
+					}
 
-				100% {
-					transform: rotate(0deg);
+					100% {
+						transform: rotate(0deg);
+					}
 				}
 			}
-		}
 
-		&::after {
-			left: 50%;
-			transform: translate(-50%, $logo-size * 0.9);
-		}
+			&::after {
+				top: initial;
+				left: 50%;
+				clip-path: none;
+				transform: translate(-50%, $logo-size * 0.9);
+			}
 
-		&.fade-in {
-			opacity: 0;
-			animation: fadeInDown 0.9s ease-out forwards;
+			&.fade-in {
+				opacity: 0;
+				animation: fadeInDown 0.9s ease-out forwards;
 
-			@keyframes fadeInDown {
-				0% {
-					opacity: 0;
-					filter: blur(32px);
-					transform: $tl-x translateY(-64px);
-				}
+				@keyframes fadeInDown {
+					0% {
+						opacity: 0;
+						filter: blur(32px);
+						transform: $tl-x translateY(-64px);
+					}
 
-				100% {
-					opacity: 1;
-					filter: blur(0);
-					transform: $tl-x;
+					100% {
+						opacity: 1;
+						filter: blur(0);
+						transform: $tl-x;
+					}
 				}
 			}
 		}
@@ -153,11 +155,15 @@ nav {
 	align-items: center;
 	height: $header-height;
 	position: fixed;
-	right: 64px;
+	right: 0;
 
-	&.at-top a {
-		transform: translateY(-72px);
-		cursor: grab;
+	@media (scripting: enabled) {
+		right: 64px;
+
+		&.at-top a {
+			transform: translateY(-72px);
+			cursor: grab;
+		}
 	}
 }
 
@@ -222,17 +228,19 @@ nav {
 	opacity: 0.78;
 	transition: 0.4s;
 
-	&.blur {
-		transform: translate(-10vw, -$header-height * 0.5);
-		filter: blur(28px);
-		background: radial-gradient(
-			ellipse at center,
-			$header-secondary 20%,
-			$header-tertiary 25%,
-			$header-primary 75%
-		);
-		box-shadow: 0 4px 14px $header-primary;
-		opacity: 1;
+	@media (scripting: enabled) {
+		&.blur {
+			transform: translate(-10vw, -$header-height * 0.5);
+			filter: blur(28px);
+			background: radial-gradient(
+				ellipse at center,
+				$header-secondary 20%,
+				$header-tertiary 25%,
+				$header-primary 75%
+			);
+			box-shadow: 0 4px 14px $header-primary;
+			opacity: 1;
+		}
 	}
 }
 

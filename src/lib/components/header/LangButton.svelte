@@ -54,6 +54,10 @@
 				}
 			}
 		}
+
+		@media (scripting: none) {
+			display: none;
+		}
 	}
 
 	span {
