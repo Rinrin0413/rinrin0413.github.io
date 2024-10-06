@@ -143,6 +143,8 @@ ul {
 		}
 
 		img {
+			width: auto;
+			height: auto;
 			$size: 75%;
 			max-width: $size;
 			max-height: $size;
