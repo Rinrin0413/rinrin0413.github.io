@@ -213,7 +213,7 @@ export const SOCIALS = [
 		service: 'Qiita',
 		name: '@Rinrin0413',
 		url: 'https://qiita.com/Rinrin0413',
-		icon: 'qiita_favicon.webp'
+		icon: 'qiita-icon.webp'
 	},
 	{
 		service: 'Reddit',
