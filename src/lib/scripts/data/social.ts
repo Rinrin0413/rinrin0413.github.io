@@ -153,7 +153,7 @@ export const SOCIALS = [
 		service: 'mstdn.jp',
 		name: '@rinrin0413',
 		url: 'https://mstdn.jp/@rinrin0413',
-		icon: null // Can not reserve 36px clear space for the logo
+		icon: 'mastodon_logo-purple.svg'
 	},
 	{
 		service: 'Musescore',
