@@ -135,7 +135,7 @@ export const SOCIALS = [
 		service: 'Misskey.io',
 		name: '@Rinrin0413',
 		url: 'https://misskey.io/@Rinrin0413',
-		icon: 'misskey-io.webp'
+		icon: 'misskey-io_io-icon.svg'
 	},
 	{
 		service: 'Modrinth',
