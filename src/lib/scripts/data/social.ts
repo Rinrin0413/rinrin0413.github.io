@@ -201,7 +201,7 @@ export const SOCIALS = [
 		service: 'Patreon',
 		name: 'Rinrin.rs',
 		url: 'https://patreon.com/user?u=68900751',
-		icon: 'Digital-Patreon-Logo_FieryCoral.webp'
+		icon: 'PATREON_SYMBOL_1_BLACK_RGB.svg'
 	},
 	{
 		service: 'pixiv',
