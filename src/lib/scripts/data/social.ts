@@ -237,7 +237,7 @@ export const SOCIALS = [
 		service: 'Spotify',
 		name: 'Rinrin.rs',
 		url: 'https://open.spotify.com/user/orr3huuq7wdmws3a6tgyh50d0?si=f680715bc4a54a5e',
-		icon: 'Spotify_Icon_RGB_Green.webp'
+		icon: 'Spotify_Primary_Logo_RGB_Green.webp'
 	},
 	{
 		service: 'Steam',
