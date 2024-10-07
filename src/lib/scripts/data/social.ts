@@ -195,7 +195,7 @@ export const SOCIALS = [
 		service: 'osu!',
 		name: 'Rinrin-rs',
 		url: 'https://osu.ppy.sh/users/32818234',
-		icon: 'osu!.webp'
+		icon: 'osu!_logo.webp'
 	},
 	{
 		service: 'Patreon',
