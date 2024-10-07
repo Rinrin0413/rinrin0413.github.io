@@ -89,11 +89,9 @@
 </svelte:head>
 
 <noscript>
-	JavaScript is disabled in your browser.
-	Some features don't work properly.
+	JavaScript is disabled in your browser. Some features don't work properly.
 	<br /><br />
-	お使いのブラウザでは JavaScript が無効になっています。
-	一部の機能が正常に動作しません。
+	お使いのブラウザでは JavaScript が無効になっています。 一部の機能が正常に動作しません。
 </noscript>
 
 <Header />

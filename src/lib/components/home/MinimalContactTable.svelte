@@ -43,7 +43,12 @@
 	</tr>
 	<tr>
 		<td>
-			<img src="/images/logos/misskey-io_io-icon.svg" alt="Misskey.io logo" width="26" height="26" />Misskey.io
+			<img
+				src="/images/logos/misskey-io_io-icon.svg"
+				alt="Misskey.io logo"
+				width="26"
+				height="26"
+			/>Misskey.io
 		</td>
 		<td
 			><a href="https://misskey.io/@Rinrin0413" target="_blank" rel="noopener noreferrer"

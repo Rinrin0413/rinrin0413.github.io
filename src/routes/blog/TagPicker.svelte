@@ -18,7 +18,13 @@
 <ul>
 	{#each allTags as { tag, count }, i}
 		{#if isOpened}
-			<Tag name={tag} {count} isEnabled={pickedTags.includes(tag)} index={i} negativeIndex={allTags.length - i} />
+			<Tag
+				name={tag}
+				{count}
+				isEnabled={pickedTags.includes(tag)}
+				index={i}
+				negativeIndex={allTags.length - i}
+			/>
 		{/if}
 	{/each}
 </ul>
