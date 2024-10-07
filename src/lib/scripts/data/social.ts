@@ -219,7 +219,7 @@ export const SOCIALS = [
 		service: 'Reddit',
 		name: 'Rinrin0413',
 		url: 'https://reddit.com/user/Rinrin0413',
-		icon: 'Reddit_Mark_OnWhite.svg'
+		icon: 'Reddit_Icon_FullColor.svg'
 	},
 	{
 		service: 'Shadertoy',
