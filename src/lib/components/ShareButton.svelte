@@ -121,7 +121,7 @@
 		></li
 		><li>
 			<button on:click={shareOnMisskey} title={ITEM_NAMES.note}>
-				<img src="/images/logos/misskey_icon.png" alt="Misskey logo" width=92 height=64 />
+				<img src="/images/logos/misskey_icon.webp" alt="Misskey logo" width=92 height=64 />
 				{#if !expanded}
 					{ITEM_NAMES.note}
 				{/if}
