@@ -171,7 +171,7 @@ export const SOCIALS = [
 		service: 'Niconico',
 		name: 'Rinrin.rs',
 		url: 'https://nicovideo.jp/user/121780655',
-		icon: 'nc296561.webp'
+		icon: 'niconico_nc296561__ニコニコ_シンボルマーク.webp'
 	},
 	{
 		service: 'Noteflight',
