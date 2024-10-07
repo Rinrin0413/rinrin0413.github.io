@@ -231,7 +231,7 @@ export const SOCIALS = [
 		service: 'SoundCloud',
 		name: 'rinrin0413',
 		url: 'https://soundcloud.com/rinrin0413',
-		icon: 'soundcloud_orange_white_39-94fc761.webp'
+		icon: 'soundcloud_ios-a62dfc8fe7.webp'
 	},
 	{
 		service: 'Spotify',
