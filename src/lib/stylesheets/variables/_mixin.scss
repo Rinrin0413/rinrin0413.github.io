@@ -18,7 +18,9 @@ $breakpoint-ultra-narrow: 380px;
 
 @mixin hm {
 	@media screen and (max-width: #{$breakpoint-hamburger-menu - 1}) {
-		@content;
+		@media (scripting: enabled) {
+			@content;
+		}
 	}
 }
 

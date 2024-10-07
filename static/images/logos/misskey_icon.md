@@ -1,12 +1,18 @@
-# Misskey assets - icon.png
+# Misskey Brand Assets - icon.png
 
-![misskey_icon.png](./misskey_icon.png)
+![icon.png](https://assets.misskey-hub.net/public/icon.png)
 
-https://github.com/misskey-dev/assets/blob/main/icon.png
+https://assets.misskey-hub.net/public/icon.png
 
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="CC BY-NC-SA" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a>
+[![CC BY-SA](https://licensebuttons.net/l/by-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-sa/4.0)
+
+---
 
 And modified by Rinrin.rs:
 
-- Trimmed and resized with GIMP
-- Converted from PNG to OxiPNG with Squoosh
+- Trimmed and resized with GIMP.
+- Converted from PNG to WebP with Squoosh.
+
+![misskey_icon.webp](./misskey_icon.webp)
+
+misskey_icon.webp

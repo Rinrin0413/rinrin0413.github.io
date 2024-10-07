@@ -81,6 +81,7 @@ ul {
 
 		img {
 			width: $logo-size;
+			height: auto;
 			margin: 0 (($copy-icn-size - $logo-size) * 0.5);
 		}
 
@@ -142,6 +143,8 @@ ul {
 		}
 
 		img {
+			width: auto;
+			height: auto;
 			$size: 75%;
 			max-width: $size;
 			max-height: $size;

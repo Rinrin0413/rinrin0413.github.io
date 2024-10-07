@@ -4,8 +4,6 @@
 
 	import type { ArticleTagWithCount } from '$lib/scripts/types';
 	import { _ } from 'svelte-i18n';
-	import { fly, scale } from 'svelte/transition';
-	import { bounceOut } from 'svelte/easing';
 
 	export let allTags: ArticleTagWithCount[];
 	export let pickedTags: string[];
@@ -20,12 +18,13 @@
 <ul>
 	{#each allTags as { tag, count }, i}
 		{#if isOpened}
-			<div
-				in:fly|global={{ y: -18, duration: 400, delay: i * 52, easing: bounceOut }}
-				out:scale={{ duration: 200, delay: (allTags.length - i) * 16 }}
-			>
-				<Tag name={tag} {count} isEnabled={pickedTags.includes(tag)} />
-			</div>
+			<Tag
+				name={tag}
+				{count}
+				isEnabled={pickedTags.includes(tag)}
+				index={i}
+				negativeIndex={allTags.length - i}
+			/>
 		{/if}
 	{/each}
 </ul>
@@ -57,9 +56,5 @@
 		padding: 0;
 		margin: 6px 0;
 		margin-bottom: 32px;
-	}
-
-	div {
-		display: inline-block;
 	}
 </style>

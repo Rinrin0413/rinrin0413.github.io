@@ -62,7 +62,7 @@ export const SOCIALS = [
 	{
 		service: 'Discord(server)',
 		name: 'Rinrinの要塞',
-		url: 'https://discord.com/users/724976600873041940',
+		url: 'https://discord.gg/7QhMDfyPHR',
 		icon: ICONS.discord
 	},
 	{
@@ -75,7 +75,7 @@ export const SOCIALS = [
 		service: 'Geartics',
 		name: 'rinrin',
 		url: 'https://geartics.com/rinrin',
-		icon: 'geartics_1_Primary_logo_on_transparent_39.webp'
+		icon: 'geartics_1_Primary_logo_on_transparent_64.webp'
 	},
 	{
 		service: 'GitHub',
@@ -123,7 +123,7 @@ export const SOCIALS = [
 		service: 'Ko-fi',
 		name: 'rinrin0413',
 		url: 'https://ko-fi.com/rinrin0413',
-		icon: 'Ko-fi_Icon_RGB_rounded.webp'
+		icon: 'kofi_s_logo_nolabel.svg'
 	},
 	{
 		service: 'MCPEDL',
@@ -135,7 +135,7 @@ export const SOCIALS = [
 		service: 'Misskey.io',
 		name: '@Rinrin0413',
 		url: 'https://misskey.io/@Rinrin0413',
-		icon: 'misskey-io.webp'
+		icon: 'misskey-io_io-icon.svg'
 	},
 	{
 		service: 'Modrinth',
@@ -153,13 +153,13 @@ export const SOCIALS = [
 		service: 'mstdn.jp',
 		name: '@rinrin0413',
 		url: 'https://mstdn.jp/@rinrin0413',
-		icon: null // Can not reserve 36px clear space for the logo
+		icon: 'mastodon_logo-purple.svg'
 	},
 	{
-		service: 'Musescore',
+		service: 'Musescore.com',
 		name: 'Rinrin.rs',
 		url: 'https://musescore.com/user/37392171',
-		icon: 'musescore-mu-logo-whitebg.svg'
+		icon: null // Could not find the guideline
 	},
 	{
 		service: 'NameMC',
@@ -171,7 +171,7 @@ export const SOCIALS = [
 		service: 'Niconico',
 		name: 'Rinrin.rs',
 		url: 'https://nicovideo.jp/user/121780655',
-		icon: 'nc296561.webp'
+		icon: 'niconico_nc296561__ニコニコ_シンボルマーク.webp'
 	},
 	{
 		service: 'Noteflight',
@@ -186,7 +186,7 @@ export const SOCIALS = [
 		icon: null // Could not find the guideline
 	},
 	{
-		service: 'openSUSE',
+		service: 'openSUSE Forums',
 		name: 'Rinrin.rs',
 		url: 'https://forums.opensuse.org/u/Rinrin.rs',
 		icon: 'opensuse_button-colour.svg'
@@ -195,13 +195,13 @@ export const SOCIALS = [
 		service: 'osu!',
 		name: 'Rinrin-rs',
 		url: 'https://osu.ppy.sh/users/32818234',
-		icon: 'osu!.webp'
+		icon: 'osu!_logo.webp'
 	},
 	{
 		service: 'Patreon',
 		name: 'Rinrin.rs',
 		url: 'https://patreon.com/user?u=68900751',
-		icon: 'Digital-Patreon-Logo_FieryCoral.webp'
+		icon: 'PATREON_SYMBOL_1_BLACK_RGB.svg'
 	},
 	{
 		service: 'pixiv',
@@ -213,13 +213,13 @@ export const SOCIALS = [
 		service: 'Qiita',
 		name: '@Rinrin0413',
 		url: 'https://qiita.com/Rinrin0413',
-		icon: 'qiita_favicon.webp'
+		icon: 'qiita-icon.webp'
 	},
 	{
 		service: 'Reddit',
 		name: 'Rinrin0413',
 		url: 'https://reddit.com/user/Rinrin0413',
-		icon: 'Reddit_Mark_OnWhite.svg'
+		icon: 'Reddit_Icon_FullColor.svg'
 	},
 	{
 		service: 'Shadertoy',
@@ -231,13 +231,13 @@ export const SOCIALS = [
 		service: 'SoundCloud',
 		name: 'rinrin0413',
 		url: 'https://soundcloud.com/rinrin0413',
-		icon: 'soundcloud_orange_white_39-94fc761.webp'
+		icon: 'soundcloud_ios-a62dfc8fe7.webp'
 	},
 	{
 		service: 'Spotify',
 		name: 'Rinrin.rs',
 		url: 'https://open.spotify.com/user/orr3huuq7wdmws3a6tgyh50d0?si=f680715bc4a54a5e',
-		icon: 'Spotify_Icon_RGB_Green.webp'
+		icon: 'Spotify_Primary_Logo_RGB_Green.webp'
 	},
 	{
 		service: 'Steam',
@@ -316,12 +316,6 @@ export const SOCIALS = [
 		name: '@rinrin0413',
 		url: 'https://zenn.dev/rinrin0413',
 		icon: 'zenn_logo-only.svg'
-	},
-	{
-		service: 'おならすきー',
-		name: '@rinrin',
-		url: 'https://ona.la/@rinrin',
-		icon: null // Could not find the guideline
 	},
 	{
 		service: 'でばっぐ神社',

@@ -1,9 +1,13 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
+	import { fly, scale } from 'svelte/transition';
+	import { bounceOut } from 'svelte/easing';
 
 	export let name: string;
 	export let count: number;
 	export let isEnabled: boolean;
+	export let index: number;
+	export let negativeIndex: number;
 
 	function toggle() {
 		isEnabled = !isEnabled;
@@ -20,7 +24,11 @@
 	}
 </script>
 
-<li class:enabled={isEnabled}>
+<li
+	class:enabled={isEnabled}
+	in:fly|global={{ y: -18, duration: 400, delay: index * 52, easing: bounceOut }}
+	out:scale={{ duration: 200, delay: negativeIndex * 16 }}
+>
 	<button on:click={toggle} class="tag-btn">
 		{name.toUpperCase()}({count})
 	</button>
