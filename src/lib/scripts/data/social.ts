@@ -62,7 +62,7 @@ export const SOCIALS = [
 	{
 		service: 'Discord(server)',
 		name: 'Rinrinの要塞',
-		url: 'https://discord.com/users/724976600873041940',
+		url: 'https://discord.gg/7QhMDfyPHR',
 		icon: ICONS.discord
 	},
 	{
