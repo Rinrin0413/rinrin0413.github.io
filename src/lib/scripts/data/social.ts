@@ -123,7 +123,7 @@ export const SOCIALS = [
 		service: 'Ko-fi',
 		name: 'rinrin0413',
 		url: 'https://ko-fi.com/rinrin0413',
-		icon: 'Ko-fi_Icon_RGB_rounded.webp'
+		icon: 'kofi_s_logo_nolabel.svg'
 	},
 	{
 		service: 'MCPEDL',
