@@ -140,7 +140,11 @@
 						placeholder={$_('w.domain')}
 						required
 						bind:value={mastodonDomain}
-					/><img src={faviconUrl(mastodonDomain)} alt="" class="server-favicon" />
+					/><img src={
+						mastodonDomain === 'mastodon.social' ?
+							'/images/logos/mastodon_logo-purple.svg' :
+							faviconUrl(mastodonDomain)
+					} alt="" class="server-favicon" />
 				</form>
 			</li>
 		{/if
