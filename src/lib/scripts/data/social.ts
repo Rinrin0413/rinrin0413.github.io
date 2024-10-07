@@ -156,10 +156,10 @@ export const SOCIALS = [
 		icon: 'mastodon_logo-purple.svg'
 	},
 	{
-		service: 'Musescore',
+		service: 'Musescore.com',
 		name: 'Rinrin.rs',
 		url: 'https://musescore.com/user/37392171',
-		icon: 'musescore-mu-logo-whitebg.svg'
+		icon: null // Could not find the guideline
 	},
 	{
 		service: 'NameMC',
