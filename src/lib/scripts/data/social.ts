@@ -75,7 +75,7 @@ export const SOCIALS = [
 		service: 'Geartics',
 		name: 'rinrin',
 		url: 'https://geartics.com/rinrin',
-		icon: 'geartics_1_Primary_logo_on_transparent_39.webp'
+		icon: 'geartics_1_Primary_logo_on_transparent_64.webp'
 	},
 	{
 		service: 'GitHub',
