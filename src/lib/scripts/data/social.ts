@@ -186,7 +186,7 @@ export const SOCIALS = [
 		icon: null // Could not find the guideline
 	},
 	{
-		service: 'openSUSE',
+		service: 'openSUSE Forums',
 		name: 'Rinrin.rs',
 		url: 'https://forums.opensuse.org/u/Rinrin.rs',
 		icon: 'opensuse_button-colour.svg'
