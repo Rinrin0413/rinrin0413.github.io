@@ -130,8 +130,7 @@ Returns a list of blog articles.
     "title": "2024年の抱負",
     "desc": "気づいたらもう今年で高3です。今年のうちに決断しなければならないことが山ほどありそうで狂う。",
     "tags": [
-      "年の抱負",
-      "新年"
+      "年の抱負"
     ],
     "slug": "20240101"
   },
@@ -188,10 +187,6 @@ Returns a list of tags of valid(published and indexed) blog articles.
   },
   {
     "tag": "ブログ",
-    "count": 1
-  },
-  {
-    "tag": "新年",
     "count": 1
   },
   {
