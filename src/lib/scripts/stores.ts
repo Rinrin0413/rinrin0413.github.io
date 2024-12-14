@@ -4,8 +4,5 @@ import { toggleScrollPrevention } from '$lib/scripts/utils';
 
 export const isDrawerMenuOpened = writable(false);
 isDrawerMenuOpened.subscribe((value) => {
-	if (browser) {
-		toggleScrollPrevention(value);
-		if (value) document.querySelector<HTMLElement>('footer li a')?.focus();
-	}
+	if (browser) toggleScrollPrevention(value);
 });
