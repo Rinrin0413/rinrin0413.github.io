@@ -1,2 +1,2 @@
 /** The Aipictors URL of the background wallpaper image */
-export const BG_IMG_URL: string | null = 'https://aipictors.com/works/460630/';
+export const BG_IMG_URL: string | null = 'https://www.aipictors.com/posts/222034';
