@@ -44,6 +44,13 @@
 			{#if meta.desc}
 				<p>{meta.desc}</p>
 			{/if}
+			{#if meta.tags !== null && !mini}
+				<ul>
+					{#each meta.tags as tag}
+						<li><span class="tag-btn">{tag.toUpperCase()}</span></li>
+					{/each}
+				</ul>
+			{/if}
 		</div>
 	</article></a
 >
