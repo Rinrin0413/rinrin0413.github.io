@@ -25,6 +25,7 @@
 
 .share-btn {
 	@include btn;
+	@include hideWhenNoJs;
 }
 
 svg {
@@ -38,6 +39,8 @@ svg {
 
 ul {
 	list-style: none;
+
+	@include hideWhenNoJs;
 
 	&.menu {
 		display: inline-block;

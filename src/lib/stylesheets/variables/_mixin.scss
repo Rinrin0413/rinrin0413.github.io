@@ -30,6 +30,12 @@ $breakpoint-ultra-narrow: 380px;
 	}
 }
 
+@mixin hideWhenNoJs {
+	@media (scripting: none) {
+		display: none;
+	}
+}
+
 @mixin glassmorphism(
 	$blur: 10px,
 	$background-color: #ffffff35,
