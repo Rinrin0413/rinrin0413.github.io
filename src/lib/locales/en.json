@@ -164,7 +164,7 @@
 		"webDev": {
 			"0": "don't like it because stylesheets are very stressful",
 			"svelte": [
-				"Used SvelteKit when developing website. Same this homepage",
+				"Used SvelteKit when developing websites. Same this website",
 				"And have never used other frameworks"
 			],
 			"htmlCssJs": "I HATE CSS",
@@ -206,7 +206,7 @@
 		"note": "Note"
 	},
 	"article.backToIndex": "Back to index",
-	"acknowledgments.desc": "Thank you for all OSS and services that used in the development of this homepage.",
+	"acknowledgments.desc": "Thank you for all OSS and services that used in the development of this website.",
 	"privacy": {
 		"desc": "This Privacy Policy outlines the use of access analytics on this website:",
 		"analytics": [
