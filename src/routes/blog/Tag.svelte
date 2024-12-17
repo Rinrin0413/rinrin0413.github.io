@@ -32,6 +32,7 @@
 	<button on:click={toggle} class="tag-btn">
 		{name.toUpperCase()}({count})
 	</button>
+	<a href="/blog{isEnabled ? '' : '?t=' + name}" class="tag-btn">{name.toUpperCase()}({count})</a>
 </li>
 
 <style lang="scss">
@@ -51,6 +52,16 @@
 			@include sp {
 				opacity: $disabled-opacity;
 			}
+		}
+	}
+
+	button {
+		@include hideWhenNoJs;
+	}
+
+	a {
+		@media (scripting: enabled) {
+			display: none;
 		}
 	}
 </style>

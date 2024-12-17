@@ -13,17 +13,17 @@ const T =
 ';
 console.log(
 	`
-        %c  %c
-    %c                %c
-    %c  %c%c            %c%c  %c
-    %c  %c%c            %c%c  %c
-    %c  %c%c  %c%c  %c%c    %c%c  %c%c  %c%c  %c
-    %c  %c%c  %c%c  %c%c    %c%c  %c%c  %c%c  %c
-    %c  %c%c            %c%c  %c
-    %c  %c%c            %c%c  %c
-    %c                %c
+         %c  %c
+     %c                %c
+     %c  %c%c            %c%c  %c
+     %c  %c%c            %c%c  %c
+     %c  %c%c  %c%c  %c%c    %c%c  %c%c  %c%c  %c
+     %c  %c%c  %c%c  %c%c    %c%c  %c%c  %c%c  %c
+     %c  %c%c            %c%c  %c
+     %c  %c%c            %c%c  %c
+     %c                %c
 
-%cRinrin' Homepage`,
+%cRinrin.rs' Website`,
 	S,
 	'',
 	D,

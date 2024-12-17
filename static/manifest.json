@@ -1,6 +1,6 @@
 {
-	"name": "Rinrin.rs' Homepage",
-	"short_name": "Rinrin's HP",
+	"name": "Rinrin.rs' Website",
+	"short_name": "Rinrin's site",
 	"start_url": "/",
 	"display": "standalone",
 	"background_color": "#d1b27f",

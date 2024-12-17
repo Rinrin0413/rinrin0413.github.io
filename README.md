@@ -1,4 +1,4 @@
-<h1 align="center">Rinrin.rs' Homepage</h1>
+<h1 align="center">Rinrin.rs' Website</h1>
 
 <p align="center">
 	<img src="/static/images/logos/rinrin/logo.svg" alt="logo" width="256" />

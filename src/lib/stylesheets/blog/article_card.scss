@@ -1,6 +1,8 @@
 @use '$lib/stylesheets/variables/mixin' as *;
 @use '$lib/stylesheets/variables/color' as *;
 
+@use '$lib/stylesheets/blog/tag';
+
 a {
 	color: inherit !important;
 	text-decoration: none;
@@ -63,18 +65,6 @@ img {
 	grid-row: 1;
 	text-align: left;
 	padding-left: 22px;
-
-	&::after {
-		content: 'read more ->';
-		display: block;
-		position: relative;
-		left: 0;
-		margin-top: 10px;
-		font-size: 14px;
-		text-decoration: underline;
-		transition: 0.2s;
-		@include bold;
-	}
 }
 
 h2 {
@@ -101,6 +91,28 @@ p {
 	margin: 0;
 	margin-top: 8px;
 	line-height: 1.1;
+
+	&::after {
+		content: 'read more ->';
+		display: block;
+		position: relative;
+		left: 0;
+		margin-top: 10px;
+		font-size: 14px;
+		text-decoration: underline;
+		transition: 0.2s;
+		@include bold;
+	}
+}
+
+ul {
+	display: flex;
+	margin-top: 18px;
+	padding: 0;
+	flex-wrap: wrap;
+	list-style: none;
+	justify-content: left;
+	opacity: 0.85;
 }
 
 @mixin mobile-view {
@@ -136,11 +148,6 @@ p {
 		grid-row: 2 / 3;
 		padding-left: 0;
 		padding-top: 6px;
-
-		&::after {
-			font-size: 14px;
-			margin-top: 1px;
-		}
 	}
 
 	h2 {
@@ -156,6 +163,11 @@ p {
 	p {
 		font-size: 15px;
 		margin-top: 2px;
+
+		&::after {
+			font-size: 14px;
+			margin-top: 1px;
+		}
 	}
 }
 
