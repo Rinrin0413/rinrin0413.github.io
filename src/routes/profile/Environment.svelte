@@ -16,9 +16,9 @@
 		{
 			type: $_('w.software'),
 			items: [
-				{ key: 'OS', value: 'openSUSE Leap 15.5 x86_64' },
+				{ key: 'OS', value: 'openSUSE Leap 15.6 x86_64' },
 				{ key: $_('w.shell'), value: 'bash 4.4.23' },
-				{ key: $_('w.desktopEnv'), value: 'GNOME 41.9' },
+				{ key: $_('w.desktopEnv'), value: 'GNOME 45.3' },
 				{ key: $_('w.webBrowser'), value: 'Mozilla Firefox ESR' },
 				{ key: $_('w.codeEditor'), value: 'Visual Studio Code Insiders' }
 			]
