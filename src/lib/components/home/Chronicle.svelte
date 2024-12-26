@@ -19,7 +19,7 @@
 <FadeInAnim type="scale-up-origin-top">
 	<div
 		class="container"
-		title={!isOpened ? 'Open' : ''}
+		title={!isOpened ? $_('chronicle.expand') : ''}
 		role="button"
 		tabindex={isOpened ? -1 : 0}
 		on:click|once={open}
@@ -27,7 +27,7 @@
 			if (e.key === 'Enter') open();
 		}}
 	>
-		<ul class:opened={isOpened}>
+		<ul class:opened={isOpened} data-text="{$_('chronicle.expand')} ▼">
 			{#each CHRONICLE as { year, events }}
 				{#each events as month, i}
 					{@const sameMonthIndexes = events.reduce(
