@@ -68,6 +68,24 @@
 
 <Hr />
 
+<section id="wakatime">
+	<Title text="Wakatime" />
+	<p>My coding activity.</p>
+	<figure>
+		<embed src="https://wakatime.com/share/@Rinrin/e0c30dca-c019-4c56-a8d8-0a200e9b5cca.svg" />
+	</figure>
+	<p>
+		<a href="https://wakatime.com/@Rinrin"
+			><img
+				src="https://wakatime.com/badge/user/88c05ffc-234e-402c-9f4e-d3b542e7309f.svg"
+				alt="Total time coded since Mar 17 2023"
+			/></a
+		>
+	</p>
+</section>
+
+<Hr />
+
 <section id="environment">
 	<Title text="Environment" />
 	<Environment />
@@ -76,5 +94,12 @@
 <style style="scss">
 	section {
 		margin-top: 28px;
+	}
+
+	figure {
+		width: 99vw;
+		max-width: 1150px;
+		height: 718px;
+		margin: 0 auto;
 	}
 </style>
