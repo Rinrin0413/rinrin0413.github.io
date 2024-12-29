@@ -38,7 +38,8 @@
 		"creations": "Creations",
 		"social": "Social",
 		"privacyPolicy": "Privacy Policy",
-		"acknowledgments": "Acknowledgments"
+		"acknowledgments": "Acknowledgments",
+		"illustration": "Illustration"
 	},
 	"home": {
 		"icon": "Rinrin.rs' avatar",
@@ -159,34 +160,40 @@
 	},
 	"skills": {
 		"summary": "Click to expand",
-		"rust": ["I love it. but i'm not saying i mastered it", "Use it to make bots for Discord"],
-		"git": "I have ASD so i will have a seizure if i don't commit regularly",
-		"glslWgslHlsl": "Originally i was developing shaderpacks for Minecraft",
+		"rust": "I love it because it's fun to write.",
+		"git": "I make mistakes occasionally, but so I have gotten used to resolving them.",
+		"glslWgslHlsl": [
+			"I am not good at coding that requires advanced mathematics.",
+			"Originally I was developing shaderpacks for Minecraft."
+		],
 		"webDev": {
-			"0": "don't like it because stylesheets are very stressful",
+			"0": "I dislike this field because stylesheets are very stressful.",
 			"svelte": [
-				"Used SvelteKit when developing websites. Same this website",
-				"And have never used other frameworks"
+				"I usually use SvelteKit when build websites. This website was made with it too.",
+				"I have never used any other frameworks."
 			],
-			"htmlCssJs": "I HATE CSS",
+			"htmlCssJs": "I HATE CSS.",
 			"sass": [
-				"I like mixin and variables etc.",
-				"I use SCSS",
-				"SASS requires indentation rules so i don't use it"
+				"I like the mixins and variables etc. of Sass.",
+				"I use SCSS because I dislike the indentation syntax."
 			]
 		},
 		"python": [
-			"It is the first language i learned",
-			"There is a risk of anaphylaxis, but that does not mean cannot write it"
+			"This is actually the first language I learned.",
+			"There is anaphylaxis risks, but it is not like I can't write it anymore."
 		],
 		"minecraft": [
-			"I used to build Japanese-style architecture. but not good at Western-style architecture",
-			"At one time i was also creating add-ons for Bedrock Edition, but not going to do it again",
-			"Currently developing shaderpacks for Java Edition and building something, when feel like it"
+			"I used to build Japanese-style architecture. And I am not good at Western-style buildings.",
+			"At one point, I was also developing add-ons for Bedrock Edition, but I am not gonna do it anymore.",
+			"Currently, I occasionally develop shaderpacks for Java Edition when feeling motivated."
 		],
 		"linux": [
-			"My main OS is openSUSE Leap 15.6",
-			"But i don't use it for server purposes so it is hard to say it is a skill"
+			"My main desktop OS is openSUSE Leap 15.6.",
+			"I am not using Linux for server purposes so it is hard to say it is a skill."
+		],
+		"illustration": [
+			"I am able to draw simple pixel art.",
+			"I used to draw analog art but I rarely draw now."
 		]
 	},
 	"env": {
