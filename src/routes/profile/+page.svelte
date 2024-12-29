@@ -97,9 +97,9 @@
 	}
 
 	figure {
+		aspect-ratio: 115 / 88;
 		width: 99vw;
 		max-width: 1150px;
-		height: 718px;
 		margin: 0 auto;
 	}
 </style>
