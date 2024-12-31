@@ -3,18 +3,19 @@
 
 	const L10N_PATHS = {
 		s: 'skills.',
-		rs: 'skills.rust.',
+		glslWgslHlsl: 'skills.glslWgslHlsl.',
 		wevDev: 'skills.webDev.',
 		svelte: 'skills.webDev.svelte.',
 		sass: 'skills.webDev.sass.',
 		py: 'skills.python.',
 		mc: 'skills.minecraft.',
-		linux: 'skills.linux.'
+		linux: 'skills.linux.',
+		illustration: 'skills.illustration.'
 	};
 	$: skills = [
 		{
 			key: 'Rust',
-			values: [$_(L10N_PATHS.rs + '0'), $_(L10N_PATHS.rs + '1')]
+			values: [$_(L10N_PATHS.s + 'rust')]
 		},
 		{
 			key: 'Git',
@@ -22,7 +23,7 @@
 		},
 		{
 			key: 'GLSL / WGSL / HLSL',
-			values: [$_(L10N_PATHS.s + 'glslWgslHlsl')]
+			values: [$_(L10N_PATHS.glslWgslHlsl + '0'), $_(L10N_PATHS.glslWgslHlsl + '1')]
 		},
 		{
 			key: $_('w.webDev'),
@@ -38,7 +39,7 @@
 				},
 				{
 					key: 'Sass',
-					value: [$_(L10N_PATHS.sass + '0'), $_(L10N_PATHS.sass + '1'), $_(L10N_PATHS.sass + '2')]
+					value: [$_(L10N_PATHS.sass + '0'), $_(L10N_PATHS.sass + '1')]
 				}
 			]
 		},
@@ -53,6 +54,10 @@
 		{
 			key: 'Linux',
 			values: [$_(L10N_PATHS.linux + '0'), $_(L10N_PATHS.linux + '1')]
+		},
+		{
+			key: $_('w.illustration'),
+			values: [$_(L10N_PATHS.illustration + '0'), $_(L10N_PATHS.illustration + '1')]
 		}
 	];
 </script>
