@@ -221,5 +221,10 @@
 			"On this website, we use ",
 			" provided by Cloudflare Inc. to analyze the behavior of our website visitors. Cloudflare Web Analytics does not use any client-side state, such as cookies or localStorage, to collect usage metrics. We also don’t “fingerprint” individuals via their IP address, User Agent string, or any other data for the purpose of displaying analytics. This analytics are non-invasive and respect the privacy of your visitors."
 		]
+	},
+	"copy": {
+		"copy": "Copy",
+		"copied": "Copied:",
+		"failed": "Copy failed."
 	}
 }
