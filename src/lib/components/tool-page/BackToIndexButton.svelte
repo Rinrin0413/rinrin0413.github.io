@@ -8,6 +8,6 @@
 	a {
 		display: inline-block;
 		font-size: 18px;
-		margin: 32px 0;
+		margin-bottom: 32px;
 	}
 </style>
