@@ -29,6 +29,7 @@ const CLOUDFLARE_ROUTES_EXCLUDE = [
 	'/sitemap.xml',
 	'/social',
 	'/tools',
+	'/tools/*',
 	'/acknowledgments',
 	'/privacy'
 ];
