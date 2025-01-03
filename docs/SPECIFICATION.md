@@ -95,6 +95,8 @@ Use the Sass mixin `kaisei-decol` to apply the font.
 - [Articles](#articles---get-apiarticles) (`/api/articles`)
 - [Article Tags](#article-tags---get-apiarticlestags) (`/api/articles/tags`)
 - [Article Thumbnail Image Formats](#article-thumbnail-image-formats---get-apiarticlesthumbnail-imgs) (`/api/articles/thumbnail-imgs`)
+- [Tools](#tools---get-apitools) (`/api/tools`)
+- [Tool Tags](#tool-tags---get-apitoolstags) (`/api/tools/tags`)
 
 ## Articles - `GET /api/articles`
 
@@ -167,7 +169,7 @@ Returns a list of tags of valid(published and indexed) blog articles.
 
 ### Response Body
 
-`ArticleTagWithCount[]` ([`/src/lib/scripts/types.ts`](/src/lib/scripts/types.ts))
+`TagWithCount[]` ([`/src/lib/scripts/types.ts`](/src/lib/scripts/types.ts))
 
 - `[]` (`object[]`) - The list of tags.
 	- `tag` (`string`) - The tag name.
@@ -220,6 +222,70 @@ Returns a list of articles that have a thumbnail image with the image file forma
   "20240101": "webp",
   "20230917_test": "webp"
 }
+```
+
+## Tools - `GET /api/tools`
+
+Returns a list of web tools.
+
+### Query Parameters
+
+| Name | Type | Description | Default |
+| --- | --- | --- | --- |
+| `t` | `string[]?` | Filter tools by tags. Example: `t=tag1,tag2` | - |
+
+### Response Body
+
+`ToolMetadata[]` ([`/src/lib/scripts/types.ts`](/src/lib/scripts/types.ts))
+
+- `[]` (`object[]`) - The list of web tools.
+	- `title` (`string`) - The title of the tool.
+	- `desc` (`string | null`) - The description of the tool.
+	- `tags` (`string[] | null`) - The list of tags of the tool.
+	- `id` (`string?`) - The ID of the tool. Its type is an optional string but it always exists.
+
+#### Example
+
+```json
+[
+  {
+    "title": "時間差計算機",
+    "desc": "2つの時刻間の経過時間を計算するツールです。",
+    "tags": [
+      "計算",
+      "時間"
+    ],
+    "slug": "time-diff"
+  }
+]
+```
+
+## Tool Tags - `GET /api/tools/tags`
+
+Returns a list of tags of web tools.
+
+### Response Body
+
+`TagWithCount[]` ([`/src/lib/scripts/types.ts`](/src/lib/scripts/types.ts))
+
+- `[]` (`object[]`) - The list of tags.
+	- `tag` (`string`) - The tag name.
+	- `count` (`number`) - The number of tools that have the tag.
+
+
+#### Example
+
+```json
+[
+  {
+    "tag": "計算",
+    "count": 1
+  },
+  {
+    "tag": "時間",
+    "count": 1
+  }
+]
 ```
 
 ---
