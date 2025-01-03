@@ -1,4 +1,4 @@
-import type { ArticleMetadata, ArticleThumbnailImgFmts } from './types';
+import type { ArticleMetadata, ArticleThumbnailImgFmts, ToolMetadata } from '$lib/scripts/types';
 
 /** Fetches and sorts articles. */
 export async function fetchArticles({ limit, tags, isOnlyIndexed }: fetchArticlesOptions = {}) {
@@ -109,4 +109,33 @@ export async function fetchArticleThumbnailImgFmt() {
 		},
 		{}
 	);
+}
+
+/** Fetches and sorts all the tools. */
+export async function fetchTools(tags?: string[]) {
+	// Fetch all the tools.
+	let tools = await Promise.all(
+		Object.entries(import.meta.glob('/src/routes/tools/*/*.svelte')).map(async ([path, module]) => {
+			const { METADATA } = (await module()) as { METADATA: ToolMetadata };
+			// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+			METADATA.id = path.split('/')[4];
+			return METADATA;
+		})
+	);
+
+	// Filter by tags.
+	tools = tools.filter((a) => {
+		if (tags)
+			for (const tag of tags) {
+				const articleTags = a.tags ?? [];
+				if (!articleTags.includes(tag)) return false;
+			}
+
+		return true;
+	});
+
+	// Sort by tool title.
+	tools.sort((a, b) => a.title.localeCompare(b.title));
+
+	return tools;
 }
