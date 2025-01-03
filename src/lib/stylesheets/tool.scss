@@ -1,0 +1,81 @@
+@use '$lib/stylesheets/variables/color' as *;
+@use '$lib/stylesheets/variables/mixin' as *;
+
+div,
+p,
+label,
+input {
+	font-size: 18px;
+}
+
+label::after {
+	content: ': ';
+}
+
+input {
+	font-family: inherit;
+	color: inherit;
+}
+
+// input[type='submit'] {
+// 	padding: 6px 8px;
+// 	background: $btn-primary;
+// 	border: 3px solid $btn-secondary;
+// 	cursor: pointer;
+// 	border-radius: 4px;
+// 	margin: 6px 0;
+// 	box-shadow: 0 0 14px #00000050;
+// 	transition: 0.2s;
+
+// 	&:hover {
+// 		filter: brightness(1.06);
+// 		transform: translateY(3px);
+// 	}
+// }
+
+input {
+	&[type='time'] {
+		margin: 2px 0;
+		padding: 2px;
+		background-color: #ffffff80;
+		border: 2px solid #00000070;
+		border-radius: 6px;
+		@include source-code-pro;
+	}
+}
+
+.result {
+	margin: 24px auto;
+	margin-bottom: 32px;
+}
+
+ul {
+	display: inline-block;
+	margin: 0 auto;
+	padding: 6px 12px;
+	background-color: #ffffff50;
+	border: 1px solid #ffffff50;
+	border-radius: 4px;
+	list-style: none;
+}
+
+li {
+	margin: 5px 0;
+	text-align: left;
+	display: flex;
+	align-items: center;
+
+	span {
+		display: inline-block;
+		min-width: 18px;
+		margin-right: 2px;
+		margin-left: 4px;
+		padding: 2px 6px;
+		background-color: #ffffffb0;
+		border-radius: 4px;
+		text-align: center;
+		user-select: all;
+		cursor: pointer;
+		@include source-code-pro;
+	}
+}
