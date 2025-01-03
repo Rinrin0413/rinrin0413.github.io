@@ -49,12 +49,7 @@
 	const EMPTY = '-';
 </script>
 
-<HeadMetadata
-	title={pageTitle}
-	desc={METADATA.desc}
-	{canonicalUrl}
-	ogType="article"
-/>
+<HeadMetadata title={pageTitle} desc={METADATA.desc} {canonicalUrl} ogType="article" />
 
 <Space height="64px" />
 <Title text={METADATA.title} />
@@ -109,11 +104,7 @@
 
 <Hr />
 <Tags tags={METADATA.tags} />
-<ShareButton
-	href={canonicalUrl}
-	title={pageTitle}
-	expanded
-/>
+<ShareButton href={canonicalUrl} title={pageTitle} expanded />
 <BackToIndexButton />
 
 <style lang="scss">
