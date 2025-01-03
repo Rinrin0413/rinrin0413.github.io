@@ -17,10 +17,11 @@
 		LOGO_180PX_OXIPNG_REL_PATH
 	} from '$lib/scripts/variables';
 
-	$: pathname = $page.url.pathname;
-
+	// NProgress
+	const PROGRESS_BAR_EXCLUDED_PATHS = ['/blog', '/tools'];
 	$: {
-		if ($navigating !== null && pathname !== '/blog') NProgress.start();
+		if ($navigating !== null && !PROGRESS_BAR_EXCLUDED_PATHS.includes($page.url.pathname))
+			NProgress.start();
 		else NProgress.done();
 	}
 
