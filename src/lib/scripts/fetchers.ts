@@ -139,3 +139,33 @@ export async function fetchTools(tags?: string[]) {
 
 	return tools;
 }
+
+/** Returns the list of the tool tags and their counts. */
+export async function fetchToolTags() {
+	const tags = // Fetch all tools.
+		(
+			await Promise.all(
+				Object.values(import.meta.glob('/src/routes/tools/*/*.svelte')).map(async (module) => {
+					const { METADATA } = (await module()) as { METADATA: ToolMetadata };
+					return METADATA.tags;
+				})
+			)
+		)
+			// Convert from "list of tag lists" to "list of tags".
+			.flat()
+
+			// Count tags.
+			.reduce((acc: { tag: string; count: number }[], tag) => {
+				const existingTag = acc.find((t) => t.tag === tag);
+				existingTag ? existingTag.count++ : acc.push({ tag, count: 1 });
+				return acc;
+			}, [])
+
+			// Sort by tag name.
+			.sort((a, b) => a.tag.localeCompare(b.tag))
+
+			// Sort by count.
+			.sort((a, b) => b.count - a.count);
+
+	return tags;
+}
