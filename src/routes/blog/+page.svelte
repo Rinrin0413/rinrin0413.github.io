@@ -36,7 +36,6 @@
 		<ShareButton
 			href="{SITE_URL}{pageUrl.pathname}{pageUrl.search}"
 			title={PAGE_FULL_TITLE_PART + TITLE}
-			notArticlePage
 		/><FeedButton />
 	</p>
 	<TagPicker allTags={data.allTags} pickedTags={tags} />

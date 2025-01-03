@@ -112,7 +112,7 @@
 			but breaking the logic for the sake of intuitiveness.
 		-->
 		<div style={parallax(-0.06)}>
-			<ShareButton href={canonicalUrl} title={titleFull} /><FeedButton />
+			<ShareButton href={canonicalUrl} title={titleFull} isInArticle /><FeedButton />
 		</div>
 	</div>
 	<Article body={data.component} />

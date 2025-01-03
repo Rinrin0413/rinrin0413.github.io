@@ -8,13 +8,13 @@
 	export let href: string;
 	export let title: string;
 	export let expanded = false;
-	export let notArticlePage = false;
+	export let isInArticle = false;
 
 	let isWebShareApiSupported = false;
 
 	if (browser) isWebShareApiSupported = navigator.share !== undefined;
 
-	const ANIM_DIRECTION = notArticlePage ? -1 : 1;
+	const ANIM_DIRECTION = isInArticle ? 1 : -1;
 	const ANIM_OFFSET = {
 		x: 1 * ANIM_DIRECTION,
 		y: 8 * ANIM_DIRECTION
@@ -91,7 +91,7 @@
 	<!-- prettier-ignore -->
 	<ul
 		class:menu={!expanded}
-		class:in-article-page={!notArticlePage}
+		class:in-article-page={isInArticle}
 		transition:fly={{ ...ANIM_OFFSET, duration: 200 }}
 	>
 		<li>
