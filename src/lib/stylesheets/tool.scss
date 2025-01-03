@@ -79,3 +79,9 @@ li {
 		@include source-code-pro;
 	}
 }
+
+@include sp {
+	p {
+		font-size: 16px;
+	}
+}
