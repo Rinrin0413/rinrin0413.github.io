@@ -212,6 +212,9 @@
 	},
 	"article.backToIndex": "記事一覧に戻る",
 	"acknowledgments.desc": "このサイトの開発で利用したすべてのOSSやサービスに感謝",
+	"tools": {
+		"backToIndex": "ツール一覧へ戻る"
+	},
 	"privacy": {
 		"desc": "このプライバシーポリシーは、当サイトにおけるアクセス解析について示したものです:",
 		"analytics": [
