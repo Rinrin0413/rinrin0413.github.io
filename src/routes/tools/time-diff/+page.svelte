@@ -20,6 +20,7 @@
 
 	let startTime = '15:30';
 	let endTime = '19:20';
+	let additionalDays = 0;
 	let diffMs: number | null;
 	let diffSec: number | null;
 	let diffMin: number | null;
@@ -29,6 +30,9 @@
 	$: if (startTime !== undefined && endTime !== undefined) {
 		const start = new Date(`1970-01-01T${startTime}`);
 		const end = new Date(`1970-01-01T${endTime}`);
+
+		// Add additional days to the end time.
+		if (0 < additionalDays) end.setDate(end.getDate() + additionalDays);
 
 		// Add one day to the end time if the end time is earlier than the start time.
 		if (end < start) end.setDate(end.getDate() + 1);
@@ -58,7 +62,7 @@
 <div>
 	<div>
 		<div>
-			<label for="start-time">開始時刻</label><input
+			<label for="start-time" class="with-colon">開始時刻</label><input
 				type="time"
 				bind:value={startTime}
 				id="start-time"
@@ -88,7 +92,20 @@
 			</button>
 		</div>
 		<div>
-			<label for="end-time">終了時刻</label><input type="time" bind:value={endTime} id="end-time" />
+			<label for="end-time" class="with-colon">終了時刻</label><input
+				type="time"
+				bind:value={endTime}
+				id="end-time"
+			/>
+		</div>
+		<div class="additional-days-container">
+			<label for="additional-days">+</label><input
+				type="number"
+				bind:value={additionalDays}
+				id="additional-days"
+				min="0"
+				max="9"
+			/><label for="additional-days">日</label>
 		</div>
 	</div>
 	<div class="result">
@@ -112,6 +129,10 @@
 
 	@use '$lib/stylesheets/variables/color' as *;
 
+	label.with-colon::after {
+		content: ': ';
+	}
+
 	button {
 		color: inherit;
 		background: none;
@@ -124,5 +145,15 @@
 		width: $size;
 		height: $size;
 		fill: $txt-primary;
+	}
+
+	.additional-days-container {
+		position: relative;
+		left: 29px;
+	}
+
+	input[type='number'] {
+		width: 34px;
+		text-align: right;
 	}
 </style>

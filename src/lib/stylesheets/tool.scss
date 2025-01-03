@@ -8,10 +8,6 @@ input {
 	font-size: 18px;
 }
 
-label::after {
-	content: ': ';
-}
-
 input {
 	font-family: inherit;
 	color: inherit;
@@ -34,6 +30,7 @@ input {
 // }
 
 input {
+	&[type='number'],
 	&[type='time'] {
 		margin: 2px 0;
 		padding: 2px;
