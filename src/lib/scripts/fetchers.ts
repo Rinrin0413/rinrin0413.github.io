@@ -32,7 +32,8 @@ export async function fetchArticles({ limit, tags, isOnlyIndexed }: fetchArticle
 
 	// Sort by newest.
 	articles.sort((a, b) => {
-		if (a.slug !== undefined && b.slug !== undefined) return calcOrder(b.slug) - calcOrder(a.slug);
+		if (a.slug !== undefined && b.slug !== undefined)
+			return calcArticleOrder(b.slug) - calcArticleOrder(a.slug);
 		// unreachable
 		return 0;
 	});
@@ -49,15 +50,15 @@ type fetchArticlesOptions = {
 	isOnlyIndexed?: boolean;
 };
 
-function calcOrder(slug: string) {
+function calcArticleOrder(slug: string) {
 	let n = parseInt(slug.split('_')[0]);
 	// It is alignment for slugs without numbering.
 	n *= n < 100000000 ? 100 : 1;
 	return n;
 }
 
-/** Returns a list of tags and their counts. */
-export async function fetchTags() {
+/** Returns the list of the article tags and their counts. */
+export async function fetchArticleTags() {
 	const tags = // Fetch all articles.
 		(
 			await Promise.all(
@@ -91,7 +92,7 @@ export async function fetchTags() {
 }
 
 /** Returns the file format of each article's thumbnail image (articles without thumbnail images will not be listed). */
-export async function fetchThumbnailImgFmt() {
+export async function fetchArticleThumbnailImgFmt() {
 	const thumbnailImgs = Object.keys(import.meta.glob(`/static/images/blog/thumbnails/*.*`)).map(
 		// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
 		(path) => path.split('/').pop()!

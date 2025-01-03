@@ -1,5 +1,5 @@
 import type { RequestHandler } from './$types';
-import { fetchArticles, fetchTags } from '$lib/scripts/fetchers';
+import { fetchArticles, fetchArticleTags } from '$lib/scripts/fetchers';
 import { SITE_URL, COPYRIGHT, BLOG_NAME, CONTACT_EMAIL_ADDRESS } from '$lib/scripts/variables';
 import { v5 as uuidv5 } from 'uuid';
 import { idToDate } from '$lib/scripts/utils';
@@ -18,7 +18,7 @@ async function body() {
 	const FEED_UUID = 'abe93c08-c6e2-2d92-a181-9a1c2816fb3d';
 
 	const categories = renderCategories(
-		(await fetchTags()).map((t) => t.tag),
+		(await fetchArticleTags()).map((t) => t.tag),
 		4
 	);
 
