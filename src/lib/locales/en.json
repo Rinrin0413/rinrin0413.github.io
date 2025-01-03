@@ -216,7 +216,9 @@
 	"article.backToIndex": "Back to index",
 	"acknowledgments.desc": "Thank you for all OSS and services that used in the development of this website.",
 	"tools": {
-		"backToIndex": "Back to tool list"
+		"backToIndex": "Back to tool list",
+		"noMatchingToolsFound": "No matching tools found.",
+		"clearFilters": "Clear filters"
 	},
 	"privacy": {
 		"desc": "This Privacy Policy outlines the use of access analytics on this website:",
