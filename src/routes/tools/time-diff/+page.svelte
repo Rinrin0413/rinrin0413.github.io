@@ -14,6 +14,7 @@
 	import Hr from '$lib/components/Hr.svelte';
 	import Tags from '$lib/components/tool-page/Tags.svelte';
 	import BackToIndexButton from '$lib/components/tool-page/BackToIndexButton.svelte';
+	import ShareButton from '$lib/components/ShareButton.svelte';
 
 	import { SITE_URL } from '$lib/scripts/variables';
 
@@ -43,13 +44,15 @@
 		}
 	}
 
+	const pageTitle = 'Web Tools - ' + METADATA.title;
+	const canonicalUrl = SITE_URL + '/tools/time-diff';
 	const EMPTY = '-';
 </script>
 
 <HeadMetadata
-	title="Web Tools - {METADATA.title}"
+	title={pageTitle}
 	desc={METADATA.desc}
-	canonicalUrl="{SITE_URL}/tools/time-diff"
+	{canonicalUrl}
 	ogType="article"
 />
 
@@ -106,6 +109,11 @@
 
 <Hr />
 <Tags tags={METADATA.tags} />
+<ShareButton
+	href={canonicalUrl}
+	title={pageTitle}
+	expanded
+/>
 <BackToIndexButton />
 
 <style lang="scss">
