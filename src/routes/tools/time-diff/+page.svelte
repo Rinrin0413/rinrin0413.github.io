@@ -1,5 +1,5 @@
 <script context="module" lang="ts">
-	const METADATA = {
+	export const METADATA = {
 		title: '時間差計算機',
 		desc: '2つの時刻間の経過時間を計算するツールです。',
 		tags: ['計算', '時間']

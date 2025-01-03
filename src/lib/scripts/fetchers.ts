@@ -1,4 +1,4 @@
-import type { ArticleMetadata, ArticleThumbnailImgFmts } from './types';
+import type { ArticleMetadata, ArticleThumbnailImgFmts, ToolMetadata } from '$lib/scripts/types';
 
 /** Fetches and sorts articles. */
 export async function fetchArticles({ limit, tags, isOnlyIndexed }: fetchArticlesOptions = {}) {
@@ -32,7 +32,8 @@ export async function fetchArticles({ limit, tags, isOnlyIndexed }: fetchArticle
 
 	// Sort by newest.
 	articles.sort((a, b) => {
-		if (a.slug !== undefined && b.slug !== undefined) return calcOrder(b.slug) - calcOrder(a.slug);
+		if (a.slug !== undefined && b.slug !== undefined)
+			return calcArticleOrder(b.slug) - calcArticleOrder(a.slug);
 		// unreachable
 		return 0;
 	});
@@ -49,15 +50,15 @@ type fetchArticlesOptions = {
 	isOnlyIndexed?: boolean;
 };
 
-function calcOrder(slug: string) {
+function calcArticleOrder(slug: string) {
 	let n = parseInt(slug.split('_')[0]);
 	// It is alignment for slugs without numbering.
 	n *= n < 100000000 ? 100 : 1;
 	return n;
 }
 
-/** Returns a list of tags and their counts. */
-export async function fetchTags() {
+/** Returns the list of the article tags and their counts. */
+export async function fetchArticleTags() {
 	const tags = // Fetch all articles.
 		(
 			await Promise.all(
@@ -91,7 +92,7 @@ export async function fetchTags() {
 }
 
 /** Returns the file format of each article's thumbnail image (articles without thumbnail images will not be listed). */
-export async function fetchThumbnailImgFmt() {
+export async function fetchArticleThumbnailImgFmt() {
 	const thumbnailImgs = Object.keys(import.meta.glob(`/static/images/blog/thumbnails/*.*`)).map(
 		// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
 		(path) => path.split('/').pop()!
@@ -108,4 +109,63 @@ export async function fetchThumbnailImgFmt() {
 		},
 		{}
 	);
+}
+
+/** Fetches and sorts all the tools. */
+export async function fetchTools(tags?: string[]) {
+	// Fetch all the tools.
+	let tools = await Promise.all(
+		Object.entries(import.meta.glob('/src/routes/tools/*/*.svelte')).map(async ([path, module]) => {
+			const { METADATA } = (await module()) as { METADATA: ToolMetadata };
+			// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+			METADATA.id = path.split('/')[4];
+			return METADATA;
+		})
+	);
+
+	// Filter by tags.
+	tools = tools.filter((a) => {
+		if (tags)
+			for (const tag of tags) {
+				const articleTags = a.tags ?? [];
+				if (!articleTags.includes(tag)) return false;
+			}
+
+		return true;
+	});
+
+	// Sort by tool title.
+	tools.sort((a, b) => a.title.localeCompare(b.title));
+
+	return tools;
+}
+
+/** Returns the list of the tool tags and their counts. */
+export async function fetchToolTags() {
+	const tags = // Fetch all tools.
+		(
+			await Promise.all(
+				Object.values(import.meta.glob('/src/routes/tools/*/*.svelte')).map(async (module) => {
+					const { METADATA } = (await module()) as { METADATA: ToolMetadata };
+					return METADATA.tags;
+				})
+			)
+		)
+			// Convert from "list of tag lists" to "list of tags".
+			.flat()
+
+			// Count tags.
+			.reduce((acc: { tag: string; count: number }[], tag) => {
+				const existingTag = acc.find((t) => t.tag === tag);
+				existingTag ? existingTag.count++ : acc.push({ tag, count: 1 });
+				return acc;
+			}, [])
+
+			// Sort by tag name.
+			.sort((a, b) => a.tag.localeCompare(b.tag))
+
+			// Sort by count.
+			.sort((a, b) => b.count - a.count);
+
+	return tags;
 }

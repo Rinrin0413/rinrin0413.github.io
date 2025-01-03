@@ -2,10 +2,10 @@
 	import Title2 from '$lib/components/Title2.svelte';
 	import Tag from './Tag.svelte';
 
-	import type { ArticleTagWithCount } from '$lib/scripts/types';
+	import type { TagWithCount } from '$lib/scripts/types';
 	import { _ } from 'svelte-i18n';
 
-	export let allTags: ArticleTagWithCount[];
+	export let allTags: TagWithCount[];
 	export let pickedTags: string[];
 
 	let isOpened = true;
