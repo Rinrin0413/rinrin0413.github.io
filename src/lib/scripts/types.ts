@@ -17,3 +17,14 @@ export interface ArticleMetadata {
 export interface ArticleThumbnailImgFmts {
 	[slug: string]: string;
 }
+
+/**
+ * I explicitly specified ` | null` instead of optional variable,
+ * to prevent missing fields in the tool metadata definitions.
+ */
+export interface ToolMetadata {
+	title: string;
+	desc: string | null;
+	tags: string[];
+	id?: string;
+}
