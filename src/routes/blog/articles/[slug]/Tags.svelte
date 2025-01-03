@@ -18,7 +18,7 @@
 <style lang="scss">
 	@use '$lib/stylesheets/variables/mixin' as *;
 
-	@use '$lib/stylesheets/blog/tag';
+	@use '$lib/stylesheets/tag';
 
 	div {
 		display: inline-block;

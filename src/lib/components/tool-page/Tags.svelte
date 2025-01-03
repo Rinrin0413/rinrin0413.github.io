@@ -20,7 +20,7 @@
 <style lang="scss">
 	@use '$lib/stylesheets/variables/mixin' as *;
 
-	@use '$lib/stylesheets/tools/tag';
+	@use '$lib/stylesheets/tag';
 
 	.tags {
 		display: inline-block;
