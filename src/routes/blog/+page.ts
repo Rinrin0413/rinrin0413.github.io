@@ -1,9 +1,5 @@
 import type { PageLoad } from './$types';
-import type {
-	ArticleMetadata,
-	ArticleTagWithCount,
-	ArticleThumbnailImgFmts
-} from '$lib/scripts/types';
+import type { ArticleMetadata, TagWithCount, ArticleThumbnailImgFmts } from '$lib/scripts/types';
 
 export const load: PageLoad = async ({
 	url,
@@ -11,7 +7,7 @@ export const load: PageLoad = async ({
 }): Promise<{
 	articles: ArticleMetadata[];
 	tags: string[];
-	allTags: ArticleTagWithCount[];
+	allTags: TagWithCount[];
 	thumbnailImgFmts: ArticleThumbnailImgFmts;
 }> => {
 	const articles = await (await fetch('/api/articles?indexed=true&' + url.searchParams)).json();
