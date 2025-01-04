@@ -202,7 +202,6 @@
 	},
 	"blog": {
 		"noMatchingArticlesFound": "一致する記事が見つかりませんでした。",
-		"clearFilters": "フィルターをリセット",
 		"copyUrl": "URLをコピー",
 		"copied": "コピーしました",
 		"copyFailed": "コピーに失敗しました",
@@ -215,7 +214,6 @@
 	"tools": {
 		"backToIndex": "ツール一覧へ戻る",
 		"noMatchingToolsFound": "一致するツールが見つかりませんでした。",
-		"clearFilters": "フィルターをリセット",
 		"notes": [
 			"本サイトのツール群は結果の正確性を保証していません。",
 			"問題等を発見された場合は ",
@@ -233,5 +231,8 @@
 		"copy": "コピー",
 		"copied": "コピーしました:",
 		"failed": "コピーに失敗しました。"
+	},
+	"tag": {
+		"clearFilters": "フィルターをリセット"
 	}
 }
