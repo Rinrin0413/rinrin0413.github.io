@@ -148,6 +148,7 @@
 	}
 
 	.additional-days-container {
+		display: inline-block;
 		position: relative;
 		left: 29px;
 	}
