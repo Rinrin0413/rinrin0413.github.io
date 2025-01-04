@@ -3,7 +3,7 @@
 	import Space from '$lib/components/Space.svelte';
 	import Title from '$lib/components/Title.svelte';
 	import ShareButton from '$lib/components/ShareButton.svelte';
-	import TagPicker from '$lib/components/tag-picker/TagPicker.svelte';
+	import TagPicker from '$lib/components/tag/picker/TagPicker.svelte';
 	import ToolCard from './ToolCard.svelte';
 	import Notes from '$lib/components/tool-page/Notes.svelte';
 
