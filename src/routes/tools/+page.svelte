@@ -5,6 +5,7 @@
 	import ShareButton from '$lib/components/ShareButton.svelte';
 	import TagPicker from '$lib/components/tag/picker/TagPicker.svelte';
 	import ToolCard from './ToolCard.svelte';
+	import ClearTagsButton from '$lib/components/tag/ClearTagsButton.svelte';
 	import Notes from '$lib/components/tool-page/Notes.svelte';
 
 	import type { PageData } from './$types';
@@ -51,7 +52,7 @@
 		</div>
 	{:else}
 		<h2>{$_('tools.noMatchingToolsFound')}</h2>
-		<a href="/tools" class="clear-btn">{$_('tools.clearFilters')}</a>
+		<ClearTagsButton />
 	{/if}
 </section>
 
@@ -83,28 +84,6 @@
 		font-size: 24px;
 		margin: 0 8px;
 		margin-top: 14px;
-	}
-
-	.clear-btn {
-		display: inline-block;
-		color: inherit;
-		text-decoration: none;
-		font-size: 16px;
-		padding: 6px 8px;
-		background: $btn-primary;
-		border: 3px solid $btn-secondary;
-		cursor: pointer;
-		border-radius: 4px;
-		margin: 0 6px;
-		margin-top: 12px;
-		font-family: inherit;
-		box-shadow: 0 0 14px #00000050;
-		transition: 0.2s;
-
-		&:hover {
-			filter: brightness(1.06);
-			transform: translateY(3px);
-		}
 	}
 
 	@include sp {

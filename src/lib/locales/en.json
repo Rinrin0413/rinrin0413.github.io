@@ -205,7 +205,6 @@
 	},
 	"blog": {
 		"noMatchingArticlesFound": "No matching articles found.",
-		"clearFilters": "Clear filters",
 		"copyUrl": "Copy URL",
 		"copied": "Copied",
 		"copyFailed": "Copy failed",
@@ -218,7 +217,6 @@
 	"tools": {
 		"backToIndex": "Back to tool list",
 		"noMatchingToolsFound": "No matching tools found.",
-		"clearFilters": "Clear filters",
 		"notes": [
 			"The accuracy of the results provided by the tools on this website is not guaranteed.",
 			"If you come across any issues or problems, I would appreciate it if you could report them on ",
@@ -236,5 +234,8 @@
 		"copy": "Copy",
 		"copied": "Copied:",
 		"failed": "Copy failed."
+	},
+	"tag": {
+		"clearFilters": "Clear filters"
 	}
 }
