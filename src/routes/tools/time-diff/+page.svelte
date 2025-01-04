@@ -12,7 +12,7 @@
 	import Title from '$lib/components/Title.svelte';
 	import CopyButton from '$lib/components/CopyButton.svelte';
 	import Hr from '$lib/components/Hr.svelte';
-	import Tags from '$lib/components/tool-page/Tags.svelte';
+	import TagList from '$lib/components/tag/TagList.svelte';
 	import BackToIndexButton from '$lib/components/tool-page/BackToIndexButton.svelte';
 	import ShareButton from '$lib/components/ShareButton.svelte';
 	import Notes from '$lib/components/tool-page/Notes.svelte';
@@ -121,7 +121,7 @@
 </div>
 
 <Hr />
-<Tags tags={METADATA.tags} />
+<TagList tags={METADATA.tags} />
 <ShareButton href={canonicalUrl} title={pageTitle} expanded />
 <Notes />
 <BackToIndexButton />

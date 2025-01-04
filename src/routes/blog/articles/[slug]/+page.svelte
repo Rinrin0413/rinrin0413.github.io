@@ -4,7 +4,7 @@
 	import ShareButton from '$lib/components/ShareButton.svelte';
 	import FeedButton from '$lib/components/FeedButton.svelte';
 	import Article from './Article.svelte';
-	import Tags from './Tags.svelte';
+	import TagList from '$lib/components/tag/TagList.svelte';
 	import ScrollToTop from './ScrollToTop.svelte';
 
 	import type { PageData } from './$types';
@@ -117,7 +117,7 @@
 	</div>
 	<Article body={data.component} />
 	<p><ShareButton href={canonicalUrl} title={titleFull} expanded /></p>
-	<Tags tags={metadata.tags} />
+	<TagList tags={metadata.tags} />
 	<div><a href="/blog" class="back-to-index">{$_('article.backToIndex')}</a></div>
 </div>
 
