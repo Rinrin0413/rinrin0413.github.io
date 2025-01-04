@@ -15,6 +15,7 @@
 	import Tags from '$lib/components/tool-page/Tags.svelte';
 	import BackToIndexButton from '$lib/components/tool-page/BackToIndexButton.svelte';
 	import ShareButton from '$lib/components/ShareButton.svelte';
+	import Notes from '$lib/components/tool-page/Notes.svelte';
 
 	import { SITE_URL } from '$lib/scripts/variables';
 
@@ -122,6 +123,7 @@
 <Hr />
 <Tags tags={METADATA.tags} />
 <ShareButton href={canonicalUrl} title={pageTitle} expanded />
+<Notes />
 <BackToIndexButton />
 
 <style lang="scss">

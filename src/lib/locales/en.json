@@ -218,7 +218,12 @@
 	"tools": {
 		"backToIndex": "Back to tool list",
 		"noMatchingToolsFound": "No matching tools found.",
-		"clearFilters": "Clear filters"
+		"clearFilters": "Clear filters",
+		"notes": [
+			"The accuracy of the results provided by the tools on this website is not guaranteed.",
+			"If you come across any issues or problems, I would appreciate it if you could report them on ",
+			"."
+		]
 	},
 	"privacy": {
 		"desc": "This Privacy Policy outlines the use of access analytics on this website:",

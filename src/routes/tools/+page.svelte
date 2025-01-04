@@ -5,6 +5,7 @@
 	import ShareButton from '$lib/components/ShareButton.svelte';
 	import TagPicker from '$lib/components/tag-picker/TagPicker.svelte';
 	import ToolCard from './ToolCard.svelte';
+	import Notes from '$lib/components/tool-page/Notes.svelte';
 
 	import type { PageData } from './$types';
 	import { page } from '$app/stores';
@@ -53,6 +54,9 @@
 		<a href="/tools" class="clear-btn">{$_('tools.clearFilters')}</a>
 	{/if}
 </section>
+
+<Notes />
+<Space height="26px" />
 
 <style lang="scss">
 	@use '$lib/stylesheets/variables/color' as *;
