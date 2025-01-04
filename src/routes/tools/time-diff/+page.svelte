@@ -31,11 +31,11 @@
 		const start = new Date(`1970-01-01T${startTime}`);
 		const end = new Date(`1970-01-01T${endTime}`);
 
-		// Add additional days to the end time.
-		if (0 < additionalDays) end.setDate(end.getDate() + additionalDays);
-
 		// Add one day to the end time if the end time is earlier than the start time.
 		if (end < start) end.setDate(end.getDate() + 1);
+
+		// Add additional days to the end time.
+		if (0 < additionalDays) end.setDate(end.getDate() + additionalDays);
 
 		diffMs = end.getTime() - start.getTime();
 		if (isNaN(diffMs)) {
