@@ -2,10 +2,10 @@
 	import HeadMetadata from '$lib/components/HeadMetadata.svelte';
 	import Space from '$lib/components/Space.svelte';
 	import Title from '$lib/components/Title.svelte';
-	import FeedButton from '$lib/components/FeedButton.svelte';
+	import FeedButton from '$lib/components/blog/FeedButton.svelte';
 	import ShareButton from '$lib/components/ShareButton.svelte';
 	import TagPicker from '$lib/btpc/components/tag/picker/TagPicker.svelte';
-	import ArticleCard from '$lib/components/ArticleCard.svelte';
+	import ArticleCard from '$lib/components/blog/ArticleCard.svelte';
 	import ClearTagsButton from '$lib/btpc/components/tag/ClearTagsButton.svelte';
 
 	import type { PageData } from './$types';

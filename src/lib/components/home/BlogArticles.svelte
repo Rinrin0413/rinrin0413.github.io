@@ -1,6 +1,6 @@
 <script lang="ts">
 	import FadeInAnim from '$lib/components/FadeInAnim.svelte';
-	import ArticleCard from '$lib/components/ArticleCard.svelte';
+	import ArticleCard from '$lib/components/blog/ArticleCard.svelte';
 
 	import type { ArticleMetadata } from '$lib/scripts/types';
 
