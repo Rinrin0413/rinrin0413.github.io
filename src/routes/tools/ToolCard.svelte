@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { ToolMetadata } from '$lib/scripts/types';
+	import type { ToolMetadata } from '$lib/btpc/scripts/types';
 
 	export let meta: ToolMetadata;
 
@@ -26,4 +26,5 @@
 
 <style lang="scss">
 	@use '$lib/stylesheets/tools/tool_card';
+	@use '$lib/btpc/stylesheets/card';
 </style>

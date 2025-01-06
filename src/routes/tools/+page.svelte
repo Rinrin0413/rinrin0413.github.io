@@ -2,11 +2,11 @@
 	import HeadMetadata from '$lib/components/HeadMetadata.svelte';
 	import Space from '$lib/components/Space.svelte';
 	import Title from '$lib/components/Title.svelte';
-	import ShareButton from '$lib/components/ShareButton.svelte';
-	import TagPicker from '$lib/components/tag/picker/TagPicker.svelte';
+	import ShareButton from '$lib/btpc/components/ShareButton.svelte';
+	import TagPicker from '$lib/btpc/components/tag/picker/TagPicker.svelte';
 	import ToolCard from './ToolCard.svelte';
-	import ClearTagsButton from '$lib/components/tag/ClearTagsButton.svelte';
-	import Notes from '$lib/components/tool-page/Notes.svelte';
+	import ClearTagsButton from '$lib/btpc/components/tag/ClearTagsButton.svelte';
+	import Notes from '$lib/components/tools/Notes.svelte';
 
 	import type { PageData } from './$types';
 	import { page } from '$app/stores';
@@ -60,6 +60,8 @@
 <Space height="26px" />
 
 <style lang="scss">
+	@use '$lib/btpc/stylesheets/index_page';
+
 	@use '$lib/stylesheets/variables/color' as *;
 	@use '$lib/stylesheets/variables/mixin' as *;
 
@@ -78,17 +80,5 @@
 		justify-content: center;
 		align-items: center;
 		gap: 8px;
-	}
-
-	h2 {
-		font-size: 24px;
-		margin: 0 8px;
-		margin-top: 14px;
-	}
-
-	@include sp {
-		h2 {
-			font-size: 18px;
-		}
 	}
 </style>

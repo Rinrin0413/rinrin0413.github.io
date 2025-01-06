@@ -201,15 +201,9 @@
 		"desc": "Rinrin.rs のソーシャルアカウント一覧"
 	},
 	"blog": {
-		"noMatchingArticlesFound": "一致する記事が見つかりませんでした。",
-		"copyUrl": "URLをコピー",
-		"copied": "コピーしました",
-		"copyFailed": "コピーに失敗しました",
-		"post": "ポスト",
-		"toot": "トゥート",
-		"note": "ノート"
+		"backToIndex": "記事一覧に戻る",
+		"noMatchingArticlesFound": "一致する記事が見つかりませんでした。"
 	},
-	"article.backToIndex": "記事一覧に戻る",
 	"acknowledgments.desc": "このサイトの開発で利用したすべてのOSSやサービスに感謝",
 	"tools": {
 		"backToIndex": "ツール一覧へ戻る",
@@ -234,5 +228,13 @@
 	},
 	"tag": {
 		"clearFilters": "フィルターをリセット"
+	},
+	"shareBtn": {
+		"copyUrl": "URLをコピー",
+		"copied": "コピーしました",
+		"copyFailed": "コピーに失敗しました",
+		"post": "ポスト",
+		"toot": "トゥート",
+		"note": "ノート"
 	}
 }

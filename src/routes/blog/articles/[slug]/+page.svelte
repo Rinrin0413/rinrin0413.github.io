@@ -1,10 +1,10 @@
 <script lang="ts">
 	import HeadMetadata from '$lib/components/HeadMetadata.svelte';
 	import Space from '$lib/components/Space.svelte';
-	import ShareButton from '$lib/components/ShareButton.svelte';
-	import FeedButton from '$lib/components/FeedButton.svelte';
+	import ShareButton from '$lib/btpc/components/ShareButton.svelte';
+	import FeedButton from '$lib/components/blog/FeedButton.svelte';
 	import Article from './Article.svelte';
-	import TagList from '$lib/components/tag/TagList.svelte';
+	import TagList from '$lib/btpc/components/tag/TagList.svelte';
 	import ScrollToTop from './ScrollToTop.svelte';
 
 	import type { PageData } from './$types';
@@ -118,7 +118,7 @@
 	<Article body={data.component} />
 	<p><ShareButton href={canonicalUrl} title={titleFull} expanded /></p>
 	<TagList tags={metadata.tags} />
-	<div><a href="/blog" class="back-to-index">{$_('article.backToIndex')}</a></div>
+	<div><a href="/blog" class="back-to-index">{$_('blog.backToIndex')}</a></div>
 </div>
 
 <ScrollToTop />

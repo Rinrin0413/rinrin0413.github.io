@@ -12,10 +12,10 @@
 	import Title from '$lib/components/Title.svelte';
 	import CopyButton from '$lib/components/CopyButton.svelte';
 	import Hr from '$lib/components/Hr.svelte';
-	import TagList from '$lib/components/tag/TagList.svelte';
-	import BackToIndexButton from '$lib/components/tool-page/BackToIndexButton.svelte';
-	import ShareButton from '$lib/components/ShareButton.svelte';
-	import Notes from '$lib/components/tool-page/Notes.svelte';
+	import TagList from '$lib/btpc/components/tag/TagList.svelte';
+	import BackToIndexButton from '$lib/components/tools/BackToIndexButton.svelte';
+	import ShareButton from '$lib/btpc/components/ShareButton.svelte';
+	import Notes from '$lib/components/tools/Notes.svelte';
 
 	import { SITE_URL } from '$lib/scripts/variables';
 
@@ -127,7 +127,7 @@
 <BackToIndexButton />
 
 <style lang="scss">
-	@use '$lib/stylesheets/tool';
+	@use '$lib/stylesheets/tools/tool_page';
 
 	@use '$lib/stylesheets/variables/color' as *;
 

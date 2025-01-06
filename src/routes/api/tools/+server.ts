@@ -1,5 +1,5 @@
 import type { RequestHandler } from './$types';
-import { fetchTools } from '$lib/scripts/fetchers';
+import { fetchTools } from '$lib/btpc/scripts/fetchers';
 import { json } from '@sveltejs/kit';
 
 export const GET: RequestHandler = async ({ url }) => {

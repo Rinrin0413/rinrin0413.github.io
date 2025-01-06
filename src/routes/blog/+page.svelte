@@ -2,11 +2,11 @@
 	import HeadMetadata from '$lib/components/HeadMetadata.svelte';
 	import Space from '$lib/components/Space.svelte';
 	import Title from '$lib/components/Title.svelte';
-	import FeedButton from '$lib/components/FeedButton.svelte';
-	import ShareButton from '$lib/components/ShareButton.svelte';
-	import TagPicker from '$lib/components/tag/picker/TagPicker.svelte';
-	import ArticleCard from '$lib/components/ArticleCard.svelte';
-	import ClearTagsButton from '$lib/components/tag/ClearTagsButton.svelte';
+	import FeedButton from '$lib/components/blog/FeedButton.svelte';
+	import ShareButton from '$lib/btpc/components/ShareButton.svelte';
+	import TagPicker from '$lib/btpc/components/tag/picker/TagPicker.svelte';
+	import ArticleCard from '$lib/components/blog/ArticleCard.svelte';
+	import ClearTagsButton from '$lib/btpc/components/tag/ClearTagsButton.svelte';
 
 	import type { PageData } from './$types';
 	import { SITE_URL, PAGE_FULL_TITLE_PART } from '$lib/scripts/variables';
@@ -61,4 +61,5 @@
 
 <style lang="scss">
 	@use '$lib/stylesheets/blog/blog';
+	@use '$lib/btpc/stylesheets/index_page';
 </style>

@@ -1,5 +1,5 @@
 import type { RequestHandler } from './$types';
-import { fetchArticles, fetchTools } from '$lib/scripts/fetchers';
+import { fetchArticles, fetchTools } from '$lib/btpc/scripts/fetchers';
 import { SITE_URL } from '$lib/scripts/variables';
 
 export const prerender = true;

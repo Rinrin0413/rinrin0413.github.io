@@ -1,5 +1,5 @@
 import type { RequestHandler } from './$types';
-import { fetchArticles, fetchArticleTags } from '$lib/scripts/fetchers';
+import { fetchArticles, fetchArticleTags } from '$lib/btpc/scripts/fetchers';
 import { SITE_URL, COPYRIGHT, BLOG_NAME, CONTACT_EMAIL_ADDRESS } from '$lib/scripts/variables';
 import { v5 as uuidv5 } from 'uuid';
 import { idToDate } from '$lib/scripts/utils';

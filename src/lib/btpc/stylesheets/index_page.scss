@@ -1,0 +1,13 @@
+@use '$lib/stylesheets/variables/mixin' as *;
+
+h2 {
+	font-size: 24px;
+	margin: 0 8px;
+	margin-top: 14px;
+}
+
+@include sp {
+	h2 {
+		font-size: 18px;
+	}
+}

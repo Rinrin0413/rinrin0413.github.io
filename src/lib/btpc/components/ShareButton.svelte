@@ -23,10 +23,10 @@
 	let isMenuOpened = false;
 
 	$: ITEM_NAMES = {
-		copy: $_('blog.copyUrl'),
-		post: $_('blog.post'),
-		toot: $_('blog.toot'),
-		note: $_('blog.note'),
+		copy: $_('shareBtn.copyUrl'),
+		post: $_('shareBtn.post'),
+		toot: $_('shareBtn.toot'),
+		note: $_('shareBtn.note'),
 		webShareApi: $_('w.webShareApi')
 	};
 
@@ -52,8 +52,8 @@
 	function copyToClipboard() {
 		navigator.clipboard
 			.writeText(href)
-			.then(() => alert($_('blog.copied')))
-			.catch(() => alert($_('blog.copyFailed')))
+			.then(() => alert($_('shareBtn.copied')))
+			.catch(() => alert($_('shareBtn.copyFailed')))
 			.finally(() => (isMenuOpened = false));
 	}
 
@@ -200,5 +200,5 @@
 {/if}
 
 <style lang="scss">
-	@use '$lib/stylesheets/blog/share_button';
+	@use '$lib/btpc/stylesheets/share_button';
 </style>

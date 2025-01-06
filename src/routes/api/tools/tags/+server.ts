@@ -1,4 +1,4 @@
-import { fetchToolTags } from '$lib/scripts/fetchers';
+import { fetchToolTags } from '$lib/btpc/scripts/fetchers';
 import { json } from '@sveltejs/kit';
 
 export const prerender = true;
