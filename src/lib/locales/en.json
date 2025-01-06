@@ -204,9 +204,9 @@
 		"desc": "List of my social accounts"
 	},
 	"blog": {
+		"backToIndex": "Back to index",
 		"noMatchingArticlesFound": "No matching articles found."
 	},
-	"article.backToIndex": "Back to index",
 	"acknowledgments.desc": "Thank you for all OSS and services that used in the development of this website.",
 	"tools": {
 		"backToIndex": "Back to tool list",

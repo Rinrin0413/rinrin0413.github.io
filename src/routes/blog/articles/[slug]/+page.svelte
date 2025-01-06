@@ -118,7 +118,7 @@
 	<Article body={data.component} />
 	<p><ShareButton href={canonicalUrl} title={titleFull} expanded /></p>
 	<TagList tags={metadata.tags} />
-	<div><a href="/blog" class="back-to-index">{$_('article.backToIndex')}</a></div>
+	<div><a href="/blog" class="back-to-index">{$_('blog.backToIndex')}</a></div>
 </div>
 
 <ScrollToTop />
