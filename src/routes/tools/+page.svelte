@@ -3,9 +3,9 @@
 	import Space from '$lib/components/Space.svelte';
 	import Title from '$lib/components/Title.svelte';
 	import ShareButton from '$lib/components/ShareButton.svelte';
-	import TagPicker from '$lib/components/tag/picker/TagPicker.svelte';
+	import TagPicker from '$lib/btpc/components/tag/picker/TagPicker.svelte';
 	import ToolCard from './ToolCard.svelte';
-	import ClearTagsButton from '$lib/components/tag/ClearTagsButton.svelte';
+	import ClearTagsButton from '$lib/btpc/components/tag/ClearTagsButton.svelte';
 	import Notes from '$lib/components/tool-page/Notes.svelte';
 
 	import type { PageData } from './$types';

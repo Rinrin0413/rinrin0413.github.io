@@ -4,7 +4,7 @@
 	import ShareButton from '$lib/components/ShareButton.svelte';
 	import FeedButton from '$lib/components/FeedButton.svelte';
 	import Article from './Article.svelte';
-	import TagList from '$lib/components/tag/TagList.svelte';
+	import TagList from '$lib/btpc/components/tag/TagList.svelte';
 	import ScrollToTop from './ScrollToTop.svelte';
 
 	import type { PageData } from './$types';

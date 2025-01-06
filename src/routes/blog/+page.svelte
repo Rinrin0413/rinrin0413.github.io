@@ -4,9 +4,9 @@
 	import Title from '$lib/components/Title.svelte';
 	import FeedButton from '$lib/components/FeedButton.svelte';
 	import ShareButton from '$lib/components/ShareButton.svelte';
-	import TagPicker from '$lib/components/tag/picker/TagPicker.svelte';
+	import TagPicker from '$lib/btpc/components/tag/picker/TagPicker.svelte';
 	import ArticleCard from '$lib/components/ArticleCard.svelte';
-	import ClearTagsButton from '$lib/components/tag/ClearTagsButton.svelte';
+	import ClearTagsButton from '$lib/btpc/components/tag/ClearTagsButton.svelte';
 
 	import type { PageData } from './$types';
 	import { SITE_URL, PAGE_FULL_TITLE_PART } from '$lib/scripts/variables';
