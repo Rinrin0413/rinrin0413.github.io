@@ -1,0 +1,71 @@
+@use '$lib/btpc/stylesheets/tag';
+
+@use '$lib/stylesheets/variables/mixin' as *;
+
+a {
+	color: inherit !important;
+	text-decoration: none;
+}
+
+article {
+	background-color: #faf7ed9a;
+	border-radius: 5px;
+	$border-light: 3px solid #ffffff50;
+	$border-dark: 3px solid #00000020;
+	border-top: $border-light;
+	border-left: $border-light;
+	border-bottom: $border-dark;
+	border-right: $border-dark;
+	box-shadow: 0 0 10px 0 #051a3340;
+	transition: 0.2s;
+
+	&:hover {
+		filter: brightness(1.1);
+
+		.meta {
+			opacity: 0.8;
+
+			&::after {
+				left: 18px;
+			}
+		}
+	}
+}
+
+.meta {
+	text-align: left;
+	padding-left: 22px;
+}
+
+h2 {
+	line-height: 1.2;
+	margin: 0;
+}
+
+p {
+	padding: 0 !important;
+	line-height: 1.1;
+}
+
+ul {
+	display: flex;
+	padding: 0;
+	flex-wrap: wrap;
+	list-style: none;
+	justify-content: left;
+	opacity: 0.85;
+}
+
+@mixin mobile-view-default {
+	article {
+		box-shadow: 0 0 6px 0 #03152b4a;
+	}
+
+	.meta {
+		padding-left: 0;
+	}
+}
+
+@include sp {
+	@include mobile-view-default;
+}

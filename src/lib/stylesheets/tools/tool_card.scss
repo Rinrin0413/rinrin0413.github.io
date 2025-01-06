@@ -1,79 +1,32 @@
 @use '$lib/stylesheets/variables/mixin' as *;
-@use '$lib/stylesheets/variables/color' as *;
-
-@use '$lib/btpc/stylesheets/tag';
-
-a {
-	color: inherit !important;
-	text-decoration: none;
-}
 
 article {
 	display: inline-block;
 	padding: 14px 16px 16px 0;
-	background-color: #faf7ed9a;
-	border-radius: 5px;
-	$border-light: 3px solid #ffffff50;
-	$border-dark: 3px solid #00000020;
-	border-top: $border-light;
-	border-left: $border-light;
-	border-bottom: $border-dark;
-	border-right: $border-dark;
-	box-shadow: 0 0 10px 0 #051a3340;
-	transition: 0.2s;
-
-	&:hover {
-		filter: brightness(1.1);
-
-		.meta {
-			opacity: 0.8;
-
-			&::after {
-				left: 18px;
-			}
-		}
-	}
-}
-
-.meta {
-	text-align: left;
-	padding-left: 22px;
 }
 
 h2 {
 	font-size: 21px;
-	line-height: 1.2;
-	margin: 0;
 	@include kaisei-decol;
 }
 
 p {
 	font-size: 16px;
-	padding: 0 !important;
 	margin: 0;
 	margin-top: 6px;
-	line-height: 1.1;
 }
 
 ul {
-	display: flex;
 	margin-top: 11px;
-	padding: 0;
-	flex-wrap: wrap;
-	list-style: none;
-	justify-content: left;
-	opacity: 0.85;
 }
 
 @include sp {
 	article {
 		padding: 10px 13px;
 		padding-bottom: 15px;
-		box-shadow: 0 0 6px 0 #03152b4a;
 	}
 
 	.meta {
-		padding-left: 0;
 		padding-top: 6px;
 	}
 

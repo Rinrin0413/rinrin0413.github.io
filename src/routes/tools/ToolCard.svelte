@@ -26,4 +26,5 @@
 
 <style lang="scss">
 	@use '$lib/stylesheets/tools/tool_card';
+	@use '$lib/btpc/stylesheets/card';
 </style>

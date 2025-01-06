@@ -57,4 +57,5 @@
 
 <style lang="scss">
 	@use '$lib/stylesheets/blog/article_card';
+	@use '$lib/btpc/stylesheets/card';
 </style>
