@@ -200,5 +200,5 @@
 {/if}
 
 <style lang="scss">
-	@use '$lib/stylesheets/blog/share_button';
+	@use '$lib/btpc/stylesheets/share_button';
 </style>
