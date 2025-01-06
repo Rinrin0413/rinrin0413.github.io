@@ -1,7 +1,7 @@
 <script lang="ts">
 	import HeadMetadata from '$lib/components/HeadMetadata.svelte';
 	import Space from '$lib/components/Space.svelte';
-	import ShareButton from '$lib/components/ShareButton.svelte';
+	import ShareButton from '$lib/btpc/components/ShareButton.svelte';
 	import FeedButton from '$lib/components/blog/FeedButton.svelte';
 	import Article from './Article.svelte';
 	import TagList from '$lib/btpc/components/tag/TagList.svelte';

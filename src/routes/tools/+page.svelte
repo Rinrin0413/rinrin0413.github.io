@@ -2,7 +2,7 @@
 	import HeadMetadata from '$lib/components/HeadMetadata.svelte';
 	import Space from '$lib/components/Space.svelte';
 	import Title from '$lib/components/Title.svelte';
-	import ShareButton from '$lib/components/ShareButton.svelte';
+	import ShareButton from '$lib/btpc/components/ShareButton.svelte';
 	import TagPicker from '$lib/btpc/components/tag/picker/TagPicker.svelte';
 	import ToolCard from './ToolCard.svelte';
 	import ClearTagsButton from '$lib/btpc/components/tag/ClearTagsButton.svelte';

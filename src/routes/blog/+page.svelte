@@ -3,7 +3,7 @@
 	import Space from '$lib/components/Space.svelte';
 	import Title from '$lib/components/Title.svelte';
 	import FeedButton from '$lib/components/blog/FeedButton.svelte';
-	import ShareButton from '$lib/components/ShareButton.svelte';
+	import ShareButton from '$lib/btpc/components/ShareButton.svelte';
 	import TagPicker from '$lib/btpc/components/tag/picker/TagPicker.svelte';
 	import ArticleCard from '$lib/components/blog/ArticleCard.svelte';
 	import ClearTagsButton from '$lib/btpc/components/tag/ClearTagsButton.svelte';
