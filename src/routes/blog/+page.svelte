@@ -61,4 +61,5 @@
 
 <style lang="scss">
 	@use '$lib/stylesheets/blog/blog';
+	@use '$lib/btpc/stylesheets/index_page';
 </style>

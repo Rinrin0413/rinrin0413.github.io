@@ -60,6 +60,8 @@
 <Space height="26px" />
 
 <style lang="scss">
+	@use '$lib/btpc/stylesheets/index_page';
+
 	@use '$lib/stylesheets/variables/color' as *;
 	@use '$lib/stylesheets/variables/mixin' as *;
 
@@ -78,17 +80,5 @@
 		justify-content: center;
 		align-items: center;
 		gap: 8px;
-	}
-
-	h2 {
-		font-size: 24px;
-		margin: 0 8px;
-		margin-top: 14px;
-	}
-
-	@include sp {
-		h2 {
-			font-size: 18px;
-		}
 	}
 </style>
