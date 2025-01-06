@@ -6,7 +6,7 @@
 	import TagPicker from '$lib/btpc/components/tag/picker/TagPicker.svelte';
 	import ToolCard from './ToolCard.svelte';
 	import ClearTagsButton from '$lib/btpc/components/tag/ClearTagsButton.svelte';
-	import Notes from '$lib/components/tool-page/Notes.svelte';
+	import Notes from '$lib/components/tools/Notes.svelte';
 
 	import type { PageData } from './$types';
 	import { page } from '$app/stores';

@@ -13,9 +13,9 @@
 	import CopyButton from '$lib/components/CopyButton.svelte';
 	import Hr from '$lib/components/Hr.svelte';
 	import TagList from '$lib/btpc/components/tag/TagList.svelte';
-	import BackToIndexButton from '$lib/components/tool-page/BackToIndexButton.svelte';
+	import BackToIndexButton from '$lib/components/tools/BackToIndexButton.svelte';
 	import ShareButton from '$lib/components/ShareButton.svelte';
-	import Notes from '$lib/components/tool-page/Notes.svelte';
+	import Notes from '$lib/components/tools/Notes.svelte';
 
 	import { SITE_URL } from '$lib/scripts/variables';
 
