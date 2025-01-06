@@ -2,7 +2,7 @@
 	import FadeInAnim from '$lib/components/FadeInAnim.svelte';
 	import ArticleCard from '$lib/components/blog/ArticleCard.svelte';
 
-	import type { ArticleMetadata } from '$lib/scripts/types';
+	import type { ArticleMetadata } from '$lib/btpc/scripts/types';
 
 	export let articles: ArticleMetadata[];
 </script>

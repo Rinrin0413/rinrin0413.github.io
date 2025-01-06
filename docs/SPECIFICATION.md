@@ -112,7 +112,7 @@ Returns a list of blog articles.
 
 ### Response Body
 
-`ArticleMetadata[]` ([`/src/lib/scripts/types.ts`](/src/lib/scripts/types.ts))
+`ArticleMetadata[]` ([`/src/lib/btpc/scripts/types.ts`](/src/lib/btpc/scripts/types.ts))
 
 - `[]` (`object[]`) - The list of articles.
 	- `published` (`boolean`) - Whether the article is published.
@@ -169,7 +169,7 @@ Returns a list of tags of valid(published and indexed) blog articles.
 
 ### Response Body
 
-`TagWithCount[]` ([`/src/lib/scripts/types.ts`](/src/lib/scripts/types.ts))
+`TagWithCount[]` ([`/src/lib/btpc/scripts/types.ts`](/src/lib/btpc/scripts/types.ts))
 
 - `[]` (`object[]`) - The list of tags.
 	- `tag` (`string`) - The tag name.
@@ -209,7 +209,7 @@ Returns a list of articles that have a thumbnail image with the image file forma
 
 ### Response Body
 
-`ArticleThumbnailImgFmts` ([`/src/lib/scripts/types.ts`](/src/lib/scripts/types.ts))
+`ArticleThumbnailImgFmts` ([`/src/lib/btpc/scripts/types.ts`](/src/lib/btpc/scripts/types.ts))
 
 - `{}` (`object`) - The list of articles that have a thumbnail image with the image file format.
 	- `[slug]` (`string`) - The thumbnail image file format of the article of this field name.
@@ -236,7 +236,7 @@ Returns a list of web tools.
 
 ### Response Body
 
-`ToolMetadata[]` ([`/src/lib/scripts/types.ts`](/src/lib/scripts/types.ts))
+`ToolMetadata[]` ([`/src/lib/btpc/scripts/types.ts`](/src/lib/btpc/scripts/types.ts))
 
 - `[]` (`object[]`) - The list of web tools.
 	- `title` (`string`) - The title of the tool.
@@ -266,7 +266,7 @@ Returns a list of tags of web tools.
 
 ### Response Body
 
-`TagWithCount[]` ([`/src/lib/scripts/types.ts`](/src/lib/scripts/types.ts))
+`TagWithCount[]` ([`/src/lib/btpc/scripts/types.ts`](/src/lib/btpc/scripts/types.ts))
 
 - `[]` (`object[]`) - The list of tags.
 	- `tag` (`string`) - The tag name.

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { ToolMetadata } from '$lib/scripts/types';
+	import type { ToolMetadata } from '$lib/btpc/scripts/types';
 
 	export let meta: ToolMetadata;
 

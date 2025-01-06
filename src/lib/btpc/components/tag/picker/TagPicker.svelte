@@ -2,7 +2,7 @@
 	import Title2 from '$lib/components/Title2.svelte';
 	import Tag from './Tag.svelte';
 
-	import type { TagWithCount } from '$lib/scripts/types';
+	import type { TagWithCount } from '$lib/btpc/scripts/types';
 	import { _ } from 'svelte-i18n';
 
 	export let allTags: TagWithCount[];

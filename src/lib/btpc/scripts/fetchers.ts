@@ -1,4 +1,8 @@
-import type { ArticleMetadata, ArticleThumbnailImgFmts, ToolMetadata } from '$lib/scripts/types';
+import type {
+	ArticleMetadata,
+	ArticleThumbnailImgFmts,
+	ToolMetadata
+} from '$lib/btpc/scripts/types';
 
 /** Fetches and sorts articles. */
 export async function fetchArticles({ limit, tags, isOnlyIndexed }: fetchArticlesOptions = {}) {
