@@ -28,6 +28,8 @@
 	let diffHr: number | null;
 	let diffFull: string | null;
 
+	const hrDigits = 10;
+
 	$: if (startTime !== undefined && endTime !== undefined) {
 		const start = new Date(`1970-01-01T${startTime}`);
 		const end = new Date(`1970-01-01T${endTime}`);
@@ -44,7 +46,7 @@
 		} else {
 			diffSec = diffMs * 0.001;
 			diffMin = diffSec / 60;
-			diffHr = parseFloat((diffMin / 60).toFixed(10));
+			diffHr = parseFloat((diffMin / 60).toPrecision(hrDigits));
 			diffFull = `${Math.floor(diffMs / 3600000)}時間${Math.floor((diffMs % 3600000) / 60000)}分`;
 		}
 	}
