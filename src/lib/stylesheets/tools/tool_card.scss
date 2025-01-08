@@ -22,25 +22,20 @@ ul {
 
 @include sp {
 	article {
-		padding: 10px 13px;
-		padding-bottom: 15px;
+		padding: 8px 0;
+		padding-bottom: 6px;
 	}
 
 	.meta {
-		padding-top: 6px;
+		padding-left: 13px !important;
 	}
 
 	h2 {
-		font-size: 18px;
+		font-size: 19px;
 	}
 
 	p {
 		font-size: 15px;
-		margin-top: 2px;
-
-		&::after {
-			font-size: 14px;
-			margin-top: 1px;
-		}
+		margin-top: 4px;
 	}
 }
