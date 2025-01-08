@@ -40,6 +40,10 @@ input {
 		cursor: pointer;
 		@include source-code-pro;
 	}
+
+	&[type='number'] {
+		text-align: right;
+	}
 }
 
 .result {

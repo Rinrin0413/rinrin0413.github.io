@@ -159,6 +159,5 @@
 
 	input[type='number'] {
 		width: 34px;
-		text-align: right;
 	}
 </style>
