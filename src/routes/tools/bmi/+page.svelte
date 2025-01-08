@@ -18,6 +18,7 @@
 	import Notes from '$lib/components/tools/Notes.svelte';
 
 	import { SITE_URL } from '$lib/scripts/variables';
+	import { page } from '$app/stores';
 
 	let weight = 39.1;
 	let height = 162.3;
@@ -88,7 +89,7 @@
 	}
 
 	const pageTitle = 'Web Tools - ' + METADATA.title;
-	const canonicalUrl = SITE_URL + '/tools/time-diff';
+	const canonicalUrl = SITE_URL + $page.url.pathname;
 	const EMPTY = '-';
 </script>
 

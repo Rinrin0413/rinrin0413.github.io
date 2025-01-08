@@ -18,6 +18,7 @@
 	import Notes from '$lib/components/tools/Notes.svelte';
 
 	import { SITE_URL } from '$lib/scripts/variables';
+	import { page } from '$app/stores';
 
 	let startTime = '15:30';
 	let endTime = '19:20';
@@ -52,7 +53,7 @@
 	}
 
 	const pageTitle = 'Web Tools - ' + METADATA.title;
-	const canonicalUrl = SITE_URL + '/tools/time-diff';
+	const canonicalUrl = SITE_URL + $page.url.pathname;
 	const EMPTY = '-';
 </script>
 
