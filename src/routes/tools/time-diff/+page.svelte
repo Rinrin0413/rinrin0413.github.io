@@ -7,15 +7,11 @@
 </script>
 
 <script lang="ts">
-	import HeadMetadata from '$lib/components/HeadMetadata.svelte';
-	import Space from '$lib/components/Space.svelte';
-	import Title from '$lib/components/Title.svelte';
+	import ToolHead from '$lib/components/tools/ToolHead.svelte';
 	import CopyButton from '$lib/components/CopyButton.svelte';
 	import ToolFooter from '$lib/components/tools/ToolFoot.svelte';
 
 	import type { ToolMetadata } from '$lib/btpc/scripts/types';
-	import { SITE_URL } from '$lib/scripts/variables';
-	import { page } from '$app/stores';
 
 	let startTime = '15:30';
 	let endTime = '19:20';
@@ -49,15 +45,10 @@
 		}
 	}
 
-	const pageTitle = 'Web Tools - ' + METADATA.title;
-	const canonicalUrl = SITE_URL + $page.url.pathname;
 	const EMPTY = '-';
 </script>
 
-<HeadMetadata title={pageTitle} desc={METADATA.desc ?? ''} {canonicalUrl} ogType="article" />
-
-<Space height="64px" />
-<Title text={METADATA.title} />
+<ToolHead {METADATA} />
 <p>{METADATA.desc}<br />終了時刻が開始時刻よりも早い場合は、終了時刻に1日を加算して計算します。</p>
 
 <div>

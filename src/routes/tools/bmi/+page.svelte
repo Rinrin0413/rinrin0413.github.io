@@ -7,14 +7,9 @@
 </script>
 
 <script lang="ts">
-	import HeadMetadata from '$lib/components/HeadMetadata.svelte';
-	import Space from '$lib/components/Space.svelte';
-	import Title from '$lib/components/Title.svelte';
+	import ToolHead from '$lib/components/tools/ToolHead.svelte';
 	import CopyButton from '$lib/components/CopyButton.svelte';
 	import ToolFooter from '$lib/components/tools/ToolFoot.svelte';
-
-	import { SITE_URL } from '$lib/scripts/variables';
-	import { page } from '$app/stores';
 
 	let weight = 39.1;
 	let height = 162.3;
@@ -84,15 +79,10 @@
 		}
 	}
 
-	const pageTitle = 'Web Tools - ' + METADATA.title;
-	const canonicalUrl = SITE_URL + $page.url.pathname;
 	const EMPTY = '-';
 </script>
 
-<HeadMetadata title={pageTitle} desc={METADATA.desc ?? ''} {canonicalUrl} ogType="article" />
-
-<Space height="64px" />
-<Title text={METADATA.title} />
+<ToolHead {METADATA} />
 <p>{METADATA.desc}</p>
 
 <div>
