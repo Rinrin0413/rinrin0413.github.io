@@ -9,7 +9,7 @@ const CLOUDFLARE_ROUTES_EXCLUDE = [
 	'<build>',
 
 	// ▼ Static Assets ▼
-	"<files>",
+	// "<files>",
 	"/.well-known/*",
 	"/favicon.ico",
 	"/images/*",
