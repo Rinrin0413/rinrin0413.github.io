@@ -9,28 +9,28 @@ const CLOUDFLARE_ROUTES_EXCLUDE = [
 	'<build>',
 
 	// ▼ Static Assets ▼
-	// "<files>",
-	'/.well-known/*',
-	'/favicon.ico',
-	'/images/*',
-	'/manifest.json',
-	'/robots.txt',
-	'/scripts/*',
-	'/stylesheets/*',
+	"<files>",
+	"/.well-known/*",
+	"/favicon.ico",
+	"/images/*",
+	"/manifest.json",
+	"/robots.txt",
+	"/scripts/*",
 
 	// ▼ Pre-rendered Pages ▼
 	// "<prerendered>",
-	'/api/articles/tags',
-	'/api/articles/thumbnail-imgs',
-	'/creations',
-	'/feed',
-	'/profile',
-	'/projects',
-	'/sitemap.xml',
-	'/social',
-	'/tools/*',
-	'/acknowledgments',
-	'/privacy'
+	"/acknowledgments",
+	"/api/articles/tags",
+	"/api/articles/thumbnail-imgs",
+	"/api/tools/tags",
+	"/creations",
+	"/feed",
+	"/privacy",
+	"/profile",
+	"/projects",
+	"/sitemap.xml",
+	"/social"
+	// "/tools/bmi" // DBG
 ];
 
 function onWarn(warning, handler) {
