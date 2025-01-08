@@ -1,4 +1,6 @@
 <script lang="ts">
+	import toast from 'svelte-french-toast';
+	import { TOAST_OPTIONS } from '$lib/scripts/variables';
 	import { _ } from 'svelte-i18n';
 
 	/** A text to be copied. */
@@ -8,12 +10,16 @@
 <button
 	on:click={() => {
 		if (text === undefined || text === null) {
-			alert($_('copy.failed'));
+			toast.error($_('copy.failed'), TOAST_OPTIONS);
+			console.error(`The text to be copied is \`${text}\`.`);
 		} else {
 			navigator.clipboard
 				.writeText(text.toString())
-				.then(() => alert($_('copy.copied') + '\n' + text))
-				.catch(() => alert($_('copy.failed')));
+				.then(() => toast.success($_('copy.copied') + '\n' + text, TOAST_OPTIONS))
+				.catch((e) => {
+					toast.error($_('copy.failed'), TOAST_OPTIONS);
+					console.error(e);
+				});
 		}
 	}}
 	title={$_('copy.copy')}

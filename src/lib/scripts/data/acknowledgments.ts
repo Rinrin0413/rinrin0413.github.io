@@ -186,6 +186,12 @@ export const ACKNOWLEDGMENTS: {
 		licenseUrl: 'https://github.com/rehypejs/rehype-slug/blob/main/license'
 	},
 	{
+		name: 'svelte-french-toast',
+		url: 'https://svelte-french-toast.vercel.app',
+		license: 'MIT',
+		licenseUrl: 'https://github.com/kbrgl/svelte-french-toast/blob/master/LICENSE.md'
+	},
+	{
 		name: 'GIMP',
 		url: 'https://gimp.org',
 		license: 'GPL-3.0',

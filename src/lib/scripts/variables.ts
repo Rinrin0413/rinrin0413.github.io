@@ -1,3 +1,5 @@
+import type { ToastOptions } from 'svelte-french-toast';
+
 /** Copyright notice. */
 export const COPYRIGHT = '© 2020 - 2025 Rinrin.rs | GPL-3.0';
 
@@ -27,3 +29,14 @@ export const LOGO_180PX_OXIPNG_REL_PATH = '/images/logos/rinrin/logo_180px_oxipn
  * ```
  */
 export const PAGE_FULL_TITLE_PART = 'Rinrin.rs | ';
+
+export const TOAST_OPTIONS: ToastOptions = {
+	position: 'bottom-right',
+	style: [
+		'text-align: left;',
+		'background-color: #ffffffb0;',
+		'color: inherit;',
+		'border: 1px solid #ffffff;',
+		'border-radius: 4px;'
+	].join(' ')
+};

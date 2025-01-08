@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { Toaster } from 'svelte-french-toast';
 	import Header from '$lib/components/header/Header.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 
@@ -94,6 +95,8 @@
 	<br /><br />
 	お使いのブラウザでは JavaScript が無効になっています。 一部の機能が正常に動作しません。
 </noscript>
+
+<Toaster />
 
 <Header />
 
