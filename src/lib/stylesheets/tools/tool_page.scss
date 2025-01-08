@@ -8,9 +8,8 @@ input {
 	font-size: 18px;
 }
 
-input {
-	font-family: inherit;
-	color: inherit;
+label.with-colon::after {
+	content: ':';
 }
 
 // input[type='submit'] {
@@ -30,15 +29,22 @@ input {
 // }
 
 input {
+	font-family: inherit;
+	color: inherit;
+
 	&[type='number'],
 	&[type='time'] {
-		margin: 2px 0;
+		margin: 2px 3px;
 		padding: 2px;
 		background-color: #ffffff80;
 		border: 2px solid #00000070;
 		border-radius: 6px;
 		cursor: pointer;
 		@include source-code-pro;
+	}
+
+	&[type='number'] {
+		text-align: right;
 	}
 }
 

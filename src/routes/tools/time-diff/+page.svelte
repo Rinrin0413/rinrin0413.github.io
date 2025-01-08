@@ -1,5 +1,5 @@
 <script context="module" lang="ts">
-	export const METADATA = {
+	export const METADATA: ToolMetadata = {
 		title: '時間差計算機',
 		desc: '2つの時刻間の経過時間を計算します。',
 		tags: ['計算', '時間']
@@ -7,17 +7,11 @@
 </script>
 
 <script lang="ts">
-	import HeadMetadata from '$lib/components/HeadMetadata.svelte';
-	import Space from '$lib/components/Space.svelte';
-	import Title from '$lib/components/Title.svelte';
+	import ToolHead from '$lib/components/tools/ToolHead.svelte';
 	import CopyButton from '$lib/components/CopyButton.svelte';
-	import Hr from '$lib/components/Hr.svelte';
-	import TagList from '$lib/btpc/components/tag/TagList.svelte';
-	import BackToIndexButton from '$lib/components/tools/BackToIndexButton.svelte';
-	import ShareButton from '$lib/btpc/components/ShareButton.svelte';
-	import Notes from '$lib/components/tools/Notes.svelte';
+	import ToolFooter from '$lib/components/tools/ToolFoot.svelte';
 
-	import { SITE_URL } from '$lib/scripts/variables';
+	import type { ToolMetadata } from '$lib/btpc/scripts/types';
 
 	let startTime = '15:30';
 	let endTime = '19:20';
@@ -51,19 +45,14 @@
 		}
 	}
 
-	const pageTitle = 'Web Tools - ' + METADATA.title;
-	const canonicalUrl = SITE_URL + '/tools/time-diff';
 	const EMPTY = '-';
 </script>
 
-<HeadMetadata title={pageTitle} desc={METADATA.desc} {canonicalUrl} ogType="article" />
-
-<Space height="64px" />
-<Title text={METADATA.title} />
+<ToolHead {METADATA} />
 <p>{METADATA.desc}<br />終了時刻が開始時刻よりも早い場合は、終了時刻に1日を加算して計算します。</p>
 
 <div>
-	<div>
+	<div class="input">
 		<div>
 			<label for="start-time" class="with-colon">開始時刻</label><input
 				type="time"
@@ -122,20 +111,13 @@
 	</div>
 </div>
 
-<Hr />
-<TagList tags={METADATA.tags} />
-<ShareButton href={canonicalUrl} title={pageTitle} expanded />
-<Notes />
-<BackToIndexButton />
+<ToolFooter {METADATA} />
 
+<!-- svelte-ignore css-unused-selector -->
 <style lang="scss">
 	@use '$lib/stylesheets/tools/tool_page';
 
 	@use '$lib/stylesheets/variables/color' as *;
-
-	label.with-colon::after {
-		content: ': ';
-	}
 
 	button {
 		color: inherit;
@@ -159,6 +141,5 @@
 
 	input[type='number'] {
 		width: 34px;
-		text-align: right;
 	}
 </style>
