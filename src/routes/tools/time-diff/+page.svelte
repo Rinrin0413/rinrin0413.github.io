@@ -134,7 +134,7 @@
 	@use '$lib/stylesheets/variables/color' as *;
 
 	label.with-colon::after {
-		content: ': ';
+		content: ':';
 	}
 
 	button {
