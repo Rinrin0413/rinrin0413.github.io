@@ -8,9 +8,8 @@ input {
 	font-size: 18px;
 }
 
-input {
-	font-family: inherit;
-	color: inherit;
+label.with-colon::after {
+	content: ':';
 }
 
 // input[type='submit'] {
@@ -30,6 +29,9 @@ input {
 // }
 
 input {
+	font-family: inherit;
+	color: inherit;
+
 	&[type='number'],
 	&[type='time'] {
 		margin: 2px 3px;
