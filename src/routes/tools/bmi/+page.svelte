@@ -75,7 +75,7 @@
 			// 22 = y / x^2
 			// y = 22 * x^2
 			stdWeight = parseFloat((22 * heightPow2).toFixed(2));
-			weightDiff = weight - stdWeight;
+			weightDiff = parseFloat((weight - stdWeight).toFixed(2));
 		}
 	}
 
