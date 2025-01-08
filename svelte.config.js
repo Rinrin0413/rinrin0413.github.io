@@ -4,6 +4,11 @@ import preprocess from 'svelte-preprocess';
 import { mdsvex } from 'mdsvex';
 import mdsvexConf from './mdsvex.config.js';
 
+const CLOUDFLARE_ROUTES_INCLUDE = [
+	"/*",
+	"/tools"
+];
+
 const CLOUDFLARE_ROUTES_EXCLUDE = [
 	// ▼ Build Artifacts ▼
 	'<build>',
@@ -29,8 +34,8 @@ const CLOUDFLARE_ROUTES_EXCLUDE = [
 	"/profile",
 	"/projects",
 	"/sitemap.xml",
-	"/social"
-	// "/tools/bmi" // DBG
+	"/social",
+	"/tools/*"
 ];
 
 function onWarn(warning, handler) {
@@ -46,7 +51,7 @@ const config = {
 	preprocess: [mdsvex(mdsvexConf), vitePreprocess(), preprocess()],
 
 	kit: {
-		adapter: adapter({ routes: { exclude: CLOUDFLARE_ROUTES_EXCLUDE } })
+		adapter: adapter({ routes: { include: CLOUDFLARE_ROUTES_INCLUDE, exclude: CLOUDFLARE_ROUTES_EXCLUDE } })
 	},
 
 	extensions: ['.svelte', ...mdsvexConf.extensions],
