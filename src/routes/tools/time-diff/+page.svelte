@@ -1,5 +1,5 @@
 <script context="module" lang="ts">
-	export const METADATA = {
+	export const METADATA: ToolMetadata = {
 		title: '時間差計算機',
 		desc: '2つの時刻間の経過時間を計算します。',
 		tags: ['計算', '時間']
@@ -11,12 +11,9 @@
 	import Space from '$lib/components/Space.svelte';
 	import Title from '$lib/components/Title.svelte';
 	import CopyButton from '$lib/components/CopyButton.svelte';
-	import Hr from '$lib/components/Hr.svelte';
-	import TagList from '$lib/btpc/components/tag/TagList.svelte';
-	import BackToIndexButton from '$lib/components/tools/BackToIndexButton.svelte';
-	import ShareButton from '$lib/btpc/components/ShareButton.svelte';
-	import Notes from '$lib/components/tools/Notes.svelte';
+	import ToolFooter from '$lib/components/tools/ToolFoot.svelte';
 
+	import type { ToolMetadata } from '$lib/btpc/scripts/types';
 	import { SITE_URL } from '$lib/scripts/variables';
 	import { page } from '$app/stores';
 
@@ -57,7 +54,7 @@
 	const EMPTY = '-';
 </script>
 
-<HeadMetadata title={pageTitle} desc={METADATA.desc} {canonicalUrl} ogType="article" />
+<HeadMetadata title={pageTitle} desc={METADATA.desc ?? ''} {canonicalUrl} ogType="article" />
 
 <Space height="64px" />
 <Title text={METADATA.title} />
@@ -123,11 +120,7 @@
 	</div>
 </div>
 
-<Hr />
-<TagList tags={METADATA.tags} />
-<ShareButton href={canonicalUrl} title={pageTitle} expanded />
-<Notes />
-<BackToIndexButton />
+<ToolFooter {METADATA} />
 
 <!-- svelte-ignore css-unused-selector -->
 <style lang="scss">
