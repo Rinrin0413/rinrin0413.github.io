@@ -128,6 +128,7 @@
 <Notes />
 <BackToIndexButton />
 
+<!-- svelte-ignore css-unused-selector -->
 <style lang="scss">
 	@use '$lib/stylesheets/tools/tool_page';
 
