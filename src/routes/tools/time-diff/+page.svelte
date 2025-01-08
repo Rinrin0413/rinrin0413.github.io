@@ -63,7 +63,7 @@
 <p>{METADATA.desc}<br />終了時刻が開始時刻よりも早い場合は、終了時刻に1日を加算して計算します。</p>
 
 <div>
-	<div>
+	<div class="input">
 		<div>
 			<label for="start-time" class="with-colon">開始時刻</label><input
 				type="time"
