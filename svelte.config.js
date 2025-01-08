@@ -4,38 +4,21 @@ import preprocess from 'svelte-preprocess';
 import { mdsvex } from 'mdsvex';
 import mdsvexConf from './mdsvex.config.js';
 
-const CLOUDFLARE_ROUTES_INCLUDE = [
-	"/*",
-	"/tools"
-];
-
 const CLOUDFLARE_ROUTES_EXCLUDE = [
 	// ▼ Build Artifacts ▼
 	'<build>',
 
 	// ▼ Static Assets ▼
 	// "<files>",
-	"/.well-known/*",
-	"/favicon.ico",
-	"/images/*",
-	"/manifest.json",
-	"/robots.txt",
-	"/scripts/*",
+	'/.well-known/*',
+	'/favicon.ico',
+	'/images/*',
+	'/manifest.json',
+	'/robots.txt',
+	'/scripts/*',
 
 	// ▼ Pre-rendered Pages ▼
-	// "<prerendered>",
-	"/acknowledgments",
-	"/api/articles/tags",
-	"/api/articles/thumbnail-imgs",
-	"/api/tools/tags",
-	"/creations",
-	"/feed",
-	"/privacy",
-	"/profile",
-	"/projects",
-	"/sitemap.xml",
-	"/social",
-	"/tools/*"
+	'<prerendered>'
 ];
 
 function onWarn(warning, handler) {
@@ -51,7 +34,7 @@ const config = {
 	preprocess: [mdsvex(mdsvexConf), vitePreprocess(), preprocess()],
 
 	kit: {
-		adapter: adapter({ routes: { include: CLOUDFLARE_ROUTES_INCLUDE, exclude: CLOUDFLARE_ROUTES_EXCLUDE } })
+		adapter: adapter({ routes: { exclude: CLOUDFLARE_ROUTES_EXCLUDE } })
 	},
 
 	extensions: ['.svelte', ...mdsvexConf.extensions],
