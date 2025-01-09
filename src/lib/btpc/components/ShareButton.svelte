@@ -8,13 +8,13 @@
 	export let href: string;
 	export let title: string;
 	export let expanded = false;
-	export let notArticlePage = false;
+	export let isInArticle = false;
 
 	let isWebShareApiSupported = false;
 
 	if (browser) isWebShareApiSupported = navigator.share !== undefined;
 
-	const ANIM_DIRECTION = notArticlePage ? -1 : 1;
+	const ANIM_DIRECTION = isInArticle ? 1 : -1;
 	const ANIM_OFFSET = {
 		x: 1 * ANIM_DIRECTION,
 		y: 8 * ANIM_DIRECTION
@@ -23,10 +23,10 @@
 	let isMenuOpened = false;
 
 	$: ITEM_NAMES = {
-		copy: $_('blog.copyUrl'),
-		post: $_('blog.post'),
-		toot: $_('blog.toot'),
-		note: $_('blog.note'),
+		copy: $_('shareBtn.copyUrl'),
+		post: $_('shareBtn.post'),
+		toot: $_('shareBtn.toot'),
+		note: $_('shareBtn.note'),
 		webShareApi: $_('w.webShareApi')
 	};
 
@@ -52,8 +52,8 @@
 	function copyToClipboard() {
 		navigator.clipboard
 			.writeText(href)
-			.then(() => alert($_('blog.copied')))
-			.catch(() => alert($_('blog.copyFailed')))
+			.then(() => alert($_('shareBtn.copied')))
+			.catch(() => alert($_('shareBtn.copyFailed')))
 			.finally(() => (isMenuOpened = false));
 	}
 
@@ -91,7 +91,7 @@
 	<!-- prettier-ignore -->
 	<ul
 		class:menu={!expanded}
-		class:in-article-page={!notArticlePage}
+		class:in-article-page={isInArticle}
 		transition:fly={{ ...ANIM_OFFSET, duration: 200 }}
 	>
 		<li>
@@ -200,5 +200,5 @@
 {/if}
 
 <style lang="scss">
-	@use '$lib/stylesheets/blog/share_button';
+	@use '$lib/btpc/stylesheets/share_button';
 </style>

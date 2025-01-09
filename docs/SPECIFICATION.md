@@ -13,7 +13,7 @@
 | 128 | header title | [`header.scss>.header-logo::after`](/src/lib/stylesheets/header/header.scss) |
 | 127 | header, header bg | [`header.scss>header, .header-bg`](/src/lib/stylesheets/header/header.scss) |
 | 126 | footer | [`footer.scss>footer`](/src/lib/stylesheets/footer.scss) |
-| 42 | sharing dropdown menu | [`share_button.scss>ul &.menu`](/src/lib/stylesheets/blog/share_button.scss) |
+| 42 | sharing dropdown menu | [`share_button.scss>ul &.menu`](/src/lib/btpc/stylesheets/share_button.scss) |
 | -1 | bg wallpaper | [`style.scss>html &::before`](/src/lib/stylesheets/style.scss) |
 | -1 | unconfirmed fixed element | [`layout.scss>#bg`](/src/lib/stylesheets/layout.scss) |
 
@@ -95,6 +95,8 @@ Use the Sass mixin `kaisei-decol` to apply the font.
 - [Articles](#articles---get-apiarticles) (`/api/articles`)
 - [Article Tags](#article-tags---get-apiarticlestags) (`/api/articles/tags`)
 - [Article Thumbnail Image Formats](#article-thumbnail-image-formats---get-apiarticlesthumbnail-imgs) (`/api/articles/thumbnail-imgs`)
+- [Tools](#tools---get-apitools) (`/api/tools`)
+- [Tool Tags](#tool-tags---get-apitoolstags) (`/api/tools/tags`)
 
 ## Articles - `GET /api/articles`
 
@@ -110,7 +112,7 @@ Returns a list of blog articles.
 
 ### Response Body
 
-`ArticleMetadata[]` ([`/src/lib/scripts/types.ts`](/src/lib/scripts/types.ts))
+`ArticleMetadata[]` ([`/src/lib/btpc/scripts/types.ts`](/src/lib/btpc/scripts/types.ts))
 
 - `[]` (`object[]`) - The list of articles.
 	- `published` (`boolean`) - Whether the article is published.
@@ -167,7 +169,7 @@ Returns a list of tags of valid(published and indexed) blog articles.
 
 ### Response Body
 
-`ArticleTagWithCount[]` ([`/src/lib/scripts/types.ts`](/src/lib/scripts/types.ts))
+`TagWithCount[]` ([`/src/lib/btpc/scripts/types.ts`](/src/lib/btpc/scripts/types.ts))
 
 - `[]` (`object[]`) - The list of tags.
 	- `tag` (`string`) - The tag name.
@@ -207,7 +209,7 @@ Returns a list of articles that have a thumbnail image with the image file forma
 
 ### Response Body
 
-`ArticleThumbnailImgFmts` ([`/src/lib/scripts/types.ts`](/src/lib/scripts/types.ts))
+`ArticleThumbnailImgFmts` ([`/src/lib/btpc/scripts/types.ts`](/src/lib/btpc/scripts/types.ts))
 
 - `{}` (`object`) - The list of articles that have a thumbnail image with the image file format.
 	- `[slug]` (`string`) - The thumbnail image file format of the article of this field name.
@@ -220,6 +222,70 @@ Returns a list of articles that have a thumbnail image with the image file forma
   "20240101": "webp",
   "20230917_test": "webp"
 }
+```
+
+## Tools - `GET /api/tools`
+
+Returns a list of web tools.
+
+### Query Parameters
+
+| Name | Type | Description | Default |
+| --- | --- | --- | --- |
+| `t` | `string[]?` | Filter tools by tags. Example: `t=tag1,tag2` | - |
+
+### Response Body
+
+`ToolMetadata[]` ([`/src/lib/btpc/scripts/types.ts`](/src/lib/btpc/scripts/types.ts))
+
+- `[]` (`object[]`) - The list of web tools.
+	- `title` (`string`) - The title of the tool.
+	- `desc` (`string | null`) - The description of the tool.
+	- `tags` (`string[] | null`) - The list of tags of the tool.
+	- `id` (`string?`) - The ID of the tool. Its type is an optional string but it always exists.
+
+#### Example
+
+```json
+[
+  {
+    "title": "時間差計算機",
+    "desc": "2つの時刻間の経過時間を計算します。",
+    "tags": [
+      "計算",
+      "時間"
+    ],
+    "slug": "time-diff"
+  }
+]
+```
+
+## Tool Tags - `GET /api/tools/tags`
+
+Returns a list of tags of web tools.
+
+### Response Body
+
+`TagWithCount[]` ([`/src/lib/btpc/scripts/types.ts`](/src/lib/btpc/scripts/types.ts))
+
+- `[]` (`object[]`) - The list of tags.
+	- `tag` (`string`) - The tag name.
+	- `count` (`number`) - The number of tools that have the tag.
+
+
+#### Example
+
+```json
+[
+  {
+    "tag": "計算",
+    "count": 1
+  },
+  {
+    "tag": "時間",
+    "count": 1
+  }
+]
 ```
 
 ---

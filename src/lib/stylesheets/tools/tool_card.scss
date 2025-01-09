@@ -1,0 +1,41 @@
+@use '$lib/stylesheets/variables/mixin' as *;
+
+article {
+	display: inline-block;
+	padding: 14px 16px 16px 0;
+}
+
+h2 {
+	font-size: 21px;
+	@include kaisei-decol;
+}
+
+p {
+	font-size: 16px;
+	margin: 0;
+	margin-top: 6px;
+}
+
+ul {
+	margin-top: 11px;
+}
+
+@include sp {
+	article {
+		padding: 8px 0;
+		padding-bottom: 6px;
+	}
+
+	.meta {
+		padding-left: 13px !important;
+	}
+
+	h2 {
+		font-size: 19px;
+	}
+
+	p {
+		font-size: 15px;
+		margin-top: 4px;
+	}
+}

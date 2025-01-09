@@ -1,9 +1,10 @@
 import type { PageLoad } from './$types';
 import type {
 	ArticleMetadata,
-	ArticleTagWithCount,
+	TagWithCount,
 	ArticleThumbnailImgFmts
-} from '$lib/scripts/types';
+} from '$lib/btpc/scripts/types';
+import { getTags } from '$lib/btpc/scripts/utils';
 
 export const load: PageLoad = async ({
 	url,
@@ -11,11 +12,11 @@ export const load: PageLoad = async ({
 }): Promise<{
 	articles: ArticleMetadata[];
 	tags: string[];
-	allTags: ArticleTagWithCount[];
+	allTags: TagWithCount[];
 	thumbnailImgFmts: ArticleThumbnailImgFmts;
 }> => {
 	const articles = await (await fetch('/api/articles?indexed=true&' + url.searchParams)).json();
-	const tags = url.searchParams.get('t')?.split(',') ?? [];
+	const tags = getTags(url);
 	const allTags = await (await fetch('/api/articles/tags')).json();
 	const thumbnailImgFmts = await (await fetch('/api/articles/thumbnail-imgs')).json();
 	return { articles, tags, allTags, thumbnailImgFmts };

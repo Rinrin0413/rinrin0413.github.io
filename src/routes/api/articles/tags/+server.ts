@@ -1,6 +1,6 @@
-import { fetchTags } from '$lib/scripts/fetchers';
+import { fetchArticleTags } from '$lib/btpc/scripts/fetchers';
 import { json } from '@sveltejs/kit';
 
 export const prerender = true;
 
-export const GET = async () => json(await fetchTags());
+export const GET = async () => json(await fetchArticleTags());

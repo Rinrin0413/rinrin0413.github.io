@@ -1,10 +1,10 @@
 <script lang="ts">
 	import HeadMetadata from '$lib/components/HeadMetadata.svelte';
 	import Space from '$lib/components/Space.svelte';
-	import ShareButton from '$lib/components/ShareButton.svelte';
-	import FeedButton from '$lib/components/FeedButton.svelte';
+	import ShareButton from '$lib/btpc/components/ShareButton.svelte';
+	import FeedButton from '$lib/components/blog/FeedButton.svelte';
 	import Article from './Article.svelte';
-	import Tags from './Tags.svelte';
+	import TagList from '$lib/btpc/components/tag/TagList.svelte';
 	import ScrollToTop from './ScrollToTop.svelte';
 
 	import type { PageData } from './$types';
@@ -112,13 +112,13 @@
 			but breaking the logic for the sake of intuitiveness.
 		-->
 		<div style={parallax(-0.06)}>
-			<ShareButton href={canonicalUrl} title={titleFull} /><FeedButton />
+			<ShareButton href={canonicalUrl} title={titleFull} isInArticle /><FeedButton />
 		</div>
 	</div>
 	<Article body={data.component} />
 	<p><ShareButton href={canonicalUrl} title={titleFull} expanded /></p>
-	<Tags tags={metadata.tags} />
-	<div><a href="/blog" class="back-to-index">{$_('article.backToIndex')}</a></div>
+	<TagList tags={metadata.tags} />
+	<div><a href="/blog" class="back-to-index">{$_('blog.backToIndex')}</a></div>
 </div>
 
 <ScrollToTop />
