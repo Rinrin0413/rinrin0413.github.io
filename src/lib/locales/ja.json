@@ -201,22 +201,40 @@
 		"desc": "Rinrin.rs のソーシャルアカウント一覧"
 	},
 	"blog": {
-		"noMatchingArticlesFound": "一致する記事が見つかりませんでした。",
-		"clearFilters": "フィルターをリセット",
-		"copyUrl": "URLをコピー",
-		"copied": "コピーしました",
-		"copyFailed": "コピーに失敗しました",
-		"post": "ポスト",
-		"toot": "トゥート",
-		"note": "ノート"
+		"backToIndex": "記事一覧に戻る",
+		"noMatchingArticlesFound": "一致する記事が見つかりませんでした。"
 	},
-	"article.backToIndex": "記事一覧に戻る",
 	"acknowledgments.desc": "このサイトの開発で利用したすべてのOSSやサービスに感謝",
+	"tools": {
+		"backToIndex": "ツール一覧へ戻る",
+		"noMatchingToolsFound": "一致するツールが見つかりませんでした。",
+		"notes": [
+			"本サイトのツール群は結果の正確性を保証していません。",
+			"問題等を発見された場合は ",
+			" にてお知らせいただけると幸いです。"
+		]
+	},
 	"privacy": {
 		"desc": "このプライバシーポリシーは、当サイトにおけるアクセス解析について示したものです:",
 		"analytics": [
 			"当サイトでは、訪問者のアクセス状況を把握するために、Cloudflare 社の提供する ",
 			" を利用しています。Cloudflare Web Analytics は、Cookie や localStorage などクライアントサイドの状態を一切使わずに、利用に関するメトリクスを収集します。また、分析を表示する目的で、IP アドレス、ユーザーエージェント文字列、その他のデータを介して、個人の「フィンガープリント」を取得することもありません。この分析は非侵襲的で、訪問者のプライバシーを尊重します。"
 		]
+	},
+	"copy": {
+		"copy": "コピー",
+		"copied": "コピーしました:",
+		"failed": "コピーに失敗しました。"
+	},
+	"tag": {
+		"clearFilters": "フィルターをリセット"
+	},
+	"shareBtn": {
+		"copyUrl": "URLをコピー",
+		"copied": "コピーしました",
+		"copyFailed": "コピーに失敗しました",
+		"post": "ポスト",
+		"toot": "トゥート",
+		"note": "ノート"
 	}
 }

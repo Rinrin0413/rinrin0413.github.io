@@ -14,7 +14,7 @@
 	<a href="https://rinrin.pages.dev">Home</a> &middot;
 	<a href="https://rinrin.pages.dev/profile">Profile</a> &middot;
 	<a href="https://rinrin.pages.dev/blog">Blog</a> &middot;
-	<a href="https://rinrin.pages.dev/tools">Web Tools (WIP)</a> &middot;
+	<a href="https://rinrin.pages.dev/tools">Web Tools</a> &middot;
 	<a href="https://rinrin.pages.dev/projects">Projects (WIP)</a> &middot;
 	<a href="https://rinrin.pages.dev/creations">Creations (WIP)</a> &middot;
 	<a href="https://rinrin.pages.dev/social">Social</a>

@@ -2,12 +2,15 @@
 	import { goto } from '$app/navigation';
 	import { fly, scale } from 'svelte/transition';
 	import { bounceOut } from 'svelte/easing';
+	import { page } from '$app/stores';
 
 	export let name: string;
 	export let count: number;
 	export let isEnabled: boolean;
 	export let index: number;
 	export let negativeIndex: number;
+
+	const path = $page.url.pathname;
 
 	function toggle() {
 		isEnabled = !isEnabled;
@@ -20,7 +23,7 @@
 			tagsInParam = tagsInParam.filter((t) => t !== name);
 		}
 
-		goto('/blog' + (0 < tagsInParam.length ? '?t=' + tagsInParam.join(',') : ''));
+		goto(path + (0 < tagsInParam.length ? '?t=' + tagsInParam.join(',') : ''));
 	}
 </script>
 
@@ -32,13 +35,13 @@
 	<button on:click={toggle} class="tag-btn">
 		{name.toUpperCase()}({count})
 	</button>
-	<a href="/blog{isEnabled ? '' : '?t=' + name}" class="tag-btn">{name.toUpperCase()}({count})</a>
+	<a href="{path}{isEnabled ? '' : '?t=' + name}" class="tag-btn">{name.toUpperCase()}({count})</a>
 </li>
 
 <style lang="scss">
 	@use '$lib/stylesheets/variables/mixin' as *;
 
-	@use '$lib/stylesheets/blog/tag';
+	@use '$lib/btpc/stylesheets/tag';
 
 	li:not(.enabled) {
 		$disabled-opacity: 0.53;

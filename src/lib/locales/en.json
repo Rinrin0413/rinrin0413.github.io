@@ -204,22 +204,40 @@
 		"desc": "List of my social accounts"
 	},
 	"blog": {
-		"noMatchingArticlesFound": "No matching articles found.",
-		"clearFilters": "Clear filters",
-		"copyUrl": "Copy URL",
-		"copied": "Copied",
-		"copyFailed": "Copy failed",
-		"post": "Post",
-		"toot": "Toot",
-		"note": "Note"
+		"backToIndex": "Back to index",
+		"noMatchingArticlesFound": "No matching articles found."
 	},
-	"article.backToIndex": "Back to index",
 	"acknowledgments.desc": "Thank you for all OSS and services that used in the development of this website.",
+	"tools": {
+		"backToIndex": "Back to tool list",
+		"noMatchingToolsFound": "No matching tools found.",
+		"notes": [
+			"The accuracy of the results provided by the tools on this website is not guaranteed.",
+			"If you come across any issues or problems, I would appreciate it if you could report them on ",
+			"."
+		]
+	},
 	"privacy": {
 		"desc": "This Privacy Policy outlines the use of access analytics on this website:",
 		"analytics": [
 			"On this website, we use ",
 			" provided by Cloudflare Inc. to analyze the behavior of our website visitors. Cloudflare Web Analytics does not use any client-side state, such as cookies or localStorage, to collect usage metrics. We also don’t “fingerprint” individuals via their IP address, User Agent string, or any other data for the purpose of displaying analytics. This analytics are non-invasive and respect the privacy of your visitors."
 		]
+	},
+	"copy": {
+		"copy": "Copy",
+		"copied": "Copied:",
+		"failed": "Copy failed."
+	},
+	"tag": {
+		"clearFilters": "Clear filters"
+	},
+	"shareBtn": {
+		"copyUrl": "Copy URL",
+		"copied": "Copied",
+		"copyFailed": "Copy failed",
+		"post": "Post",
+		"toot": "Toot",
+		"note": "Note"
 	}
 }

@@ -1,26 +1,33 @@
 <script lang="ts">
 	import { _ } from 'svelte-i18n';
+	import { page } from '$app/stores';
 
 	export let tags: string[] | null;
 </script>
 
-{#if tags && 0 < tags.length}
-	<div id="tags">
-		<span>{$_('w.tags')}</span>
-		<ul>
-			{#each tags as tag}
-				<li><a href="/blog?t={tag}" class="tag-btn">{tag.toUpperCase()}</a></li>
-			{/each}
-		</ul>
+{#if tags !== null && 0 < tags.length}
+	<div>
+		<div class="tags">
+			<span>{$_('w.tags')}</span>
+			<ul>
+				{#each tags as tag}
+					<li>
+						<a href="/{$page.url.pathname.split('/')[1]}/?t={tag}" class="tag-btn"
+							>{tag.toUpperCase()}</a
+						>
+					</li>
+				{/each}
+			</ul>
+		</div>
 	</div>
 {/if}
 
 <style lang="scss">
 	@use '$lib/stylesheets/variables/mixin' as *;
 
-	@use '$lib/stylesheets/blog/tag';
+	@use '$lib/btpc/stylesheets/tag';
 
-	div {
+	.tags {
 		display: inline-block;
 		padding-top: 8px;
 		margin: 0 22px;

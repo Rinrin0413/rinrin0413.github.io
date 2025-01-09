@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { ArticleMetadata, ArticleThumbnailImgFmts } from '$lib/scripts/types';
+	import type { ArticleMetadata, ArticleThumbnailImgFmts } from '$lib/btpc/scripts/types';
 	import { idToDate } from '$lib/scripts/utils';
 	import { _ } from 'svelte-i18n';
 	import { date as dateI18n } from 'svelte-i18n';
@@ -57,4 +57,5 @@
 
 <style lang="scss">
 	@use '$lib/stylesheets/blog/article_card';
+	@use '$lib/btpc/stylesheets/card';
 </style>

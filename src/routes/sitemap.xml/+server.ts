@@ -1,5 +1,5 @@
 import type { RequestHandler } from './$types';
-import { fetchArticles } from '$lib/scripts/fetchers';
+import { fetchArticles, fetchTools } from '$lib/btpc/scripts/fetchers';
 import { SITE_URL } from '$lib/scripts/variables';
 
 export const prerender = true;
@@ -17,6 +17,15 @@ async function body() {
 		.map(
 			(article) => `<url>
         <loc>${SITE_URL}/blog/articles/${article.slug}</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>`
+		)
+		.join('\n    ');
+	const tools = (await fetchTools())
+		.map(
+			(tool) => `<url>
+        <loc>${SITE_URL}/blog/articles/${tool.id}</loc>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>`
@@ -46,6 +55,7 @@ async function body() {
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
+    ${tools}
     <url>
         <loc>${SITE_URL}/projects</loc>
         <changefreq>weekly</changefreq>

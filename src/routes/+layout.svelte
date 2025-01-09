@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { Toaster } from 'svelte-french-toast';
 	import Header from '$lib/components/header/Header.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 
@@ -17,10 +18,11 @@
 		LOGO_180PX_OXIPNG_REL_PATH
 	} from '$lib/scripts/variables';
 
-	$: pathname = $page.url.pathname;
-
+	// NProgress
+	const PROGRESS_BAR_EXCLUDED_PATHS = ['/blog', '/tools'];
 	$: {
-		if ($navigating !== null && pathname !== '/blog') NProgress.start();
+		if ($navigating !== null && !PROGRESS_BAR_EXCLUDED_PATHS.includes($page.url.pathname))
+			NProgress.start();
 		else NProgress.done();
 	}
 
@@ -93,6 +95,8 @@
 	<br /><br />
 	お使いのブラウザでは JavaScript が無効になっています。 一部の機能が正常に動作しません。
 </noscript>
+
+<Toaster />
 
 <Header />
 

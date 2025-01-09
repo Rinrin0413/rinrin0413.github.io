@@ -1,5 +1,5 @@
 import type { PageLoad } from './$types';
-import type { ArticleMetadata } from '$lib/scripts/types';
+import type { ArticleMetadata } from '$lib/btpc/scripts/types';
 
 export const load: PageLoad = async ({ fetch }): Promise<{ articles: ArticleMetadata[] }> => {
 	const ARTICLE_LIMIT = 3;

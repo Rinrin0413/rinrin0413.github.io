@@ -16,21 +16,9 @@ const CLOUDFLARE_ROUTES_EXCLUDE = [
 	'/manifest.json',
 	'/robots.txt',
 	'/scripts/*',
-	'/stylesheets/*',
 
 	// ▼ Pre-rendered Pages ▼
-	// "<prerendered>",
-	'/api/articles/tags',
-	'/api/articles/thumbnail-imgs',
-	'/creations',
-	'/feed',
-	'/profile',
-	'/projects',
-	'/sitemap.xml',
-	'/social',
-	'/tools',
-	'/acknowledgments',
-	'/privacy'
+	'<prerendered>'
 ];
 
 function onWarn(warning, handler) {
