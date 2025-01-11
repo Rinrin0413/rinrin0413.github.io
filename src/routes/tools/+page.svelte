@@ -27,8 +27,7 @@
 <HeadMetadata title={TITLE} desc="作った、かす Web ツール" canonicalUrl="{SITE_URL}/tools" />
 
 <section>
-	<Space height="64px" />
-	<Title text="Web Tools" />
+	<Title text="Web Tools" atPageTop />
 	<p>
 		<ShareButton
 			href="{SITE_URL}{pageUrl.pathname}{pageUrl.search}"

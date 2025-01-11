@@ -22,9 +22,7 @@
 />
 
 <section>
-	<Space height="64px" />
-
-	<Title text="Acknowledgments" />
+	<Title text="Acknowledgments" atPageTop />
 	<p>{$_('acknowledgments.desc')}</p>
 
 	<Space height="10px" />

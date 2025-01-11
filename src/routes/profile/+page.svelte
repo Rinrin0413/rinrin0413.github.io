@@ -1,7 +1,6 @@
 <script lang="ts">
 	import HeadMetadata from '$lib/components/HeadMetadata.svelte';
 	import Title from '$lib/components/Title.svelte';
-	import Space from '$lib/components/Space.svelte';
 	import Details from './Details.svelte';
 	import Hr from '$lib/components/Hr.svelte';
 	import Chronicle from '$lib/components/home/Chronicle.svelte';
@@ -27,9 +26,7 @@
 />
 
 <section>
-	<Space height="64px" />
-
-	<Title text="My Profile" />
+	<Title text="My Profile" atPageTop />
 
 	{#each intro as lines}
 		<p>
