@@ -11,6 +11,12 @@
 	 */
 	export let id: string | undefined | null = null;
 
+	/**
+	 * Whether the title is at a top of a page.
+	 * When set to `true`, adds a 64px space above the title.
+	 */
+	export let atPageTop: boolean = false;
+
 	let vw: number;
 	let width: number;
 	let initWidth: number;
@@ -34,6 +40,9 @@
 </script>
 
 <div class:mini={isOverflown}>
+	{#if atPageTop}
+		<Space height="64px" />
+	{/if}
 	<h1 {id} bind:clientWidth={width}>{text}</h1>
 	<span data-content={text} />
 	<Space height="64px" />
