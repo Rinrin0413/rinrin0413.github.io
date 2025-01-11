@@ -1,6 +1,5 @@
 <script lang="ts">
 	import HeadMetadata from '$lib/components/HeadMetadata.svelte';
-	import Space from '$lib/components/Space.svelte';
 	import Title from '$lib/components/Title.svelte';
 
 	import type { ToolMetadata } from '$lib/btpc/scripts/types';
@@ -17,5 +16,4 @@
 	ogType="article"
 />
 
-<Space height="64px" />
-<Title text={METADATA.title} />
+<Title text={METADATA.title} atPageTop />

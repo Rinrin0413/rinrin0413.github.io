@@ -16,9 +16,7 @@
 />
 
 <section>
-	<Space height="64px" />
-
-	<Title text="Social" />
+	<Title text="Social" atPageTop />
 	<p>{$_('social.desc')}</p>
 
 	<Space height="32px" />

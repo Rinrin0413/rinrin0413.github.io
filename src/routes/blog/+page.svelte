@@ -1,6 +1,5 @@
 <script lang="ts">
 	import HeadMetadata from '$lib/components/HeadMetadata.svelte';
-	import Space from '$lib/components/Space.svelte';
 	import Title from '$lib/components/Title.svelte';
 	import FeedButton from '$lib/components/blog/FeedButton.svelte';
 	import ShareButton from '$lib/btpc/components/ShareButton.svelte';
@@ -31,8 +30,7 @@
 <HeadMetadata title={TITLE} desc="Rinrin.rs のブログ(?)" {canonicalUrl} />
 
 <section>
-	<Space height="64px" />
-	<Title text="Blog" />
+	<Title text="Blog" atPageTop />
 	<p>
 		<ShareButton
 			href="{SITE_URL}{pageUrl.pathname}{pageUrl.search}"

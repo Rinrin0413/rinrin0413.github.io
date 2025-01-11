@@ -1,7 +1,6 @@
 <script lang="ts">
 	import HeadMetadata from '$lib/components/HeadMetadata.svelte';
 	import Title from '$lib/components/Title.svelte';
-	import Space from '$lib/components/Space.svelte';
 
 	import { SITE_URL } from '$lib/scripts/variables';
 	//import { _ } from 'svelte-i18n';
@@ -14,9 +13,7 @@
 />
 
 <section>
-	<Space height="64px" />
-
-	<Title text="Dev. Projects" />
+	<Title text="Dev. Projects" atPageTop />
 	<p>Coming soon...</p>
 </section>
 
