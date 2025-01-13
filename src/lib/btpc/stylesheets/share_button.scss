@@ -141,7 +141,6 @@ ul {
 	&:not(.in-article-page) {
 		bottom: auto;
 		top: 333px;
-		filter: drop-shadow(0 0 5px #00000070);
 
 		&::before {
 			top: -17px;
