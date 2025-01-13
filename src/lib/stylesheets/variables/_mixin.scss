@@ -66,3 +66,34 @@ $breakpoint-ultra-narrow: 380px;
 	font-family: 'Kaisei Decol', 'Kiwi Maru', serif;
 	font-weight: 700;
 }
+
+@mixin internal--button-opened {
+	filter: brightness(1.06);
+	transform: translateY(3px);
+}
+
+@mixin button($size: auto, $feat-class-opened: false) {
+	display: inline-block;
+	width: $size;
+	height: $size;
+	font-family: inherit;
+	color: inherit;
+	background: $btn-primary;
+	border: 3px solid $btn-secondary;
+	border-radius: 4px;
+	box-shadow: 0 0 14px #00000050;
+	box-sizing: content-box;
+	cursor: pointer;
+	text-decoration: none;
+	transition: 0.2s;
+
+	&:hover {
+		@include internal--button-opened;
+	}
+
+	@if $feat-class-opened {
+		&.opened {
+			@include internal--button-opened;
+		}
+	}
+}
