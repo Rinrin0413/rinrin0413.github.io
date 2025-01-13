@@ -1,23 +1,18 @@
+@use '$lib/stylesheets/variables/mixin' as *;
 @use '$lib/stylesheets/variables/dimension' as *;
 @use '$lib/stylesheets/variables/color' as *;
 
 button {
-	$btn-size: $header-height * 0.82;
-	height: $btn-size;
-	width: $btn-size;
-	background: $btn-primary;
-	border: 3px solid $btn-secondary;
-	cursor: pointer;
-	border-radius: 4px;
 	margin: 0 6px;
-	margin-top: 6.66px; // $header-height * 0.5 - $btn-size * 0.5}
-	font-family: inherit;
-	filter: drop-shadow(0 0 4px #0000008a);
-	transition: 0.2s;
-
-	&:hover {
-		transform: translateY(2px);
-	}
+	// $size = header-height * 0.82
+	// 6.66 = $header-height * 0.5 - $size * 0.5
+	margin-top: 6.66px;
+	// Added the `!important` keyword to override the `filter` property on hover
+	// because the `button` mixin sets `filter: brightness(1.06);` on hover.
+	filter: drop-shadow(0 0 4px #0000008a) !important;
+	@include button($size: $header-height * 0.82);
+	box-shadow: none;
+	box-sizing: border-box;
 }
 
 svg,
