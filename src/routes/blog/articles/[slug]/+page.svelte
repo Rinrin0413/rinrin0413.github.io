@@ -39,7 +39,7 @@
 
 	$: thumbnailImgFmt = data.thumbnailImgFmt;
 	$: hasThumbnailImg = thumbnailImgFmt !== null;
-	$: thumbnailPath = hasThumbnailImg ? `/images/blog/thumbnails/${slug}.` + thumbnailImgFmt : null;
+	$: thumbnailPath = hasThumbnailImg ? `/images/blog/thaumbnails/${slug}.` + thumbnailImgFmt : null;
 
 	function introAnim(index = 0) {
 		return {
@@ -79,19 +79,14 @@
 {#if hasThumbnailImg}
 	<img
 		src={thumbnailPath}
-		alt={$_('w.backImage')}
+		alt=""
 		class="back-thumbnail"
 		style={parallax(0.25)}
 		aria-hidden="true"
 	/>
 
 	<div class="thumbnail-wrapper" in:scale|global={introAnim()}>
-		<img
-			src={thumbnailPath}
-			alt={$_('w.articleThumbnailImage')}
-			class="thumbnail"
-			style={parallax(-0.25)}
-		/>
+		<img src={thumbnailPath} alt="" class="thumbnail" style={parallax(-0.25)} />
 	</div>
 {:else}
 	<Space height="86px" />

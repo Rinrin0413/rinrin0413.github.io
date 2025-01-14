@@ -1,7 +1,7 @@
 <h1 align="center">Rinrin.rs' Website</h1>
 
 <p align="center">
-	<img src="/static/images/logos/rinrin/logo.svg" alt="logo" width="256" />
+	<img src="/static/images/logos/rinrin/logo.svg" alt="Rinrin.rs' logo" width="256" />
 	<br />
 	<a href="https://rinrin.pages.dev">https://rinrin.pages.dev</a>
 	<br /><br />
@@ -33,5 +33,5 @@
 <br />
 
 <p align="center">
-	<img src="https://img.shields.io/github/license/Rinrin0413/rinrin0413.github.io?color=%23BD0102&style=for-the-badge" alt="license">
+	<img src="https://img.shields.io/github/license/Rinrin0413/rinrin0413.github.io?color=%23BD0102&style=for-the-badge" alt="GPL-3.0">
 </p>

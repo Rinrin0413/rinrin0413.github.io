@@ -95,7 +95,7 @@
 		on:click={() => {
 			isDrawerMenuOpened.set(false);
 		}}
-		tabindex="-1"><img src="/images/logos/rinrin/logo.svg" alt={$_('header.logo')} /></a
+		tabindex="-1"><img src="/images/logos/rinrin/logo.svg" alt="" /></a
 	>
 </header>
 

@@ -18,9 +18,6 @@
 		"webBrowser": "Webブラウザー",
 		"codeEditor": "コードエディター",
 		"tags": "タグ",
-		"articleThumbnailImage": "記事のサムネイル画像",
-		"noImage": "画像無し",
-		"backImage": "バックグラウンド画像",
 		"rssAtomFeed": "RSS / Atom フィード",
 		"share": "共有",
 		"domain": "ドメイン",
@@ -53,7 +50,6 @@
 		"otherSocial": "その他のソーシャルアカウント"
 	},
 	"header": {
-		"logo": "Rinrin.rsのロゴ",
 		"language": "English",
 		"skip": "コンテンツへ進む"
 	},

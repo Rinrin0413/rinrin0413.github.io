@@ -98,7 +98,7 @@
 			<button on:click={copyToClipboard} title={ITEM_NAMES.copy} bind:this={firstItem}>
 				<img
 					src="/images/google-material-design-icons/content_copy_24dp_533618_FILL0_wght400_GRAD0_opsz24_trimmed.svg"
-					alt={$_('copy.copy')}
+					alt=""
 					width=17
 					height=20
 				/>
@@ -109,7 +109,7 @@
 		></li
 		><li>
 			<button on:click={shareOnTwitter} title={ITEM_NAMES.post}>
-				<img src="/images/logos/x_logo.svg" alt="X logo" width=1200 height=1227 />
+				<img src="/images/logos/x_logo.svg" alt="" width=1200 height=1227 />
 				{#if !expanded}
 					{ITEM_NAMES.post}
 				{/if}
@@ -117,7 +117,7 @@
 		></li
 		><li>
 			<button on:click={shareOnMisskey} title={ITEM_NAMES.note}>
-				<img src="/images/logos/misskey_icon.webp" alt="Misskey logo" width=92 height=64 />
+				<img src="/images/logos/misskey_icon.webp" alt="" width=92 height=64 />
 				{#if !expanded}
 					{ITEM_NAMES.note}
 				{/if}
@@ -126,7 +126,7 @@
 		>{#if !expanded}
 			<li>
 				<button class:opened={false} on:click={shareOnMastodon} title={ITEM_NAMES.toot}>
-					<img src="/images/logos/mastodon_logo-purple.svg" alt="Mastodon logo" width=75 height=79 />
+					<img src="/images/logos/mastodon_logo-purple.svg" alt="" width=75 height=79 />
 					{ITEM_NAMES.toot}
 				</button>
 				<form on:submit={shareOnMastodon}>
