@@ -39,7 +39,7 @@
 
 	$: thumbnailImgFmt = data.thumbnailImgFmt;
 	$: hasThumbnailImg = thumbnailImgFmt !== null;
-	$: thumbnailPath = hasThumbnailImg ? `/images/blog/thaumbnails/${slug}.` + thumbnailImgFmt : null;
+	$: thumbnailPath = hasThumbnailImg ? `/images/blog/thumbnails/${slug}.` + thumbnailImgFmt : null;
 
 	function introAnim(index = 0) {
 		return {
