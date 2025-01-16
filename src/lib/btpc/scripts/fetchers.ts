@@ -87,7 +87,7 @@ export async function fetchArticleTags() {
 			}, [])
 
 			// Sort by tag name.
-			.sort((a, b) => a.tag.localeCompare(b.tag))
+			.sort((a, b) => a.tag.localeCompare(b.tag, 'ja'))
 
 			// Sort by count.
 			.sort((a, b) => b.count - a.count);
@@ -139,7 +139,7 @@ export async function fetchTools(tags?: string[]) {
 	});
 
 	// Sort by tool title.
-	tools.sort((a, b) => a.title.localeCompare(b.title));
+	tools.sort((a, b) => a.title.localeCompare(b.title, 'ja'));
 
 	return tools;
 }
@@ -166,7 +166,7 @@ export async function fetchToolTags() {
 			}, [])
 
 			// Sort by tag name.
-			.sort((a, b) => a.tag.localeCompare(b.tag))
+			.sort((a, b) => a.tag.localeCompare(b.tag, 'ja'))
 
 			// Sort by count.
 			.sort((a, b) => b.count - a.count);
