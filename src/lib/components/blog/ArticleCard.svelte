@@ -43,6 +43,7 @@
 			{#if meta.desc}
 				<p>{meta.desc}</p>
 			{/if}
+			<span class="read-more">read more -&gt;</span>
 			{#if meta.tags !== null && !mini}
 				<ul>
 					{#each meta.tags as tag}
