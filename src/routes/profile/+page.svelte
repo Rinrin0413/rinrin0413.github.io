@@ -7,7 +7,6 @@
 	import Skills from './Skills.svelte';
 	import Environment from './Environment.svelte';
 
-	import { SITE_URL } from '$lib/scripts/variables';
 	import { _ } from 'svelte-i18n';
 	import { calcAge } from '$lib/scripts/utils';
 
@@ -18,12 +17,7 @@
 	];
 </script>
 
-<HeadMetadata
-	title="Profile"
-	desc="Rinrin.rs のプロフィール"
-	canonicalUrl="{SITE_URL}/profile"
-	ogType="profile"
-/>
+<HeadMetadata title="Profile" desc="Rinrin.rs のプロフィール" ogType="profile" />
 
 <section>
 	<Title text="My Profile" atPageTop />

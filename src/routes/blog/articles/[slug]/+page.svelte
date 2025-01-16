@@ -58,7 +58,6 @@
 <HeadMetadata
 	title="Blog - {title}"
 	desc={metadata.desc ?? ''}
-	{canonicalUrl}
 	ogType="article"
 	ogCardType="summary_large_image"
 	doesNotSetThumbnailImg

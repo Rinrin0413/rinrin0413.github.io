@@ -4,16 +4,11 @@
 	import Space from '$lib/components/Space.svelte';
 	import EaButton from '$lib/components/EaButton.svelte';
 
-	import { SITE_URL } from '$lib/scripts/variables';
 	import { _ } from 'svelte-i18n';
 	import { SOCIALS } from '$lib/scripts/data/social';
 </script>
 
-<HeadMetadata
-	title="Social"
-	desc="Rinrin.rs のソーシャルアカウント一覧"
-	canonicalUrl="{SITE_URL}/social"
-/>
+<HeadMetadata title="Social" desc="Rinrin.rs のソーシャルアカウント一覧" />
 
 <section>
 	<Title text="Social" atPageTop />

@@ -4,13 +4,14 @@
 		LOGO_180PX_OXIPNG_REL_PATH,
 		PAGE_FULL_TITLE_PART
 	} from '$lib/scripts/variables';
+	import { page } from '$app/stores';
 
 	/** ex: `Home` */
 	export let title: string;
 	/** ex: `Rinrin.rs のホームページです。` */
 	export let desc: string;
 	/** ex: `{SITE_URL}/profile` */
-	export let canonicalUrl: string;
+	export let canonicalUrl = SITE_URL + $page.url.pathname;
 	/**
 	 * ex: `article`
 	 *

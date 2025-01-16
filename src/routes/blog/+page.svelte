@@ -18,8 +18,6 @@
 
 	export let data: PageData;
 
-	$: canonicalUrl = SITE_URL + '/blog';
-
 	$: pageUrl = $page.url;
 	$: tags = data.tags;
 	$: articles = data.articles;
@@ -27,7 +25,7 @@
 	const TITLE = 'Blog';
 </script>
 
-<HeadMetadata title={TITLE} desc="Rinrin.rs のブログ(?)" {canonicalUrl} />
+<HeadMetadata title={TITLE} desc="Rinrin.rs のブログ(?)" />
 
 <section>
 	<Title text="Blog" atPageTop />
