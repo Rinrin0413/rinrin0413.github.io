@@ -227,8 +227,6 @@
 	},
 	"shareBtn": {
 		"copyUrl": "URLをコピー",
-		"copied": "コピーしました",
-		"copyFailed": "コピーに失敗しました",
 		"post": "ポスト",
 		"toot": "トゥート",
 		"note": "ノート"

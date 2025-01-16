@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { SITE_NAME } from '$lib/scripts/variables';
 	import { browser } from '$app/environment';
+	import toast from 'svelte-french-toast';
+	import { TOAST_OPTIONS } from '$lib/scripts/variables';
 	import { _ } from 'svelte-i18n';
 	import { fly } from 'svelte/transition';
 	import { faviconUrl } from '$lib/scripts/utils';
@@ -52,8 +54,11 @@
 	function copyToClipboard() {
 		navigator.clipboard
 			.writeText(href)
-			.then(() => alert($_('shareBtn.copied')))
-			.catch(() => alert($_('shareBtn.copyFailed')))
+			.then(() => toast.success($_('copy.copied') + '\n' + href, TOAST_OPTIONS))
+			.catch((e) => {
+				toast.error($_('copy.failed'), TOAST_OPTIONS);
+				console.error(e);
+			})
 			.finally(() => (isMenuOpened = false));
 	}
 
