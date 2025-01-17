@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { SITE_NAME } from '$lib/scripts/variables';
+	import { SITE_URL, SITE_NAME } from '$lib/scripts/variables';
+	import { page } from '$app/stores';
 	import { browser } from '$app/environment';
 	import toast from 'svelte-french-toast';
 	import { TOAST_OPTIONS } from '$lib/scripts/variables';
@@ -7,7 +8,7 @@
 	import { fly } from 'svelte/transition';
 	import { faviconUrl } from '$lib/scripts/utils';
 
-	export let href: string;
+	export let href: string | null = null;
 	export let title: string;
 	export let expanded = false;
 	export let isInArticle = false;
@@ -15,6 +16,8 @@
 	let isWebShareApiSupported = false;
 
 	if (browser) isWebShareApiSupported = navigator.share !== undefined;
+
+	$: sharedUrl = href ?? SITE_URL + $page.url.pathname + $page.url.search;
 
 	const ANIM_DIRECTION = isInArticle ? 1 : -1;
 	const ANIM_OFFSET = {
@@ -44,7 +47,7 @@
 	/** **＊ Must be called in the browser environment.** */
 	function shareWithWebShareApi() {
 		navigator.share({
-			url: href,
+			url: sharedUrl,
 			text: title,
 			title: SITE_NAME
 		});
@@ -53,8 +56,8 @@
 	/** **＊ Must be called in the browser environment.** */
 	function copyToClipboard() {
 		navigator.clipboard
-			.writeText(href)
-			.then(() => toast.success($_('copy.copied') + '\n' + href, TOAST_OPTIONS))
+			.writeText(sharedUrl)
+			.then(() => toast.success($_('copy.copied') + '\n' + sharedUrl, TOAST_OPTIONS))
 			.catch((e) => {
 				toast.error($_('copy.failed'), TOAST_OPTIONS);
 				console.error(e);
@@ -69,20 +72,20 @@
 
 	/** **＊ Must be called in the browser environment.** */
 	function shareOnTwitter() {
-		const text = encodeURIComponent(title.replace('Rinrin.rs', 'Rinrin​.rs') + '\n' + href);
+		const text = encodeURIComponent(title.replace('Rinrin.rs', 'Rinrin​.rs') + '\n' + sharedUrl);
 		openLink('https://twitter.com/intent/tweet?text=' + text);
 	}
 
 	/** **＊ Must be called in the browser environment.** */
 	function shareOnMisskey() {
 		const text = encodeURIComponent(title);
-		const url = encodeURIComponent(href);
+		const url = encodeURIComponent(sharedUrl);
 		openLink(`https://misskey-hub.net/share/?text=${text}&url=${url}`);
 	}
 
 	/** **＊ Must be called in the browser environment.** */
 	function shareWithDomain(domain: string) {
-		const text = encodeURIComponent(title + '\n' + href);
+		const text = encodeURIComponent(title + '\n' + sharedUrl);
 		openLink(`https://${domain}/share?text=${text}`);
 	}
 

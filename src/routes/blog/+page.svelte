@@ -8,8 +8,7 @@
 	import ClearTagsButton from '$lib/btpc/components/tag/ClearTagsButton.svelte';
 
 	import type { PageData } from './$types';
-	import { SITE_URL, PAGE_FULL_TITLE_PART } from '$lib/scripts/variables';
-	import { page } from '$app/stores';
+	import { PAGE_FULL_TITLE_PART } from '$lib/scripts/variables';
 	import { _ } from 'svelte-i18n';
 	import { fly } from 'svelte/transition';
 	import { elasticBackOut } from '$lib/scripts/easing';
@@ -18,7 +17,6 @@
 
 	export let data: PageData;
 
-	$: pageUrl = $page.url;
 	$: tags = data.tags;
 	$: articles = data.articles;
 
@@ -30,10 +28,7 @@
 <section>
 	<Title text="Blog" atPageTop />
 	<p>
-		<ShareButton
-			href="{SITE_URL}{pageUrl.pathname}{pageUrl.search}"
-			title={PAGE_FULL_TITLE_PART + TITLE}
-		/><FeedButton />
+		<ShareButton title={PAGE_FULL_TITLE_PART + TITLE} /><FeedButton />
 	</p>
 	<TagPicker allTags={data.allTags} pickedTags={tags} />
 
