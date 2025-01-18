@@ -58,6 +58,10 @@
 		}
 	}
 
+	.tag-btn {
+		padding-right: 1px;
+	}
+
 	button {
 		@include hideWhenNoJs;
 	}
