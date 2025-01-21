@@ -46,5 +46,6 @@
 	img {
 		height: $size;
 		aspect-ratio: 17 / 20;
+		user-select: none;
 	}
 </style>
