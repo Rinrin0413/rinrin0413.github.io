@@ -26,7 +26,7 @@
 >
 	<img
 		src="/images/google-material-design-icons/content_copy_24dp_533618_FILL0_wght400_GRAD0_opsz24_trimmed.svg"
-		alt="Copy"
+		alt={$_('copy.copy')}
 	/>
 </button>
 
