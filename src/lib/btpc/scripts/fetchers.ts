@@ -16,6 +16,11 @@ export async function fetchArticles({ limit, tags, isOnlyIndexed }: fetchArticle
 		})
 	);
 
+	// Convert all the tags to lowercase.
+	articles.forEach((a) => {
+		if (a.tags !== null) a.tags = a.tags.map((t) => t.toLowerCase());
+	});
+
 	// Filtering
 	articles = articles.filter((a) => {
 		// Filter by published.
@@ -25,7 +30,7 @@ export async function fetchArticles({ limit, tags, isOnlyIndexed }: fetchArticle
 		if (tags)
 			for (const tag of tags) {
 				const articleTags = a.tags ?? [];
-				if (!articleTags.includes(tag)) return false;
+				if (!articleTags.includes(tag.toLowerCase())) return false;
 			}
 
 		// Filter by indexed.
@@ -81,8 +86,9 @@ export async function fetchArticleTags() {
 
 			// Count tags.
 			.reduce((acc: { tag: string; count: number }[], tag) => {
-				const existingTag = acc.find((t) => t.tag === tag);
-				existingTag ? existingTag.count++ : acc.push({ tag, count: 1 });
+				const tagLowercase = tag.toLowerCase();
+				const existingTag = acc.find((t) => t.tag.toLowerCase() === tagLowercase);
+				existingTag ? existingTag.count++ : acc.push({ tag: tagLowercase, count: 1 });
 				return acc;
 			}, [])
 
@@ -127,12 +133,17 @@ export async function fetchTools(tags?: string[]) {
 		})
 	);
 
+	// Convert all the tags to lowercase.
+	tools.forEach((t) => {
+		if (t.tags !== null) t.tags = t.tags.map((t) => t.toLowerCase());
+	});
+
 	// Filter by tags.
 	tools = tools.filter((a) => {
 		if (tags)
 			for (const tag of tags) {
 				const articleTags = a.tags ?? [];
-				if (!articleTags.includes(tag)) return false;
+				if (!articleTags.includes(tag.toLowerCase())) return false;
 			}
 
 		return true;
@@ -160,8 +171,9 @@ export async function fetchToolTags() {
 
 			// Count tags.
 			.reduce((acc: { tag: string; count: number }[], tag) => {
-				const existingTag = acc.find((t) => t.tag === tag);
-				existingTag ? existingTag.count++ : acc.push({ tag, count: 1 });
+				const tagLowercase = tag.toLowerCase();
+				const existingTag = acc.find((t) => t.tag.toLowerCase() === tagLowercase);
+				existingTag ? existingTag.count++ : acc.push({ tag: tagLowercase, count: 1 });
 				return acc;
 			}, [])
 
