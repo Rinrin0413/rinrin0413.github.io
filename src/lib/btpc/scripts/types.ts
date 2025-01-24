@@ -5,6 +5,7 @@ export interface TagWithCount {
 
 // I explicitly specified ` | null` instead of optional variable.
 // This is to prevent missing fields in the article frontmatter definitions.
+/** Alphabetic characters in the tags must be lowercase. */
 export interface ArticleMetadata {
 	published: boolean;
 	indexed: boolean;
@@ -18,10 +19,9 @@ export interface ArticleThumbnailImgFmts {
 	[slug: string]: string;
 }
 
-/**
- * I explicitly specified ` | null` instead of optional variable,
- * to prevent missing fields in the tool metadata definitions.
- */
+// I explicitly specified ` | null` instead of optional variable,
+// to prevent missing fields in the tool metadata definitions.
+/** Alphabetic characters in the tags must be lowercase. */
 export interface ToolMetadata {
 	title: string;
 	desc: string | null;
