@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Title2 from '$lib/components/Title2.svelte';
+	import FadeInAnim from '$lib/components/FadeInAnim.svelte';
 
 	import { _ } from 'svelte-i18n';
 
@@ -33,8 +34,10 @@
 
 	<div>
 		{#each items as { key, value }}
-			<h3>{key}</h3>
-			<p>{value}</p>
+			<FadeInAnim type="scale-up-origin-top">
+				<h3>{key}</h3>
+				<p>{value}</p>
+			</FadeInAnim>
 		{/each}
 	</div>
 {/each}
