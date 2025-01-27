@@ -1,6 +1,6 @@
 {
 	"name": "website_rinrin",
-	"version": "0.8.0",
+	"version": "0.8.1",
 	"private": true,
 	"scripts": {
 		"dev": "vite dev",
@@ -39,7 +39,7 @@
 		"tsx": "^4.19.1",
 		"typescript": "^5.1.6",
 		"uuid": "^9.0.1",
-		"vite": "^5.4.6"
+		"vite": "^5.4.14"
 	},
 	"type": "module",
 	"dependencies": {

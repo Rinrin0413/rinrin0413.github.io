@@ -9,8 +9,7 @@
 	import Notes from '$lib/components/tools/Notes.svelte';
 
 	import type { PageData } from './$types';
-	import { page } from '$app/stores';
-	import { SITE_URL, PAGE_FULL_TITLE_PART } from '$lib/scripts/variables';
+	import { PAGE_FULL_TITLE_PART } from '$lib/scripts/variables';
 	import { scale } from 'svelte/transition';
 	import { expoOut } from 'svelte/easing';
 	import { flip } from 'svelte/animate';
@@ -18,22 +17,17 @@
 
 	export let data: PageData;
 
-	$: pageUrl = $page.url;
 	$: tools = data.tools;
 
 	const TITLE = 'Web Tools';
 </script>
 
-<HeadMetadata title={TITLE} desc="作った、かす Web ツール" canonicalUrl="{SITE_URL}/tools" />
+<HeadMetadata title={TITLE} desc="作った、かす Web ツール" />
 
 <section>
-	<Space height="64px" />
-	<Title text="Web Tools" />
+	<Title text="Web Tools" atPageTop />
 	<p>
-		<ShareButton
-			href="{SITE_URL}{pageUrl.pathname}{pageUrl.search}"
-			title={PAGE_FULL_TITLE_PART + TITLE}
-		/>
+		<ShareButton title={PAGE_FULL_TITLE_PART + TITLE} />
 	</p>
 	<TagPicker allTags={data.allTags} pickedTags={data.tags} />
 

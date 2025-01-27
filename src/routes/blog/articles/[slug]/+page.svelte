@@ -25,8 +25,6 @@
 	$: isPathnameEndsWithSlash = paths[pathnameLength - 1] === '';
 	$: slug = paths[pathnameLength - (isPathnameEndsWithSlash ? 2 : 1)];
 
-	$: canonicalUrl = SITE_URL + '/blog/articles/' + slug;
-
 	let scrollY: number;
 	$: parallax = parallaxStyle(scrollY);
 
@@ -58,7 +56,6 @@
 <HeadMetadata
 	title="Blog - {title}"
 	desc={metadata.desc ?? ''}
-	{canonicalUrl}
 	ogType="article"
 	ogCardType="summary_large_image"
 	doesNotSetThumbnailImg
@@ -79,19 +76,14 @@
 {#if hasThumbnailImg}
 	<img
 		src={thumbnailPath}
-		alt={$_('w.backImage')}
+		alt=""
 		class="back-thumbnail"
 		style={parallax(0.25)}
 		aria-hidden="true"
 	/>
 
 	<div class="thumbnail-wrapper" in:scale|global={introAnim()}>
-		<img
-			src={thumbnailPath}
-			alt={$_('w.articleThumbnailImage')}
-			class="thumbnail"
-			style={parallax(-0.25)}
-		/>
+		<img src={thumbnailPath} alt="" class="thumbnail" style={parallax(-0.25)} />
 	</div>
 {:else}
 	<Space height="86px" />
@@ -112,11 +104,11 @@
 			but breaking the logic for the sake of intuitiveness.
 		-->
 		<div style={parallax(-0.06)}>
-			<ShareButton href={canonicalUrl} title={titleFull} isInArticle /><FeedButton />
+			<ShareButton title={titleFull} isInArticle /><FeedButton />
 		</div>
 	</div>
 	<Article body={data.component} />
-	<p><ShareButton href={canonicalUrl} title={titleFull} expanded /></p>
+	<p><ShareButton title={titleFull} expanded /></p>
 	<TagList tags={metadata.tags} />
 	<div><a href="/blog" class="back-to-index">{$_('blog.backToIndex')}</a></div>
 </div>

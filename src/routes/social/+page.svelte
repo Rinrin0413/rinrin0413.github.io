@@ -4,21 +4,14 @@
 	import Space from '$lib/components/Space.svelte';
 	import EaButton from '$lib/components/EaButton.svelte';
 
-	import { SITE_URL } from '$lib/scripts/variables';
 	import { _ } from 'svelte-i18n';
 	import { SOCIALS } from '$lib/scripts/data/social';
 </script>
 
-<HeadMetadata
-	title="Social"
-	desc="Rinrin.rs のソーシャルアカウント一覧"
-	canonicalUrl="{SITE_URL}/social"
-/>
+<HeadMetadata title="Social" desc="Rinrin.rs のソーシャルアカウント一覧" />
 
 <section>
-	<Space height="64px" />
-
-	<Title text="Social" />
+	<Title text="Social" atPageTop />
 	<p>{$_('social.desc')}</p>
 
 	<Space height="32px" />
@@ -29,7 +22,7 @@
 		{#each SOCIALS as { service, name, url, icon }}
 			<tr>
 				<td>
-					{#if icon}<img src="/images/logos/{icon}" alt="{service} logo" />{/if}{service}
+					{#if icon}<img src="/images/logos/{icon}" alt="" />{/if}{service}
 				</td>
 				<td>
 					{#if url}

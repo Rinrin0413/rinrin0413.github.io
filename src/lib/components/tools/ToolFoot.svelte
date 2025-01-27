@@ -6,18 +6,12 @@
 	import BackToIndexButton from '$lib/components/tools/BackToIndexButton.svelte';
 
 	import type { ToolMetadata } from '$lib/btpc/scripts/types';
-	import { SITE_URL } from '$lib/scripts/variables';
-	import { page } from '$app/stores';
 
 	export let METADATA: ToolMetadata;
 </script>
 
 <Hr />
 <TagList tags={METADATA.tags} />
-<ShareButton
-	href={SITE_URL + $page.url.pathname}
-	title={'Web Tools - ' + METADATA.title}
-	expanded
-/>
+<ShareButton title={'Web Tools - ' + METADATA.title} expanded />
 <Notes />
 <BackToIndexButton />

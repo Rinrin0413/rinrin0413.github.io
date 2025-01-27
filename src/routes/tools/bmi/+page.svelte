@@ -2,7 +2,7 @@
 	export const METADATA = {
 		title: 'BMI計算機',
 		desc: '体重と身長からボディマス指数(BMI)を計算します。',
-		tags: ['計算', 'BMI']
+		tags: ['計算', 'bmi']
 	};
 </script>
 

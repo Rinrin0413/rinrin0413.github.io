@@ -23,7 +23,7 @@ published: true
 indexed: true
 title: ここにタイトル
 desc: ここに説明文
-tags: [タグ, タグ]
+tags: [タグ, tag]
 ---
 
 ここに本文

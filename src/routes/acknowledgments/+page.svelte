@@ -3,7 +3,6 @@
 	import Space from '$lib/components/Space.svelte';
 	import Title from '$lib/components/Title.svelte';
 
-	import { SITE_URL } from '$lib/scripts/variables';
 	import { _ } from 'svelte-i18n';
 	import { ACKNOWLEDGMENTS } from '$lib/scripts/data/acknowledgments';
 	import { fly } from 'svelte/transition';
@@ -18,13 +17,10 @@
 <HeadMetadata
 	title="Acknowledgments"
 	desc="このサイトの開発で利用したすべてのOSSやサービスに感謝。"
-	canonicalUrl="{SITE_URL}/acknowledgments"
 />
 
 <section>
-	<Space height="64px" />
-
-	<Title text="Acknowledgments" />
+	<Title text="Acknowledgments" atPageTop />
 	<p>{$_('acknowledgments.desc')}</p>
 
 	<Space height="10px" />

@@ -1,11 +1,14 @@
 <script lang="ts">
-	import { SITE_NAME } from '$lib/scripts/variables';
+	import { SITE_URL, SITE_NAME } from '$lib/scripts/variables';
+	import { page } from '$app/stores';
 	import { browser } from '$app/environment';
+	import toast from 'svelte-french-toast';
+	import { TOAST_OPTIONS } from '$lib/scripts/variables';
 	import { _ } from 'svelte-i18n';
 	import { fly } from 'svelte/transition';
 	import { faviconUrl } from '$lib/scripts/utils';
 
-	export let href: string;
+	export let href: string | null = null;
 	export let title: string;
 	export let expanded = false;
 	export let isInArticle = false;
@@ -13,6 +16,8 @@
 	let isWebShareApiSupported = false;
 
 	if (browser) isWebShareApiSupported = navigator.share !== undefined;
+
+	$: sharedUrl = href ?? SITE_URL + $page.url.pathname + $page.url.search;
 
 	const ANIM_DIRECTION = isInArticle ? 1 : -1;
 	const ANIM_OFFSET = {
@@ -42,7 +47,7 @@
 	/** **＊ Must be called in the browser environment.** */
 	function shareWithWebShareApi() {
 		navigator.share({
-			url: href,
+			url: sharedUrl,
 			text: title,
 			title: SITE_NAME
 		});
@@ -51,9 +56,12 @@
 	/** **＊ Must be called in the browser environment.** */
 	function copyToClipboard() {
 		navigator.clipboard
-			.writeText(href)
-			.then(() => alert($_('shareBtn.copied')))
-			.catch(() => alert($_('shareBtn.copyFailed')))
+			.writeText(sharedUrl)
+			.then(() => toast.success($_('copy.copied') + '\n' + sharedUrl, TOAST_OPTIONS))
+			.catch((e) => {
+				toast.error($_('copy.failed'), TOAST_OPTIONS);
+				console.error(e);
+			})
 			.finally(() => (isMenuOpened = false));
 	}
 
@@ -64,20 +72,20 @@
 
 	/** **＊ Must be called in the browser environment.** */
 	function shareOnTwitter() {
-		const text = encodeURIComponent(title.replace('Rinrin.rs', 'Rinrin​.rs') + '\n' + href);
+		const text = encodeURIComponent(title.replace('Rinrin.rs', 'Rinrin​.rs') + '\n' + sharedUrl);
 		openLink('https://twitter.com/intent/tweet?text=' + text);
 	}
 
 	/** **＊ Must be called in the browser environment.** */
 	function shareOnMisskey() {
 		const text = encodeURIComponent(title);
-		const url = encodeURIComponent(href);
+		const url = encodeURIComponent(sharedUrl);
 		openLink(`https://misskey-hub.net/share/?text=${text}&url=${url}`);
 	}
 
 	/** **＊ Must be called in the browser environment.** */
 	function shareWithDomain(domain: string) {
-		const text = encodeURIComponent(title + '\n' + href);
+		const text = encodeURIComponent(title + '\n' + sharedUrl);
 		openLink(`https://${domain}/share?text=${text}`);
 	}
 
@@ -96,16 +104,12 @@
 	>
 		<li>
 			<button on:click={copyToClipboard} title={ITEM_NAMES.copy} bind:this={firstItem}>
-				<!--
-					Google Material Symbols and Icons - Content Copy
-					https://fonts.google.com/icons?selected=Material%20Symbols%20Outlined%3Acontent_copy%3AFILL%400%3Bwght%40400%3BGRAD%400%3Bopsz%4024
-					This icon is licensed under the Apache License Version 2.0: https://github.com/google/material-design-icons/blob/master/README.md
-				-->
-				<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"
-					><path
-						d="M360-240q-33 0-56.5-23.5T280-320v-480q0-33 23.5-56.5T360-880h360q33 0 56.5 23.5T800-800v480q0 33-23.5 56.5T720-240H360Zm0-80h360v-480H360v480ZM200-80q-33 0-56.5-23.5T120-160v-560h80v560h440v80H200Zm160-240v-480 480Z"
-					/></svg
-				>
+				<img
+					src="/images/google-material-design-icons/content_copy_24dp_533618_FILL0_wght400_GRAD0_opsz24_trimmed.svg"
+					alt={expanded ? ITEM_NAMES.copy : ''}
+					width=17
+					height=20
+				/>
 				{#if !expanded}
 					{ITEM_NAMES.copy}
 				{/if}
@@ -113,7 +117,7 @@
 		></li
 		><li>
 			<button on:click={shareOnTwitter} title={ITEM_NAMES.post}>
-				<img src="/images/logos/x_logo.svg" alt="X logo" width=1200 height=1227 />
+				<img src="/images/logos/x_logo.svg" alt={expanded ? ITEM_NAMES.post : ''} width=1200 height=1227 />
 				{#if !expanded}
 					{ITEM_NAMES.post}
 				{/if}
@@ -121,7 +125,7 @@
 		></li
 		><li>
 			<button on:click={shareOnMisskey} title={ITEM_NAMES.note}>
-				<img src="/images/logos/misskey_icon.webp" alt="Misskey logo" width=92 height=64 />
+				<img src="/images/logos/misskey_icon.webp" alt={expanded ? ITEM_NAMES.note : ''} width=92 height=64 />
 				{#if !expanded}
 					{ITEM_NAMES.note}
 				{/if}
@@ -130,7 +134,7 @@
 		>{#if !expanded}
 			<li>
 				<button class:opened={false} on:click={shareOnMastodon} title={ITEM_NAMES.toot}>
-					<img src="/images/logos/mastodon_logo-purple.svg" alt="Mastodon logo" width=75 height=79 />
+					<img src="/images/logos/mastodon_logo-purple.svg" alt="" width=75 height=79 />
 					{ITEM_NAMES.toot}
 				</button>
 				<form on:submit={shareOnMastodon}>

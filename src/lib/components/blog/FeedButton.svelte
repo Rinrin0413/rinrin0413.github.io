@@ -22,25 +22,13 @@
 </a>
 
 <style lang="scss">
+	@use '$lib/stylesheets/variables/mixin' as *;
 	@use '$lib/stylesheets/variables/color' as *;
 
 	a {
-		display: inline-block;
-		$size: 32px;
-		width: $size;
-		height: $size;
-		padding: 4px;
 		margin: 0 6px;
-		background: $btn-primary;
-		border: 3px solid $btn-secondary;
-		border-radius: 4px;
-		box-shadow: 0 0 14px #00000050;
-		transition: 0.2s;
-
-		&:hover {
-			filter: brightness(1.06);
-			transform: translateY(3px);
-		}
+		padding: 4px;
+		@include button($size: 32px);
 	}
 
 	svg {

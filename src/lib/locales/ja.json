@@ -18,9 +18,6 @@
 		"webBrowser": "Webブラウザー",
 		"codeEditor": "コードエディター",
 		"tags": "タグ",
-		"articleThumbnailImage": "記事のサムネイル画像",
-		"noImage": "画像無し",
-		"backImage": "バックグラウンド画像",
 		"rssAtomFeed": "RSS / Atom フィード",
 		"share": "共有",
 		"domain": "ドメイン",
@@ -53,7 +50,6 @@
 		"otherSocial": "その他のソーシャルアカウント"
 	},
 	"header": {
-		"logo": "Rinrin.rsのロゴ",
 		"language": "English",
 		"skip": "コンテンツへ進む"
 	},
@@ -201,7 +197,7 @@
 		"desc": "Rinrin.rs のソーシャルアカウント一覧"
 	},
 	"blog": {
-		"backToIndex": "記事一覧に戻る",
+		"backToIndex": "記事一覧へ戻る",
 		"noMatchingArticlesFound": "一致する記事が見つかりませんでした。"
 	},
 	"acknowledgments.desc": "このサイトの開発で利用したすべてのOSSやサービスに感謝",
@@ -231,8 +227,6 @@
 	},
 	"shareBtn": {
 		"copyUrl": "URLをコピー",
-		"copied": "コピーしました",
-		"copyFailed": "コピーに失敗しました",
 		"post": "ポスト",
 		"toot": "トゥート",
 		"note": "ノート"

@@ -1,14 +1,13 @@
 <script lang="ts">
 	import HeadMetadata from '$lib/components/HeadMetadata.svelte';
+	import FadeInAnim from '$lib/components/FadeInAnim.svelte';
 	import Title from '$lib/components/Title.svelte';
-	import Space from '$lib/components/Space.svelte';
 	import Details from './Details.svelte';
 	import Hr from '$lib/components/Hr.svelte';
 	import Chronicle from '$lib/components/home/Chronicle.svelte';
 	import Skills from './Skills.svelte';
 	import Environment from './Environment.svelte';
 
-	import { SITE_URL } from '$lib/scripts/variables';
 	import { _ } from 'svelte-i18n';
 	import { calcAge } from '$lib/scripts/utils';
 
@@ -19,28 +18,25 @@
 	];
 </script>
 
-<HeadMetadata
-	title="Profile"
-	desc="Rinrin.rs のプロフィール"
-	canonicalUrl="{SITE_URL}/profile"
-	ogType="profile"
-/>
+<HeadMetadata title="Profile" desc="Rinrin.rs のプロフィール" ogType="profile" />
 
 <section>
-	<Space height="64px" />
+	<Title text="My Profile" atPageTop />
 
-	<Title text="My Profile" />
+	<FadeInAnim type="scale-up-origin-top">
+		{#each intro as lines}
+			<p>
+				{#each lines as line, i}
+					{#if i !== 0}<br />{/if}
+					{line}
+				{/each}
+			</p>
+		{/each}
+	</FadeInAnim>
 
-	{#each intro as lines}
-		<p>
-			{#each lines as line, i}
-				{#if i !== 0}<br />{/if}
-				{line}
-			{/each}
-		</p>
-	{/each}
-
-	<Details />
+	<FadeInAnim type="scale-up-origin-top">
+		<Details />
+	</FadeInAnim>
 </section>
 
 <Hr />
@@ -71,17 +67,21 @@
 <section id="wakatime">
 	<Title text="Wakatime" />
 	<p>My coding activity.</p>
-	<figure>
-		<embed src="https://wakatime.com/share/@Rinrin/e0c30dca-c019-4c56-a8d8-0a200e9b5cca.svg" />
-	</figure>
-	<p>
-		<a href="https://wakatime.com/@Rinrin"
-			><img
-				src="https://wakatime.com/badge/user/88c05ffc-234e-402c-9f4e-d3b542e7309f.svg"
-				alt="Total time coded since Mar 17 2023"
-			/></a
-		>
-	</p>
+	<FadeInAnim type="scale-up-origin-top">
+		<figure>
+			<embed src="https://wakatime.com/share/@Rinrin/e0c30dca-c019-4c56-a8d8-0a200e9b5cca.svg" />
+		</figure>
+	</FadeInAnim>
+	<FadeInAnim type="scale-up-origin-top">
+		<p>
+			<a href="https://wakatime.com/@Rinrin"
+				><img
+					src="https://wakatime.com/badge/user/88c05ffc-234e-402c-9f4e-d3b542e7309f.svg"
+					alt="Total time coded since Mar 17 2023"
+				/></a
+			>
+		</p>
+	</FadeInAnim>
 </section>
 
 <Hr />

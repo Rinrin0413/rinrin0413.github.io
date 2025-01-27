@@ -5,18 +5,13 @@
 <table class="social-table">
 	<tr>
 		<td>
-			<img src="/images/logos/gmail.webp" alt="Gmail logo" width="39" height="39" />Gmail
+			<img src="/images/logos/gmail.webp" alt="" width="39" height="39" />Gmail
 		</td>
 		<td><EaButton mini /></td>
 	</tr>
 	<tr>
 		<td>
-			<img
-				src="/images/logos/discord-mark-blue.svg"
-				alt="Discord logo"
-				width="26"
-				height="20"
-			/>Discord
+			<img src="/images/logos/discord-mark-blue.svg" alt="" width="26" height="20" />Discord
 		</td>
 		<td
 			><a
@@ -28,12 +23,7 @@
 	</tr>
 	<tr>
 		<td title="My Discord server">
-			<img
-				src="/images/logos/discord-mark-blue.svg"
-				alt="Discord logo"
-				width="26"
-				height="20"
-			/>Discord(server)
+			<img src="/images/logos/discord-mark-blue.svg" alt="" width="26" height="20" />Discord(server)
 		</td>
 		<td
 			><a href="https://discord.gg/7QhMDfyPHR" target="_blank" rel="noopener noreferrer"
@@ -43,12 +33,7 @@
 	</tr>
 	<tr>
 		<td>
-			<img
-				src="/images/logos/misskey-io_io-icon.svg"
-				alt="Misskey.io logo"
-				width="26"
-				height="26"
-			/>Misskey.io
+			<img src="/images/logos/misskey-io_io-icon.svg" alt="" width="26" height="26" />Misskey.io
 		</td>
 		<td
 			><a href="https://misskey.io/@Rinrin0413" target="_blank" rel="noopener noreferrer"
@@ -58,7 +43,7 @@
 	</tr>
 	<tr>
 		<td>
-			<img src="/images/logos/github-mark.svg" alt="GitHub logo" width="98" height="96" />GitHub
+			<img src="/images/logos/github-mark.svg" alt="" width="98" height="96" />GitHub
 		</td>
 		<td>
 			<a href="https://github.com/Rinrin0413" target="_blank" rel="noopener noreferrer"
@@ -68,7 +53,7 @@
 	</tr>
 	<tr>
 		<td>
-			<img src="/images/logos/x_logo.svg" alt="X logo" width="1200" height="1227" />X
+			<img src="/images/logos/x_logo.svg" alt="" width="1200" height="1227" />X
 		</td>
 		<td
 			><a href="https://x.com/Rinrin_2nd" target="_blank" rel="noopener noreferrer">@Rinrin_2nd</a

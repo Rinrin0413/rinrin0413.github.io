@@ -1,22 +1,17 @@
 <script lang="ts">
 	import HeadMetadata from '$lib/components/HeadMetadata.svelte';
 	import Title from '$lib/components/Title.svelte';
-	import Space from '$lib/components/Space.svelte';
 
-	import { SITE_URL } from '$lib/scripts/variables';
 	import { _, date } from 'svelte-i18n';
 </script>
 
 <HeadMetadata
 	title="Privacy Policy"
 	desc="このプライバシーポリシーは、当サイトにおけるアクセス解析について示したものです。"
-	canonicalUrl="{SITE_URL}/privacy"
 />
 
 <section>
-	<Space height="64px" />
-
-	<Title text="Privacy Policy" />
+	<Title text="Privacy Policy" atPageTop />
 	<p class="desc">{$_(`privacy.desc`)}</p>
 
 	<p>

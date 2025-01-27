@@ -26,11 +26,11 @@
 		{$_('error.pageNotFound.0')}<br />
 		{$_('error.pageNotFound.1')}
 	</p>
-	<img src="/images/404.webp" alt="404 Not like this" class="e404" />
+	<img src="/images/404.webp" alt="" class="e404" />
 {:else}
 	<Title text="Unexpected error" />
 	<p>{msg}</p>
-	<img src="https://http.cat/{status}.jpg" alt=" " loading="lazy" />
+	<img src="https://http.cat/{status}.jpg" alt="" loading="lazy" />
 {/if}
 
 <style lang="scss">

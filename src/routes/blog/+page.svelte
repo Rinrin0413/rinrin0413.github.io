@@ -1,6 +1,5 @@
 <script lang="ts">
 	import HeadMetadata from '$lib/components/HeadMetadata.svelte';
-	import Space from '$lib/components/Space.svelte';
 	import Title from '$lib/components/Title.svelte';
 	import FeedButton from '$lib/components/blog/FeedButton.svelte';
 	import ShareButton from '$lib/btpc/components/ShareButton.svelte';
@@ -9,8 +8,7 @@
 	import ClearTagsButton from '$lib/btpc/components/tag/ClearTagsButton.svelte';
 
 	import type { PageData } from './$types';
-	import { SITE_URL, PAGE_FULL_TITLE_PART } from '$lib/scripts/variables';
-	import { page } from '$app/stores';
+	import { PAGE_FULL_TITLE_PART } from '$lib/scripts/variables';
 	import { _ } from 'svelte-i18n';
 	import { fly } from 'svelte/transition';
 	import { elasticBackOut } from '$lib/scripts/easing';
@@ -19,25 +17,18 @@
 
 	export let data: PageData;
 
-	$: canonicalUrl = SITE_URL + '/blog';
-
-	$: pageUrl = $page.url;
 	$: tags = data.tags;
 	$: articles = data.articles;
 
 	const TITLE = 'Blog';
 </script>
 
-<HeadMetadata title={TITLE} desc="Rinrin.rs のブログ(?)" {canonicalUrl} />
+<HeadMetadata title={TITLE} desc="Rinrin.rs のブログ(?)" />
 
 <section>
-	<Space height="64px" />
-	<Title text="Blog" />
+	<Title text="Blog" atPageTop />
 	<p>
-		<ShareButton
-			href="{SITE_URL}{pageUrl.pathname}{pageUrl.search}"
-			title={PAGE_FULL_TITLE_PART + TITLE}
-		/><FeedButton />
+		<ShareButton title={PAGE_FULL_TITLE_PART + TITLE} /><FeedButton />
 	</p>
 	<TagPicker allTags={data.allTags} pickedTags={tags} />
 

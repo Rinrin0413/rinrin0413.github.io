@@ -34,8 +34,9 @@
 >
 	<button on:click={toggle} class="tag-btn">
 		{name.toUpperCase()}({count})
-	</button>
-	<a href="{path}{isEnabled ? '' : '?t=' + name}" class="tag-btn">{name.toUpperCase()}({count})</a>
+	</button><a href="{path}{isEnabled ? '' : '?t=' + name}" class="tag-btn"
+		>{name.toUpperCase()}({count})</a
+	>
 </li>
 
 <style lang="scss">
@@ -56,6 +57,10 @@
 				opacity: $disabled-opacity;
 			}
 		}
+	}
+
+	.tag-btn {
+		padding-right: 1px;
 	}
 
 	button {
