@@ -15,11 +15,11 @@
 	let metadata = data.frontmatter;
 	$: metadata = data.frontmatter;
 
-	$: date = new Date(metadata.date);
-	let datePlus9h: Date;
+	$: date = metadata.date === null ? null : new Date(metadata.date);
+	let datePlus9h: Date | null;
 	$: {
-		datePlus9h = new Date(date);
-		datePlus9h.setHours(datePlus9h.getHours() + 9);
+		datePlus9h = date === null ? null : new Date(date);
+		if (datePlus9h !== null) datePlus9h.setHours(datePlus9h.getHours() + 9);
 	}
 
 	$: hasThumbnailImg = metadata.thumbnailImg !== null;
@@ -58,7 +58,13 @@
 
 <div class="artwork-content">
 	<div><h1>{metadata.title}</h1></div>
-	<div><time datetime={datePlus9h.toISOString()}>{$dateI18n(date, { format: 'full' })}</time></div>
+	{#if date !== null && datePlus9h !== null}
+		<div>
+			<time datetime={datePlus9h.toISOString()}>{$dateI18n(date, { format: 'full' })}</time>
+		</div>
+	{:else}
+		<div><time>{$_('creations.dateUnknown')}</time></div>
+	{/if}
 	<OtherInfo {metadata} />
 	<ChildPageComponentRenderer component={data.component} />
 	<p><ShareButton title={titleFull} expanded /></p>
