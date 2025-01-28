@@ -58,7 +58,6 @@
 <div class="artwork-content">
 	<div><h1>{metadata.title}</h1></div>
 	<div><time datetime={datePlus9h.toISOString()}>{$dateI18n(date, { format: 'full' })}</time></div>
-	<ShareButton title={titleFull} isInBtpcChildPage />
 	<OtherInfo {metadata} />
 	<ChildPageComponentRenderer component={data.component} />
 	<p><ShareButton title={titleFull} expanded /></p>
