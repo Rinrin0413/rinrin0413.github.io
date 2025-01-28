@@ -36,7 +36,10 @@
 		"social": "ソーシャル",
 		"privacyPolicy": "プライバシーポリシー",
 		"acknowledgments": "謝辞",
-		"illustration": "イラスト"
+		"illustration": "イラスト",
+		"category": "カテゴリ",
+		"usedTools": "使用ツール",
+		"license": "ライセンス"
 	},
 	"home": {
 		"icon": "Rinrin.rs のアイコン",

@@ -36,7 +36,10 @@
 		"social": "Social",
 		"privacyPolicy": "Privacy Policy",
 		"acknowledgments": "Acknowledgments",
-		"illustration": "Illustration"
+		"illustration": "Illustration",
+		"category": "Category",
+		"usedTools": "Used tools",
+		"license": "License"
 	},
 	"home": {
 		"icon": "Rinrin.rs' avatar",

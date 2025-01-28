@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { ArtworkMetadata } from '$lib/btpc/scripts/types';
+	import { _ } from 'svelte-i18n';
 
 	export let metadata: ArtworkMetadata;
 </script>
@@ -7,7 +8,7 @@
 <div class="other-info">
 	<table>
 		<tr>
-			<td>カテゴリ</td>
+			<td>{$_('w.category')}</td>
 			<td
 				><span
 					><a href="/creations?c={metadata.category}" class="category">{metadata.category}</a></span
@@ -15,14 +16,14 @@
 			>
 		</tr>
 		<tr>
-			<td>タグ</td>
+			<td>{$_('w.tags')}</td>
 			<td
 				>{#each metadata.tags as tag}<a href="/creations?t={tag}" class="tag">{tag.toUpperCase()}</a
 					>{/each}</td
 			>
 		</tr>
 		<tr>
-			<td>使用ツール</td>
+			<td>{$_('w.usedTools')}</td>
 			<td
 				><span
 					>{#each metadata.usedTools as tool, i}{#if 0 < i},
@@ -32,7 +33,7 @@
 		</tr>
 		{#if metadata.license !== null}
 			<tr>
-				<td>ライセンス</td>
+				<td>{$_('w.license')}</td>
 				<td
 					><span>
 						{#if metadata.license === 'CC BY-SA 4.0'}
