@@ -78,7 +78,7 @@
 		padding: 0;
 
 		&:first-child {
-			text-wrap: nowrap;
+			white-space: nowrap;
 			text-align: right;
 
 			&:after {
