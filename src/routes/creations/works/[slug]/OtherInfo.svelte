@@ -97,7 +97,7 @@
 
 	.category,
 	.tag {
-		filter: hue-rotate(319deg) grayscale(0.7);
+		filter: hue-rotate(319deg) grayscale(0.3);
 	}
 
 	.cc img {
