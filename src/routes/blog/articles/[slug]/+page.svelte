@@ -104,7 +104,7 @@
 			but breaking the logic for the sake of intuitiveness.
 		-->
 		<div style={parallax(-0.06)}>
-			<ShareButton title={titleFull} isInArticle /><FeedButton />
+			<ShareButton title={titleFull} isInBtpcChildPage /><FeedButton />
 		</div>
 	</div>
 	<Article body={data.component} />
