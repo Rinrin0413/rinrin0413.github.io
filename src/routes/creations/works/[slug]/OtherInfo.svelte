@@ -19,7 +19,10 @@
 		<tr>
 			<td>使用ツール</td>
 			<td
-				>{#each metadata.usedTools as tool}<span>{tool}</span>{/each}</td
+				><span
+					>{#each metadata.usedTools as tool, i}{#if 0 < i},
+						{/if}{tool}{/each}</span
+				></td
 			>
 		</tr>
 	</table>
@@ -62,6 +65,7 @@
 	}
 
 	a {
+		margin-left: 10px;
 		filter: hue-rotate(319deg) grayscale(0.7);
 	}
 </style>
