@@ -8,12 +8,17 @@
 	<table>
 		<tr>
 			<td>カテゴリ</td>
-			<td><a href="/creations?c={metadata.category}">{metadata.category}</a></td>
+			<td
+				><span
+					><a href="/creations?c={metadata.category}" class="category">{metadata.category}</a></span
+				></td
+			>
 		</tr>
 		<tr>
 			<td>タグ</td>
 			<td
-				>{#each metadata.tags as tag}<a href="/creations?t={tag}">{tag.toUpperCase()}</a>{/each}</td
+				>{#each metadata.tags as tag}<a href="/creations?t={tag}" class="tag">{tag.toUpperCase()}</a
+					>{/each}</td
 			>
 		</tr>
 		<tr>
@@ -25,6 +30,32 @@
 				></td
 			>
 		</tr>
+		{#if metadata.license !== null}
+			<tr>
+				<td>ライセンス</td>
+				<td
+					><span>
+						{#if metadata.license === 'CC BY-SA 4.0'}
+							<a
+								href="https://creativecommons.org/licenses/by-sa/4.0/"
+								target="_blank"
+								rel="license noopener noreferrer"
+								class="cc no-after-icn"
+								>CC BY-SA 4.0<img
+									src="https://mirrors.creativecommons.org/presskit/icons/cc.svg"
+									alt=""
+								/><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="" /><img
+									src="https://mirrors.creativecommons.org/presskit/icons/sa.svg"
+									alt=""
+								/></a
+							>
+						{:else}
+							{metadata.license}
+						{/if}
+					</span></td
+				>
+			</tr>
+		{/if}
 	</table>
 </div>
 
@@ -59,13 +90,20 @@
 		}
 	}
 
-	a,
-	span {
+	span,
+	.tag {
 		margin-left: 10px;
 	}
 
-	a {
-		margin-left: 10px;
+	.category,
+	.tag {
 		filter: hue-rotate(319deg) grayscale(0.7);
+	}
+
+	.cc img {
+		height: 24px;
+		aspect-ratio: 1;
+		margin-left: 2px;
+		vertical-align: text-bottom;
 	}
 </style>

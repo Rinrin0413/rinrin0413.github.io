@@ -39,6 +39,7 @@ export interface ArtworkMetadata {
 	tags: string[];
 	date: string;
 	usedTools: string[];
+	license: string | null;
 	thumbnailImg: string | null;
 	id?: string;
 }
