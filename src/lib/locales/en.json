@@ -213,6 +213,9 @@
 			"."
 		]
 	},
+	"creations": {
+		"backToIndex": "Back to artwork list"
+	},
 	"privacy": {
 		"desc": "This Privacy Policy outlines the use of access analytics on this website:",
 		"analytics": [
