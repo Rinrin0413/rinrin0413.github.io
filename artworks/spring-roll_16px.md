@@ -9,4 +9,8 @@ license: CC BY-SA 4.0
 thumbnailImg: spring-roll_16px_upscaled.webp
 ---
 
-ドット絵の原寸大 → ![文字並に小さい春巻きのドット絵](/images/creations/spring-roll_16px.png) ←
+<script>
+	import PixelArtOriginalSize from '$lib/components/creations/artworks/PixelArtOriginalSize.svelte';
+</script>
+
+<PixelArtOriginalSize filename="spring-roll_16px" subjectName="春巻き" />
