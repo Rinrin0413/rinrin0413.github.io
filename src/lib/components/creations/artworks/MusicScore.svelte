@@ -12,7 +12,10 @@
 
 <p>
 	<a href={path} target="_blank" rel="noopener noreferrer" class="no-after-icn"
-		>楽譜をダウンロード (PDF)</a
+		><img
+			src="/images/digital-agency_designsystem-assets/icon/download_fill.svg"
+			alt=""
+		/>楽譜をダウンロード (PDF)</a
 	>
 </p>
 
@@ -26,6 +29,14 @@
 	a {
 		padding: 6px 8px;
 		@include button;
+	}
+
+	img {
+		width: 25px;
+		height: auto;
+		aspect-ratio: 1 / 1;
+		margin-right: 4px;
+		vertical-align: text-bottom;
 	}
 
 	object {
