@@ -1,7 +1,8 @@
 import type {
 	ArticleMetadata,
 	ArticleThumbnailImgFmts,
-	ToolMetadata
+	ToolMetadata,
+	ArtworkMetadata
 } from '$lib/btpc/scripts/types';
 
 /** Fetches and sorts articles. */
@@ -185,3 +186,47 @@ export async function fetchToolTags() {
 
 	return tags;
 }
+
+/** Fetches and sorts artworks. */
+export async function fetchArtworks({ category, tags, license }: fetchArtworksOptions = {}) {
+	// Fetch all artworks.
+	let artworks = await Promise.all(
+		Object.entries(import.meta.glob('/artworks/*.md')).map(async ([path, module]) => {
+			const { metadata } = (await module()) as { metadata: ArtworkMetadata };
+			// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+			metadata.id = path.split('/').pop()!.split('.')[0];
+			return metadata;
+		})
+	);
+
+	// Filterings
+	artworks = artworks.filter((a) => {
+		// Filter by category.
+		if (category !== undefined && a.category !== category) return false;
+
+		// Filter by tags.
+		if (tags !== undefined && tags.length !== 0)
+			if (!tags.every((t) => a.tags.includes(t))) return false;
+
+		// Filter by license.
+		if (license !== undefined && a.license !== license) return false;
+
+		return true;
+	});
+
+	// Sort by newest.
+	artworks.sort((a, b) => {
+		if (a.date !== null && b.date !== null)
+			return new Date(b.date).getTime() - new Date(a.date).getTime();
+		// unreachable
+		return 0;
+	});
+
+	return artworks;
+}
+
+type fetchArtworksOptions = {
+	category?: string;
+	tags?: string[];
+	license?: string;
+};
