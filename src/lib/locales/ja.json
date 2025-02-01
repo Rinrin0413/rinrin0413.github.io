@@ -36,7 +36,10 @@
 		"social": "ソーシャル",
 		"privacyPolicy": "プライバシーポリシー",
 		"acknowledgments": "謝辞",
-		"illustration": "イラスト"
+		"illustration": "イラスト",
+		"category": "カテゴリ",
+		"usedTools": "使用ツール",
+		"license": "ライセンス"
 	},
 	"home": {
 		"icon": "Rinrin.rs のアイコン",
@@ -209,6 +212,10 @@
 			"問題等を発見された場合は ",
 			" にてお知らせいただけると幸いです。"
 		]
+	},
+	"creations": {
+		"dateUnknown": "日付不明",
+		"backToIndex": "創作物一覧へ戻る"
 	},
 	"privacy": {
 		"desc": "このプライバシーポリシーは、当サイトにおけるアクセス解析について示したものです:",

@@ -28,3 +28,18 @@ export interface ToolMetadata {
 	tags: string[];
 	id?: string;
 }
+
+// I explicitly specified ` | null` instead of optional variable,
+// to prevent missing fields in the tool metadata definitions.
+/** Alphabetic characters in the tags must be lowercase. */
+export interface ArtworkMetadata {
+	category: string;
+	title: string;
+	desc: string | null;
+	tags: string[];
+	date: string | null;
+	usedTools: string[];
+	license: string | null;
+	thumbnailImg: string | null;
+	id?: string;
+}

@@ -36,7 +36,10 @@
 		"social": "Social",
 		"privacyPolicy": "Privacy Policy",
 		"acknowledgments": "Acknowledgments",
-		"illustration": "Illustration"
+		"illustration": "Illustration",
+		"category": "Category",
+		"usedTools": "Used tools",
+		"license": "License"
 	},
 	"home": {
 		"icon": "Rinrin.rs' avatar",
@@ -212,6 +215,10 @@
 			"If you come across any issues or problems, I would appreciate it if you could report them on ",
 			"."
 		]
+	},
+	"creations": {
+		"dateUnknown": "Date unknown",
+		"backToIndex": "Back to artwork list"
 	},
 	"privacy": {
 		"desc": "This Privacy Policy outlines the use of access analytics on this website:",

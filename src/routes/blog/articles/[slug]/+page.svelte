@@ -3,7 +3,7 @@
 	import Space from '$lib/components/Space.svelte';
 	import ShareButton from '$lib/btpc/components/ShareButton.svelte';
 	import FeedButton from '$lib/components/blog/FeedButton.svelte';
-	import Article from './Article.svelte';
+	import ChildPageComponentRenderer from '$lib/btpc/components/ChildPageComponentRenderer.svelte';
 	import TagList from '$lib/btpc/components/tag/TagList.svelte';
 	import ScrollToTop from './ScrollToTop.svelte';
 
@@ -104,10 +104,10 @@
 			but breaking the logic for the sake of intuitiveness.
 		-->
 		<div style={parallax(-0.06)}>
-			<ShareButton title={titleFull} isInArticle /><FeedButton />
+			<ShareButton title={titleFull} isInBtpcChildPage /><FeedButton />
 		</div>
 	</div>
-	<Article body={data.component} />
+	<ChildPageComponentRenderer component={data.component} />
 	<p><ShareButton title={titleFull} expanded /></p>
 	<TagList tags={metadata.tags} />
 	<div><a href="/blog" class="back-to-index">{$_('blog.backToIndex')}</a></div>

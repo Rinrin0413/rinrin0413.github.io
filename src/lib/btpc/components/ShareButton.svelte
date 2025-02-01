@@ -11,7 +11,7 @@
 	export let href: string | null = null;
 	export let title: string;
 	export let expanded = false;
-	export let isInArticle = false;
+	export let isInBtpcChildPage = false;
 
 	let isWebShareApiSupported = false;
 
@@ -19,7 +19,7 @@
 
 	$: sharedUrl = href ?? SITE_URL + $page.url.pathname + $page.url.search;
 
-	const ANIM_DIRECTION = isInArticle ? 1 : -1;
+	const ANIM_DIRECTION = isInBtpcChildPage ? 1 : -1;
 	const ANIM_OFFSET = {
 		x: 1 * ANIM_DIRECTION,
 		y: 8 * ANIM_DIRECTION
@@ -99,7 +99,7 @@
 	<!-- prettier-ignore -->
 	<ul
 		class:menu={!expanded}
-		class:in-article-page={isInArticle}
+		class:in-article-page={isInBtpcChildPage}
 		transition:fly={{ ...ANIM_OFFSET, duration: 200 }}
 	>
 		<li>

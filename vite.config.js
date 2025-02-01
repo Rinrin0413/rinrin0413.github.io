@@ -3,5 +3,5 @@ import { defineConfig } from 'vite';
 
 export default defineConfig({
 	plugins: [sveltekit()],
-	server: { fs: { allow: ['articles'] } }
+	server: { fs: { allow: ['articles', 'artworks'] } }
 });
