@@ -230,3 +230,30 @@ type fetchArtworksOptions = {
 	tags?: string[];
 	license?: string;
 };
+
+/** Returns the list of the artwork categories and their counts. */
+export async function fetchArtworkCategories() {
+	const categories = // Fetch all artworks.
+		(
+			await Promise.all(
+				Object.values(import.meta.glob('/artworks/*.md')).map(async (module) => {
+					const { metadata } = (await module()) as { metadata: ArtworkMetadata };
+					return metadata.category;
+				})
+			)
+		)
+			// Count categories.
+			.reduce((acc: { category: string; count: number }[], category) => {
+				const existingCategory = acc.find((t) => t.category === category);
+				existingCategory ? existingCategory.count++ : acc.push({ category, count: 1 });
+				return acc;
+			}, [])
+
+			// Sort by tag name.
+			.sort((a, b) => a.category.localeCompare(b.category, 'ja'))
+
+			// Sort by count.
+			.sort((a, b) => b.count - a.count);
+
+	return categories;
+}
