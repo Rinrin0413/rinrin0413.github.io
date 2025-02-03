@@ -287,3 +287,32 @@ export async function fetchArtworkTags() {
 
 	return tags;
 }
+
+/** Returns the list of the valid licenses for the artwork and their counts. */
+export async function fetchArtworkLicenses() {
+	const licenses = // Fetch all artworks.
+		(
+			await Promise.all(
+				Object.values(import.meta.glob('/artworks/*.md')).map(async (module) => {
+					const { metadata } = (await module()) as { metadata: ArtworkMetadata };
+					return metadata.license;
+				})
+			)
+		)
+			// Count categories.
+			.reduce((acc: { license: string; count: number }[], license) => {
+				if (license === 'CC BY-SA 4.0') {
+					const existingLicense = acc.find((t) => t.license === license);
+					existingLicense ? existingLicense.count++ : acc.push({ license, count: 1 });
+				}
+				return acc;
+			}, [])
+
+			// Sort by tag name.
+			.sort((a, b) => a.license.localeCompare(b.license, 'ja'))
+
+			// Sort by count.
+			.sort((a, b) => b.count - a.count);
+
+	return licenses;
+}
