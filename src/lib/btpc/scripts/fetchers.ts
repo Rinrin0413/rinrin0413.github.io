@@ -257,3 +257,33 @@ export async function fetchArtworkCategories() {
 
 	return categories;
 }
+
+/** Returns the list of the artwork tags and their counts. */
+export async function fetchArtworkTags() {
+	const tags = // Fetch all artworks.
+		(
+			await Promise.all(
+				Object.values(import.meta.glob('/artworks/*.md')).map(async (module) => {
+					const { metadata } = (await module()) as { metadata: ArtworkMetadata };
+					return metadata.tags;
+				})
+			)
+		)
+			// Convert from "list of tag lists" to "list of tags".
+			.flat()
+
+			// Count tags.
+			.reduce((acc: { tag: string; count: number }[], tag) => {
+				const existingTag = acc.find((t) => t.tag === tag);
+				existingTag ? existingTag.count++ : acc.push({ tag, count: 1 });
+				return acc;
+			}, [])
+
+			// Sort by tag name.
+			.sort((a, b) => a.tag.localeCompare(b.tag, 'ja'))
+
+			// Sort by count.
+			.sort((a, b) => b.count - a.count);
+
+	return tags;
+}
