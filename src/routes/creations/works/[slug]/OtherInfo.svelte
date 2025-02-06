@@ -18,8 +18,7 @@
 		<tr>
 			<td>{$_('w.tags')}</td>
 			<td
-				>{#each metadata.tags as tag}<a href="/creations?t={tag}" class="tag">{tag.toUpperCase()}</a
-					>{/each}</td
+				>{#each metadata.tags as tag}<a href="/creations?t={tag}" class="tag">{tag}</a>{/each}</td
 			>
 		</tr>
 		<tr>
