@@ -97,6 +97,10 @@ Use the Sass mixin `kaisei-decol` to apply the font.
 - [Article Thumbnail Image Formats](#article-thumbnail-image-formats---get-apiarticlesthumbnail-imgs) (`/api/articles/thumbnail-imgs`)
 - [Tools](#tools---get-apitools) (`/api/tools`)
 - [Tool Tags](#tool-tags---get-apitoolstags) (`/api/tools/tags`)
+- [Artworks](#artworks---get-apiartworks) (`/api/artworks`)
+- [Artwork Categories](#artwork-categories---get-apiartworkscategories) (`/api/artworks/categories`)
+- [Artwork Tags](#artwork-tags---get-apiartworkstags) (`/api/artworks/tags`)
+- [Artwork Licenses](#artwork-licenses---get-apiartworkslicenses) (`/api/artworks/licenses`)
 
 ## Articles - `GET /api/articles`
 
@@ -284,6 +288,176 @@ Returns a list of tags of web tools.
   {
     "tag": "時間",
     "count": 1
+  }
+]
+```
+
+## Artworks - `GET /api/artworks`
+
+Returns a list of artworks.
+
+### Query Parameters
+
+| Name | Type | Description | Default |
+| --- | --- | --- | --- |
+| `c` | `string?` | Filter artworks by category. | - |
+| `t` | `string[]?` | Filter artworks by tags. Example: `t=tag1,tag2` | - |
+| `license` | `string?` | Filter artworks by license. | - |
+
+### Response Body
+
+`ArtworkMetadata[]` ([`/src/lib/btpc/scripts/types.ts`](/src/lib/btpc/scripts/types.ts))
+
+- `[]` (`object[]`) - The list of artworks.
+	- `category` (`string`) - The category of the artwork.
+	- `title` (`string`) - The title of the artwork.
+	- `desc` (`string | null`) - The description of the artwork.
+	- `tags` (`string[]`) - The list of tags of the artwork.
+	- `date` (`string | null`) - The date the artwork was created.
+	- `usedTools` (`string[]`) - The list of used tools to create the artwork.
+	- `license` (`string | null`) - The license of the artwork.
+	- `thumbnailImg` (`string | null`) - The thumbnail image path of the artwork.
+	- `id` (`string?`) - The ID of the artwork. Its type is an optional string but it always exists.
+
+#### Example
+
+```json
+  {
+    "category": "イラスト",
+    "title": "404 Not like this",
+    "desc": "本ウェブサイトの404エラーページ用に用意した画像。",
+    "tags": [
+      "^v^"
+    ],
+    "date": "2023-03-09T00:00:00.000Z",
+    "usedTools": [
+      "GIMP",
+      "Squoosh"
+    ],
+    "license": "CC BY-SA 4.0",
+    "thumbnailImg": "404-not-like-this.webp",
+    "id": "404-not-like-this"
+  },
+  {
+    "category": "イラスト",
+    "title": "春巻き (16pxドット絵)",
+    "desc": null,
+    "tags": [
+      "春巻き",
+      "食べ物",
+      "ドット絵",
+      "16px"
+    ],
+    "date": "2020-04-30T00:00:00.000Z",
+    "usedTools": [
+      "paint.net"
+    ],
+    "license": "CC BY-SA 4.0",
+    "thumbnailImg": "spring-roll_16px_upscaled.webp",
+    "id": "spring-roll_16px"
+  },
+  {
+    "category": "楽曲",
+    "title": "練習曲第1番「福音」ニ短調 (第1稿)",
+    "desc": "中学生の頃に初めて作った曲。",
+    "tags": [
+      "練習曲",
+      "福音",
+      "第1稿",
+      "短調"
+    ],
+    "date": null,
+    "usedTools": [
+      "Noteflight"
+    ],
+    "license": "©2021 Rinrin All rights reserved",
+    "thumbnailImg": "etude_1i.webp",
+    "id": "etude_1i"
+  }
+]
+```
+
+## Artwork Categories - `GET /api/artworks/categories`
+
+Returns a list of categories of artworks.
+
+### Response Body
+
+<!-- `TagWithCount[]` ([`/src/lib/btpc/scripts/types.ts`](/src/lib/btpc/scripts/types.ts)) -->
+
+- `[]` (`object[]`) - The list of categories.
+	- `category` (`string`) - The category name.
+	- `count` (`number`) - The number of artworks that have the category.
+
+#### Example
+
+```json
+[
+  {
+    "category": "イラスト",
+    "count": 9
+  },
+  {
+    "category": "楽曲",
+    "count": 2
+  }
+]
+```
+
+## Artwork Tags - `GET /api/artworks/tags`
+
+Returns a list of tags of artworks.
+
+### Response Body
+
+`TagWithCount[]` ([`/src/lib/btpc/scripts/types.ts`](/src/lib/btpc/scripts/types.ts))
+
+- `[]` (`object[]`) - The list of tags.
+	- `tag` (`string`) - The tag name.
+	- `count` (`number`) - The number of artworks that have the tag.
+
+#### Example
+
+```json
+[
+  {
+    "tag": "16px",
+    "count": 6
+  },
+  {
+    "tag": "ドット絵",
+    "count": 6
+  },
+  {
+    "tag": "練習曲",
+    "count": 2
+  }
+]
+```
+
+## Artwork Licenses - `GET /api/artworks/licenses`
+
+Returns a list of licenses of artworks.
+
+### Response Body
+
+<!-- `TagWithCount[]` ([`/src/lib/btpc/scripts/types.ts`](/src/lib/btpc/scripts/types.ts)) -->
+
+- `[]` (`object[]`) - The list of licenses.
+	- `license` (`string`) - The license name.
+	- `count` (`number`) - The number of artworks that have the license.
+
+#### Example
+
+```json
+[
+  {
+    "license": "CC BY-SA 4.0",
+    "count": 6
+  },
+  {
+	"license": "CC BY 4.0",
+	"count": 1
   }
 ]
 ```
