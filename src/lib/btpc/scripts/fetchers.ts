@@ -1,7 +1,8 @@
 import type {
 	ArticleMetadata,
 	ArticleThumbnailImgFmts,
-	ToolMetadata
+	ToolMetadata,
+	ArtworkMetadata
 } from '$lib/btpc/scripts/types';
 
 /** Fetches and sorts articles. */
@@ -184,4 +185,134 @@ export async function fetchToolTags() {
 			.sort((a, b) => b.count - a.count);
 
 	return tags;
+}
+
+/** Fetches and sorts artworks. */
+export async function fetchArtworks({ category, tags, license }: fetchArtworksOptions = {}) {
+	// Fetch all artworks.
+	let artworks = await Promise.all(
+		Object.entries(import.meta.glob('/artworks/*.md')).map(async ([path, module]) => {
+			const { metadata } = (await module()) as { metadata: ArtworkMetadata };
+			// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+			metadata.id = path.split('/').pop()!.split('.')[0];
+			return metadata;
+		})
+	);
+
+	// Filterings
+	artworks = artworks.filter((a) => {
+		// Filter by category.
+		if (category !== undefined && a.category !== category) return false;
+
+		// Filter by tags.
+		if (tags !== undefined && tags.length !== 0)
+			if (!tags.every((t) => a.tags.includes(t))) return false;
+
+		// Filter by license.
+		if (license !== undefined && a.license !== license) return false;
+
+		return true;
+	});
+
+	// Sort by newest.
+	artworks.sort((a, b) => {
+		if (a.date !== null && b.date !== null)
+			return new Date(b.date).getTime() - new Date(a.date).getTime();
+		// unreachable
+		return 0;
+	});
+
+	return artworks;
+}
+
+type fetchArtworksOptions = {
+	category?: string;
+	tags?: string[];
+	license?: string;
+};
+
+/** Returns the list of the artwork categories and their counts. */
+export async function fetchArtworkCategories() {
+	const categories = // Fetch all artworks.
+		(
+			await Promise.all(
+				Object.values(import.meta.glob('/artworks/*.md')).map(async (module) => {
+					const { metadata } = (await module()) as { metadata: ArtworkMetadata };
+					return metadata.category;
+				})
+			)
+		)
+			// Count categories.
+			.reduce((acc: { category: string; count: number }[], category) => {
+				const existingCategory = acc.find((t) => t.category === category);
+				existingCategory ? existingCategory.count++ : acc.push({ category, count: 1 });
+				return acc;
+			}, [])
+
+			// Sort by tag name.
+			.sort((a, b) => a.category.localeCompare(b.category, 'ja'))
+
+			// Sort by count.
+			.sort((a, b) => b.count - a.count);
+
+	return categories;
+}
+
+/** Returns the list of the artwork tags and their counts. */
+export async function fetchArtworkTags() {
+	const tags = // Fetch all artworks.
+		(
+			await Promise.all(
+				Object.values(import.meta.glob('/artworks/*.md')).map(async (module) => {
+					const { metadata } = (await module()) as { metadata: ArtworkMetadata };
+					return metadata.tags;
+				})
+			)
+		)
+			// Convert from "list of tag lists" to "list of tags".
+			.flat()
+
+			// Count tags.
+			.reduce((acc: { tag: string; count: number }[], tag) => {
+				const existingTag = acc.find((t) => t.tag === tag);
+				existingTag ? existingTag.count++ : acc.push({ tag, count: 1 });
+				return acc;
+			}, [])
+
+			// Sort by tag name.
+			.sort((a, b) => a.tag.localeCompare(b.tag, 'ja'))
+
+			// Sort by count.
+			.sort((a, b) => b.count - a.count);
+
+	return tags;
+}
+
+/** Returns the list of the valid licenses for the artwork and their counts. */
+export async function fetchArtworkLicenses() {
+	const licenses = // Fetch all artworks.
+		(
+			await Promise.all(
+				Object.values(import.meta.glob('/artworks/*.md')).map(async (module) => {
+					const { metadata } = (await module()) as { metadata: ArtworkMetadata };
+					return metadata.license;
+				})
+			)
+		)
+			// Count categories.
+			.reduce((acc: { license: string; count: number }[], license) => {
+				if (license === 'CC BY-SA 4.0') {
+					const existingLicense = acc.find((t) => t.license === license);
+					existingLicense ? existingLicense.count++ : acc.push({ license, count: 1 });
+				}
+				return acc;
+			}, [])
+
+			// Sort by tag name.
+			.sort((a, b) => a.license.localeCompare(b.license, 'ja'))
+
+			// Sort by count.
+			.sort((a, b) => b.count - a.count);
+
+	return licenses;
 }
