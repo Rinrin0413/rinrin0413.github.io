@@ -9,8 +9,10 @@
 	export let isEnabled: boolean;
 	export let index: number;
 	export let negativeIndex: number;
+	export let forceUpperCase: boolean;
 
 	const path = $page.url.pathname;
+	const upperCaseName = forceUpperCase ? name.toUpperCase() : name;
 
 	function toggle() {
 		isEnabled = !isEnabled;
@@ -33,9 +35,9 @@
 	out:scale={{ duration: 200, delay: negativeIndex * 16 }}
 >
 	<button on:click={toggle} class="tag-btn">
-		{name.toUpperCase()}({count})
+		{upperCaseName}({count})
 	</button><a href="{path}{isEnabled ? '' : '?t=' + name}" class="tag-btn"
-		>{name.toUpperCase()}({count})</a
+		>{upperCaseName}({count})</a
 	>
 </li>
 
