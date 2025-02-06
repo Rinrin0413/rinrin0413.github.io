@@ -1,5 +1,5 @@
-export interface TagWithCount {
-	tag: string;
+export interface ItemWithCount {
+	item: string;
 	count: number;
 }
 

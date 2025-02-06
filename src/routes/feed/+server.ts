@@ -18,7 +18,7 @@ async function body() {
 	const FEED_UUID = 'abe93c08-c6e2-2d92-a181-9a1c2816fb3d';
 
 	const categories = renderCategories(
-		(await fetchArticleTags()).map((t) => t.tag),
+		(await fetchArticleTags()).map((t) => t.item),
 		4
 	);
 

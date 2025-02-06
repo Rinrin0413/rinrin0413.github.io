@@ -2,7 +2,8 @@ import type {
 	ArticleMetadata,
 	ArticleThumbnailImgFmts,
 	ToolMetadata,
-	ArtworkMetadata
+	ArtworkMetadata,
+	ItemWithCount
 } from '$lib/btpc/scripts/types';
 
 /** Fetches and sorts articles. */
@@ -86,15 +87,15 @@ export async function fetchArticleTags() {
 			.flatMap((a) => (a.isValid && a.tags) || [])
 
 			// Count tags.
-			.reduce((acc: { tag: string; count: number }[], tag) => {
+			.reduce((acc: ItemWithCount[], tag) => {
 				const tagLowercase = tag.toLowerCase();
-				const existingTag = acc.find((t) => t.tag.toLowerCase() === tagLowercase);
-				existingTag ? existingTag.count++ : acc.push({ tag: tagLowercase, count: 1 });
+				const existingTag = acc.find((t) => t.item.toLowerCase() === tagLowercase);
+				existingTag ? existingTag.count++ : acc.push({ item: tagLowercase, count: 1 });
 				return acc;
 			}, [])
 
 			// Sort by tag name.
-			.sort((a, b) => a.tag.localeCompare(b.tag, 'ja'))
+			.sort((a, b) => a.item.localeCompare(b.item, 'ja'))
 
 			// Sort by count.
 			.sort((a, b) => b.count - a.count);
@@ -171,15 +172,15 @@ export async function fetchToolTags() {
 			.flat()
 
 			// Count tags.
-			.reduce((acc: { tag: string; count: number }[], tag) => {
+			.reduce((acc: ItemWithCount[], tag) => {
 				const tagLowercase = tag.toLowerCase();
-				const existingTag = acc.find((t) => t.tag.toLowerCase() === tagLowercase);
-				existingTag ? existingTag.count++ : acc.push({ tag: tagLowercase, count: 1 });
+				const existingTag = acc.find((t) => t.item.toLowerCase() === tagLowercase);
+				existingTag ? existingTag.count++ : acc.push({ item: tagLowercase, count: 1 });
 				return acc;
 			}, [])
 
 			// Sort by tag name.
-			.sort((a, b) => a.tag.localeCompare(b.tag, 'ja'))
+			.sort((a, b) => a.item.localeCompare(b.item, 'ja'))
 
 			// Sort by count.
 			.sort((a, b) => b.count - a.count);
@@ -243,14 +244,14 @@ export async function fetchArtworkCategories() {
 			)
 		)
 			// Count categories.
-			.reduce((acc: { category: string; count: number }[], category) => {
-				const existingCategory = acc.find((t) => t.category === category);
-				existingCategory ? existingCategory.count++ : acc.push({ category, count: 1 });
+			.reduce((acc: ItemWithCount[], category) => {
+				const existingCategory = acc.find((t) => t.item === category);
+				existingCategory ? existingCategory.count++ : acc.push({ item: category, count: 1 });
 				return acc;
 			}, [])
 
 			// Sort by tag name.
-			.sort((a, b) => a.category.localeCompare(b.category, 'ja'))
+			.sort((a, b) => a.item.localeCompare(b.item, 'ja'))
 
 			// Sort by count.
 			.sort((a, b) => b.count - a.count);
@@ -273,14 +274,14 @@ export async function fetchArtworkTags() {
 			.flat()
 
 			// Count tags.
-			.reduce((acc: { tag: string; count: number }[], tag) => {
-				const existingTag = acc.find((t) => t.tag === tag);
-				existingTag ? existingTag.count++ : acc.push({ tag, count: 1 });
+			.reduce((acc: ItemWithCount[], tag) => {
+				const existingTag = acc.find((t) => t.item === tag);
+				existingTag ? existingTag.count++ : acc.push({ item: tag, count: 1 });
 				return acc;
 			}, [])
 
 			// Sort by tag name.
-			.sort((a, b) => a.tag.localeCompare(b.tag, 'ja'))
+			.sort((a, b) => a.item.localeCompare(b.item, 'ja'))
 
 			// Sort by count.
 			.sort((a, b) => b.count - a.count);
@@ -300,16 +301,16 @@ export async function fetchArtworkLicenses() {
 			)
 		)
 			// Count categories.
-			.reduce((acc: { license: string; count: number }[], license) => {
+			.reduce((acc: ItemWithCount[], license) => {
 				if (license === 'CC BY-SA 4.0') {
-					const existingLicense = acc.find((t) => t.license === license);
-					existingLicense ? existingLicense.count++ : acc.push({ license, count: 1 });
+					const existingLicense = acc.find((t) => t.item === license);
+					existingLicense ? existingLicense.count++ : acc.push({ item: license, count: 1 });
 				}
 				return acc;
 			}, [])
 
 			// Sort by tag name.
-			.sort((a, b) => a.license.localeCompare(b.license, 'ja'))
+			.sort((a, b) => a.item.localeCompare(b.item, 'ja'))
 
 			// Sort by count.
 			.sort((a, b) => b.count - a.count);

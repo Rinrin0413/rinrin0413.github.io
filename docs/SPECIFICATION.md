@@ -173,35 +173,34 @@ Returns a list of tags of valid(published and indexed) blog articles.
 
 ### Response Body
 
-`TagWithCount[]` ([`/src/lib/btpc/scripts/types.ts`](/src/lib/btpc/scripts/types.ts))
+`ItemWithCount[]` ([`/src/lib/btpc/scripts/types.ts`](/src/lib/btpc/scripts/types.ts))
 
 - `[]` (`object[]`) - The list of tags.
-	- `tag` (`string`) - The tag name.
+	- `item` (`string`) - The tag name.
 	- `count` (`number`) - The number of articles that have the tag.
-
 
 #### Example
 
 ```json
 [
   {
-    "tag": "svelte",
+    "item": "svelte",
     "count": 1
   },
   {
-    "tag": "web開発",
+    "item": "web開発",
     "count": 1
   },
   {
-    "tag": "ブログ",
+    "item": "ブログ",
     "count": 1
   },
   {
-    "tag": "年の抱負",
+    "item": "年の抱負",
     "count": 1
   },
   {
-    "tag": "年末年始",
+    "item": "年末年始",
     "count": 1
   }
 ]
@@ -270,10 +269,10 @@ Returns a list of tags of web tools.
 
 ### Response Body
 
-`TagWithCount[]` ([`/src/lib/btpc/scripts/types.ts`](/src/lib/btpc/scripts/types.ts))
+`ItemWithCount[]` ([`/src/lib/btpc/scripts/types.ts`](/src/lib/btpc/scripts/types.ts))
 
 - `[]` (`object[]`) - The list of tags.
-	- `tag` (`string`) - The tag name.
+	- `item` (`string`) - The tag name.
 	- `count` (`number`) - The number of tools that have the tag.
 
 
@@ -282,11 +281,11 @@ Returns a list of tags of web tools.
 ```json
 [
   {
-    "tag": "計算",
+    "item": "計算",
     "count": 1
   },
   {
-    "tag": "時間",
+    "item": "時間",
     "count": 1
   }
 ]
@@ -383,10 +382,10 @@ Returns a list of categories of artworks.
 
 ### Response Body
 
-<!-- `TagWithCount[]` ([`/src/lib/btpc/scripts/types.ts`](/src/lib/btpc/scripts/types.ts)) -->
+`ItemWithCount[]` ([`/src/lib/btpc/scripts/types.ts`](/src/lib/btpc/scripts/types.ts))
 
 - `[]` (`object[]`) - The list of categories.
-	- `category` (`string`) - The category name.
+	- `item` (`string`) - The category name.
 	- `count` (`number`) - The number of artworks that have the category.
 
 #### Example
@@ -394,11 +393,11 @@ Returns a list of categories of artworks.
 ```json
 [
   {
-    "category": "イラスト",
+    "item": "イラスト",
     "count": 9
   },
   {
-    "category": "楽曲",
+    "item": "楽曲",
     "count": 2
   }
 ]
@@ -410,10 +409,10 @@ Returns a list of tags of artworks.
 
 ### Response Body
 
-`TagWithCount[]` ([`/src/lib/btpc/scripts/types.ts`](/src/lib/btpc/scripts/types.ts))
+`ItemWithCount[]` ([`/src/lib/btpc/scripts/types.ts`](/src/lib/btpc/scripts/types.ts))
 
 - `[]` (`object[]`) - The list of tags.
-	- `tag` (`string`) - The tag name.
+	- `item` (`string`) - The tag name.
 	- `count` (`number`) - The number of artworks that have the tag.
 
 #### Example
@@ -421,15 +420,15 @@ Returns a list of tags of artworks.
 ```json
 [
   {
-    "tag": "16px",
+    "item": "16px",
     "count": 6
   },
   {
-    "tag": "ドット絵",
+    "item": "ドット絵",
     "count": 6
   },
   {
-    "tag": "練習曲",
+    "item": "練習曲",
     "count": 2
   }
 ]
@@ -441,10 +440,10 @@ Returns a list of licenses of artworks.
 
 ### Response Body
 
-<!-- `TagWithCount[]` ([`/src/lib/btpc/scripts/types.ts`](/src/lib/btpc/scripts/types.ts)) -->
+`ItemWithCount[]` ([`/src/lib/btpc/scripts/types.ts`](/src/lib/btpc/scripts/types.ts))
 
 - `[]` (`object[]`) - The list of licenses.
-	- `license` (`string`) - The license name.
+	- `item` (`string`) - The license name.
 	- `count` (`number`) - The number of artworks that have the license.
 
 #### Example
@@ -452,12 +451,12 @@ Returns a list of licenses of artworks.
 ```json
 [
   {
-    "license": "CC BY-SA 4.0",
+    "item": "CC BY-SA 4.0",
     "count": 6
   },
   {
-	"license": "CC BY 4.0",
-	"count": 1
+	  "item": "CC BY 4.0",
+	  "count": 1
   }
 ]
 ```
