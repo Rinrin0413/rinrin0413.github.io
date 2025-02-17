@@ -17,15 +17,20 @@
 	function toggle() {
 		isEnabled = !isEnabled;
 
-		const params = new URLSearchParams(location.search).getAll('t');
-		let tagsInParam = 0 < params.length ? params[0].split(',') : [];
-		if (isEnabled) {
-			tagsInParam.push(name);
-		} else {
-			tagsInParam = tagsInParam.filter((t) => t !== name);
-		}
+		const params = new URLSearchParams(location.search);
 
-		goto(path + (0 < tagsInParam.length ? '?t=' + tagsInParam.join(',') : ''));
+		let tags = params.getAll('t');
+		tags = 0 < tags.length ? tags[0].split(',') : [];
+		if (isEnabled) tags.push(name);
+		else tags = tags.filter((t) => t !== name);
+
+		params.delete('t');
+
+		goto(
+			`${path}?${0 < tags.length ? 't=' + tags.join(',') : ''}${
+				0 < Array.from(params).length ? '&' : ''
+			}${params.toString()}`
+		);
 	}
 </script>
 
