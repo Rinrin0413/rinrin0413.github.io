@@ -219,7 +219,8 @@ export async function fetchArtworks({ category, tags, license }: fetchArtworksOp
 	artworks.sort((a, b) => {
 		if (a.date !== null && b.date !== null)
 			return new Date(b.date).getTime() - new Date(a.date).getTime();
-		// unreachable
+		if (a.date === null && b.date !== null) return 1;
+		if (a.date !== null && b.date === null) return -1;
 		return 0;
 	});
 
