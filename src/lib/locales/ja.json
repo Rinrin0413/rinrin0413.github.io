@@ -39,7 +39,8 @@
 		"illustration": "イラスト",
 		"category": "カテゴリ",
 		"usedTools": "使用ツール",
-		"license": "ライセンス"
+		"license": "ライセンス",
+		"all": "すべて"
 	},
 	"home": {
 		"icon": "Rinrin.rs のアイコン",
@@ -215,7 +216,8 @@
 	},
 	"creations": {
 		"dateUnknown": "日付不明",
-		"backToIndex": "創作物一覧へ戻る"
+		"backToIndex": "創作物一覧へ戻る",
+		"noMatchingArtworksFound": "一致する物が見つかりませんでした。"
 	},
 	"privacy": {
 		"desc": "このプライバシーポリシーは、当サイトにおけるアクセス解析について示したものです:",

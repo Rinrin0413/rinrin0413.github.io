@@ -39,7 +39,8 @@
 		"illustration": "Illustration",
 		"category": "Category",
 		"usedTools": "Used tools",
-		"license": "License"
+		"license": "License",
+		"all": "All"
 	},
 	"home": {
 		"icon": "Rinrin.rs' avatar",
@@ -218,7 +219,8 @@
 	},
 	"creations": {
 		"dateUnknown": "Date unknown",
-		"backToIndex": "Back to artwork list"
+		"backToIndex": "Back to artwork list",
+		"noMatchingArtworksFound": "No matching artworks found."
 	},
 	"privacy": {
 		"desc": "This Privacy Policy outlines the use of access analytics on this website:",
