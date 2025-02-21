@@ -7,6 +7,7 @@
 
 	export let allTags: ItemWithCount[];
 	export let pickedTags: string[];
+	export let doesNotConvertToUpperCase = false;
 
 	let isOpened = true;
 </script>
@@ -24,6 +25,7 @@
 				isEnabled={pickedTags.includes(item)}
 				index={i}
 				negativeIndex={allTags.length - i}
+				forceUpperCase={!doesNotConvertToUpperCase}
 			/>
 		{/if}
 	{/each}

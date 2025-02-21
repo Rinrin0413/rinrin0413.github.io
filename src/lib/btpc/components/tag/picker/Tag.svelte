@@ -9,21 +9,28 @@
 	export let isEnabled: boolean;
 	export let index: number;
 	export let negativeIndex: number;
+	export let forceUpperCase: boolean;
 
 	const path = $page.url.pathname;
+	const upperCaseName = forceUpperCase ? name.toUpperCase() : name;
 
 	function toggle() {
 		isEnabled = !isEnabled;
 
-		const params = new URLSearchParams(location.search).getAll('t');
-		let tagsInParam = 0 < params.length ? params[0].split(',') : [];
-		if (isEnabled) {
-			tagsInParam.push(name);
-		} else {
-			tagsInParam = tagsInParam.filter((t) => t !== name);
-		}
+		const params = new URLSearchParams(location.search);
 
-		goto(path + (0 < tagsInParam.length ? '?t=' + tagsInParam.join(',') : ''));
+		let tags = params.getAll('t');
+		tags = 0 < tags.length ? tags[0].split(',') : [];
+		if (isEnabled) tags.push(name);
+		else tags = tags.filter((t) => t !== name);
+
+		params.delete('t');
+
+		goto(
+			`${path}?${0 < tags.length ? 't=' + tags.join(',') : ''}${
+				0 < Array.from(params).length ? '&' : ''
+			}${params.toString()}`
+		);
 	}
 </script>
 
@@ -33,9 +40,9 @@
 	out:scale={{ duration: 200, delay: negativeIndex * 16 }}
 >
 	<button on:click={toggle} class="tag-btn">
-		{name.toUpperCase()}({count})
+		{upperCaseName}({count})
 	</button><a href="{path}{isEnabled ? '' : '?t=' + name}" class="tag-btn"
-		>{name.toUpperCase()}({count})</a
+		>{upperCaseName}({count})</a
 	>
 </li>
 
