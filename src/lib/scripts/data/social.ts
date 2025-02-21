@@ -207,7 +207,7 @@ export const SOCIALS = [
 		service: 'pixiv',
 		name: 'Rinrin.rs',
 		url: 'https://pixiv.net/users/81973273',
-		icon: 'pixiv_logo_icon_r.webp'
+		icon: 'pixiv_icon_r.webp'
 	},
 	{
 		service: 'Qiita',
