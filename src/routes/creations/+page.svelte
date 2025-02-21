@@ -4,6 +4,7 @@
 	import ShareButton from '$lib/btpc/components/ShareButton.svelte';
 	import CategoryAndLicensePicker from '$lib/components/creations/CategoryAndLicensePicker.svelte';
 	import TagPicker from '$lib/btpc/components/tag/picker/TagPicker.svelte';
+	import ArtworkCard from '$lib/components/creations/ArtworkCard.svelte';
 	import ClearTagsButton from '$lib/btpc/components/tag/ClearTagsButton.svelte';
 
 	import type { PageData } from './$types';
@@ -43,16 +44,7 @@
 						transition:scale|global={{ duration: 300 }}
 						animate:flip={{ duration: 700, easing: expoOut }}
 					>
-						<a href="/creations/works/{meta.id}">
-							<img src="/images/creations/thumbnails/{meta.thumbnailImg}" alt="" /><br />
-						</a>
-						{meta.title}<br />
-						{meta.date}<br />
-						{meta.desc}<br />
-						タグ: {meta.tags}<br />
-						使用ツール: {meta.usedTools}<br />
-						ライセンス: {meta.license}<br />
-						カテゴリ: {meta.category}<br />
+						<ArtworkCard {meta} />
 					</li>
 				{/each}
 			</ul>
@@ -64,21 +56,23 @@
 </section>
 
 <style lang="scss">
+	.artworks {
+		margin: 0 auto;
+	}
+
 	ul {
 		display: flex;
-		margin: 0;
+		margin: 0 8px;
+		padding: 0;
+		list-style: none;
 		flex-wrap: wrap;
 		justify-content: center;
-		list-style: none;
+		align-items: center;
+		gap: 8px;
 	}
 
 	li {
-		max-width: 256px;
-		text-align: left;
-	}
-
-	img {
 		max-width: 100%;
-		max-height: 256px;
+		text-align: left;
 	}
 </style>
