@@ -26,3 +26,9 @@
 				alt={i === 0 ? `文字並に小さい${subjectName}のドット絵` : ''}
 			/>{/each}{/if} ←
 </p>
+
+<style lang="scss">
+	img {
+		vertical-align: middle;
+	}
+</style>
