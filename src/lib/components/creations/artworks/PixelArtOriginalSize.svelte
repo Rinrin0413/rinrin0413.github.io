@@ -30,5 +30,6 @@
 <style lang="scss">
 	img {
 		vertical-align: middle;
+		image-rendering: pixelated;
 	}
 </style>
