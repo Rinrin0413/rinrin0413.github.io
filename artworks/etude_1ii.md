@@ -2,7 +2,7 @@
 category: 楽曲
 title: 練習曲第1番「福音」 (第2稿)
 desc: 第1稿の理性的改訂版。
-tags: [練習曲, 福音, 第2稿, 短調]
+tags: [練習曲, 福音, 短調]
 date: 2021-11-10
 usedTools: [MuseScore 3]
 license: ©2021 Rinrin.rs All rights reserved.

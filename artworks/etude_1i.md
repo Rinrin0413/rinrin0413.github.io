@@ -2,7 +2,7 @@
 category: 楽曲
 title: 練習曲第1番「福音」ニ短調 (第1稿)
 desc: 中学生の頃に初めて作った曲。
-tags: [練習曲, 福音, 第1稿, 短調]
+tags: [練習曲, 福音, 短調]
 date: null
 usedTools: [Noteflight]
 license: ©2021 Rinrin All rights reserved

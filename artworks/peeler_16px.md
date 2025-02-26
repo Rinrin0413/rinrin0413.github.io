@@ -2,7 +2,7 @@
 category: イラスト
 title: ピーラー (16pxドット絵)
 desc: null
-tags: [ピーラー, ドット絵, 16px]
+tags: [ドット絵, 16px]
 date: 2020-06-04
 usedTools: [paint.net]
 license: null
