@@ -2,7 +2,7 @@
 category: イラスト
 title: カプセル剤 (16pxドット絵)
 desc: null
-tags: [カプセル剤, ドット絵, 16px]
+tags: [ドット絵, 16px]
 date: 2020-04-30
 usedTools: [paint.net]
 license: CC BY-SA 4.0

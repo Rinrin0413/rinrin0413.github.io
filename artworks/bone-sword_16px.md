@@ -2,7 +2,7 @@
 category: イラスト
 title: 骨の剣 (16pxドット絵)
 desc: null
-tags: [剣, ドット絵, 16px]
+tags: [ドット絵, 16px]
 date: 2019-10-25
 usedTools: [paint.net]
 license: null
