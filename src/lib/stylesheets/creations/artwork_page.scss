@@ -20,6 +20,10 @@ $thumbnail-img-height: calc($max-vh001 * 65);
 	object-fit: contain;
 }
 
+.pixelated {
+	image-rendering: pixelated;
+}
+
 $text-color-meta: #fffbee;
 
 h1 {

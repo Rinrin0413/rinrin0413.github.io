@@ -16,7 +16,12 @@
 	><article>
 		<div class="content">
 			<div class="thumbnail">
-				<img src="/images/creations/thumbnails/{meta.thumbnailImg}" alt="" loading="lazy" />
+				<img
+					src="/images/creations/thumbnails/{meta.thumbnailImg}"
+					alt=""
+					loading="lazy"
+					class:pixelated={meta.tags.includes('ドット絵')}
+				/>
 			</div>
 			<div class="meta">
 				<h2>{meta.title}</h2>

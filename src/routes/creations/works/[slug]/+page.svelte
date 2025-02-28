@@ -50,7 +50,12 @@
 
 {#if hasThumbnailImg}
 	<div class="thumbnail-wrapper">
-		<img src={thumbnailPath} alt="" class="thumbnail" />
+		<img
+			src={thumbnailPath}
+			alt=""
+			class="thumbnail"
+			class:pixelated={metadata.tags.includes('ドット絵')}
+		/>
 	</div>
 {:else}
 	<Space height="86px" />
