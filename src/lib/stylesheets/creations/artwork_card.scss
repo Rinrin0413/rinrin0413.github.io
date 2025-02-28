@@ -3,11 +3,19 @@
 article {
 	display: inline-block;
 	padding: 14px 22px;
+
+	&:hover img {
+		filter: brightness(0.9) drop-shadow(0 4px 4px #0000006a);
+		transform: translateY(-3px) scale(1.03);
+	}
+}
+
+.content {
+	max-width: 364px;
 }
 
 .meta {
 	padding: 0 !important;
-	max-width: 364px;
 }
 
 .thumbnail {
@@ -17,6 +25,7 @@ article {
 img {
 	max-width: 100%;
 	max-height: 224px;
+	transition: 0.2s;
 }
 
 h2 {

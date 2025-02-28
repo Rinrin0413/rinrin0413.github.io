@@ -14,25 +14,27 @@
 
 <a href="/creations/works/{meta.id}"
 	><article>
-		<div class="meta">
+		<div class="content">
 			<div class="thumbnail">
 				<img src="/images/creations/thumbnails/{meta.thumbnailImg}" alt="" loading="lazy" />
 			</div>
-			<h2>{meta.title}</h2>
-			{#if date !== null}
-				<time datetime={datePlus9h.toISOString()}>
-					{$dateI18n(date, { format: 'medium' })}
-				</time>
-			{/if}
-			{#if meta.desc}
-				<p>{meta.desc}</p>
-			{/if}
-			<ul>
-				<li class="category">{meta.category}</li>
-				{#each meta.tags as tag}
-					<li><span class="tag-btn">{tag.toUpperCase()}</span></li>
-				{/each}
-			</ul>
+			<div class="meta">
+				<h2>{meta.title}</h2>
+				{#if date !== null}
+					<time datetime={datePlus9h.toISOString()}>
+						{$dateI18n(date, { format: 'medium' })}
+					</time>
+				{/if}
+				{#if meta.desc}
+					<p>{meta.desc}</p>
+				{/if}
+				<ul>
+					<li class="category">{meta.category}</li>
+					{#each meta.tags as tag}
+						<li><span class="tag-btn">{tag.toUpperCase()}</span></li>
+					{/each}
+				</ul>
+			</div>
 		</div>
 	</article></a
 >
