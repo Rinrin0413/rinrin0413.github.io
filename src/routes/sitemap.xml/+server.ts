@@ -25,7 +25,7 @@ async function body() {
 	const tools = (await fetchTools())
 		.map(
 			(tool) => `<url>
-        <loc>${SITE_URL}/blog/articles/${tool.id}</loc>
+        <loc>${SITE_URL}/tools/${tool.id}</loc>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>`
