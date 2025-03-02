@@ -224,6 +224,15 @@
 		"textureAtlasPlayer": {
 			"title": "Texture Atlas Player",
 			"frames": "frames"
+		},
+		"musicPiece": {
+			"identifier": "Identifier",
+			"none": "None",
+			"nameEn": "English Name",
+			"nameJa": "Japanese Name",
+			"period": "Composition Period",
+			"formation": "Formation",
+			"originalPiece": "Original Piece"
 		}
 	},
 	"privacy": {

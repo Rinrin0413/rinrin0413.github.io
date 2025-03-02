@@ -221,6 +221,15 @@
 		"textureAtlasPlayer": {
 			"title": "テクスチャアトラス プレイヤー",
 			"frames": "フレーム"
+		},
+		"musicPiece": {
+			"identifier": "識別子",
+			"none": "なし",
+			"nameEn": "英語名",
+			"nameJa": "日本語名",
+			"period": "作曲期間",
+			"formation": "編成",
+			"originalPiece": "原曲"
 		}
 	},
 	"privacy": {

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { _ } from 'svelte-i18n';
 	export let metadata: {
 		op: string | null;
 		nameEn: string | null;
@@ -21,28 +22,28 @@
 
 <table>
 	<tr>
-		<td>識別子</td>
-		<td>{metadata.op ?? 'なし'}</td>
+		<td>{$_('creations.musicPiece.identifier')}</td>
+		<td>{metadata.op ?? $_('creations.musicPiece.none')}</td>
 	</tr>
 	<tr>
-		<td>英語名</td>
+		<td>{$_('creations.musicPiece.nameEn')}</td>
 		<td>{metadata.nameEn ?? ''}</td>
 	</tr>
 	<tr>
-		<td>日本語名</td>
+		<td>{$_('creations.musicPiece.nameJa')}</td>
 		<td>{metadata.nameJa ?? ''}</td>
 	</tr>
 	<tr>
-		<td>作曲期間</td>
+		<td>{$_('creations.musicPiece.period')}</td>
 		<td>{metadata.period ?? '?'}</td>
 	</tr>
 	<tr>
-		<td>編成</td>
+		<td>{$_('creations.musicPiece.formation')}</td>
 		<td>{metadata.formation ?? '?'}</td>
 	</tr>
 	{#if originalPiece !== null}
 		<tr>
-			<td>原曲</td>
+			<td>{$_('creations.musicPiece.originalPiece')}</td>
 			<td>
 				{#if originalPiece.url !== undefined}
 					<a href={originalPiece.url}>{originalPiece.name}</a>
