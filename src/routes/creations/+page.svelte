@@ -11,7 +11,7 @@
 	import { PAGE_FULL_TITLE_PART } from '$lib/scripts/variables';
 	import { scale } from 'svelte/transition';
 	import { flip } from 'svelte/animate';
-	import { expoOut } from 'svelte/easing';
+	import { CARD_ANIM_PARAMS } from '$lib/btpc/scripts/variables';
 	import { _ } from 'svelte-i18n';
 
 	export let data: PageData;
@@ -41,8 +41,8 @@
 			<ul>
 				{#each artworks as meta (meta.id)}
 					<li
-						transition:scale|global={{ duration: 300 }}
-						animate:flip={{ duration: 700, easing: expoOut }}
+						transition:scale|global={CARD_ANIM_PARAMS.transition}
+						animate:flip={CARD_ANIM_PARAMS.animate}
 					>
 						<ArtworkCard {meta} />
 					</li>
