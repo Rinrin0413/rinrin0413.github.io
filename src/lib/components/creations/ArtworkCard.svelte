@@ -36,7 +36,7 @@
 				<ul>
 					<li class="category">{meta.category}</li>
 					{#each meta.tags as tag}
-						<li><span class="tag-btn">{tag.toUpperCase()}</span></li>
+						<li><span class="tag-btn">{tag}</span></li>
 					{/each}
 				</ul>
 			</div>
