@@ -233,6 +233,10 @@
 			"period": "Composition Period",
 			"formation": "Formation",
 			"originalPiece": "Original Piece"
+		},
+		"musicScore": {
+			"dlScore": "Download the score",
+			"scorePreview": "The score preview"
 		}
 	},
 	"privacy": {

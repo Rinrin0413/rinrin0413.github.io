@@ -230,6 +230,10 @@
 			"period": "作曲期間",
 			"formation": "編成",
 			"originalPiece": "原曲"
+		},
+		"musicScore": {
+			"dlScore": "楽譜をダウンロード",
+			"scorePreview": "楽譜のプレビュー"
 		}
 	},
 	"privacy": {
