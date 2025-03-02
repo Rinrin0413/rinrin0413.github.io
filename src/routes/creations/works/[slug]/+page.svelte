@@ -10,6 +10,7 @@
 	import { SITE_URL, PAGE_FULL_TITLE_PART } from '$lib/scripts/variables';
 	import { _ } from 'svelte-i18n';
 	import { date as dateI18n } from 'svelte-i18n';
+	import { add9h } from '$lib/btpc/scripts/utils';
 
 	export let data: PageData;
 	let metadata = data.frontmatter;
@@ -17,10 +18,7 @@
 
 	$: date = metadata.date === null ? null : new Date(metadata.date);
 	let datePlus9h: Date | null;
-	$: {
-		datePlus9h = date === null ? null : new Date(date);
-		if (datePlus9h !== null) datePlus9h.setHours(datePlus9h.getHours() + 9);
-	}
+	$: datePlus9h = date === null ? null : add9h(date);
 
 	$: hasThumbnailImg = metadata.thumbnailImg !== null;
 	$: thumbnailPath = hasThumbnailImg

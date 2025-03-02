@@ -15,6 +15,7 @@
 	import { cubicOut } from 'svelte/easing';
 	import { scale } from 'svelte/transition';
 	import { date as dateI18n } from 'svelte-i18n';
+	import { add9h } from '$lib/btpc/scripts/utils';
 
 	export let data: PageData;
 	let metadata = data.frontmatter;
@@ -30,10 +31,7 @@
 
 	$: date = idToDate(slug);
 	let datePlus9h: Date;
-	$: {
-		datePlus9h = new Date(date);
-		datePlus9h.setHours(datePlus9h.getHours() + 9);
-	}
+	$: datePlus9h = add9h(date);
 
 	$: thumbnailImgFmt = data.thumbnailImgFmt;
 	$: hasThumbnailImg = thumbnailImgFmt !== null;
