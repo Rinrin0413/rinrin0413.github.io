@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { ArticleMetadata, ArticleThumbnailImgFmts } from '$lib/btpc/scripts/types';
 	import { idToDate } from '$lib/scripts/utils';
+	import { add9h } from '$lib/btpc/scripts/utils';
 	import { date as dateI18n } from 'svelte-i18n';
 
 	export let meta: ArticleMetadata;
@@ -14,10 +15,7 @@
 	const slug = meta.slug ?? 'unreachable';
 	const date = idToDate(slug);
 	let datePlus9h: Date;
-	$: {
-		datePlus9h = new Date(date);
-		datePlus9h.setHours(datePlus9h.getHours() + 9);
-	}
+	$: datePlus9h = add9h(date);
 
 	const thumbnailImgFmt = thumbnailImgFmts?.[slug] ?? null;
 	const hasThumbnailImg = thumbnailImgFmt !== null;

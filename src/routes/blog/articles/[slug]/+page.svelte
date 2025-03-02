@@ -3,18 +3,19 @@
 	import Space from '$lib/components/Space.svelte';
 	import ShareButton from '$lib/btpc/components/ShareButton.svelte';
 	import FeedButton from '$lib/components/blog/FeedButton.svelte';
-	import Article from './Article.svelte';
+	import ChildPageComponentRenderer from '$lib/btpc/components/ChildPageComponentRenderer.svelte';
 	import TagList from '$lib/btpc/components/tag/TagList.svelte';
+	import BackToIndexButton from '$lib/btpc/components/BackToIndexButton.svelte';
 	import ScrollToTop from './ScrollToTop.svelte';
 
 	import type { PageData } from './$types';
 	import { page } from '$app/stores';
 	import { SITE_URL, PAGE_FULL_TITLE_PART } from '$lib/scripts/variables';
 	import { parallaxStyle, idToDate } from '$lib/scripts/utils';
-	import { _ } from 'svelte-i18n';
 	import { cubicOut } from 'svelte/easing';
 	import { scale } from 'svelte/transition';
 	import { date as dateI18n } from 'svelte-i18n';
+	import { add9h } from '$lib/btpc/scripts/utils';
 
 	export let data: PageData;
 	let metadata = data.frontmatter;
@@ -30,10 +31,7 @@
 
 	$: date = idToDate(slug);
 	let datePlus9h: Date;
-	$: {
-		datePlus9h = new Date(date);
-		datePlus9h.setHours(datePlus9h.getHours() + 9);
-	}
+	$: datePlus9h = add9h(date);
 
 	$: thumbnailImgFmt = data.thumbnailImgFmt;
 	$: hasThumbnailImg = thumbnailImgFmt !== null;
@@ -104,17 +102,18 @@
 			but breaking the logic for the sake of intuitiveness.
 		-->
 		<div style={parallax(-0.06)}>
-			<ShareButton title={titleFull} isInArticle /><FeedButton />
+			<ShareButton title={titleFull} isInBtpcChildPage /><FeedButton />
 		</div>
 	</div>
-	<Article body={data.component} />
+	<ChildPageComponentRenderer component={data.component} />
 	<p><ShareButton title={titleFull} expanded /></p>
 	<TagList tags={metadata.tags} />
-	<div><a href="/blog" class="back-to-index">{$_('blog.backToIndex')}</a></div>
+	<BackToIndexButton category="blog" />
 </div>
 
 <ScrollToTop />
 
 <style lang="scss">
 	@use '$lib/stylesheets/blog/article_page';
+	@use '$lib/btpc/stylesheets/page_meta.scss';
 </style>

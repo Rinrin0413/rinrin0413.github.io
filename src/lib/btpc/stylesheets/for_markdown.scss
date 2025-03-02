@@ -1,7 +1,7 @@
 @use '$lib/stylesheets/variables/mixin' as *;
 @use '$lib/stylesheets/variables/color' as *;
 
-.article-body {
+.child-page-body {
 	$width-change-rate: calc(100vw - $breakpoint);
 	max-width: min(calc($width-change-rate * 0.3 + 768px), 1024px);
 	margin: 0 auto;
@@ -184,6 +184,7 @@
 				@include sp {
 					max-width: initial;
 					width: 100vw;
+					padding: 5px 8px;
 				}
 			}
 

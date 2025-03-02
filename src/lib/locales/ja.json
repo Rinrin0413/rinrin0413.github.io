@@ -36,7 +36,11 @@
 		"social": "ソーシャル",
 		"privacyPolicy": "プライバシーポリシー",
 		"acknowledgments": "謝辞",
-		"illustration": "イラスト"
+		"illustration": "イラスト",
+		"category": "カテゴリ",
+		"usedTools": "使用ツール",
+		"license": "ライセンス",
+		"all": "すべて"
 	},
 	"home": {
 		"icon": "Rinrin.rs のアイコン",
@@ -209,6 +213,28 @@
 			"問題等を発見された場合は ",
 			" にてお知らせいただけると幸いです。"
 		]
+	},
+	"creations": {
+		"dateUnknown": "日付不明",
+		"backToIndex": "創作物一覧へ戻る",
+		"noMatchingArtworksFound": "一致する物が見つかりませんでした。",
+		"textureAtlasPlayer": {
+			"title": "テクスチャアトラス プレイヤー",
+			"frames": "フレーム"
+		},
+		"musicPiece": {
+			"identifier": "識別子",
+			"none": "なし",
+			"nameEn": "英語名",
+			"nameJa": "日本語名",
+			"period": "作曲期間",
+			"formation": "編成",
+			"originalPiece": "原曲"
+		},
+		"musicScore": {
+			"dlScore": "楽譜をダウンロード",
+			"scorePreview": "楽譜のプレビュー"
+		}
 	},
 	"privacy": {
 		"desc": "このプライバシーポリシーは、当サイトにおけるアクセス解析について示したものです:",

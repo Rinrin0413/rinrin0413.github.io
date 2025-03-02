@@ -19,7 +19,7 @@
 	} from '$lib/scripts/variables';
 
 	// NProgress
-	const PROGRESS_BAR_EXCLUDED_PATHS = ['/blog', '/tools'];
+	const PROGRESS_BAR_EXCLUDED_PATHS = ['/blog', '/tools', '/creations'];
 	$: {
 		if ($navigating !== null && !PROGRESS_BAR_EXCLUDED_PATHS.includes($page.url.pathname))
 			NProgress.start();

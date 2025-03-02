@@ -1,5 +1,5 @@
 import type { PageLoad } from './$types';
-import type { ToolMetadata, TagWithCount } from '$lib/btpc/scripts/types';
+import type { ToolMetadata, ItemWithCount } from '$lib/btpc/scripts/types';
 import { getTags } from '$lib/btpc/scripts/utils';
 
 export const load: PageLoad = async ({
@@ -8,7 +8,7 @@ export const load: PageLoad = async ({
 }): Promise<{
 	tools: ToolMetadata[];
 	tags: string[];
-	allTags: TagWithCount[];
+	allTags: ItemWithCount[];
 }> => {
 	const tools = await (await fetch('/api/tools?' + url.searchParams)).json();
 	const tags = getTags(url);
