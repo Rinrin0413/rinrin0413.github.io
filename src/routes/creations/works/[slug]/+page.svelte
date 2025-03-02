@@ -5,11 +5,13 @@
 	import OtherInfo from './OtherInfo.svelte';
 	import ChildPageComponentRenderer from '$lib/btpc/components/ChildPageComponentRenderer.svelte';
 	import License from './License.svelte';
+	import BackToIndexButton from '$lib/btpc/components/BackToIndexButton.svelte';
 
 	import type { PageData } from './$types';
 	import { SITE_URL, PAGE_FULL_TITLE_PART } from '$lib/scripts/variables';
 	import { _ } from 'svelte-i18n';
 	import { date as dateI18n } from 'svelte-i18n';
+	import { add9h } from '$lib/btpc/scripts/utils';
 
 	export let data: PageData;
 	let metadata = data.frontmatter;
@@ -17,10 +19,7 @@
 
 	$: date = metadata.date === null ? null : new Date(metadata.date);
 	let datePlus9h: Date | null;
-	$: {
-		datePlus9h = date === null ? null : new Date(date);
-		if (datePlus9h !== null) datePlus9h.setHours(datePlus9h.getHours() + 9);
-	}
+	$: datePlus9h = date === null ? null : add9h(date);
 
 	$: hasThumbnailImg = metadata.thumbnailImg !== null;
 	$: thumbnailPath = hasThumbnailImg
@@ -74,9 +73,10 @@
 	<ChildPageComponentRenderer component={data.component} />
 	<p><ShareButton title={titleFull} expanded /></p>
 	<License license={metadata.license} />
-	<div><a href="/creations" class="back-to-index">{$_('creations.backToIndex')}</a></div>
+	<BackToIndexButton category="creations" />
 </div>
 
 <style lang="scss">
 	@use '$lib/stylesheets/creations/artwork_page.scss';
+	@use '$lib/btpc/stylesheets/page_meta.scss';
 </style>

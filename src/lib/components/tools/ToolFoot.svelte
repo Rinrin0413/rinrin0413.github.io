@@ -3,7 +3,7 @@
 	import TagList from '$lib/btpc/components/tag/TagList.svelte';
 	import ShareButton from '$lib/btpc/components/ShareButton.svelte';
 	import Notes from '$lib/components/tools/Notes.svelte';
-	import BackToIndexButton from '$lib/components/tools/BackToIndexButton.svelte';
+	import BackToIndexButton from '$lib/btpc/components/BackToIndexButton.svelte';
 
 	import type { ToolMetadata } from '$lib/btpc/scripts/types';
 
@@ -14,4 +14,4 @@
 <TagList tags={METADATA.tags} />
 <ShareButton title={'Web Tools - ' + METADATA.title} expanded />
 <Notes />
-<BackToIndexButton />
+<BackToIndexButton category="tools" />
