@@ -3,6 +3,7 @@
 
 	import { onMount } from 'svelte';
 	import { browser } from '$app/environment';
+	import { _ } from 'svelte-i18n';
 
 	/**
 	 * e.g.:
@@ -63,7 +64,7 @@
 	bind:this={elem}
 />
 
-<p>{currentFrame + 1} / {frameCount} フレーム</p>
+<p>{currentFrame + 1} / {frameCount} {$_('creations.textureAtlasPlayer.frames')}</p>
 
 <input type="range" bind:value={currentFrame} min="0" max={frameCount - 1} />
 
@@ -78,7 +79,7 @@
 	</button>
 </div>
 
-<p class="title">テクスチャアトラス プレイヤー</p>
+<p class="title">{$_('creations.textureAtlasPlayer.title')}</p>
 
 <Hr />
 

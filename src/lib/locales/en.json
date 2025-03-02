@@ -220,7 +220,24 @@
 	"creations": {
 		"dateUnknown": "Date unknown",
 		"backToIndex": "Back to artwork list",
-		"noMatchingArtworksFound": "No matching artworks found."
+		"noMatchingArtworksFound": "No matching artworks found.",
+		"textureAtlasPlayer": {
+			"title": "Texture Atlas Player",
+			"frames": "frames"
+		},
+		"musicPiece": {
+			"identifier": "Identifier",
+			"none": "None",
+			"nameEn": "English Name",
+			"nameJa": "Japanese Name",
+			"period": "Composition Period",
+			"formation": "Formation",
+			"originalPiece": "Original Piece"
+		},
+		"musicScore": {
+			"dlScore": "Download the score",
+			"scorePreview": "The score preview"
+		}
 	},
 	"privacy": {
 		"desc": "This Privacy Policy outlines the use of access analytics on this website:",

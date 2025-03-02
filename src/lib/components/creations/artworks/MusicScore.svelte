@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { browser } from '$app/environment';
+	import { _ } from 'svelte-i18n';
 
 	export let filename: string;
 
@@ -12,15 +13,14 @@
 
 <p>
 	<a href={path} target="_blank" rel="noopener noreferrer" class="no-after-icn"
-		><img
-			src="/images/digital-agency_designsystem-assets/icon/download_fill.svg"
-			alt=""
-		/>楽譜をダウンロード (PDF)</a
+		><img src="/images/digital-agency_designsystem-assets/icon/download_fill.svg" alt="" />{$_(
+			'creations.musicScore.dlScore'
+		)} (PDF)</a
 	>
 </p>
 
 {#if isPdfViewerEnabled}
-	<object type="application/pdf" data={path} title="楽譜のプレビュー" />
+	<object type="application/pdf" data={path} title={$_('creations.musicScore.scorePreview')} />
 {/if}
 
 <style lang="scss">
