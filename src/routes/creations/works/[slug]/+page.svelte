@@ -77,4 +77,5 @@
 
 <style lang="scss">
 	@use '$lib/stylesheets/creations/artwork_page.scss';
+	@use '$lib/btpc/stylesheets/page_meta.scss';
 </style>

@@ -1,5 +1,4 @@
 @use '$lib/stylesheets/variables/dimension' as *;
-@use '$lib/stylesheets/variables/mixin' as *;
 
 $thumbnail-img-height: calc($max-vh001 * 65);
 
@@ -22,46 +21,6 @@ $thumbnail-img-height: calc($max-vh001 * 65);
 
 .pixelated {
 	image-rendering: pixelated;
-}
-
-$text-color-meta: #fffbee;
-
-h1 {
-	@include kaisei-decol;
-	display: inline-block;
-	max-width: 90%;
-	padding: 6px 18px;
-	margin: 0 auto;
-	font-size: 30px;
-	color: $text-color-meta;
-	background-color: #0000005a;
-	border-bottom: 7px solid #0000003a;
-	border-radius: 3px;
-	$blur: blur(20px);
-	backdrop-filter: $blur;
-	-webkit-backdrop-filter: $blur;
-
-	@include sp {
-		font-size: 24px;
-	}
-}
-
-time {
-	display: inline-block;
-	padding: 3px 18px;
-	margin: 0 auto;
-	margin-top: 16px;
-	margin-bottom: 13px;
-	color: $text-color-meta;
-	font-size: 16px;
-	background-color: #0000008a;
-	border-radius: 1px;
-	$border-light: 2px solid #ffffff30;
-	$border-dark: 2px solid #00000017;
-	border-top: $border-light;
-	border-left: $border-light;
-	border-bottom: $border-dark;
-	border-right: $border-dark;
 }
 
 .back-to-index {

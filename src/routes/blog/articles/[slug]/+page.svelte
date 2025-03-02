@@ -115,4 +115,5 @@
 
 <style lang="scss">
 	@use '$lib/stylesheets/blog/article_page';
+	@use '$lib/btpc/stylesheets/page_meta.scss';
 </style>
