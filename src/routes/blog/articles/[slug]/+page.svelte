@@ -5,13 +5,13 @@
 	import FeedButton from '$lib/components/blog/FeedButton.svelte';
 	import ChildPageComponentRenderer from '$lib/btpc/components/ChildPageComponentRenderer.svelte';
 	import TagList from '$lib/btpc/components/tag/TagList.svelte';
+	import BackToIndexButton from '$lib/btpc/components/BackToIndexButton.svelte';
 	import ScrollToTop from './ScrollToTop.svelte';
 
 	import type { PageData } from './$types';
 	import { page } from '$app/stores';
 	import { SITE_URL, PAGE_FULL_TITLE_PART } from '$lib/scripts/variables';
 	import { parallaxStyle, idToDate } from '$lib/scripts/utils';
-	import { _ } from 'svelte-i18n';
 	import { cubicOut } from 'svelte/easing';
 	import { scale } from 'svelte/transition';
 	import { date as dateI18n } from 'svelte-i18n';
@@ -108,7 +108,7 @@
 	<ChildPageComponentRenderer component={data.component} />
 	<p><ShareButton title={titleFull} expanded /></p>
 	<TagList tags={metadata.tags} />
-	<div><a href="/blog" class="back-to-index">{$_('blog.backToIndex')}</a></div>
+	<BackToIndexButton category="blog" />
 </div>
 
 <ScrollToTop />

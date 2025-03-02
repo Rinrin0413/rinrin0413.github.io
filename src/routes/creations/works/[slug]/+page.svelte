@@ -5,6 +5,7 @@
 	import OtherInfo from './OtherInfo.svelte';
 	import ChildPageComponentRenderer from '$lib/btpc/components/ChildPageComponentRenderer.svelte';
 	import License from './License.svelte';
+	import BackToIndexButton from '$lib/btpc/components/BackToIndexButton.svelte';
 
 	import type { PageData } from './$types';
 	import { SITE_URL, PAGE_FULL_TITLE_PART } from '$lib/scripts/variables';
@@ -72,7 +73,7 @@
 	<ChildPageComponentRenderer component={data.component} />
 	<p><ShareButton title={titleFull} expanded /></p>
 	<License license={metadata.license} />
-	<div><a href="/creations" class="back-to-index">{$_('creations.backToIndex')}</a></div>
+	<BackToIndexButton category="creations" />
 </div>
 
 <style lang="scss">
