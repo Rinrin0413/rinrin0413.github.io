@@ -217,7 +217,11 @@
 	"creations": {
 		"dateUnknown": "日付不明",
 		"backToIndex": "創作物一覧へ戻る",
-		"noMatchingArtworksFound": "一致する物が見つかりませんでした。"
+		"noMatchingArtworksFound": "一致する物が見つかりませんでした。",
+		"textureAtlasPlayer": {
+			"title": "テクスチャアトラス プレイヤー",
+			"frames": "フレーム"
+		}
 	},
 	"privacy": {
 		"desc": "このプライバシーポリシーは、当サイトにおけるアクセス解析について示したものです:",
