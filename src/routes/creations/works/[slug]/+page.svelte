@@ -22,14 +22,14 @@
 	$: datePlus9h = date === null ? null : add9h(date);
 
 	$: hasThumbnailImg = metadata.thumbnailImg !== null;
-	$: thumbnailPath = hasThumbnailImg
+	$: thumbnailImgPath = hasThumbnailImg
 		? '/images/creations/thumbnails/' + metadata.thumbnailImg
 		: null;
 
 	$: title = metadata.title;
 	$: titleFull = PAGE_FULL_TITLE_PART + title;
 
-	$: absThumbnailImgPath = SITE_URL + thumbnailPath;
+	$: absThumbnailImgPath = SITE_URL + thumbnailImgPath;
 </script>
 
 <HeadMetadata
@@ -50,7 +50,7 @@
 {#if hasThumbnailImg}
 	<div class="thumbnail-wrapper">
 		<img
-			src={thumbnailPath}
+			src={thumbnailImgPath}
 			alt=""
 			class="thumbnail"
 			class:pixelated={metadata.tags.includes('ドット絵')}
