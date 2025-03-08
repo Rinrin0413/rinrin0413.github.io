@@ -2,11 +2,12 @@
 	import Title2 from '$lib/components/Title2.svelte';
 	import Tag from './Tag.svelte';
 
-	import type { TagWithCount } from '$lib/btpc/scripts/types';
+	import type { ItemWithCount } from '$lib/btpc/scripts/types';
 	import { _ } from 'svelte-i18n';
 
-	export let allTags: TagWithCount[];
+	export let allTags: ItemWithCount[];
 	export let pickedTags: string[];
+	export let doesNotConvertToUpperCase = false;
 
 	let isOpened = true;
 </script>
@@ -16,14 +17,15 @@
 </button>
 
 <ul>
-	{#each allTags as { tag, count }, i}
+	{#each allTags as { item, count }, i}
 		{#if isOpened}
 			<Tag
-				name={tag}
+				name={item}
 				{count}
-				isEnabled={pickedTags.includes(tag)}
+				isEnabled={pickedTags.includes(item)}
 				index={i}
 				negativeIndex={allTags.length - i}
+				forceUpperCase={!doesNotConvertToUpperCase}
 			/>
 		{/if}
 	{/each}

@@ -1,0 +1,24 @@
+@use '$lib/stylesheets/variables/dimension' as *;
+
+$thumbnail-img-height: calc($max-vh001 * 65);
+
+.thumbnail-wrapper {
+	width: 100%;
+	height: $thumbnail-img-height;
+	position: relative;
+	display: flex;
+	margin-bottom: 16px;
+	justify-content: center;
+	align-items: center;
+}
+
+.thumbnail {
+	position: relative;
+	width: min(95vw, calc($max-vh001 * 95));
+	height: $thumbnail-img-height;
+	object-fit: contain;
+}
+
+.pixelated {
+	image-rendering: pixelated;
+}
