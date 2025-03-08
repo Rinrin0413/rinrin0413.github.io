@@ -296,13 +296,13 @@ export const SOCIALS = [
 	{
 		service: 'Xbox',
 		name: 'killkillkill172',
-		url: 'https://account.xbox.com/profile?gamertag=killkillkill172',
+		url: 'https://xbox.com/play/user/killkillkill172',
 		icon: ICONS.xbox
 	},
 	{
 		service: 'Xbox(sub)',
 		name: 'Rinrin0413',
-		url: 'https://account.xbox.com/profile?gamertag=Rinrin0413',
+		url: 'https://xbox.com/play/user/Rinrin0413',
 		icon: ICONS.xbox
 	},
 	{
