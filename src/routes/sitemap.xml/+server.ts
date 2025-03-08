@@ -17,7 +17,7 @@ async function body() {
 		.map(
 			(article) => `<url>
         <loc>${SITE_URL}/blog/articles/${article.slug}</loc>
-        <changefreq>weekly</changefreq>
+        <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>`
 		)
@@ -26,7 +26,7 @@ async function body() {
 		.map(
 			(tool) => `<url>
         <loc>${SITE_URL}/tools/${tool.id}</loc>
-        <changefreq>weekly</changefreq>
+        <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>`
 		)
@@ -35,8 +35,8 @@ async function body() {
 		.map(
 			(artwork) => `<url>
         <loc>${SITE_URL}/creations/works/${artwork.id}</loc>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
     </url>`
 		)
 		.join('\n    ');
@@ -56,39 +56,39 @@ async function body() {
     <url>
         <loc>${SITE_URL}/blog</loc>
         <changefreq>weekly</changefreq>
-        <priority>1.0</priority>
+        <priority>0.9</priority>
     </url>
 	${articles}
     <url>
         <loc>${SITE_URL}/tools</loc>
         <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
+        <priority>0.5</priority>
     </url>
     ${tools}
     <url>
         <loc>${SITE_URL}/projects</loc>
-        <changefreq>weekly</changefreq>
-        <priority>0.5</priority>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
     </url>
     <url>
         <loc>${SITE_URL}/creations</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
     </url>
     ${artworks}
     <url>
         <loc>${SITE_URL}/social</loc>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
     </url>
     <url>
         <loc>${SITE_URL}/acknowledgments</loc>
         <changefreq>monthly</changefreq>
-        <priority>0.4</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>${SITE_URL}/privacy</loc>
-        <changefreq>yearly</changefreq>
+        <changefreq>monthly</changefreq>
         <priority>0.2</priority>
     </url>
 </urlset>`;
