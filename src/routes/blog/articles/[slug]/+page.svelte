@@ -21,10 +21,13 @@
 	let metadata = data.frontmatter;
 	$: metadata = data.frontmatter;
 
-	$: paths = $page.url.pathname.split('/');
-	$: pathnameLength = paths.length;
-	$: isPathnameEndsWithSlash = paths[pathnameLength - 1] === '';
-	$: slug = paths[pathnameLength - (isPathnameEndsWithSlash ? 2 : 1)];
+	let slug: string;
+	$: {
+		const paths = $page.url.pathname.split('/');
+		const pathnameLength = paths.length;
+		const pathnameIsEndsWithSlash = paths[pathnameLength - 1] === '';
+		slug = paths[pathnameLength - (pathnameIsEndsWithSlash ? 2 : 1)];
+	}
 
 	let scrollY: number;
 	$: parallax = parallaxStyle(scrollY);
