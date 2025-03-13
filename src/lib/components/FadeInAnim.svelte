@@ -1,7 +1,6 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
+	import { onMount, onDestroy } from 'svelte';
 	import { browser } from '$app/environment';
-	import { addClassOnVisible } from '$lib/scripts/utils';
 
 	/** `slide-up` | `slide-left` | `scale-up-origin-top` */
 	export let type: string;
@@ -16,15 +15,33 @@
 	export let playForced = false;
 
 	let container: HTMLElement;
+	let observer: IntersectionObserver;
 
-	onMount(fadeIn);
-	if (browser) window.addEventListener('scroll', fadeIn);
+	onMount(() => {
+		if (browser) {
+			observer = new IntersectionObserver(handleIntersect, {
+				threshold: evenLittleBit ? 0 : 0.25
+			});
+			observer.observe(container);
+		}
+	});
+
+	onDestroy(() => {
+		if (observer !== undefined) observer.disconnect();
+	});
 
 	$: if (playForced && container !== undefined) container.classList.add(type);
 
-	/** **＊ Must be called in the browser environment.** */
-	function fadeIn() {
-		addClassOnVisible(container, type, { delay, evenLittleBit });
+	function handleIntersect(entries: IntersectionObserverEntry[]) {
+		entries.forEach((entry) => {
+			if (entry.isIntersecting) {
+				const target = entry.target;
+				setTimeout(() => {
+					target.classList.add(type);
+				}, delay);
+				observer.unobserve(target);
+			}
+		});
 	}
 </script>
 
