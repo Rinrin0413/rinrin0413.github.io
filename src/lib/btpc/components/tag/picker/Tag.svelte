@@ -76,6 +76,8 @@
 	}
 
 	a {
+		display: inline-block;
+
 		@media (scripting: enabled) {
 			display: none;
 		}
