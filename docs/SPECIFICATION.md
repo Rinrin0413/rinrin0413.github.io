@@ -123,7 +123,7 @@ Returns a list of blog articles.
 	- `indexed` (`boolean`) - Whether the article is indexed.
 	- `title` (`string`) - The title of the article.
 	- `desc` (`string | null`) - The description of the article.
-	- `tags` (`string[] | null`) - The list of tags of the article.
+	- `tags` (`string[]`) - The list of tags of the article.
 	- `slug` (`string?`) - The slug of the article. Its type is an optional string but it always exists.
 
 #### Example
@@ -244,7 +244,7 @@ Returns a list of web tools.
 - `[]` (`object[]`) - The list of web tools.
 	- `title` (`string`) - The title of the tool.
 	- `desc` (`string | null`) - The description of the tool.
-	- `tags` (`string[] | null`) - The list of tags of the tool.
+	- `tags` (`string[]`) - The list of tags of the tool.
 	- `id` (`string?`) - The ID of the tool. Its type is an optional string but it always exists.
 
 #### Example

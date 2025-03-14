@@ -2,10 +2,10 @@
 	import { _ } from 'svelte-i18n';
 	import { page } from '$app/stores';
 
-	export let tags: string[] | null;
+	export let tags: string[];
 </script>
 
-{#if tags !== null && 0 < tags.length}
+{#if 0 < tags.length}
 	<div>
 		<div class="tags">
 			<span>{$_('w.tags')}</span>

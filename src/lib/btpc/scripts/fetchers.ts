@@ -31,8 +31,7 @@ export async function fetchArticles({ limit, tags, isOnlyIndexed }: fetchArticle
 		// Filter by tags.
 		if (tags)
 			for (const tag of tags) {
-				const articleTags = a.tags ?? [];
-				if (!articleTags.includes(tag.toLowerCase())) return false;
+				if (!a.tags.includes(tag.toLowerCase())) return false;
 			}
 
 		// Filter by indexed.
@@ -84,7 +83,7 @@ export async function fetchArticleTags() {
 		)
 			// Filter by published,indexed
 			// and convert to list of tags.
-			.flatMap((a) => (a.isValid && a.tags) || [])
+			.flatMap((a) => (a.isValid ? a.tags : []))
 
 			// Count tags.
 			.reduce((acc: ItemWithCount[], tag) => {
