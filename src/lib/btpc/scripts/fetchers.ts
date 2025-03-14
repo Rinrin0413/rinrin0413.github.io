@@ -23,7 +23,7 @@ export async function fetchArticles({ limit, tags, isOnlyIndexed }: fetchArticle
 		if (a.tags !== null) a.tags = a.tags.map((t) => t.toLowerCase());
 	});
 
-	// Filtering
+	// Filterings
 	articles = articles.filter((a) => {
 		// Filter by published.
 		if (!a.published) return false;
