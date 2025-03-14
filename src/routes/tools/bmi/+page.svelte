@@ -1,5 +1,5 @@
 <script context="module" lang="ts">
-	export const METADATA = {
+	export const metadata = {
 		title: 'BMI計算機',
 		desc: '体重と身長からボディマス指数(BMI)を計算します。',
 		tags: ['計算', 'bmi']
@@ -82,8 +82,8 @@
 	const EMPTY = '-';
 </script>
 
-<ToolHead {METADATA} />
-<p>{METADATA.desc}</p>
+<ToolHead {metadata} />
+<p>{metadata.desc}</p>
 
 <div>
 	<div class="input">
@@ -124,7 +124,7 @@
 	</div>
 </div>
 
-<ToolFooter {METADATA} />
+<ToolFooter {metadata} />
 
 <!-- svelte-ignore css-unused-selector -->
 <style lang="scss">

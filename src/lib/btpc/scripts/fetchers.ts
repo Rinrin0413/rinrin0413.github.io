@@ -128,10 +128,10 @@ export async function fetchTools(tags?: string[]) {
 	// Fetch all the tools.
 	let tools = await Promise.all(
 		Object.entries(import.meta.glob('/src/routes/tools/*/*.svelte')).map(async ([path, module]) => {
-			const { METADATA } = (await module()) as { METADATA: ToolMetadata };
+			const { metadata } = (await module()) as { metadata: ToolMetadata };
 			// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-			METADATA.id = path.split('/')[4];
-			return METADATA;
+			metadata.id = path.split('/')[4];
+			return metadata;
 		})
 	);
 
@@ -163,8 +163,8 @@ export async function fetchToolTags() {
 		(
 			await Promise.all(
 				Object.values(import.meta.glob('/src/routes/tools/*/*.svelte')).map(async (module) => {
-					const { METADATA } = (await module()) as { METADATA: ToolMetadata };
-					return METADATA.tags;
+					const { metadata } = (await module()) as { metadata: ToolMetadata };
+					return metadata.tags;
 				})
 			)
 		)

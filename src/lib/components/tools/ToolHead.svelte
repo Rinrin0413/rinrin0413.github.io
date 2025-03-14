@@ -4,9 +4,9 @@
 
 	import type { ToolMetadata } from '$lib/btpc/scripts/types';
 
-	export let METADATA: ToolMetadata;
+	export let metadata: ToolMetadata;
 </script>
 
-<HeadMetadata title={'Web Tools - ' + METADATA.title} desc={METADATA.desc ?? ''} ogType="article" />
+<HeadMetadata title={'Web Tools - ' + metadata.title} desc={metadata.desc ?? ''} ogType="article" />
 
-<Title text={METADATA.title} atPageTop />
+<Title text={metadata.title} atPageTop />
