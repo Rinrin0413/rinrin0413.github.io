@@ -10,8 +10,8 @@ import type {
 export async function fetchArticles({ limit, tags, isOnlyIndexed }: fetchArticlesOptions = {}) {
 	// Fetch all articles.
 	let articles = await Promise.all(
-		Object.entries(import.meta.glob('/articles/*.md')).map(async ([path, importArticle]) => {
-			const { metadata } = (await importArticle()) as { metadata: ArticleMetadata };
+		Object.entries(import.meta.glob('/articles/*.md')).map(async ([path, module]) => {
+			const { metadata } = (await module()) as { metadata: ArticleMetadata };
 			// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
 			metadata.slug = path.split('/').pop()!.split('.')[0];
 			return metadata;
@@ -72,8 +72,8 @@ export async function fetchArticleTags() {
 	const tags = // Fetch all articles.
 		(
 			await Promise.all(
-				Object.values(import.meta.glob('/articles/*.md')).map(async (importArticle) => {
-					const { metadata } = (await importArticle()) as { metadata: ArticleMetadata };
+				Object.values(import.meta.glob('/articles/*.md')).map(async (module) => {
+					const { metadata } = (await module()) as { metadata: ArticleMetadata };
 					return {
 						isValid: metadata.indexed && metadata.published,
 						tags: metadata.tags
