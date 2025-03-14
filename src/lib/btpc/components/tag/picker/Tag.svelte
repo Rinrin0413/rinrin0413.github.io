@@ -29,7 +29,8 @@
 		goto(
 			`${path}?${0 < tags.length ? 't=' + tags.join(',') : ''}${
 				0 < Array.from(params).length ? '&' : ''
-			}${params.toString()}`
+			}${params.toString()}`,
+			{ noScroll: true }
 		);
 	}
 </script>
@@ -75,6 +76,8 @@
 	}
 
 	a {
+		display: inline-block;
+
 		@media (scripting: enabled) {
 			display: none;
 		}

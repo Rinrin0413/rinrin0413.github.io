@@ -21,10 +21,13 @@
 	let metadata = data.frontmatter;
 	$: metadata = data.frontmatter;
 
-	$: paths = $page.url.pathname.split('/');
-	$: pathnameLength = paths.length;
-	$: isPathnameEndsWithSlash = paths[pathnameLength - 1] === '';
-	$: slug = paths[pathnameLength - (isPathnameEndsWithSlash ? 2 : 1)];
+	let slug: string;
+	$: {
+		const paths = $page.url.pathname.split('/');
+		const pathnameLength = paths.length;
+		const pathnameIsEndsWithSlash = paths[pathnameLength - 1] === '';
+		slug = paths[pathnameLength - (pathnameIsEndsWithSlash ? 2 : 1)];
+	}
 
 	let scrollY: number;
 	$: parallax = parallaxStyle(scrollY);
@@ -35,7 +38,9 @@
 
 	$: thumbnailImgFmt = data.thumbnailImgFmt;
 	$: hasThumbnailImg = thumbnailImgFmt !== null;
-	$: thumbnailPath = hasThumbnailImg ? `/images/blog/thumbnails/${slug}.` + thumbnailImgFmt : null;
+	$: thumbnailImgPath = hasThumbnailImg
+		? `/images/blog/thumbnails/${slug}.` + thumbnailImgFmt
+		: null;
 
 	function introAnim(index = 0) {
 		return {
@@ -48,7 +53,7 @@
 	$: title = metadata.title;
 	$: titleFull = PAGE_FULL_TITLE_PART + title;
 
-	$: absThumbnailPath = SITE_URL + thumbnailPath;
+	$: absThumbnailImgPath = SITE_URL + thumbnailImgPath;
 </script>
 
 <HeadMetadata
@@ -61,8 +66,8 @@
 
 <svelte:head>
 	{#if hasThumbnailImg}
-		<meta property="og:image" content={absThumbnailPath} />
-		<meta name="thumbnail" content={absThumbnailPath} />
+		<meta property="og:image" content={absThumbnailImgPath} />
+		<meta name="thumbnail" content={absThumbnailImgPath} />
 	{/if}
 	{#if !metadata.indexed}
 		<meta name="robots" content="noindex" />
@@ -73,7 +78,7 @@
 
 {#if hasThumbnailImg}
 	<img
-		src={thumbnailPath}
+		src={thumbnailImgPath}
 		alt=""
 		class="back-thumbnail"
 		style={parallax(0.25)}
@@ -81,7 +86,7 @@
 	/>
 
 	<div class="thumbnail-wrapper" in:scale|global={introAnim()}>
-		<img src={thumbnailPath} alt="" class="thumbnail" style={parallax(-0.25)} />
+		<img src={thumbnailImgPath} alt="" class="thumbnail" style={parallax(-0.25)} />
 	</div>
 {:else}
 	<Space height="86px" />

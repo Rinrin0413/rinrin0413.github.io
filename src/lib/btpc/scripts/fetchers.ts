@@ -10,8 +10,8 @@ import type {
 export async function fetchArticles({ limit, tags, isOnlyIndexed }: fetchArticlesOptions = {}) {
 	// Fetch all articles.
 	let articles = await Promise.all(
-		Object.entries(import.meta.glob('/articles/*.md')).map(async ([path, importArticle]) => {
-			const { metadata } = (await importArticle()) as { metadata: ArticleMetadata };
+		Object.entries(import.meta.glob('/articles/*.md')).map(async ([path, module]) => {
+			const { metadata } = (await module()) as { metadata: ArticleMetadata };
 			// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
 			metadata.slug = path.split('/').pop()!.split('.')[0];
 			return metadata;
@@ -23,7 +23,7 @@ export async function fetchArticles({ limit, tags, isOnlyIndexed }: fetchArticle
 		if (a.tags !== null) a.tags = a.tags.map((t) => t.toLowerCase());
 	});
 
-	// Filtering
+	// Filterings
 	articles = articles.filter((a) => {
 		// Filter by published.
 		if (!a.published) return false;
@@ -31,8 +31,7 @@ export async function fetchArticles({ limit, tags, isOnlyIndexed }: fetchArticle
 		// Filter by tags.
 		if (tags)
 			for (const tag of tags) {
-				const articleTags = a.tags ?? [];
-				if (!articleTags.includes(tag.toLowerCase())) return false;
+				if (!a.tags.includes(tag.toLowerCase())) return false;
 			}
 
 		// Filter by indexed.
@@ -73,8 +72,8 @@ export async function fetchArticleTags() {
 	const tags = // Fetch all articles.
 		(
 			await Promise.all(
-				Object.values(import.meta.glob('/articles/*.md')).map(async (importArticle) => {
-					const { metadata } = (await importArticle()) as { metadata: ArticleMetadata };
+				Object.values(import.meta.glob('/articles/*.md')).map(async (module) => {
+					const { metadata } = (await module()) as { metadata: ArticleMetadata };
 					return {
 						isValid: metadata.indexed && metadata.published,
 						tags: metadata.tags
@@ -84,7 +83,7 @@ export async function fetchArticleTags() {
 		)
 			// Filter by published,indexed
 			// and convert to list of tags.
-			.flatMap((a) => (a.isValid && a.tags) || [])
+			.flatMap((a) => (a.isValid ? a.tags : []))
 
 			// Count tags.
 			.reduce((acc: ItemWithCount[], tag) => {
@@ -128,10 +127,10 @@ export async function fetchTools(tags?: string[]) {
 	// Fetch all the tools.
 	let tools = await Promise.all(
 		Object.entries(import.meta.glob('/src/routes/tools/*/*.svelte')).map(async ([path, module]) => {
-			const { METADATA } = (await module()) as { METADATA: ToolMetadata };
+			const { metadata } = (await module()) as { metadata: ToolMetadata };
 			// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-			METADATA.id = path.split('/')[4];
-			return METADATA;
+			metadata.id = path.split('/')[4];
+			return metadata;
 		})
 	);
 
@@ -163,8 +162,8 @@ export async function fetchToolTags() {
 		(
 			await Promise.all(
 				Object.values(import.meta.glob('/src/routes/tools/*/*.svelte')).map(async (module) => {
-					const { METADATA } = (await module()) as { METADATA: ToolMetadata };
-					return METADATA.tags;
+					const { metadata } = (await module()) as { metadata: ToolMetadata };
+					return metadata.tags;
 				})
 			)
 		)

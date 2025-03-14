@@ -34,7 +34,7 @@
 	export let doesNotSetThumbnailImg = false;
 
 	$: fullTitle = PAGE_FULL_TITLE_PART + title;
-	const absThumbnailPath = SITE_URL + LOGO_180PX_OXIPNG_REL_PATH;
+	const absThumbnailImgPath = SITE_URL + LOGO_180PX_OXIPNG_REL_PATH;
 </script>
 
 <svelte:head>
@@ -42,7 +42,7 @@
 	<meta name="title" content={fullTitle} />
 	<meta name="description" content={desc} />
 	{#if !doesNotSetThumbnailImg}
-		<meta name="thumbnail" content={absThumbnailPath} />
+		<meta name="thumbnail" content={absThumbnailImgPath} />
 	{/if}
 
 	<meta property="og:title" content={title} />
@@ -51,7 +51,7 @@
 	<meta property="og:type" content={ogType} />
 	<meta name="twitter:card" content={ogCardType} />
 	{#if !doesNotSetThumbnailImg}
-		<meta property="og:image" content={absThumbnailPath} />
+		<meta property="og:image" content={absThumbnailImgPath} />
 	{/if}
 
 	<link rel="canonical" href={canonicalUrl} />

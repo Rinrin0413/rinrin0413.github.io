@@ -7,11 +7,11 @@
 
 	import type { ToolMetadata } from '$lib/btpc/scripts/types';
 
-	export let METADATA: ToolMetadata;
+	export let metadata: ToolMetadata;
 </script>
 
 <Hr />
-<TagList tags={METADATA.tags} />
-<ShareButton title={'Web Tools - ' + METADATA.title} expanded />
+<TagList tags={metadata.tags} />
+<ShareButton title={'Web Tools - ' + metadata.title} expanded />
 <Notes />
 <BackToIndexButton category="tools" />

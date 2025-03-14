@@ -11,7 +11,7 @@ export interface ArticleMetadata {
 	indexed: boolean;
 	title: string;
 	desc: string | null;
-	tags: string[] | null;
+	tags: string[];
 	slug?: string;
 }
 

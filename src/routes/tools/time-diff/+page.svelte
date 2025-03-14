@@ -1,5 +1,5 @@
 <script context="module" lang="ts">
-	export const METADATA: ToolMetadata = {
+	export const metadata: ToolMetadata = {
 		title: '時間差計算機',
 		desc: '2つの時刻間の経過時間を計算します。',
 		tags: ['計算', '時間']
@@ -48,8 +48,8 @@
 	const EMPTY = '-';
 </script>
 
-<ToolHead {METADATA} />
-<p>{METADATA.desc}<br />終了時刻が開始時刻よりも早い場合は、終了時刻に1日を加算して計算します。</p>
+<ToolHead {metadata} />
+<p>{metadata.desc}<br />終了時刻が開始時刻よりも早い場合は、終了時刻に1日を加算して計算します。</p>
 
 <div>
 	<div class="input">
@@ -111,7 +111,7 @@
 	</div>
 </div>
 
-<ToolFooter {METADATA} />
+<ToolFooter {metadata} />
 
 <!-- svelte-ignore css-unused-selector -->
 <style lang="scss">

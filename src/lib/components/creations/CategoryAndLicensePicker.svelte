@@ -19,7 +19,7 @@
 		if (value === 'all') params.delete(paramName);
 		else params.set(paramName, value);
 
-		goto(`${$page.url.pathname}?${params.toString()}`);
+		goto(`${$page.url.pathname}?${params.toString()}`, { noScroll: true });
 	}
 </script>
 
