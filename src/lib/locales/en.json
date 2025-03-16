@@ -26,7 +26,6 @@
 		"sitemap": "Site Map",
 		"otherLinks": "Other links",
 		"bgWallpaper": "Background wallpaper",
-		"effectiveDate": "Effective date",
 		"home": "Home",
 		"profile": "Profile",
 		"blog": "Blog",
@@ -40,7 +39,9 @@
 		"category": "Category",
 		"usedTools": "Used tools",
 		"license": "License",
-		"all": "All"
+		"all": "All",
+		"establishedOn": "Established on {date}",
+		"revisedOn": "Revised on {date}"
 	},
 	"home": {
 		"icon": "Rinrin.rs' avatar",
@@ -243,7 +244,14 @@
 		"desc": "This Privacy Policy outlines the use of access analytics on this website:",
 		"analytics": [
 			"On this website, we use ",
-			" provided by Cloudflare Inc. to analyze the behavior of our website visitors. Cloudflare Web Analytics does not use any client-side state, such as cookies or localStorage, to collect usage metrics. We also don’t “fingerprint” individuals via their IP address, User Agent string, or any other data for the purpose of displaying analytics. This analytics are non-invasive and respect the privacy of your visitors."
+			" provided by Cloudflare, Inc. to analyze the behavior of visitors to this website. Cloudflare Web Analytics does not use any client-side state, such as cookies or localStorage, to collect usage metrics. We also don’t “fingerprint” individuals via your IP address, User Agent string, or any other data for the purpose of displaying analytics. These analytics are non-invasive and respect your privacy.",
+			"However, some pages on this website contain embedded content from",
+			" (",
+			") and",
+			" (",
+			"). As a result, each service may collect access information. For more details, please refer to Noteflight's \"",
+			"\" page and SoundCloud's \"",
+			"\" page."
 		]
 	},
 	"copy": {
