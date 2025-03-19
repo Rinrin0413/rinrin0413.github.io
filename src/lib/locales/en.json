@@ -64,41 +64,41 @@
 	"error": { "pageNotFound": ["404 not like this!", "this page does not exist :("] },
 	"activities": {
 		"programming": {
-			"desc": "I started around the 13year-old. I do not learn very broadly.",
-			"rust": "Currently my favorite language🦀 Also my handle contains the .rs extension. ",
+			"desc": "I began programming when I was about 13, but my knowledge is limited to a few areas.",
+			"rust": "This is my favorite language 🦀. My online handle \"Rinrin.rs\" also includes the \".rs\" extension.",
 			"graphics": {
-				"desc": "When i was developing shader packs for Minecraft Bedrock Edition,\ncome to like this field.",
-				"langsToUse": "Languages to use:",
-				"mayNotUse": "I may not use it anymore"
+				"desc": "After developing shader packs for Minecraft Bedrock Edition, I became interested in this field.",
+				"langsToUse": "The languages I use:",
+				"mayNotUse": "no longer use maybe"
 			},
 			"webdev": [
-				"I basically don't want to do this because stylesheets are very stressful. I use SCSS of ",
-				" because \"using normal CSS\" breaks my sprit (SAAS requires indentation rules so i don't use it).\ni.e. i don't have much motivation for web development. So i have never used a framework other than ",
-				". This home page was made with it.",
+				"Writing stylesheets is very stressful so I basically don't wanna work on this. I usually use SCSS from ",
+				" (since SASS's indentation rules don't suit me). In other words, I don't have much motivation for web development. So I have never used a framework other than ",
+				". This website was built with it.",
 				"and I HATE MOBILE SAFARI."
 			],
 			"git": [
-				"I learned the basics but i can never remember options, etc.\nI am quite sloppy about managing branches in my personal repositories. I basically use ",
+				"I have learned the basics of Git, but I often forget the command-line options. I am quite sloppy about managing branches in my personal repositories. I mainly use ",
 				" for remote repository hosting."
 			]
 		},
 		"game": {
-			"desc": "Games like RPGs are not listed here.",
-			"tetrio": "TETR.IO is modern yet familiar online stacker in the same genre as certain Russian certain puzzle game.\nI am not very good at this game but fun to play it once in a while.",
+			"desc": "Single-player RPGs are not listed here.",
+			"tetrio": "TETR.IO is a modern yet familiar online stacker in the same genre as certain Russian puzzle games. I am not very good at this game but it is fun to play once in a while.",
 			"mc": [
-				"It is one of the games i have been playing for the longest period.\nI no longer play Wii U Edition and Bedrock Edition, I currently play the Java Edition. On the Wii U Edition,\nI was building frequently. Since i started Bedrock Edition,\nI have been developing add-ons and shader packs but i got sick of Bedrock Edition because of the repeated ",
-				"'s shit. Currently, I am developing a shader pack for Java Edition at my own pace."
+				"Minecraft is one of the games I have played for the longest time. I no longer play the Wii U Edition or Bedrock Edition; I currently play the Java Edition. In the Wii U Edition, I used to build many structures. After moving to the Bedrock Edition, I started developing add-ons and shader packs. However, I got sick of it because of ",
+				"'s repeated nonsense. Currently, I am developing shader packs for the Java Edition at my own pace."
 			],
-			"sky": "I was born in the Season of Assembly. But I am not logging in much lately. I might go if you invite me."
+			"sky": "I was born in the Season of Assembly, but I am not logging in much lately. I might log in if you invite me."
 		},
 		"music": {
-			"listen": "I like piano music in the classical era and romantic era, and i especially listen to Franz Liszt's pieces. Recently, i started to listen to not only piano music but also orchestral compositions and classical song.",
-			"play": "I play classical music on the piano but not very good at it.\nAnd i quickly get tired of piano practice, so i'm often satisfied with playing only some of my favorite melodies.",
+			"listen": "I like piano music from the Classical and Romantic musical eras, and I am especially drawn to Franz Liszt's pieces. In recent years, I have started listening to not only piano music but also orchestral pieces and lieder (classical art songs).",
+			"play": "I play classical music on the piano but I am not very good at it. I quickly get tired of piano practice so I am often satisfied with just playing some of my favorite melodies.",
 			"compose": [
-				"I compose classical like music and arrange/transcribe classical music. Sometimes compose songs like popular music.\nBut i don't know anything about code progression, etc. because i hardly consider theory. Basically i compose in ",
-				"."
+				"I compose classical-style music and arrange/transcribe classical music. Occasionally, I compose pieces like popular music. However, I am still learning musical theories. I mainly use ",
+				" for composing, arranging, and transcribing."
 			],
-			"sing": "I don't usually sing because i'm not very familiar with songs that have lyrics. The songs i can sing are Pretty Cure songs, GHIBLI songs that i bought on CD and listened to in the past, and other songs that i was made to sing at compulsory education school, etc.."
+			"sing": "I don't usually sing much because I am not very familiar with songs with lyrics. The songs I can sing are Pretty Cure songs, GHIBLI songs that I bought on CD and listened to in the past, and other songs that I had to sing during compulsory education, etc."
 		}
 	},
 	"chronicle": {

@@ -14,9 +14,10 @@
 			<br />
 			<h2 class="c5">Graphics</h2>
 			<p>
-				{$_('activities.programming.graphics.desc')}<br />{$_(
-					'activities.programming.graphics.langsToUse'
-				)}<br />
+				{$_('activities.programming.graphics.desc')}
+			</p>
+			<p>
+				{$_('activities.programming.graphics.langsToUse')}<br />
 				<a href="https://learn.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl"
 					>HLSL</a
 				>({$_('activities.programming.graphics.mayNotUse')}),
