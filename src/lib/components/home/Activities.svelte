@@ -6,7 +6,7 @@
 <div class="container">
 	<FadeInAnim type="scale-up-origin-top">
 		<div id="act-prog">
-			<h1 id="acivity-programming" class="c5">Programming</h1>
+			<h1 id="activity-programming" class="c5">Programming</h1>
 			<p>{$_('activities.programming.desc')}</p>
 			<br />
 			<h2 class="c5"><a href="https://rust-lang.org">Rust</a></h2>
@@ -14,9 +14,10 @@
 			<br />
 			<h2 class="c5">Graphics</h2>
 			<p>
-				{$_('activities.programming.graphics.desc')}<br />{$_(
-					'activities.programming.graphics.langsToUse'
-				)}<br />
+				{$_('activities.programming.graphics.desc')}
+			</p>
+			<p>
+				{$_('activities.programming.graphics.langsToUse')}<br />
 				<a href="https://learn.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl"
 					>HLSL</a
 				>({$_('activities.programming.graphics.mayNotUse')}),
@@ -43,7 +44,7 @@
 	</FadeInAnim>
 	<FadeInAnim type="scale-up-origin-top">
 		<div id="act-game">
-			<h1 id="acivity-game" class="c5">Game</h1>
+			<h1 id="activity-game" class="c5">Game</h1>
 			<p>{$_('activities.game.desc')}</p>
 			<br />
 			<h2><a href="https://tetr.io">TETR.IO</a></h2>
@@ -58,7 +59,7 @@
 	</FadeInAnim>
 	<FadeInAnim type="scale-up-origin-top">
 		<div id="act-music">
-			<h1 id="acivity-music" class="c5">Music</h1>
+			<h1 id="activity-music" class="c5">Music</h1>
 			<p class="subtitle">|♫|♪♬♪|♪♫:|❙♪|❙</p>
 			<br />
 			<h2>Listen</h2>

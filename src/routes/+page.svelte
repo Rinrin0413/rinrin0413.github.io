@@ -43,9 +43,9 @@
 	<Title text="Major Activities" />
 	<p>{$_('home.whatIDo')}</p>
 	<ul id="activity-list">
-		<li><a href="#acivity-programming">Programming</a></li>
-		<li><a href="#acivity-game">Game</a></li>
-		<li><a href="#acivity-music">Music</a></li>
+		<li><a href="#activity-programming">Programming</a></li>
+		<li><a href="#activity-game">Game</a></li>
+		<li><a href="#activity-music">Music</a></li>
 	</ul>
 	<Activities />
 </section>
