@@ -12,17 +12,21 @@ label.with-colon::after {
 	content: ':';
 }
 
+$border: 2px solid #00000070;
+$input-margin: 2px 3px;
+$input-border-radius: 6px;
+
 input {
 	font-family: inherit;
 	color: inherit;
 
 	&[type='number'],
 	&[type='time'] {
-		margin: 2px 3px;
+		margin: $input-margin;
 		padding: 2px;
-		background-color: #ffffff80;
-		border: 2px solid #00000070;
-		border-radius: 6px;
+		background-color: #ffffff50;
+		border: $border;
+		border-radius: $input-border-radius;
 		cursor: pointer;
 		@include source-code-pro;
 	}
@@ -30,6 +34,18 @@ input {
 	&[type='number'] {
 		text-align: right;
 	}
+}
+
+select {
+	font-family: inherit;
+	color: $txt-dark;
+	font-size: 16px;
+	margin: $input-margin;
+	padding: 1.5px 3px;
+	background-color: #ffffff80;
+	border: $border;
+	border-radius: $input-border-radius;
+	cursor: pointer;
 }
 
 .result {
