@@ -11,6 +11,10 @@ export const CHRONICLE: {
 		events: [null]
 	},
 	{
+		year: 2013,
+		events: [4]
+	},
+	{
 		year: 2015,
 		events: [6]
 	},
