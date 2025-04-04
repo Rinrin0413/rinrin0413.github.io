@@ -37,15 +37,9 @@ input {
 }
 
 select {
-	font-family: inherit;
-	color: $txt-dark;
 	font-size: 16px;
 	margin: $input-margin;
 	padding: 1.5px 3px;
-	background-color: #ffffff80;
-	border: $border;
-	border-radius: $input-border-radius;
-	cursor: pointer;
 }
 
 .result {
