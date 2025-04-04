@@ -71,6 +71,7 @@
 
 	select {
 		font-family: inherit;
+		color: $txt-dark;
 		font-size: 14px;
 		padding: 1px 3px;
 		background-color: #ffffff80;
