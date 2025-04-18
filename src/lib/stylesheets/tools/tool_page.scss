@@ -40,6 +40,12 @@ input {
 	&[type='number'] {
 		text-align: right;
 	}
+
+	&[type='color'] {
+		background: none;
+		border: none;
+		border-radius: 0;
+	}
 }
 
 select {
