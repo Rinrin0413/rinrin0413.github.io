@@ -1,7 +1,7 @@
 <script context="module" lang="ts">
 	export const metadata = {
 		title: '色混合機',
-		desc: '複数の色を平均値で混合します。',
+		desc: '複数の色を混合します。',
 		tags: ['色']
 	};
 </script>
@@ -14,16 +14,18 @@
 	import { scale } from 'svelte/transition';
 	import { flip } from 'svelte/animate';
 
+	const METHODS = ['中間混色', '加法混色', '減法混色'] as const;
+
+	type Method = (typeof METHODS)[number];
 	type Triplet = [number, number, number];
 
+	let method: Method = METHODS[0];
 	let colorCodes = ['#ff0000', '#0000ff'];
 
 	let colors: Triplet[];
 	$: colors = colorCodes.map(colorCodeToRgb);
 	let mixedColor: Triplet;
-	$: mixedColor = colors
-		.reduce((acc, cur) => [acc[0] + cur[0], acc[1] + cur[1], acc[2] + cur[2]], [0, 0, 0])
-		.map((c) => Math.round(c / colors.length)) as Triplet;
+	$: mixedColor = mixColors(colors, method);
 
 	$: [colorCode, rgb255, rgb1, cmyk, hsl, hsv] = format(mixedColor);
 
@@ -40,6 +42,44 @@
 			];
 
 		return [NaN, NaN, NaN];
+	}
+
+	/** Mixes the colors using the specified method. */
+	function mixColors(colors: Triplet[], method: Method) {
+		let result: number[];
+		switch (method) {
+			case '中間混色': {
+				result = sumColors(colors).map((c) => Math.round(c / colors.length));
+				break;
+			}
+			case '加法混色': {
+				result = sumColors(colors).map((v) => Math.min(v, 255));
+				break;
+			}
+			case '減法混色': {
+				result = colors
+					.reduce(
+						(acc, cur) => [
+							acc[0] * (cur[0] / 255),
+							acc[1] * (cur[1] / 255),
+							acc[2] * (cur[2] / 255)
+						],
+						[255, 255, 255]
+					)
+					.map((v) => Math.round(v));
+				break;
+			}
+		}
+		if (colors.length === 0) result = [NaN, NaN, NaN];
+		return result as Triplet;
+	}
+
+	/** Sums the given RGB colors (0~255). */
+	function sumColors(colors: Triplet[]) {
+		return colors.reduce(
+			(acc, cur) => [acc[0] + cur[0], acc[1] + cur[1], acc[2] + cur[2]],
+			[0, 0, 0]
+		);
 	}
 
 	/** Generates color strings from the mixed color array. */
@@ -201,6 +241,11 @@
 
 <div>
 	<div class="input">
+		<select bind:value={method}>
+			{#each METHODS as m}
+				<option value={m}>{m}</option>
+			{/each}
+		</select>
 		<ul class="colors">
 			{#each colorCodes as color, i (i)}
 				<li
@@ -246,12 +291,12 @@
 				<span>{colorCode}</span>
 			</li>
 			<li>
-				<CopyButton text={rgb255} />RGB (0~255):
+				<CopyButton text={rgb255} />RGB:
 				<div style="background-color: {rgb255};" />
 				<span>{rgb255}</span>
 			</li>
 			<li>
-				<CopyButton text={rgb1} />RGB (0~1):
+				<CopyButton text={rgb1} />RGB(比率):
 				<div
 					style="background-color: rgb({rgb1
 						.replace(/rgb\(|\)/g, '')
