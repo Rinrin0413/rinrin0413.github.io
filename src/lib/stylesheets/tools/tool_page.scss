@@ -20,6 +20,7 @@ input {
 	font-family: inherit;
 	color: inherit;
 
+	&[type='text'],
 	&[type='number'],
 	&[type='time'] {
 		margin: $input-margin;
@@ -27,8 +28,13 @@ input {
 		background-color: #ffffff50;
 		border: $border;
 		border-radius: $input-border-radius;
-		cursor: pointer;
 		@include source-code-pro;
+	}
+
+	&[type='number'],
+	&[type='time'],
+	&[type='color'] {
+		cursor: pointer;
 	}
 
 	&[type='number'] {
