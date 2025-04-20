@@ -12,20 +12,23 @@ label.with-colon::after {
 	content: ':';
 }
 
-$border: 2px solid #00000070;
 $input-margin: 2px 3px;
-$input-border-radius: 6px;
 
 input {
+	$bg-col: #ffffff50;
+	$border: 2px solid #00000070;
+	$input-border-radius: 6px;
+
 	font-family: inherit;
 	color: inherit;
+	accent-color: $txt-primary;
 
 	&[type='text'],
 	&[type='number'],
 	&[type='time'] {
 		margin: $input-margin;
 		padding: 2px;
-		background-color: #ffffff50;
+		background-color: $bg-col;
 		border: $border;
 		border-radius: $input-border-radius;
 		@include source-code-pro;
@@ -33,7 +36,8 @@ input {
 
 	&[type='number'],
 	&[type='time'],
-	&[type='color'] {
+	&[type='color'],
+	&[type='checkbox'] {
 		cursor: pointer;
 	}
 
@@ -45,6 +49,44 @@ input {
 		background: none;
 		border: none;
 		border-radius: 0;
+	}
+
+	&[type='checkbox'] {
+		$size: 26px;
+		$padding: 2px;
+		$transition-duration: 0.2s;
+		width: $size * 2;
+		height: $size;
+		margin: 0 8px;
+		position: relative;
+		background-color: $bg-col;
+		border: $border;
+		border-radius: $size;
+		vertical-align: middle;
+		box-sizing: content-box;
+		appearance: none;
+		transition: $transition-duration;
+
+		&::before {
+			content: '';
+			width: $size - $padding * 2;
+			aspect-ratio: 1;
+			position: absolute;
+			top: $padding;
+			left: $padding;
+			background-color: white;
+			border-radius: 50%;
+			filter: drop-shadow(0 0 2px black);
+			transition: $transition-duration ease-in;
+		}
+
+		&:checked {
+			background-color: rgba($txt-primary, 0.85);
+
+			&::before {
+				translate: $size;
+			}
+		}
 	}
 }
 
@@ -58,13 +100,17 @@ select {
 	margin: 24px auto;
 	margin-bottom: 32px;
 
+	.card,
 	ul {
-		display: inline-block;
 		margin: 0 auto;
 		padding: 6px 12px;
 		background-color: #ffffff50;
 		border: 1px solid #ffffff50;
 		border-radius: 4px;
+	}
+
+	ul {
+		display: inline-block;
 		list-style: none;
 	}
 
