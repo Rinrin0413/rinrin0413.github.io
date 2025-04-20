@@ -87,6 +87,14 @@ select {
 			cursor: pointer;
 			@include source-code-pro;
 		}
+
+		hr {
+			display: block;
+			width: 100%;
+			margin: 2px 0;
+			border: 1px solid $txt-primary;
+			opacity: 0.6;
+		}
 	}
 }
 
