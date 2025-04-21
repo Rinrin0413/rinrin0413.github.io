@@ -91,10 +91,10 @@
 		return (
 			equation
 				.toString()
-				// Replace "x => " and "f=>" with "y = ".
-				.replace(/^(?:x => |f=>)/, 'y = ')
-				// Rename the variables from "f" to "x".
-				.replace(/(?<![A-Za-z])f(?![A-Za-z])/g, 'x')
+				// Replace "x => " and "[a-z]=>" with "y = ".
+				.replace(/^(?:x => |[a-z]=>)/, 'y = ')
+				// Rename the minified variables to "x".
+				.replace(/(?<![A-Za-z])[a-z](?![A-Za-z])/g, 'x')
 				// Restore the omitted zeros before a decimal point.
 				.replace(/(?<![0-9A-Za-z])\.(?=\d)/g, '0.')
 				// Add spaces around operators.
