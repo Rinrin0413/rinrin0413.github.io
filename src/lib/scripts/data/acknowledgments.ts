@@ -139,6 +139,18 @@ export const ACKNOWLEDGMENTS: {
 		...LICENSES.svelteLangTools
 	},
 	{
+		name: 'Chart.js',
+		url: 'https://chartjs.org',
+		license: 'MIT',
+		licenseUrl: 'https://github.com/chartjs/Chart.js/blob/master/LICENSE.md'
+	},
+	{
+		name: 'svelte-chartjs',
+		url: 'https://saurav.tech/mdbsvelte/?path=/story/charts--examples',
+		license: 'MIT',
+		licenseUrl: 'https://github.com/SauravKanchan/svelte-chartjs/blob/master/LICENSE'
+	},
+	{
 		name: 'Prettier',
 		url: 'https://prettier.io',
 		license: 'MIT',
