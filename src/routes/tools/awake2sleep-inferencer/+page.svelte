@@ -91,6 +91,23 @@
 			]
 		};
 	}
+
+	function fmtFunctionEquation(equation: (x: number) => number) {
+		return (
+			equation
+				.toString()
+				// Replace "x => " and "f=>" with "y = ".
+				.replace(/^(?:x => |f=>)/, 'y = ')
+				// Rename the variables from "f" to "x".
+				.replace(/(?<![A-Za-z])f(?![A-Za-z])/g, 'x')
+				// Restore the omitted zeros before a decimal point.
+				.replace(/(?<![0-9A-Za-z])\.(?=\d)/g, '0.')
+				// Add spaces around operators.
+				// But ignore if the hyphen is a part of a exponential notation like `60369131017537305e-21`.
+				// Maybe the division operator `/` will not be included in the regression equation.
+				.replace(/ ?(?<!e)(\*\*|[+\-*]) ?/g, ' $1 ')
+		);
+	}
 </script>
 
 <ToolHead {metadata} />
@@ -153,7 +170,7 @@
 				<li>覚醒時間の標準偏差: {DATASET.stats.awake.stdDeviation}時間</li>
 				<li>睡眠時間の標準偏差: {DATASET.stats.sleep.stdDeviation}時間</li>
 				{#each DATASET.regrModels as model}
-					<li>{model.name}式: {model.f.toString().replace('x =>', 'y =')}</li>
+					<li>{model.name}式: {fmtFunctionEquation(model.f)}</li>
 					<li>{model.name}の決定係数: {model.r2}</li>
 				{/each}
 			</ul>
