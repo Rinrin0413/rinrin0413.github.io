@@ -16,7 +16,6 @@
 
 	import type { ChartOptions, ChartData, Point } from 'chart.js';
 	import { Chart, registerables } from 'chart.js';
-	import { browser } from '$app/environment';
 
 	// prettier-ignore
 	const DATASET: {
@@ -39,11 +38,6 @@
 		}
 	};
 
-	let renderGraph = false;
-	let chartWidth = 7;
-
-	if (renderGraph && browser) chartWidth = window.innerWidth < 700 ? 4 : 7;
-
 	Chart.register(...registerables);
 
 	let awakeDuration = parseFloat(DATASET.stats.awake.mean.toFixed(1));
@@ -56,6 +50,7 @@
 		{} as Record<string, number>
 	);
 
+	let renderGraph = false;
 	let chartData: ChartData<'line', (number | Point)[], unknown>;
 	$: if (renderGraph && chartData !== undefined)
 		chartData.datasets[DATASET.regrModels.length].data[0] = {
@@ -140,7 +135,12 @@
 		</ul>
 		{#if renderGraph}
 			<div class="chart card">
-				<Line data={chartData} options={CHART_OPTIONS} width={chartWidth} height={4} />
+				<Line
+					data={chartData}
+					options={CHART_OPTIONS}
+					width={window.innerWidth < 700 ? 3 : 7}
+					height={4}
+				/>
 			</div>
 		{/if}
 		<p>
