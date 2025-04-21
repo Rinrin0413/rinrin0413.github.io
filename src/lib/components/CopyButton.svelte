@@ -47,5 +47,6 @@
 		height: $size;
 		aspect-ratio: 17 / 20;
 		user-select: none;
+		vertical-align: middle;
 	}
 </style>
