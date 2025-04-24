@@ -40,7 +40,8 @@
 
 	Chart.register(...registerables);
 
-	let awakeDuration = parseFloat(DATASET.stats.awake.mean.toFixed(1));
+	// The default value should be a multiple of 0.5 because the `<input>` element and graph steps are 0.5.
+	let awakeDuration = Math.round(DATASET.stats.awake.mean * 2) * 0.5;
 
 	$: sleepDurations = DATASET.regrModels.reduce(
 		(acc, model) => {
