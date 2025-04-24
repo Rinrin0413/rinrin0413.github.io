@@ -34,11 +34,15 @@ input {
 		@include source-code-pro;
 	}
 
-	&[type='number'],
 	&[type='time'],
 	&[type='color'],
 	&[type='checkbox'] {
 		cursor: pointer;
+	}
+
+	&[type='text'],
+	&[type='number'] {
+		cursor: text;
 	}
 
 	&[type='number'] {
