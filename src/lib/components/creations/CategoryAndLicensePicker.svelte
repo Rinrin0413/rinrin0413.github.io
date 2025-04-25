@@ -68,14 +68,4 @@
 	span::after {
 		content: ': ';
 	}
-
-	select {
-		font-family: inherit;
-		font-size: 14px;
-		padding: 1px 3px;
-		background-color: #ffffff80;
-		border: 2px solid #00000070;
-		border-radius: 6px;
-		cursor: pointer;
-	}
 </style>

@@ -12,59 +12,139 @@ label.with-colon::after {
 	content: ':';
 }
 
+$input-margin: 2px 3px;
+
 input {
+	$bg-col: #ffffff50;
+	$border: 2px solid #00000070;
+	$input-border-radius: 6px;
+
 	font-family: inherit;
 	color: inherit;
+	accent-color: $txt-primary;
 
+	&[type='text'],
 	&[type='number'],
 	&[type='time'] {
-		margin: 2px 3px;
+		margin: $input-margin;
 		padding: 2px;
-		background-color: #ffffff80;
-		border: 2px solid #00000070;
-		border-radius: 6px;
-		cursor: pointer;
+		background-color: $bg-col;
+		border: $border;
+		border-radius: $input-border-radius;
 		@include source-code-pro;
+	}
+
+	&[type='time'],
+	&[type='color'],
+	&[type='checkbox'] {
+		cursor: pointer;
+	}
+
+	&[type='text'],
+	&[type='number'] {
+		cursor: text;
 	}
 
 	&[type='number'] {
 		text-align: right;
 	}
+
+	&[type='color'] {
+		background: none;
+		border: none;
+		border-radius: 0;
+	}
+
+	&[type='checkbox'] {
+		$size: 26px;
+		$padding: 2px;
+		$transition-duration: 0.2s;
+		width: $size * 2;
+		height: $size;
+		margin: 0 8px;
+		position: relative;
+		background-color: $bg-col;
+		border: $border;
+		border-radius: $size;
+		vertical-align: middle;
+		box-sizing: content-box;
+		appearance: none;
+		transition: $transition-duration;
+
+		&::before {
+			content: '';
+			width: $size - $padding * 2;
+			aspect-ratio: 1;
+			position: absolute;
+			top: $padding;
+			left: $padding;
+			background-color: white;
+			border-radius: 50%;
+			filter: drop-shadow(0 0 2px black);
+			transition: $transition-duration ease-in;
+		}
+
+		&:checked {
+			background-color: rgba($txt-primary, 0.85);
+
+			&::before {
+				translate: $size;
+			}
+		}
+	}
+}
+
+select {
+	font-size: 16px;
+	margin: $input-margin;
+	padding: 1.5px 3px;
 }
 
 .result {
 	margin: 24px auto;
 	margin-bottom: 32px;
-}
 
-ul {
-	display: inline-block;
-	margin: 0 auto;
-	padding: 6px 12px;
-	background-color: #ffffff50;
-	border: 1px solid #ffffff50;
-	border-radius: 4px;
-	list-style: none;
-}
-
-li {
-	margin: 5px 0;
-	text-align: left;
-	display: flex;
-	align-items: center;
-
-	span {
-		display: inline-block;
-		min-width: 18px;
-		margin-right: 2px;
-		margin-left: 4px;
-		padding: 2px 6px;
-		background-color: #ffffffb0;
+	.card,
+	ul {
+		margin: 0 auto;
+		padding: 6px 12px;
+		background-color: #ffffff50;
+		border: 1px solid #ffffff50;
 		border-radius: 4px;
-		text-align: center;
-		user-select: all;
-		cursor: pointer;
-		@include source-code-pro;
+	}
+
+	ul {
+		display: inline-block;
+		list-style: none;
+	}
+
+	li {
+		margin: 5px 0;
+		text-align: left;
+		display: flex;
+		align-items: center;
+
+		span {
+			display: inline-block;
+			min-width: 18px;
+			margin-right: 2px;
+			margin-left: 4px;
+			padding: 2px 6px;
+			background-color: #ffffffb0;
+			border-radius: 4px;
+			text-align: center;
+			user-select: all;
+			cursor: pointer;
+			@include source-code-pro;
+		}
+
+		hr {
+			display: block;
+			width: 100%;
+			margin: 2px 0;
+			border: 1px solid $txt-primary;
+			opacity: 0.6;
+		}
 	}
 }
 

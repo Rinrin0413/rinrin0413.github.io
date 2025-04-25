@@ -11,6 +11,10 @@ export const CHRONICLE: {
 		events: [null]
 	},
 	{
+		year: 2013,
+		events: [4]
+	},
+	{
 		year: 2015,
 		events: [6]
 	},
@@ -37,6 +41,10 @@ export const CHRONICLE: {
 	{
 		year: 2023,
 		events: [2]
+	},
+	{
+		year: 2025,
+		events: [4]
 	}
 	// {
 	// 	year: 2036,

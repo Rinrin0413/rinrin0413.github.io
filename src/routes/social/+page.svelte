@@ -2,9 +2,9 @@
 	import HeadMetadata from '$lib/components/HeadMetadata.svelte';
 	import Title from '$lib/components/Title.svelte';
 	import Space from '$lib/components/Space.svelte';
-	import EaButton from '$lib/components/EaButton.svelte';
 
 	import { _ } from 'svelte-i18n';
+	import { CONTACT_EMAIL_ADDRESS } from '$lib/scripts/variables';
 	import { SOCIALS } from '$lib/scripts/data/social';
 </script>
 
@@ -16,31 +16,23 @@
 
 	<Space height="32px" />
 
-	<p><span class="email">Email</span> <EaButton /></p>
+	<p>Email: <a href="mailto:{CONTACT_EMAIL_ADDRESS}">{CONTACT_EMAIL_ADDRESS}</a></p>
 
-	<table class="social-table">
+	<ul>
 		{#each SOCIALS as { service, name, url, icon }}
-			<tr>
-				<td>
-					{#if icon}<img src="/images/logos/{icon}" alt="" />{/if}{service}
-				</td>
-				<td>
-					{#if url}
-						<a href={url} target="_blank" rel="noopener noreferrer">{name}</a>
-					{:else}
-						{name}
-					{/if}
-				</td>
-			</tr>
+			<li>
+				{#if icon !== null}<img src="/images/logos/{icon}" alt="" />{/if}{service}:
+				{#if url}
+					<a href={url} target="_blank" rel="noopener noreferrer" class="no-after-icn">{name}</a>
+				{:else}
+					{name}
+				{/if}
+			</li>
 		{/each}
-	</table>
+	</ul>
 </section>
 
 <style lang="scss">
 	@use '$lib/stylesheets/social_table';
 	@use '$lib/stylesheets/variables/mixin' as *;
-
-	.email:after {
-		content: ': ';
-	}
 </style>
