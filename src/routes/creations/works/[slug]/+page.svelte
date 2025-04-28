@@ -64,7 +64,9 @@
 	<div><h1>{metadata.title}</h1></div>
 	{#if date !== null && datePlus9h !== null}
 		<div>
-			<time datetime={datePlus9h.toISOString()}>{$dateI18n(date, { format: 'full' })}</time>
+			<time datetime={datePlus9h.toISOString()} class="sub-title"
+				>{$dateI18n(date, { format: 'full' })}</time
+			>
 		</div>
 	{:else}
 		<div><time>{$_('creations.dateUnknown')}</time></div>
