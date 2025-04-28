@@ -12,7 +12,6 @@ export const load: PageLoad = async ({
 	const { default: component, metadata: frontmatter } = await import(
 		`../../../../../projects/${params.slug}.md`
 	).catch(err);
-	console.log(`Loading project ${params.slug}`);
 	return { component, frontmatter };
 };
 
