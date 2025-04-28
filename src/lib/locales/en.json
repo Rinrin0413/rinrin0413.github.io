@@ -41,7 +41,9 @@
 		"license": "License",
 		"all": "All",
 		"establishedOn": "Established on {date}",
-		"revisedOn": "Revised on {date}"
+		"revisedOn": "Revised on {date}",
+		"repo": "Repository",
+		"website": "Website"
 	},
 	"home": {
 		"icon": "Rinrin.rs' avatar",
@@ -220,6 +222,20 @@
 			"If you come across any issues or problems, I would appreciate it if you could report them on ",
 			"."
 		]
+	},
+	"projects": {
+		"status": "Dev. status",
+		"statuses": {
+			"wip": "Work in progress",
+			"active": "Active",
+			"completed": "Completed",
+			"archived": "Archived",
+			"abandoned": "Abandoned"
+		},
+		"latestUpdate": "Latest update",
+		"initRelease": "Initial release",
+		"writtenIn": "Written in",
+		"backToIndex": "Back to project list"
 	},
 	"creations": {
 		"dateUnknown": "Date unknown",

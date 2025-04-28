@@ -41,7 +41,9 @@
 		"license": "ライセンス",
 		"all": "すべて",
 		"establishedOn": "{date} 制定",
-		"revisedOn": "{date} 改定"
+		"revisedOn": "{date} 改定",
+		"repo": "リポジトリ",
+		"website": "ウェブサイト"
 	},
 	"home": {
 		"icon": "Rinrin.rs のアイコン",
@@ -217,6 +219,20 @@
 			"問題等を発見された場合は ",
 			" にてお知らせいただけると幸いです。"
 		]
+	},
+	"projects": {
+		"status": "開発状況",
+		"statuses": {
+			"wip": "未完成",
+			"active": "アクティブ",
+			"completed": "完成",
+			"archived": "アーカイブ",
+			"abandoned": "放棄"
+		},
+		"latestUpdate": "最新",
+		"initRelease": "初版",
+		"writtenIn": "プログラム言語",
+		"backToIndex": "プロジェクト一覧へ戻る"
 	},
 	"creations": {
 		"dateUnknown": "日付不明",
