@@ -90,7 +90,8 @@
 						>{removeUrlScheme(metadata.repo)}</a
 					></td
 				>
-			</tr>{/if}
+			</tr>
+		{/if}
 		{#if metadata.website !== null}
 			<tr>
 				<td>{$_('w.website')}</td>
@@ -155,8 +156,14 @@
 </div>
 
 <style lang="scss">
+	@use '$lib/stylesheets/variables/mixin' as *;
+
 	.other-info {
 		margin: 14px 24px;
+
+		@include sp {
+			margin: 14px 1px;
+		}
 	}
 
 	table {
@@ -165,6 +172,10 @@
 		background-color: #ffffffb0;
 		border: 1px solid #ffffff;
 		border-radius: 4px;
+
+		@include sp {
+			padding: 6px 3px;
+		}
 	}
 
 	td {
@@ -190,9 +201,14 @@
 		margin-left: 10px;
 	}
 
-	a:not([target='_blank']) {
-		filter: hue-rotate(319deg) grayscale(0.3);
-		text-decoration: none;
+	a {
+		word-break: break-all;
+
+		&:not([target='_blank']) {
+			white-space: nowrap;
+			filter: hue-rotate(319deg) grayscale(0.3);
+			text-decoration: none;
+		}
 	}
 
 	.cc img {
