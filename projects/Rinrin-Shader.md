@@ -18,8 +18,6 @@ thumbnailImg: rinrin-shader.webp
 
 GitHub の[リリース一覧](https://github.com/Rinrin0413/Rinrin_Shader/releases)からダウンロードできます。
 
-![download count](https://img.shields.io/github/downloads/Rinrin0413/Rinrin_Shader/total?style=for-the-badge)
-
 ## 対応環境
 
 - プラットフォーム: Minecraft for Windows
