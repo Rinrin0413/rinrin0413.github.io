@@ -7,7 +7,7 @@ repo: https://github.com/Rinrin0413/Rinrin_Shader
 website: null
 status: archived
 date: 2021-12-05
-initDate: 2021-10-06
+initDate: 2021-05-05
 license: GPL-3.0
 thumbnailImg: rinrin-shader.webp
 ---
