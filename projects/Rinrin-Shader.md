@@ -23,7 +23,7 @@ GitHub の[リリース一覧](https://github.com/Rinrin0413/Rinrin_Shader/relea
 ## 対応環境
 
 - プラットフォーム: Minecraft for Windows
-- バージョン: `v1.16.100 以前` 又は `32bit版 1.18.12 以前`
+- バージョン: `v1.16.100 以前` 又は `32bit版 v1.18.12 以前`
 
 ## 主な機能
 
