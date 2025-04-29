@@ -32,7 +32,7 @@ thumbnailImg: website.webp
 	- Major Activities - 主な活動
 	- Chronicle - 年代史
 	- Blog Articles - ブログ記事 (最新3件)
-	- Contact / Social - 連絡先とソーシャルアカウント (主要
+	- Contact / Social - 連絡先とソーシャルアカウント (主要)
 - [Profile - プロフィール](https://rinrin.pages.dev/profile)
 	- My Profile - 自己紹介
 	- Chronicle - 年代史
