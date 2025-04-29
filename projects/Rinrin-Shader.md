@@ -12,6 +12,8 @@ license: GPL-3.0
 thumbnailImg: rinrin-shader.webp
 ---
 
+![ ](https://img.shields.io/github/v/release/Rinrin0413/Rinrin_Shader?label=%E6%9C%80%E6%96%B0%E3%83%90%E3%83%BC%E3%82%B8%E3%83%A7%E3%83%B3&style=flat-square)
+
 自己満足で開発した、マインクラフト統合版向けのシェーダーパック。
 
 ## ダウンロード
