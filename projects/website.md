@@ -7,7 +7,7 @@ repo: https://github.com/Rinrin0413/rinrin0413.github.io
 website: https://rinrin.pages.dev
 status: active
 date: 2025-04-25
-initDate: null
+initDate: 2021-06-26
 license: GPL-3.0
 thumbnailImg: website.webp
 ---
