@@ -28,27 +28,27 @@ thumbnailImg: website.webp
 
 ## 基本的なコンテンツ
 
-- [Home- ホーム](https://rinrin.pages.dev)
+- [Home- ホーム](/)
 	- Major Activities - 主な活動
 	- Chronicle - 年代史
 	- Blog Articles - ブログ記事 (最新3件)
 	- Contact / Social - 連絡先とソーシャルアカウント (主要)
-- [Profile - プロフィール](https://rinrin.pages.dev/profile)
+- [Profile - プロフィール](/profile)
 	- My Profile - 自己紹介
 	- Chronicle - 年代史
 	- Hobby - 趣味
 	- Skills - スキル
 	- Wakatime
 	- Environment - 開発環境
-- [Blog - ブログ](https://rinrin.pages.dev/blog)
-- [Web Tools - Webツール](https://rinrin.pages.dev/tools)
-- [Projects - プロジェクト](https://rinrin.pages.dev/projects)
-- [Creations - 創作物](https://rinrin.pages.dev/creations)
-- [Social - ソーシャル](https://rinrin.pages.dev/social)
-- [Privacy Policy - プライバシーポリシー](https://rinrin.pages.dev/privacy)
-- [Acknowledgments - 謝辞](https://rinrin.pages.dev/acknowledgments)
-- [RSS / Atom feed](https://rinrin.pages.dev/feed)
-- [sitemap.xml](https://rinrin.pages.dev/sitemap.xml)
+- [Blog - ブログ](/blog)
+- [Web Tools - Webツール](/tools)
+- [Projects - プロジェクト](/projects)
+- [Creations - 創作物](/creations)
+- [Social - ソーシャル](/social)
+- [Privacy Policy - プライバシーポリシー](/privacy)
+- [Acknowledgments - 謝辞](/acknowledgments)
+- [RSS / Atom feed](/feed)
+- [sitemap.xml](/sitemap.xml)
 
 ## 使用技術
 
@@ -58,4 +58,4 @@ thumbnailImg: website.webp
 - [SCSS](https://sass-lang.com): CSS を拡張したプリプロセッサ
 - [Cloudflare Pages](https://cloudflare.com/developer-platform/products/pages): ホスティング
 
-その他、[謝辞](https://rinrin.pages.dev/acknowledgments)ページを参照。
+その他、[謝辞](/acknowledgments)ページを参照。
