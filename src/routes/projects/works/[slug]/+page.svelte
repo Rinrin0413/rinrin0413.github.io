@@ -4,36 +4,44 @@
 	import ShareButton from '$lib/btpc/components/ShareButton.svelte';
 	import OtherInfo from './OtherInfo.svelte';
 	import ChildPageComponentRenderer from '$lib/btpc/components/ChildPageComponentRenderer.svelte';
-	import License from './License.svelte';
 	import BackToIndexButton from '$lib/btpc/components/BackToIndexButton.svelte';
 
 	import type { PageData } from './$types';
 	import { SITE_URL, PAGE_FULL_TITLE_PART } from '$lib/scripts/variables';
 	import { _ } from 'svelte-i18n';
-	import { date as dateI18n } from 'svelte-i18n';
-	import { add9h } from '$lib/btpc/scripts/utils';
 
 	export let data: PageData;
 	let metadata = data.frontmatter;
 	$: metadata = data.frontmatter;
 
-	$: date = metadata.date === null ? null : new Date(metadata.date);
-	let datePlus9h: Date | null;
-	$: datePlus9h = date === null ? null : add9h(date);
-
 	$: hasThumbnailImg = metadata.thumbnailImg !== null;
 	$: thumbnailImgPath = hasThumbnailImg
-		? '/images/creations/thumbnails/' + metadata.thumbnailImg
+		? '/images/projects/thumbnails/' + metadata.thumbnailImg
 		: null;
 
 	$: title = metadata.title;
 	$: titleFull = PAGE_FULL_TITLE_PART + title;
 
 	$: absThumbnailImgPath = SITE_URL + thumbnailImgPath;
+
+	function getStatusEmoji(status: string) {
+		switch (status) {
+			case 'wip':
+				return '🚧';
+			case 'active':
+				return '⚡';
+			case 'completed':
+				return '✅';
+			case 'archived':
+				return '🏛️';
+			case 'abandoned':
+				return '🏚️';
+		}
+	}
 </script>
 
 <HeadMetadata
-	title="Creations - {title}"
+	title="Projects - {title}"
 	desc={metadata.desc ?? ''}
 	ogType="article"
 	ogCardType="summary_large_image"
@@ -49,36 +57,27 @@
 
 {#if hasThumbnailImg}
 	<div class="thumbnail-wrapper">
-		<img
-			src={thumbnailImgPath}
-			alt=""
-			class="thumbnail"
-			class:pixelated={metadata.tags.includes('ドット絵')}
-		/>
+		<img src={thumbnailImgPath} alt="" class="thumbnail" />
 	</div>
 {:else}
 	<Space height="86px" />
 {/if}
 
-<div class="artwork-content">
+<div class="project-content" class:thumbnail-exists={hasThumbnailImg}>
 	<div><h1>{metadata.title}</h1></div>
-	{#if date !== null && datePlus9h !== null}
-		<div>
-			<time datetime={datePlus9h.toISOString()} class="sub-title"
-				>{$dateI18n(date, { format: 'full' })}</time
-			>
-		</div>
-	{:else}
-		<div><time>{$_('creations.dateUnknown')}</time></div>
-	{/if}
+	<div>
+		<span class="sub-title"
+			>{$_('projects.status')}: {getStatusEmoji(metadata.status) +
+				$_('projects.statuses.' + metadata.status)}</span
+		>
+	</div>
 	<OtherInfo {metadata} />
 	<ChildPageComponentRenderer component={data.component} />
 	<p><ShareButton title={titleFull} expanded /></p>
-	<License license={metadata.license} />
-	<BackToIndexButton category="creations" />
+	<BackToIndexButton category="projects" />
 </div>
 
 <style lang="scss">
-	@use '$lib/stylesheets/creations/artwork_page.scss';
+	@use '$lib/stylesheets/projects/project_page.scss';
 	@use '$lib/btpc/stylesheets/page_meta.scss';
 </style>

@@ -97,7 +97,7 @@
 		<h1 style={parallax(-0.19)}>{metadata.title}</h1>
 	</div>
 	<div in:scale|global={introAnim(3)}>
-		<time datetime={datePlus9h.toISOString()} style={parallax(-0.12)}
+		<time datetime={datePlus9h.toISOString()} class="sub-title" style={parallax(-0.12)}
 			>{$dateI18n(date, { format: 'full' })}</time
 		>
 	</div>

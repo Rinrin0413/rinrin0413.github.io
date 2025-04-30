@@ -43,3 +43,20 @@ export interface ArtworkMetadata {
 	thumbnailImg: string | null;
 	id?: string;
 }
+
+// I explicitly specified ` | null` instead of optional variable,
+// to prevent missing fields in the tool metadata definitions.
+export interface ProjectMetadata {
+	title: string;
+	desc: string | null;
+	tags: string[];
+	langs: string[];
+	repo: string | null;
+	website: string | null;
+	status: 'wip' | 'active' | 'completed' | 'archived' | 'abandoned';
+	date: string | null;
+	initDate: string | null;
+	license: string | null;
+	thumbnailImg: string | null;
+	id?: string;
+}
