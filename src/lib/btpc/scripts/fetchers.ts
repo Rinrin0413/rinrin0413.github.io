@@ -3,7 +3,8 @@ import type {
 	ArticleThumbnailImgFmts,
 	ToolMetadata,
 	ArtworkMetadata,
-	ItemWithCount
+	ItemWithCount,
+	ProjectMetadata
 } from '$lib/btpc/scripts/types';
 
 /** Fetches and sorts articles. */
@@ -316,4 +317,162 @@ export async function fetchArtworkLicenses() {
 			.sort((a, b) => b.count - a.count);
 
 	return licenses;
+}
+
+/** Fetches and sorts projects. */
+export async function fetchProjects({ tags, langs, license, status }: fetchProjectsOptions = {}) {
+	// Fetch all projects.
+	let projects = await Promise.all(
+		Object.entries(import.meta.glob('/projects/*.md')).map(async ([path, module]) => {
+			const { metadata } = (await module()) as { metadata: ProjectMetadata };
+			// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+			metadata.id = path.split('/').pop()!.split('.')[0];
+			return metadata;
+		})
+	);
+
+	// Filterings
+	projects = projects.filter((a) => {
+		// Filter by tags.
+		if (tags !== undefined && tags.length !== 0)
+			if (!tags.every((t) => a.tags.includes(t))) return false;
+
+		// Filter by programming languages.
+		if (langs !== undefined && langs.length !== 0)
+			if (!langs.every((l) => a.langs.includes(l))) return false;
+
+		// Filter by license.
+		if (license !== undefined && a.license !== license) return false;
+
+		// Filter by status.
+		if (status !== undefined && a.status !== status) return false;
+
+		return true;
+	});
+
+	// Sort by newest.
+	projects.sort((a, b) => {
+		const aDate = a.date ?? a.initDate;
+		const bDate = b.date ?? b.initDate;
+		if (aDate !== null && bDate !== null)
+			return new Date(bDate).getTime() - new Date(aDate).getTime();
+		if (aDate === null && bDate !== null) return 1;
+		if (aDate !== null && bDate === null) return -1;
+		return 0;
+	});
+
+	return projects;
+}
+
+type fetchProjectsOptions = {
+	tags?: string[];
+	langs?: string[];
+	license?: string;
+	status?: string;
+};
+
+/** Returns the list of the project tags and their counts. */
+export async function fetchProjectTags() {
+	const tags = (
+		await Promise.all(
+			Object.values(import.meta.glob('/projects/*.md')).map(async (module) => {
+				const { metadata } = (await module()) as { metadata: ProjectMetadata };
+				return metadata.tags;
+			})
+		)
+	)
+		// Convert from "list of tag lists" to "list of tags".
+		.flat()
+
+		// Count tags.
+		.reduce((acc: ItemWithCount[], tag) => {
+			const existingTag = acc.find((t) => t.item === tag);
+			existingTag ? existingTag.count++ : acc.push({ item: tag, count: 1 });
+			return acc;
+		}, [])
+
+		// Sort by tag name.
+		.sort((a, b) => a.item.localeCompare(b.item, 'ja'))
+
+		// Sort by count.
+		.sort((a, b) => b.count - a.count);
+
+	return tags;
+}
+
+/** Returns the list of the programming languages for the projects and their counts. */
+export async function fetchProjectLangs() {
+	const langs = (
+		await Promise.all(
+			Object.values(import.meta.glob('/projects/*.md')).map(async (module) => {
+				const { metadata } = (await module()) as { metadata: ProjectMetadata };
+				return metadata.langs;
+			})
+		)
+	)
+		// Convert from "list of language lists" to "language list".
+		.flat()
+
+		// Count languages.
+		.reduce((acc: ItemWithCount[], lang) => {
+			const existingLang = acc.find((t) => t.item === lang);
+			existingLang ? existingLang.count++ : acc.push({ item: lang, count: 1 });
+			return acc;
+		}, [])
+
+		// Sort by language name.
+		.sort((a, b) => a.item.localeCompare(b.item, 'ja'))
+
+		// Sort by count.
+		.sort((a, b) => b.count - a.count);
+
+	return langs;
+}
+
+/** Returns the list of the valid licenses for the projects and their counts. */
+export async function fetchProjectLicenses() {
+	const licenses = (
+		await Promise.all(
+			Object.values(import.meta.glob('/projects/*.md')).map(async (module) => {
+				const { metadata } = (await module()) as { metadata: ProjectMetadata };
+				return metadata.license;
+			})
+		)
+	)
+		// Count categories.
+		.reduce((acc: ItemWithCount[], license) => {
+			if (license !== null && ['MIT', 'GPL-3.0', 'CC BY-SA 4.0', 'CC BY 4.0'].includes(license)) {
+				const existingLicense = acc.find((t) => t.item === license);
+				existingLicense ? existingLicense.count++ : acc.push({ item: license, count: 1 });
+			}
+			return acc;
+		}, [])
+
+		// Sort by tag name.
+		.sort((a, b) => a.item.localeCompare(b.item, 'ja'))
+
+		// Sort by count.
+		.sort((a, b) => b.count - a.count);
+
+	return licenses;
+}
+
+/** Returns the list of the project statuses and their counts. */
+export async function fetchProjectStatuses() {
+	const statuses = (
+		await Promise.all(
+			Object.values(import.meta.glob('/projects/*.md')).map(async (module) => {
+				const { metadata } = (await module()) as { metadata: ProjectMetadata };
+				return metadata.status;
+			})
+		)
+	)
+		// Count statuses.
+		.reduce((acc: ItemWithCount[], status) => {
+			const existingStatus = acc.find((t) => t.item === status);
+			existingStatus ? existingStatus.count++ : acc.push({ item: status, count: 1 });
+			return acc;
+		}, []);
+
+	return statuses;
 }
