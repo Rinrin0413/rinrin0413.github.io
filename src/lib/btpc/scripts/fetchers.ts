@@ -370,3 +370,32 @@ type fetchProjectsOptions = {
 	license?: string;
 	status?: string;
 };
+
+/** Returns the list of the project tags and their counts. */
+export async function fetchProjectTags() {
+	const tags = (
+		await Promise.all(
+			Object.values(import.meta.glob('/projects/*.md')).map(async (module) => {
+				const { metadata } = (await module()) as { metadata: ProjectMetadata };
+				return metadata.tags;
+			})
+		)
+	)
+		// Convert from "list of tag lists" to "list of tags".
+		.flat()
+
+		// Count tags.
+		.reduce((acc: ItemWithCount[], tag) => {
+			const existingTag = acc.find((t) => t.item === tag);
+			existingTag ? existingTag.count++ : acc.push({ item: tag, count: 1 });
+			return acc;
+		}, [])
+
+		// Sort by tag name.
+		.sort((a, b) => a.item.localeCompare(b.item, 'ja'))
+
+		// Sort by count.
+		.sort((a, b) => b.count - a.count);
+
+	return tags;
+}
