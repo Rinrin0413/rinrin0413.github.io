@@ -428,3 +428,31 @@ export async function fetchProjectLangs() {
 
 	return langs;
 }
+
+/** Returns the list of the valid licenses for the projects and their counts. */
+export async function fetchProjectLicenses() {
+	const licenses = (
+		await Promise.all(
+			Object.values(import.meta.glob('/projects/*.md')).map(async (module) => {
+				const { metadata } = (await module()) as { metadata: ProjectMetadata };
+				return metadata.license;
+			})
+		)
+	)
+		// Count categories.
+		.reduce((acc: ItemWithCount[], license) => {
+			if (license !== null && ['MIT', 'GPL-3.0', 'CC BY-SA 4.0', 'CC BY 4.0'].includes(license)) {
+				const existingLicense = acc.find((t) => t.item === license);
+				existingLicense ? existingLicense.count++ : acc.push({ item: license, count: 1 });
+			}
+			return acc;
+		}, [])
+
+		// Sort by tag name.
+		.sort((a, b) => a.item.localeCompare(b.item, 'ja'))
+
+		// Sort by count.
+		.sort((a, b) => b.count - a.count);
+
+	return licenses;
+}
