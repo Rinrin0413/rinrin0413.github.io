@@ -3,7 +3,8 @@ import type {
 	ArticleThumbnailImgFmts,
 	ToolMetadata,
 	ArtworkMetadata,
-	ItemWithCount
+	ItemWithCount,
+	ProjectMetadata
 } from '$lib/btpc/scripts/types';
 
 /** Fetches and sorts articles. */
@@ -317,3 +318,55 @@ export async function fetchArtworkLicenses() {
 
 	return licenses;
 }
+
+/** Fetches and sorts projects. */
+export async function fetchProjects({ tags, langs, license, status }: fetchProjectsOptions = {}) {
+	// Fetch all projects.
+	let projects = await Promise.all(
+		Object.entries(import.meta.glob('/projects/*.md')).map(async ([path, module]) => {
+			const { metadata } = (await module()) as { metadata: ProjectMetadata };
+			// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+			metadata.id = path.split('/').pop()!.split('.')[0];
+			return metadata;
+		})
+	);
+
+	// Filterings
+	projects = projects.filter((a) => {
+		// Filter by tags.
+		if (tags !== undefined && tags.length !== 0)
+			if (!tags.every((t) => a.tags.includes(t))) return false;
+
+		// Filter by programming languages.
+		if (langs !== undefined && langs.length !== 0)
+			if (!langs.every((l) => a.langs.includes(l))) return false;
+
+		// Filter by license.
+		if (license !== undefined && a.license !== license) return false;
+
+		// Filter by status.
+		if (status !== undefined && a.status !== status) return false;
+
+		return true;
+	});
+
+	// Sort by newest.
+	projects.sort((a, b) => {
+		const aDate = a.date ?? a.initDate;
+		const bDate = b.date ?? b.initDate;
+		if (aDate !== null && bDate !== null)
+			return new Date(bDate).getTime() - new Date(aDate).getTime();
+		if (aDate === null && bDate !== null) return 1;
+		if (aDate !== null && bDate === null) return -1;
+		return 0;
+	});
+
+	return projects;
+}
+
+type fetchProjectsOptions = {
+	tags?: string[];
+	langs?: string[];
+	license?: string;
+	status?: string;
+};
