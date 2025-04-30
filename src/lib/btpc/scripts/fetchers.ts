@@ -456,3 +456,23 @@ export async function fetchProjectLicenses() {
 
 	return licenses;
 }
+
+/** Returns the list of the project statuses and their counts. */
+export async function fetchProjectStatuses() {
+	const statuses = (
+		await Promise.all(
+			Object.values(import.meta.glob('/projects/*.md')).map(async (module) => {
+				const { metadata } = (await module()) as { metadata: ProjectMetadata };
+				return metadata.status;
+			})
+		)
+	)
+		// Count statuses.
+		.reduce((acc: ItemWithCount[], status) => {
+			const existingStatus = acc.find((t) => t.item === status);
+			existingStatus ? existingStatus.count++ : acc.push({ item: status, count: 1 });
+			return acc;
+		}, []);
+
+	return statuses;
+}
