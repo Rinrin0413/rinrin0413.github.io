@@ -399,3 +399,32 @@ export async function fetchProjectTags() {
 
 	return tags;
 }
+
+/** Returns the list of the programming languages for the projects and their counts. */
+export async function fetchProjectLangs() {
+	const langs = (
+		await Promise.all(
+			Object.values(import.meta.glob('/projects/*.md')).map(async (module) => {
+				const { metadata } = (await module()) as { metadata: ProjectMetadata };
+				return metadata.langs;
+			})
+		)
+	)
+		// Convert from "list of language lists" to "language list".
+		.flat()
+
+		// Count languages.
+		.reduce((acc: ItemWithCount[], lang) => {
+			const existingLang = acc.find((t) => t.item === lang);
+			existingLang ? existingLang.count++ : acc.push({ item: lang, count: 1 });
+			return acc;
+		}, [])
+
+		// Sort by language name.
+		.sort((a, b) => a.item.localeCompare(b.item, 'ja'))
+
+		// Sort by count.
+		.sort((a, b) => b.count - a.count);
+
+	return langs;
+}
