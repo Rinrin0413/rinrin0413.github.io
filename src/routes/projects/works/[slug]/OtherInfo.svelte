@@ -77,7 +77,7 @@
 			<td>{$_('projects.writtenIn')}</td>
 			<td
 				>{#each metadata.langs as lang, i}{#if 0 < i},{/if}<a
-						href="/projects?t={lang}"
+						href="/projects?langs={lang}"
 						class="lang link">{lang}</a
 					>{/each}</td
 			>
