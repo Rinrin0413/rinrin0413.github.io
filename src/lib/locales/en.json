@@ -232,6 +232,7 @@
 			"archived": "Archived",
 			"abandoned": "Abandoned"
 		},
+		"noMatchingProjectsFound": "No matching projects found.",
 		"latestUpdate": "Latest update",
 		"initRelease": "Initial release",
 		"writtenIn": "Written in",

@@ -229,6 +229,7 @@
 			"archived": "アーカイブ",
 			"abandoned": "放棄"
 		},
+		"noMatchingProjectsFound": "一致するプロジェクトが見つかりませんでした。",
 		"latestUpdate": "最新",
 		"initRelease": "初版",
 		"writtenIn": "プログラム言語",
