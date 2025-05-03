@@ -10,9 +10,8 @@
 	import type { PageData } from './$types';
 	import { PAGE_FULL_TITLE_PART } from '$lib/scripts/variables';
 	import { fly } from 'svelte/transition';
-	import { elasticBackOut } from '$lib/scripts/easing';
-	import { expoIn, expoOut } from 'svelte/easing';
 	import { flip } from 'svelte/animate';
+	import { WIDE_CARD_ANIM_PARAMS } from '$lib/btpc/scripts/variables';
 	import { _ } from 'svelte-i18n';
 
 	export let data: PageData;
@@ -41,9 +40,9 @@
 		<ul>
 			{#each projects as meta (meta.id)}
 				<li
-					in:fly|global={{ x: -512, duration: 1000, easing: elasticBackOut }}
-					out:fly|global={{ x: 256, duration: 200, easing: expoIn }}
-					animate:flip={{ duration: 700, easing: expoOut }}
+					in:fly|global={WIDE_CARD_ANIM_PARAMS.transitionIn}
+					out:fly|global={WIDE_CARD_ANIM_PARAMS.transitionOut}
+					animate:flip={WIDE_CARD_ANIM_PARAMS.animate}
 				>
 					<ProjectCard {meta} />
 				</li>
