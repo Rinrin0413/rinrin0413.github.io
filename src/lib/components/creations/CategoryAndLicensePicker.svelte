@@ -42,19 +42,5 @@
 </div>
 
 <style lang="scss">
-	@use '$lib/stylesheets/variables/mixin' as *;
-	@use '$lib/stylesheets/variables/color' as *;
-
-	div {
-		margin: 6px auto;
-		@include hideWhenNoJs;
-	}
-
-	label {
-		font-size: 16px;
-	}
-
-	span::after {
-		content: ': ';
-	}
+	@use '$lib/btpc/stylesheets/picker';
 </style>
