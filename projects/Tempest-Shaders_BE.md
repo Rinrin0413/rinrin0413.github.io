@@ -15,7 +15,7 @@ thumbnailImg: tempest-shaders_be.png
 ![ ](https://img.shields.io/github/v/release/Rinrin0413/Tempest_Shaders?label=%E6%9C%80%E6%96%B0%E3%83%90%E3%83%BC%E3%82%B8%E3%83%A7%E3%83%B3&style=flat-square)
 
 Rinrin の狂気から生まれた、マインクラフト統合版向けのシェーダーパック。
-いつもと違う世界を体験したい方におすすめです。
+いつもと違う世界を体験したい方にどうぞ。
 
 Java 版でも開発中です: [Tempest Shaders for JE](./Tempest-Shaders_JE)
 
