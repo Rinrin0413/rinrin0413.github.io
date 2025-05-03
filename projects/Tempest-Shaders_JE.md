@@ -18,7 +18,7 @@ thumbnailImg: null
 まとまった時間が取れたときに開発している。放棄しているわけではない。
 <!-- いつもと違う世界を体験したい方にどうぞ。 -->
 
-統合版のものは完成しています(古いバージョンで動作): [Tempest Shaders for BE](./Tempest-Shaders_BE)
+統合版のものは完成しています（古いバージョンで動作）: [Tempest Shaders for BE](./Tempest-Shaders_BE)
 
 <!-- ## ダウンロード
 
@@ -40,7 +40,7 @@ GitHub の[リリース一覧](https://github.com/Rinrin0413/Tempest-Shaders_JE/
 - ファンシーな空と雲
 - 色とりどりの星
 - 揺れる草木
-- 様々なカスタマイズオプション
+- さまざまなカスタマイズオプション
 <!-- - LabPBR 対応 -->
 
 などなど
