@@ -49,7 +49,7 @@
 	<Space height="86px" />
 {/if}
 
-<div class="project-content" class:thumbnail-exists={hasThumbnailImg}>
+<div class="content" class:thumbnail-exists={hasThumbnailImg}>
 	<div><h1>{metadata.title}</h1></div>
 	<div>
 		<span class="sub-title"
@@ -64,6 +64,6 @@
 </div>
 
 <style lang="scss">
-	@use '$lib/stylesheets/projects/project_page.scss';
+	@use '$lib/btpc/stylesheets/tall_thumbnail.scss';
 	@use '$lib/btpc/stylesheets/page_meta.scss';
 </style>
