@@ -1,6 +1,9 @@
 <script lang="ts">
+	import CcLicense from '$lib/btpc/components/CcLicense.svelte';
+
 	import type { ProjectMetadata } from '$lib/btpc/scripts/types';
 	import { _ } from 'svelte-i18n';
+	import { CC_LICENSES } from '$lib/btpc/components/CcLicense.svelte';
 
 	export let metadata: ProjectMetadata;
 
@@ -120,31 +123,8 @@
 								rel="license noopener noreferrer"
 								class="no-after-icn">GPL-3.0</a
 							>
-						{:else if metadata.license === 'CC BY-SA 4.0'}
-							<a
-								href="https://creativecommons.org/licenses/by-sa/4.0/"
-								target="_blank"
-								rel="license noopener noreferrer"
-								class="cc no-after-icn"
-								>CC BY-SA 4.0<img
-									src="https://mirrors.creativecommons.org/presskit/icons/cc.svg"
-									alt=""
-								/><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="" /><img
-									src="https://mirrors.creativecommons.org/presskit/icons/sa.svg"
-									alt=""
-								/></a
-							>
-						{:else if metadata.license === 'CC BY 4.0'}
-							<a
-								href="https://creativecommons.org/licenses/by/4.0/"
-								target="_blank"
-								rel="license noopener noreferrer"
-								class="cc no-after-icn"
-								>CC BY 4.0<img
-									src="https://mirrors.creativecommons.org/presskit/icons/cc.svg"
-									alt=""
-								/><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="" /></a
-							>
+						{:else if CC_LICENSES.includes(metadata.license)}
+							<CcLicense license={metadata.license} />
 						{:else}
 							{metadata.license}
 						{/if}
