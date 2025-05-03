@@ -11,14 +11,14 @@
 			<td>{$_('w.category')}</td>
 			<td
 				><span
-					><a href="/creations?c={metadata.category}" class="category">{metadata.category}</a></span
+					><a href="/creations?c={metadata.category}">{metadata.category}</a></span
 				></td
 			>
 		</tr>
 		<tr>
 			<td>{$_('w.tags')}</td>
 			<td
-				>{#each metadata.tags as tag}<a href="/creations?t={tag}" class="tag">{tag}</a>{/each}</td
+				>{#each metadata.tags as tag}<a href="/creations?t={tag}" class="link">{tag}</a>{/each}</td
 			>
 		</tr>
 		<tr>
@@ -60,50 +60,5 @@
 </div>
 
 <style lang="scss">
-	.other-info {
-		margin: 14px 24px;
-	}
-
-	table {
-		margin: 0 auto;
-		padding: 6px 12px;
-		background-color: #ffffffb0;
-		border: 1px solid #ffffff;
-		border-radius: 4px;
-	}
-
-	td {
-		font-size: 16px;
-		padding: 0;
-
-		&:first-child {
-			white-space: nowrap;
-			text-align: right;
-
-			&:after {
-				content: ':';
-			}
-		}
-
-		&:last-child {
-			text-align: left;
-		}
-	}
-
-	span,
-	.tag {
-		margin-left: 10px;
-	}
-
-	.category,
-	.tag {
-		filter: hue-rotate(319deg) grayscale(0.3);
-	}
-
-	.cc img {
-		height: 24px;
-		aspect-ratio: 1;
-		margin-left: 2px;
-		vertical-align: text-bottom;
-	}
+	@use '$lib/btpc/stylesheets/other_info.scss';
 </style>
