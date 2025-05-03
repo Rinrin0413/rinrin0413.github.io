@@ -3,6 +3,7 @@
 	import { goto } from '$app/navigation';
 	import { page } from '$app/stores';
 	import { _ } from 'svelte-i18n';
+	import { getStatusEmoji } from '$lib/btpc/scripts/projects/util';
 
 	export let allStatuses: ItemWithCount[];
 	export let allLangs: ItemWithCount[];
@@ -32,21 +33,6 @@
 		else params.set(paramName, value);
 
 		goto(`${$page.url.pathname}?${params.toString()}`, { noScroll: true });
-	}
-
-	function getStatusEmoji(status: string) {
-		switch (status) {
-			case 'wip':
-				return '🚧';
-			case 'active':
-				return '⚡';
-			case 'completed':
-				return '✅';
-			case 'archived':
-				return '🏛️';
-			case 'abandoned':
-				return '🏚️';
-		}
 	}
 </script>
 

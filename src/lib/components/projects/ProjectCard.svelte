@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { ProjectMetadata } from '$lib/btpc/scripts/types';
 	import { _ } from 'svelte-i18n';
+	import { getStatusEmoji } from '$lib/btpc/scripts/projects/util';
 
 	export let meta: ProjectMetadata;
 
@@ -45,21 +46,6 @@
 			case 'archived':
 			case 'abandoned':
 				return fmtToFullDate(date);
-		}
-	}
-
-	function getStatusEmoji(status: string) {
-		switch (status) {
-			case 'wip':
-				return '🚧';
-			case 'active':
-				return '⚡';
-			case 'completed':
-				return '✅';
-			case 'archived':
-				return '🏛️';
-			case 'abandoned':
-				return '🏚️';
 		}
 	}
 
