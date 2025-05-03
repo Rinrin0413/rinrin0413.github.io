@@ -12,7 +12,7 @@ license: GPL-3.0
 thumbnailImg: website.webp
 ---
 
-本ウェブサイト。いわゆる私のホームページ(誤用)。昔は HTML, CSS, JavaScript のみで開発していたが、2023年に SvelteKit で作り直した。
+本ウェブサイト。いわゆる私のホームページ。昔は HTML, CSS, JavaScript のみで開発していたが、2023年に SvelteKit で作り直した。
 
 ## 	開発目的
 
@@ -31,8 +31,8 @@ thumbnailImg: website.webp
 - [Home- ホーム](/)
 	- Major Activities - 主な活動
 	- Chronicle - 年代史
-	- Blog Articles - ブログ記事 (最新3件)
-	- Contact / Social - 連絡先とソーシャルアカウント (主要)
+	- Blog Articles - ブログ記事（最新3件）
+	- Contact / Social - 連絡先とソーシャルアカウント（主要なもの）
 - [Profile - プロフィール](/profile)
 	- My Profile - 自己紹介
 	- Chronicle - 年代史
