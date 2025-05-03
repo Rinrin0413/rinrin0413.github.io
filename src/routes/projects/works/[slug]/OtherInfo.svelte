@@ -1,3 +1,7 @@
+<script context="module">
+	export const RECOGNIZED_LICENSES = ['MIT', 'GPL-3.0', ...CC_LICENSES];
+</script>
+
 <script lang="ts">
 	import CcLicense from '$lib/btpc/components/CcLicense.svelte';
 
