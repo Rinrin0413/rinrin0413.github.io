@@ -2,6 +2,7 @@
 	import CcLicense from '$lib/btpc/components/CcLicense.svelte';
 
 	import type { ProjectMetadata } from '$lib/btpc/scripts/types';
+	import { omitDateByStatus, fmtToFullDate } from '$lib/btpc/scripts/projects/util';
 	import { _ } from 'svelte-i18n';
 	import { CC_LICENSES } from '$lib/btpc/components/CcLicense.svelte';
 
@@ -9,46 +10,6 @@
 
 	$: date = metadata.date === null ? null : new Date(metadata.date);
 	$: initDate = metadata.initDate === null ? null : new Date(metadata.initDate);
-
-	function calcHowLongAgo(date: Date) {
-		const now = new Date();
-		const diff = now.getTime() - date.getTime();
-		const daysAgo = Math.floor(diff / 86400000) + 1;
-
-		const yearsAgo = Math.floor(daysAgo / 365);
-		if (0 < yearsAgo) return yearsAgo + '年前';
-
-		const monthsAgo = Math.floor(daysAgo / 30.4375);
-		if (0 < monthsAgo) return monthsAgo + 'ヶ月前';
-
-		const weeksAgo = Math.floor(daysAgo / 7);
-		if (0 < weeksAgo) {
-			return weeksAgo + '週間前';
-		} else if (0 < daysAgo) {
-			return daysAgo + '日前';
-		} else {
-			return '今日';
-		}
-	}
-
-	function fmtToFullDate(date: Date) {
-		return `${date.getFullYear()}年${date.getMonth() + 1}月${date.getDate()}日 (${calcHowLongAgo(
-			date
-		)})`;
-	}
-
-	function omitDate(date: Date) {
-		switch (metadata.status) {
-			case 'wip':
-			case 'active':
-				return `${date.getFullYear()}年`;
-			case 'completed':
-				return `${date.getFullYear()}年${date.getMonth() + 1}月`;
-			case 'archived':
-			case 'abandoned':
-				return fmtToFullDate(date);
-		}
-	}
 
 	function removeUrlScheme(url: string) {
 		return url.replace(/^https?:\/\//, '');
@@ -60,7 +21,7 @@
 		{#if date !== null}
 			<tr>
 				<td>{$_('projects.latestUpdate')}</td>
-				<td><span>{omitDate(date)}</span></td>
+				<td><span>{omitDateByStatus(date, metadata.status)}</span></td>
 			</tr>
 		{/if}
 		{#if initDate !== null}

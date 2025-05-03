@@ -1,53 +1,16 @@
 <script lang="ts">
 	import type { ProjectMetadata } from '$lib/btpc/scripts/types';
+	import { omitDateByStatus, getStatusEmoji } from '$lib/btpc/scripts/projects/util';
 	import { _ } from 'svelte-i18n';
-	import { getStatusEmoji } from '$lib/btpc/scripts/projects/util';
 
 	export let meta: ProjectMetadata;
 
 	const id = meta.id ?? 'unreachable';
-	const date = meta.initDate === null ? null : omitDate(new Date(meta.date ?? meta.initDate));
+	const date =
+		meta.initDate === null
+			? null
+			: omitDateByStatus(new Date(meta.date ?? meta.initDate), meta.status);
 	const hasThumbnailImg = meta.thumbnailImg !== null;
-
-	function calcHowLongAgo(date: Date) {
-		const now = new Date();
-		const diff = now.getTime() - date.getTime();
-		const daysAgo = Math.floor(diff / 86400000) + 1;
-
-		const yearsAgo = Math.floor(daysAgo / 365);
-		if (0 < yearsAgo) return yearsAgo + '年前';
-
-		const monthsAgo = Math.floor(daysAgo / 30.4375);
-		if (0 < monthsAgo) return monthsAgo + 'ヶ月前';
-
-		const weeksAgo = Math.floor(daysAgo / 7);
-		if (0 < weeksAgo) {
-			return weeksAgo + '週間前';
-		} else if (0 < daysAgo) {
-			return daysAgo + '日前';
-		} else {
-			return '今日';
-		}
-	}
-
-	function fmtToFullDate(date: Date) {
-		return `${date.getFullYear()}年${date.getMonth() + 1}月${date.getDate()}日 (${calcHowLongAgo(
-			date
-		)})`;
-	}
-
-	function omitDate(date: Date) {
-		switch (meta.status) {
-			case 'wip':
-			case 'active':
-				return `${date.getFullYear()}年`;
-			case 'completed':
-				return `${date.getFullYear()}年${date.getMonth() + 1}月`;
-			case 'archived':
-			case 'abandoned':
-				return fmtToFullDate(date);
-		}
-	}
 
 	function langCol(lang: string) {
 		switch (lang) {
