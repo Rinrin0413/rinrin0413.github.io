@@ -1,5 +1,10 @@
 import type { RequestHandler } from './$types';
-import { fetchArticles, fetchTools, fetchArtworks } from '$lib/btpc/scripts/fetchers';
+import {
+	fetchArticles,
+	fetchTools,
+	fetchProjects,
+	fetchArtworks
+} from '$lib/btpc/scripts/fetchers';
 import { SITE_URL } from '$lib/scripts/variables';
 
 export const prerender = true;
@@ -28,6 +33,15 @@ async function body() {
         <loc>${SITE_URL}/tools/${tool.id}</loc>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
+    </url>`
+		)
+		.join('\n    ');
+	const projects = (await fetchProjects())
+		.map(
+			(project) => `<url>
+        <loc>${SITE_URL}/projects/works/${project.id}</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
     </url>`
 		)
 		.join('\n    ');
@@ -70,6 +84,7 @@ async function body() {
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
+    ${projects}
     <url>
         <loc>${SITE_URL}/creations</loc>
         <changefreq>weekly</changefreq>
