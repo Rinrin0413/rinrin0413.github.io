@@ -16,7 +16,7 @@ thumbnailImg: null
 
 [TETRA CHANNEL API](https://tetr.io/about/api) のための Rust ラッパーライブラリです。
 
-このライブラリを使用して以下のようなデータを取得することができます:
+このライブラリを使用して以下のようなデータを取得できます:
 
 - 詳細なユーザー情報 (information)
 - ユーザーの概要 (summaries)
