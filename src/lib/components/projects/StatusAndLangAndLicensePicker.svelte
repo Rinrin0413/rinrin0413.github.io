@@ -1,8 +1,7 @@
 <script lang="ts">
 	import type { ItemWithCount } from '$lib/btpc/scripts/types';
-	import { goto } from '$app/navigation';
-	import { page } from '$app/stores';
 	import { _ } from 'svelte-i18n';
+	import { updateParamOnElmValueChange } from '$lib/btpc/scripts/utils';
 	import { getStatusEmoji } from '$lib/btpc/scripts/projects/util';
 
 	export let allStatuses: ItemWithCount[];
@@ -24,23 +23,13 @@
 		archived: '開発が終了しているもの',
 		abandoned: '完成する前に放棄したもの'
 	};
-
-	function updateParam(event: Event, paramName: string) {
-		const params = new URLSearchParams(location.search);
-
-		const value = (event.target as HTMLSelectElement).value;
-		if (value === 'all') params.delete(paramName);
-		else params.set(paramName, value);
-
-		goto(`${$page.url.pathname}?${params.toString()}`, { noScroll: true });
-	}
 </script>
 
 <div>
 	<label
 		><span>{$_('projects.status')}</span><select
 			bind:value={status}
-			on:change={(e) => updateParam(e, 'status')}
+			on:change={(e) => updateParamOnElmValueChange(e, 'status')}
 		>
 			<option value="all">{$_('w.all')}</option>
 			{#each STATUS_ORDER as s}
@@ -57,7 +46,7 @@
 	<label
 		><span>{$_('projects.writtenIn')}</span><select
 			bind:value={lang}
-			on:change={(e) => updateParam(e, 'langs')}
+			on:change={(e) => updateParamOnElmValueChange(e, 'langs')}
 		>
 			<option value="all">{$_('w.all')}</option>
 			{#each allLangs as l}
@@ -71,7 +60,7 @@
 	<label
 		><span>{$_('w.license')}</span><select
 			bind:value={license}
-			on:change={(e) => updateParam(e, 'license')}
+			on:change={(e) => updateParamOnElmValueChange(e, 'license')}
 		>
 			<option value="all">{$_('w.all')}</option>
 			{#each allLicenses as l}
