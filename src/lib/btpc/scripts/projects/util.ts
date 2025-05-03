@@ -1,3 +1,6 @@
+export const PROJECT_STATUSES = ['wip', 'active', 'completed', 'archived', 'abandoned'] as const;
+export type ProjectStatus = (typeof PROJECT_STATUSES)[number];
+
 /**
  * Returns the emoji for a given project status string.
  * An empty string is returned if the status is not recognized.
@@ -52,10 +55,7 @@ export function fmtToFullDate(date: Date) {
  * Omits the given date based on the given project status,
  * returns as the Japanese string.
  */
-export function omitDateByStatus(
-	date: Date,
-	status: 'wip' | 'active' | 'completed' | 'archived' | 'abandoned'
-) {
+export function omitDateByStatus(date: Date, status: ProjectStatus) {
 	switch (status) {
 		case 'wip':
 		case 'active':

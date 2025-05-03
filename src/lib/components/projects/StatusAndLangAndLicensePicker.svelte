@@ -1,8 +1,9 @@
 <script lang="ts">
 	import type { ItemWithCount } from '$lib/btpc/scripts/types';
+	import type { ProjectStatus } from '$lib/btpc/scripts/projects/util';
 	import { _ } from 'svelte-i18n';
 	import { updateParamOnElmValueChange } from '$lib/btpc/scripts/utils';
-	import { getStatusEmoji } from '$lib/btpc/scripts/projects/util';
+	import { PROJECT_STATUSES, getStatusEmoji } from '$lib/btpc/scripts/projects/util';
 
 	export let allStatuses: ItemWithCount[];
 	export let allLangs: ItemWithCount[];
@@ -15,8 +16,7 @@
 	$: lang = pickedLang ?? 'all';
 	$: license = pickedLicense ?? 'all';
 
-	const STATUS_ORDER = ['wip', 'active', 'completed', 'archived', 'abandoned'];
-	const STATUS_LABELS: Record<(typeof STATUS_ORDER)[number], string> = {
+	const STATUS_LABELS: Record<ProjectStatus, string> = {
 		wip: '開発が進行中で未完成のもの',
 		active: '完成しているが、機能追加等の開発が続いているもの',
 		completed: '完成していて、現時点で更新の予定がないもの',
@@ -32,7 +32,7 @@
 			on:change={(e) => updateParamOnElmValueChange(e, 'status')}
 		>
 			<option value="all">{$_('w.all')}</option>
-			{#each STATUS_ORDER as s}
+			{#each PROJECT_STATUSES as s}
 				<option value={s} title={STATUS_LABELS[s]}
 					>{getStatusEmoji(s)}
 					{$_('projects.statuses.' + s)} ({(allStatuses.find((st) => st.item === s) ?? { count: 0 })
