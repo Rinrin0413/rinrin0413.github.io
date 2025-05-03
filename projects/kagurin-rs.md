@@ -1,5 +1,5 @@
 ---
-title: かぐりん.rs (Kagurin.rs)
+title: かぐりん.rs
 desc: Discord用の汎用bot。
 tags: [Discordアプリ]
 langs: [Rust]
