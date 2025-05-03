@@ -50,6 +50,6 @@
 </section>
 
 <style lang="scss">
-	@use '$lib/stylesheets/blog/blog';
 	@use '$lib/btpc/stylesheets/index_page';
+	@use '$lib/btpc/stylesheets/wide_card_index_page.scss';
 </style>

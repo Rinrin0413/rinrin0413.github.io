@@ -55,25 +55,6 @@
 </section>
 
 <style lang="scss">
-	@use '$lib/stylesheets/variables/color' as *;
-	@use '$lib/stylesheets/variables/mixin' as *;
-
 	@use '$lib/btpc/stylesheets/index_page';
-
-	ul {
-		max-width: 1024px;
-		padding: 0;
-		margin: 0 auto;
-		list-style: none;
-	}
-
-	li {
-		margin: 24px 16px;
-	}
-
-	@include sp {
-		li {
-			margin: 17px 14px;
-		}
-	}
+	@use '$lib/btpc/stylesheets/wide_card_index_page.scss';
 </style>
