@@ -91,7 +91,7 @@
 	}
 </script>
 
-<a href="/projects/works/{id}"
+<a href="/projects/works/{id}" class:force-mobile-view={false}
 	><article>
 		<div class="thumbnail">
 			<img
@@ -112,7 +112,7 @@
 			</h2>
 			<div class="date">{date} に更新</div>
 			{#if meta.desc}<p>{meta.desc}</p>{/if}
-			<span class="see-more">see more -&gt;</span>
+			<span class="more">see more -&gt;</span>
 			{#if 0 < meta.tags.length}
 				<ul>
 					{#each meta.tags as tag}
@@ -131,6 +131,39 @@
 >
 
 <style lang="scss">
-	@use '$lib/stylesheets/projects/project_card';
 	@use '$lib/btpc/stylesheets/card';
+	@use '$lib/btpc/stylesheets/wide_card';
+
+	@use '$lib/stylesheets/variables/mixin' as *;
+
+	.status {
+		float: right;
+		font-size: 17px;
+	}
+
+	.lang {
+		margin-top: 15px;
+		font-size: 16px;
+	}
+
+	.lang-col {
+		display: inline-block;
+		height: 13px;
+		aspect-ratio: 1;
+		position: relative;
+		top: 2px;
+		margin-right: 3px;
+		border: 1px solid #00000060;
+		border-radius: 50%;
+	}
+
+	@include sp {
+		.status {
+			font-size: 15px;
+		}
+
+		.lang {
+			margin-top: 8px;
+		}
+	}
 </style>
