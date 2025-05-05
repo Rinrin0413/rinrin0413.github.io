@@ -4,8 +4,6 @@
 	<img src="/static/images/logos/rinrin/logo.svg" alt="Rinrin.rs' logo" width="256" />
 	<br />
 	<a href="https://rinrin.pages.dev">https://rinrin.pages.dev</a>
-	<br /><br />
-	In development...
 </p>
 
 <h2 align="center">Site Map</h2>
@@ -15,7 +13,7 @@
 	<a href="https://rinrin.pages.dev/profile">Profile</a> &middot;
 	<a href="https://rinrin.pages.dev/blog">Blog</a> &middot;
 	<a href="https://rinrin.pages.dev/tools">Web Tools</a> &middot;
-	<a href="https://rinrin.pages.dev/projects">Projects (WIP)</a> &middot;
+	<a href="https://rinrin.pages.dev/projects">Projects</a> &middot;
 	<a href="https://rinrin.pages.dev/creations">Creations</a> &middot;
 	<a href="https://rinrin.pages.dev/social">Social</a>
 </p>
