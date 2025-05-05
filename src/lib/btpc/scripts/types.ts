@@ -1,3 +1,5 @@
+import type { ProjectStatus } from '$lib/btpc/scripts/projects/util';
+
 export interface ItemWithCount {
 	item: string;
 	count: number;
@@ -53,7 +55,7 @@ export interface ProjectMetadata {
 	langs: string[];
 	repo: string | null;
 	website: string | null;
-	status: 'wip' | 'active' | 'completed' | 'archived' | 'abandoned';
+	status: ProjectStatus;
 	date: string | null;
 	initDate: string | null;
 	license: string | null;

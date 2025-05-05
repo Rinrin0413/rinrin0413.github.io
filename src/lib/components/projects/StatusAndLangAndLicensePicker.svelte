@@ -1,8 +1,9 @@
 <script lang="ts">
 	import type { ItemWithCount } from '$lib/btpc/scripts/types';
-	import { goto } from '$app/navigation';
-	import { page } from '$app/stores';
+	import type { ProjectStatus } from '$lib/btpc/scripts/projects/util';
 	import { _ } from 'svelte-i18n';
+	import { updateParamOnElmValueChange } from '$lib/btpc/scripts/utils';
+	import { PROJECT_STATUSES, getStatusEmoji } from '$lib/btpc/scripts/projects/util';
 
 	export let allStatuses: ItemWithCount[];
 	export let allLangs: ItemWithCount[];
@@ -15,49 +16,23 @@
 	$: lang = pickedLang ?? 'all';
 	$: license = pickedLicense ?? 'all';
 
-	const STATUS_ORDER = ['wip', 'active', 'completed', 'archived', 'abandoned'];
-	const STATUS_LABELS: Record<(typeof STATUS_ORDER)[number], string> = {
+	const STATUS_LABELS: Record<ProjectStatus, string> = {
 		wip: '開発が進行中で未完成のもの',
 		active: '完成しているが、機能追加等の開発が続いているもの',
 		completed: '完成していて、現時点で更新の予定がないもの',
 		archived: '開発が終了しているもの',
 		abandoned: '完成する前に放棄したもの'
 	};
-
-	function updateParam(event: Event, paramName: string) {
-		const params = new URLSearchParams(location.search);
-
-		const value = (event.target as HTMLSelectElement).value;
-		if (value === 'all') params.delete(paramName);
-		else params.set(paramName, value);
-
-		goto(`${$page.url.pathname}?${params.toString()}`, { noScroll: true });
-	}
-
-	function getStatusEmoji(status: string) {
-		switch (status) {
-			case 'wip':
-				return '🚧';
-			case 'active':
-				return '⚡';
-			case 'completed':
-				return '✅';
-			case 'archived':
-				return '🏛️';
-			case 'abandoned':
-				return '🏚️';
-		}
-	}
 </script>
 
 <div>
 	<label
 		><span>{$_('projects.status')}</span><select
 			bind:value={status}
-			on:change={(e) => updateParam(e, 'status')}
+			on:change={(e) => updateParamOnElmValueChange(e, 'status')}
 		>
 			<option value="all">{$_('w.all')}</option>
-			{#each STATUS_ORDER as s}
+			{#each PROJECT_STATUSES as s}
 				<option value={s} title={STATUS_LABELS[s]}
 					>{getStatusEmoji(s)}
 					{$_('projects.statuses.' + s)} ({(allStatuses.find((st) => st.item === s) ?? { count: 0 })
@@ -71,7 +46,7 @@
 	<label
 		><span>{$_('projects.writtenIn')}</span><select
 			bind:value={lang}
-			on:change={(e) => updateParam(e, 'langs')}
+			on:change={(e) => updateParamOnElmValueChange(e, 'langs')}
 		>
 			<option value="all">{$_('w.all')}</option>
 			{#each allLangs as l}
@@ -85,7 +60,7 @@
 	<label
 		><span>{$_('w.license')}</span><select
 			bind:value={license}
-			on:change={(e) => updateParam(e, 'license')}
+			on:change={(e) => updateParamOnElmValueChange(e, 'license')}
 		>
 			<option value="all">{$_('w.all')}</option>
 			{#each allLicenses as l}
@@ -97,19 +72,5 @@
 </div>
 
 <style lang="scss">
-	@use '$lib/stylesheets/variables/mixin' as *;
-	@use '$lib/stylesheets/variables/color' as *;
-
-	div {
-		margin: 6px auto;
-		@include hideWhenNoJs;
-	}
-
-	label {
-		font-size: 16px;
-	}
-
-	span::after {
-		content: ': ';
-	}
+	@use '$lib/btpc/stylesheets/picker';
 </style>

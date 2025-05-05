@@ -6,6 +6,7 @@ import type {
 	ItemWithCount,
 	ProjectMetadata
 } from '$lib/btpc/scripts/types';
+import { RECOGNIZED_LICENSES as RECOGNIZED_PJT_LICENSES } from '../../../routes/projects/works/[slug]/OtherInfo.svelte';
 
 /** Fetches and sorts articles. */
 export async function fetchArticles({ limit, tags, isOnlyIndexed }: fetchArticlesOptions = {}) {
@@ -441,7 +442,8 @@ export async function fetchProjectLicenses() {
 	)
 		// Count categories.
 		.reduce((acc: ItemWithCount[], license) => {
-			if (license !== null && ['MIT', 'GPL-3.0', 'CC BY-SA 4.0', 'CC BY 4.0'].includes(license)) {
+			// `as boolean` is needed to avoid the unexpected unexpected unexpected error "Unexpected any value in conditional". why
+			if (license !== null && (RECOGNIZED_PJT_LICENSES.includes(license) as boolean)) {
 				const existingLicense = acc.find((t) => t.item === license);
 				existingLicense ? existingLicense.count++ : acc.push({ item: license, count: 1 });
 			}

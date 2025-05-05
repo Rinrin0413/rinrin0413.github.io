@@ -9,6 +9,7 @@
 	import type { PageData } from './$types';
 	import { SITE_URL, PAGE_FULL_TITLE_PART } from '$lib/scripts/variables';
 	import { _ } from 'svelte-i18n';
+	import { getStatusEmoji } from '$lib/btpc/scripts/projects/util';
 
 	export let data: PageData;
 	let metadata = data.frontmatter;
@@ -23,21 +24,6 @@
 	$: titleFull = PAGE_FULL_TITLE_PART + title;
 
 	$: absThumbnailImgPath = SITE_URL + thumbnailImgPath;
-
-	function getStatusEmoji(status: string) {
-		switch (status) {
-			case 'wip':
-				return '🚧';
-			case 'active':
-				return '⚡';
-			case 'completed':
-				return '✅';
-			case 'archived':
-				return '🏛️';
-			case 'abandoned':
-				return '🏚️';
-		}
-	}
 </script>
 
 <HeadMetadata
@@ -63,7 +49,7 @@
 	<Space height="86px" />
 {/if}
 
-<div class="project-content" class:thumbnail-exists={hasThumbnailImg}>
+<div class="content" class:thumbnail-exists={hasThumbnailImg}>
 	<div><h1>{metadata.title}</h1></div>
 	<div>
 		<span class="sub-title"
@@ -78,6 +64,6 @@
 </div>
 
 <style lang="scss">
-	@use '$lib/stylesheets/projects/project_page.scss';
+	@use '$lib/btpc/stylesheets/tall_thumbnail.scss';
 	@use '$lib/btpc/stylesheets/page_meta.scss';
 </style>
