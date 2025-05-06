@@ -101,6 +101,11 @@ Use the Sass mixin `kaisei-decol` to apply the font.
 - [Artwork Categories](#artwork-categories---get-apiartworkscategories) (`/api/artworks/categories`)
 - [Artwork Tags](#artwork-tags---get-apiartworkstags) (`/api/artworks/tags`)
 - [Artwork Licenses](#artwork-licenses---get-apiartworkslicenses) (`/api/artworks/licenses`)
+- [Projects](#projects) (`/api/projects`)
+- [Project Tags](#project-tags---get-apiprojectstags) (`/api/projects/tags`)
+- [Project Languages](#project-languages---get-apiprojectslangs) (`/api/projects/langs`)
+- [Project Licenses](#project-licenses---get-apiprojectslicenses) (`/api/projects/licenses`)
+- [Project Statuses](#project-statuses---get-apiprojectsstatuses) (`/api/projects/statuses`)
 
 ## Articles - `GET /api/articles`
 
@@ -457,6 +462,241 @@ Returns a list of licenses of artworks.
   {
 	  "item": "CC BY 4.0",
 	  "count": 1
+  }
+]
+```
+
+## Projects
+
+Returns a list of projects.
+
+### Query Parameters
+
+| Name | Type | Description | Default |
+| --- | --- | --- | --- |
+| `t` | `string[]?` | Filter projects by tags. Example: `t=tag1,tag2` | - |
+| `langs` | `string[]?` | Filter projects by programming languages. Example: `langs=lang1,lang2` | - |
+| `license` | `string?` | Filter projects by license. | - |
+| `status` | `string?` | Filter projects by status. | - |
+
+### Response Body
+
+`ProjectMetadata[]` ([`/src/lib/btpc/scripts/types.ts`](/src/lib/btpc/scripts/types.ts))
+
+- `[]` (`object[]`) - The list of projects.
+  - `title` (`string`) - The title of the project.
+  - `desc` (`string | null`) - The description of the project.
+  - `tags` (`string[]`) - The list of tags of the project.
+  - `langs` (`string[]`) - The list of programming languages used in the project.
+  - `repo` (`string | null`) - The repository URL of the project.
+  - `website` (`string | null`) - The website URL of the project.
+  - `status` (`string`) - The status of the project.
+  - `date` (`string | null`) - The last updated date of the project.
+  - `initDate` (`string | null`) - The initial release date of the project.
+  - `license` (`string | null`) - The license of the project.
+  - `thumbnailImg` (`string | null`) - The thumbnail image path of the project.
+  - `id` (`string?`) - The ID of the project. Its type is an optional string but it always exists.
+
+#### Example
+
+```json
+[
+  {
+    "title": "ホームページ (website)",
+    "desc": "Rinrin.rsのホームページ。",
+    "tags": [
+      "ウェブサイト",
+      "SvelteKit"
+    ],
+    "langs": [
+      "Svelte",
+      "TypeScript",
+      "SCSS"
+    ],
+    "repo": "https://github.com/Rinrin0413/rinrin0413.github.io",
+    "website": "https://rinrin.pages.dev",
+    "status": "active",
+    "date": "2025-04-25T00:00:00.000Z",
+    "initDate": "2021-06-26T00:00:00.000Z",
+    "license": "GPL-3.0",
+    "thumbnailImg": "website.webp",
+    "id": "website"
+  },
+  {
+    "title": "tetr-ch-rs",
+    "desc": "TETRA CHANNEL APIのためのRustラッパーライブラリ。",
+    "tags": [
+      "ライブラリ",
+      "ラッパー",
+      "TETR.IO"
+    ],
+    "langs": [
+      "Rust"
+    ],
+    "repo": "https://github.com/Rinrin0413/tetr-ch-rs",
+    "website": "https://docs.rs/tetr_ch",
+    "status": "completed",
+    "date": "2024-12-26T00:00:00.000Z",
+    "initDate": "2022-08-23T00:00:00.000Z",
+    "license": "MIT",
+    "thumbnailImg": null,
+    "id": "tetr-ch-rs"
+  },
+  {
+    "title": "Tempest Shaders for BE",
+    "desc": "Rinrinの狂気から生まれた、マインクラフト統合版向けのシェーダーパック。",
+    "tags": [
+      "シェーダーパック",
+      "マインクラフト統合版",
+      "グラフィックス"
+    ],
+    "langs": [
+      "HLSL"
+    ],
+    "repo": "https://github.com/Rinrin0413/Tempest-Shaders",
+    "website": null,
+    "status": "archived",
+    "date": "2022-03-12T00:00:00.000Z",
+    "initDate": "2022-01-06T00:00:00.000Z",
+    "license": "CC BY 4.0",
+    "thumbnailImg": "tempest-shaders_be.png",
+    "id": "Tempest-Shaders_BE"
+  }
+]
+```
+
+## Project Tags - `GET /api/projects/tags`
+
+Returns a list of tags of projects.
+
+### Response Body
+
+`ItemWithCount[]` ([`/src/lib/btpc/scripts/types.ts`](/src/lib/btpc/scripts/types.ts))
+
+- `[]` (`object[]`) - The list of tags.
+  - `item` (`string`) - The tag name.
+  - `count` (`number`) - The number of projects that have the tag.
+
+#### Example
+
+```json
+[
+  {
+    "item": "シェーダーパック",
+    "count": 3
+  },
+  {
+    "item": "ライブラリ",
+    "count": 3
+  },
+  {
+    "item": "マインクラフト統合版",
+    "count": 2
+  },
+  {
+    "item": "怪レい日本语",
+    "count": 2
+  },
+  {
+    "item": "Discordアプリ",
+    "count": 1
+  }
+]
+```
+
+## Project Languages - `GET /api/projects/langs`
+
+Returns a list of programming languages of projects.
+
+### Response Body
+
+`ItemWithCount[]` ([`/src/lib/btpc/scripts/types.ts`](/src/lib/btpc/scripts/types.ts))
+
+- `[]` (`object[]`) - The list of programming languages.
+  - `item` (`string`) - The programming language name.
+  - `count` (`number`) - The number of projects that use the programming language.
+
+#### Example
+
+```json
+[
+  {
+    "item": "Rust",
+    "count": 5
+  },
+  {
+    "item": "HLSL",
+    "count": 2
+  },
+  {
+    "item": "Svelte",
+    "count": 1
+  },
+  {
+    "item": "TypeScript",
+    "count": 1
+  }
+]
+```
+
+## Project Licenses - `GET /api/projects/licenses`
+
+Returns a list of licenses of projects.
+
+### Response Body
+
+`ItemWithCount[]` ([`/src/lib/btpc/scripts/types.ts`](/src/lib/btpc/scripts/types.ts))
+
+- `[]` (`object[]`) - The list of licenses.
+  - `item` (`string`) - The license name.
+  - `count` (`number`) - The number of projects that have the license.
+
+#### Example
+
+```json
+[
+  {
+    "item": "MIT",
+    "count": 4
+  },
+  {
+    "item": "CC BY 4.0",
+    "count": 3
+  },
+  {
+    "item": "GPL-3.0",
+    "count": 3
+  }
+]
+```
+
+## Project Statuses - `GET /api/projects/statuses`
+
+Returns a list of statuses of projects.
+
+### Response Body
+
+`ItemWithCount[]` ([`/src/lib/btpc/scripts/types.ts`](/src/lib/btpc/scripts/types.ts))
+
+### Example
+
+```json
+[
+  {
+    "item": "active",
+    "count": 4
+  },
+  {
+    "item": "wip",
+    "count": 2
+  },
+  {
+    "item": "archived",
+    "count": 2
+  },
+  {
+    "item": "completed",
+    "count": 2
   }
 ]
 ```

@@ -92,12 +92,12 @@
 	<Space height="86px" />
 {/if}
 
-<div class="article-content" class:thumbnail-exists={hasThumbnailImg}>
+<div class="content" class:thumbnail-exists={hasThumbnailImg}>
 	<div in:scale|global={introAnim(2)}>
 		<h1 style={parallax(-0.19)}>{metadata.title}</h1>
 	</div>
 	<div in:scale|global={introAnim(3)}>
-		<time datetime={datePlus9h.toISOString()} style={parallax(-0.12)}
+		<time datetime={datePlus9h.toISOString()} class="sub-title" style={parallax(-0.12)}
 			>{$dateI18n(date, { format: 'full' })}</time
 		>
 	</div>
@@ -119,6 +119,20 @@
 <ScrollToTop />
 
 <style lang="scss">
-	@use '$lib/stylesheets/blog/article_page';
+	@use '$lib/btpc/stylesheets/tall_thumbnail.scss';
 	@use '$lib/btpc/stylesheets/page_meta.scss';
+
+	@use '$lib/btpc/stylesheets/tall_thumbnail.scss' as *;
+
+	.back-thumbnail {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: $thumbnail-wrapper-height;
+		object-fit: cover;
+		opacity: 0.6;
+		filter: blur(42px);
+		user-select: none;
+	}
 </style>
