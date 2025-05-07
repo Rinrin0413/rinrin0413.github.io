@@ -100,7 +100,7 @@ async fn main() {
     };
 
     // エラーがないかを確認。
-	// 指定したユーザーが存在しない場合、ここでエラー "No such user!" が返されます。
+    // 指定したユーザーが存在しない場合、ここでエラー "No such user!" が返されます。
     if let Some(err) = response.error {
         panic!("エラー: {}\n", err.msg.expect("エラーメッセージがありません。"));
     }
