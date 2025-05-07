@@ -21,6 +21,6 @@ export default {
 };
 
 async function highlighter(code, lang) {
-	const theme = await shiki.getHighlighter({ theme: 'dracula' });
+	const theme = await shiki.getHighlighter({ theme: 'rose-pine-moon' });
 	return escapeSvelte(theme.codeToHtml(code, { lang }));
 }
