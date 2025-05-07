@@ -33,7 +33,6 @@ export interface ToolMetadata {
 
 // I explicitly specified ` | null` instead of optional variable,
 // to prevent missing fields in the tool metadata definitions.
-/** Alphabetic characters in the tags must be lowercase. */
 export interface ArtworkMetadata {
 	category: string;
 	title: string;
