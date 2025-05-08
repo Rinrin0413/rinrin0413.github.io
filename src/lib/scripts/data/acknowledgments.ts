@@ -23,7 +23,7 @@ export const ACKNOWLEDGMENTS: {
 	},
 	{
 		name: 'SvelteKit',
-		url: 'https://kit.svelte.dev',
+		url: 'https://svelte.dev/docs/kit',
 		...LICENSES.svelteKit
 	},
 	{

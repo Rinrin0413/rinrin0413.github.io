@@ -45,7 +45,7 @@ h2 {
 	@include kaisei-decol;
 }
 
-time {
+.date {
 	display: block;
 	font-size: 15px;
 	opacity: 0.7;
@@ -58,7 +58,7 @@ p {
 	margin-top: 8px;
 }
 
-.read-more {
+.more {
 	display: block;
 	position: relative;
 	left: 0;
@@ -111,7 +111,7 @@ ul {
 		font-size: 18px;
 	}
 
-	time {
+	.date {
 		font-size: 14px;
 		opacity: 0.6;
 		margin-top: 0;

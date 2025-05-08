@@ -56,6 +56,8 @@
 </section>
 
 <style lang="scss">
+	@use '$lib/btpc/stylesheets/index_page';
+
 	.artworks {
 		margin: 0 auto;
 	}

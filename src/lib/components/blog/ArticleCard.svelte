@@ -35,13 +35,13 @@
 		</div>
 		<div class="meta">
 			<h2>{meta.title}</h2>
-			<time datetime={datePlus9h.toISOString()}>
+			<time datetime={datePlus9h.toISOString()} class="date">
 				{$dateI18n(date, { format: 'medium' })}
 			</time>
 			{#if meta.desc}
 				<p>{meta.desc}</p>
 			{/if}
-			<span class="read-more">read more -&gt;</span>
+			<span class="more">read more -&gt;</span>
 			{#if 0 < meta.tags.length && !mini}
 				<ul>
 					{#each meta.tags as tag}
@@ -54,6 +54,6 @@
 >
 
 <style lang="scss">
-	@use '$lib/stylesheets/blog/article_card';
 	@use '$lib/btpc/stylesheets/card';
+	@use '$lib/btpc/stylesheets/wide_card';
 </style>

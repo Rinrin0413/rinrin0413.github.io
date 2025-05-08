@@ -41,7 +41,7 @@
 	Chart.register(...registerables);
 
 	// The default value should be a multiple of 0.5 because the `<input>` element and graph steps are 0.5.
-	let awakeDuration = Math.round(DATASET.stats.awake.mean * 2) * 0.5;
+	let awakeDuration = roundToHalf(DATASET.stats.awake.mean);
 
 	$: sleepDurations = DATASET.regrModels.reduce(
 		(acc, model) => {
@@ -55,7 +55,7 @@
 	let chartData: ChartData<'line', (number | Point)[], unknown>;
 	$: if (renderGraph && chartData !== undefined)
 		chartData.datasets[DATASET.regrModels.length].data[0] = {
-			x: awakeDuration,
+			x: roundToHalf(awakeDuration),
 			y:
 				DATASET.regrModels.reduce((acc, model) => {
 					let sleepDuration = sleepDurations[model.name];
@@ -63,6 +63,11 @@
 					return acc + sleepDuration;
 				}, 0) / DATASET.regrModels.length
 		};
+
+	/** Returns a supplied numeric expression rounded to the nearest multiple of 0.5. */
+	function roundToHalf(x: number) {
+		return Math.round(x * 2) * 0.5;
+	}
 
 	function setChartData() {
 		if (!renderGraph || chartData !== undefined) return;

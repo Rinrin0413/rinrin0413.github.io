@@ -1,22 +1,10 @@
 @use '$lib/stylesheets/variables/dimension' as *;
 
-$back-thumbnail-height: calc($max-vh001 * 70);
-
-.back-thumbnail {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: $back-thumbnail-height;
-	object-fit: cover;
-	opacity: 0.6;
-	filter: blur(42px);
-	user-select: none;
-}
+$thumbnail-wrapper-height: calc($max-vh001 * 70);
 
 .thumbnail-wrapper {
 	width: 100%;
-	height: $back-thumbnail-height;
+	height: $thumbnail-wrapper-height;
 	position: relative;
 	bottom: $header-height * 1.3;
 	display: flex;
@@ -27,16 +15,16 @@ $back-thumbnail-height: calc($max-vh001 * 70);
 .thumbnail {
 	position: relative;
 	width: min(95vw, calc($max-vh001 * 95));
-	height: min(427px, $back-thumbnail-height);
+	height: min(427px, $thumbnail-wrapper-height);
 	object-fit: contain;
 	filter: drop-shadow(0 0 14px #00000080);
 
 	@media (max-height: 859px) {
-		height: min(386px, $back-thumbnail-height);
+		height: min(386px, $thumbnail-wrapper-height);
 	}
 }
 
-.article-content.thumbnail-exists {
+.content.thumbnail-exists {
 	position: relative;
 	bottom: $header-height * 1.3 + 18px;
 

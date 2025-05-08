@@ -62,13 +62,15 @@
 
 <div class="artwork-content">
 	<div><h1>{metadata.title}</h1></div>
-	{#if date !== null && datePlus9h !== null}
-		<div>
-			<time datetime={datePlus9h.toISOString()}>{$dateI18n(date, { format: 'full' })}</time>
-		</div>
-	{:else}
-		<div><time>{$_('creations.dateUnknown')}</time></div>
-	{/if}
+	<div>
+		{#if date !== null && datePlus9h !== null}
+			<time datetime={datePlus9h.toISOString()} class="sub-title"
+				>{$dateI18n(date, { format: 'full' })}</time
+			>
+		{:else}
+			<span class="sub-title">{$_('creations.dateUnknown')}</span>
+		{/if}
+	</div>
 	<OtherInfo {metadata} />
 	<ChildPageComponentRenderer component={data.component} />
 	<p><ShareButton title={titleFull} expanded /></p>
