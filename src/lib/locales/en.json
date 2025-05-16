@@ -263,8 +263,8 @@
 	"privacy": {
 		"desc": "This Privacy Policy outlines the use of access analytics on this website:",
 		"analytics": [
-			"On this website, we use ",
-			" provided by Cloudflare, Inc. to analyze the behavior of visitors to this website. Cloudflare Web Analytics does not use any client-side state, such as cookies or localStorage, to collect usage metrics. We also don’t “fingerprint” individuals via your IP address, User Agent string, or any other data for the purpose of displaying analytics. These analytics are non-invasive and respect your privacy.",
+			"To analyze the behavior of visitors, this website uses ",
+			" (provided by Cloudflare, Inc.). Cloudflare Web Analytics does not use any client-side state, such as cookies or localStorage, to collect usage metrics. In addition, no “fingerprinting” techniques are used to identify individual visitors via visitors' IP address, User Agent string, or any other data for analytics purposes. These analytics are non-invasive and respect visitors' privacy.",
 			"However, some pages on this website contain embedded content from",
 			" (",
 			") and",
