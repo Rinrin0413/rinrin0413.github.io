@@ -5,7 +5,7 @@
 	import { _, date as dateI18n } from 'svelte-i18n';
 
 	const establishedData = new Date('2024-06-23T09:00:00Z');
-	const revisedDates = [new Date('2025-03-21T09:00:00Z')];
+	const revisedDates = ['2025-03-21T09:00:00Z', '2025-05-16T09:00:00Z'].map((d) => new Date(d));
 </script>
 
 <HeadMetadata
