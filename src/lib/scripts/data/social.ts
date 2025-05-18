@@ -126,6 +126,12 @@ export const SOCIALS = [
 		icon: 'kofi_s_logo_nolabel.svg'
 	},
 	{
+		service: 'LeetCode',
+		name: 'rinrin0413',
+		url: 'https://leetcode.com/u/rinrin0413',
+		icon: null // Could not find the guideline
+	},
+	{
 		service: 'MCPEDL',
 		name: 'Rinrinrs',
 		url: 'https://mcpedl.com/user/rinrin-rs',
