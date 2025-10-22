@@ -284,7 +284,7 @@ export const SOCIALS = [
 	{
 		service: 'Transifex',
 		name: 'rinrin0413.valley',
-		url: 'https://transifex.com/user/profile/rinrin0413.valley',
+		url: 'https://app.transifex.com/user/profile/rinrin0413.valley',
 		icon: null // Could not find the guideline
 	},
 	{
