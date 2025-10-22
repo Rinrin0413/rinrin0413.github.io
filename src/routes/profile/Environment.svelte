@@ -17,10 +17,10 @@
 		{
 			type: $_('w.software'),
 			items: [
-				{ key: 'OS', value: 'openSUSE Leap 15.6 x86_64' },
-				{ key: $_('w.shell'), value: 'bash 4.4.23' },
-				{ key: $_('w.desktopEnv'), value: 'GNOME 45.3' },
-				{ key: $_('w.webBrowser'), value: 'Mozilla Firefox ESR' },
+				{ key: 'OS', value: 'Fedora Linux (Workstation Edition)' },
+				{ key: $_('w.shell'), value: 'fish' },
+				{ key: $_('w.desktopEnv'), value: 'GNOME' },
+				{ key: $_('w.webBrowser'), value: 'Mozilla Firefox' },
 				{ key: $_('w.codeEditor'), value: 'Visual Studio Code Insiders' }
 			]
 		}
@@ -42,11 +42,11 @@
 	</div>
 {/each}
 
-<p>
+<!-- <p>
 	{$_('env.notes.0')}<a href="https://geartics.com/rinrin" target="_blank" rel="noopener noreferrer"
 		>Geartics</a
 	>{$_('env.notes.1')}
-</p>
+</p> -->
 
 <style lang="scss">
 	@use '$lib/stylesheets/variables/color' as *;
