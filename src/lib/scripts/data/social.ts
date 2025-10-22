@@ -72,12 +72,6 @@ export const SOCIALS = [
 		icon: null // Could not find the guideline
 	},
 	{
-		service: 'Geartics',
-		name: 'rinrin',
-		url: 'https://geartics.com/rinrin',
-		icon: 'geartics_1_Primary_logo_on_transparent_64.webp'
-	},
-	{
 		service: 'GitHub',
 		name: '@Rinrin0413',
 		url: 'https://github.com/Rinrin0413',
