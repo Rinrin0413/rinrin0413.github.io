@@ -66,9 +66,21 @@ export const SOCIALS = [
 		icon: ICONS.discord
 	},
 	{
+		service: 'Fedora Weblate',
+		name: '@rinrin',
+		url: 'https://translate.fedoraproject.org/user/rinrin',
+		icon: null // Could not find the guideline
+	},
+	{
 		service: 'Flat',
 		name: 'Rinrin0413',
 		url: 'https://flat.io/@Rinrin0413',
+		icon: null // Could not find the guideline
+	},
+	{
+		service: 'GeoGuessr',
+		name: 'Rinrin',
+		url: 'https://www.geoguessr.com/user/68336373d20b5df4a88f49c1',
 		icon: null // Could not find the guideline
 	},
 	{
@@ -136,6 +148,12 @@ export const SOCIALS = [
 		name: '@Rinrin0413',
 		url: 'https://misskey.io/@Rinrin0413',
 		icon: 'misskey-io_io-icon.svg'
+	},
+	{
+		service: 'mixi2',
+		name: '@rinrin0413',
+		url: 'https://mixi.social/@rinrin0413',
+		icon: null // Could not find the guideline
 	},
 	{
 		service: 'Modrinth',
@@ -225,6 +243,12 @@ export const SOCIALS = [
 		service: 'Shadertoy',
 		name: 'rinrin',
 		url: 'https://shadertoy.com/user/rinrin',
+		icon: null // Could not find the guideline
+	},
+	{
+		service: 'Sora',
+		name: 'rinrin0413',
+		url: 'https://sora.chatgpt.com/profile/rinrin0413',
 		icon: null // Could not find the guideline
 	},
 	{
