@@ -66,16 +66,22 @@ export const SOCIALS = [
 		icon: ICONS.discord
 	},
 	{
+		service: 'Fedora Weblate',
+		name: '@rinrin',
+		url: 'https://translate.fedoraproject.org/user/rinrin',
+		icon: null // Could not find the guideline
+	},
+	{
 		service: 'Flat',
 		name: 'Rinrin0413',
 		url: 'https://flat.io/@Rinrin0413',
 		icon: null // Could not find the guideline
 	},
 	{
-		service: 'Geartics',
-		name: 'rinrin',
-		url: 'https://geartics.com/rinrin',
-		icon: 'geartics_1_Primary_logo_on_transparent_64.webp'
+		service: 'GeoGuessr',
+		name: 'Rinrin',
+		url: 'https://www.geoguessr.com/user/68336373d20b5df4a88f49c1',
+		icon: null // Could not find the guideline
 	},
 	{
 		service: 'GitHub',
@@ -142,6 +148,12 @@ export const SOCIALS = [
 		name: '@Rinrin0413',
 		url: 'https://misskey.io/@Rinrin0413',
 		icon: 'misskey-io_io-icon.svg'
+	},
+	{
+		service: 'mixi2',
+		name: '@rinrin0413',
+		url: 'https://mixi.social/@rinrin0413',
+		icon: null // Could not find the guideline
 	},
 	{
 		service: 'Modrinth',
@@ -234,6 +246,12 @@ export const SOCIALS = [
 		icon: null // Could not find the guideline
 	},
 	{
+		service: 'Sora',
+		name: 'rinrin0413',
+		url: 'https://sora.chatgpt.com/profile/rinrin0413',
+		icon: null // Could not find the guideline
+	},
+	{
 		service: 'SoundCloud',
 		name: 'rinrin0413',
 		url: 'https://soundcloud.com/rinrin0413',
@@ -266,7 +284,7 @@ export const SOCIALS = [
 	{
 		service: 'Transifex',
 		name: 'rinrin0413.valley',
-		url: 'https://transifex.com/user/profile/rinrin0413.valley',
+		url: 'https://app.transifex.com/user/profile/rinrin0413.valley',
 		icon: null // Could not find the guideline
 	},
 	{

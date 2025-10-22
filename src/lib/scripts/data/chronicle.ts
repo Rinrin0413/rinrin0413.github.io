@@ -44,7 +44,7 @@ export const CHRONICLE: {
 	},
 	{
 		year: 2025,
-		events: [4]
+		events: [4, 9]
 	}
 	// {
 	// 	year: 2036,
