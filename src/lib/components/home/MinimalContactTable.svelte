@@ -30,7 +30,7 @@
 			isExternal: true
 		},
 		{
-			service: 'Discord(server)',
+			service: 'Discord Server',
 			name: 'Rinrinの要塞',
 			href: 'https://discord.gg/7QhMDfyPHR',
 			src: '/images/logos/discord-mark-blue.svg',

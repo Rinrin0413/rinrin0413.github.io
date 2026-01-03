@@ -54,13 +54,13 @@ export const SOCIALS = [
 		icon: ICONS.discord
 	},
 	{
-		service: 'Discord(sub)',
+		service: 'Discord (sub)',
 		name: 'rinrin.wgsl',
 		url: 'https://discord.com/users/801082943371477022',
 		icon: ICONS.discord
 	},
 	{
-		service: 'Discord(server)',
+		service: 'Discord (server)',
 		name: 'Rinrinの要塞',
 		url: 'https://discord.gg/7QhMDfyPHR',
 		icon: ICONS.discord
@@ -312,7 +312,7 @@ export const SOCIALS = [
 		icon: ICONS.x
 	},
 	{
-		service: 'X(sub)',
+		service: 'X (sub)',
 		name: '@Rinrin_wgsl',
 		url: 'https://x.com/Rinrin_wgsl',
 		icon: ICONS.x
@@ -324,7 +324,7 @@ export const SOCIALS = [
 		icon: ICONS.xbox
 	},
 	{
-		service: 'Xbox(sub)',
+		service: 'Xbox (sub)',
 		name: 'Rinrin0413',
 		url: 'https://xbox.com/play/user/Rinrin0413',
 		icon: ICONS.xbox
