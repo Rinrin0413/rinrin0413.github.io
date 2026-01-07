@@ -106,7 +106,6 @@ thumbnailImg: null
 
 ```bash
 ./kagami.sh
-
 ```
 
 ## バックアップ先のディレクトリ構造
