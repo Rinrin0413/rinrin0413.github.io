@@ -96,7 +96,6 @@ thumbnailImg: null
 
 ```bash
 ./kagami.sh dry
-
 ```
 
 > 【注意事項】
