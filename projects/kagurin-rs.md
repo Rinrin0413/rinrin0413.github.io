@@ -6,7 +6,7 @@ langs: [Rust]
 repo: https://github.com/Rinrin0413/kagurin-rs
 website: null
 status: active
-date: 2024-12-24
+date: 2025-05-17
 initDate: 2022-01-30
 license: GPL-3.0
 thumbnailImg: null

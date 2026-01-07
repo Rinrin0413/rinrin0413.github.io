@@ -6,7 +6,7 @@ langs: [Rust]
 repo: https://github.com/Rinrin0413/tetr-ch-rs
 website: https://docs.rs/tetr_ch
 status: completed
-date: 2024-12-26
+date: 2025-12-15
 initDate: 2022-08-23
 license: MIT
 thumbnailImg: null
