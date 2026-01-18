@@ -21,7 +21,8 @@
 				{ key: $_('w.shell'), value: 'fish' },
 				{ key: $_('w.desktopEnv'), value: 'GNOME' },
 				{ key: $_('w.webBrowser'), value: 'Mozilla Firefox' },
-				{ key: $_('w.codeEditor'), value: 'Visual Studio Code Insiders' }
+				{ key: $_('w.codeEditor'), value: 'Visual Studio Code Insiders' },
+				{ key: $_('w.terminalEmulator'), value: 'Ghostty' }
 			]
 		}
 	];
