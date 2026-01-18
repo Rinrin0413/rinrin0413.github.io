@@ -43,7 +43,8 @@
 		"establishedOn": "Established on {date}",
 		"revisedOn": "Revised on {date}",
 		"repo": "Repository",
-		"website": "Website"
+		"website": "Website",
+		"terminalEmulator": "Terminal Emulator"
 	},
 	"home": {
 		"icon": "Rinrin.rs' avatar",

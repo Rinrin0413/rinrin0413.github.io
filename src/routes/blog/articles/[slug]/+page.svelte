@@ -29,7 +29,7 @@
 		slug = paths[pathnameLength - (pathnameIsEndsWithSlash ? 2 : 1)];
 	}
 
-	let scrollY: number;
+	let scrollY = 0;
 	$: parallax = parallaxStyle(scrollY);
 
 	$: date = idToDate(slug);

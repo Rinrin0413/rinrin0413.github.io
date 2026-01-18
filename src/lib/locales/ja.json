@@ -43,7 +43,8 @@
 		"establishedOn": "{date} 制定",
 		"revisedOn": "{date} 改定",
 		"repo": "リポジトリ",
-		"website": "ウェブサイト"
+		"website": "ウェブサイト",
+		"terminalEmulator": "ターミナルエミュレーター"
 	},
 	"home": {
 		"icon": "Rinrin.rs のアイコン",

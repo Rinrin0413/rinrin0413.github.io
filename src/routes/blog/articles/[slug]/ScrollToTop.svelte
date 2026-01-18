@@ -4,7 +4,7 @@
 	let willScrollUp = false;
 	let lastScrollPos = 0;
 
-	let scrollY: number;
+	let scrollY = 0;
 
 	$: {
 		willScrollUp = scrollY < lastScrollPos;

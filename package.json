@@ -1,6 +1,6 @@
 {
 	"name": "website_rinrin",
-	"version": "1.0.6",
+	"version": "1.0.7",
 	"private": true,
 	"scripts": {
 		"dev": "vite dev",
@@ -15,8 +15,8 @@
 		"project": "tsx assets/scripts/create-project.ts"
 	},
 	"devDependencies": {
-		"@typescript-eslint/eslint-plugin": "^6.0.0",
-		"@typescript-eslint/parser": "^6.0.0",
+		"@typescript-eslint/eslint-plugin": "^8.53.0",
+		"@typescript-eslint/parser": "^8.53.0",
 		"eslint": "^8.56.0",
 		"eslint-config-prettier": "^9.1.0",
 		"eslint-plugin-svelte": "^2.35.1",
@@ -27,7 +27,7 @@
 	"type": "module",
 	"dependencies": {
 		"@sveltejs/adapter-cloudflare": "^3.0.0",
-		"@sveltejs/kit": "^2.20.6",
+		"@sveltejs/kit": "^2.49.5",
 		"@sveltejs/vite-plugin-svelte": "^3.0.0",
 		"@types/nprogress": "^0.2.3",
 		"@types/uuid": "^9.0.6",
