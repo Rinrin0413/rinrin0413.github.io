@@ -91,7 +91,10 @@ export async function fetchArticleTags() {
 			.reduce((acc: ItemWithCount[], tag) => {
 				const tagLowercase = tag.toLowerCase();
 				const existingTag = acc.find((t) => t.item.toLowerCase() === tagLowercase);
-				existingTag ? existingTag.count++ : acc.push({ item: tagLowercase, count: 1 });
+
+				if (existingTag !== undefined) existingTag.count++;
+				else acc.push({ item: tagLowercase, count: 1 });
+
 				return acc;
 			}, [])
 
@@ -176,7 +179,10 @@ export async function fetchToolTags() {
 			.reduce((acc: ItemWithCount[], tag) => {
 				const tagLowercase = tag.toLowerCase();
 				const existingTag = acc.find((t) => t.item.toLowerCase() === tagLowercase);
-				existingTag ? existingTag.count++ : acc.push({ item: tagLowercase, count: 1 });
+
+				if (existingTag !== undefined) existingTag.count++;
+				else acc.push({ item: tagLowercase, count: 1 });
+
 				return acc;
 			}, [])
 
@@ -248,7 +254,10 @@ export async function fetchArtworkCategories() {
 			// Count categories.
 			.reduce((acc: ItemWithCount[], category) => {
 				const existingCategory = acc.find((t) => t.item === category);
-				existingCategory ? existingCategory.count++ : acc.push({ item: category, count: 1 });
+
+				if (existingCategory !== undefined) existingCategory.count++;
+				else acc.push({ item: category, count: 1 });
+
 				return acc;
 			}, [])
 
@@ -278,7 +287,10 @@ export async function fetchArtworkTags() {
 			// Count tags.
 			.reduce((acc: ItemWithCount[], tag) => {
 				const existingTag = acc.find((t) => t.item === tag);
-				existingTag ? existingTag.count++ : acc.push({ item: tag, count: 1 });
+
+				if (existingTag !== undefined) existingTag.count++;
+				else acc.push({ item: tag, count: 1 });
+
 				return acc;
 			}, [])
 
@@ -306,7 +318,9 @@ export async function fetchArtworkLicenses() {
 			.reduce((acc: ItemWithCount[], license) => {
 				if (license === 'CC BY-SA 4.0') {
 					const existingLicense = acc.find((t) => t.item === license);
-					existingLicense ? existingLicense.count++ : acc.push({ item: license, count: 1 });
+
+					if (existingLicense !== undefined) existingLicense.count++;
+					else acc.push({ item: license, count: 1 });
 				}
 				return acc;
 			}, [])
@@ -388,7 +402,10 @@ export async function fetchProjectTags() {
 		// Count tags.
 		.reduce((acc: ItemWithCount[], tag) => {
 			const existingTag = acc.find((t) => t.item === tag);
-			existingTag ? existingTag.count++ : acc.push({ item: tag, count: 1 });
+
+			if (existingTag !== undefined) existingTag.count++;
+			else acc.push({ item: tag, count: 1 });
+
 			return acc;
 		}, [])
 
@@ -417,7 +434,10 @@ export async function fetchProjectLangs() {
 		// Count languages.
 		.reduce((acc: ItemWithCount[], lang) => {
 			const existingLang = acc.find((t) => t.item === lang);
-			existingLang ? existingLang.count++ : acc.push({ item: lang, count: 1 });
+
+			if (existingLang !== undefined) existingLang.count++;
+			else acc.push({ item: lang, count: 1 });
+
 			return acc;
 		}, [])
 
@@ -445,7 +465,9 @@ export async function fetchProjectLicenses() {
 			// `as boolean` is needed to avoid the unexpected unexpected unexpected error "Unexpected any value in conditional". why
 			if (license !== null && (RECOGNIZED_PJT_LICENSES.includes(license) as boolean)) {
 				const existingLicense = acc.find((t) => t.item === license);
-				existingLicense ? existingLicense.count++ : acc.push({ item: license, count: 1 });
+
+				if (existingLicense !== undefined) existingLicense.count++;
+				else acc.push({ item: license, count: 1 });
 			}
 			return acc;
 		}, [])
@@ -472,7 +494,10 @@ export async function fetchProjectStatuses() {
 		// Count statuses.
 		.reduce((acc: ItemWithCount[], status) => {
 			const existingStatus = acc.find((t) => t.item === status);
-			existingStatus ? existingStatus.count++ : acc.push({ item: status, count: 1 });
+
+			if (existingStatus !== undefined) existingStatus.count++;
+			else acc.push({ item: status, count: 1 });
+
 			return acc;
 		}, []);
 
