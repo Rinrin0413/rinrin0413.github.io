@@ -96,6 +96,12 @@ export const SOCIALS = [
 		icon: 'gitlab-logo.svg'
 	},
 	{
+		service: 'Gitty',
+		name: 'Rinrin0413',
+		url: 'https://gitty-code.com/user/Rinrin0413',
+		icon: null // Could not find the guideline
+	},
+	{
 		service: 'GNOME Sh. Ext.',
 		name: 'Rinrin.rs',
 		url: 'https://extensions.gnome.org/accounts/profile/Rinrin.rs',
