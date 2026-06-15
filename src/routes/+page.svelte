@@ -19,7 +19,7 @@
 
 <HeadMetadata title="Home" desc="Rinrin.rs のホームページです。" canonicalUrl={SITE_URL} />
 
-<img src="/images/icon_13_384px.webp" alt={$_('home.icon')} class="icn" />
+<img src="/images/icon_15_256px.gif" alt={$_('home.icon')} class="icn" />
 
 <section id="about">
 	<Title text="About me" />
