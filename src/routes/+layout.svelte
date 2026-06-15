@@ -13,7 +13,6 @@
 		BLOG_NAME,
 		COPYRIGHT,
 		SITE_NAME,
-		SITE_URL,
 		CONTACT_EMAIL_ADDRESS,
 		LOGO_180PX_OXIPNG_REL_PATH
 	} from '$lib/scripts/variables';
@@ -76,7 +75,7 @@
 
 	<meta property="og:site_name" content={SITE_NAME} />
 	<meta property="og:locale" content="ja_JP" />
-	<meta name="twitter:site" content={SITE_URL} />
+	<meta name="twitter:site" content="@Rinrin_2nd" />
 	<meta name="theme-color" content="#d1b27f" />
 
 	<meta name="keywords" content="Rinrin,Rinrin0413,Rinrin.rs" />
