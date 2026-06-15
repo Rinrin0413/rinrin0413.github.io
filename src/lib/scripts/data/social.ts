@@ -8,7 +8,7 @@ export const SOCIALS = [
 	{
 		service: 'Aipictors',
 		name: 'rin',
-		url: 'https://aipictors.com/user/?id=rin',
+		url: 'https://www.aipictors.com/users/rin',
 		icon: 'aipictors_square_logo.webp'
 	},
 	{
@@ -91,8 +91,8 @@ export const SOCIALS = [
 	},
 	{
 		service: 'GitLab',
-		name: '@rinrin0413.valley',
-		url: 'https://gitlab.com/rinrin0413.valley',
+		name: '@Rinrin0413',
+		url: 'https://gitlab.com/Rinrin0413',
 		icon: 'gitlab-logo.svg'
 	},
 	{
@@ -141,12 +141,6 @@ export const SOCIALS = [
 		service: 'LeetCode',
 		name: 'rinrin0413',
 		url: 'https://leetcode.com/u/rinrin0413',
-		icon: null // Could not find the guideline
-	},
-	{
-		service: 'MCPEDL',
-		name: 'Rinrinrs',
-		url: 'https://mcpedl.com/user/rinrin-rs',
 		icon: null // Could not find the guideline
 	},
 	{
@@ -216,6 +210,12 @@ export const SOCIALS = [
 		icon: 'opensuse_button-colour.svg'
 	},
 	{
+		service: 'Open WebUI Comm.',
+		name: 'rinrin-rs',
+		url: 'https://openwebui.com/u/rinrin-rs',
+		icon: 'open-webui-logo-transparent-9665c5e6fe8abe6bfab2ba83db0c409a.webp'
+	},
+	{
 		service: 'osu!',
 		name: 'Rinrin-rs',
 		url: 'https://osu.ppy.sh/users/32818234',
@@ -249,12 +249,6 @@ export const SOCIALS = [
 		service: 'Shadertoy',
 		name: 'rinrin',
 		url: 'https://shadertoy.com/user/rinrin',
-		icon: null // Could not find the guideline
-	},
-	{
-		service: 'Sora',
-		name: 'rinrin0413',
-		url: 'https://sora.chatgpt.com/profile/rinrin0413',
 		icon: null // Could not find the guideline
 	},
 	{
