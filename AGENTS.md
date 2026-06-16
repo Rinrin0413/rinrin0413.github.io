@@ -13,11 +13,11 @@ This website supports only Japanese and English. Localization is managed via `ja
 
 ## Commands
 
-- Clean install: `npm clean-install`
-- Install deps: `npm install`
-- Start dev server: `npm run dev`
-- Build: `npm run build`
-- Check & format & lint: `npm run check && npm run fmt && npm run lnt`
+- Clean install: `pnpm install --frozen-lockfile`
+- Install deps: `pnpm install`
+- Start dev server: `pnpm dev`
+- Build: `pnpm build`
+- Check & format & lint: `pnpm check && pnpm fmt && pnpm lnt`
 
 ## Code Style
 
