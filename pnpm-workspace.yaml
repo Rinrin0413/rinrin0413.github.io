@@ -2,3 +2,6 @@ allowBuilds:
   es5-ext: true
   esbuild: true
   svelte-preprocess: true
+minimumReleaseAge: 4320
+trustPolicy: no-downgrade
+blockExoticSubdeps: true
