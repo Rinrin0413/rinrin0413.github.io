@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { run } from 'svelte/legacy';
+
 	import HeadMetadata from '$lib/components/HeadMetadata.svelte';
 	import Space from '$lib/components/Space.svelte';
 	import ShareButton from '$lib/btpc/components/ShareButton.svelte';
@@ -11,19 +13,25 @@
 	import { _ } from 'svelte-i18n';
 	import { getStatusEmoji } from '$lib/btpc/scripts/projects/util';
 
-	export let data: PageData;
-	let metadata = data.frontmatter;
-	$: metadata = data.frontmatter;
+	interface Props {
+		data: PageData;
+	}
 
-	$: hasThumbnailImg = metadata.thumbnailImg !== null;
-	$: thumbnailImgPath = hasThumbnailImg
+	let { data }: Props = $props();
+	let metadata = $state(data.frontmatter);
+	run(() => {
+		metadata = data.frontmatter;
+	});
+
+	let hasThumbnailImg = $derived(metadata.thumbnailImg !== null);
+	let thumbnailImgPath = $derived(hasThumbnailImg
 		? '/images/projects/thumbnails/' + metadata.thumbnailImg
-		: null;
+		: null);
 
-	$: title = metadata.title;
-	$: titleFull = PAGE_FULL_TITLE_PART + title;
+	let title = $derived(metadata.title);
+	let titleFull = $derived(PAGE_FULL_TITLE_PART + title);
 
-	$: absThumbnailImgPath = SITE_URL + thumbnailImgPath;
+	let absThumbnailImgPath = $derived(SITE_URL + thumbnailImgPath);
 </script>
 
 <HeadMetadata

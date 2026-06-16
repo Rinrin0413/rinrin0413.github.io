@@ -1,4 +1,4 @@
-<script context="module" lang="ts">
+<script module lang="ts">
 	export const metadata = {
 		title: '犬・猫と人間の年齢換算機',
 		desc: '犬や猫の年齢を人間の年齢に換算します。',
@@ -7,15 +7,17 @@
 </script>
 
 <script lang="ts">
+	import { run } from 'svelte/legacy';
+
 	import ToolHead from '$lib/components/tools/ToolHead.svelte';
 	import CopyButton from '$lib/components/CopyButton.svelte';
 	import ToolFooter from '$lib/components/tools/ToolFoot.svelte';
 
-	let creature = '小〜中型犬';
-	let creatureAge = 5.5;
-	let humanAgeMoe: number | null;
-	let humanAgeVetsNeJp: number | null;
-	let humanAgeDnaMethylationBased: number | null;
+	let creature = $state('小〜中型犬');
+	let creatureAge = $state(5.5);
+	let humanAgeMoe: number | null = $state();
+	let humanAgeVetsNeJp: number | null = $state();
+	let humanAgeDnaMethylationBased: number | null = $state();
 
 	const MOE_TABLES = {
 		smallMediumDogAndCat: [
@@ -76,32 +78,6 @@
 		]
 	};
 
-	$: if (creatureAge !== undefined) {
-		if (creature === '小〜中型犬' || creature === '猫')
-			humanAgeMoe =
-				2 <= creatureAge
-					? 24 + (creatureAge - 2) * 4
-					: interpolate(creatureAge, MOE_TABLES.smallMediumDogAndCat);
-		else if (creature === '大型犬')
-			humanAgeMoe = 1 <= creatureAge ? 12 + (creatureAge - 1) * 7 : creatureAge * 12;
-		else humanAgeMoe = null; // unreachable
-		humanAgeMoe = toFixed(humanAgeMoe);
-
-		let vetsNeJpTable: number[][] | null;
-		if (creature === '小〜中型犬' || creature === '猫')
-			vetsNeJpTable = VETS_NE_JP_TABLES.smallMediumDogAndCat;
-		else if (creature === '大型犬') vetsNeJpTable = VETS_NE_JP_TABLES.largeDog;
-		else vetsNeJpTable = null; // unreachable
-		if (vetsNeJpTable !== null) humanAgeVetsNeJp = interpolate(creatureAge, vetsNeJpTable);
-		else humanAgeVetsNeJp = null;
-		humanAgeVetsNeJp = toFixed(humanAgeVetsNeJp);
-
-		if (creature.includes('犬')) humanAgeDnaMethylationBased = 16 * Math.log(creatureAge) + 31;
-		if (humanAgeDnaMethylationBased !== null && isNaN(humanAgeDnaMethylationBased))
-			humanAgeDnaMethylationBased = null;
-		if (humanAgeDnaMethylationBased !== null)
-			humanAgeDnaMethylationBased = toFixed(humanAgeDnaMethylationBased);
-	}
 
 	function interpolate(age: number, table: number[][]) {
 		if (age < table[0][0] || table[table.length - 1][0] < age) return null;
@@ -119,6 +95,34 @@
 	}
 
 	const EMPTY = '-';
+	run(() => {
+		if (creatureAge !== undefined) {
+			if (creature === '小〜中型犬' || creature === '猫')
+				humanAgeMoe =
+					2 <= creatureAge
+						? 24 + (creatureAge - 2) * 4
+						: interpolate(creatureAge, MOE_TABLES.smallMediumDogAndCat);
+			else if (creature === '大型犬')
+				humanAgeMoe = 1 <= creatureAge ? 12 + (creatureAge - 1) * 7 : creatureAge * 12;
+			else humanAgeMoe = null; // unreachable
+			humanAgeMoe = toFixed(humanAgeMoe);
+
+			let vetsNeJpTable: number[][] | null;
+			if (creature === '小〜中型犬' || creature === '猫')
+				vetsNeJpTable = VETS_NE_JP_TABLES.smallMediumDogAndCat;
+			else if (creature === '大型犬') vetsNeJpTable = VETS_NE_JP_TABLES.largeDog;
+			else vetsNeJpTable = null; // unreachable
+			if (vetsNeJpTable !== null) humanAgeVetsNeJp = interpolate(creatureAge, vetsNeJpTable);
+			else humanAgeVetsNeJp = null;
+			humanAgeVetsNeJp = toFixed(humanAgeVetsNeJp);
+
+			if (creature.includes('犬')) humanAgeDnaMethylationBased = 16 * Math.log(creatureAge) + 31;
+			if (humanAgeDnaMethylationBased !== null && isNaN(humanAgeDnaMethylationBased))
+				humanAgeDnaMethylationBased = null;
+			if (humanAgeDnaMethylationBased !== null)
+				humanAgeDnaMethylationBased = toFixed(humanAgeDnaMethylationBased);
+		}
+	});
 </script>
 
 <ToolHead {metadata} />
@@ -162,7 +166,7 @@
 
 <ToolFooter {metadata} />
 
-<!-- svelte-ignore css-unused-selector -->
+<!-- svelte-ignore css_unused_selector -->
 <style lang="scss">
 	@use '$lib/stylesheets/tools/tool_page';
 

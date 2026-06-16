@@ -4,7 +4,7 @@
 
 	import { _ } from 'svelte-i18n';
 
-	$: envs = [
+	let envs = $derived([
 		{
 			type: $_('w.hardware'),
 			items: [
@@ -25,7 +25,7 @@
 				{ key: $_('w.terminalEmulator'), value: 'Ghostty' }
 			]
 		}
-	];
+	]);
 </script>
 
 <p>{$_('env.intro')}</p>

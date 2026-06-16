@@ -5,16 +5,27 @@
 	import { updateParamOnElmValueChange } from '$lib/btpc/scripts/utils';
 	import { PROJECT_STATUSES, getStatusEmoji } from '$lib/btpc/scripts/projects/util';
 
-	export let allStatuses: ItemWithCount[];
-	export let allLangs: ItemWithCount[];
-	export let allLicenses: ItemWithCount[];
-	export let pickedStatus: string | null = null;
-	export let pickedLang: string | null = null;
-	export let pickedLicense: string | null = null;
+	interface Props {
+		allStatuses: ItemWithCount[];
+		allLangs: ItemWithCount[];
+		allLicenses: ItemWithCount[];
+		pickedStatus?: string | null;
+		pickedLang?: string | null;
+		pickedLicense?: string | null;
+	}
 
-	$: status = pickedStatus ?? 'all';
-	$: lang = pickedLang ?? 'all';
-	$: license = pickedLicense ?? 'all';
+	let {
+		allStatuses,
+		allLangs,
+		allLicenses,
+		pickedStatus = null,
+		pickedLang = null,
+		pickedLicense = null
+	}: Props = $props();
+
+	let status = $derived(pickedStatus ?? 'all');
+	let lang = $derived(pickedLang ?? 'all');
+	let license = $derived(pickedLicense ?? 'all');
 
 	const STATUS_LABELS: Record<ProjectStatus, string> = {
 		wip: '開発が進行中で未完成のもの',
@@ -29,7 +40,7 @@
 	<label
 		><span>{$_('projects.status')}</span><select
 			bind:value={status}
-			on:change={(e) => updateParamOnElmValueChange(e, 'status')}
+			onchange={(e) => updateParamOnElmValueChange(e, 'status')}
 		>
 			<option value="all">{$_('w.all')}</option>
 			{#each PROJECT_STATUSES as s}
@@ -46,7 +57,7 @@
 	<label
 		><span>{$_('projects.writtenIn')}</span><select
 			bind:value={lang}
-			on:change={(e) => updateParamOnElmValueChange(e, 'langs')}
+			onchange={(e) => updateParamOnElmValueChange(e, 'langs')}
 		>
 			<option value="all">{$_('w.all')}</option>
 			{#each allLangs as l}
@@ -60,7 +71,7 @@
 	<label
 		><span>{$_('w.license')}</span><select
 			bind:value={license}
-			on:change={(e) => updateParamOnElmValueChange(e, 'license')}
+			onchange={(e) => updateParamOnElmValueChange(e, 'license')}
 		>
 			<option value="all">{$_('w.all')}</option>
 			{#each allLicenses as l}

@@ -2,14 +2,14 @@
 	import { _ } from 'svelte-i18n';
 	import { calcAge } from '$lib/scripts/utils';
 
-	$: details = [
+	let details = $derived([
 		{ key: $_('w.name'), value: 'Rinrin.rs' },
 		{ key: $_('w.age'), value: `${calcAge()}${$_('w.yearsOld')}` },
 		{ key: $_('w.birthday'), value: $_('profile.birthday') },
 		{ key: $_('profile.primaryLang'), value: $_('w.jaLang') },
 		{ key: $_('profile.timezone'), value: 'JST (UTC +9)' },
 		{ key: $_('profile.birthplace'), value: $_('w.yokohama') }
-	];
+	]);
 </script>
 
 <div>

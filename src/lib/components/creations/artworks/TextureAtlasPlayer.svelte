@@ -5,25 +5,40 @@
 	import { browser } from '$app/environment';
 	import { _ } from 'svelte-i18n';
 
-	/**
+	
+	
+	
+	
+	
+	interface Props {
+		/**
 	 * e.g.:
 	 * - `"boss-health-bar"`
 	 *
 	 * This filename is used like `/images/creations/{filename}.png` as a path of the image.
 	 */
-	export let filename: string;
-	/** The width of the frame. (pixels) */
-	export let frameWidth: number;
-	/** The height of the frame. (pixels) */
-	export let frameHeight: number;
-	/** The number of frames. */
-	export let frameCount: number;
-	/** The speed of the animation. (milliseconds) */
-	export let animSpeed: number;
+		filename: string;
+		/** The width of the frame. (pixels) */
+		frameWidth: number;
+		/** The height of the frame. (pixels) */
+		frameHeight: number;
+		/** The number of frames. */
+		frameCount: number;
+		/** The speed of the animation. (milliseconds) */
+		animSpeed: number;
+	}
+
+	let {
+		filename,
+		frameWidth,
+		frameHeight,
+		frameCount,
+		animSpeed
+	}: Props = $props();
 
 	let interval: number;
-	let isPlaying = true;
-	let currentFrame = 0;
+	let isPlaying = $state(true);
+	let currentFrame = $state(0);
 
 	onMount(() => {
 		updateDimensions();
@@ -35,9 +50,9 @@
 	});
 	if (browser) addEventListener('resize', updateDimensions);
 
-	let elem: HTMLDivElement;
-	let width = frameWidth;
-	let height = frameHeight;
+	let elem: HTMLDivElement = $state();
+	let width = $state(frameWidth);
+	let height = $state(frameHeight);
 
 	function updateDimensions() {
 		if (elem !== undefined && elem.parentElement !== null) {
@@ -62,14 +77,14 @@
 		background-position: 0 {elem !== undefined ? -height * currentFrame : 0}px;
 	"
 	bind:this={elem}
-/>
+></div>
 
 <p>{currentFrame + 1} / {frameCount} {$_('creations.textureAtlasPlayer.frames')}</p>
 
 <input type="range" bind:value={currentFrame} min="0" max={frameCount - 1} />
 
 <div class="btn-wrapper">
-	<button on:click={() => (isPlaying = !isPlaying)}>
+	<button onclick={() => (isPlaying = !isPlaying)}>
 		<img
 			src="/images/google-material-design-icons/{isPlaying
 				? 'pause_24dp_533618_FILL1_wght400_GRAD0_opsz24'

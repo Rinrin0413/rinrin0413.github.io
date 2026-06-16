@@ -1,6 +1,8 @@
 <script lang="ts">
+	import { run } from 'svelte/legacy';
+
 	import { SITE_URL, SITE_NAME } from '$lib/scripts/variables';
-	import { page } from '$app/stores';
+	import { page } from '$app/state';
 	import { browser } from '$app/environment';
 	import toast from 'svelte-french-toast';
 	import { TOAST_OPTIONS } from '$lib/scripts/variables';
@@ -8,16 +10,25 @@
 	import { fly } from 'svelte/transition';
 	import { faviconUrl } from '$lib/scripts/utils';
 
-	export let href: string | null = null;
-	export let title: string;
-	export let expanded = false;
-	export let isInBtpcChildPage = false;
+	interface Props {
+		href?: string | null;
+		title: string;
+		expanded?: boolean;
+		isInBtpcChildPage?: boolean;
+	}
 
-	let isWebShareApiSupported = false;
+	let {
+		href = null,
+		title,
+		expanded = false,
+		isInBtpcChildPage = false
+	}: Props = $props();
+
+	let isWebShareApiSupported = $state(false);
 
 	if (browser) isWebShareApiSupported = navigator.share !== undefined;
 
-	$: sharedUrl = href ?? SITE_URL + $page.url.pathname + $page.url.search;
+	let sharedUrl = $derived(href ?? SITE_URL + page.url.pathname + page.url.search);
 
 	const ANIM_DIRECTION = isInBtpcChildPage ? 1 : -1;
 	const ANIM_OFFSET = {
@@ -25,20 +36,22 @@
 		y: 8 * ANIM_DIRECTION
 	};
 
-	let isMenuOpened = false;
+	let isMenuOpened = $state(false);
 
-	$: ITEM_NAMES = {
+	let ITEM_NAMES = $derived({
 		copy: $_('shareBtn.copyUrl'),
 		post: $_('shareBtn.post'),
 		toot: $_('shareBtn.toot'),
 		note: $_('shareBtn.note'),
 		webShareApi: $_('w.webShareApi')
-	};
+	});
 
-	let mastodonDomain = 'mastodon.social';
+	let mastodonDomain = $state('mastodon.social');
 
-	let firstItem: HTMLElement;
-	$: if (!expanded) firstItem?.focus();
+	let firstItem: HTMLElement = $state();
+	run(() => {
+		if (!expanded) firstItem?.focus();
+	});
 
 	function toggleDropdownMenu() {
 		isMenuOpened = !isMenuOpened;
@@ -103,7 +116,7 @@
 		transition:fly={{ ...ANIM_OFFSET, duration: 200 }}
 	>
 		<li>
-			<button on:click={copyToClipboard} title={ITEM_NAMES.copy} bind:this={firstItem}>
+			<button onclick={copyToClipboard} title={ITEM_NAMES.copy} bind:this={firstItem}>
 				<img
 					src="/images/google-material-design-icons/content_copy_24dp_533618_FILL0_wght400_GRAD0_opsz24_trimmed.svg"
 					alt={expanded ? ITEM_NAMES.copy : ''}
@@ -116,7 +129,7 @@
 			</button
 		></li
 		><li>
-			<button on:click={shareOnTwitter} title={ITEM_NAMES.post}>
+			<button onclick={shareOnTwitter} title={ITEM_NAMES.post}>
 				<img src="/images/logos/x_logo.svg" alt={expanded ? ITEM_NAMES.post : ''} width=1200 height=1227 />
 				{#if !expanded}
 					{ITEM_NAMES.post}
@@ -124,7 +137,7 @@
 			</button
 		></li
 		><li>
-			<button on:click={shareOnMisskey} title={ITEM_NAMES.note}>
+			<button onclick={shareOnMisskey} title={ITEM_NAMES.note}>
 				<img src="/images/logos/misskey_icon.webp" alt={expanded ? ITEM_NAMES.note : ''} width=92 height=64 />
 				{#if !expanded}
 					{ITEM_NAMES.note}
@@ -133,13 +146,13 @@
 		></li
 		>{#if !expanded}
 			<li>
-				<button class:opened={false} on:click={shareOnMastodon} title={ITEM_NAMES.toot}>
+				<button class:opened={false} onclick={shareOnMastodon} title={ITEM_NAMES.toot}>
 					<img src="/images/logos/mastodon_logo-purple.svg" alt="" width=75 height=79 />
 					{ITEM_NAMES.toot}
 				</button>
-				<form on:submit={shareOnMastodon}>
+				<form onsubmit={shareOnMastodon}>
 					<span
-					/><input
+					></span><input
 						type="text"
 						placeholder={$_('w.domain')}
 						required
@@ -152,9 +165,8 @@
 				</form>
 			</li>
 		{/if
-		}{#if isWebShareApiSupported
-			}<li>
-				<button class="web-share-api-btn" on:click={shareWithWebShareApi} title={ITEM_NAMES.webShareApi}>
+		}{#if isWebShareApiSupported}<li>
+				<button class="web-share-api-btn" onclick={shareWithWebShareApi} title={ITEM_NAMES.webShareApi}>
 					<!--
 						Bootstrap Icons - Three dots
 						https://icons.getbootstrap.com/icons/three-dots
@@ -180,7 +192,7 @@
 
 {#if !expanded}
 	<button
-		on:click={toggleDropdownMenu}
+		onclick={toggleDropdownMenu}
 		class="share-btn"
 		class:opened={isMenuOpened}
 		title={$_('w.share')}

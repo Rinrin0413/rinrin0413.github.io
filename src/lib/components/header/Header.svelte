@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { run } from 'svelte/legacy';
+
 	import Icon from './Icon.svelte';
 	import HamburgerButton from './HamburgerButton.svelte';
 	import LangButton from './LangButton.svelte';
@@ -6,21 +8,23 @@
 	import { onMount } from 'svelte';
 	import { browser } from '$app/environment';
 	import { isDrawerMenuOpened } from '$lib/scripts/stores';
-	import { page } from '$app/stores';
+	import { page } from '$app/state';
 	import { _ } from 'svelte-i18n';
 
 	onMount(updateScroll);
 
-	let isAtTop = true;
+	let isAtTop = $state(true);
 
 	if (browser) addEventListener('scroll', updateScroll);
 
-	$: isMainVisual = isAtTop && !$isDrawerMenuOpened;
+	let isMainVisual = $derived(isAtTop && !$isDrawerMenuOpened);
 
-	let enableFadeIn = true;
+	let enableFadeIn = $state(true);
 
-	$: pathname = $page.url.pathname;
-	$: if (!isAtTop) enableFadeIn = false;
+	let pathname = $derived(page.url.pathname);
+	run(() => {
+		if (!isAtTop) enableFadeIn = false;
+	});
 
 	const ITEMS = [
 		{
@@ -60,12 +64,12 @@
 	}
 </script>
 
-<div class="header-bg" class:blur={isMainVisual} />
+<div class="header-bg" class:blur={isMainVisual}></div>
 <header class:backdrop-blur={!isMainVisual}>
 	<a
 		href="#main-content"
 		class="skip-btn"
-		on:focus={forceSetTheAtTopFalse}
+		onfocus={forceSetTheAtTopFalse}
 		inert={$isDrawerMenuOpened}>{$_('header.skip')}</a
 	>
 	<nav class:opened={$isDrawerMenuOpened} class:at-top={isMainVisual}>
@@ -74,8 +78,8 @@
 				href="/{item.id}"
 				class="item"
 				class:active={pathname.split('/')[1] === item.id}
-				on:focus={forceSetTheAtTopFalse}
-				on:mousedown={forceSetTheAtTopFalse}
+				onfocus={forceSetTheAtTopFalse}
+				onmousedown={forceSetTheAtTopFalse}
 			>
 				<Icon id={item.id} />
 				<span class="item-text">{$_(item.name)}</span>
@@ -92,7 +96,7 @@
 		class="header-logo"
 		class:center={isMainVisual}
 		class:fade-in={enableFadeIn}
-		on:click={() => {
+		onclick={() => {
 			isDrawerMenuOpened.set(false);
 		}}
 		tabindex="-1"><img src="/images/logos/rinrin/logo.svg" alt="" /></a

@@ -1,4 +1,4 @@
-<script context="module" lang="ts">
+<script module lang="ts">
 	export const metadata: ToolMetadata = {
 		title: '時間差計算機',
 		desc: '2つの時刻間の経過時間を計算します。',
@@ -7,43 +7,47 @@
 </script>
 
 <script lang="ts">
+	import { run } from 'svelte/legacy';
+
 	import ToolHead from '$lib/components/tools/ToolHead.svelte';
 	import CopyButton from '$lib/components/CopyButton.svelte';
 	import ToolFooter from '$lib/components/tools/ToolFoot.svelte';
 
 	import type { ToolMetadata } from '$lib/btpc/scripts/types';
 
-	let startTime = '15:30';
-	let endTime = '19:20';
-	let additionalDays = 0;
-	let diffMs: number | null;
-	let diffSec: number | null;
-	let diffMin: number | null;
-	let diffHr: number | null;
-	let diffFull: string | null;
+	let startTime = $state('15:30');
+	let endTime = $state('19:20');
+	let additionalDays = $state(0);
+	let diffMs: number | null = $state();
+	let diffSec: number | null = $state();
+	let diffMin: number | null = $state();
+	let diffHr: number | null = $state();
+	let diffFull: string | null = $state();
 
 	const hrDigits = 10;
 
-	$: if (startTime !== undefined && endTime !== undefined) {
-		const start = new Date(`1970-01-01T${startTime}`);
-		const end = new Date(`1970-01-01T${endTime}`);
+	run(() => {
+		if (startTime !== undefined && endTime !== undefined) {
+			const start = new Date(`1970-01-01T${startTime}`);
+			const end = new Date(`1970-01-01T${endTime}`);
 
-		// Add one day to the end time if the end time is earlier than the start time.
-		if (end < start) end.setDate(end.getDate() + 1);
+			// Add one day to the end time if the end time is earlier than the start time.
+			if (end < start) end.setDate(end.getDate() + 1);
 
-		// Add additional days to the end time.
-		if (0 < additionalDays) end.setDate(end.getDate() + additionalDays);
+			// Add additional days to the end time.
+			if (0 < additionalDays) end.setDate(end.getDate() + additionalDays);
 
-		diffMs = end.getTime() - start.getTime();
-		if (isNaN(diffMs)) {
-			diffMs = diffSec = diffMin = diffHr = diffFull = null;
-		} else {
-			diffSec = diffMs * 0.001;
-			diffMin = diffSec / 60;
-			diffHr = parseFloat((diffMin / 60).toPrecision(hrDigits));
-			diffFull = `${Math.floor(diffMs / 3600000)}時間${Math.floor((diffMs % 3600000) / 60000)}分`;
+			diffMs = end.getTime() - start.getTime();
+			if (isNaN(diffMs)) {
+				diffMs = diffSec = diffMin = diffHr = diffFull = null;
+			} else {
+				diffSec = diffMs * 0.001;
+				diffMin = diffSec / 60;
+				diffHr = parseFloat((diffMin / 60).toPrecision(hrDigits));
+				diffFull = `${Math.floor(diffMs / 3600000)}時間${Math.floor((diffMs % 3600000) / 60000)}分`;
+			}
 		}
-	}
+	});
 
 	const EMPTY = '-';
 </script>
@@ -62,7 +66,7 @@
 		</div>
 		<div>
 			<button
-				on:click={() => ([startTime, endTime] = [endTime, startTime])}
+				onclick={() => ([startTime, endTime] = [endTime, startTime])}
 				title="入れ替える"
 				tabindex="-1"
 			>
@@ -113,7 +117,7 @@
 
 <ToolFooter {metadata} />
 
-<!-- svelte-ignore css-unused-selector -->
+<!-- svelte-ignore css_unused_selector -->
 <style lang="scss">
 	@use '$lib/stylesheets/tools/tool_page';
 

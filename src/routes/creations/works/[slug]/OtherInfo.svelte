@@ -5,44 +5,50 @@
 	import { _ } from 'svelte-i18n';
 	import { CC_LICENSES } from '$lib/btpc/components/CcLicense.svelte';
 
-	export let metadata: ArtworkMetadata;
+	interface Props {
+		metadata: ArtworkMetadata;
+	}
+
+	let { metadata }: Props = $props();
 </script>
 
 <div class="other-info">
 	<table>
-		<tr>
-			<td>{$_('w.category')}</td>
-			<td><span><a href="/creations?c={metadata.category}">{metadata.category}</a></span></td>
-		</tr>
-		<tr>
-			<td>{$_('w.tags')}</td>
-			<td
-				>{#each metadata.tags as tag}<a href="/creations?t={tag}" class="link">{tag}</a>{/each}</td
-			>
-		</tr>
-		<tr>
-			<td>{$_('w.usedTools')}</td>
-			<td
-				><span
-					>{#each metadata.usedTools as tool, i}{#if 0 < i},
-						{/if}{tool}{/each}</span
-				></td
-			>
-		</tr>
-		{#if metadata.license !== null}
+		<tbody>
 			<tr>
-				<td>{$_('w.license')}</td>
+				<td>{$_('w.category')}</td>
+				<td><span><a href="/creations?c={metadata.category}">{metadata.category}</a></span></td>
+			</tr>
+			<tr>
+				<td>{$_('w.tags')}</td>
 				<td
-					><span>
-						{#if CC_LICENSES.includes(metadata.license)}
-							<CcLicense license={metadata.license} />
-						{:else}
-							{metadata.license}
-						{/if}
-					</span></td
+					>{#each metadata.tags as tag}<a href="/creations?t={tag}" class="link">{tag}</a>{/each}</td
 				>
 			</tr>
-		{/if}
+			<tr>
+				<td>{$_('w.usedTools')}</td>
+				<td
+					><span
+						>{#each metadata.usedTools as tool, i}{#if 0 < i},
+							{/if}{tool}{/each}</span
+					></td
+				>
+			</tr>
+			{#if metadata.license !== null}
+				<tr>
+					<td>{$_('w.license')}</td>
+					<td
+						><span>
+							{#if CC_LICENSES.includes(metadata.license)}
+								<CcLicense license={metadata.license} />
+							{:else}
+								{metadata.license}
+							{/if}
+						</span></td
+					>
+				</tr>
+			{/if}
+		</tbody>
 	</table>
 </div>
 

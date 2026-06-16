@@ -14,9 +14,13 @@
 	import { WIDE_CARD_ANIM_PARAMS } from '$lib/btpc/scripts/variables';
 	import { _ } from 'svelte-i18n';
 
-	export let data: PageData;
+	interface Props {
+		data: PageData;
+	}
 
-	$: projects = data.projects;
+	let { data }: Props = $props();
+
+	let projects = $derived(data.projects);
 
 	const TITLE = 'Dev. Projects';
 </script>

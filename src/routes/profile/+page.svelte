@@ -12,10 +12,10 @@
 	import { calcAge } from '$lib/scripts/utils';
 
 	const L10N_PATH: string = 'profile.intro.';
-	$: intro = [
+	let intro = $derived([
 		[$_(L10N_PATH + '0'), $_(L10N_PATH + '1', { values: { age: calcAge() } }), $_(L10N_PATH + '2')],
 		[$_(L10N_PATH + '3'), $_(L10N_PATH + '4'), $_(L10N_PATH + '5'), $_(L10N_PATH + '6')]
-	];
+	]);
 </script>
 
 <HeadMetadata title="Profile" desc="Rinrin.rs のプロフィール" ogType="profile" />

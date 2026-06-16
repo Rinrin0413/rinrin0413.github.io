@@ -5,8 +5,8 @@
 
 	import NProgress from 'nprogress';
 	import 'nprogress/nprogress.css';
-	import { navigating } from '$app/stores';
-	import { page } from '$app/stores';
+	import { navigating } from '$app/state';
+	import { page } from '$app/state';
 	import { browser } from '$app/environment';
 	import { isDrawerMenuOpened } from '$lib/scripts/stores';
 	import {
@@ -16,14 +16,21 @@
 		CONTACT_EMAIL_ADDRESS,
 		LOGO_180PX_OXIPNG_REL_PATH
 	} from '$lib/scripts/variables';
+	interface Props {
+		children?: import('svelte').Snippet;
+	}
+
+	let { children }: Props = $props();
 
 	// NProgress
 	const PROGRESS_BAR_EXCLUDED_PATHS = ['/blog', '/tools', '/projects', '/creations'];
-	$: {
-		if ($navigating !== null && !PROGRESS_BAR_EXCLUDED_PATHS.includes($page.url.pathname))
-			NProgress.start();
-		else NProgress.done();
-	}
+	$effect(() => {
+		if (navigating.to !== null) {
+			if (!PROGRESS_BAR_EXCLUDED_PATHS.includes(navigating.to.url.pathname)) NProgress.start();
+		} else {
+			NProgress.done();
+		}
+	});
 
 	let maxVh1: number;
 	let prevWidth: number;
@@ -99,11 +106,11 @@
 
 <Header />
 
-<main id="main-content" inert={$isDrawerMenuOpened}><slot /></main>
+<main id="main-content" inert={$isDrawerMenuOpened}>{@render children?.()}</main>
 
 <Footer />
 
-<div id="bg" />
+<div id="bg"></div>
 
 <style lang="scss" global>
 	@use '$lib/stylesheets/layout';

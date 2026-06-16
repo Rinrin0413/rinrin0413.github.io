@@ -6,8 +6,8 @@
 </script>
 
 <button
-	on:click={() => isDrawerMenuOpened.update((prev) => !prev)}
-	on:focus={() => dispatch('focus')}
+	onclick={() => isDrawerMenuOpened.update((prev) => !prev)}
+	onfocus={() => dispatch('focus')}
 >
 	{#if $isDrawerMenuOpened}
 		<!--

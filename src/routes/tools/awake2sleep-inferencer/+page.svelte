@@ -1,4 +1,4 @@
-<script context="module" lang="ts">
+<script module lang="ts">
 	export const metadata = {
 		title: 'Rinrinの睡眠時間推論機',
 		desc: '覚醒時間から Rinrin.rs の睡眠時間を回帰式を用いて推論します。',
@@ -7,6 +7,8 @@
 </script>
 
 <script lang="ts">
+	import { run } from 'svelte/legacy';
+
 	import ToolHead from '$lib/components/tools/ToolHead.svelte';
 	import CopyButton from '$lib/components/CopyButton.svelte';
 	import { Line } from 'svelte-chartjs';
@@ -41,28 +43,11 @@
 	Chart.register(...registerables);
 
 	// The default value should be a multiple of 0.5 because the `<input>` element and graph steps are 0.5.
-	let awakeDuration = roundToHalf(DATASET.stats.awake.mean);
+	let awakeDuration = $state(roundToHalf(DATASET.stats.awake.mean));
 
-	$: sleepDurations = DATASET.regrModels.reduce(
-		(acc, model) => {
-			acc[model.name] = model.f(awakeDuration);
-			return acc;
-		},
-		{} as Record<string, number>
-	);
 
-	let renderGraph = false;
-	let chartData: ChartData<'line', (number | Point)[], unknown>;
-	$: if (renderGraph && chartData !== undefined)
-		chartData.datasets[DATASET.regrModels.length].data[0] = {
-			x: roundToHalf(awakeDuration),
-			y:
-				DATASET.regrModels.reduce((acc, model) => {
-					let sleepDuration = sleepDurations[model.name];
-					if (sleepDuration < 0) sleepDuration = 0;
-					return acc + sleepDuration;
-				}, 0) / DATASET.regrModels.length
-		};
+	let renderGraph = $state(false);
+	let chartData: ChartData<'line', (number | Point)[], unknown> = $state();
 
 	/** Returns a supplied numeric expression rounded to the nearest multiple of 0.5. */
 	function roundToHalf(x: number) {
@@ -109,6 +94,25 @@
 				.replace(/ ?(?<!e)(\*\*|[+\-*]) ?/g, ' $1 ')
 		);
 	}
+	let sleepDurations = $derived(DATASET.regrModels.reduce(
+		(acc, model) => {
+			acc[model.name] = model.f(awakeDuration);
+			return acc;
+		},
+		{} as Record<string, number>
+	));
+	run(() => {
+		if (renderGraph && chartData !== undefined)
+			chartData.datasets[DATASET.regrModels.length].data[0] = {
+				x: roundToHalf(awakeDuration),
+				y:
+					DATASET.regrModels.reduce((acc, model) => {
+						let sleepDuration = sleepDurations[model.name];
+						if (sleepDuration < 0) sleepDuration = 0;
+						return acc + sleepDuration;
+					}, 0) / DATASET.regrModels.length
+			};
+	});
 </script>
 
 <ToolHead {metadata} />
@@ -153,7 +157,7 @@
 			<label for="render-graph">グラフを表示</label><input
 				type="checkbox"
 				bind:checked={renderGraph}
-				on:change={setChartData}
+				onchange={setChartData}
 				id="render-graph"
 			/>
 		</p>
@@ -185,7 +189,7 @@
 </div>
 <ToolFooter {metadata} />
 
-<!-- svelte-ignore css-unused-selector -->
+<!-- svelte-ignore css_unused_selector -->
 <style lang="scss">
 	@use '$lib/stylesheets/tools/tool_page';
 

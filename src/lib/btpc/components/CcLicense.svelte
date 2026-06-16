@@ -1,11 +1,15 @@
-<script context="module" lang="ts">
+<script module lang="ts">
 	export const CC_LICENSES = ['CC BY-SA 4.0', 'CC BY 4.0'];
 </script>
 
 <script lang="ts">
-	export let license: string;
+	interface Props {
+		license: string;
+	}
 
-	let conditions: string[];
+	let { license }: Props = $props();
+
+	let conditions: string[] = $state();
 	if (CC_LICENSES.includes(license)) conditions = license.split(' ')[1].toLowerCase().split('-');
 </script>
 

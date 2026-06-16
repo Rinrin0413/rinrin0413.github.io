@@ -1,4 +1,4 @@
-<script context="module" lang="ts">
+<script module lang="ts">
 	export const metadata = {
 		title: 'BMI計算機',
 		desc: '体重と身長からボディマス指数(BMI)を計算します。',
@@ -7,77 +7,81 @@
 </script>
 
 <script lang="ts">
+	import { run } from 'svelte/legacy';
+
 	import ToolHead from '$lib/components/tools/ToolHead.svelte';
 	import CopyButton from '$lib/components/CopyButton.svelte';
 	import ToolFooter from '$lib/components/tools/ToolFoot.svelte';
 
-	let weight = 39.1;
-	let height = 162.3;
-	let bmi: number | null;
-	let formula: string | null;
-	let bmiCategoryJasso: string | null;
-	let bmiCategoryWho: string | null;
-	let stdWeight: number | null;
-	let weightDiff: number | null;
+	let weight = $state(39.1);
+	let height = $state(162.3);
+	let bmi: number | null = $state();
+	let formula: string | null = $state();
+	let bmiCategoryJasso: string | null = $state();
+	let bmiCategoryWho: string | null = $state();
+	let stdWeight: number | null = $state();
+	let weightDiff: number | null = $state();
 
-	$: if (weight !== undefined && height !== undefined) {
-		const heightMeters = height * 0.01;
-		const heightPow2 = heightMeters * heightMeters;
-		// BMI = weight / height^2
-		bmi = parseFloat((weight / heightPow2).toFixed(4));
+	run(() => {
+		if (weight !== undefined && height !== undefined) {
+			const heightMeters = height * 0.01;
+			const heightPow2 = heightMeters * heightMeters;
+			// BMI = weight / height^2
+			bmi = parseFloat((weight / heightPow2).toFixed(4));
 
-		if (isNaN(bmi)) {
-			bmi = null;
-			formula = null;
-			bmiCategoryJasso = null;
-			bmiCategoryWho = null;
-			stdWeight = null;
-			weightDiff = null;
-		} else {
-			formula = `${weight}/(${height}/100)^2 ≒ ${bmi}`;
-
-			// BMI categories by JASSO
-			if (bmi < 18.5) {
-				bmiCategoryJasso = '低体重';
-			} else if (bmi < 25) {
-				bmiCategoryJasso = '普通体重';
-			} else if (bmi < 30) {
-				bmiCategoryJasso = '肥満（1 度）';
-			} else if (bmi < 35) {
-				bmiCategoryJasso = '肥満（2 度）';
-			} else if (bmi < 40) {
-				bmiCategoryJasso = '肥満（3 度）';
+			if (isNaN(bmi)) {
+				bmi = null;
+				formula = null;
+				bmiCategoryJasso = null;
+				bmiCategoryWho = null;
+				stdWeight = null;
+				weightDiff = null;
 			} else {
-				bmiCategoryJasso = '肥満（4 度）';
-			}
+				formula = `${weight}/(${height}/100)^2 ≒ ${bmi}`;
 
-			// BMI categories by WHO
-			if (bmi < 16) {
-				bmiCategoryWho = 'Severe thinness';
-			} else if (bmi < 17) {
-				bmiCategoryWho = 'Moderate thinness';
-			} else if (bmi < 18.5) {
-				bmiCategoryWho = 'Mild thinness';
-			} else if (bmi < 25) {
-				bmiCategoryWho = 'Normal range';
-			} else if (bmi < 30) {
-				bmiCategoryWho = 'Pre-obese';
-			} else if (bmi < 35) {
-				bmiCategoryWho = 'Obese (Class I)';
-			} else if (bmi < 40) {
-				bmiCategoryWho = 'Obese (Class II)';
-			} else {
-				bmiCategoryWho = 'Obese (Class III)';
-			}
+				// BMI categories by JASSO
+				if (bmi < 18.5) {
+					bmiCategoryJasso = '低体重';
+				} else if (bmi < 25) {
+					bmiCategoryJasso = '普通体重';
+				} else if (bmi < 30) {
+					bmiCategoryJasso = '肥満（1 度）';
+				} else if (bmi < 35) {
+					bmiCategoryJasso = '肥満（2 度）';
+				} else if (bmi < 40) {
+					bmiCategoryJasso = '肥満（3 度）';
+				} else {
+					bmiCategoryJasso = '肥満（4 度）';
+				}
 
-			// 22 is the ideal BMI value.
-			// x = height (m), y = healthy weight (kg)
-			// 22 = y / x^2
-			// y = 22 * x^2
-			stdWeight = parseFloat((22 * heightPow2).toFixed(2));
-			weightDiff = parseFloat((weight - stdWeight).toFixed(2));
+				// BMI categories by WHO
+				if (bmi < 16) {
+					bmiCategoryWho = 'Severe thinness';
+				} else if (bmi < 17) {
+					bmiCategoryWho = 'Moderate thinness';
+				} else if (bmi < 18.5) {
+					bmiCategoryWho = 'Mild thinness';
+				} else if (bmi < 25) {
+					bmiCategoryWho = 'Normal range';
+				} else if (bmi < 30) {
+					bmiCategoryWho = 'Pre-obese';
+				} else if (bmi < 35) {
+					bmiCategoryWho = 'Obese (Class I)';
+				} else if (bmi < 40) {
+					bmiCategoryWho = 'Obese (Class II)';
+				} else {
+					bmiCategoryWho = 'Obese (Class III)';
+				}
+
+				// 22 is the ideal BMI value.
+				// x = height (m), y = healthy weight (kg)
+				// 22 = y / x^2
+				// y = 22 * x^2
+				stdWeight = parseFloat((22 * heightPow2).toFixed(2));
+				weightDiff = parseFloat((weight - stdWeight).toFixed(2));
+			}
 		}
-	}
+	});
 
 	const EMPTY = '-';
 </script>
@@ -126,7 +130,7 @@
 
 <ToolFooter {metadata} />
 
-<!-- svelte-ignore css-unused-selector -->
+<!-- svelte-ignore css_unused_selector -->
 <style lang="scss">
 	@use '$lib/stylesheets/tools/tool_page';
 

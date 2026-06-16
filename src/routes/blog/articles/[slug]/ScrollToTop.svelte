@@ -1,21 +1,23 @@
 <script lang="ts">
+	import { run } from 'svelte/legacy';
+
 	import { fly } from 'svelte/transition';
 
-	let willScrollUp = false;
-	let lastScrollPos = 0;
+	let willScrollUp = $state(false);
+	let lastScrollPos = $state(0);
 
-	let scrollY = 0;
+	let scrollY = $state(0);
 
-	$: {
+	run(() => {
 		willScrollUp = scrollY < lastScrollPos;
 		lastScrollPos = scrollY;
-	}
+	});
 </script>
 
 <svelte:window bind:scrollY />
 
 {#if 800 < scrollY && willScrollUp}
-	<button on:click={() => document.body.scrollIntoView()} transition:fly={{ x: 86, duration: 500 }}>
+	<button onclick={() => document.body.scrollIntoView()} transition:fly={{ x: 86, duration: 500 }}>
 		<!--
 			Bootstrap Icons - Arrow up circle fill
 			https://icons.getbootstrap.com/icons/arrow-up-circle-fill

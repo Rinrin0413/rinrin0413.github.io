@@ -1,5 +1,9 @@
 <script lang="ts">
-	export let license: string | null;
+	interface Props {
+		license: string | null;
+	}
+
+	let { license }: Props = $props();
 </script>
 
 {#if license !== null}

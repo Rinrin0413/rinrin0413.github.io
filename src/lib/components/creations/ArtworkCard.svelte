@@ -1,13 +1,21 @@
 <script lang="ts">
+	import { run } from 'svelte/legacy';
+
 	import type { ArtworkMetadata } from '$lib/btpc/scripts/types';
 	import { add9h } from '$lib/btpc/scripts/utils';
 	import { date as dateI18n } from 'svelte-i18n';
 
-	export let meta: ArtworkMetadata;
+	interface Props {
+		meta: ArtworkMetadata;
+	}
+
+	let { meta }: Props = $props();
 
 	const date = meta.date !== null ? new Date(meta.date) : null;
-	let datePlus9h: Date;
-	$: if (date !== null) datePlus9h = add9h(date);
+	let datePlus9h: Date = $state();
+	run(() => {
+		if (date !== null) datePlus9h = add9h(date);
+	});
 </script>
 
 <a href="/creations/works/{meta.id}"

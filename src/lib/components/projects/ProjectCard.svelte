@@ -3,7 +3,11 @@
 	import { omitDateByStatus, getStatusEmoji } from '$lib/btpc/scripts/projects/util';
 	import { _ } from 'svelte-i18n';
 
-	export let meta: ProjectMetadata;
+	interface Props {
+		meta: ProjectMetadata;
+	}
+
+	let { meta }: Props = $props();
 
 	const id = meta.id ?? 'unreachable';
 	const date =
@@ -85,7 +89,7 @@
 			{/if}
 			{#if 1 <= meta.langs.length}
 				<div class="lang">
-					<span class="lang-col" style="background-color: {langCol(meta.langs[0])};" />{meta
+					<span class="lang-col" style="background-color: {langCol(meta.langs[0])};"></span>{meta
 						.langs[0]}
 				</div>
 			{/if}

@@ -4,18 +4,23 @@
 	import { add9h } from '$lib/btpc/scripts/utils';
 	import { date as dateI18n } from 'svelte-i18n';
 
-	export let meta: ArticleMetadata;
-	export let thumbnailImgFmts: ArticleThumbnailImgFmts | null = null;
-	/**
+	
+	interface Props {
+		meta: ArticleMetadata;
+		thumbnailImgFmts?: ArticleThumbnailImgFmts | null;
+		/**
 	 * Whether the card is mini version.
 	 * The mini version is always mobile view and does not have thumbnail image.
 	 */
-	export let mini = false;
+		mini?: boolean;
+	}
+
+	let { meta, thumbnailImgFmts = null, mini = false }: Props = $props();
 
 	const slug = meta.slug ?? 'unreachable';
 	const date = idToDate(slug);
-	let datePlus9h: Date;
-	$: datePlus9h = add9h(date);
+	let datePlus9h: Date = $derived(add9h(date));
+	
 
 	const thumbnailImgFmt = thumbnailImgFmts?.[slug] ?? null;
 	const hasThumbnailImg = thumbnailImgFmt !== null;

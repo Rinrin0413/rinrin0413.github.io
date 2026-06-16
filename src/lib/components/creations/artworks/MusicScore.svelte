@@ -2,9 +2,13 @@
 	import { browser } from '$app/environment';
 	import { _ } from 'svelte-i18n';
 
-	export let filename: string;
+	interface Props {
+		filename: string;
+	}
 
-	let isPdfViewerEnabled: boolean;
+	let { filename }: Props = $props();
+
+	let isPdfViewerEnabled: boolean = $state();
 
 	if (browser) isPdfViewerEnabled = navigator.pdfViewerEnabled;
 
@@ -20,7 +24,7 @@
 </p>
 
 {#if isPdfViewerEnabled}
-	<object type="application/pdf" data={path} title={$_('creations.musicScore.scorePreview')} />
+	<object type="application/pdf" data={path} title={$_('creations.musicScore.scorePreview')}></object>
 {/if}
 
 <style lang="scss">

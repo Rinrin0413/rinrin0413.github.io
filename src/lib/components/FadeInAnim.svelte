@@ -1,20 +1,37 @@
 <script lang="ts">
+	import { run } from 'svelte/legacy';
+
 	import { onMount, onDestroy } from 'svelte';
 	import { browser } from '$app/environment';
 
-	/** `slide-up` | `slide-left` | `scale-up-origin-top` */
-	export let type: string;
+	
 
-	/** The delay in milliseconds before the animation starts. */
-	export let delay = 0;
+	
 
-	/** Whether to play the animation even if the element is only a little in the viewport. */
-	export let evenLittleBit = false;
+	
 
-	/** Whether to play the animation forcibly now. */
-	export let playForced = false;
+	
+	interface Props {
+		/** `slide-up` | `slide-left` | `scale-up-origin-top` */
+		type: string;
+		/** The delay in milliseconds before the animation starts. */
+		delay?: number;
+		/** Whether to play the animation even if the element is only a little in the viewport. */
+		evenLittleBit?: boolean;
+		/** Whether to play the animation forcibly now. */
+		playForced?: boolean;
+		children?: import('svelte').Snippet;
+	}
 
-	let container: HTMLElement;
+	let {
+		type,
+		delay = 0,
+		evenLittleBit = false,
+		playForced = false,
+		children
+	}: Props = $props();
+
+	let container: HTMLElement = $state();
 	let observer: IntersectionObserver;
 
 	onMount(() => {
@@ -30,7 +47,9 @@
 		if (observer !== undefined) observer.disconnect();
 	});
 
-	$: if (playForced && container !== undefined) container.classList.add(type);
+	run(() => {
+		if (playForced && container !== undefined) container.classList.add(type);
+	});
 
 	function handleIntersect(entries: IntersectionObserverEntry[]) {
 		entries.forEach((entry) => {
@@ -51,7 +70,7 @@
 	class:slide-left={false}
 	class:scale-up-origin-top={false}
 >
-	<slot />
+	{@render children?.()}
 </div>
 
 <style lang="scss">

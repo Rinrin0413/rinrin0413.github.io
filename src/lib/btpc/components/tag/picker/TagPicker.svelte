@@ -5,14 +5,18 @@
 	import type { ItemWithCount } from '$lib/btpc/scripts/types';
 	import { _ } from 'svelte-i18n';
 
-	export let allTags: ItemWithCount[];
-	export let pickedTags: string[];
-	export let doesNotConvertToUpperCase = false;
+	interface Props {
+		allTags: ItemWithCount[];
+		pickedTags: string[];
+		doesNotConvertToUpperCase?: boolean;
+	}
 
-	let isOpened = true;
+	let { allTags, pickedTags, doesNotConvertToUpperCase = false }: Props = $props();
+
+	let isOpened = $state(true);
 </script>
 
-<button on:click={() => (isOpened = !isOpened)}>
+<button onclick={() => (isOpened = !isOpened)}>
 	<span class:opened={isOpened}><Title2 text={$_('w.tags')} style="margin: 0;" /></span>
 </button>
 

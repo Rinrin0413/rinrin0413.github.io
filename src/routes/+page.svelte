@@ -13,7 +13,11 @@
 	import { _ } from 'svelte-i18n';
 	import { calcAge } from '$lib/scripts/utils';
 
-	export let data: PageData;
+	interface Props {
+		data: PageData;
+	}
+
+	let { data }: Props = $props();
 	const articles = data.articles;
 </script>
 

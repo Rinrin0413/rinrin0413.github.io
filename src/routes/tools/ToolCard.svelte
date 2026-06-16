@@ -1,7 +1,11 @@
 <script lang="ts">
 	import type { ToolMetadata } from '$lib/btpc/scripts/types';
 
-	export let meta: ToolMetadata;
+	interface Props {
+		meta: ToolMetadata;
+	}
+
+	let { meta }: Props = $props();
 
 	const id = meta.id ?? 'unreachable';
 </script>

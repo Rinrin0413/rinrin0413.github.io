@@ -6,7 +6,7 @@
 </script>
 
 <button
-	on:click={() => {
+	onclick={() => {
 		if (typeof $locale === 'string' && $locale.startsWith('en')) {
 			locale.set('ja');
 		} else {
@@ -14,7 +14,7 @@
 			alert('Some parts may not be translated.');
 		}
 	}}
-	on:focus={() => dispatch('focus')}
+	onfocus={() => dispatch('focus')}
 >
 	<!--
 		Google Material Symbols and Icons - Language

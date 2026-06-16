@@ -1,7 +1,11 @@
 <script lang="ts">
 	import { _ } from 'svelte-i18n';
 
-	export let category: string;
+	interface Props {
+		category: string;
+	}
+
+	let { category }: Props = $props();
 </script>
 
 <div><a href="/{category}">{$_(category + '.backToIndex')}</a></div>

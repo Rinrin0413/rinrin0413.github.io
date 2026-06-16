@@ -4,7 +4,11 @@
 
 	import type { ArticleMetadata } from '$lib/btpc/scripts/types';
 
-	export let articles: ArticleMetadata[];
+	interface Props {
+		articles: ArticleMetadata[];
+	}
+
+	let { articles }: Props = $props();
 </script>
 
 <ul>

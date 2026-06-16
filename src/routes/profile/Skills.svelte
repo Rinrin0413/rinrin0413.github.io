@@ -12,7 +12,7 @@
 		linux: 'skills.linux.',
 		illustration: 'skills.illustration.'
 	};
-	$: skills = [
+	let skills = $derived([
 		{
 			key: 'Rust',
 			values: [$_(L10N_PATHS.s + 'rust')]
@@ -59,7 +59,7 @@
 			key: $_('w.illustration'),
 			values: [$_(L10N_PATHS.illustration + '0'), $_(L10N_PATHS.illustration + '1')]
 		}
-	];
+	]);
 </script>
 
 <details>

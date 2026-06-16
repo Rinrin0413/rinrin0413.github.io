@@ -5,3 +5,5 @@ allowBuilds:
 minimumReleaseAge: 4320
 trustPolicy: no-downgrade
 blockExoticSubdeps: true
+trustPolicyExclude:
+  - chokidar@4.0.3
