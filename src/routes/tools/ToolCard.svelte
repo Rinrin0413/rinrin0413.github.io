@@ -7,7 +7,7 @@
 
 	let { meta }: Props = $props();
 
-	const id = meta.id ?? 'unreachable';
+	const id = $derived((meta.id ?? 'unreachable'));
 </script>
 
 <a href="/tools/{id}"

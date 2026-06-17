@@ -8,11 +8,11 @@
 
 	let { filename }: Props = $props();
 
-	let isPdfViewerEnabled: boolean = $state();
+	let isPdfViewerEnabled: boolean = $state(false);
 
 	if (browser) isPdfViewerEnabled = navigator.pdfViewerEnabled;
 
-	const path = `/documents/creations/${filename}.pdf`;
+	const path = $derived(`/documents/creations/${filename}.pdf`);
 </script>
 
 <p>

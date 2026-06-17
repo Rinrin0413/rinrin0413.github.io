@@ -50,9 +50,9 @@
 	});
 	if (browser) addEventListener('resize', updateDimensions);
 
-	let elem: HTMLDivElement = $state();
-	let width = $state(frameWidth);
-	let height = $state(frameHeight);
+	let elem: HTMLDivElement | undefined = $state();
+	let width = $derived(frameWidth);
+	let height = $derived(frameHeight);
 
 	function updateDimensions() {
 		if (elem !== undefined && elem.parentElement !== null) {

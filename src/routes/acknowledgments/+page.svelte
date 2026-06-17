@@ -26,26 +26,28 @@
 	<Space height="10px" />
 
 	<table>
-		{#each ACKNOWLEDGMENTS as { name, url, license, licenseUrl }, i}
-			<tr>
-				<td in:fly|global={{ y: ANIM.offset, duration: ANIM.duration, delay: i * ANIM.delay }}>
-					<a href={url} target="_blank" rel="noopener noreferrer">{name}</a>
-				</td>
-				<td
-					in:fly|global={{ y: ANIM.offset, duration: ANIM.duration, delay: i * ANIM.delay + 250 }}
-				>
-					{#if license !== undefined}
-						{#if licenseUrl === undefined}
-							{license}
-						{:else}
-							<a href={licenseUrl} target="_blank" rel="noopener noreferrer">
+		<tbody>
+			{#each ACKNOWLEDGMENTS as { name, url, license, licenseUrl }, i}
+				<tr>
+					<td in:fly|global={{ y: ANIM.offset, duration: ANIM.duration, delay: i * ANIM.delay }}>
+						<a href={url} target="_blank" rel="noopener noreferrer">{name}</a>
+					</td>
+					<td
+						in:fly|global={{ y: ANIM.offset, duration: ANIM.duration, delay: i * ANIM.delay + 250 }}
+					>
+						{#if license !== undefined}
+							{#if licenseUrl === undefined}
 								{license}
-							</a>
+							{:else}
+								<a href={licenseUrl} target="_blank" rel="noopener noreferrer">
+									{license}
+								</a>
+							{/if}
 						{/if}
-					{/if}
-				</td>
-			</tr>
-		{/each}
+					</td>
+				</tr>
+			{/each}
+		</tbody>
 	</table>
 </section>
 

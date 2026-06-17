@@ -9,11 +9,14 @@
 
 	let { license }: Props = $props();
 
-	let conditions: string[] = $state();
-	if (CC_LICENSES.includes(license)) conditions = license.split(' ')[1].toLowerCase().split('-');
+	let conditions: string[] | null = $derived(
+		CC_LICENSES.includes(license) ?
+			license.split(' ')[1].toLowerCase().split('-') :
+			null
+		);
 </script>
 
-{#if conditions !== undefined}
+{#if conditions !== null}
 	<a
 		href="https://creativecommons.org/licenses/{conditions.join('-')}/4.0/"
 		target="_blank"

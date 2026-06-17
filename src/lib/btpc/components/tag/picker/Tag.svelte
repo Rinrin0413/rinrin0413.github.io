@@ -23,7 +23,7 @@
 	}: Props = $props();
 
 	const path = page.url.pathname;
-	const upperCaseName = forceUpperCase ? name.toUpperCase() : name;
+	const upperCaseName = $derived(forceUpperCase ? name.toUpperCase() : name);
 
 	function toggle() {
 		isEnabled = !isEnabled;

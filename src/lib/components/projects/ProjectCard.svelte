@@ -9,12 +9,12 @@
 
 	let { meta }: Props = $props();
 
-	const id = meta.id ?? 'unreachable';
+	const id = $derived(meta.id ?? 'unreachable');
 	const date =
-		meta.initDate === null
+		$derived(meta.initDate === null
 			? null
-			: omitDateByStatus(new Date(meta.date ?? meta.initDate), meta.status);
-	const hasThumbnailImg = meta.thumbnailImg !== null;
+			: omitDateByStatus(new Date(meta.date ?? meta.initDate), meta.status));
+	const hasThumbnailImg = $derived(meta.thumbnailImg !== null);
 
 	function langCol(lang: string) {
 		switch (lang) {

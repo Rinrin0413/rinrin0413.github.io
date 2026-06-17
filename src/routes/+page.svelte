@@ -18,7 +18,7 @@
 	}
 
 	let { data }: Props = $props();
-	const articles = data.articles;
+	const articles = $derived(data.articles);
 </script>
 
 <HeadMetadata title="Home" desc="Rinrin.rs のホームページです。" canonicalUrl={SITE_URL} />

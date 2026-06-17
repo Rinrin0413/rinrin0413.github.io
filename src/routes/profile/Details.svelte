@@ -14,12 +14,14 @@
 
 <div>
 	<table>
-		{#each details as { key, value }}
-			<tr>
-				<td>{key}</td>
-				<td>{value}</td>
-			</tr>
-		{/each}
+		<tbody>
+			{#each details as { key, value }}
+				<tr>
+					<td>{key}</td>
+					<td>{value}</td>
+				</tr>
+			{/each}
+		</tbody>
 	</table>
 </div>
 

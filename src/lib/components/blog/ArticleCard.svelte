@@ -17,13 +17,13 @@
 
 	let { meta, thumbnailImgFmts = null, mini = false }: Props = $props();
 
-	const slug = meta.slug ?? 'unreachable';
-	const date = idToDate(slug);
+	const slug = $derived((meta.slug ?? 'unreachable'));
+	const date = $derived(idToDate(slug));
 	let datePlus9h: Date = $derived(add9h(date));
 	
 
-	const thumbnailImgFmt = thumbnailImgFmts?.[slug] ?? null;
-	const hasThumbnailImg = thumbnailImgFmt !== null;
+	const thumbnailImgFmt = $derived((thumbnailImgFmts?.[slug] ?? null));
+	const hasThumbnailImg = $derived(thumbnailImgFmt !== null);
 </script>
 
 <a href="/blog/articles/{slug}" class:force-mobile-view={mini}
