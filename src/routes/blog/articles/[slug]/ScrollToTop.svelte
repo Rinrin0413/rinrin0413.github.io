@@ -1,14 +1,12 @@
 <script lang="ts">
-	import { run } from 'svelte/legacy';
-
 	import { fly } from 'svelte/transition';
 
 	let willScrollUp = $state(false);
-	let lastScrollPos = $state(0);
+	let lastScrollPos = 0;
 
 	let scrollY = $state(0);
 
-	run(() => {
+	$effect(() => {
 		willScrollUp = scrollY < lastScrollPos;
 		lastScrollPos = scrollY;
 	});

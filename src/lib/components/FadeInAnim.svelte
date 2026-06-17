@@ -1,6 +1,4 @@
 <script lang="ts">
-	import { run } from 'svelte/legacy';
-
 	import { onMount, onDestroy } from 'svelte';
 	import { browser } from '$app/environment';
 
@@ -31,11 +29,11 @@
 		children
 	}: Props = $props();
 
-	let container: HTMLElement = $state();
+	let container: HTMLElement | undefined = $state();
 	let observer: IntersectionObserver;
 
 	onMount(() => {
-		if (browser) {
+		if (browser && container !== undefined) {
 			observer = new IntersectionObserver(handleIntersect, {
 				threshold: evenLittleBit ? 0 : 0.25
 			});
@@ -47,7 +45,7 @@
 		if (observer !== undefined) observer.disconnect();
 	});
 
-	run(() => {
+	$effect(() => {
 		if (playForced && container !== undefined) container.classList.add(type);
 	});
 

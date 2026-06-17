@@ -7,8 +7,6 @@
 </script>
 
 <script lang="ts">
-	import { run } from 'svelte/legacy';
-
 	import ToolHead from '$lib/components/tools/ToolHead.svelte';
 	import CopyButton from '$lib/components/CopyButton.svelte';
 	import { Line } from 'svelte-chartjs';
@@ -45,9 +43,10 @@
 	// The default value should be a multiple of 0.5 because the `<input>` element and graph steps are 0.5.
 	let awakeDuration = $state(roundToHalf(DATASET.stats.awake.mean));
 
-
 	let renderGraph = $state(false);
-	let chartData: ChartData<'line', (number | Point)[], unknown> = $state();
+	let chartData: ChartData<'line', (number | Point)[], unknown> | undefined = $state.raw();
+
+	let chartRef: Chart<'line'> | null = $state(null);
 
 	/** Returns a supplied numeric expression rounded to the nearest multiple of 0.5. */
 	function roundToHalf(x: number) {
@@ -101,9 +100,9 @@
 		},
 		{} as Record<string, number>
 	));
-	run(() => {
-		if (renderGraph && chartData !== undefined)
-			chartData.datasets[DATASET.regrModels.length].data[0] = {
+	$effect(() => {
+		if (renderGraph && chartRef !== null) {
+			chartRef.data.datasets[DATASET.regrModels.length].data[0] = {
 				x: roundToHalf(awakeDuration),
 				y:
 					DATASET.regrModels.reduce((acc, model) => {
@@ -112,6 +111,9 @@
 						return acc + sleepDuration;
 					}, 0) / DATASET.regrModels.length
 			};
+
+			chartRef.update('none');
+		}
 	});
 </script>
 
@@ -145,12 +147,15 @@
 		</ul>
 		{#if renderGraph}
 			<div class="chart card">
-				<Line
-					data={chartData}
-					options={CHART_OPTIONS}
-					width={window.innerWidth < 700 ? 3 : 7}
-					height={4}
-				/>
+				{#if chartData !== undefined}
+					<Line
+						bind:chart={chartRef}
+						data={chartData}
+						options={CHART_OPTIONS}
+						width={window.innerWidth < 700 ? 3 : 7}
+						height={4}
+					/>
+				{/if}
 			</div>
 		{/if}
 		<p>

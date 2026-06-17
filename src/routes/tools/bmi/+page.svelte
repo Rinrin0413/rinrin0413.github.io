@@ -7,22 +7,20 @@
 </script>
 
 <script lang="ts">
-	import { run } from 'svelte/legacy';
-
 	import ToolHead from '$lib/components/tools/ToolHead.svelte';
 	import CopyButton from '$lib/components/CopyButton.svelte';
 	import ToolFooter from '$lib/components/tools/ToolFoot.svelte';
 
 	let weight = $state(39.1);
 	let height = $state(162.3);
-	let bmi: number | null = $state();
-	let formula: string | null = $state();
-	let bmiCategoryJasso: string | null = $state();
-	let bmiCategoryWho: string | null = $state();
-	let stdWeight: number | null = $state();
-	let weightDiff: number | null = $state();
+	let bmi: number | null = $state(null);
+	let formula: string | null = $state(null);
+	let bmiCategoryJasso: string | null = $state(null);
+	let bmiCategoryWho: string | null = $state(null);
+	let stdWeight: number | null = $state(null);
+	let weightDiff: number | null = $state(null);
 
-	run(() => {
+	$effect(() => {
 		if (weight !== undefined && height !== undefined) {
 			const heightMeters = height * 0.01;
 			const heightPow2 = heightMeters * heightMeters;

@@ -1,6 +1,4 @@
 <script lang="ts">
-	import { run } from 'svelte/legacy';
-
 	import HeadMetadata from '$lib/components/HeadMetadata.svelte';
 	import Space from '$lib/components/Space.svelte';
 	import ShareButton from '$lib/btpc/components/ShareButton.svelte';
@@ -18,10 +16,7 @@
 	}
 
 	let { data }: Props = $props();
-	let metadata = $state(data.frontmatter);
-	run(() => {
-		metadata = data.frontmatter;
-	});
+	let metadata = $derived(data.frontmatter);
 
 	let hasThumbnailImg = $derived(metadata.thumbnailImg !== null);
 	let thumbnailImgPath = $derived(hasThumbnailImg

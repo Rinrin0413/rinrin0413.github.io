@@ -24,17 +24,13 @@
 	}
 
 	let { data }: Props = $props();
-	let metadata = $state(data.frontmatter);
-	run(() => {
-		metadata = data.frontmatter;
-	});
+	let metadata = $derived(data.frontmatter);
 
-	let slug: string = $state();
-	run(() => {
+	let slug: string = $derived.by(() => {
 		const paths = page.url.pathname.split('/');
 		const pathnameLength = paths.length;
 		const pathnameIsEndsWithSlash = paths[pathnameLength - 1] === '';
-		slug = paths[pathnameLength - (pathnameIsEndsWithSlash ? 2 : 1)];
+		return paths[pathnameLength - (pathnameIsEndsWithSlash ? 2 : 1)];
 	});
 
 	let scrollY = $state(0);

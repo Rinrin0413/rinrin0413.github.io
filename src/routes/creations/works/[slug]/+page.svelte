@@ -1,6 +1,4 @@
 <script lang="ts">
-	import { run } from 'svelte/legacy';
-
 	import HeadMetadata from '$lib/components/HeadMetadata.svelte';
 	import Space from '$lib/components/Space.svelte';
 	import ShareButton from '$lib/btpc/components/ShareButton.svelte';
@@ -20,10 +18,7 @@
 	}
 
 	let { data }: Props = $props();
-	let metadata = $state(data.frontmatter);
-	run(() => {
-		metadata = data.frontmatter;
-	});
+	let metadata = $derived(data.frontmatter);
 
 	let date = $derived(metadata.date === null ? null : new Date(metadata.date));
 	let datePlus9h: Date | null = $derived(date === null ? null : add9h(date));

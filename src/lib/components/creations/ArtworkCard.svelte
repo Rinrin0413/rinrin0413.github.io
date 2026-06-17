@@ -1,6 +1,4 @@
 <script lang="ts">
-	import { run } from 'svelte/legacy';
-
 	import type { ArtworkMetadata } from '$lib/btpc/scripts/types';
 	import { add9h } from '$lib/btpc/scripts/utils';
 	import { date as dateI18n } from 'svelte-i18n';
@@ -11,10 +9,10 @@
 
 	let { meta }: Props = $props();
 
-	const date = meta.date !== null ? new Date(meta.date) : null;
-	let datePlus9h: Date = $state();
-	run(() => {
-		if (date !== null) datePlus9h = add9h(date);
+	const date = $derived(meta.date !== null ? new Date(meta.date) : null);
+	let datePlus9h: Date | null = $derived.by(() => {
+		if (date !== null) return add9h(date);
+		return null;
 	});
 </script>
 
@@ -32,7 +30,7 @@
 			<div class="meta">
 				<h2>{meta.title}</h2>
 				{#if date !== null}
-					<time datetime={datePlus9h.toISOString()}>
+					<time datetime={datePlus9h?.toISOString()}>
 						{$dateI18n(date, { format: 'medium' })}
 					</time>
 				{/if}

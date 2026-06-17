@@ -7,8 +7,6 @@
 </script>
 
 <script lang="ts">
-	import { run } from 'svelte/legacy';
-
 	import ToolHead from '$lib/components/tools/ToolHead.svelte';
 	import CopyButton from '$lib/components/CopyButton.svelte';
 	import ToolFooter from '$lib/components/tools/ToolFoot.svelte';
@@ -18,15 +16,15 @@
 	let startTime = $state('15:30');
 	let endTime = $state('19:20');
 	let additionalDays = $state(0);
-	let diffMs: number | null = $state();
-	let diffSec: number | null = $state();
-	let diffMin: number | null = $state();
-	let diffHr: number | null = $state();
-	let diffFull: string | null = $state();
+	let diffMs: number | null = $state(null);
+	let diffSec: number | null = $state(null);
+	let diffMin: number | null = $state(null);
+	let diffHr: number | null = $state(null);
+	let diffFull: string | null = $state(null);
 
 	const hrDigits = 10;
 
-	run(() => {
+	$effect(() => {
 		if (startTime !== undefined && endTime !== undefined) {
 			const start = new Date(`1970-01-01T${startTime}`);
 			const end = new Date(`1970-01-01T${endTime}`);

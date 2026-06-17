@@ -1,6 +1,4 @@
 <script lang="ts">
-	import { run } from 'svelte/legacy';
-
 	import Space from '$lib/components/Space.svelte';
 
 	import { browser } from '$app/environment';
@@ -25,9 +23,9 @@
 
 	let { text, id = null, atPageTop = false }: Props = $props();
 
-	let vw: number = $state();
-	let width: number = $state();
-	let initWidth: number = $state();
+	let vw: number | undefined = $state();
+	let width: number | undefined = $state();
+	let initWidth: number | undefined = $state();
 	let isOverflown = $state(false);
 
 	if (browser) {
@@ -36,8 +34,8 @@
 		window.addEventListener('resize', updateVw);
 	}
 
-	run(() => {
-		if (width !== undefined) {
+	$effect(() => {
+		if (width !== undefined && vw !== undefined) {
 			if (initWidth === undefined) initWidth = width;
 			isOverflown = vw <= initWidth;
 		}

@@ -1,6 +1,4 @@
 <script lang="ts">
-	import { run } from 'svelte/legacy';
-
 	import { SITE_URL, SITE_NAME } from '$lib/scripts/variables';
 	import { page } from '$app/state';
 	import { browser } from '$app/environment';
@@ -30,11 +28,11 @@
 
 	let sharedUrl = $derived(href ?? SITE_URL + page.url.pathname + page.url.search);
 
-	const ANIM_DIRECTION = isInBtpcChildPage ? 1 : -1;
-	const ANIM_OFFSET = {
+	const ANIM_DIRECTION = $derived(isInBtpcChildPage ? 1 : -1);
+	const ANIM_OFFSET = $derived({
 		x: 1 * ANIM_DIRECTION,
 		y: 8 * ANIM_DIRECTION
-	};
+	});
 
 	let isMenuOpened = $state(false);
 
@@ -48,8 +46,8 @@
 
 	let mastodonDomain = $state('mastodon.social');
 
-	let firstItem: HTMLElement = $state();
-	run(() => {
+	let firstItem: HTMLElement | undefined = $state();
+	$effect(() => {
 		if (!expanded) firstItem?.focus();
 	});
 

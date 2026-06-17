@@ -1,6 +1,4 @@
 <script lang="ts">
-	import { run } from 'svelte/legacy';
-
 	import Icon from './Icon.svelte';
 	import HamburgerButton from './HamburgerButton.svelte';
 	import LangButton from './LangButton.svelte';
@@ -20,11 +18,11 @@
 	let isMainVisual = $derived(isAtTop && !$isDrawerMenuOpened);
 
 	let enableFadeIn = $state(true);
-
-	let pathname = $derived(page.url.pathname);
-	run(() => {
+	$effect(() => {
 		if (!isAtTop) enableFadeIn = false;
 	});
+
+	let pathname = $derived(page.url.pathname);
 
 	const ITEMS = [
 		{

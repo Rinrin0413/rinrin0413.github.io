@@ -7,7 +7,7 @@
 </script>
 
 <script lang="ts">
-	import { run } from 'svelte/legacy';
+	import { untrack } from 'svelte';
 
 	import ToolHead from '$lib/components/tools/ToolHead.svelte';
 	import CopyButton from '$lib/components/CopyButton.svelte';
@@ -15,9 +15,9 @@
 
 	let creature = $state('小〜中型犬');
 	let creatureAge = $state(5.5);
-	let humanAgeMoe: number | null = $state();
-	let humanAgeVetsNeJp: number | null = $state();
-	let humanAgeDnaMethylationBased: number | null = $state();
+	let humanAgeMoe: number | null = $state(null);
+	let humanAgeVetsNeJp: number | null = $state(null);
+	let humanAgeDnaMethylationBased: number | null = $state(null);
 
 	const MOE_TABLES = {
 		smallMediumDogAndCat: [
@@ -95,33 +95,38 @@
 	}
 
 	const EMPTY = '-';
-	run(() => {
-		if (creatureAge !== undefined) {
-			if (creature === '小〜中型犬' || creature === '猫')
-				humanAgeMoe =
-					2 <= creatureAge
-						? 24 + (creatureAge - 2) * 4
-						: interpolate(creatureAge, MOE_TABLES.smallMediumDogAndCat);
-			else if (creature === '大型犬')
-				humanAgeMoe = 1 <= creatureAge ? 12 + (creatureAge - 1) * 7 : creatureAge * 12;
-			else humanAgeMoe = null; // unreachable
-			humanAgeMoe = toFixed(humanAgeMoe);
+	$effect(() => {
+		creature;
+		creatureAge;
 
-			let vetsNeJpTable: number[][] | null;
-			if (creature === '小〜中型犬' || creature === '猫')
-				vetsNeJpTable = VETS_NE_JP_TABLES.smallMediumDogAndCat;
-			else if (creature === '大型犬') vetsNeJpTable = VETS_NE_JP_TABLES.largeDog;
-			else vetsNeJpTable = null; // unreachable
-			if (vetsNeJpTable !== null) humanAgeVetsNeJp = interpolate(creatureAge, vetsNeJpTable);
-			else humanAgeVetsNeJp = null;
-			humanAgeVetsNeJp = toFixed(humanAgeVetsNeJp);
+		untrack(() => {
+			if (creatureAge !== undefined) {
+				if (creature === '小〜中型犬' || creature === '猫')
+					humanAgeMoe =
+						2 <= creatureAge
+							? 24 + (creatureAge - 2) * 4
+							: interpolate(creatureAge, MOE_TABLES.smallMediumDogAndCat);
+				else if (creature === '大型犬')
+					humanAgeMoe = 1 <= creatureAge ? 12 + (creatureAge - 1) * 7 : creatureAge * 12;
+				else humanAgeMoe = null; // unreachable
+				humanAgeMoe = toFixed(humanAgeMoe);
 
-			if (creature.includes('犬')) humanAgeDnaMethylationBased = 16 * Math.log(creatureAge) + 31;
-			if (humanAgeDnaMethylationBased !== null && isNaN(humanAgeDnaMethylationBased))
-				humanAgeDnaMethylationBased = null;
-			if (humanAgeDnaMethylationBased !== null)
-				humanAgeDnaMethylationBased = toFixed(humanAgeDnaMethylationBased);
-		}
+				let vetsNeJpTable: number[][] | null;
+				if (creature === '小〜中型犬' || creature === '猫')
+					vetsNeJpTable = VETS_NE_JP_TABLES.smallMediumDogAndCat;
+				else if (creature === '大型犬') vetsNeJpTable = VETS_NE_JP_TABLES.largeDog;
+				else vetsNeJpTable = null; // unreachable
+				if (vetsNeJpTable !== null) humanAgeVetsNeJp = interpolate(creatureAge, vetsNeJpTable);
+				else humanAgeVetsNeJp = null;
+				humanAgeVetsNeJp = toFixed(humanAgeVetsNeJp);
+
+				if (creature.includes('犬')) humanAgeDnaMethylationBased = 16 * Math.log(creatureAge) + 31;
+				if (humanAgeDnaMethylationBased !== null && isNaN(humanAgeDnaMethylationBased))
+					humanAgeDnaMethylationBased = null;
+				if (humanAgeDnaMethylationBased !== null)
+					humanAgeDnaMethylationBased = toFixed(humanAgeDnaMethylationBased);
+			}
+		});
 	});
 </script>
 
