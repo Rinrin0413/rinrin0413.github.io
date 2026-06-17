@@ -14,17 +14,17 @@
 	import { onMount } from 'svelte';
 	import type { ToolMetadata } from '$lib/btpc/scripts/types';
 
-	let tNs: number = $state();
-	let tUs: number = $state();
-	let tMs: number = $state();
+	let tNs: number | null = $state(null);
+	let tUs: number | null = $state(null);
+	let tMs: number | null = $state(null);
 	let tSec = $state(86_400); // 86,400s = 1d
-	let tMin: number = $state();
-	let tHou: number = $state();
-	let tDay: number = $state();
-	let tWeek: number = $state();
-	let tMon: number = $state();
-	let tYear: number = $state();
-	let tCentury: number = $state();
+	let tMin: number | null = $state(null);
+	let tHou: number | null = $state(null);
+	let tDay: number | null = $state(null);
+	let tWeek: number | null = $state(null);
+	let tMon: number | null = $state(null);
+	let tYear: number | null = $state(null);
+	let tCentury: number | null = $state(null);
 
 	onMount(update);
 

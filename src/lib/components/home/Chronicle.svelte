@@ -26,7 +26,7 @@
 		tabindex={isOpened ? -1 : 0}
 		onclick={once(open)}
 		onkeypress={once((e) => {
-			if (e.key === 'Enter') open();
+			if ((e as KeyboardEvent).key === 'Enter') open();
 		})}
 	>
 		<ul class:opened={isOpened} data-text="{$_('chronicle.expand')} ▼">

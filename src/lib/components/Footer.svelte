@@ -6,7 +6,7 @@
 	import FadeInAnim from './FadeInAnim.svelte';
 	import { BG_IMG_URL } from '$lib/scripts/data/bg-img-url';
 
-	let wallpaperPath: string = $state();
+	let wallpaperPath: string | undefined = $state();
 	const hasBgImgUrl = BG_IMG_URL !== null;
 
 	if (!hasBgImgUrl)
