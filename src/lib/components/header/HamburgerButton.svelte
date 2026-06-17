@@ -1,13 +1,14 @@
 <script lang="ts">
-	import { createEventDispatcher } from 'svelte';
 	import { isDrawerMenuOpened } from '$lib/scripts/stores';
 
-	const dispatch = createEventDispatcher();
+	let { onFocus }: {
+		onFocus: () => void;
+	} = $props();
 </script>
 
 <button
 	onclick={() => isDrawerMenuOpened.update((prev) => !prev)}
-	onfocus={() => dispatch('focus')}
+	onfocus={onFocus}
 >
 	{#if $isDrawerMenuOpened}
 		<!--

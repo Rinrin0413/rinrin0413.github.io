@@ -85,8 +85,8 @@
 		{/each}
 	</nav>
 	<div class="hamburger-btn" class:hidden={isMainVisual}>
-		<HamburgerButton on:focus={forceSetTheAtTopFalse} /><LangButton
-			on:focus={forceSetTheAtTopFalse}
+		<HamburgerButton onFocus={forceSetTheAtTopFalse} /><LangButton
+			onFocus={forceSetTheAtTopFalse}
 		/>
 	</div>
 	<a

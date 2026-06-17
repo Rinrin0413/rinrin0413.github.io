@@ -1,8 +1,9 @@
 <script lang="ts">
-	import { createEventDispatcher } from 'svelte';
 	import { locale, _ } from 'svelte-i18n';
 
-	const dispatch = createEventDispatcher();
+	let { onFocus }: {
+		onFocus: () => void;
+	} = $props();
 </script>
 
 <button
@@ -14,7 +15,7 @@
 			alert('Some parts may not be translated.');
 		}
 	}}
-	onfocus={() => dispatch('focus')}
+	onfocus={onFocus}
 >
 	<!--
 		Google Material Symbols and Icons - Language
