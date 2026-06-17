@@ -24,7 +24,8 @@
 </p>
 
 {#if isPdfViewerEnabled}
-	<object type="application/pdf" data={path} title={$_('creations.musicScore.scorePreview')}></object>
+	<object type="application/pdf" data={path} title={$_('creations.musicScore.scorePreview')}
+	></object>
 {/if}
 
 <style lang="scss">

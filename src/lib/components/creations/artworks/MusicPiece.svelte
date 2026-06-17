@@ -2,16 +2,16 @@
 	import { _ } from 'svelte-i18n';
 	interface Props {
 		metadata: {
-		op: string | null;
-		nameEn: string | null;
-		nameJa: string | null;
-		period: string | null;
-		formation: string | null;
-	};
+			op: string | null;
+			nameEn: string | null;
+			nameJa: string | null;
+			period: string | null;
+			formation: string | null;
+		};
 		originalPiece?: {
-		name: string;
-		url?: string;
-	} | null;
+			name: string;
+			url?: string;
+		} | null;
 		audioFilename?: string | null;
 	}
 

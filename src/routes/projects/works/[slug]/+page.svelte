@@ -19,9 +19,9 @@
 	let metadata = $derived(data.frontmatter);
 
 	let hasThumbnailImg = $derived(metadata.thumbnailImg !== null);
-	let thumbnailImgPath = $derived(hasThumbnailImg
-		? '/images/projects/thumbnails/' + metadata.thumbnailImg
-		: null);
+	let thumbnailImgPath = $derived(
+		hasThumbnailImg ? '/images/projects/thumbnails/' + metadata.thumbnailImg : null
+	);
 
 	let title = $derived(metadata.title);
 	let titleFull = $derived(PAGE_FULL_TITLE_PART + title);

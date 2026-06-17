@@ -25,7 +25,6 @@
 	let colors: Triplet[] = $derived(colorCodes.map(colorCodeToRgb));
 	let mixedColor: Triplet = $derived(mixColors(colors, method));
 
-
 	/** Converts a six-digit hexadecimal color code string to an RGB array `[r, g, b]` (0~255). */
 	function colorCodeToRgb(color: string): Triplet {
 		if (!/^#([0-9a-f]{6})$/i.test(color)) return [NaN, NaN, NaN];
@@ -231,8 +230,7 @@
 
 		return `hsl(${h * 100}, ${sHsl * 100}%, ${l * 100}%)`;
 	}
-	
-	
+
 	let [colorCode, rgb255, rgb1, cmyk, hsl, hsv] = $derived(format(mixedColor));
 </script>
 

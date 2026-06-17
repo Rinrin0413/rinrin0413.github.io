@@ -1,5 +1,4 @@
 <script lang="ts">
-	
 	interface Props {
 		/** The intrinsic height of the space. */
 		height: string;

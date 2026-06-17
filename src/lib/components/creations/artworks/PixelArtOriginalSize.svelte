@@ -1,22 +1,20 @@
 <script lang="ts">
-	
-	
 	interface Props {
 		/**
-	 * e.g.:
-	 * - `"spring-roll_16px"`
-	 * - `["gold-coin_16px", "silver-coin_16px"]`
-	 *
-	 * This filename is used like `/images/creations/{filename}.png` as a path of the image.
-	 */
+		 * e.g.:
+		 * - `"spring-roll_16px"`
+		 * - `["gold-coin_16px", "silver-coin_16px"]`
+		 *
+		 * This filename is used like `/images/creations/{filename}.png` as a path of the image.
+		 */
 		filename: string | string[];
 		/**
-	 * e.g.:
-	 * - `"春巻き"`
-	 * - `"金貨と銀貨"`
-	 *
-	 * This subject name is used like `文字並に小さい{subjectName}のドット絵` as an alternative text of the image.
-	 */
+		 * e.g.:
+		 * - `"春巻き"`
+		 * - `"金貨と銀貨"`
+		 *
+		 * This subject name is used like `文字並に小さい{subjectName}のドット絵` as an alternative text of the image.
+		 */
 		subjectName: string;
 	}
 

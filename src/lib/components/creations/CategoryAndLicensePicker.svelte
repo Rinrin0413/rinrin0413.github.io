@@ -10,12 +10,7 @@
 		pickedLicense?: string | null;
 	}
 
-	let {
-		allCategories,
-		allLicenses,
-		pickedCategory = null,
-		pickedLicense = null
-	}: Props = $props();
+	let { allCategories, allLicenses, pickedCategory = null, pickedLicense = null }: Props = $props();
 
 	let category = $derived(pickedCategory ?? 'all');
 	let license = $derived(pickedLicense ?? 'all');

@@ -3,7 +3,6 @@
 	import { TOAST_OPTIONS } from '$lib/scripts/variables';
 	import { _ } from 'svelte-i18n';
 
-	
 	interface Props {
 		/** A text to be copied. */
 		text: number | string | null;

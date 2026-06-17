@@ -93,13 +93,15 @@
 				.replace(/ ?(?<!e)(\*\*|[+\-*]) ?/g, ' $1 ')
 		);
 	}
-	let sleepDurations = $derived(DATASET.regrModels.reduce(
-		(acc, model) => {
-			acc[model.name] = model.f(awakeDuration);
-			return acc;
-		},
-		{} as Record<string, number>
-	));
+	let sleepDurations = $derived(
+		DATASET.regrModels.reduce(
+			(acc, model) => {
+				acc[model.name] = model.f(awakeDuration);
+				return acc;
+			},
+			{} as Record<string, number>
+		)
+	);
 	$effect(() => {
 		if (renderGraph && chartRef !== null) {
 			chartRef.data.datasets[DATASET.regrModels.length].data[0] = {

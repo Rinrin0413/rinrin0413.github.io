@@ -3,21 +3,17 @@
 
 	import { browser } from '$app/environment';
 
-
-	
-
-	
 	interface Props {
 		text: string;
 		/**
-	 * Defines a unique identifier (ID) which must be unique in the whole document.
-	 * Its purpose is to identify the element when linking (using a fragment identifier).
-	 */
+		 * Defines a unique identifier (ID) which must be unique in the whole document.
+		 * Its purpose is to identify the element when linking (using a fragment identifier).
+		 */
 		id?: string | undefined | null;
 		/**
-	 * Whether the title is at a top of a page.
-	 * When set to `true`, adds a 64px space above the title.
-	 */
+		 * Whether the title is at a top of a page.
+		 * When set to `true`, adds a 64px space above the title.
+		 */
 		atPageTop?: boolean;
 	}
 

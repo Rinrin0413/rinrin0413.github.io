@@ -22,7 +22,8 @@
 			<tr>
 				<td>{$_('w.tags')}</td>
 				<td
-					>{#each metadata.tags as tag}<a href="/creations?t={tag}" class="link">{tag}</a>{/each}</td
+					>{#each metadata.tags as tag}<a href="/creations?t={tag}" class="link">{tag}</a
+						>{/each}</td
 				>
 			</tr>
 			<tr>

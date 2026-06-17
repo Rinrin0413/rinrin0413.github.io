@@ -1,15 +1,14 @@
 <script lang="ts">
 	import { isDrawerMenuOpened } from '$lib/scripts/stores';
 
-	let { onFocus }: {
+	let {
+		onFocus
+	}: {
 		onFocus: () => void;
 	} = $props();
 </script>
 
-<button
-	onclick={() => isDrawerMenuOpened.update((prev) => !prev)}
-	onfocus={onFocus}
->
+<button onclick={() => isDrawerMenuOpened.update((prev) => !prev)} onfocus={onFocus}>
 	{#if $isDrawerMenuOpened}
 		<!--
 			Google Material Symbols and Icons - Close

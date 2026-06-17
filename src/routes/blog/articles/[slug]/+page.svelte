@@ -38,13 +38,12 @@
 
 	let date = $derived(idToDate(slug));
 	let datePlus9h: Date = $derived(add9h(date));
-	
 
 	let thumbnailImgFmt = $derived(data.thumbnailImgFmt);
 	let hasThumbnailImg = $derived(thumbnailImgFmt !== null);
-	let thumbnailImgPath = $derived(hasThumbnailImg
-		? `/images/blog/thumbnails/${slug}.` + thumbnailImgFmt
-		: null);
+	let thumbnailImgPath = $derived(
+		hasThumbnailImg ? `/images/blog/thumbnails/${slug}.` + thumbnailImgFmt : null
+	);
 
 	function introAnim(index = 0) {
 		return {

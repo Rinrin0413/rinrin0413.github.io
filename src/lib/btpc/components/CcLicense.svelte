@@ -10,10 +10,8 @@
 	let { license }: Props = $props();
 
 	let conditions: string[] | null = $derived(
-		CC_LICENSES.includes(license) ?
-			license.split(' ')[1].toLowerCase().split('-') :
-			null
-		);
+		CC_LICENSES.includes(license) ? license.split(' ')[1].toLowerCase().split('-') : null
+	);
 </script>
 
 {#if conditions !== null}

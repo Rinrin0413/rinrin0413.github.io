@@ -5,18 +5,13 @@
 	import { browser } from '$app/environment';
 	import { _ } from 'svelte-i18n';
 
-	
-	
-	
-	
-	
 	interface Props {
 		/**
-	 * e.g.:
-	 * - `"boss-health-bar"`
-	 *
-	 * This filename is used like `/images/creations/{filename}.png` as a path of the image.
-	 */
+		 * e.g.:
+		 * - `"boss-health-bar"`
+		 *
+		 * This filename is used like `/images/creations/{filename}.png` as a path of the image.
+		 */
 		filename: string;
 		/** The width of the frame. (pixels) */
 		frameWidth: number;
@@ -28,13 +23,7 @@
 		animSpeed: number;
 	}
 
-	let {
-		filename,
-		frameWidth,
-		frameHeight,
-		frameCount,
-		animSpeed
-	}: Props = $props();
+	let { filename, frameWidth, frameHeight, frameCount, animSpeed }: Props = $props();
 
 	let interval: number;
 	let isPlaying = $state(true);

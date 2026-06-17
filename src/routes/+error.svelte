@@ -8,7 +8,9 @@
 	let status = $derived(page.status);
 	let is404 = $derived(status === 404);
 	let err = $derived(page.error);
-	let msg = $derived(is404 ? 'Page not found' : err !== null ? err.message : 'Something went wrong');
+	let msg = $derived(
+		is404 ? 'Page not found' : err !== null ? err.message : 'Something went wrong'
+	);
 
 	let title = $derived(`${PAGE_FULL_TITLE_PART}${status} - ${msg}`);
 </script>

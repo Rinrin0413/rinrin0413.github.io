@@ -22,12 +22,11 @@
 
 	let date = $derived(metadata.date === null ? null : new Date(metadata.date));
 	let datePlus9h: Date | null = $derived(date === null ? null : add9h(date));
-	
 
 	let hasThumbnailImg = $derived(metadata.thumbnailImg !== null);
-	let thumbnailImgPath = $derived(hasThumbnailImg
-		? '/images/creations/thumbnails/' + metadata.thumbnailImg
-		: null);
+	let thumbnailImgPath = $derived(
+		hasThumbnailImg ? '/images/creations/thumbnails/' + metadata.thumbnailImg : null
+	);
 
 	let title = $derived(metadata.title);
 	let titleFull = $derived(PAGE_FULL_TITLE_PART + title);

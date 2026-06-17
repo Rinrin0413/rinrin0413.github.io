@@ -2,13 +2,6 @@
 	import { onMount, onDestroy } from 'svelte';
 	import { browser } from '$app/environment';
 
-	
-
-	
-
-	
-
-	
 	interface Props {
 		/** `slide-up` | `slide-left` | `scale-up-origin-top` */
 		type: string;
@@ -21,13 +14,7 @@
 		children?: import('svelte').Snippet;
 	}
 
-	let {
-		type,
-		delay = 0,
-		evenLittleBit = false,
-		playForced = false,
-		children
-	}: Props = $props();
+	let { type, delay = 0, evenLittleBit = false, playForced = false, children }: Props = $props();
 
 	let container: HTMLElement | undefined = $state();
 	let observer: IntersectionObserver;

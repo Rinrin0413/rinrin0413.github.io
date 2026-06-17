@@ -15,12 +15,7 @@
 		isInBtpcChildPage?: boolean;
 	}
 
-	let {
-		href = null,
-		title,
-		expanded = false,
-		isInBtpcChildPage = false
-	}: Props = $props();
+	let { href = null, title, expanded = false, isInBtpcChildPage = false }: Props = $props();
 
 	let isWebShareApiSupported = $state(false);
 

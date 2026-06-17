@@ -1,5 +1,4 @@
 <script lang="ts">
-	
 	interface Props {
 		/** `profile` | `blog` | `tools` | `projects` | `creations` | `social` */
 		id: string;

@@ -78,7 +78,6 @@
 		]
 	};
 
-
 	function interpolate(age: number, table: number[][]) {
 		if (age < table[0][0] || table[table.length - 1][0] < age) return null;
 		for (let i = 0; i < table.length - 1; i++) {

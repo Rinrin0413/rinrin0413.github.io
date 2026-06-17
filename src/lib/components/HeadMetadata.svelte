@@ -6,12 +6,6 @@
 	} from '$lib/scripts/variables';
 	import { page } from '$app/state';
 
-	
-	
-	
-	
-	
-	
 	interface Props {
 		/** ex: `Home` */
 		title: string;
@@ -20,24 +14,24 @@
 		/** ex: `{SITE_URL}/profile` */
 		canonicalUrl?: any;
 		/**
-	 * ex: `article`
-	 *
-	 * Default: `website`
-	 */
+		 * ex: `article`
+		 *
+		 * Default: `website`
+		 */
 		ogType?: string;
 		/**
-	 * ex: `summary_large_image`
-	 *
-	 * Default: `summary`
-	 */
+		 * ex: `summary_large_image`
+		 *
+		 * Default: `summary`
+		 */
 		ogCardType?: string;
 		/**
-	 * Whether to set the thumbnail image.
-	 *
-	 * If `false`, set `<meta name="thumbnail" content=ABS_PATH />` and `<meta property="og:image" content=ABS_PATH />`.
-	 *
-	 * Default: `false`
-	 */
+		 * Whether to set the thumbnail image.
+		 *
+		 * If `false`, set `<meta name="thumbnail" content=ABS_PATH />` and `<meta property="og:image" content=ABS_PATH />`.
+		 *
+		 * Default: `false`
+		 */
 		doesNotSetThumbnailImg?: boolean;
 	}
 

@@ -1,14 +1,10 @@
 <script lang="ts">
-
-	
-
-	
 	interface Props {
 		text: string;
 		/**
-	 * Defines a unique identifier (ID) which must be unique in the whole document.
-	 * Its purpose is to identify the element when linking (using a fragment identifier).
-	 */
+		 * Defines a unique identifier (ID) which must be unique in the whole document.
+		 * Its purpose is to identify the element when linking (using a fragment identifier).
+		 */
 		id?: string | undefined | null;
 		/** Defines inline CSS styles for an element. */
 		style?: string | undefined | null;
