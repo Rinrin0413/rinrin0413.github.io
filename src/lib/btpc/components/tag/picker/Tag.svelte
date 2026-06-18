@@ -3,6 +3,7 @@
 	import { fly, scale } from 'svelte/transition';
 	import { bounceOut } from 'svelte/easing';
 	import { page } from '$app/state';
+	import { SvelteURLSearchParams } from 'svelte/reactivity';
 
 	interface Props {
 		name: string;
@@ -28,7 +29,7 @@
 	function toggle() {
 		isEnabled = !isEnabled;
 
-		const params = new URLSearchParams(location.search);
+		const params = new SvelteURLSearchParams(location.search);
 
 		let tags = params.getAll('t');
 		tags = 0 < tags.length ? tags[0].split(',') : [];

@@ -15,7 +15,7 @@
 <div>
 	<table>
 		<tbody>
-			{#each details as { key, value }}
+			{#each details as { key, value } (key)}
 				<tr>
 					<td>{key}</td>
 					<td>{value}</td>

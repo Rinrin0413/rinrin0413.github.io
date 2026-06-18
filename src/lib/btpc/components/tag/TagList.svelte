@@ -14,7 +14,7 @@
 		<div class="tags">
 			<span>{$_('w.tags')}</span>
 			<ul>
-				{#each tags as tag}
+				{#each tags as tag (tag)}
 					<li>
 						<a href="/{page.url.pathname.split('/')[1]}/?t={tag}" class="tag-btn"
 							>{tag.toUpperCase()}</a

@@ -12,6 +12,7 @@
 	import ToolFooter from '$lib/components/tools/ToolFoot.svelte';
 
 	import type { ToolMetadata } from '$lib/btpc/scripts/types';
+	import { SvelteDate } from 'svelte/reactivity';
 
 	let startTime = $state('15:30');
 	let endTime = $state('19:20');
@@ -26,8 +27,8 @@
 
 	$effect(() => {
 		if (startTime !== undefined && endTime !== undefined) {
-			const start = new Date(`1970-01-01T${startTime}`);
-			const end = new Date(`1970-01-01T${endTime}`);
+			const start = new SvelteDate(`1970-01-01T${startTime}`);
+			const end = new SvelteDate(`1970-01-01T${endTime}`);
 
 			// Add one day to the end time if the end time is earlier than the start time.
 			if (end < start) end.setDate(end.getDate() + 1);

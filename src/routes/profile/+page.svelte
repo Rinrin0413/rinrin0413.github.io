@@ -24,9 +24,9 @@
 	<Title text="My Profile" atPageTop />
 
 	<FadeInAnim type="scale-up-origin-top">
-		{#each intro as lines}
+		{#each intro as lines (lines)}
 			<p>
-				{#each lines as line, i}
+				{#each lines as line, i (line)}
 					{#if i !== 0}<br />{/if}
 					{line}
 				{/each}

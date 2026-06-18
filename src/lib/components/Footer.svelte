@@ -53,7 +53,7 @@
 			<nav>
 				<h1>{$_('w.sitemap')}</h1>
 				<ul>
-					{#each SITEMAP as { id, path }, i}
+					{#each SITEMAP as { id, path }, i (id)}
 						<li>
 							<FadeInAnim
 								type={ANIM_TYPE}
@@ -71,7 +71,7 @@
 				<nav>
 					<h1>{$_('w.otherLinks')}</h1>
 					<ul>
-						{#each OTHER_PAGES as { id, path }, i}
+						{#each OTHER_PAGES as { id, path }, i (id)}
 							<li>
 								<FadeInAnim
 									type={ANIM_TYPE}

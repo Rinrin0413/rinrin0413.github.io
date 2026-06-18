@@ -30,8 +30,8 @@
 		})}
 	>
 		<ul class:opened={isOpened} data-text="{$_('chronicle.expand')} ▼">
-			{#each CHRONICLE as { year, events }}
-				{#each events as month, i}
+			{#each CHRONICLE as { year, events } (year)}
+				{#each events as month, i (month)}
 					{@const sameMonthIndexes = events.reduce(
 						(indexes, m, index) => (m === month ? indexes.concat(index) : indexes),
 						[0].slice(1)

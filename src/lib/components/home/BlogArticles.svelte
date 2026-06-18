@@ -12,7 +12,7 @@
 </script>
 
 <ul>
-	{#each articles as meta}
+	{#each articles as meta (meta.slug)}
 		<li>
 			<FadeInAnim type="scale-up-origin-top">
 				<ArticleCard {meta} mini />

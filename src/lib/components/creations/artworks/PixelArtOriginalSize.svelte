@@ -25,7 +25,7 @@
 	ドット絵の原寸大 → {#if typeof filename === 'string'}<img
 			src="/images/creations/{filename}.png"
 			alt="文字並に小さい{subjectName}のドット絵"
-		/>{:else}{#each filename as name, i}<img
+		/>{:else}{#each filename as name, i (name)}<img
 				src="/images/creations/{name}.png"
 				alt={i === 0 ? `文字並に小さい${subjectName}のドット絵` : ''}
 			/>{/each}{/if} ←

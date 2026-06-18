@@ -43,7 +43,7 @@
 			onchange={(e) => updateParamOnElmValueChange(e, 'status')}
 		>
 			<option value="all">{$_('w.all')}</option>
-			{#each PROJECT_STATUSES as s}
+			{#each PROJECT_STATUSES as s (s)}
 				<option value={s} title={STATUS_LABELS[s]}
 					>{getStatusEmoji(s)}
 					{$_('projects.statuses.' + s)} ({(allStatuses.find((st) => st.item === s) ?? { count: 0 })
@@ -60,7 +60,7 @@
 			onchange={(e) => updateParamOnElmValueChange(e, 'langs')}
 		>
 			<option value="all">{$_('w.all')}</option>
-			{#each allLangs as l}
+			{#each allLangs as l (l.item)}
 				{@const name = l.item}
 				<option value={name}>{name} ({l.count})</option>
 			{/each}
@@ -74,7 +74,7 @@
 			onchange={(e) => updateParamOnElmValueChange(e, 'license')}
 		>
 			<option value="all">{$_('w.all')}</option>
-			{#each allLicenses as l}
+			{#each allLicenses as l (l.item)}
 				{@const name = l.item}
 				<option value={name}>{name} ({l.count})</option>
 			{/each}

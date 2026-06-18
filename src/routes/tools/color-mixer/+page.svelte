@@ -240,7 +240,7 @@
 <div>
 	<div class="input">
 		<select bind:value={method}>
-			{#each METHODS as m}
+			{#each METHODS as m (m)}
 				<option value={m}>{m}</option>
 			{/each}
 		</select>

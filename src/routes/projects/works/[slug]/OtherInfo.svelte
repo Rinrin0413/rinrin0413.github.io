@@ -42,14 +42,14 @@
 			<tr>
 				<td>{$_('w.tags')}</td>
 				<td
-					>{#each metadata.tags as tag}<a href="/projects?t={tag}" class="tag link">{tag}</a
+					>{#each metadata.tags as tag (tag)}<a href="/projects?t={tag}" class="tag link">{tag}</a
 						>{/each}</td
 				>
 			</tr>
 			<tr>
 				<td>{$_('projects.writtenIn')}</td>
 				<td
-					>{#each metadata.langs as lang, i}{#if 0 < i},{/if}<a
+					>{#each metadata.langs as lang, i (lang)}{#if 0 < i},{/if}<a
 							href="/projects?langs={lang}"
 							class="lang link">{lang}</a
 						>{/each}</td

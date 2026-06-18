@@ -137,7 +137,7 @@
 		<div>
 			<label for="dog-age" class="with-colon"
 				><select bind:value={creature}>
-					{#each ['小〜中型犬', '大型犬', '猫'] as c}
+					{#each ['小〜中型犬', '大型犬', '猫'] as c (c)}
 						<option value={c}>{c}</option>
 					{/each}
 				</select>の年齢</label

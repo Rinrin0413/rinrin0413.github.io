@@ -136,7 +136,7 @@
 	<div class="result">
 		<ul>
 			<li>睡眠時間の推論結果</li>
-			{#each DATASET.regrModels as model, i}
+			{#each DATASET.regrModels as model, i (model.name)}
 				{@const r2 = model.r2.toFixed(4)}
 				{@const name = model.name}
 				{@const duration = sleepDurations[name]}
@@ -186,7 +186,7 @@
 				<li>平均睡眠時間: {DATASET.stats.sleep.mean}時間</li>
 				<li>覚醒時間の標準偏差: {DATASET.stats.awake.stdDeviation}時間</li>
 				<li>睡眠時間の標準偏差: {DATASET.stats.sleep.stdDeviation}時間</li>
-				{#each DATASET.regrModels as model}
+				{#each DATASET.regrModels as model (model.name)}
 					<li>{model.name}式: {fmtFunctionEquation(model.f)}</li>
 					<li>{model.name}の決定係数: {model.r2}</li>
 				{/each}

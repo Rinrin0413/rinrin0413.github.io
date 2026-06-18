@@ -23,7 +23,7 @@
 			onchange={(e) => updateParamOnElmValueChange(e, 'c')}
 		>
 			<option value="all">{$_('w.all')}</option>
-			{#each allCategories as c}
+			{#each allCategories as c (c.item)}
 				{@const name = c.item}
 				<option value={name}>{name} ({c.count})</option>
 			{/each}
@@ -37,7 +37,7 @@
 			onchange={(e) => updateParamOnElmValueChange(e, 'license')}
 		>
 			<option value="all">{$_('w.all')}</option>
-			{#each allLicenses as l}
+			{#each allLicenses as l (l.item)}
 				{@const name = l.item}
 				<option value={name}>{name} ({l.count})</option>
 			{/each}

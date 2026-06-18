@@ -30,11 +30,11 @@
 
 <p>{$_('env.intro')}</p>
 
-{#each envs as { type, items }}
+{#each envs as { type, items } (type)}
 	<Title2 text={type} />
 
 	<div>
-		{#each items as { key, value }}
+		{#each items as { key, value } (key)}
 			<FadeInAnim type="scale-up-origin-top">
 				<h3>{key}</h3>
 				<p>{value}</p>

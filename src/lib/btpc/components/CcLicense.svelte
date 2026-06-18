@@ -23,7 +23,7 @@
 		>{license}<img
 			src="https://mirrors.creativecommons.org/presskit/icons/cc.svg"
 			alt=""
-		/>{#each conditions as condition}<img
+		/>{#each conditions as condition (condition)}<img
 				src="https://mirrors.creativecommons.org/presskit/icons/{condition}.svg"
 				alt=""
 			/>{/each}</a

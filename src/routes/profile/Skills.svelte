@@ -70,14 +70,14 @@
 			<li>
 				<span>{s0.key}</span>
 				<ul>
-					{#each s0.values as s1}
+					{#each s0.values as s1 (s1)}
 						{#if typeof s1 === 'string'}
 							<li>{s1}</li>
 						{:else}
 							<li>
 								<span>{s1.key}</span>
 								<ul>
-									{#each s1.value as s2}
+									{#each s1.value as s2 (s2)}
 										<li>{s2}</li>
 									{/each}
 								</ul>

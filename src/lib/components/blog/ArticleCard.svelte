@@ -47,7 +47,7 @@
 			<span class="more">read more -&gt;</span>
 			{#if 0 < meta.tags.length && !mini}
 				<ul>
-					{#each meta.tags as tag}
+					{#each meta.tags as tag (tag)}
 						<li><span class="tag-btn">{tag.toUpperCase()}</span></li>
 					{/each}
 				</ul>

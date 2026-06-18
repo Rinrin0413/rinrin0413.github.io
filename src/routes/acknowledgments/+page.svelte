@@ -27,7 +27,7 @@
 
 	<table>
 		<tbody>
-			{#each ACKNOWLEDGMENTS as { name, url, license, licenseUrl }, i}
+			{#each ACKNOWLEDGMENTS as { name, url, license, licenseUrl }, i (name)}
 				<tr>
 					<td in:fly|global={{ y: ANIM.offset, duration: ANIM.duration, delay: i * ANIM.delay }}>
 						<a href={url} target="_blank" rel="noopener noreferrer">{name}</a>

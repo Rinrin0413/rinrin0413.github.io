@@ -71,7 +71,7 @@
 		inert={$isDrawerMenuOpened}>{$_('header.skip')}</a
 	>
 	<nav class:opened={$isDrawerMenuOpened} class:at-top={isMainVisual}>
-		{#each ITEMS as item}
+		{#each ITEMS as item (item.id)}
 			<a
 				href="/{item.id}"
 				class="item"

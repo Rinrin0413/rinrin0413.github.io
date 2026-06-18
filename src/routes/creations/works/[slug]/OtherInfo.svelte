@@ -22,7 +22,7 @@
 			<tr>
 				<td>{$_('w.tags')}</td>
 				<td
-					>{#each metadata.tags as tag}<a href="/creations?t={tag}" class="link">{tag}</a
+					>{#each metadata.tags as tag (tag)}<a href="/creations?t={tag}" class="link">{tag}</a
 						>{/each}</td
 				>
 			</tr>
@@ -30,7 +30,7 @@
 				<td>{$_('w.usedTools')}</td>
 				<td
 					><span
-						>{#each metadata.usedTools as tool, i}{#if 0 < i},
+						>{#each metadata.usedTools as tool, i (tool)}{#if 0 < i},
 							{/if}{tool}{/each}</span
 					></td
 				>

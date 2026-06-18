@@ -19,7 +19,7 @@
 			{/if}
 			{#if meta.tags}
 				<ul>
-					{#each meta.tags as tag}
+					{#each meta.tags as tag (tag)}
 						<li><span class="tag-btn">{tag.toUpperCase()}</span></li>
 					{/each}
 				</ul>

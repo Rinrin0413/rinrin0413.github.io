@@ -21,7 +21,7 @@
 </button>
 
 <ul>
-	{#each allTags as { item, count }, i}
+	{#each allTags as { item, count }, i (item)}
 		{#if isOpened}
 			<Tag
 				name={item}
