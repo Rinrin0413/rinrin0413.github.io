@@ -46,13 +46,8 @@ html {
 		content: '';
 		// The maximum size of the background image is 1920x1035.
 		// And update the `BG_IMG_URL` constant in `/src/lib/scripts/data/bg-img-url.ts` if change the image.
-		background: linear-gradient(
-				152deg,
-				$bg-primary,
-				$bg-secondary 42%,
-				$bg-secondary 68%,
-				$bg-primary
-			),
+		background:
+			linear-gradient(152deg, $bg-primary, $bg-secondary 42%, $bg-secondary 68%, $bg-primary),
 			url('/images/wallpapers/sd_city-along-canal.webp');
 		background-repeat: no-repeat;
 		background-size: cover;
