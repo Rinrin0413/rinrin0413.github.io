@@ -29,6 +29,14 @@ module.exports = {
 	],
 	rules: {
 		'@typescript-eslint/strict-boolean-expressions': 'error',
-		eqeqeq: ['error', 'always']
+		eqeqeq: ['error', 'always'],
+		'@typescript-eslint/no-unused-vars': [
+			'error',
+			{
+				argsIgnorePattern: '^_',
+				varsIgnorePattern: '^_',
+				caughtErrorsIgnorePattern: '^_'
+			}
+		]
 	}
 };

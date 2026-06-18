@@ -6,7 +6,6 @@
 	import NProgress from 'nprogress';
 	import 'nprogress/nprogress.css';
 	import { navigating } from '$app/state';
-	import { page } from '$app/state';
 	import { browser } from '$app/environment';
 	import { isDrawerMenuOpened } from '$lib/scripts/stores';
 	import {

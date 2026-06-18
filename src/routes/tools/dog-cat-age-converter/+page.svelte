@@ -95,8 +95,8 @@
 
 	const EMPTY = '-';
 	$effect(() => {
-		creature;
-		creatureAge;
+		void creature;
+		void creatureAge;
 
 		untrack(() => {
 			if (creatureAge !== undefined) {

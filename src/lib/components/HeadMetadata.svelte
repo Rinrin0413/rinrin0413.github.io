@@ -12,7 +12,7 @@
 		/** ex: `Rinrin.rs のホームページです。` */
 		desc: string;
 		/** ex: `{SITE_URL}/profile` */
-		canonicalUrl?: any;
+		canonicalUrl?: string;
 		/**
 		 * ex: `article`
 		 *
