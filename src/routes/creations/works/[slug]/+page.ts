@@ -1,12 +1,12 @@
 import type { PageLoad } from './$types';
-import type { SvelteComponent } from 'svelte';
+import type { Component } from 'svelte';
 import type { ArtworkMetadata } from '$lib/btpc/scripts/types';
 import { error } from '@sveltejs/kit';
 
 export const load: PageLoad = async ({
 	params
 }): Promise<{
-	component: typeof SvelteComponent;
+	component: Component;
 	frontmatter: ArtworkMetadata;
 }> => {
 	const { default: component, metadata: frontmatter } = await import(
