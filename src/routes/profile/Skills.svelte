@@ -66,18 +66,18 @@
 	<summary class="a">{$_('skills.summary')}</summary>
 
 	<ul>
-		{#each skills as s0 (s0.key)}
+		{#each skills as s0, i (i)}
 			<li>
 				<span>{s0.key}</span>
 				<ul>
-					{#each s0.values as s1 (s1)}
+					{#each s0.values as s1, i (i)}
 						{#if typeof s1 === 'string'}
 							<li>{s1}</li>
 						{:else}
 							<li>
 								<span>{s1.key}</span>
 								<ul>
-									{#each s1.value as s2 (s2)}
+									{#each s1.value as s2, i (i)}
 										<li>{s2}</li>
 									{/each}
 								</ul>

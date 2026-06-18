@@ -14,14 +14,14 @@ header {
 	width: 100vw;
 	height: $header-height;
 	$filter: blur(16px);
-	backdrop-filter: $filter;
 	-webkit-backdrop-filter: $filter;
+	backdrop-filter: $filter;
 	transition: 0.4s;
 
 	@media (scripting: enabled) {
 		&:not(.backdrop-blur) {
-			backdrop-filter: none;
 			-webkit-backdrop-filter: none;
+			backdrop-filter: none;
 		}
 	}
 }
