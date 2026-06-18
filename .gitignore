@@ -1,4 +1,5 @@
 .vscode/
+.wrangler/
 
 # by Svelte Kit
 .DS_Store
