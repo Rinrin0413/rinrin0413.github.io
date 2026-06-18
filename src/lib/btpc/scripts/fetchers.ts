@@ -14,7 +14,6 @@ export async function fetchArticles({ limit, tags, isOnlyIndexed }: fetchArticle
 	let articles = await Promise.all(
 		Object.entries(import.meta.glob('/articles/*.md')).map(async ([path, module]) => {
 			const { metadata } = (await module()) as { metadata: ArticleMetadata };
-			// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
 			metadata.slug = path.split('/').pop()!.split('.')[0];
 			return metadata;
 		})
@@ -110,12 +109,10 @@ export async function fetchArticleTags() {
 /** Returns the file format of each article's thumbnail image (articles without thumbnail images will not be listed). */
 export async function fetchArticleThumbnailImgFmt() {
 	const thumbnailImgs = Object.keys(import.meta.glob(`/static/images/blog/thumbnails/*.*`)).map(
-		// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
 		(path) => path.split('/').pop()!
 	);
 	return (await Promise.all(Object.keys(import.meta.glob('/articles/*.md')))).reduce(
 		(acc: ArticleThumbnailImgFmts, path) => {
-			// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
 			const slug = path.split('/').pop()!.split('.')[0];
 			for (const img of thumbnailImgs) {
 				const [name, fmt] = img.split('.');
@@ -133,7 +130,6 @@ export async function fetchTools(tags?: string[]) {
 	let tools = await Promise.all(
 		Object.entries(import.meta.glob('/src/routes/tools/*/*.svelte')).map(async ([path, module]) => {
 			const { metadata } = (await module()) as { metadata: ToolMetadata };
-			// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
 			metadata.id = path.split('/')[4];
 			return metadata;
 		})
@@ -201,7 +197,6 @@ export async function fetchArtworks({ category, tags, license }: fetchArtworksOp
 	let artworks = await Promise.all(
 		Object.entries(import.meta.glob('/artworks/*.md')).map(async ([path, module]) => {
 			const { metadata } = (await module()) as { metadata: ArtworkMetadata };
-			// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
 			metadata.id = path.split('/').pop()!.split('.')[0];
 			return metadata;
 		})
@@ -340,7 +335,6 @@ export async function fetchProjects({ tags, langs, license, status }: fetchProje
 	let projects = await Promise.all(
 		Object.entries(import.meta.glob('/projects/*.md')).map(async ([path, module]) => {
 			const { metadata } = (await module()) as { metadata: ProjectMetadata };
-			// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
 			metadata.id = path.split('/').pop()!.split('.')[0];
 			return metadata;
 		})
