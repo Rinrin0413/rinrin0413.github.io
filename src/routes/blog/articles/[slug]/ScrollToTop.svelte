@@ -6,13 +6,14 @@
 
 	let scrollY = $state(0);
 
-	$effect(() => {
+	function handleScroll() {
+		scrollY = window.scrollY;
 		willScrollUp = scrollY < lastScrollPos;
 		lastScrollPos = scrollY;
-	});
+	}
 </script>
 
-<svelte:window bind:scrollY />
+<svelte:window onscroll={handleScroll} />
 
 {#if 800 < scrollY && willScrollUp}
 	<button onclick={() => document.body.scrollIntoView()} transition:fly={{ x: 86, duration: 500 }}>

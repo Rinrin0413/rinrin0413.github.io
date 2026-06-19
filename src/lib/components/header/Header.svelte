@@ -18,9 +18,6 @@
 	let isMainVisual = $derived(isAtTop && !$isDrawerMenuOpened);
 
 	let enableFadeIn = $state(true);
-	$effect(() => {
-		if (!isAtTop) enableFadeIn = false;
-	});
 
 	let pathname = $derived(page.url.pathname);
 
@@ -54,6 +51,7 @@
 	/** **＊ Must be called in the browser environment.** */
 	function updateScroll() {
 		isAtTop = window.scrollY <= 0;
+		if (!isAtTop) enableFadeIn = false;
 	}
 
 	/** Forcibly set the `AtTop` variable to `false`. */
