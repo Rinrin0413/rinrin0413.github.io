@@ -7,7 +7,7 @@ This website supports only Japanese and English. Localization is managed via `ja
 ## Technical Stack
 
 - Frontend: Svelte 5, SvelteKit 2, SCSS
-- Language: TypeScript 5 (strict mode)
+- Language: TypeScript 6 (strict mode)
 - Hosting: Cloudflare Pages
 - Repository: https://github.com/Rinrin0413/rinrin0413.github.io
 
