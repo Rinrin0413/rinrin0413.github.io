@@ -19,16 +19,10 @@
 
 	let { text, id = null, atPageTop = false }: Props = $props();
 
-	let vw: number | undefined = $state();
+	let vw: number | undefined = $state(browser ? window.innerWidth : undefined);
 	let width: number | undefined = $state();
 	let initWidth: number | undefined = $state();
 	let isOverflown = $state(false);
-
-	if (browser) {
-		updateVw();
-
-		window.addEventListener('resize', updateVw);
-	}
 
 	$effect(() => {
 		if (width !== undefined && vw !== undefined) {
@@ -42,6 +36,8 @@
 		vw = window.innerWidth;
 	}
 </script>
+
+<svelte:window onresize={updateVw} />
 
 <div class:mini={isOverflown}>
 	{#if atPageTop}
