@@ -17,35 +17,42 @@
 	let startTime = $state('15:30');
 	let endTime = $state('19:20');
 	let additionalDays = $state(0);
-	let diffMs: number | null = $state(null);
-	let diffSec: number | null = $state(null);
-	let diffMin: number | null = $state(null);
-	let diffHr: number | null = $state(null);
-	let diffFull: string | null = $state(null);
 
 	const hrDigits = 10;
 
-	$effect(() => {
-		if (startTime !== undefined && endTime !== undefined) {
-			const start = new SvelteDate(`1970-01-01T${startTime}`);
-			const end = new SvelteDate(`1970-01-01T${endTime}`);
+	let result = $derived.by(() => {
+		const emptyResult = {
+			diffMs: null,
+			diffSec: null,
+			diffMin: null,
+			diffHr: null,
+			diffFull: null
+		};
 
-			// Add one day to the end time if the end time is earlier than the start time.
-			if (end < start) end.setDate(end.getDate() + 1);
+		if (startTime === undefined || endTime === undefined) return emptyResult;
 
-			// Add additional days to the end time.
-			if (0 < additionalDays) end.setDate(end.getDate() + additionalDays);
+		const start = new SvelteDate(`1970-01-01T${startTime}`);
+		const end = new SvelteDate(`1970-01-01T${endTime}`);
 
-			diffMs = end.getTime() - start.getTime();
-			if (isNaN(diffMs)) {
-				diffMs = diffSec = diffMin = diffHr = diffFull = null;
-			} else {
-				diffSec = diffMs * 0.001;
-				diffMin = diffSec / 60;
-				diffHr = parseFloat((diffMin / 60).toPrecision(hrDigits));
-				diffFull = `${Math.floor(diffMs / 3600000)}時間${Math.floor((diffMs % 3600000) / 60000)}分`;
-			}
-		}
+		// Add one day to the end time if the end time is earlier than the start time.
+		if (end < start) end.setDate(end.getDate() + 1);
+
+		// Add additional days to the end time.
+		if (0 < additionalDays) end.setDate(end.getDate() + additionalDays);
+
+		const diffMs = end.getTime() - start.getTime();
+		if (isNaN(diffMs)) return emptyResult;
+
+		const diffSec = diffMs * 0.001;
+		const diffMin = diffSec / 60;
+
+		return {
+			diffMs,
+			diffSec,
+			diffMin,
+			diffHr: parseFloat((diffMin / 60).toPrecision(hrDigits)),
+			diffFull: `${Math.floor(diffMs / 3600000)}時間${Math.floor((diffMs % 3600000) / 60000)}分`
+		};
 	});
 
 	const EMPTY = '-';
@@ -105,11 +112,11 @@
 	</div>
 	<div class="result">
 		<ul>
-			<li><CopyButton text={diffFull} /><span>{diffFull ?? EMPTY}</span></li>
-			<li><CopyButton text={diffHr} /><span>{diffHr ?? EMPTY}</span>時間</li>
-			<li><CopyButton text={diffMin} /><span>{diffMin ?? EMPTY}</span>分</li>
-			<li><CopyButton text={diffSec} /><span>{diffSec ?? EMPTY}</span>秒</li>
-			<li><CopyButton text={diffMs} /><span>{diffMs ?? EMPTY}</span>ミリ秒</li>
+			<li><CopyButton text={result.diffFull} /><span>{result.diffFull ?? EMPTY}</span></li>
+			<li><CopyButton text={result.diffHr} /><span>{result.diffHr ?? EMPTY}</span>時間</li>
+			<li><CopyButton text={result.diffMin} /><span>{result.diffMin ?? EMPTY}</span>分</li>
+			<li><CopyButton text={result.diffSec} /><span>{result.diffSec ?? EMPTY}</span>秒</li>
+			<li><CopyButton text={result.diffMs} /><span>{result.diffMs ?? EMPTY}</span>ミリ秒</li>
 		</ul>
 	</div>
 </div>
