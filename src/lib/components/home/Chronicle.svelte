@@ -1,6 +1,4 @@
 <script lang="ts">
-	import { once } from 'svelte/legacy';
-
 	import Title from '$lib/components/Title.svelte';
 	import FadeInAnim from '$lib/components/FadeInAnim.svelte';
 
@@ -11,6 +9,7 @@
 	let isOpened = $state(false);
 
 	function open() {
+		if (isOpened) return;
 		isOpened = !isOpened;
 	}
 </script>
@@ -24,10 +23,10 @@
 		title={!isOpened ? $_('chronicle.expand') : ''}
 		role="button"
 		tabindex={isOpened ? -1 : 0}
-		onclick={once(open)}
-		onkeypress={once((e) => {
+		onclick={open}
+		onkeypress={(e) => {
 			if ((e as KeyboardEvent).key === 'Enter') open();
-		})}
+		}}
 	>
 		<ul class:opened={isOpened} data-text="{$_('chronicle.expand')} ▼">
 			{#each CHRONICLE as { year, events } (year)}
