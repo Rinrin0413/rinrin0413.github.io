@@ -2,9 +2,9 @@
 	import { locale, _ } from 'svelte-i18n';
 
 	let {
-		onFocus
+		onfocus
 	}: {
-		onFocus: () => void;
+		onfocus: () => void;
 	} = $props();
 </script>
 
@@ -17,7 +17,7 @@
 			alert('Some parts may not be translated.');
 		}
 	}}
-	onfocus={onFocus}
+	{onfocus}
 >
 	<!--
 		Google Material Symbols and Icons - Language
