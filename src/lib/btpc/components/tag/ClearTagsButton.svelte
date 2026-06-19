@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { page } from '$app/stores';
+	import { page } from '$app/state';
 	import { _ } from 'svelte-i18n';
 </script>
 
-<a href={$page.url.pathname}>{$_('tag.clearFilters')}</a>
+<a href={page.url.pathname}>{$_('tag.clearFilters')}</a>
 
 <style lang="scss">
 	@use '$lib/stylesheets/variables/mixin' as *;

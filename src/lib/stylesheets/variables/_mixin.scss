@@ -45,8 +45,8 @@ $breakpoint-ultra-narrow: 380px;
 ) {
 	background-color: $background-color;
 	$filter: blur($blur);
-	backdrop-filter: $filter;
 	-webkit-backdrop-filter: $filter;
+	backdrop-filter: $filter;
 	border-top: $border-light;
 	border-left: $border-light;
 	border-bottom: $border-dark;

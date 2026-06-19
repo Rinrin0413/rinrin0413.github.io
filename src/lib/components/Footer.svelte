@@ -6,7 +6,7 @@
 	import FadeInAnim from './FadeInAnim.svelte';
 	import { BG_IMG_URL } from '$lib/scripts/data/bg-img-url';
 
-	let wallpaperPath: string;
+	let wallpaperPath: string | undefined = $state();
 	const hasBgImgUrl = BG_IMG_URL !== null;
 
 	if (!hasBgImgUrl)
@@ -16,7 +16,7 @@
 			wallpaperPath = bgImg.replace(/.*url\("(.*)"\).*/, '$1');
 		});
 
-	$: isLocaleEng = typeof $locale === 'string' && $locale.startsWith('en');
+	let isLocaleEng = $derived(typeof $locale === 'string' && $locale.startsWith('en'));
 
 	const SITEMAP = [
 		{ id: 'home', path: '/' },
@@ -53,7 +53,7 @@
 			<nav>
 				<h1>{$_('w.sitemap')}</h1>
 				<ul>
-					{#each SITEMAP as { id, path }, i}
+					{#each SITEMAP as { id, path }, i (id)}
 						<li>
 							<FadeInAnim
 								type={ANIM_TYPE}
@@ -61,7 +61,7 @@
 								evenLittleBit
 								playForced={$isDrawerMenuOpened}
 							>
-								<a href={path} on:click={closeDrawerMenu}>{$_('w.' + id)}</a>
+								<a href={path} onclick={closeDrawerMenu}>{$_('w.' + id)}</a>
 							</FadeInAnim>
 						</li>
 					{/each}
@@ -71,7 +71,7 @@
 				<nav>
 					<h1>{$_('w.otherLinks')}</h1>
 					<ul>
-						{#each OTHER_PAGES as { id, path }, i}
+						{#each OTHER_PAGES as { id, path }, i (id)}
 							<li>
 								<FadeInAnim
 									type={ANIM_TYPE}
@@ -79,7 +79,7 @@
 									evenLittleBit
 									playForced={$isDrawerMenuOpened}
 								>
-									<a href={path} on:click={closeDrawerMenu}>{$_('w.' + id)}</a>
+									<a href={path} onclick={closeDrawerMenu}>{$_('w.' + id)}</a>
 								</FadeInAnim>
 							</li>
 						{/each}
@@ -124,7 +124,7 @@
 				</nav>
 				<div class="lang">
 					<button
-						on:click={() => {
+						onclick={() => {
 							if (isLocaleEng) locale.set('ja');
 						}}
 						class="active"
@@ -132,7 +132,7 @@
 					>
 					|
 					<button
-						on:click={() => {
+						onclick={() => {
 							if (!isLocaleEng) {
 								locale.set('en');
 								alert('Some parts may not be translated.');

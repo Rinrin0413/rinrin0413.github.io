@@ -14,10 +14,14 @@
 	import { flip } from 'svelte/animate';
 	import { WIDE_CARD_ANIM_PARAMS } from '$lib/btpc/scripts/variables';
 
-	export let data: PageData;
+	interface Props {
+		data: PageData;
+	}
 
-	$: tags = data.tags;
-	$: articles = data.articles;
+	let { data }: Props = $props();
+
+	let tags = $derived(data.tags);
+	let articles = $derived(data.articles);
 
 	const TITLE = 'Blog';
 </script>

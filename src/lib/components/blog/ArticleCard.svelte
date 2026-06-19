@@ -4,21 +4,24 @@
 	import { add9h } from '$lib/btpc/scripts/utils';
 	import { date as dateI18n } from 'svelte-i18n';
 
-	export let meta: ArticleMetadata;
-	export let thumbnailImgFmts: ArticleThumbnailImgFmts | null = null;
-	/**
-	 * Whether the card is mini version.
-	 * The mini version is always mobile view and does not have thumbnail image.
-	 */
-	export let mini = false;
+	interface Props {
+		meta: ArticleMetadata;
+		thumbnailImgFmts?: ArticleThumbnailImgFmts | null;
+		/**
+		 * Whether the card is mini version.
+		 * The mini version is always mobile view and does not have thumbnail image.
+		 */
+		mini?: boolean;
+	}
 
-	const slug = meta.slug ?? 'unreachable';
-	const date = idToDate(slug);
-	let datePlus9h: Date;
-	$: datePlus9h = add9h(date);
+	let { meta, thumbnailImgFmts = null, mini = false }: Props = $props();
 
-	const thumbnailImgFmt = thumbnailImgFmts?.[slug] ?? null;
-	const hasThumbnailImg = thumbnailImgFmt !== null;
+	const slug = $derived(meta.slug ?? 'unreachable');
+	const date = $derived(idToDate(slug));
+	let datePlus9h: Date = $derived(add9h(date));
+
+	const thumbnailImgFmt = $derived(thumbnailImgFmts?.[slug] ?? null);
+	const hasThumbnailImg = $derived(thumbnailImgFmt !== null);
 </script>
 
 <a href="/blog/articles/{slug}" class:force-mobile-view={mini}
@@ -44,7 +47,7 @@
 			<span class="more">read more -&gt;</span>
 			{#if 0 < meta.tags.length && !mini}
 				<ul>
-					{#each meta.tags as tag}
+					{#each meta.tags as tag (tag)}
 						<li><span class="tag-btn">{tag.toUpperCase()}</span></li>
 					{/each}
 				</ul>

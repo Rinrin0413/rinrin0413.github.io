@@ -13,23 +13,25 @@
 	import { date as dateI18n } from 'svelte-i18n';
 	import { add9h } from '$lib/btpc/scripts/utils';
 
-	export let data: PageData;
-	let metadata = data.frontmatter;
-	$: metadata = data.frontmatter;
+	interface Props {
+		data: PageData;
+	}
 
-	$: date = metadata.date === null ? null : new Date(metadata.date);
-	let datePlus9h: Date | null;
-	$: datePlus9h = date === null ? null : add9h(date);
+	let { data }: Props = $props();
+	let metadata = $derived(data.frontmatter);
 
-	$: hasThumbnailImg = metadata.thumbnailImg !== null;
-	$: thumbnailImgPath = hasThumbnailImg
-		? '/images/creations/thumbnails/' + metadata.thumbnailImg
-		: null;
+	let date = $derived(metadata.date === null ? null : new Date(metadata.date));
+	let datePlus9h: Date | null = $derived(date === null ? null : add9h(date));
 
-	$: title = metadata.title;
-	$: titleFull = PAGE_FULL_TITLE_PART + title;
+	let hasThumbnailImg = $derived(metadata.thumbnailImg !== null);
+	let thumbnailImgPath = $derived(
+		hasThumbnailImg ? '/images/creations/thumbnails/' + metadata.thumbnailImg : null
+	);
 
-	$: absThumbnailImgPath = SITE_URL + thumbnailImgPath;
+	let title = $derived(metadata.title);
+	let titleFull = $derived(PAGE_FULL_TITLE_PART + title);
+
+	let absThumbnailImgPath = $derived(SITE_URL + thumbnailImgPath);
 </script>
 
 <HeadMetadata

@@ -15,9 +15,13 @@
 	import { flip } from 'svelte/animate';
 	import { _ } from 'svelte-i18n';
 
-	export let data: PageData;
+	interface Props {
+		data: PageData;
+	}
 
-	$: tools = data.tools;
+	let { data }: Props = $props();
+
+	let tools = $derived(data.tools);
 
 	const TITLE = 'Web Tools';
 </script>

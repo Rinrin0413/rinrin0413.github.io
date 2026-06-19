@@ -22,7 +22,7 @@ const CLOUDFLARE_ROUTES_EXCLUDE = [
 ];
 
 function onWarn(warning, handler) {
-	const IGNORED_WARNS = ['a11y-no-noninteractive-tabindex'];
+	const IGNORED_WARNS = ['a11y_no_noninteractive_tabindex'];
 	if (IGNORED_WARNS.includes(warning.code)) return;
 	handler(warning);
 }

@@ -1,6 +1,10 @@
 <script lang="ts">
-	/** `profile` | `blog` | `tools` | `projects` | `creations` | `social` */
-	export let id: string;
+	interface Props {
+		/** `profile` | `blog` | `tools` | `projects` | `creations` | `social` */
+		id: string;
+	}
+
+	let { id }: Props = $props();
 </script>
 
 {#if id === 'profile'}

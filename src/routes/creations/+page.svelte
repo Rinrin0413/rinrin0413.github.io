@@ -14,9 +14,13 @@
 	import { CARD_ANIM_PARAMS } from '$lib/btpc/scripts/variables';
 	import { _ } from 'svelte-i18n';
 
-	export let data: PageData;
+	interface Props {
+		data: PageData;
+	}
 
-	$: artworks = data.artworks;
+	let { data }: Props = $props();
+
+	let artworks = $derived(data.artworks);
 
 	const TITLE = 'Creations';
 </script>

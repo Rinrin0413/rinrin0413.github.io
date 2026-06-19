@@ -6,8 +6,8 @@ This website supports only Japanese and English. Localization is managed via `ja
 
 ## Technical Stack
 
-- Frontend: Svelte 4, SvelteKit 2, SCSS
-- Language: TypeScript 5 (strict mode)
+- Frontend: Svelte 5, SvelteKit 2, SCSS
+- Language: TypeScript 6 (strict mode)
 - Hosting: Cloudflare Pages
 - Repository: https://github.com/Rinrin0413/rinrin0413.github.io
 
@@ -31,7 +31,8 @@ This website supports only Japanese and English. Localization is managed via `ja
     - `_mixin.scss` defines mixins and breakpoints for targeting specific screen widths, specifying fonts or their weights, using glassmorphism or button styles, and providing several general-purpose mixins.
     - `_dimension.scss` defines dimension variables used throughout the project, including header heights, realtime viewport heights, and other project-wide dimensions.
     - Only add variables or mixins to these files if they are shared across **multiple** components or files.
-- Follow the Svelte 4 best practices.
+- Follow the Svelte 5 best practices. 
+  - Use [runes](https://svelte.dev/docs/svelte/what-are-runes) instead of [reactive `$:` statements](https://svelte.dev/docs/svelte/legacy-reactive-assignments).
 - Write comments and documentation in English.
 
 ## Other Instructions

@@ -52,7 +52,7 @@
 			})}</time
 		>
 
-		{#each revisedDates as date}
+		{#each revisedDates as date (date.getTime())}
 			<br />
 
 			<time datetime={date.toISOString()}

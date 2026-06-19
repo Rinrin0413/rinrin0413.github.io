@@ -7,7 +7,11 @@
 
 	import type { ToolMetadata } from '$lib/btpc/scripts/types';
 
-	export let metadata: ToolMetadata;
+	interface Props {
+		metadata: ToolMetadata;
+	}
+
+	let { metadata }: Props = $props();
 </script>
 
 <Hr />

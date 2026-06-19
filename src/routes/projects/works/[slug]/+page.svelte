@@ -11,19 +11,22 @@
 	import { _ } from 'svelte-i18n';
 	import { getStatusEmoji } from '$lib/btpc/scripts/projects/util';
 
-	export let data: PageData;
-	let metadata = data.frontmatter;
-	$: metadata = data.frontmatter;
+	interface Props {
+		data: PageData;
+	}
 
-	$: hasThumbnailImg = metadata.thumbnailImg !== null;
-	$: thumbnailImgPath = hasThumbnailImg
-		? '/images/projects/thumbnails/' + metadata.thumbnailImg
-		: null;
+	let { data }: Props = $props();
+	let metadata = $derived(data.frontmatter);
 
-	$: title = metadata.title;
-	$: titleFull = PAGE_FULL_TITLE_PART + title;
+	let hasThumbnailImg = $derived(metadata.thumbnailImg !== null);
+	let thumbnailImgPath = $derived(
+		hasThumbnailImg ? '/images/projects/thumbnails/' + metadata.thumbnailImg : null
+	);
 
-	$: absThumbnailImgPath = SITE_URL + thumbnailImgPath;
+	let title = $derived(metadata.title);
+	let titleFull = $derived(PAGE_FULL_TITLE_PART + title);
+
+	let absThumbnailImgPath = $derived(SITE_URL + thumbnailImgPath);
 </script>
 
 <HeadMetadata

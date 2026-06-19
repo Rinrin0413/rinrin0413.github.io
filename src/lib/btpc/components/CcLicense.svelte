@@ -1,15 +1,20 @@
-<script context="module" lang="ts">
+<script module lang="ts">
 	export const CC_LICENSES = ['CC BY-SA 4.0', 'CC BY 4.0'];
 </script>
 
 <script lang="ts">
-	export let license: string;
+	interface Props {
+		license: string;
+	}
 
-	let conditions: string[];
-	if (CC_LICENSES.includes(license)) conditions = license.split(' ')[1].toLowerCase().split('-');
+	let { license }: Props = $props();
+
+	let conditions: string[] | null = $derived(
+		CC_LICENSES.includes(license) ? license.split(' ')[1].toLowerCase().split('-') : null
+	);
 </script>
 
-{#if conditions !== undefined}
+{#if conditions !== null}
 	<a
 		href="https://creativecommons.org/licenses/{conditions.join('-')}/4.0/"
 		target="_blank"
@@ -18,7 +23,7 @@
 		>{license}<img
 			src="https://mirrors.creativecommons.org/presskit/icons/cc.svg"
 			alt=""
-		/>{#each conditions as condition}<img
+		/>{#each conditions as condition (condition)}<img
 				src="https://mirrors.creativecommons.org/presskit/icons/{condition}.svg"
 				alt=""
 			/>{/each}</a

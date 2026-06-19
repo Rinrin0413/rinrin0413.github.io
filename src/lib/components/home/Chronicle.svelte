@@ -6,9 +6,10 @@
 	import { fmtMonth } from '$lib/scripts/utils';
 	import { _ } from 'svelte-i18n';
 
-	let isOpened = false;
+	let isOpened = $state(false);
 
 	function open() {
+		if (isOpened) return;
 		isOpened = !isOpened;
 	}
 </script>
@@ -22,14 +23,14 @@
 		title={!isOpened ? $_('chronicle.expand') : ''}
 		role="button"
 		tabindex={isOpened ? -1 : 0}
-		on:click|once={open}
-		on:keypress|once={(e) => {
-			if (e.key === 'Enter') open();
+		onclick={open}
+		onkeypress={(e) => {
+			if ((e as KeyboardEvent).key === 'Enter') open();
 		}}
 	>
 		<ul class:opened={isOpened} data-text="{$_('chronicle.expand')} ▼">
-			{#each CHRONICLE as { year, events }}
-				{#each events as month, i}
+			{#each CHRONICLE as { year, events } (year)}
+				{#each events as month, i (i)}
 					{@const sameMonthIndexes = events.reduce(
 						(indexes, m, index) => (m === month ? indexes.concat(index) : indexes),
 						[0].slice(1)

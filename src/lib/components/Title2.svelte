@@ -1,14 +1,16 @@
 <script lang="ts">
-	export let text: string;
+	interface Props {
+		text: string;
+		/**
+		 * Defines a unique identifier (ID) which must be unique in the whole document.
+		 * Its purpose is to identify the element when linking (using a fragment identifier).
+		 */
+		id?: string | undefined | null;
+		/** Defines inline CSS styles for an element. */
+		style?: string | undefined | null;
+	}
 
-	/**
-	 * Defines a unique identifier (ID) which must be unique in the whole document.
-	 * Its purpose is to identify the element when linking (using a fragment identifier).
-	 */
-	export let id: string | undefined | null = null;
-
-	/** Defines inline CSS styles for an element. */
-	export let style: string | undefined | null = null;
+	let { text, id = null, style = null }: Props = $props();
 </script>
 
 <h2 {id} {style}>{text}</h2>

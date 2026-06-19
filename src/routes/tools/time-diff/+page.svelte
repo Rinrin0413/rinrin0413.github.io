@@ -1,4 +1,4 @@
-<script context="module" lang="ts">
+<script module lang="ts">
 	export const metadata: ToolMetadata = {
 		title: '時間差計算機',
 		desc: '2つの時刻間の経過時間を計算します。',
@@ -12,21 +12,27 @@
 	import ToolFooter from '$lib/components/tools/ToolFoot.svelte';
 
 	import type { ToolMetadata } from '$lib/btpc/scripts/types';
+	import { SvelteDate } from 'svelte/reactivity';
 
-	let startTime = '15:30';
-	let endTime = '19:20';
-	let additionalDays = 0;
-	let diffMs: number | null;
-	let diffSec: number | null;
-	let diffMin: number | null;
-	let diffHr: number | null;
-	let diffFull: string | null;
+	let startTime = $state('15:30');
+	let endTime = $state('19:20');
+	let additionalDays = $state(0);
 
 	const hrDigits = 10;
 
-	$: if (startTime !== undefined && endTime !== undefined) {
-		const start = new Date(`1970-01-01T${startTime}`);
-		const end = new Date(`1970-01-01T${endTime}`);
+	let result = $derived.by(() => {
+		const emptyResult = {
+			diffMs: null,
+			diffSec: null,
+			diffMin: null,
+			diffHr: null,
+			diffFull: null
+		};
+
+		if (startTime === undefined || endTime === undefined) return emptyResult;
+
+		const start = new SvelteDate(`1970-01-01T${startTime}`);
+		const end = new SvelteDate(`1970-01-01T${endTime}`);
 
 		// Add one day to the end time if the end time is earlier than the start time.
 		if (end < start) end.setDate(end.getDate() + 1);
@@ -34,16 +40,20 @@
 		// Add additional days to the end time.
 		if (0 < additionalDays) end.setDate(end.getDate() + additionalDays);
 
-		diffMs = end.getTime() - start.getTime();
-		if (isNaN(diffMs)) {
-			diffMs = diffSec = diffMin = diffHr = diffFull = null;
-		} else {
-			diffSec = diffMs * 0.001;
-			diffMin = diffSec / 60;
-			diffHr = parseFloat((diffMin / 60).toPrecision(hrDigits));
-			diffFull = `${Math.floor(diffMs / 3600000)}時間${Math.floor((diffMs % 3600000) / 60000)}分`;
-		}
-	}
+		const diffMs = end.getTime() - start.getTime();
+		if (isNaN(diffMs)) return emptyResult;
+
+		const diffSec = diffMs * 0.001;
+		const diffMin = diffSec / 60;
+
+		return {
+			diffMs,
+			diffSec,
+			diffMin,
+			diffHr: parseFloat((diffMin / 60).toPrecision(hrDigits)),
+			diffFull: `${Math.floor(diffMs / 3600000)}時間${Math.floor((diffMs % 3600000) / 60000)}分`
+		};
+	});
 
 	const EMPTY = '-';
 </script>
@@ -62,7 +72,7 @@
 		</div>
 		<div>
 			<button
-				on:click={() => ([startTime, endTime] = [endTime, startTime])}
+				onclick={() => ([startTime, endTime] = [endTime, startTime])}
 				title="入れ替える"
 				tabindex="-1"
 			>
@@ -102,18 +112,18 @@
 	</div>
 	<div class="result">
 		<ul>
-			<li><CopyButton text={diffFull} /><span>{diffFull ?? EMPTY}</span></li>
-			<li><CopyButton text={diffHr} /><span>{diffHr ?? EMPTY}</span>時間</li>
-			<li><CopyButton text={diffMin} /><span>{diffMin ?? EMPTY}</span>分</li>
-			<li><CopyButton text={diffSec} /><span>{diffSec ?? EMPTY}</span>秒</li>
-			<li><CopyButton text={diffMs} /><span>{diffMs ?? EMPTY}</span>ミリ秒</li>
+			<li><CopyButton text={result.diffFull} /><span>{result.diffFull ?? EMPTY}</span></li>
+			<li><CopyButton text={result.diffHr} /><span>{result.diffHr ?? EMPTY}</span>時間</li>
+			<li><CopyButton text={result.diffMin} /><span>{result.diffMin ?? EMPTY}</span>分</li>
+			<li><CopyButton text={result.diffSec} /><span>{result.diffSec ?? EMPTY}</span>秒</li>
+			<li><CopyButton text={result.diffMs} /><span>{result.diffMs ?? EMPTY}</span>ミリ秒</li>
 		</ul>
 	</div>
 </div>
 
 <ToolFooter {metadata} />
 
-<!-- svelte-ignore css-unused-selector -->
+<!-- svelte-ignore css_unused_selector -->
 <style lang="scss">
 	@use '$lib/stylesheets/tools/tool_page';
 

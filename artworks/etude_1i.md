@@ -30,4 +30,4 @@ thumbnailImg: etude_1i.webp
 
 ## 楽譜
 
-<iframe title="Noteflight" allowfullscreen width="100%" src="https://www.noteflight.com/music/title_embed/0befbe20-8619-471e-8212-62b1f68473ea/etude-no-1-gospel-d-minor-first-version" style="aspect-ratio: 5 / 7;" />
+<iframe title="Noteflight" allowfullscreen width="100%" src="https://www.noteflight.com/music/title_embed/0befbe20-8619-471e-8212-62b1f68473ea/etude-no-1-gospel-d-minor-first-version" style="aspect-ratio: 5 / 7;"></iframe>

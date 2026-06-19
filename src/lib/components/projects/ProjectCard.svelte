@@ -3,14 +3,19 @@
 	import { omitDateByStatus, getStatusEmoji } from '$lib/btpc/scripts/projects/util';
 	import { _ } from 'svelte-i18n';
 
-	export let meta: ProjectMetadata;
+	interface Props {
+		meta: ProjectMetadata;
+	}
 
-	const id = meta.id ?? 'unreachable';
-	const date =
+	let { meta }: Props = $props();
+
+	const id = $derived(meta.id ?? 'unreachable');
+	const date = $derived(
 		meta.initDate === null
 			? null
-			: omitDateByStatus(new Date(meta.date ?? meta.initDate), meta.status);
-	const hasThumbnailImg = meta.thumbnailImg !== null;
+			: omitDateByStatus(new Date(meta.date ?? meta.initDate), meta.status)
+	);
+	const hasThumbnailImg = $derived(meta.thumbnailImg !== null);
 
 	function langCol(lang: string) {
 		switch (lang) {
@@ -78,14 +83,14 @@
 			<span class="more">see more -&gt;</span>
 			{#if 0 < meta.tags.length}
 				<ul>
-					{#each meta.tags as tag}
+					{#each meta.tags as tag (tag)}
 						<li><span class="tag-btn">{tag}</span></li>
 					{/each}
 				</ul>
 			{/if}
 			{#if 1 <= meta.langs.length}
 				<div class="lang">
-					<span class="lang-col" style="background-color: {langCol(meta.langs[0])};" />{meta
+					<span class="lang-col" style="background-color: {langCol(meta.langs[0])};"></span>{meta
 						.langs[0]}
 				</div>
 			{/if}

@@ -1,8 +1,12 @@
 <script lang="ts">
 	import { _ } from 'svelte-i18n';
-	import { page } from '$app/stores';
+	import { page } from '$app/state';
 
-	export let tags: string[];
+	interface Props {
+		tags: string[];
+	}
+
+	let { tags }: Props = $props();
 </script>
 
 {#if 0 < tags.length}
@@ -10,9 +14,9 @@
 		<div class="tags">
 			<span>{$_('w.tags')}</span>
 			<ul>
-				{#each tags as tag}
+				{#each tags as tag (tag)}
 					<li>
-						<a href="/{$page.url.pathname.split('/')[1]}/?t={tag}" class="tag-btn"
+						<a href="/{page.url.pathname.split('/')[1]}/?t={tag}" class="tag-btn"
 							>{tag.toUpperCase()}</a
 						>
 					</li>

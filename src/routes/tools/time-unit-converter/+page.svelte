@@ -1,4 +1,4 @@
-<script context="module" lang="ts">
+<script module lang="ts">
 	export const metadata: ToolMetadata = {
 		title: '時間の単位換算機',
 		desc: '様々な時間の単位を相互的に換算します。',
@@ -14,17 +14,17 @@
 	import { onMount } from 'svelte';
 	import type { ToolMetadata } from '$lib/btpc/scripts/types';
 
-	let tNs: number;
-	let tUs: number;
-	let tMs: number;
-	let tSec = 86_400; // 86,400s = 1d
-	let tMin: number;
-	let tHou: number;
-	let tDay: number;
-	let tWeek: number;
-	let tMon: number;
-	let tYear: number;
-	let tCentury: number;
+	let tNs: number | null = $state(null);
+	let tUs: number | null = $state(null);
+	let tMs: number | null = $state(null);
+	let tSec = $state(86_400); // 86,400s = 1d
+	let tMin: number | null = $state(null);
+	let tHou: number | null = $state(null);
+	let tDay: number | null = $state(null);
+	let tWeek: number | null = $state(null);
+	let tMon: number | null = $state(null);
+	let tYear: number | null = $state(null);
+	let tCentury: number | null = $state(null);
 
 	onMount(update);
 
@@ -81,41 +81,41 @@
 		<ul>
 			<li>
 				<CopyButton text={tNs} />ナノ秒:
-				<input type="number" bind:value={tNs} on:input={update} />ns
+				<input type="number" bind:value={tNs} oninput={update} />ns
 			</li>
 			<li>
 				<CopyButton text={tUs} />マイクロ秒:
-				<input type="number" bind:value={tUs} on:input={update} />µs
+				<input type="number" bind:value={tUs} oninput={update} />µs
 			</li>
 			<li>
 				<CopyButton text={tMs} />ミリ秒:
-				<input type="number" bind:value={tMs} on:input={update} />ms
+				<input type="number" bind:value={tMs} oninput={update} />ms
 			</li>
 			<li>
-				<CopyButton text={tSec} />秒: <input type="number" bind:value={tSec} on:input={update} />s
+				<CopyButton text={tSec} />秒: <input type="number" bind:value={tSec} oninput={update} />s
 			</li>
 			<li>
-				<CopyButton text={tMin} />分: <input type="number" bind:value={tMin} on:input={update} />min
+				<CopyButton text={tMin} />分: <input type="number" bind:value={tMin} oninput={update} />min
 			</li>
 			<li>
-				<CopyButton text={tHou} />時間: <input type="number" bind:value={tHou} on:input={update} />h
+				<CopyButton text={tHou} />時間: <input type="number" bind:value={tHou} oninput={update} />h
 			</li>
 			<li>
-				<CopyButton text={tDay} />日: <input type="number" bind:value={tDay} on:input={update} />d
+				<CopyButton text={tDay} />日: <input type="number" bind:value={tDay} oninput={update} />d
 			</li>
 			<li>
-				<CopyButton text={tWeek} />週: <input type="number" bind:value={tWeek} on:input={update} />w
+				<CopyButton text={tWeek} />週: <input type="number" bind:value={tWeek} oninput={update} />w
 			</li>
 			<li>
 				<CopyButton text={tMon} />月(平均):
-				<input type="number" bind:value={tMon} on:input={update} />mon
+				<input type="number" bind:value={tMon} oninput={update} />mon
 			</li>
 			<li>
-				<CopyButton text={tYear} />年: <input type="number" bind:value={tYear} on:input={update} />y
+				<CopyButton text={tYear} />年: <input type="number" bind:value={tYear} oninput={update} />y
 			</li>
 			<li>
 				<CopyButton text={tCentury} />世紀:
-				<input type="number" bind:value={tCentury} on:input={update} />T
+				<input type="number" bind:value={tCentury} oninput={update} />T
 			</li>
 		</ul>
 	</div>
@@ -123,7 +123,7 @@
 
 <ToolFooter {metadata} />
 
-<!-- svelte-ignore css-unused-selector -->
+<!-- svelte-ignore css_unused_selector -->
 <style lang="scss">
 	@use '$lib/stylesheets/tools/tool_page';
 	@use '$lib/stylesheets/variables/color' as *;

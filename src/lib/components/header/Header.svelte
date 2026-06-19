@@ -6,21 +6,20 @@
 	import { onMount } from 'svelte';
 	import { browser } from '$app/environment';
 	import { isDrawerMenuOpened } from '$lib/scripts/stores';
-	import { page } from '$app/stores';
+	import { page } from '$app/state';
 	import { _ } from 'svelte-i18n';
 
 	onMount(updateScroll);
 
-	let isAtTop = true;
+	let isAtTop = $state(true);
 
 	if (browser) addEventListener('scroll', updateScroll);
 
-	$: isMainVisual = isAtTop && !$isDrawerMenuOpened;
+	let isMainVisual = $derived(isAtTop && !$isDrawerMenuOpened);
 
-	let enableFadeIn = true;
+	let enableFadeIn = $state(true);
 
-	$: pathname = $page.url.pathname;
-	$: if (!isAtTop) enableFadeIn = false;
+	let pathname = $derived(page.url.pathname);
 
 	const ITEMS = [
 		{
@@ -52,6 +51,7 @@
 	/** **＊ Must be called in the browser environment.** */
 	function updateScroll() {
 		isAtTop = window.scrollY <= 0;
+		if (!isAtTop) enableFadeIn = false;
 	}
 
 	/** Forcibly set the `AtTop` variable to `false`. */
@@ -60,22 +60,22 @@
 	}
 </script>
 
-<div class="header-bg" class:blur={isMainVisual} />
+<div class="header-bg" class:blur={isMainVisual}></div>
 <header class:backdrop-blur={!isMainVisual}>
 	<a
 		href="#main-content"
 		class="skip-btn"
-		on:focus={forceSetTheAtTopFalse}
+		onfocus={forceSetTheAtTopFalse}
 		inert={$isDrawerMenuOpened}>{$_('header.skip')}</a
 	>
 	<nav class:opened={$isDrawerMenuOpened} class:at-top={isMainVisual}>
-		{#each ITEMS as item}
+		{#each ITEMS as item (item.id)}
 			<a
 				href="/{item.id}"
 				class="item"
 				class:active={pathname.split('/')[1] === item.id}
-				on:focus={forceSetTheAtTopFalse}
-				on:mousedown={forceSetTheAtTopFalse}
+				onfocus={forceSetTheAtTopFalse}
+				onmousedown={forceSetTheAtTopFalse}
 			>
 				<Icon id={item.id} />
 				<span class="item-text">{$_(item.name)}</span>
@@ -83,8 +83,8 @@
 		{/each}
 	</nav>
 	<div class="hamburger-btn" class:hidden={isMainVisual}>
-		<HamburgerButton on:focus={forceSetTheAtTopFalse} /><LangButton
-			on:focus={forceSetTheAtTopFalse}
+		<HamburgerButton onfocus={forceSetTheAtTopFalse} /><LangButton
+			onfocus={forceSetTheAtTopFalse}
 		/>
 	</div>
 	<a
@@ -92,7 +92,7 @@
 		class="header-logo"
 		class:center={isMainVisual}
 		class:fade-in={enableFadeIn}
-		on:click={() => {
+		onclick={() => {
 			isDrawerMenuOpened.set(false);
 		}}
 		tabindex="-1"><img src="/images/logos/rinrin/logo.svg" alt="" /></a

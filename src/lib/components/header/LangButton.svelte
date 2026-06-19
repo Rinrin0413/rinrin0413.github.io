@@ -1,12 +1,15 @@
 <script lang="ts">
-	import { createEventDispatcher } from 'svelte';
 	import { locale, _ } from 'svelte-i18n';
 
-	const dispatch = createEventDispatcher();
+	let {
+		onfocus
+	}: {
+		onfocus: () => void;
+	} = $props();
 </script>
 
 <button
-	on:click={() => {
+	onclick={() => {
 		if (typeof $locale === 'string' && $locale.startsWith('en')) {
 			locale.set('ja');
 		} else {
@@ -14,7 +17,7 @@
 			alert('Some parts may not be translated.');
 		}
 	}}
-	on:focus={() => dispatch('focus')}
+	{onfocus}
 >
 	<!--
 		Google Material Symbols and Icons - Language
