@@ -17,7 +17,7 @@ This website supports only Japanese and English. Localization is managed via `ja
 - Install deps: `pnpm install`
 - Start dev server: `pnpm dev`
 - Build: `pnpm build`
-- Check & format & lint: `pnpm check && pnpm fmt && pnpm lnt`
+- Check & format & lint: `pnpm check && pnpm format && pnpm lint`
 
 ## Code Style
 
