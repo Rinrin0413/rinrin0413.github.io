@@ -91,7 +91,7 @@
 	<Environment />
 </section>
 
-<style style="scss">
+<style lang="scss">
 	section {
 		margin-top: 28px;
 	}
