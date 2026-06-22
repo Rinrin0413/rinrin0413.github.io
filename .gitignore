@@ -1,5 +1,6 @@
 .vscode/
 .wrangler/
+licenses.json
 
 # by Svelte Kit
 .DS_Store

@@ -215,7 +215,8 @@
 		"backToIndex": "Back to index",
 		"noMatchingArticlesFound": "No matching articles found."
 	},
-	"acknowledgments.desc": "Thank you for all OSS and services that used in the development of this website.",
+	"acknowledgments.desc": "Licenses for the open-source software used in this website.",
+	"acknowledgments.showLicenseText": "Show license text",
 	"tools": {
 		"backToIndex": "Back to tool list",
 		"noMatchingToolsFound": "No matching tools found.",

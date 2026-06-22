@@ -16,6 +16,7 @@ This website supports only Japanese and English. Localization is managed via `ja
 - Clean install: `pnpm install --frozen-lockfile`
 - Install deps: `pnpm install`
 - Start dev server: `pnpm dev`
+  - `pnpm run licenses` to update licenses data
 - Build: `pnpm build`
 - Check & format & lint: `pnpm check && pnpm format && pnpm lint`
 
