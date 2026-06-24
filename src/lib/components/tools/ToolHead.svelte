@@ -4,7 +4,11 @@
 
 	import type { ToolMetadata } from '$lib/btpc/scripts/types';
 
-	export let metadata: ToolMetadata;
+	interface Props {
+		metadata: ToolMetadata;
+	}
+
+	let { metadata }: Props = $props();
 </script>
 
 <HeadMetadata title={'Web Tools - ' + metadata.title} desc={metadata.desc ?? ''} ogType="article" />

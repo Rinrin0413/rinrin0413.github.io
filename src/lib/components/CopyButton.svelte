@@ -3,12 +3,16 @@
 	import { TOAST_OPTIONS } from '$lib/scripts/variables';
 	import { _ } from 'svelte-i18n';
 
-	/** A text to be copied. */
-	export let text: number | string | null;
+	interface Props {
+		/** A text to be copied. */
+		text: number | string | null;
+	}
+
+	let { text }: Props = $props();
 </script>
 
 <button
-	on:click={() => {
+	onclick={() => {
 		if (text === undefined || text === null) {
 			toast.error($_('copy.failed'), TOAST_OPTIONS);
 			console.error(`The text to be copied is \`${text}\`.`);

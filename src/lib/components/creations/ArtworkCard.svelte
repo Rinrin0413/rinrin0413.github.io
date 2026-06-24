@@ -3,11 +3,17 @@
 	import { add9h } from '$lib/btpc/scripts/utils';
 	import { date as dateI18n } from 'svelte-i18n';
 
-	export let meta: ArtworkMetadata;
+	interface Props {
+		meta: ArtworkMetadata;
+	}
 
-	const date = meta.date !== null ? new Date(meta.date) : null;
-	let datePlus9h: Date;
-	$: if (date !== null) datePlus9h = add9h(date);
+	let { meta }: Props = $props();
+
+	const date = $derived(meta.date !== null ? new Date(meta.date) : null);
+	let datePlus9h: Date | null = $derived.by(() => {
+		if (date !== null) return add9h(date);
+		return null;
+	});
 </script>
 
 <a href="/creations/works/{meta.id}"
@@ -24,7 +30,7 @@
 			<div class="meta">
 				<h2>{meta.title}</h2>
 				{#if date !== null}
-					<time datetime={datePlus9h.toISOString()}>
+					<time datetime={datePlus9h?.toISOString()}>
 						{$dateI18n(date, { format: 'medium' })}
 					</time>
 				{/if}
@@ -33,7 +39,7 @@
 				{/if}
 				<ul>
 					<li class="category">{meta.category}</li>
-					{#each meta.tags as tag}
+					{#each meta.tags as tag (tag)}
 						<li><span class="tag-btn">{tag}</span></li>
 					{/each}
 				</ul>

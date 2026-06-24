@@ -6,7 +6,7 @@ langs: [Svelte, TypeScript, SCSS]
 repo: https://github.com/Rinrin0413/rinrin0413.github.io
 website: https://rinrin.pages.dev
 status: active
-date: 2026-01-07
+date: 2026-06-24
 initDate: 2021-06-26
 license: GPL-3.0
 thumbnailImg: website.webp

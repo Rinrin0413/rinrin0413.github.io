@@ -10,7 +10,7 @@
 
 <HeadMetadata
 	title="Privacy Policy"
-	desc="このプライバシーポリシーは、当サイトにおけるアクセス解析について示したものです。"
+	desc="このプライバシーポリシーは、本ウェブサイトにおけるアクセス解析について示したものです。"
 />
 
 <section>
@@ -52,7 +52,7 @@
 			})}</time
 		>
 
-		{#each revisedDates as date}
+		{#each revisedDates as date (date.getTime())}
 			<br />
 
 			<time datetime={date.toISOString()}

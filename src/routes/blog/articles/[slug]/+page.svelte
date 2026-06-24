@@ -9,7 +9,7 @@
 	import ScrollToTop from './ScrollToTop.svelte';
 
 	import type { PageData } from './$types';
-	import { page } from '$app/stores';
+	import { page } from '$app/state';
 	import { SITE_URL, PAGE_FULL_TITLE_PART } from '$lib/scripts/variables';
 	import { parallaxStyle, idToDate } from '$lib/scripts/utils';
 	import { cubicOut } from 'svelte/easing';
@@ -17,30 +17,31 @@
 	import { date as dateI18n } from 'svelte-i18n';
 	import { add9h } from '$lib/btpc/scripts/utils';
 
-	export let data: PageData;
-	let metadata = data.frontmatter;
-	$: metadata = data.frontmatter;
-
-	let slug: string;
-	$: {
-		const paths = $page.url.pathname.split('/');
-		const pathnameLength = paths.length;
-		const pathnameIsEndsWithSlash = paths[pathnameLength - 1] === '';
-		slug = paths[pathnameLength - (pathnameIsEndsWithSlash ? 2 : 1)];
+	interface Props {
+		data: PageData;
 	}
 
-	let scrollY = 0;
-	$: parallax = parallaxStyle(scrollY);
+	let { data }: Props = $props();
+	let metadata = $derived(data.frontmatter);
 
-	$: date = idToDate(slug);
-	let datePlus9h: Date;
-	$: datePlus9h = add9h(date);
+	let slug: string = $derived.by(() => {
+		const paths = page.url.pathname.split('/');
+		const pathnameLength = paths.length;
+		const pathnameIsEndsWithSlash = paths[pathnameLength - 1] === '';
+		return paths[pathnameLength - (pathnameIsEndsWithSlash ? 2 : 1)];
+	});
 
-	$: thumbnailImgFmt = data.thumbnailImgFmt;
-	$: hasThumbnailImg = thumbnailImgFmt !== null;
-	$: thumbnailImgPath = hasThumbnailImg
-		? `/images/blog/thumbnails/${slug}.` + thumbnailImgFmt
-		: null;
+	let scrollY = $state(0);
+	let parallax = $derived(parallaxStyle(scrollY));
+
+	let date = $derived(idToDate(slug));
+	let datePlus9h: Date = $derived(add9h(date));
+
+	let thumbnailImgFmt = $derived(data.thumbnailImgFmt);
+	let hasThumbnailImg = $derived(thumbnailImgFmt !== null);
+	let thumbnailImgPath = $derived(
+		hasThumbnailImg ? `/images/blog/thumbnails/${slug}.` + thumbnailImgFmt : null
+	);
 
 	function introAnim(index = 0) {
 		return {
@@ -50,10 +51,10 @@
 		};
 	}
 
-	$: title = metadata.title;
-	$: titleFull = PAGE_FULL_TITLE_PART + title;
+	let title = $derived(metadata.title);
+	let titleFull = $derived(PAGE_FULL_TITLE_PART + title);
 
-	$: absThumbnailImgPath = SITE_URL + thumbnailImgPath;
+	let absThumbnailImgPath = $derived(SITE_URL + thumbnailImgPath);
 </script>
 
 <HeadMetadata

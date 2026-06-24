@@ -1,4 +1,4 @@
-<script context="module" lang="ts">
+<script module lang="ts">
 	export const metadata = {
 		title: '色混合機',
 		desc: '複数の色を混合します。',
@@ -19,15 +19,11 @@
 	type Method = (typeof METHODS)[number];
 	type Triplet = [number, number, number];
 
-	let method: Method = METHODS[0];
-	let colorCodes = ['#ff0000', '#0000ff'];
+	let method: Method = $state(METHODS[0]);
+	let colorCodes = $state(['#ff0000', '#0000ff']);
 
-	let colors: Triplet[];
-	$: colors = colorCodes.map(colorCodeToRgb);
-	let mixedColor: Triplet;
-	$: mixedColor = mixColors(colors, method);
-
-	$: [colorCode, rgb255, rgb1, cmyk, hsl, hsv] = format(mixedColor);
+	let colors: Triplet[] = $derived(colorCodes.map(colorCodeToRgb));
+	let mixedColor: Triplet = $derived(mixColors(colors, method));
 
 	/** Converts a six-digit hexadecimal color code string to an RGB array `[r, g, b]` (0~255). */
 	function colorCodeToRgb(color: string): Triplet {
@@ -234,6 +230,8 @@
 
 		return `hsl(${h * 100}, ${sHsl * 100}%, ${l * 100}%)`;
 	}
+
+	let [colorCode, rgb255, rgb1, cmyk, hsl, hsv] = $derived(format(mixedColor));
 </script>
 
 <ToolHead {metadata} />
@@ -242,25 +240,25 @@
 <div>
 	<div class="input">
 		<select bind:value={method}>
-			{#each METHODS as m}
+			{#each METHODS as m (m)}
 				<option value={m}>{m}</option>
 			{/each}
 		</select>
 		<ul class="colors">
-			{#each colorCodes as color, i (i)}
+			{#each colorCodes as _, i (i)}
 				<li
 					class="color"
 					class:invalid={colors[i].some((v) => isNaN(v))}
 					transition:scale={{ duration: 200 }}
 					animate:flip={{ duration: 200 }}
 				>
-					<input type="color" bind:value={color} /><input
+					<input type="color" bind:value={colorCodes[i]} /><input
 						type="text"
-						bind:value={color}
+						bind:value={colorCodes[i]}
 						placeholder="#00ff00"
-						on:change={() => normalizeColorCode(i)}
+						onchange={() => normalizeColorCode(i)}
 						aria-label="色{i + 1}"
-					/><button class="delete-btn" on:click={() => deleteColor(i)} aria-label="色を削除">
+					/><button class="delete-btn" onclick={() => deleteColor(i)} aria-label="色を削除">
 						<img
 							src="/images/google-material-design-icons/close_24dp_533618_FILL0_wght400_GRAD0_opsz24.svg"
 							alt="色を削除"
@@ -272,7 +270,7 @@
 		<div>
 			<button
 				class="add-btn"
-				on:click={() =>
+				onclick={() =>
 					(colorCodes = [
 						...colorCodes,
 						`#${Math.floor(Math.random() * 0xffffff)
@@ -287,12 +285,12 @@
 		<ul>
 			<li>
 				<CopyButton text={colorCode} />カラーコード:
-				<div style="background-color: {colorCode};" />
+				<div style="background-color: {colorCode};"></div>
 				<span>{colorCode}</span>
 			</li>
 			<li>
 				<CopyButton text={rgb255} />RGB:
-				<div style="background-color: {rgb255};" />
+				<div style="background-color: {rgb255};"></div>
 				<span>{rgb255}</span>
 			</li>
 			<li>
@@ -303,22 +301,22 @@
 						.split(',')
 						.map((c) => parseFloat(c) * 255)
 						.join(', ')});"
-				/>
+				></div>
 				<span>{rgb1}</span>
 			</li>
 			<li>
 				<CopyButton text={cmyk} />CMYK:
-				<div style="background-color: {cmykToRgb(cmyk)};" />
+				<div style="background-color: {cmykToRgb(cmyk)};"></div>
 				<span>{cmyk}</span>
 			</li>
 			<li>
 				<CopyButton text={hsl} />HSL:
-				<div style="background-color: {hsl};" />
+				<div style="background-color: {hsl};"></div>
 				<span>{hsl}</span>
 			</li>
 			<li>
 				<CopyButton text={hsv} />HSV:
-				<div style="background-color: {hsvToHsl(hsv)};" />
+				<div style="background-color: {hsvToHsl(hsv)};"></div>
 				<span>{hsv}</span>
 			</li>
 		</ul>
@@ -327,7 +325,7 @@
 
 <ToolFooter {metadata} />
 
-<!-- svelte-ignore css-unused-selector -->
+<!-- svelte-ignore css_unused_selector -->
 <style lang="scss">
 	@use '$lib/stylesheets/tools/tool_page';
 	@use '$lib/stylesheets/variables/color' as *;

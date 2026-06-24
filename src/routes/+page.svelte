@@ -13,13 +13,17 @@
 	import { _ } from 'svelte-i18n';
 	import { calcAge } from '$lib/scripts/utils';
 
-	export let data: PageData;
-	const articles = data.articles;
+	interface Props {
+		data: PageData;
+	}
+
+	let { data }: Props = $props();
+	const articles = $derived(data.articles);
 </script>
 
 <HeadMetadata title="Home" desc="Rinrin.rs のホームページです。" canonicalUrl={SITE_URL} />
 
-<img src="/images/icon_13_384px.webp" alt={$_('home.icon')} class="icn" />
+<img src="/images/icon_15_256px.gif" alt={$_('home.icon')} class="icn" />
 
 <section id="about">
 	<Title text="About me" />

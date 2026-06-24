@@ -1,4 +1,4 @@
-<script context="module" lang="ts">
+<script module lang="ts">
 	export const metadata = {
 		title: 'Rinrinの睡眠時間推論機',
 		desc: '覚醒時間から Rinrin.rs の睡眠時間を回帰式を用いて推論します。',
@@ -41,28 +41,12 @@
 	Chart.register(...registerables);
 
 	// The default value should be a multiple of 0.5 because the `<input>` element and graph steps are 0.5.
-	let awakeDuration = roundToHalf(DATASET.stats.awake.mean);
+	let awakeDuration = $state(roundToHalf(DATASET.stats.awake.mean));
 
-	$: sleepDurations = DATASET.regrModels.reduce(
-		(acc, model) => {
-			acc[model.name] = model.f(awakeDuration);
-			return acc;
-		},
-		{} as Record<string, number>
-	);
+	let renderGraph = $state(false);
+	let chartData: ChartData<'line', (number | Point)[], unknown> | undefined = $state.raw();
 
-	let renderGraph = false;
-	let chartData: ChartData<'line', (number | Point)[], unknown>;
-	$: if (renderGraph && chartData !== undefined)
-		chartData.datasets[DATASET.regrModels.length].data[0] = {
-			x: roundToHalf(awakeDuration),
-			y:
-				DATASET.regrModels.reduce((acc, model) => {
-					let sleepDuration = sleepDurations[model.name];
-					if (sleepDuration < 0) sleepDuration = 0;
-					return acc + sleepDuration;
-				}, 0) / DATASET.regrModels.length
-		};
+	let chartRef: Chart<'line'> | null = $state(null);
 
 	/** Returns a supplied numeric expression rounded to the nearest multiple of 0.5. */
 	function roundToHalf(x: number) {
@@ -109,6 +93,30 @@
 				.replace(/ ?(?<!e)(\*\*|[+\-*]) ?/g, ' $1 ')
 		);
 	}
+	let sleepDurations = $derived(
+		DATASET.regrModels.reduce(
+			(acc, model) => {
+				acc[model.name] = model.f(awakeDuration);
+				return acc;
+			},
+			{} as Record<string, number>
+		)
+	);
+	$effect(() => {
+		if (renderGraph && chartRef !== null) {
+			chartRef.data.datasets[DATASET.regrModels.length].data[0] = {
+				x: roundToHalf(awakeDuration),
+				y:
+					DATASET.regrModels.reduce((acc, model) => {
+						let sleepDuration = sleepDurations[model.name];
+						if (sleepDuration < 0) sleepDuration = 0;
+						return acc + sleepDuration;
+					}, 0) / DATASET.regrModels.length
+			};
+
+			chartRef.update('none');
+		}
+	});
 </script>
 
 <ToolHead {metadata} />
@@ -128,7 +136,7 @@
 	<div class="result">
 		<ul>
 			<li>睡眠時間の推論結果</li>
-			{#each DATASET.regrModels as model, i}
+			{#each DATASET.regrModels as model, i (model.name)}
 				{@const r2 = model.r2.toFixed(4)}
 				{@const name = model.name}
 				{@const duration = sleepDurations[name]}
@@ -141,19 +149,22 @@
 		</ul>
 		{#if renderGraph}
 			<div class="chart card">
-				<Line
-					data={chartData}
-					options={CHART_OPTIONS}
-					width={window.innerWidth < 700 ? 3 : 7}
-					height={4}
-				/>
+				{#if chartData !== undefined}
+					<Line
+						bind:chart={chartRef}
+						data={chartData}
+						options={CHART_OPTIONS}
+						width={window.innerWidth < 700 ? 3 : 7}
+						height={4}
+					/>
+				{/if}
 			</div>
 		{/if}
 		<p>
 			<label for="render-graph">グラフを表示</label><input
 				type="checkbox"
 				bind:checked={renderGraph}
-				on:change={setChartData}
+				onchange={setChartData}
 				id="render-graph"
 			/>
 		</p>
@@ -175,7 +186,7 @@
 				<li>平均睡眠時間: {DATASET.stats.sleep.mean}時間</li>
 				<li>覚醒時間の標準偏差: {DATASET.stats.awake.stdDeviation}時間</li>
 				<li>睡眠時間の標準偏差: {DATASET.stats.sleep.stdDeviation}時間</li>
-				{#each DATASET.regrModels as model}
+				{#each DATASET.regrModels as model (model.name)}
 					<li>{model.name}式: {fmtFunctionEquation(model.f)}</li>
 					<li>{model.name}の決定係数: {model.r2}</li>
 				{/each}
@@ -185,7 +196,7 @@
 </div>
 <ToolFooter {metadata} />
 
-<!-- svelte-ignore css-unused-selector -->
+<!-- svelte-ignore css_unused_selector -->
 <style lang="scss">
 	@use '$lib/stylesheets/tools/tool_page';
 

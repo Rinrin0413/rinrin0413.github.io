@@ -1,9 +1,13 @@
 <script lang="ts">
 	import type { ToolMetadata } from '$lib/btpc/scripts/types';
 
-	export let meta: ToolMetadata;
+	interface Props {
+		meta: ToolMetadata;
+	}
 
-	const id = meta.id ?? 'unreachable';
+	let { meta }: Props = $props();
+
+	const id = $derived(meta.id ?? 'unreachable');
 </script>
 
 <a href="/tools/{id}"
@@ -15,7 +19,7 @@
 			{/if}
 			{#if meta.tags}
 				<ul>
-					{#each meta.tags as tag}
+					{#each meta.tags as tag (tag)}
 						<li><span class="tag-btn">{tag.toUpperCase()}</span></li>
 					{/each}
 				</ul>

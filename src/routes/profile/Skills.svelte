@@ -12,7 +12,7 @@
 		linux: 'skills.linux.',
 		illustration: 'skills.illustration.'
 	};
-	$: skills = [
+	let skills = $derived([
 		{
 			key: 'Rust',
 			values: [$_(L10N_PATHS.s + 'rust')]
@@ -59,25 +59,25 @@
 			key: $_('w.illustration'),
 			values: [$_(L10N_PATHS.illustration + '0'), $_(L10N_PATHS.illustration + '1')]
 		}
-	];
+	]);
 </script>
 
 <details>
 	<summary class="a">{$_('skills.summary')}</summary>
 
 	<ul>
-		{#each skills as s0 (s0.key)}
+		{#each skills as s0, i (i)}
 			<li>
 				<span>{s0.key}</span>
 				<ul>
-					{#each s0.values as s1}
+					{#each s0.values as s1, i (i)}
 						{#if typeof s1 === 'string'}
 							<li>{s1}</li>
 						{:else}
 							<li>
 								<span>{s1.key}</span>
 								<ul>
-									{#each s1.value as s2}
+									{#each s1.value as s2, i (i)}
 										<li>{s2}</li>
 									{/each}
 								</ul>

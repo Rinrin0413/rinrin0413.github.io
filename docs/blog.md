@@ -1,7 +1,7 @@
 # ブログ記事の追加について
 
 ```bash
-npm run article
+pnpm article
 ```
 
 これでテンプレートを `/articles/` に作成してくれる。

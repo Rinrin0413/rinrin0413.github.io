@@ -29,7 +29,6 @@ async function body() {
 	const articles = (await fetchArticles({ isOnlyIndexed: true }))
 		.reverse()
 		.map((article) => {
-			// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
 			const slug = article.slug!;
 
 			let date = idToDate(slug);

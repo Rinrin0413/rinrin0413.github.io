@@ -70,7 +70,7 @@
 </script>
 
 <ul>
-	{#each SOCIALS as { service, name, href, src, width, height, isExternal, title }}
+	{#each SOCIALS as { service, name, href, src, width, height, isExternal, title } (service)}
 		<li {title}>
 			<img {src} alt="" {width} {height} />{service}:
 			<a

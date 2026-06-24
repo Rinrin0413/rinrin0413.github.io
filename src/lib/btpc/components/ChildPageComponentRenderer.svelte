@@ -1,10 +1,14 @@
 <script lang="ts">
-	import type { SvelteComponent } from 'svelte';
+	import type { Component } from 'svelte';
 
-	export let component: typeof SvelteComponent;
+	interface Props {
+		component: Component;
+	}
+
+	let { component: ChildComponent }: Props = $props();
 </script>
 
-<article class="child-page-body"><div><svelte:component this={component} /></div></article>
+<article class="child-page-body"><div><ChildComponent /></div></article>
 
 <style lang="scss" global>
 	@use '$lib/btpc/stylesheets/for_markdown';

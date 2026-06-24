@@ -48,8 +48,8 @@
 		&:hover {
 			background-color: #ffffff5a;
 			$saturate: saturate(2);
-			backdrop-filter: $saturate;
 			-webkit-backdrop-filter: $saturate;
+			backdrop-filter: $saturate;
 		}
 	}
 

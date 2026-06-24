@@ -3,23 +3,27 @@
 	import { updateParamOnElmValueChange } from '$lib/btpc/scripts/utils';
 	import { _ } from 'svelte-i18n';
 
-	export let allCategories: ItemWithCount[];
-	export let allLicenses: ItemWithCount[];
-	export let pickedCategory: string | null = null;
-	export let pickedLicense: string | null = null;
+	interface Props {
+		allCategories: ItemWithCount[];
+		allLicenses: ItemWithCount[];
+		pickedCategory?: string | null;
+		pickedLicense?: string | null;
+	}
 
-	$: category = pickedCategory ?? 'all';
-	$: license = pickedLicense ?? 'all';
+	let { allCategories, allLicenses, pickedCategory = null, pickedLicense = null }: Props = $props();
+
+	let category = $derived(pickedCategory ?? 'all');
+	let license = $derived(pickedLicense ?? 'all');
 </script>
 
 <div>
 	<label
 		><span>{$_('w.category')}</span><select
 			bind:value={category}
-			on:change={(e) => updateParamOnElmValueChange(e, 'c')}
+			onchange={(e) => updateParamOnElmValueChange(e, 'c')}
 		>
 			<option value="all">{$_('w.all')}</option>
-			{#each allCategories as c}
+			{#each allCategories as c (c.item)}
 				{@const name = c.item}
 				<option value={name}>{name} ({c.count})</option>
 			{/each}
@@ -30,10 +34,10 @@
 	<label
 		><span>{$_('w.license')}</span><select
 			bind:value={license}
-			on:change={(e) => updateParamOnElmValueChange(e, 'license')}
+			onchange={(e) => updateParamOnElmValueChange(e, 'license')}
 		>
 			<option value="all">{$_('w.all')}</option>
-			{#each allLicenses as l}
+			{#each allLicenses as l (l.item)}
 				{@const name = l.item}
 				<option value={name}>{name} ({l.count})</option>
 			{/each}

@@ -19,7 +19,7 @@
 	<p>Email: <a href="mailto:{CONTACT_EMAIL_ADDRESS}">{CONTACT_EMAIL_ADDRESS}</a></p>
 
 	<ul>
-		{#each SOCIALS as { service, name, url, icon }}
+		{#each SOCIALS as { service, name, url, icon } (service)}
 			<li>
 				{#if icon !== null}<img src="/images/logos/{icon}" alt="" />{/if}{service}:
 				{#if url}

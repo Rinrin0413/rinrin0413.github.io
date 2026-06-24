@@ -48,7 +48,7 @@
 	},
 	"home": {
 		"icon": "Rinrin.rs' avatar",
-		"greeting": ["Hi there!!!", "I'm a {age}year-old Japanese student."],
+		"greeting": ["Hi there!!!", "I'm a {age}-year-old Japanese student."],
 		"contents": "of this home",
 		"whatIDo": "what i usually do",
 		"chronicle": "my history",
@@ -215,7 +215,8 @@
 		"backToIndex": "Back to index",
 		"noMatchingArticlesFound": "No matching articles found."
 	},
-	"acknowledgments.desc": "Thank you for all OSS and services that used in the development of this website.",
+	"acknowledgments.desc": "Licenses for the open-source software used in this website.",
+	"acknowledgments.showLicenseText": "Show license text",
 	"tools": {
 		"backToIndex": "Back to tool list",
 		"noMatchingToolsFound": "No matching tools found.",
