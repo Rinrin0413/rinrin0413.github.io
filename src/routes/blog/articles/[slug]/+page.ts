@@ -16,7 +16,9 @@ export const load: PageLoad = async ({
 	).catch(err);
 	if (!(frontmatter.published as boolean)) err();
 
-	const thumbnailImgFmt = await (await fetch('/api/articles/thumbnail-imgs'))
+	const thumbnailImgFmt = await (
+		await fetch('/api/articles/thumbnail-imgs')
+	)
 		.json()
 		.then((imgs: { [slug: string]: string }) => imgs[params.slug] ?? null);
 
