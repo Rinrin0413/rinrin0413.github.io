@@ -29,7 +29,7 @@
 
 <section>
 	<Title text={TITLE} atPageTop />
-	<p><ShareButton title={PAGE_FULL_TITLE_PART + TITLE} /></p>
+	<div><ShareButton title={PAGE_FULL_TITLE_PART + TITLE} /></div>
 	<StatusAndLangAndLicensePicker
 		allStatuses={data.allStatuses}
 		allLangs={data.allLangs}
