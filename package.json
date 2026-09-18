@@ -20,7 +20,7 @@
 		"packageManager": {
 			"name": "pnpm",
 			"version": "12.4.2",
-			"onFail": "warn"
+			"onFail": "download"
 		}
 	},
 	"devDependencies": {
