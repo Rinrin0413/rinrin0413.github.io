@@ -1,7 +1,8 @@
 @use '$lib/stylesheets/variables/mixin' as *;
 
 li {
-	display: inline;
+	display: inline-block;
+	vertical-align: top;
 	margin: 0 3px;
 	margin-bottom: 4px;
 	background-color: #1f1f1f;
@@ -12,7 +13,14 @@ li {
 	}
 }
 
+// Keep specificity at zero so component-specific display styles
+// (e.g., scripting-aware display: none in Tag.svelte) can take precedence.
+:where(.tag-btn) {
+	display: inline-block;
+}
+
 .tag-btn {
+	vertical-align: top;
 	background: none;
 	border: none;
 	padding: 3px 6px;
@@ -20,6 +28,8 @@ li {
 	@include source-code-pro;
 	color: #e9e9e9;
 	font-size: 16px;
+	line-height: 18px;
 	text-decoration: none;
 	cursor: pointer;
+	box-sizing: border-box;
 }
