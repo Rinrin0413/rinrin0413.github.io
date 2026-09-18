@@ -13,9 +13,13 @@
 | 128 | header title | [`header.scss>.header-logo::after`](/src/lib/stylesheets/header/header.scss) |
 | 127 | header, header bg | [`header.scss>header, .header-bg`](/src/lib/stylesheets/header/header.scss) |
 | 126 | footer | [`footer.scss>footer`](/src/lib/stylesheets/footer.scss) |
-| 42 | sharing dropdown menu | [`share_button.scss>ul &.menu`](/src/lib/btpc/stylesheets/share_button.scss) |
-| -1 | bg wallpaper | [`style.scss>html &::before`](/src/lib/stylesheets/style.scss) |
-| -1 | unconfirmed fixed element | [`layout.scss>#bg`](/src/lib/stylesheets/layout.scss) |
+| 42 (inside main) | sharing dropdown menu | [`share_button.scss>ul &.menu`](/src/lib/btpc/stylesheets/share_button.scss) |
+| auto (stacking level 0) | main content, isolated stacking context | [`layout.scss>main`](/src/lib/stylesheets/layout.scss) |
+| 0 | fixed background wallpaper | [`layout.scss>#bg`](/src/lib/stylesheets/layout.scss) |
+
+`#bg` precedes `main` in DOM order. `main` uses `isolation: isolate` to paint its contents above the background without changing their containing blocks. Header, footer/drawer, and Toaster remain outside this stacking context.
+
+The background keeps the maximum observed `window.innerHeight` via `--max-vh001`. Its non-negative z-index and opaque `$txt-primary` (`#533618`) background color allow Safari to consider it for native solid color extension. `html` uses `#dad2c5` as a fallback color that blends naturally with the wallpaper and its gradient overlay; `body` has no explicit background color. Wallpaper extension behind Safari's toolbar is not guaranteed and requires device testing.
 
 ---
 

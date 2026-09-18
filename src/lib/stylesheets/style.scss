@@ -40,26 +40,8 @@ html {
 	color: $txt-primary;
 	text-align: center;
 	scroll-behavior: smooth;
-	background-color: #615141;
-
-	&::before {
-		content: '';
-		// The maximum size of the background image is 1920x1035.
-		// And update the `BG_IMG_URL` constant in `/src/lib/scripts/data/bg-img-url.ts` if change the image.
-		background:
-			linear-gradient(152deg, $bg-primary, $bg-secondary 42%, $bg-secondary 68%, $bg-primary),
-			url('/images/wallpapers/sd_city-along-canal.webp');
-		background-repeat: no-repeat;
-		background-size: cover;
-		background-position: center;
-		display: block;
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: calc($max-vh001 * 100);
-		z-index: -1;
-	}
+	// Use a fallback color that blends naturally with the wallpaper and its gradient overlay.
+	background-color: #dad2c5;
 }
 
 body {
