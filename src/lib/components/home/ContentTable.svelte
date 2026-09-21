@@ -26,8 +26,6 @@
 </ul>
 
 <style lang="scss">
-	@use '$lib/stylesheets/variables/mixin' as *;
-
 	ul {
 		list-style: none;
 		max-width: 326px;

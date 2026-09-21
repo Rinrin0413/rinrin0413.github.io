@@ -36,8 +36,6 @@
 <style lang="scss">
 	@use '$lib/stylesheets/header/button';
 
-	@use '$lib/stylesheets/variables/mixin' as *;
-
 	button {
 		display: none;
 		margin-right: 8px;

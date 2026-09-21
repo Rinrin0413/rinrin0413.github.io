@@ -98,8 +98,6 @@
 	@use '$lib/btpc/stylesheets/card';
 	@use '$lib/btpc/stylesheets/wide_card';
 
-	@use '$lib/stylesheets/variables/mixin' as *;
-
 	.status {
 		float: right;
 		font-size: 17px;

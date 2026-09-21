@@ -711,7 +711,9 @@ Returns a list of statuses of projects.
 </div>
 </details>
 
-### Project date collection
+---
+
+## Project date collection
 
 Run `pnpm project-dates` to refresh `src/lib/project-dates.json`. `pnpm build` runs this after license collection. During development, refresh it manually before starting the dev server when needed.
 
@@ -722,3 +724,13 @@ Collected timestamps are stored in UTC; project calendar dates are displayed in 
 The JSON is tracked by Git and keyed by repository and branch. Collection failures warn and reuse the saved value for the same key; without a valid saved value, the build fails. Commit updated JSON manually when appropriate: builds never create commits. Clean environments can only fall back to committed data, not data collected by a previous remote build. Unused entries are removed after a successful collection run.
 
 Optionally set `GITHUB_TOKEN` in the build environment for authenticated requests. It is never included in the generated JSON. No scheduled builds are configured.
+
+---
+
+## Shared SCSS definitions
+
+Vite automatically injects `@use '$lib/stylesheets/variables' as *;` into Svelte SCSS style blocks. Components can use shared variables and mixins without explicit imports.
+
+Standalone SCSS modules must include that `@use` explicitly: Sass module scopes are isolated, and Vite's `additionalData` does not run on modules loaded by Sass. Files inside `variables/` must keep their own dependencies instead of importing the shared index, to avoid circular imports.
+
+The shared entry point is `src/lib/stylesheets/variables/_index.scss`. Add an `@forward` there when introducing a new shared module. Keep these modules limited to variables, functions, and mixins so automatic injection does not duplicate CSS.

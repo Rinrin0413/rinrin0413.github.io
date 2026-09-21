@@ -22,9 +22,6 @@
 </a>
 
 <style lang="scss">
-	@use '$lib/stylesheets/variables/mixin' as *;
-	@use '$lib/stylesheets/variables/color' as *;
-
 	a {
 		margin: 0 6px;
 		padding: 4px;

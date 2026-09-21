@@ -34,5 +34,4 @@
 
 <style lang="scss">
 	@use '$lib/stylesheets/social_table';
-	@use '$lib/stylesheets/variables/mixin' as *;
 </style>

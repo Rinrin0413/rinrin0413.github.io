@@ -91,9 +91,6 @@
 </details>
 
 <style lang="scss">
-	@use '$lib/stylesheets/variables/mixin' as *;
-	@use '$lib/stylesheets/variables/color' as *;
-
 	details {
 		display: inline-block;
 		padding: 0 16px;

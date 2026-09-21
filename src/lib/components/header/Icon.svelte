@@ -103,9 +103,6 @@
 {/if}
 
 <style lang="scss">
-	@use '$lib/stylesheets/variables/color' as *;
-	@use '$lib/stylesheets/variables/mixin' as *;
-
 	svg {
 		display: block;
 		margin: 0 auto;

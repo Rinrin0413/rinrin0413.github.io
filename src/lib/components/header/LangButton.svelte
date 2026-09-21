@@ -33,8 +33,6 @@
 </button>
 
 <style lang="scss">
-	@use '$lib/stylesheets/variables/mixin' as *;
-
 	@use '$lib/stylesheets/header/button';
 
 	button {

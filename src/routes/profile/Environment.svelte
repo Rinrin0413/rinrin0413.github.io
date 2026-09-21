@@ -50,9 +50,6 @@
 </p> -->
 
 <style lang="scss">
-	@use '$lib/stylesheets/variables/color' as *;
-	@use '$lib/stylesheets/variables/mixin' as *;
-
 	h3,
 	div p {
 		max-width: 365px;

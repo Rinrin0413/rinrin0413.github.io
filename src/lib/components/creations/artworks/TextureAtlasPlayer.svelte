@@ -88,9 +88,6 @@
 <Hr />
 
 <style lang="scss">
-	@use '$lib/stylesheets/variables/color' as *;
-	@use '$lib/stylesheets/variables/mixin' as *;
-
 	.player {
 		height: auto;
 		margin: 24px auto;

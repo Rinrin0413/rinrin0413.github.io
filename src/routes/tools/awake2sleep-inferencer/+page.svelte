@@ -200,8 +200,6 @@
 <style lang="scss">
 	@use '$lib/stylesheets/tools/tool_page';
 
-	@use '$lib/stylesheets/variables/mixin' as *;
-
 	input[type='number'] {
 		width: 80px;
 	}

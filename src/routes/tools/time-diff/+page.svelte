@@ -127,8 +127,6 @@
 <style lang="scss">
 	@use '$lib/stylesheets/tools/tool_page';
 
-	@use '$lib/stylesheets/variables/color' as *;
-
 	button {
 		color: inherit;
 		background: none;

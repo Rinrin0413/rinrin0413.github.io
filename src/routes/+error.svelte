@@ -36,8 +36,6 @@
 {/if}
 
 <style lang="scss">
-	@use '$lib/stylesheets/variables/mixin' as *;
-
 	h1 {
 		@include source-code-pro;
 		font-size: 5rem;

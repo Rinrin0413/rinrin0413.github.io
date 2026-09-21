@@ -26,9 +26,6 @@
 </div>
 
 <style lang="scss">
-	@use '$lib/stylesheets/variables/mixin' as *;
-	@use '$lib/stylesheets/variables/color' as *;
-
 	div {
 		max-width: 420px;
 		padding: 0 12px;

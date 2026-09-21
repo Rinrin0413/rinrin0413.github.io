@@ -60,9 +60,6 @@
 <style lang="scss">
 	@use '$lib/btpc/stylesheets/index_page';
 
-	@use '$lib/stylesheets/variables/color' as *;
-	@use '$lib/stylesheets/variables/mixin' as *;
-
 	.tools {
 		margin: 0 auto;
 	}

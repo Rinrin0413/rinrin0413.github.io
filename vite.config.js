@@ -22,5 +22,16 @@ export default defineConfig({
 			}
 		})
 	],
+	css: {
+		preprocessorOptions: {
+			scss: {
+				// Sass modules loaded through @use keep their own explicit dependencies.
+				additionalData: (source, filename) =>
+					typeof filename === 'string' && filename.includes('.svelte')
+						? `@use '$lib/stylesheets/variables' as *;\n${source}`
+						: source
+			}
+		}
+	},
 	server: { fs: { allow: ['articles', 'artworks', 'projects'] } }
 });
