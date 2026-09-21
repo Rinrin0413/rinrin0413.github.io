@@ -4,9 +4,10 @@ desc: マインクラフトJava版向けのシェーダーパック。現在開�
 tags: [シェーダーパック, マインクラフトJava版, グラフィックス]
 langs: [GLSL]
 repo: https://github.com/Rinrin0413/Tempest-Shaders_JE
+branch: dev
 website: null
 status: wip
-date: 2023-03-25
+date: null
 initDate: 2022-10-19
 license: CC BY 4.0
 thumbnailImg: null

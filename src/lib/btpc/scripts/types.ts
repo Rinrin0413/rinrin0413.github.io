@@ -53,10 +53,11 @@ export interface ProjectMetadata {
 	tags: string[];
 	langs: string[];
 	repo: string | null;
+	branch: string | null;
 	website: string | null;
 	status: ProjectStatus;
 	date: string | null;
-	initDate: string | null;
+	initDate: string;
 	license: string | null;
 	thumbnailImg: string | null;
 	id?: string;

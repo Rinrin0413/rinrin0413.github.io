@@ -493,10 +493,11 @@ Returns a list of projects.
   - `tags` (`string[]`) - The list of tags of the project.
   - `langs` (`string[]`) - The list of programming languages used in the project.
   - `repo` (`string | null`) - The repository URL of the project.
+  - `branch` (`string | null`) - The GitHub branch used to collect the latest commit date when the source `date` is null.
   - `website` (`string | null`) - The website URL of the project.
   - `status` (`string`) - The status of the project.
   - `date` (`string | null`) - The last updated date of the project.
-  - `initDate` (`string | null`) - The initial release date of the project.
+  - `initDate` (`string`) - The required initial release date of the project.
   - `license` (`string | null`) - The license of the project.
   - `thumbnailImg` (`string | null`) - The thumbnail image path of the project.
   - `id` (`string?`) - The ID of the project. Its type is an optional string but it always exists.
@@ -709,3 +710,15 @@ Returns a list of statuses of projects.
 
 </div>
 </details>
+
+### Project date collection
+
+Run `pnpm project-dates` to refresh `src/lib/project-dates.json`. `pnpm build` runs this after license collection. During development, refresh it manually before starting the dev server when needed.
+
+`initDate` is required and must contain a valid non-null date; missing or invalid values fail collection before any API requests. Both `date` and `branch` are required in project frontmatter. A non-null `date` overrides automatic collection without making a GitHub request. Set `date: null` and `branch: main` (or another branch) to use the latest commit's committer date from `repo`. Set both to null to leave the update date unset. Existing manual dates are preserved.
+
+Collected timestamps are stored in UTC; project calendar dates are displayed in Asia/Tokyo. The Projects API returns the resolved date. This is the commit timestamp, not the push timestamp.
+
+The JSON is tracked by Git and keyed by repository and branch. Collection failures warn and reuse the saved value for the same key; without a valid saved value, the build fails. Commit updated JSON manually when appropriate: builds never create commits. Clean environments can only fall back to committed data, not data collected by a previous remote build. Unused entries are removed after a successful collection run.
+
+Optionally set `GITHUB_TOKEN` in the build environment for authenticated requests. It is never included in the generated JSON. No scheduled builds are configured.

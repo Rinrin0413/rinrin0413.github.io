@@ -4,9 +4,10 @@ desc: 私のマシンで動作する私のバックアップツール。
 tags: [ツール]
 langs: [Shell]
 repo: https://github.com/Rinrin0413/Kagami-sh
+branch: main
 website: null
 status: completed
-date: 2025-12-09
+date: null
 initDate: 2025-12-05
 license: MIT
 thumbnailImg: null

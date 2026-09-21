@@ -17,7 +17,7 @@
 	let { metadata }: Props = $props();
 
 	let date = $derived(metadata.date === null ? null : new Date(metadata.date));
-	let initDate = $derived(metadata.initDate === null ? null : new Date(metadata.initDate));
+	let initDate = $derived(new Date(metadata.initDate));
 
 	function removeUrlScheme(url: string) {
 		return url.replace(/^https?:\/\//, '');
@@ -33,12 +33,10 @@
 					<td><span>{omitDateByStatus(date, metadata.status)}</span></td>
 				</tr>
 			{/if}
-			{#if initDate !== null}
-				<tr>
-					<td>{$_('projects.initRelease')}</td>
-					<td><span>{fmtToFullDate(initDate)}</span></td>
-				</tr>
-			{/if}
+			<tr>
+				<td>{$_('projects.initRelease')}</td>
+				<td><span>{fmtToFullDate(initDate)}</span></td>
+			</tr>
 			<tr>
 				<td>{$_('w.tags')}</td>
 				<td

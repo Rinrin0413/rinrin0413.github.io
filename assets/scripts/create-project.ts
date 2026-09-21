@@ -24,9 +24,10 @@ desc: ここに説明文(任意)
 tags: [タグ, Tag, tag]
 langs: [プログラム言語, Language, lang]
 repo: ここにリポジトリのURL(任意)
+branch: ここに「最終更新日時を取得するブランチ」(任意)
 website: ここにウェブサイトのURL(任意)
 status: wip または active または completed または archived または abandoned
-date: 最終更新日時
+date: null # アーカイブプロジェクトなどで、最終更新日時を手動で上書きする際に設定
 initDate: 初版日時
 license: ここにライセンス(任意)
 thumbnailImg: ここにサムネイル画像のファイル名(任意)

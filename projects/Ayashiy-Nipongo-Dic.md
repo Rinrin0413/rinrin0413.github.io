@@ -4,9 +4,10 @@ desc: 辞畫ツー儿てこゐ㇇ァ亻儿を读込むと︑贵樣は怪レい�
 tags: [怪レい日本语]
 langs: []
 repo: https://github.com/Rinrin0413/Ayashiy-Nipongo-Dic
+branch: null
 website: https://discord.gg/cHwzRZ9uE5
 status: active
-date: 2024-05-01
+date: null
 initDate: 2021-12-14
 license: MIT
 thumbnailImg: null

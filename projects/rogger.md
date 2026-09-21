@@ -4,9 +4,10 @@ desc: ログ出力のためのRinrin.rs用Rustライブラリ。
 tags: [ライブラリ]
 langs: [Rust]
 repo: https://github.com/Rinrin0413/rogger
+branch: dev
 website: https://docs.rs/rogger
 status: completed
-date: 2022-12-24
+date: null
 initDate: 2022-12-18
 license: MIT
 thumbnailImg: rogger.webp

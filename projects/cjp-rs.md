@@ -4,9 +4,10 @@ desc: 贵樣ばこゐRustﾗ亻㇇゛ﾗ刂て怪レい日本语に変換ずゑ�
 tags: [ライブラリ, 怪レい日本语]
 langs: [Rust]
 repo: https://github.com/Rinrin0413/cjp-rs
+branch: dev
 website: https://docs.rs/cjp
 status: active
-date: 2024-05-03
+date: null
 initDate: 2022-09-20
 license: MIT
 thumbnailImg: null
