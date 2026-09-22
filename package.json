@@ -10,7 +10,7 @@
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"lint": "prettier --check . && eslint .",
-		"format": "prettier --write .",
+		"format": "prettier --write . --log-level warn",
 		"project-dates": "tsx assets/scripts/collect-project-dates.ts",
 		"licenses": "node assets/scripts/collect-licenses.ts",
 		"article": "tsx assets/scripts/create-article.ts",
