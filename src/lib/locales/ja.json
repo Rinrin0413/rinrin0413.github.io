@@ -232,6 +232,13 @@
 			"archived": "アーカイブ",
 			"abandoned": "放棄"
 		},
+		"statusDescriptions": {
+			"wip": "開発が進行中で未完成のもの",
+			"active": "完成しているが、機能追加等の開発が続いているもの",
+			"completed": "完成していて、現時点で更新の予定がないもの",
+			"archived": "開発が終了しているもの",
+			"abandoned": "完成する前に放棄したもの"
+		},
 		"noMatchingProjectsFound": "一致するプロジェクトが見つかりませんでした。",
 		"latestUpdate": "最新",
 		"initRelease": "初版",

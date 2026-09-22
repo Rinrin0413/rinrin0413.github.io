@@ -235,6 +235,13 @@
 			"archived": "Archived",
 			"abandoned": "Abandoned"
 		},
+		"statusDescriptions": {
+			"wip": "In development and incomplete",
+			"active": "Completed, but further development such as new features is ongoing",
+			"completed": "Completed, with no current plans for updates",
+			"archived": "Development has ended",
+			"abandoned": "Abandoned before completion"
+		},
 		"noMatchingProjectsFound": "No matching projects found.",
 		"latestUpdate": "Latest update",
 		"initRelease": "Initial release",
