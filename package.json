@@ -4,7 +4,8 @@
 	"private": true,
 	"scripts": {
 		"dev": "vite dev",
-		"build": "pnpm run licenses && pnpm run project-dates && vite build",
+		"build": "pnpm run licenses && vite build",
+		"build:deploy": "pnpm run project-dates && pnpm run build",
 		"preview": "vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",

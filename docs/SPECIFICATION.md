@@ -715,13 +715,15 @@ Returns a list of statuses of projects.
 
 ## Project date collection
 
-Run `pnpm project-dates` to refresh `src/lib/project-dates.json`. `pnpm build` runs this after license collection. During development, refresh it manually before starting the dev server when needed.
+Run `pnpm project-dates` to generate or refresh `src/lib/project-dates.json`. After installing dependencies in a fresh clone, run it once before `pnpm dev`, `pnpm build`, or `pnpm check` (including `pnpm check:watch`). During development, refresh it manually when current dates are needed. The generated JSON is ignored by Git and must not be committed.
+
+`pnpm build` collects licenses and builds using the existing JSON without fetching project dates. `pnpm run build:deploy` collects project dates first, then runs `pnpm build`. Set the Cloudflare Pages build command to `pnpm run build:deploy` so each deployment uses freshly collected dates.
 
 `initDate` is required and must contain a valid non-null date; missing or invalid values fail collection before any API requests. Both `date` and `branch` are required in project frontmatter. A non-null `date` overrides automatic collection without making a GitHub request. Set `date: null` and `branch: main` (or another branch) to use the latest commit's committer date from `repo`. Set both to null to leave the update date unset. Existing manual dates are preserved.
 
 Collected timestamps are stored in UTC; project calendar dates are displayed in Asia/Tokyo. The Projects API returns the resolved date. This is the commit timestamp, not the push timestamp.
 
-The JSON is tracked by Git and keyed by repository and branch. Collection failures warn and reuse the saved value for the same key; without a valid saved value, the build fails. Commit updated JSON manually when appropriate: builds never create commits. Clean environments can only fall back to committed data, not data collected by a previous remote build. Unused entries are removed after a successful collection run.
+The JSON is keyed by repository and branch. Any collection failure exits with an error and stops the deployment build; existing values are never used as a fallback. The JSON is written only after all required dates have been collected successfully, so a collection failure leaves any existing file unchanged. Each successful collection replaces the generated data and removes unused entries. No periodic updates or commits of this file are required.
 
 Optionally set `GITHUB_TOKEN` in the build environment for authenticated requests. It is never included in the generated JSON. No scheduled builds are configured.
 

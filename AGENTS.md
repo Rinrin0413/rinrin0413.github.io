@@ -17,7 +17,9 @@ This website supports only Japanese and English. Localization is managed via `ja
 - Install deps: `pnpm install`
 - Start dev server: `pnpm dev`
   - `pnpm run licenses` to update licenses data
+  - `pnpm run project-dates` to update project dates data
 - Build: `pnpm build`
+- Deployment build: `pnpm build:deploy`
 - Check & format & lint: `pnpm check && pnpm format && pnpm lint`
 
 ## Code Style

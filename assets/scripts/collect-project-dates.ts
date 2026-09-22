@@ -1,9 +1,8 @@
 import { readFile, readdir, writeFile } from 'node:fs/promises';
 import { compile } from 'mdsvex';
-import { getProjectDateKey } from '../../src/lib/btpc/scripts/projects/dates';
+import { getProjectDateKey } from '../../src/lib/btpc/scripts/projects/date-key';
 
 const outputPath = 'src/lib/project-dates.json';
-const previous: Record<string, string> = JSON.parse(await readFile(outputPath, 'utf8'));
 const targets = new Set<string>();
 
 for (const file of (await readdir('projects')).filter((file) => file.endsWith('.md')).sort()) {
@@ -54,12 +53,7 @@ for (const key of [...targets].sort()) {
 			throw new Error('GitHub returned an invalid committer date.');
 		output[key] = new Date(date).toISOString();
 	} catch (error) {
-		console.warn(`Failed to collect project date for ${key}:`, error);
-		const fallback = previous[key];
-		if (typeof fallback !== 'string' || Number.isNaN(Date.parse(fallback)))
-			throw new Error(`No saved project date for ${key}.`, { cause: error });
-		console.warn(`Using saved project date for ${key}: ${fallback}`);
-		output[key] = fallback;
+		throw new Error(`Failed to collect project date for ${key}.`, { cause: error });
 	}
 }
 
