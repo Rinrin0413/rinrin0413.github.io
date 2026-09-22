@@ -305,7 +305,7 @@
 	</div>
 	<Hr />
 	<div class="result">
-		<Title2 text="データセットの概要" />
+		<Title2 text="データセットの統計" />
 		<p>
 			<CopyButton
 				text={JSON.stringify(STATISTICS, (_, v) => (typeof v === 'function' ? v.toString() : v))}
