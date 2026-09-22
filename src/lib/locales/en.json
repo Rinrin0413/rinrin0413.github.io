@@ -44,7 +44,8 @@
 		"revisedOn": "Revised on {date}",
 		"repo": "Repository",
 		"website": "Website",
-		"terminalEmulator": "Terminal Emulator"
+		"terminalEmulator": "Terminal Emulator",
+		"chiba": "Chiba Pref."
 	},
 	"home": {
 		"icon": "Rinrin.rs' avatar",
@@ -163,6 +164,7 @@
 		"birthday": "April 13th, 2006",
 		"primaryLang": "Primary lang.",
 		"timezone": "Timezone",
+		"residence": "Residence",
 		"birthplace": "Birthplace",
 		"hobby": "see"
 	},
@@ -178,7 +180,7 @@
 			"0": "I dislike this field because stylesheets are very stressful.",
 			"svelte": [
 				"I usually use SvelteKit when build websites. This website was made with it too.",
-				"I have never used any other frameworks."
+				"I have hardly ever used any other frameworks."
 			],
 			"htmlCssJs": "I HATE CSS.",
 			"sass": [

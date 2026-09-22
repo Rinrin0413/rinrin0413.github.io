@@ -44,7 +44,8 @@
 		"revisedOn": "{date} 改定",
 		"repo": "リポジトリ",
 		"website": "ウェブサイト",
-		"terminalEmulator": "ターミナルエミュレーター"
+		"terminalEmulator": "ターミナルエミュレーター",
+		"chiba": "千葉県"
 	},
 	"home": {
 		"icon": "Rinrin.rs のアイコン",
@@ -163,6 +164,7 @@
 		"birthday": "2006年4月13日",
 		"primaryLang": "言語",
 		"timezone": "時刻帯",
+		"residence": "居住地",
 		"birthplace": "出身地",
 		"hobby": "参照:"
 	},
@@ -178,7 +180,7 @@
 			"0": "スタイルシートのおかげで嫌いな分野。",
 			"svelte": [
 				"サイトを作るときには SvelteKit を使っている。このサイトもそう。",
-				"これ以外のフレームワークを使ったことはない。"
+				"これ以外のフレームワークはほぼ使ったことはない。"
 			],
 			"htmlCssJs": "CSS 嫌い。",
 			"sass": ["mixin とか変数とかが好き。", "インデント構文は嫌いなので SCSS のほうを使っている。"]
