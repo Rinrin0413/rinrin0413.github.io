@@ -45,7 +45,7 @@
 		},
 		{
 			key: 'Python',
-			values: [$_(L10N_PATHS.py + '0'), $_(L10N_PATHS.py + '1')]
+			values: [$_(L10N_PATHS.py + '0')]
 		},
 		{
 			key: $_('w.minecraft'),
