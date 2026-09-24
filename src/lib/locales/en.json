@@ -76,8 +76,8 @@
 				"mayNotUse": "no longer use maybe"
 			},
 			"webdev": [
-				"Writing stylesheets is very stressful so I basically don't wanna work on this. I usually use SCSS from ",
-				" (since SASS's indentation rules don't suit me). In other words, I don't have much motivation for web development. So I have hardly ever used a framework other than ",
+				"I'm not good at web development because writing stylesheets is a pain. I usually use SCSS from ",
+				" for stylesheets. In other words, I don't have much motivation for web development. So I have hardly ever used a framework other than ",
 				". This website was built with it.",
 				"and I HATE MOBILE SAFARI."
 			],
@@ -97,7 +97,7 @@
 		},
 		"music": {
 			"listen": "I like piano music from the Classical and Romantic musical eras, and I am especially drawn to Franz Liszt's pieces. In recent years, I have started listening to not only piano music but also orchestral pieces and lieder (classical art songs).",
-			"play": "I play classical music on the piano but I am not very good at it. I quickly get tired of piano practice so I am often satisfied with just playing some of my favorite melodies.",
+			"play": "I play (easy) classical music on the piano but I am not very good at it. ",
 			"compose": [
 				"I compose classical-style music and arrange/transcribe classical music. Occasionally, I compose pieces like popular music. However, I am still learning musical theories. I mainly use ",
 				" for composing, arranging, and transcribing."
