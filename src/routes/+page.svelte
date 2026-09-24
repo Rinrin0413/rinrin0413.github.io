@@ -47,9 +47,30 @@
 	<Title text="Major Activities" />
 	<p>{$_('home.whatIDo')}</p>
 	<ul id="activity-list">
-		<li><a href="#activity-programming">Programming</a></li>
-		<li><a href="#activity-game">Game</a></li>
-		<li><a href="#activity-music">Music</a></li>
+		<li>
+			<a href="#activity-programming">
+				<span class="num">01</span>
+				<span class="name">Programming</span>
+			</a>
+		</li>
+		<li>
+			<a href="#activity-game">
+				<span class="num">02</span>
+				<span class="name">Game</span>
+			</a>
+		</li>
+		<li>
+			<a href="#activity-music">
+				<span class="num">03</span>
+				<span class="name">Music</span>
+			</a>
+		</li>
+		<li>
+			<a href="#activity-artificial-intelligence">
+				<span class="num">04</span>
+				<span class="name">AI</span>
+			</a>
+		</li>
 	</ul>
 	<Activities />
 </section>

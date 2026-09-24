@@ -103,6 +103,30 @@
 				" for composing, arranging, and transcribing."
 			],
 			"sing": "I don't usually sing much because I am not very familiar with songs with lyrics. The songs I can sing are Pretty Cure songs, GHIBLI songs that I bought on CD and listened to in the past, and other songs that I had to sing during compulsory education, etc."
+		},
+		"ai": {
+			"desc": "Within computer science, I have always had an interest in artificial intelligence.",
+			"llm": {
+				"title": "Large Language Models",
+				"desc": "I had been following the field since around GPT-2, but things suddenly became fascinating around GPT-3 when scaling laws came into play. While code completion powered by GitHub Copilot was already revolutionary enough, ChatGPT (GPT-3.5) and subsequent models enabled far more advanced applications.",
+				"local": [
+					"In early 2025, I also became interested in local LLMs. It was fun tinkering and experimenting within ",
+					"limited computational resources",
+					"."
+				]
+			},
+			"imageGen": {
+				"title": "Image Generation AI",
+				"body": [
+					"My first hands-on experience was with ",
+					" in 2021, and even back then, I thought it was pretty good. During the Stable Diffusion v1.5 era, I used to play with it locally using ",
+					", but I kind of grew tired of it around when SDXL came out. When NanoBanana was released, my interest was piqued again, but I ultimately stepped away after failing to come up with any real use case for it."
+				]
+			},
+			"other": {
+				"title": "Other",
+				"desc": "Aside from that, I also try out bots for stacking games whenever I have some free time."
+			}
 		}
 	},
 	"chronicle": {
@@ -188,9 +212,7 @@
 				"I use SCSS because I dislike the indentation syntax."
 			]
 		},
-		"python": [
-			"This is actually the first language I learned."
-		],
+		"python": ["This is actually the first language I learned."],
 		"minecraft": [
 			"I used to build Japanese-style architecture. And I am not good at Western-style buildings.",
 			"At one point, I was also developing add-ons for Bedrock Edition, but I am not gonna do it anymore.",

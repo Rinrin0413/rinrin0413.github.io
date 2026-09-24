@@ -78,6 +78,34 @@
 			<p>{$_('activities.music.sing')}</p>
 		</div>
 	</FadeInAnim>
+	<FadeInAnim type="scale-up-origin-top">
+		<div id="act-ai">
+			<h1 id="activity-artificial-intelligence">
+				<span class="initial">A</span>rtificial <span class="initial">I</span>ntelligence
+			</h1>
+			<p>{$_('activities.ai.desc')}</p>
+			<br />
+			<h2>{$_('activities.ai.llm.title')}</h2>
+			<p>
+				{$_('activities.ai.llm.desc')}<br />
+				{$_('activities.ai.llm.local.0')}<a href="/blog/articles/20260701"
+					>{$_('activities.ai.llm.local.1')}</a
+				>{$_('activities.ai.llm.local.2')}
+			</p>
+			<br />
+			<h2>{$_('activities.ai.imageGen.title')}</h2>
+			<p>
+				{$_('activities.ai.imageGen.body.0')}<a
+					href="https://blogs.nvidia.co.jp/blog/studio-canvas-app">NVIDIA Canvas</a
+				>{$_('activities.ai.imageGen.body.1')}<a
+					href="https://github.com/automatic1111/stable-diffusion-webui">A1111</a
+				>{$_('activities.ai.imageGen.body.2')}
+			</p>
+			<br />
+			<h2>{$_('activities.ai.other.title')}</h2>
+			<p>{$_('activities.ai.other.desc')}</p>
+		</div>
+	</FadeInAnim>
 </div>
 
 <style lang="scss">
