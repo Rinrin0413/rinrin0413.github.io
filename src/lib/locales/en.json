@@ -69,15 +69,15 @@
 	"activities": {
 		"programming": {
 			"desc": "I began programming when I was about 13, but my knowledge is limited to a few areas.",
-			"rust": "This is my favorite language, though I have not really used it much lately. My online handle \"Rinrin.rs\" also includes the \".rs\" extension.",
+			"rust": "It is my favorite language, though I have not used it much lately. The \".rs\" extension in my handle \"Rinrin.rs\" also comes from Rust.",
 			"graphics": {
-				"desc": "After developing shader packs for Minecraft Bedrock Edition, I became interested in this field.",
-				"langsToUse": "The languages I use:",
-				"mayNotUse": "no longer use maybe"
+				"desc": "I got into computer graphics after developing shader packs for Minecraft Bedrock Edition. Currently, I sometimes develop shader packs for the Java Edition... maybe.",
+				"langsToUse": "Languages I use:",
+				"mayNotUse": "might not use anymore"
 			},
 			"webdev": [
-				"I'm not good at web development because writing stylesheets is a pain. I usually use SCSS from ",
-				" for stylesheets. In other words, I don't have much motivation for web development. So I have hardly ever used a framework other than ",
+				"I'm not good at web development because writing stylesheets is a pain. I usually use ",
+				"'s SCSS for stylesheets. In other words, I don't have much motivation for web development. So I have hardly ever used a framework other than ",
 				". This website was built with it.",
 				"and I HATE MOBILE SAFARI."
 			],
@@ -88,21 +88,21 @@
 		},
 		"game": {
 			"desc": "Single-player RPGs are not listed here.",
-			"tetrio": "TETR.IO is a modern yet familiar online stacker in the same genre as certain Russian puzzle games. I am not very good at this game but it is fun to play once in a while.",
+			"tetrio": "TETR.IO is a modern yet familiar online stacker in the same genre as certain Russian puzzle games. I have not been playing it much lately, but it is always fun to pick up once in a while.",
 			"mc": [
-				"Minecraft is one of the games I have played for the longest time. I no longer play the Wii U Edition or Bedrock Edition; I currently play the Java Edition. In the Wii U Edition, I used to build many structures. After moving to the Bedrock Edition, I started developing add-ons and shader packs. However, I got sick of it because of ",
-				"'s repeated nonsense. Currently, I am developing shader packs for the Java Edition at my own pace."
+				"This is the game I have played the longest. I no longer play the Wii U Edition or Bedrock Edition; I mainly play the Java Edition now. Back on the Wii U, I mostly spent my time building. After switching to Bedrock Edition, I also got into developing add-ons and shader packs, but I was completely put off by ",
+				"'s repeated disruptive updates. Currently, I am slowly working on shader development for Java Edition (maybe)."
 			],
-			"sky": "I was born in the Season of Assembly, but I am not logging in much lately. I might log in if you invite me."
+			"sky": "I was born in the Season of Assembly, but I rarely log in these days. I might join if you invite me."
 		},
 		"music": {
 			"listen": "I like piano music from the Classical and Romantic musical eras, and I am especially drawn to Franz Liszt's pieces. In recent years, I have started listening to not only piano music but also orchestral pieces and lieder (classical art songs).",
-			"play": "I play (easy) classical music on the piano but I am not very good at it. ",
+			"play": "I am self-taught, so it is nothing to show off, but I play (simple) classical pieces on the piano, such as those mentioned above.",
 			"compose": [
-				"I compose classical-style music and arrange/transcribe classical music. Occasionally, I compose pieces like popular music. However, I am still learning musical theories. I mainly use ",
+				"I compose classical-style music and arrange/transcribe classical music. Occasionally, I compose pieces like popular music. However, I am still studying music theory. I mainly use ",
 				" for composing, arranging, and transcribing."
 			],
-			"sing": "I don't usually sing much because I am not very familiar with songs with lyrics. The songs I can sing are Pretty Cure songs, GHIBLI songs that I bought on CD and listened to in the past, and other songs that I had to sing during compulsory education, etc."
+			"sing": "I don't usually sing much because I don't know many songs with lyrics. The ones I can sing are Pretty Cure songs, Ghibli songs from CDs I used to listen to, songs that I had to sing during compulsory education, and so on."
 		},
 		"ai": {
 			"desc": "Within computer science, I have always had an interest in artificial intelligence.",
@@ -110,7 +110,7 @@
 				"title": "Large Language Models",
 				"desc": "I had been following the field since around GPT-2, but things suddenly became fascinating around GPT-3 when scaling laws came into play. While code completion powered by GitHub Copilot was already revolutionary enough, ChatGPT (GPT-3.5) and subsequent models enabled far more advanced applications.",
 				"local": [
-					"In early 2025, I also became interested in local LLMs. It was fun tinkering and experimenting within ",
+					"In early 2025, I also became interested in local LLMs. It was fun tinkering and experimenting with ",
 					"limited computational resources",
 					"."
 				]

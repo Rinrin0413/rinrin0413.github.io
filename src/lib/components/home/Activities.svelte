@@ -44,7 +44,7 @@
 	</FadeInAnim>
 	<FadeInAnim type="scale-up-origin-top">
 		<div id="act-game">
-			<h1 id="activity-game" class="c5">Game</h1>
+			<h1 id="activity-game" class="c5">Games</h1>
 			<p>{$_('activities.game.desc')}</p>
 			<br />
 			<h2><a href="https://tetr.io">TETR.IO</a></h2>
@@ -62,19 +62,19 @@
 			<h1 id="activity-music" class="c5">Music</h1>
 			<p class="subtitle">|♫|♪♬♪|♪♫:|❙♪|❙</p>
 			<br />
-			<h2>Listen</h2>
+			<h2>Listening</h2>
 			<p>{$_('activities.music.listen')}</p>
 			<br />
-			<h2>Play</h2>
+			<h2>Playing</h2>
 			<p>{$_('activities.music.play')}</p>
 			<br />
-			<h2>Compose</h2>
+			<h2>Composing</h2>
 			<p>
 				{$_('activities.music.compose.0')}<a href="https://musescore.org">MuseScore Studio 3, 4</a
 				>{$_('activities.music.compose.1')}
 			</p>
 			<br />
-			<h2>Sing</h2>
+			<h2>Singing</h2>
 			<p>{$_('activities.music.sing')}</p>
 		</div>
 	</FadeInAnim>
