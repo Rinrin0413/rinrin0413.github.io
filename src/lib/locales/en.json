@@ -132,10 +132,10 @@
 	"chronicle": {
 		"expand": "Click to expand",
 		"2006": {
-			"4": "was born in Yokohama City"
+			"4": "Born in Yokohama City"
 		},
 		"2011": {
-			"null": "Around this time, I had been playing Ameba Pigg on Windows 7 and have called myself \"rinrin\" since then."
+			"null": "Around this time, was playing Ameba Pigg on Windows 7 and started going by \"rinrin\"."
 		},
 		"2013": {
 			"4": "Enrolled in a special needs class at an elementary school."
@@ -144,7 +144,7 @@
 			"6": "Moved to Tochigi Prefecture."
 		},
 		"2016": {
-			"12": "Played Minecraft for the first time. (Wii U Edition)"
+			"12": "Played Minecraft for the first time (Wii U Edition)."
 		},
 		"2019": {
 			"3": "Moved to Chiba Prefecture after graduating from elementary school.",
@@ -155,24 +155,24 @@
 			"null": "In mid-2020, my congenital disorder began to worsen."
 		},
 		"2021": {
-			"4": "After spring break, became unable to talk and was no longer able to attend school.",
+			"4": "After spring break, became almost unable to talk and was no longer able to attend school.",
 			"5": "Started developing shader packs for Minecraft for Windows.",
 			"11": "Started learning the Rust programming language."
 		},
 		"2022": {
-			"3": "Bought a new desktop computer and reinstalled Windows for a certain reason.",
-			"4": "Enrolled at S High School.",
-			"6": "After all, I installed openSUSE Leap as my main OS instead of Windows. Somehow the installation was successful this time."
+			"3": "Bought a new desktop computer, and reinstalled Windows for various reasons.",
+			"4": "Wrote my name down and got into S High School.",
+			"6": "Installed openSUSE Leap instead of Windows as my main OS. Somehow, it worked this time."
 		},
 		"2023": {
 			"2": "Rewrote this website using SvelteKit."
 		},
 		"2025": {
-			"4": "Enrolled at ZEN University as a first-generation student.",
-			"9": "Changed the OS of my computer to Fedora Workstation."
+			"4": "Enrolled at ZEN University as a member of the inaugural class.",
+			"9": "Switched my PC's OS to Fedora Workstation."
 		},
 		"2036": {
-			"4": "I have thought right after I was born that how old will I be in 30 years later."
+			"4": "Ever since I was born, I had been wondering how old I would be in 30 years."
 		}
 	},
 	"profile": {
