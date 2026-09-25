@@ -40,6 +40,15 @@
 			title: 'My Discord server'
 		},
 		{
+			service: 'X',
+			name: '@Rinrin_2nd',
+			href: 'https://x.com/Rinrin_2nd',
+			src: '/images/logos/x_logo.svg',
+			width: 1200,
+			height: 1227,
+			isExternal: true
+		},
+		{
 			service: 'Misskey.io',
 			name: '@Rinrin0413',
 			href: 'https://misskey.io/@Rinrin0413',
@@ -58,12 +67,12 @@
 			isExternal: true
 		},
 		{
-			service: 'X',
-			name: '@Rinrin_2nd',
-			href: 'https://x.com/Rinrin_2nd',
-			src: '/images/logos/x_logo.svg',
-			width: 1200,
-			height: 1227,
+			service: 'Hugging Face',
+			name: 'rinrin0413',
+			href: 'https://huggingface.co/rinrin0413',
+			src: '/images/logos/hf-logo.svg',
+			width: 206,
+			height: 191,
 			isExternal: true
 		}
 	];
