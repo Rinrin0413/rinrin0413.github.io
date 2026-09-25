@@ -1,8 +1,6 @@
 <script lang="ts">
 	import Space from '$lib/components/Space.svelte';
 
-	import { browser } from '$app/environment';
-
 	interface Props {
 		text: string;
 		/**
@@ -19,32 +17,23 @@
 
 	let { text, id = null, atPageTop = false }: Props = $props();
 
-	let vw: number | undefined = $state(browser ? window.innerWidth : undefined);
+	let vw: number | undefined = $state();
 	let width: number | undefined = $state();
-	let initWidth: number | undefined = $state();
-	let isOverflown = $state(false);
-
-	$effect(() => {
-		if (width !== undefined && vw !== undefined) {
-			if (initWidth === undefined) initWidth = width;
-			isOverflown = vw <= initWidth;
-		}
-	});
-
-	/** **＊ Must be called in the browser environment.** */
-	function updateVw() {
-		vw = window.innerWidth;
-	}
+	let isOverflown = $derived(width !== undefined && vw !== undefined && vw <= width);
 </script>
 
-<svelte:window onresize={updateVw} />
+<svelte:window bind:innerWidth={vw} />
 
 <div class:mini={isOverflown}>
+	<!-- Measure at the normal size so shrinking cannot change the overflow threshold. -->
+	<div class="measurement" aria-hidden="true">
+		<h1 bind:clientWidth={width}>{text}</h1>
+	</div>
 	{#if atPageTop}
 		<Space height="64px" />
 	{/if}
-	<h1 {id} bind:clientWidth={width}>{text}</h1>
-	<span data-content={text}></span>
+	<h1 {id}>{text}</h1>
+	<span data-content={text} aria-hidden="true"></span>
 	<Space height="64px" />
 </div>
 

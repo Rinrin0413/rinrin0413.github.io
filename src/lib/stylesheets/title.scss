@@ -47,20 +47,32 @@ span::before {
 	text-shadow: none;
 }
 
+.measurement {
+	position: absolute;
+	width: 0;
+	height: 0;
+	overflow: hidden;
+	visibility: hidden;
+
+	h1 {
+		width: max-content;
+	}
+}
+
 .mini {
-	h1,
-	span::before {
+	> h1,
+	> span::before {
 		font-size: 26px;
 	}
 
-	h1 {
+	> h1 {
 		&::before,
 		&::after {
 			width: 16px;
 		}
 	}
 
-	span::before {
+	> span::before {
 		transform-origin: 50% 31px;
 	}
 }
