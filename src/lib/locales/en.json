@@ -22,7 +22,7 @@
 		"share": "Share",
 		"domain": "Domain",
 		"webShareApi": "Web Share API",
-		"jaLang": "Japanese lang.",
+		"jaLang": "Japanese",
 		"sitemap": "Site Map",
 		"otherLinks": "Other links",
 		"bgWallpaper": "Background wallpaper",
@@ -177,18 +177,18 @@
 	},
 	"profile": {
 		"intro": [
-			"Hi there, I'm Rinrin.rs.",
-			"am a student, Japanese, {age} years old. and have ASD.",
-			"I'm mainly on Discord.",
-			"I'll write code.",
-			"Basically i would not work Web dev.",
-			"may be able to draw a simple pixel art.",
-			"also compose music as a hobby."
+			"Hi there, I am Rinrin.rs.",
+			"A student, Japanese, {age} years old, with ASD.",
+			"You can mainly find me on Discord.",
+			"I write code.",
+			"Though not much Web dev.",
+			"Sometimes I create simple pixel art.",
+			"Music composition is another hobby of mine."
 		],
 		"birthday": "April 13th, 2006",
-		"primaryLang": "Primary lang.",
+		"primaryLang": "Language",
 		"timezone": "Timezone",
-		"residence": "Residence",
+		"residence": "Location",
 		"birthplace": "Birthplace",
 		"hobby": "see"
 	},
