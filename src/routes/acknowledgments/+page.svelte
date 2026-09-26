@@ -68,9 +68,6 @@
 </section>
 
 <style lang="scss">
-	@use '$lib/stylesheets/variables/color' as *;
-	@use '$lib/stylesheets/variables/mixin' as *;
-
 	.software-list {
 		max-width: 1024px;
 		padding: 0;

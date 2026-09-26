@@ -1,6 +1,7 @@
 .vscode/
 .wrangler/
 licenses.json
+/src/lib/project-dates.json
 
 # by Svelte Kit
 .DS_Store

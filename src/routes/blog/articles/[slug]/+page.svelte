@@ -112,7 +112,7 @@
 		</div>
 	</div>
 	<ChildPageComponentRenderer component={data.component} />
-	<p><ShareButton title={titleFull} expanded /></p>
+	<div><ShareButton title={titleFull} expanded /></div>
 	<TagList tags={metadata.tags} />
 	<BackToIndexButton category="blog" />
 </div>

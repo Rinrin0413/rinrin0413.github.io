@@ -4,6 +4,7 @@ desc: 自己満足で開発した、マインクラフト統合版向けのシ�
 tags: [シェーダーパック, マインクラフト統合版, グラフィックス]
 langs: [HLSL]
 repo: https://github.com/Rinrin0413/Rinrin_Shader
+branch: master
 website: null
 status: archived
 date: 2021-12-05

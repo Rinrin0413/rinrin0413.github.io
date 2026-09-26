@@ -26,8 +26,6 @@
 </ul>
 
 <style lang="scss">
-	@use '$lib/stylesheets/variables/mixin' as *;
-
 	ul {
 		list-style: none;
 		max-width: 326px;
@@ -38,12 +36,6 @@
 
 	li {
 		transition: 0.13s;
-
-		&:last-child {
-			div {
-				border: none;
-			}
-		}
 
 		&:hover {
 			background-color: #ffffff5a;
@@ -62,7 +54,5 @@
 		padding: 16px 0;
 		margin: 0 auto;
 		font-size: 20px;
-		$border: 1px solid #ffffffa0;
-		border-bottom: $border;
 	}
 </style>

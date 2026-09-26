@@ -13,9 +13,13 @@
 | 128 | header title | [`header.scss>.header-logo::after`](/src/lib/stylesheets/header/header.scss) |
 | 127 | header, header bg | [`header.scss>header, .header-bg`](/src/lib/stylesheets/header/header.scss) |
 | 126 | footer | [`footer.scss>footer`](/src/lib/stylesheets/footer.scss) |
-| 42 | sharing dropdown menu | [`share_button.scss>ul &.menu`](/src/lib/btpc/stylesheets/share_button.scss) |
-| -1 | bg wallpaper | [`style.scss>html &::before`](/src/lib/stylesheets/style.scss) |
-| -1 | unconfirmed fixed element | [`layout.scss>#bg`](/src/lib/stylesheets/layout.scss) |
+| 42 (inside main) | sharing dropdown menu | [`share_button.scss>ul &.menu`](/src/lib/btpc/stylesheets/share_button.scss) |
+| auto (stacking level 0) | main content, isolated stacking context | [`layout.scss>main`](/src/lib/stylesheets/layout.scss) |
+| 0 | fixed background wallpaper | [`layout.scss>#bg`](/src/lib/stylesheets/layout.scss) |
+
+`#bg` precedes `main` in DOM order. `main` uses `isolation: isolate` to paint its contents above the background without changing their containing blocks. Header, footer/drawer, and Toaster remain outside this stacking context.
+
+The background keeps the maximum observed `window.innerHeight` via `--max-vh001`. Its non-negative z-index and opaque `$txt-primary` (`#533618`) background color allow Safari to consider it for native solid color extension. `html` uses `#dad2c5` as a fallback color that blends naturally with the wallpaper and its gradient overlay; `body` has no explicit background color. Wallpaper extension behind Safari's toolbar is not guaranteed and requires device testing.
 
 ---
 
@@ -489,10 +493,11 @@ Returns a list of projects.
   - `tags` (`string[]`) - The list of tags of the project.
   - `langs` (`string[]`) - The list of programming languages used in the project.
   - `repo` (`string | null`) - The repository URL of the project.
+  - `branch` (`string | null`) - The GitHub branch used to collect the latest commit date when the source `date` is null.
   - `website` (`string | null`) - The website URL of the project.
   - `status` (`string`) - The status of the project.
   - `date` (`string | null`) - The last updated date of the project.
-  - `initDate` (`string | null`) - The initial release date of the project.
+  - `initDate` (`string`) - The required initial release date of the project.
   - `license` (`string | null`) - The license of the project.
   - `thumbnailImg` (`string | null`) - The thumbnail image path of the project.
   - `id` (`string?`) - The ID of the project. Its type is an optional string but it always exists.
@@ -705,3 +710,29 @@ Returns a list of statuses of projects.
 
 </div>
 </details>
+
+---
+
+## Project date collection
+
+Run `pnpm project-dates` to generate or refresh `src/lib/project-dates.json`. After installing dependencies in a fresh clone, run it once before `pnpm dev`, `pnpm build`, or `pnpm check` (including `pnpm check:watch`). During development, refresh it manually when current dates are needed. The generated JSON is ignored by Git and must not be committed.
+
+`pnpm build` collects licenses and builds using the existing JSON without fetching project dates. `pnpm run build:deploy` collects project dates first, then runs `pnpm build`. Set the Cloudflare Pages build command to `pnpm run build:deploy` so each deployment uses freshly collected dates.
+
+`initDate` is required and must contain a valid non-null date; missing or invalid values fail collection before any API requests. Both `date` and `branch` are required in project frontmatter. A non-null `date` overrides automatic collection without making a GitHub request. Set `date: null` and `branch: main` (or another branch) to use the latest commit's committer date from `repo`. Set both to null to leave the update date unset. Existing manual dates are preserved.
+
+Collected timestamps are stored in UTC; project calendar dates are displayed in Asia/Tokyo. The Projects API returns the resolved date. This is the commit timestamp, not the push timestamp.
+
+The JSON is keyed by repository and branch. Any collection failure exits with an error and stops the deployment build; existing values are never used as a fallback. The JSON is written only after all required dates have been collected successfully, so a collection failure leaves any existing file unchanged. Each successful collection replaces the generated data and removes unused entries. No periodic updates or commits of this file are required.
+
+Optionally set `GITHUB_TOKEN` in the build environment for authenticated requests. It is never included in the generated JSON. No scheduled builds are configured.
+
+---
+
+## Shared SCSS definitions
+
+Vite automatically injects `@use '$lib/stylesheets/variables' as *;` into Svelte SCSS style blocks. Components can use shared variables and mixins without explicit imports.
+
+Standalone SCSS modules must include that `@use` explicitly: Sass module scopes are isolated, and Vite's `additionalData` does not run on modules loaded by Sass. Files inside `variables/` must keep their own dependencies instead of importing the shared index, to avoid circular imports.
+
+The shared entry point is `src/lib/stylesheets/variables/_index.scss`. Add an `@forward` there when introducing a new shared module. Keep these modules limited to variables, functions, and mixins so automatic injection does not duplicate CSS.

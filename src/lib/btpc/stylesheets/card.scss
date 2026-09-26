@@ -1,6 +1,5 @@
+@use '$lib/stylesheets/variables' as *;
 @use '$lib/btpc/stylesheets/tag';
-
-@use '$lib/stylesheets/variables/mixin' as *;
 
 a {
 	color: inherit !important;

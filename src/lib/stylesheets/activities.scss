@@ -1,4 +1,4 @@
-@use '$lib/stylesheets/variables/mixin' as *;
+@use '$lib/stylesheets/variables' as *;
 
 .container {
 	margin: 0 auto;
@@ -139,5 +139,76 @@ p {
 	::selection {
 		background-color: black;
 		color: white;
+	}
+}
+
+#act-ai {
+	$accent-green: #76b900;
+	$bracket-color: #8b949e;
+	$link-color: #58a6ff;
+
+	background-color: #161b22;
+	border: 1px solid #30363d;
+	border-radius: 4px;
+	color: #c9d1d9;
+	line-height: 1.5;
+	padding-bottom: 24px;
+
+	h1 {
+		font-size: 22px;
+		color: #b1bac4;
+		margin-block: 20px;
+
+		$margin: 5px;
+
+		&:before {
+			content: '[';
+			color: $bracket-color;
+			margin-right: $margin;
+		}
+
+		&:after {
+			content: ']';
+			color: $bracket-color;
+			margin-left: $margin;
+		}
+
+		.initial {
+			color: #ffffff;
+		}
+	}
+
+	h2 {
+		font-size: 18px;
+		color: #e6edf3;
+		margin-block: 12px;
+
+		&:before {
+			content: '>> ';
+			@include source-code-pro;
+			color: $accent-green;
+			@include bold;
+		}
+	}
+
+	p {
+		padding-left: 10px;
+		border-left: 2px solid #21262d;
+		margin: 0;
+	}
+
+	a {
+		color: $link-color;
+		text-decoration: underline;
+		text-underline-offset: 3px;
+
+		&:hover {
+			color: #79c0ff;
+		}
+	}
+
+	::selection {
+		background-color: rgba($accent-green, 0.35);
+		color: inherit;
 	}
 }

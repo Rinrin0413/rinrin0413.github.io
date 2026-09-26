@@ -16,60 +16,154 @@
 
 	import type { ChartOptions, ChartData, Point } from 'chart.js';
 	import { Chart, registerables } from 'chart.js';
+	import { slide } from 'svelte/transition';
+
+	const DAY_OF_WEEK = [
+		'Sunday',
+		'Monday',
+		'Tuesday',
+		'Wednesday',
+		'Thursday',
+		'Friday',
+		'Saturday'
+	] as const;
+
+	const DAY_OF_WEEK_LABELS: Record<DayOfWeek, string> = {
+		Sunday: '日曜日',
+		Monday: '月曜日',
+		Tuesday: '火曜日',
+		Wednesday: '水曜日',
+		Thursday: '木曜日',
+		Friday: '金曜日',
+		Saturday: '土曜日'
+	};
+
+	type VariableStats = {
+		mean: number;
+		median: number;
+		stdDev: number;
+		min: number;
+		max: number;
+		q1: number;
+		q3: number;
+	};
+
+	type DayOfWeek = (typeof DAY_OF_WEEK)[number];
+
+	type Statistics = {
+		nSamples: number;
+		date: string;
+		corr: number;
+		pVal: number;
+		variableStats: {
+			awakeStats: VariableStats;
+			sleepStats: VariableStats;
+		};
+		regrModels: (
+			| {
+					name:
+						| '4次多項式回帰'
+						| '線形回帰'
+						| '3次多項式回帰'
+						| '2次多項式回帰'
+						| '指数回帰'
+						| '対数回帰'
+						| '累乗回帰';
+					f: (x: number) => number;
+					r2: number;
+					adjR2: number;
+			  }
+			| {
+					name: '線形重回帰';
+					f: (x: number, dow: DayOfWeek) => number;
+					r2: number;
+					adjR2: number;
+			  }
+		)[];
+	};
+
+	type ModelName = Statistics['regrModels'][number]['name'];
+
+	const MODEL_COLORS: Record<ModelName, string> = {
+		線形重回帰: '#63a7e4',
+		'4次多項式回帰': '#aa84e6',
+		'3次多項式回帰': '#e76b70',
+		'2次多項式回帰': '#d29d38',
+		線形回帰: '#48baaa',
+		指数回帰: '#68bf68',
+		対数回帰: '#eb8b52',
+		累乗回帰: '#e06da8'
+	};
+	const MODEL_COLOR_ALPHA_HEX = '40';
+	const AVG_POINT_COLOR = '#38220b';
 
 	// prettier-ignore
-	const DATASET: {
-		sampleCount: number;
-		date: string;
-		stats: {
-			awake: { mean: number; stdDeviation: number };
-			sleep: { mean: number; stdDeviation: number };
-			correlation: number;
-		};
-		regrModels: { name: string; f: (x: number) => number; r2: number }[];
-	} = {sampleCount:332,date:'2025-05-16',stats:{awake:{mean:17.573644578358433,stdDeviation:5.629571493129007},sleep:{mean:10.105220883581318,stdDeviation:3.435985519999611},correlation:0.21967948030930193},regrModels:[{name:'4次多項式回帰',f:(x)=>6.455637091184526+0.8306496844164935*x-0.08037903929229682*x**2+0.0032753668542768524*x**3-0.00004334186240824761*x**4,r2:0.05445454910798353},{name:'指数回帰',f:(x)=>7.184055004551228*Math.exp(0.015654242454859867*x),r2:0.05273796811819387},{name:'2次多項式回帰',f:(x)=>8.862558948083242+0.005591467828727637*x+0.003361633254461013*x**2,r2:0.05073305050338839},{name:'線形回帰',f:(x)=>0.1340804560888989*x+7.748938603370822,r2:0.04825907406895735},{name:'累乗回帰',f:(x)=>5.17332021332197*x**0.2149869785378694,r2:0.045039058649980035},{name:'対数回帰',f:(x)=>1.7587249990770417*Math.log(x)+5.168619357712622,r2:0.03759669010492728}]};
+	const STATISTICS: Statistics = {nSamples:723,date:'2026-09-21',corr:0.37776569017450007,pVal:6.097929990849042e-26,variableStats:{awakeStats:{mean:18.611479944816043,median:17.55,stdDev:6.172375043105346,min:1.1,max:38.8,q1:14.858333335000001,q3:21.116666665},sleepStats:{mean:10.078469340742737,median:9.866666667,stdDev:3.6664945513531833,min:1.066666667,max:20.75,q1:7.55,q3:12.56666667}},regrModels:[{name:'線形重回帰',f:(x,dow)=>{const dowAdj={'Friday':0.,'Monday':2.1517297614054773,'Saturday':-1.4137495509472477,'Sunday':3.3389299671269423,'Thursday':0.9630602719081417,'Tuesday':2.4239326596458248,'Wednesday':2.3101349516577079}[dow];return 0.2213426951392897*x+dowAdj+4.497586634276423},r2:0.346628818979718,adjR2:0.3400669850239907},{name:'4次多項式回帰',f:(x)=>8.221102696542664-0.0005718673206981*x-0.0062506883890610*(x*x)+0.0009378047068810*(x*x*x)-0.0000181507378305*(x*x*x*x),r2:0.15162054195242292,adjR2:0.1468941939967261},{name:'3次多項式回帰',f:(x)=>8.273898303994219-0.2030735261399484*x+0.0224907476823056*(x*x)-0.0003522363422562*(x*x*x),r2:0.14778070192879178,adjR2:0.1442248495029036},{name:'2次多項式回帰',f:(x)=>6.614152197985271+0.1461886349227861*x+0.0019340974024287*(x*x),r2:0.14378155615879828,adjR2:0.14140317159257276},{name:'線形回帰',f:(x)=>0.2243991713141499*x+5.902068664196098,r2:0.1427069166730166,adjR2:0.14151788327034387},{name:'指数回帰',f:(x)=>5.9357060116883860*Math.exp(0.0242233987848270*x),r2:0.12427421989128506,adjR2:0.12305962102844348},{name:'対数回帰',f:(x)=>2.9952139155808948*Math.log(x)+1.5205641877255474,r2:0.11086405632693686,adjR2:0.1096308580694153},{name:'累乗回帰',f:(x)=>3.4917297385643633*x**0.3434916482579419,r2:0.1089621844983456,adjR2:0.10772634841581907}]};
 
-	const MAX_AWAKE_DURATION = 37.5;
+	const MAX_AWAKE_DURATION = 40;
 
 	const CHART_OPTIONS: ChartOptions<'line'> = {
 		scales: {
-			x: { title: { display: true, text: '覚醒時間 (時間)' }, min: 0, max: MAX_AWAKE_DURATION },
-			y: { title: { display: true, text: '睡眠時間 (時間)' }, min: 5, max: 14 }
+			x: {
+				title: { display: true, text: '覚醒継続時間（時間）' },
+				min: 0,
+				max: MAX_AWAKE_DURATION
+			},
+			y: { title: { display: true, text: '睡眠時間（時間）' }, min: 4, max: 15 }
 		}
 	};
 
 	Chart.register(...registerables);
 
 	// The default value should be a multiple of 0.5 because the `<input>` element and graph steps are 0.5.
-	let awakeDuration = $state(roundToHalf(DATASET.stats.awake.mean));
+	let awakeDuration = $state(roundToHalf(STATISTICS.variableStats.awakeStats.mean));
 
 	let renderGraph = $state(false);
 	let chartData: ChartData<'line', (number | Point)[], unknown> | undefined = $state.raw();
 
 	let chartRef: Chart<'line'> | null = $state(null);
 
+	let enableMultiRegr = $state(false);
+	let selectedDayOfWeek: DayOfWeek = $state(getCurrentDayOfWeek());
+
+	let filteredRegrModels = $derived(
+		STATISTICS.regrModels.filter((model) => model.name !== '線形重回帰' || enableMultiRegr)
+	);
+
 	/** Returns a supplied numeric expression rounded to the nearest multiple of 0.5. */
 	function roundToHalf(x: number) {
 		return Math.round(x * 2) * 0.5;
 	}
 
+	function getCurrentDayOfWeek(): DayOfWeek {
+		return DAY_OF_WEEK[new Date().getDay()];
+	}
+
 	function setChartData() {
-		if (!renderGraph || chartData !== undefined) return;
+		if (!renderGraph) return;
 		const xLabels = Array.from({ length: MAX_AWAKE_DURATION * 2 + 1 }, (_, i) => i * 0.5);
 		chartData = {
 			labels: xLabels,
 			datasets: [
-				...DATASET.regrModels.map((model) => ({
+				...STATISTICS.regrModels.map((model) => ({
 					label: model.name,
-					data: xLabels.map((x) => model.f(x))
+					data: xLabels.map((x) => {
+						if (model.name === '線形重回帰') return model.f(x, selectedDayOfWeek);
+						return model.f(x);
+					}),
+					borderColor: MODEL_COLORS[model.name],
+					backgroundColor: MODEL_COLORS[model.name] + MODEL_COLOR_ALPHA_HEX,
+					hidden: model.name === '線形重回帰' && !enableMultiRegr
 				})),
 				{
-					label: '推論値平均',
-					data: [],
-					pointBackgroundColor: '#38220b',
+					label: 'ReLUの平均',
+					data: [{ x: roundToHalf(awakeDuration), y: avgReluInference }],
+					pointBackgroundColor: AVG_POINT_COLOR,
+					borderColor: AVG_POINT_COLOR,
+					backgroundColor: AVG_POINT_COLOR + MODEL_COLOR_ALPHA_HEX,
 					pointBorderWidth: 0,
-					pointRadius: 8,
-					pointHoverRadius: 16,
+					pointRadius: 9,
+					pointHoverRadius: 18,
 					showLine: false,
 					animation: false
 				}
@@ -77,41 +171,57 @@
 		};
 	}
 
-	function fmtFunctionEquation(equation: (x: number) => number) {
-		return (
-			equation
-				.toString()
-				// Rename the minified variables to "x".
-				.replace(/(?<![0-9A-Za-z])[A-Za-z](?![0-9A-Za-z])/g, 'x')
-				// Replace "x => " and "x=>" with "y = ".
-				.replace(/^(?:x => |x=>)/, 'y = ')
-				// Restore the omitted zeros before a decimal point.
-				.replace(/(?<![0-9A-Za-z])\.(?=\d)/g, '0.')
-				// Add spaces around operators.
-				// But ignore if the hyphen is a part of a exponential notation like `60369131017537305e-21`.
-				// Maybe the division operator `/` will not be included in the regression equation.
-				.replace(/ ?(?<!e)(\*\*|[+\-*]) ?/g, ' $1 ')
+	function updateMultiRegrChart() {
+		if (!renderGraph || chartRef === null) return;
+
+		const multiRegrDataset = chartRef.data.datasets.find(
+			(dataset) => dataset.label === '線形重回帰'
 		);
+		const multiRegrModel = STATISTICS.regrModels.find((model) => model.name === '線形重回帰');
+
+		if (multiRegrDataset !== undefined && multiRegrModel !== undefined) {
+			chartRef.setDatasetVisibility(
+				chartRef.data.datasets.indexOf(multiRegrDataset),
+				enableMultiRegr
+			);
+
+			const xLabels = chartRef.data.labels as number[];
+			multiRegrDataset.data = xLabels.map((x) => multiRegrModel.f(x, selectedDayOfWeek));
+		}
+
+		chartRef.update('none');
 	}
+
 	let sleepDurations = $derived(
-		DATASET.regrModels.reduce(
+		filteredRegrModels.reduce(
 			(acc, model) => {
-				acc[model.name] = model.f(awakeDuration);
+				let sleepDuration: number;
+
+				if (model.name === '線形重回帰') {
+					sleepDuration = model.f(awakeDuration, selectedDayOfWeek);
+				} else {
+					sleepDuration = model.f(awakeDuration);
+				}
+
+				acc[model.name] = sleepDuration;
 				return acc;
 			},
 			{} as Record<string, number>
 		)
 	);
+	let avgReluInference = $derived(
+		filteredRegrModels.reduce((acc, model) => {
+			let sleepDuration = sleepDurations[model.name];
+			if (sleepDuration < 0) sleepDuration = 0;
+			acc += sleepDuration;
+			return acc;
+		}, 0) / filteredRegrModels.length
+	);
 	$effect(() => {
 		if (renderGraph && chartRef !== null) {
-			chartRef.data.datasets[DATASET.regrModels.length].data[0] = {
+			chartRef.data.datasets[STATISTICS.regrModels.length].data[0] = {
 				x: roundToHalf(awakeDuration),
-				y:
-					DATASET.regrModels.reduce((acc, model) => {
-						let sleepDuration = sleepDurations[model.name];
-						if (sleepDuration < 0) sleepDuration = 0;
-						return acc + sleepDuration;
-					}, 0) / DATASET.regrModels.length
+				y: avgReluInference
 			};
 
 			chartRef.update('none');
@@ -124,28 +234,52 @@
 
 <div>
 	<div class="input">
-		<label for="awake-dur" class="with-colon">覚醒時間</label><input
-			type="number"
-			bind:value={awakeDuration}
-			min="0"
-			max={MAX_AWAKE_DURATION}
-			step="0.5"
-			id="awake-dur"
-		/><label for="awake-dur">時間</label>
+		<div>
+			<label for="awake-dur" class="with-colon">覚醒継続時間</label><input
+				type="number"
+				bind:value={awakeDuration}
+				min="0"
+				max={MAX_AWAKE_DURATION}
+				step="0.5"
+				id="awake-dur"
+			/><label for="awake-dur">時間</label>
+		</div>
+		<div>
+			<input
+				type="checkbox"
+				bind:checked={enableMultiRegr}
+				onchange={updateMultiRegrChart}
+				id="dow-toggle"
+			/><label for="dow-toggle" class:with-colon={enableMultiRegr}>覚醒曜日を指定（重回帰）</label
+			>{#if enableMultiRegr}<select
+					bind:value={selectedDayOfWeek}
+					onchange={updateMultiRegrChart}
+					aria-label="覚醒曜日"
+					transition:slide={{ axis: 'x', duration: 150 }}
+				>
+					{#each DAY_OF_WEEK as dow (dow)}
+						<option value={dow}>{DAY_OF_WEEK_LABELS[dow]}</option>
+					{/each}
+				</select>
+			{/if}
+		</div>
 	</div>
 	<div class="result">
 		<ul>
 			<li>睡眠時間の推論結果</li>
-			{#each DATASET.regrModels as model, i (model.name)}
-				{@const r2 = model.r2.toFixed(4)}
+			{#each filteredRegrModels as model, i (model.name)}
+				{@const adjR2 = model.adjR2.toFixed(4)}
 				{@const name = model.name}
 				{@const duration = sleepDurations[name]}
 				{#if i !== 0}
-					<li><hr /></li>
+					<li transition:slide><hr /></li>
 				{/if}
-				<li><CopyButton text={r2} />{name} (R² ≒ <span>{r2}</span>)</li>
-				<li><CopyButton text={duration} /><span>{duration}</span>時間</li>
+				<li transition:slide><CopyButton text={adjR2} />{name} (補正R²<span>{adjR2}</span>)</li>
+				<li transition:slide><CopyButton text={duration} /><span>{duration}</span>時間</li>
 			{/each}
+			<li><hr /></li>
+			<li>ReLU の平均 = 1/n ∑max(0, xᵢ)</li>
+			<li><CopyButton text={avgReluInference} /><span>{avgReluInference}</span>時間</li>
 		</ul>
 		{#if renderGraph}
 			<div class="chart card">
@@ -171,24 +305,32 @@
 	</div>
 	<Hr />
 	<div class="result">
-		<Title2 text="データセットの概要" />
+		<Title2 text="データセットの統計" />
 		<p>
 			<CopyButton
-				text={JSON.stringify(DATASET, (_, v) => (typeof v === 'function' ? v.toString() : v))}
-			/>データセットをコピー (JSON)
+				text={JSON.stringify(STATISTICS, (_, v) => (typeof v === 'function' ? v.toString() : v))}
+			/>統計情報をコピー (JSON)
 		</p>
 		<div>
 			<ul class="dataset">
-				<li>サンプル数: {DATASET.sampleCount}</li>
-				<li>最終更新日: {DATASET.date}</li>
-				<li>相関係数: {DATASET.stats.correlation}</li>
-				<li>平均覚醒時間: {DATASET.stats.awake.mean}時間</li>
-				<li>平均睡眠時間: {DATASET.stats.sleep.mean}時間</li>
-				<li>覚醒時間の標準偏差: {DATASET.stats.awake.stdDeviation}時間</li>
-				<li>睡眠時間の標準偏差: {DATASET.stats.sleep.stdDeviation}時間</li>
-				{#each DATASET.regrModels as model (model.name)}
-					<li>{model.name}式: {fmtFunctionEquation(model.f)}</li>
-					<li>{model.name}の決定係数: {model.r2}</li>
+				<li>標本数: {STATISTICS.nSamples}</li>
+				<li>最終更新日: {STATISTICS.date}</li>
+				<li>相関係数: {STATISTICS.corr}</li>
+				<li>p値: {STATISTICS.pVal}</li>
+				{#each Object.entries(STATISTICS.variableStats) as [varName, stats] (varName)}
+					{@const varLabel = (varName === 'awakeStats' ? '覚醒時間' : '睡眠時間') + 'の'}
+					<li>{varLabel}平均: {stats.mean}</li>
+					<li>{varLabel}中央値: {stats.median}</li>
+					<li>{varLabel}標準偏差: {stats.stdDev}</li>
+					<li>{varLabel}最小値: {stats.min}</li>
+					<li>{varLabel}最大値: {stats.max}</li>
+					<li>{varLabel}第1四分位数: {stats.q1}</li>
+					<li>{varLabel}第3四分位数: {stats.q3}</li>
+				{/each}
+				{#each STATISTICS.regrModels as model (model.name)}
+					<li>{model.name}の関数: {model.f}</li>
+					<li>{model.name}のR²: {model.r2}</li>
+					<li>{model.name}の補正R²: {model.adjR2}</li>
 				{/each}
 			</ul>
 		</div>
@@ -199,8 +341,6 @@
 <!-- svelte-ignore css_unused_selector -->
 <style lang="scss">
 	@use '$lib/stylesheets/tools/tool_page';
-
-	@use '$lib/stylesheets/variables/mixin' as *;
 
 	input[type='number'] {
 		width: 80px;

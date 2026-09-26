@@ -1,5 +1,5 @@
 <script module>
-	export const RECOGNIZED_LICENSES = ['MIT', 'GPL-3.0', ...CC_LICENSES];
+	export const RECOGNIZED_LICENSES = ['MIT', 'GPL-3.0', ...CC_LICENSES, 'BSD-3-Clause'];
 </script>
 
 <script lang="ts">
@@ -17,7 +17,7 @@
 	let { metadata }: Props = $props();
 
 	let date = $derived(metadata.date === null ? null : new Date(metadata.date));
-	let initDate = $derived(metadata.initDate === null ? null : new Date(metadata.initDate));
+	let initDate = $derived(new Date(metadata.initDate));
 
 	function removeUrlScheme(url: string) {
 		return url.replace(/^https?:\/\//, '');
@@ -33,12 +33,10 @@
 					<td><span>{omitDateByStatus(date, metadata.status)}</span></td>
 				</tr>
 			{/if}
-			{#if initDate !== null}
-				<tr>
-					<td>{$_('projects.initRelease')}</td>
-					<td><span>{fmtToFullDate(initDate)}</span></td>
-				</tr>
-			{/if}
+			<tr>
+				<td>{$_('projects.initRelease')}</td>
+				<td><span>{fmtToFullDate(initDate)}</span></td>
+			</tr>
 			<tr>
 				<td>{$_('w.tags')}</td>
 				<td
@@ -95,6 +93,13 @@
 								>
 							{:else if CC_LICENSES.includes(metadata.license)}
 								<CcLicense license={metadata.license} />
+							{:else if metadata.license === 'BSD-3-Clause'}
+								<a
+									href="https://opensource.org/license/bsd-3-clause"
+									target="_blank"
+									rel="license noopener noreferrer"
+									class="no-after-icn">BSD-3-Clause</a
+								>
 							{:else}
 								{metadata.license}
 							{/if}

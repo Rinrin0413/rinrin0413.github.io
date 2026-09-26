@@ -8,6 +8,7 @@
 		{ key: $_('w.birthday'), value: $_('profile.birthday') },
 		{ key: $_('profile.primaryLang'), value: $_('w.jaLang') },
 		{ key: $_('profile.timezone'), value: 'JST (UTC +9)' },
+		{ key: $_('profile.residence'), value: $_('w.chiba') },
 		{ key: $_('profile.birthplace'), value: $_('w.yokohama') }
 	]);
 </script>
@@ -26,9 +27,6 @@
 </div>
 
 <style lang="scss">
-	@use '$lib/stylesheets/variables/mixin' as *;
-	@use '$lib/stylesheets/variables/color' as *;
-
 	div {
 		max-width: 420px;
 		padding: 0 12px;

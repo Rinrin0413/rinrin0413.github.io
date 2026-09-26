@@ -44,11 +44,21 @@ function calcHowLongAgo(date: Date) {
 	}
 }
 
+/** Uses the same calendar date on the server and in every browser. */
+function japaneseDateParts(date: Date) {
+	const parts = new Intl.DateTimeFormat('en-US', {
+		timeZone: 'Asia/Tokyo',
+		year: 'numeric',
+		month: 'numeric',
+		day: 'numeric'
+	}).formatToParts(date);
+	return Object.fromEntries(parts.map(({ type, value }) => [type, value]));
+}
+
 /** Formats the given date as a full date Japanese string. */
 export function fmtToFullDate(date: Date) {
-	return `${date.getFullYear()}年${date.getMonth() + 1}月${date.getDate()}日 (${calcHowLongAgo(
-		date
-	)})`;
+	const { year, month, day } = japaneseDateParts(date);
+	return `${year}年${month}月${day}日 (${calcHowLongAgo(date)})`;
 }
 
 /**
@@ -56,12 +66,13 @@ export function fmtToFullDate(date: Date) {
  * returns as the Japanese string.
  */
 export function omitDateByStatus(date: Date, status: ProjectStatus) {
+	const { year, month } = japaneseDateParts(date);
 	switch (status) {
 		case 'wip':
 		case 'active':
-			return `${date.getFullYear()}年`;
+			return `${year}年`;
 		case 'completed':
-			return `${date.getFullYear()}年${date.getMonth() + 1}月`;
+			return `${year}年${month}月`;
 		case 'archived':
 		case 'abandoned':
 			return fmtToFullDate(date);

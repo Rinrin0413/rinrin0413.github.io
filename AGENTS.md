@@ -17,7 +17,9 @@ This website supports only Japanese and English. Localization is managed via `ja
 - Install deps: `pnpm install`
 - Start dev server: `pnpm dev`
   - `pnpm run licenses` to update licenses data
+  - `pnpm run project-dates` to update project dates data
 - Build: `pnpm build`
+- Deployment build: `pnpm build:deploy`
 - Check & format & lint: `pnpm check && pnpm format && pnpm lint`
 
 ## Code Style
@@ -27,7 +29,7 @@ This website supports only Japanese and English. Localization is managed via `ja
   - No implicit booleans in conditionals (e.g., `if (0 < count)` or `if (user !== null)`).
 - Use SCSS instead of Vanilla CSS.
   - `src/lib/stylesheets/variables/` directory contains utility SCSS files `_color.scss`, `_mixin.scss`, and `_dimension.scss`.
-    To use them in SCSS files or `<style lang="scss">` blocks, import as `@use '$lib/stylesheets/variables/color' as *;`.
+    Shared definitions are automatically available in Svelte `<style lang="scss">` blocks through Vite. Standalone SCSS modules must use `@use '$lib/stylesheets/variables' as *;`. Add new shared modules to `variables/_index.scss` with `@forward`; keep dependencies within `variables/` explicit to avoid cycles.
     - `_color.scss` defines color variables used throughout the project, including text colors, background colors, header colors, button colors, line color, and other project-wide colors.
     - `_mixin.scss` defines mixins and breakpoints for targeting specific screen widths, specifying fonts or their weights, using glassmorphism or button styles, and providing several general-purpose mixins.
     - `_dimension.scss` defines dimension variables used throughout the project, including header heights, realtime viewport heights, and other project-wide dimensions.

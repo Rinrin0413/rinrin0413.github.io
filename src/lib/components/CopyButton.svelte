@@ -35,8 +35,6 @@
 </button>
 
 <style lang="scss">
-	@use '$lib/stylesheets/variables/color' as *;
-
 	$size: 20px;
 
 	button {

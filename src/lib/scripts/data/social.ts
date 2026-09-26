@@ -144,6 +144,12 @@ export const SOCIALS = [
 		icon: null // Could not find the guideline
 	},
 	{
+		service: 'local.ai',
+		name: 'rin',
+		url: 'https://local.ai/rin',
+		icon: null // Could not find the guideline
+	},
+	{
 		service: 'Misskey.io',
 		name: '@Rinrin0413',
 		url: 'https://misskey.io/@Rinrin0413',

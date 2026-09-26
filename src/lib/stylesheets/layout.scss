@@ -1,5 +1,4 @@
-@use '$lib/stylesheets/variables/color' as *;
-@use '$lib/stylesheets/variables/dimension' as *;
+@use '$lib/stylesheets/variables' as *;
 
 #nprogress {
 	.bar {
@@ -43,13 +42,27 @@ main {
 
 	min-height: max(218px, calc(100vh - $header-space - $min-footer-height));
 	margin-top: $header-space;
+	// Paint above the earlier #bg without changing descendants' containing blocks.
+	isolation: isolate;
 }
 
 #bg {
+	// The maximum size of the background image is 1920x1035.
+	// Update BG_IMG_URL in /src/lib/scripts/data/bg-img-url.ts if the image changes.
+	background-image:
+		linear-gradient(152deg, $bg-primary, $bg-secondary 42%, $bg-secondary 68%, $bg-primary),
+		url('/images/wallpapers/sd_city-along-canal.webp');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	// Use the site's primary text color for Safari's native solid color extension.
+	background-color: $txt-primary;
 	position: fixed;
 	top: 0;
 	left: 0;
-	width: 100vw;
-	height: 100vh;
-	z-index: -1;
+	width: 100%;
+	height: calc($max-vh001 * 100);
+	pointer-events: none;
+	// A negative level can exclude viewport-sized layers from Safari's fixed-container sampling.
+	z-index: 0;
 }

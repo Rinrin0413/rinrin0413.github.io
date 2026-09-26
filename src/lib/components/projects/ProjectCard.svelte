@@ -10,11 +10,7 @@
 	let { meta }: Props = $props();
 
 	const id = $derived(meta.id ?? 'unreachable');
-	const date = $derived(
-		meta.initDate === null
-			? null
-			: omitDateByStatus(new Date(meta.date ?? meta.initDate), meta.status)
-	);
+	const date = $derived(omitDateByStatus(new Date(meta.date ?? meta.initDate), meta.status));
 	const hasThumbnailImg = $derived(meta.thumbnailImg !== null);
 
 	function langCol(lang: string) {
@@ -101,8 +97,6 @@
 <style lang="scss">
 	@use '$lib/btpc/stylesheets/card';
 	@use '$lib/btpc/stylesheets/wide_card';
-
-	@use '$lib/stylesheets/variables/mixin' as *;
 
 	.status {
 		float: right;

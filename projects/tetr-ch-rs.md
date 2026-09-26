@@ -4,9 +4,10 @@ desc: TETRA CHANNEL APIのためのRustラッパーライブラリ。
 tags: [ライブラリ, ラッパー, TETR.IO]
 langs: [Rust]
 repo: https://github.com/Rinrin0413/tetr-ch-rs
+branch: dev
 website: https://docs.rs/tetr_ch
 status: completed
-date: 2025-12-15
+date: null
 initDate: 2022-08-23
 license: MIT
 thumbnailImg: null

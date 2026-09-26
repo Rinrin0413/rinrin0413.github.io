@@ -22,7 +22,7 @@
 		"share": "Share",
 		"domain": "Domain",
 		"webShareApi": "Web Share API",
-		"jaLang": "Japanese lang.",
+		"jaLang": "Japanese",
 		"sitemap": "Site Map",
 		"otherLinks": "Other links",
 		"bgWallpaper": "Background wallpaper",
@@ -44,7 +44,8 @@
 		"revisedOn": "Revised on {date}",
 		"repo": "Repository",
 		"website": "Website",
-		"terminalEmulator": "Terminal Emulator"
+		"terminalEmulator": "Terminal Emulator",
+		"chiba": "Chiba Pref."
 	},
 	"home": {
 		"icon": "Rinrin.rs' avatar",
@@ -54,7 +55,7 @@
 		"chronicle": "my history",
 		"recentArticles": "Recent articles:",
 		"viewAll": "View all",
-		"contact": "Basically, I can respond by joining my Discord server and contacting me there, or by direct messaging me on Discord.\nI might not notice them when I am out, so if it's urgent, please send me an email instead.",
+		"contact": "Generally, I can respond if you join my Discord server or send a DM to my Discord account. However, I might miss your message when I'm away or on the go, so please contact me by email if you need a guaranteed reply or if it is urgent.",
 		"otherSocial": "Other social accounts"
 	},
 	"header": {
@@ -68,15 +69,15 @@
 	"activities": {
 		"programming": {
 			"desc": "I began programming when I was about 13, but my knowledge is limited to a few areas.",
-			"rust": "This is my favorite language 🦀. My online handle \"Rinrin.rs\" also includes the \".rs\" extension.",
+			"rust": "It is my favorite language, though I have not used it much lately. The \".rs\" extension in my handle \"Rinrin.rs\" also comes from Rust.",
 			"graphics": {
-				"desc": "After developing shader packs for Minecraft Bedrock Edition, I became interested in this field.",
-				"langsToUse": "The languages I use:",
-				"mayNotUse": "no longer use maybe"
+				"desc": "I got into computer graphics after developing shader packs for Minecraft Bedrock Edition. Currently, I sometimes develop shader packs for the Java Edition... maybe.",
+				"langsToUse": "Languages I use:",
+				"mayNotUse": "might not use anymore"
 			},
 			"webdev": [
-				"Writing stylesheets is very stressful so I basically don't wanna work on this. I usually use SCSS from ",
-				" (since SASS's indentation rules don't suit me). In other words, I don't have much motivation for web development. So I have never used a framework other than ",
+				"I'm not good at web development because writing stylesheets is a pain. I usually use ",
+				"'s SCSS for stylesheets. In other words, I don't have much motivation for web development. So I have hardly ever used a framework other than ",
 				". This website was built with it.",
 				"and I HATE MOBILE SAFARI."
 			],
@@ -87,30 +88,54 @@
 		},
 		"game": {
 			"desc": "Single-player RPGs are not listed here.",
-			"tetrio": "TETR.IO is a modern yet familiar online stacker in the same genre as certain Russian puzzle games. I am not very good at this game but it is fun to play once in a while.",
+			"tetrio": "TETR.IO is a modern yet familiar online stacker in the same genre as certain Russian puzzle games. I have not been playing it much lately, but it is always fun to pick up once in a while.",
 			"mc": [
-				"Minecraft is one of the games I have played for the longest time. I no longer play the Wii U Edition or Bedrock Edition; I currently play the Java Edition. In the Wii U Edition, I used to build many structures. After moving to the Bedrock Edition, I started developing add-ons and shader packs. However, I got sick of it because of ",
-				"'s repeated nonsense. Currently, I am developing shader packs for the Java Edition at my own pace."
+				"This is the game I have played the longest. I no longer play the Wii U Edition or Bedrock Edition; I mainly play the Java Edition now. Back on the Wii U, I mostly spent my time building. After switching to Bedrock Edition, I also got into developing add-ons and shader packs, but I was completely put off by ",
+				"'s repeated disruptive updates. Currently, I am slowly working on shader development for Java Edition (maybe)."
 			],
-			"sky": "I was born in the Season of Assembly, but I am not logging in much lately. I might log in if you invite me."
+			"sky": "I was born in the Season of Assembly, but I rarely log in these days. I might join if you invite me."
 		},
 		"music": {
 			"listen": "I like piano music from the Classical and Romantic musical eras, and I am especially drawn to Franz Liszt's pieces. In recent years, I have started listening to not only piano music but also orchestral pieces and lieder (classical art songs).",
-			"play": "I play classical music on the piano but I am not very good at it. I quickly get tired of piano practice so I am often satisfied with just playing some of my favorite melodies.",
+			"play": "I am self-taught, so it is nothing to show off, but I play (simple) classical pieces on the piano, such as those mentioned above.",
 			"compose": [
-				"I compose classical-style music and arrange/transcribe classical music. Occasionally, I compose pieces like popular music. However, I am still learning musical theories. I mainly use ",
+				"I compose classical-style music and arrange/transcribe classical music. Occasionally, I compose pieces like popular music. However, I am still studying music theory. I mainly use ",
 				" for composing, arranging, and transcribing."
 			],
-			"sing": "I don't usually sing much because I am not very familiar with songs with lyrics. The songs I can sing are Pretty Cure songs, GHIBLI songs that I bought on CD and listened to in the past, and other songs that I had to sing during compulsory education, etc."
+			"sing": "I don't usually sing much because I don't know many songs with lyrics. The ones I can sing are Pretty Cure songs, Ghibli songs from CDs I used to listen to, songs that I had to sing during compulsory education, and so on."
+		},
+		"ai": {
+			"desc": "Within computer science, I have always had an interest in artificial intelligence.",
+			"llm": {
+				"title": "Large Language Models",
+				"desc": "I had been following the field since around GPT-2, but things suddenly became fascinating around GPT-3 when scaling laws came into play. While code completion powered by GitHub Copilot was already revolutionary enough, ChatGPT (GPT-3.5) and subsequent models enabled far more advanced applications.",
+				"local": [
+					"In early 2025, I also became interested in local LLMs. It was fun tinkering and experimenting with ",
+					"limited computational resources",
+					"."
+				]
+			},
+			"imageGen": {
+				"title": "Image Generation AI",
+				"body": [
+					"My first hands-on experience was with ",
+					" in 2021, and even back then, I thought it was pretty good. During the Stable Diffusion v1.5 era, I used to play with it locally using ",
+					", but I kind of grew tired of it around when SDXL came out. When NanoBanana was released, my interest was piqued again, but I ultimately stepped away after failing to come up with any real use case for it."
+				]
+			},
+			"other": {
+				"title": "Other",
+				"desc": "Aside from that, I also try out bots for stacking games whenever I have some free time."
+			}
 		}
 	},
 	"chronicle": {
 		"expand": "Click to expand",
 		"2006": {
-			"4": "was born in Yokohama City"
+			"4": "Born in Yokohama City"
 		},
 		"2011": {
-			"null": "Around this time, I had been playing Ameba Pigg on Windows 7 and have called myself \"rinrin\" since then."
+			"null": "Around this time, I was playing Ameba Pigg on Windows 7 and started going by \"rinrin\"."
 		},
 		"2013": {
 			"4": "Enrolled in a special needs class at an elementary school."
@@ -119,7 +144,7 @@
 			"6": "Moved to Tochigi Prefecture."
 		},
 		"2016": {
-			"12": "Played Minecraft for the first time. (Wii U Edition)"
+			"12": "Played Minecraft for the first time (Wii U Edition)."
 		},
 		"2019": {
 			"3": "Moved to Chiba Prefecture after graduating from elementary school.",
@@ -130,79 +155,42 @@
 			"null": "In mid-2020, my congenital disorder began to worsen."
 		},
 		"2021": {
-			"4": "After spring break, became unable to talk and was no longer able to attend school.",
+			"4": "After spring break, became almost unable to talk and was no longer able to attend school.",
 			"5": "Started developing shader packs for Minecraft for Windows.",
 			"11": "Started learning the Rust programming language."
 		},
 		"2022": {
-			"3": "Bought a new desktop computer and reinstalled Windows for a certain reason.",
-			"4": "Enrolled at S High School.",
-			"6": "After all, I hate Windows, so I installed openSUSE Leap as my main OS. Somehow the installation was successful this time."
+			"3": "Bought a new desktop computer, and reinstalled Windows for various reasons.",
+			"4": "Wrote my name down and got into S High School.",
+			"6": "Installed openSUSE Leap instead of Windows as my main OS. Somehow, it worked this time."
 		},
 		"2023": {
 			"2": "Rewrote this website using SvelteKit."
 		},
 		"2025": {
-			"4": "Enrolled at ZEN University as a first-generation student.",
-			"9": "Changed the OS of my computer to Fedora Workstation."
+			"4": "Enrolled at ZEN University as a member of the inaugural class.",
+			"9": "Switched my PC's OS to Fedora Workstation."
 		},
 		"2036": {
-			"4": "I have thought right after I was born that how old will I be in 30 years later."
+			"4": "Ever since I was born, I had been wondering how old I would be in 30 years."
 		}
 	},
 	"profile": {
 		"intro": [
-			"Hi there, I'm Rinrin.rs.",
-			"am a student, Japanese, {age} years old. and have ASD.",
-			"I'm mainly on Discord.",
-			"I'll write code.",
-			"Basically i would not work Web dev.",
-			"may be able to draw a simple pixel art.",
-			"also compose music as a hobby."
+			"Hi there, I am Rinrin.rs.",
+			"A student, Japanese, {age} years old, with ASD.",
+			"You can mainly find me on Discord.",
+			"I write code.",
+			"Though not much Web dev.",
+			"Sometimes I create simple pixel art.",
+			"Music composition is another hobby of mine."
 		],
 		"birthday": "April 13th, 2006",
-		"primaryLang": "Primary lang.",
+		"primaryLang": "Language",
 		"timezone": "Timezone",
+		"residence": "Location",
 		"birthplace": "Birthplace",
 		"hobby": "see"
-	},
-	"skills": {
-		"summary": "Click to expand",
-		"rust": "I love it because it's fun to write.",
-		"git": "I make mistakes occasionally, but so I have gotten used to resolving them.",
-		"glslWgslHlsl": [
-			"I am not good at coding that requires advanced mathematics.",
-			"Originally I was developing shaderpacks for Minecraft."
-		],
-		"webDev": {
-			"0": "I dislike this field because stylesheets are very stressful.",
-			"svelte": [
-				"I usually use SvelteKit when build websites. This website was made with it too.",
-				"I have never used any other frameworks."
-			],
-			"htmlCssJs": "I HATE CSS.",
-			"sass": [
-				"I like the mixins and variables etc. of Sass.",
-				"I use SCSS because I dislike the indentation syntax."
-			]
-		},
-		"python": [
-			"This is actually the first language I learned.",
-			"There is anaphylaxis risks, but it is not like I can't write it anymore."
-		],
-		"minecraft": [
-			"I used to build Japanese-style architecture. And I am not good at Western-style buildings.",
-			"At one point, I was also developing add-ons for Bedrock Edition, but I am not gonna do it anymore.",
-			"Currently, I occasionally develop shaderpacks for Java Edition when feeling motivated."
-		],
-		"linux": [
-			"Currently, I am using Fedora Workstation as my primary desktop OS.",
-			"I am not using Linux for server purposes so it is hard to say it is a skill."
-		],
-		"illustration": [
-			"I am able to draw simple pixel art.",
-			"I used to draw analog art but I rarely draw now."
-		]
 	},
 	"env": {
 		"intro": "My various soil and environments",
@@ -221,8 +209,8 @@
 		"backToIndex": "Back to tool list",
 		"noMatchingToolsFound": "No matching tools found.",
 		"notes": [
-			"The accuracy of the results provided by the tools on this website is not guaranteed.",
-			"If you come across any issues or problems, I would appreciate it if you could report them on ",
+			"Results from the tools on this website are not guaranteed to be accurate.",
+			"If you find any issues, please feel free to report them on ",
 			"."
 		]
 	},
@@ -234,6 +222,13 @@
 			"completed": "Completed",
 			"archived": "Archived",
 			"abandoned": "Abandoned"
+		},
+		"statusDescriptions": {
+			"wip": "In development and incomplete",
+			"active": "Completed, but further development such as new features is ongoing",
+			"completed": "Completed, with no current plans for updates",
+			"archived": "Development has ended",
+			"abandoned": "Abandoned before completion"
 		},
 		"noMatchingProjectsFound": "No matching projects found.",
 		"latestUpdate": "Latest update",

@@ -75,7 +75,7 @@
 	</div>
 	<OtherInfo {metadata} />
 	<ChildPageComponentRenderer component={data.component} />
-	<p><ShareButton title={titleFull} expanded /></p>
+	<div><ShareButton title={titleFull} expanded /></div>
 	<License license={metadata.license} />
 	<BackToIndexButton category="creations" />
 </div>

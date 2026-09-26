@@ -1,4 +1,4 @@
-@use '$lib/stylesheets/variables/color' as *;
+@use '$lib/stylesheets/variables' as *;
 
 .icn {
 	$size: 256px;
@@ -28,23 +28,66 @@
 }
 
 #activity-list {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	max-width: 320px;
+	margin: 14px auto 28px auto;
+	padding: 12px 14px;
+	gap: 10px 32px;
 	list-style: none;
-	padding: 0;
-	margin: 12px auto;
+	border-top: 1px solid rgba($line-primary, 0.22);
+	border-bottom: 1px solid rgba($line-primary, 0.22);
+	box-sizing: border-box;
+
+	@include sp {
+		max-width: 280px;
+		gap: 8px 16px;
+		padding: 10px 8px;
+	}
 
 	li {
-		margin: 0 12px;
-		font-size: 18px;
+		margin: 0;
 	}
 
 	a {
-		color: #460000;
-		transition: 0.3s;
+		display: flex;
+		align-items: baseline;
+		justify-content: flex-start;
+		gap: 6px;
+		color: $txt-dark;
+		text-decoration: none;
+		font-size: 17px;
+		padding: 4px 6px;
+		border-radius: 3px;
+		transition: color 0.18s ease;
+
+		.num {
+			@include source-code-pro;
+			font-size: 15px;
+			color: rgba($txt-primary, 0.6);
+			letter-spacing: 0.5px;
+			transition: color 0.18s ease;
+		}
+
+		.name {
+			font-family: inherit;
+			letter-spacing: 0.3px;
+		}
 
 		&:hover {
+			color: #460000;
+
+			.num {
+				color: #460000;
+			}
+
+			.name {
+				text-decoration: underline;
+				text-underline-offset: 3px;
+			}
+		}
+
+		&:active {
 			color: #9b3535;
 		}
 	}

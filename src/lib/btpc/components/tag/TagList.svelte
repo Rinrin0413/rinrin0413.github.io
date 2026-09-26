@@ -27,8 +27,6 @@
 {/if}
 
 <style lang="scss">
-	@use '$lib/stylesheets/variables/mixin' as *;
-
 	@use '$lib/btpc/stylesheets/tag';
 
 	.tags {

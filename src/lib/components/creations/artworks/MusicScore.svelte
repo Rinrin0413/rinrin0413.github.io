@@ -29,8 +29,6 @@
 {/if}
 
 <style lang="scss">
-	@use '$lib/stylesheets/variables/mixin' as *;
-
 	a {
 		padding: 6px 8px;
 		@include button;

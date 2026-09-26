@@ -1,6 +1,5 @@
 <script lang="ts">
 	import type { ItemWithCount } from '$lib/btpc/scripts/types';
-	import type { ProjectStatus } from '$lib/btpc/scripts/projects/util';
 	import { _ } from 'svelte-i18n';
 	import { updateParamOnElmValueChange } from '$lib/btpc/scripts/utils';
 	import { PROJECT_STATUSES, getStatusEmoji } from '$lib/btpc/scripts/projects/util';
@@ -26,14 +25,6 @@
 	let status = $derived(pickedStatus ?? 'all');
 	let lang = $derived(pickedLang ?? 'all');
 	let license = $derived(pickedLicense ?? 'all');
-
-	const STATUS_LABELS: Record<ProjectStatus, string> = {
-		wip: '開発が進行中で未完成のもの',
-		active: '完成しているが、機能追加等の開発が続いているもの',
-		completed: '完成していて、現時点で更新の予定がないもの',
-		archived: '開発が終了しているもの',
-		abandoned: '完成する前に放棄したもの'
-	};
 </script>
 
 <div>
@@ -44,7 +35,7 @@
 		>
 			<option value="all">{$_('w.all')}</option>
 			{#each PROJECT_STATUSES as s (s)}
-				<option value={s} title={STATUS_LABELS[s]}
+				<option value={s} title={$_('projects.statusDescriptions.' + s)}
 					>{getStatusEmoji(s)}
 					{$_('projects.statuses.' + s)} ({(allStatuses.find((st) => st.item === s) ?? { count: 0 })
 						.count})</option

@@ -1,3 +1,4 @@
+import { resolveProjectDate } from '$lib/btpc/scripts/projects/dates';
 import type {
 	ArticleMetadata,
 	ArticleThumbnailImgFmts,
@@ -335,8 +336,7 @@ export async function fetchProjects({ tags, langs, license, status }: fetchProje
 	let projects = await Promise.all(
 		Object.entries(import.meta.glob('/projects/*.md')).map(async ([path, module]) => {
 			const { metadata } = (await module()) as { metadata: ProjectMetadata };
-			metadata.id = path.split('/').pop()!.split('.')[0];
-			return metadata;
+			return { ...resolveProjectDate(metadata), id: path.split('/').pop()!.split('.')[0] };
 		})
 	);
 
@@ -363,11 +363,7 @@ export async function fetchProjects({ tags, langs, license, status }: fetchProje
 	projects.sort((a, b) => {
 		const aDate = a.date ?? a.initDate;
 		const bDate = b.date ?? b.initDate;
-		if (aDate !== null && bDate !== null)
-			return new Date(bDate).getTime() - new Date(aDate).getTime();
-		if (aDate === null && bDate !== null) return 1;
-		if (aDate !== null && bDate === null) return -1;
-		return 0;
+		return new Date(bDate).getTime() - new Date(aDate).getTime();
 	});
 
 	return projects;

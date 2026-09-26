@@ -328,7 +328,6 @@
 <!-- svelte-ignore css_unused_selector -->
 <style lang="scss">
 	@use '$lib/stylesheets/tools/tool_page';
-	@use '$lib/stylesheets/variables/color' as *;
 
 	.colors {
 		display: flex;

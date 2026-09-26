@@ -30,9 +30,9 @@
 
 <section>
 	<Title text="Blog" atPageTop />
-	<p>
+	<div>
 		<ShareButton title={PAGE_FULL_TITLE_PART + TITLE} /><FeedButton />
-	</p>
+	</div>
 	<TagPicker allTags={data.allTags} pickedTags={tags} />
 
 	{#if 0 < articles.length}

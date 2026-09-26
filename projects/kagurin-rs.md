@@ -4,9 +4,10 @@ desc: Discord用の汎用bot。
 tags: [Discordアプリ]
 langs: [Rust]
 repo: https://github.com/Rinrin0413/kagurin-rs
+branch: dev
 website: null
 status: active
-date: 2025-05-17
+date: null
 initDate: 2022-01-30
 license: GPL-3.0
 thumbnailImg: null

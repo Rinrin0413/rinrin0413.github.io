@@ -1,5 +1,4 @@
-@use '$lib/stylesheets/variables/color' as *;
-@use '$lib/stylesheets/variables/mixin' as *;
+@use '$lib/stylesheets/variables' as *;
 
 div,
 p,
@@ -58,7 +57,7 @@ input {
 	&[type='checkbox'] {
 		$size: 26px;
 		$padding: 2px;
-		$transition-duration: 0.2s;
+		$transition-duration: 0.15s;
 		width: $size * 2;
 		height: $size;
 		margin: 0 8px;

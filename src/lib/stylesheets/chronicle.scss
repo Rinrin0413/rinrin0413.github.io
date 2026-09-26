@@ -1,5 +1,4 @@
-@use '$lib/stylesheets/variables/color' as *;
-@use '$lib/stylesheets/variables/mixin' as *;
+@use '$lib/stylesheets/variables' as *;
 
 .container {
 	margin: 64px 18px;
@@ -140,12 +139,18 @@ ul {
 	.year {
 		font-size: 16px;
 		padding-right: 10px;
+		.opened & {
+			width: 4ch;
+			flex-shrink: 0;
+			white-space: normal;
+		}
 
 		&:not(.no-pin):after {
 			$size: 12px;
 			width: $size;
 			height: $size;
-			left: 91px;
+			top: 0;
+			left: calc(100% - 5px);
 		}
 	}
 

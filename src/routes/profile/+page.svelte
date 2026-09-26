@@ -5,7 +5,6 @@
 	import Details from './Details.svelte';
 	import Hr from '$lib/components/Hr.svelte';
 	import Chronicle from '$lib/components/home/Chronicle.svelte';
-	import Skills from './Skills.svelte';
 	import Environment from './Environment.svelte';
 
 	import { _ } from 'svelte-i18n';
@@ -48,18 +47,11 @@
 <Hr />
 
 <section id="hobby">
-	<Title text="Hobby" />
+	<Title text="Hobby / Skills" />
 	<p>
 		{$_('profile.hobby')}
 		<a href="/#activities">Major Activities</a>
 	</p>
-</section>
-
-<Hr />
-
-<section id="skills">
-	<Title text="Skills" />
-	<Skills />
 </section>
 
 <Hr />

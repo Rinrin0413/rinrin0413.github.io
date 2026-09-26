@@ -30,9 +30,9 @@
 
 <section>
 	<Title text="Web Tools" atPageTop />
-	<p>
+	<div>
 		<ShareButton title={PAGE_FULL_TITLE_PART + TITLE} />
-	</p>
+	</div>
 	<TagPicker allTags={data.allTags} pickedTags={data.tags} />
 
 	{#if 0 < tools.length}
@@ -59,9 +59,6 @@
 
 <style lang="scss">
 	@use '$lib/btpc/stylesheets/index_page';
-
-	@use '$lib/stylesheets/variables/color' as *;
-	@use '$lib/stylesheets/variables/mixin' as *;
 
 	.tools {
 		margin: 0 auto;

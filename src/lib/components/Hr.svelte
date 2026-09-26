@@ -1,8 +1,6 @@
 <hr />
 
 <style lang="scss">
-	@use '$lib/stylesheets/variables/color' as *;
-
 	hr {
 		height: 2px;
 		margin: 0;

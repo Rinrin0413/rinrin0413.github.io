@@ -1,3 +1,4 @@
+import { resolveProjectDate } from '$lib/btpc/scripts/projects/dates';
 import type { PageLoad } from './$types';
 import type { Component } from 'svelte';
 import type { ProjectMetadata } from '$lib/btpc/scripts/types';
@@ -12,7 +13,7 @@ export const load: PageLoad = async ({
 	const { default: component, metadata: frontmatter } = await import(
 		`../../../../../projects/${params.slug}.md`
 	).catch(err);
-	return { component, frontmatter };
+	return { component, frontmatter: resolveProjectDate(frontmatter) };
 };
 
 function err() {

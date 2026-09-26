@@ -95,6 +95,8 @@
 	<link rel="alternate" href="/feed" type="application/atom+xml" title={BLOG_NAME} />
 </svelte:head>
 
+<div id="bg" aria-hidden="true"></div>
+
 <noscript>
 	JavaScript is disabled in your browser. Some features don't work properly.
 	<br /><br />
@@ -108,8 +110,6 @@
 <main id="main-content" inert={$isDrawerMenuOpened}>{@render children?.()}</main>
 
 <Footer />
-
-<div id="bg"></div>
 
 <style lang="scss" global>
 	@use '$lib/stylesheets/layout';

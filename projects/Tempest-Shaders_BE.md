@@ -4,6 +4,7 @@ desc: Rinrinの狂気から生まれた、マインクラフト統合版向け�
 tags: [シェーダーパック, マインクラフト統合版, グラフィックス]
 langs: [HLSL]
 repo: https://github.com/Rinrin0413/Tempest-Shaders
+branch: master
 website: null
 status: archived
 date: 2022-03-12

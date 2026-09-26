@@ -21,7 +21,7 @@
 				{ key: $_('w.shell'), value: 'fish' },
 				{ key: $_('w.desktopEnv'), value: 'GNOME' },
 				{ key: $_('w.webBrowser'), value: 'Mozilla Firefox' },
-				{ key: $_('w.codeEditor'), value: 'Visual Studio Code Insiders' },
+				{ key: $_('w.codeEditor'), value: 'Visual Studio Code' },
 				{ key: $_('w.terminalEmulator'), value: 'Ghostty' }
 			]
 		}
@@ -50,9 +50,6 @@
 </p> -->
 
 <style lang="scss">
-	@use '$lib/stylesheets/variables/color' as *;
-	@use '$lib/stylesheets/variables/mixin' as *;
-
 	h3,
 	div p {
 		max-width: 365px;

@@ -29,9 +29,9 @@
 
 <section>
 	<Title text={TITLE} atPageTop />
-	<p>
+	<div>
 		<ShareButton title={PAGE_FULL_TITLE_PART + TITLE} />
-	</p>
+	</div>
 	<CategoryAndLicensePicker
 		allCategories={data.allCategories}
 		allLicenses={data.allLicenses}

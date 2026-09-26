@@ -16,9 +16,6 @@
 <h2 {id} {style}>{text}</h2>
 
 <style lang="scss">
-	@use '$lib/stylesheets/variables/color' as *;
-	@use '$lib/stylesheets/variables/mixin' as *;
-
 	h2 {
 		display: inline-block;
 		text-align: center;
