@@ -192,41 +192,6 @@
 		"birthplace": "Birthplace",
 		"hobby": "see"
 	},
-	"skills": {
-		"summary": "Click to expand",
-		"rust": "I love it because it's fun to write.",
-		"git": "I make mistakes occasionally, but so I have gotten used to resolving them.",
-		"glslWgslHlsl": [
-			"I am not good at coding that requires advanced mathematics.",
-			"Originally I was developing shaderpacks for Minecraft."
-		],
-		"webDev": {
-			"0": "I dislike this field because stylesheets are very stressful.",
-			"svelte": [
-				"I usually use SvelteKit when build websites. This website was made with it too.",
-				"I have hardly ever used any other frameworks."
-			],
-			"htmlCssJs": "I HATE CSS.",
-			"sass": [
-				"I like the mixins and variables etc. of Sass.",
-				"I use SCSS because I dislike the indentation syntax."
-			]
-		},
-		"python": ["This is actually the first language I learned."],
-		"minecraft": [
-			"I used to build Japanese-style architecture. And I am not good at Western-style buildings.",
-			"At one point, I was also developing add-ons for Bedrock Edition, but I am not gonna do it anymore.",
-			"Currently, I occasionally develop shaderpacks for Java Edition when feeling motivated."
-		],
-		"linux": [
-			"Currently, I am using Fedora Workstation as my primary desktop OS.",
-			"I am not using Linux for server purposes so it is hard to say it is a skill."
-		],
-		"illustration": [
-			"I am able to draw simple pixel art.",
-			"I used to draw analog art but I rarely draw now."
-		]
-	},
 	"env": {
 		"intro": "My various soil and environments",
 		"notes": ["see ", "(Japanese) for more details and devices"]
