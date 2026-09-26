@@ -309,7 +309,7 @@
 		<p>
 			<CopyButton
 				text={JSON.stringify(STATISTICS, (_, v) => (typeof v === 'function' ? v.toString() : v))}
-			/>データセットをコピー (JSON)
+			/>統計情報をコピー (JSON)
 		</p>
 		<div>
 			<ul class="dataset">
