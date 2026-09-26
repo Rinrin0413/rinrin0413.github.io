@@ -209,8 +209,8 @@
 		"backToIndex": "Back to tool list",
 		"noMatchingToolsFound": "No matching tools found.",
 		"notes": [
-			"The accuracy of the results provided by the tools on this website is not guaranteed.",
-			"If you come across any issues or problems, I would appreciate it if you could report them on ",
+			"Results from the tools on this website are not guaranteed to be accurate.",
+			"If you find any issues, please feel free to report them on ",
 			"."
 		]
 	},
