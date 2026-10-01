@@ -56,6 +56,15 @@
 
 <Hr />
 
+<section id="now">
+	<Title text="Now" />
+	<p>
+		{$_('profile.now.0')}<a href="/now">/now</a>{$_('profile.now.1')}
+	</p>
+</section>
+
+<Hr />
+
 <section id="wakatime">
 	<Title text="Wakatime" />
 	<p>My coding activity.</p>

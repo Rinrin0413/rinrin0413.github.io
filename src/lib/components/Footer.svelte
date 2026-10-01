@@ -30,7 +30,8 @@
 
 	const OTHER_PAGES = [
 		{ id: 'privacyPolicy', path: '/privacy' },
-		{ id: 'acknowledgments', path: '/acknowledgments' }
+		{ id: 'acknowledgments', path: '/acknowledgments' },
+		{ id: 'nowPage', path: '/now' }
 	];
 
 	const ANIM_TYPE = 'slide-left';
