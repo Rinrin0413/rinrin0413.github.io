@@ -54,6 +54,9 @@
 		<Hr />
 		<ul>
 			<li>居住地: 日本 千葉県（北部）</li>
+			<li>
+				所属: <a href="https://zen.ac.jp/" target="_blank" rel="noopener noreferrer">ZEN大学</a> 1期生
+			</li>
 		</ul>
 	</div>
 </article>
