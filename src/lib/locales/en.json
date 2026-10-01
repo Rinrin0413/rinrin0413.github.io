@@ -45,7 +45,8 @@
 		"repo": "Repository",
 		"website": "Website",
 		"terminalEmulator": "Terminal Emulator",
-		"chiba": "Chiba Pref."
+		"chiba": "Chiba Pref.",
+		"nowPage": "/now page"
 	},
 	"home": {
 		"icon": "Rinrin.rs' avatar",
@@ -190,11 +191,20 @@
 		"timezone": "Timezone",
 		"residence": "Location",
 		"birthplace": "Birthplace",
-		"hobby": "see"
+		"hobby": "see",
+		"now": ["What I am working on and doing now. Please refer to the ", " page."]
 	},
 	"env": {
 		"intro": "My various soil and environments",
 		"notes": ["see ", "(Japanese) for more details and devices"]
+	},
+	"now": {
+		"desc": [
+			"This is my ",
+			" page. What I am working on and doing now. The content is not translated, so please use your preferred AI to read in your language."
+		],
+		"lastUpdated": "Last updated (irregular updates)",
+		"unavailable": "Updates are currently unavailable. Please try again later or view the GitHub Gist directly at the following URL:"
 	},
 	"social": {
 		"desc": "List of my social accounts"

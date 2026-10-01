@@ -45,7 +45,8 @@
 		"repo": "リポジトリ",
 		"website": "ウェブサイト",
 		"terminalEmulator": "ターミナルエミュレーター",
-		"chiba": "千葉県"
+		"chiba": "千葉県",
+		"nowPage": "/now ページ"
 	},
 	"home": {
 		"icon": "Rinrin.rs のアイコン",
@@ -190,11 +191,17 @@
 		"timezone": "時刻帯",
 		"residence": "居住地",
 		"birthplace": "出身地",
-		"hobby": "参照:"
+		"hobby": "参照:",
+		"now": ["今取り組んでいることや近況。", " ページを参照してください。"]
 	},
 	"env": {
 		"intro": "いろんな土壌と環境",
 		"notes": ["詳細と他のデバイスについては ", " 参照"]
+	},
+	"now": {
+		"desc": [" ", "  ページ。私が今取り組んでいることや近況。"],
+		"lastUpdated": "最終更新（不定期更新）",
+		"unavailable": "現在、近況を表示できません。しばらく経ってから再度お試しいただくか、以下の URL から直接 GitHub Gist をご覧ください:"
 	},
 	"social": {
 		"desc": "Rinrin.rs のソーシャルアカウント一覧"

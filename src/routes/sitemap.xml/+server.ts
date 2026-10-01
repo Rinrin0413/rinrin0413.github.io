@@ -97,6 +97,11 @@ async function body() {
         <priority>0.7</priority>
     </url>
     <url>
+        <loc>${SITE_URL}/now</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
         <loc>${SITE_URL}/acknowledgments</loc>
         <changefreq>monthly</changefreq>
         <priority>0.1</priority>

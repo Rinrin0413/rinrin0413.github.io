@@ -40,3 +40,12 @@ export const TOAST_OPTIONS: ToastOptions = {
 		'border-radius: 4px;'
 	].join(' ')
 };
+
+/** The GitHub Gist ID used for the `/now` page. */
+export const GIST_ID_FOR_NOW_PAGE = '7df9e07751fdf33716031eeff70fab7e';
+
+/** The GitHub Gist viewing URL used for the `/now` page. */
+export const GIST_URL_FOR_NOW_PAGE = 'https://gist.github.com/' + GIST_ID_FOR_NOW_PAGE;
+
+/** The GitHub Gist API URL used to fetch the `/now` content. */
+export const GIST_API_URL_FOR_NOW_PAGE = 'https://api.github.com/gists/' + GIST_ID_FOR_NOW_PAGE;
